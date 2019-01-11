@@ -1,0 +1,66 @@
+<section class="spotlight">
+
+  {% if section_title %}
+      {%
+      include '@demo_theme/heading/heading.twig' with {
+        "title": section_title,
+        "heading_level": 2,
+        "classes": "spotlight__section-title"
+      } only
+    %}
+  {% endif %}
+
+  <div class="spotlight__group">
+
+    {% for item in spotlights %}
+      <article class="spotlight__item">
+
+        {{ item.image }}
+
+        {% if item.eyebrow %}
+          {%
+            include '@demo_theme/eyebrow/eyebrow.twig' with {
+              "text": item.eyebrow,
+              "classes": " spotlight__eyebrow",
+            } only
+          %}
+        {% endif %}
+
+        {%
+          include '@demo_theme/heading/heading.twig' with {
+            "title": item.title,
+            "heading_level": 3,
+            "classes": "spotlight__title"
+          } only
+        %}
+
+        {% if item.subhead %}
+          {%
+            include '@demo_theme/heading/heading.twig' with {
+              "title": item.subhead,
+              "heading_level": 4,
+              "classes": "spotlight__subhead"
+            } only
+          %}
+        {% endif %}
+        
+
+        {% if item.text %}
+          {%
+            include '@demo_theme/body/body.twig' with {
+              "body": item.text,
+            } only
+          %}
+        {% endif %}
+
+        {% if item.link %}
+          <a href="{{ item.link.url }}" class="spotlight__link">{{ item.link.text }}</a>
+        {% endif %}
+        
+      </article>
+
+    {% endfor %}
+
+  <div>
+
+</section>

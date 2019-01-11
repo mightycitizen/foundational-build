@@ -1,0 +1,13 @@
+{{ attach_library('demo_theme/heading') }}
+{# Default to h2 (heading level 2) if no heading level is supplied. #}
+{% set heading_level = heading_level|default(2) %}
+
+{% if url %}
+  <h{{ heading_level }} class="heading heading-{{ heading_level }} {{ classes|default('') }}">
+    <a href="{{ url }}" class="heading--link">{{ title }}</a>
+  </h{{ heading_level }}>
+{% else %}
+  <h{{ heading_level }} class="heading heading-{{ heading_level }} {{ classes|default('') }}">
+    {{ title }}
+  </h{{ heading_level }}>
+{% endif %}

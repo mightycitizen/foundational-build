@@ -1,0 +1,22 @@
+{% if section_title %}
+    {%
+    include '@demo_theme/heading/heading.twig' with {
+      "title": section_title,
+      "heading_level": 2,
+      "classes": "card-list__title"
+    } only
+  %}
+{% endif %}
+
+<ul class="card-list {{modifier_class}}{{ classes|default('') }}">
+  {% for item in items %}
+    <li class="card-list__item">
+      {%
+        include '@demo_theme/card/card.twig' with {
+          "card": item,
+          "classes": ""
+        } only
+      %}
+    </li>
+  {% endfor %}
+</ul>

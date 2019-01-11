@@ -1,0 +1,44 @@
+// Primary Tabs
+//
+// This is the site's primary-tabs which provide links for varios page actions such as edit content, view revisions, etc..
+//
+// Markup: primary-tabs.twig
+//
+// Style guide: Components.Primary Tabs
+
+@import '../../global/utils/init';
+
+.primary-tabs {
+  border-bottom: 1px solid $color-silver;
+  margin: 2rem;
+  list-style: none;
+}
+
+.primary-tabs__items {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: -1px;
+
+  a {
+    display: block;
+    padding: 6px 20px;
+    border: 1px solid $color-silver;
+    border-bottom: 0;
+    margin-right: 4px;
+    background: $color-light-gray;
+    color: $color-primary;
+    text-decoration: none;
+
+    &:hover,
+    &.is-active {
+      background: $color-white;
+      color: $color-primary;
+      text-decoration: none;
+      border-bottom: 1px solid $color-white;
+    }
+  }
+}
+
+.primary-tabs__item {
+  list-style: none;
+}

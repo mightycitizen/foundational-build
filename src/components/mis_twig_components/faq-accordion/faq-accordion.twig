@@ -1,0 +1,12 @@
+<section class="faq-accordion__wrapper">
+  {% for item in items %}
+  <article class="faq-accordion" role="presentation">
+    <button type="button" class="faq-accordion__toggle" aria-controls="faq-accordion__content--a{{ item.accordion_instance }}" aria-expanded="false" id="faq-accordion__toggle--q{{ item.accordion_instance }}" aria-selected="false">
+      <span class="faq-accordion__q">{{ item.question }}</span>
+    </button>
+    <div class="faq-accordion__a" id="faq-accordion__content--a{{ item.accordion_instance }}" aria-hidden="true" aria-labelledby="faq-accordion__content--q{{ item.accordion_instance }}">
+      <p>{{ item.answer }}</p>
+    </div>
+  </article>
+  {% endfor %}
+</section>

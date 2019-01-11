@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "image": "<img src='https://source.unsplash.com/random/1400x787' alt='Promo image' />",
+      "heading": {
+        "url": "#",
+        "title": "Phasellus auctor, turpis at luctus finibus"
+      },
+      "body": "<p>This copy is optional, if nothing is entered nothing will display. Lorem ipsum urpis at luctus finibus, erat lectus convallis velit, at sodales purus lacus quis magna. Proin sed luctus augue.</p>",
+      "link": {
+        "url": "#",
+        "text": "Learn more"
+      }
+    },
+    {
+      "image": "<img src='https://source.unsplash.com/random/1400x787' alt='Promo image' />",
+      "heading": {
+        "url": "#",
+        "title": "Phasellus auctor, turpis at luctus finibus"
+      },
+      "body": "<p>This copy is optional, if nothing is entered nothing will display. Lorem ipsum urpis at luctus finibus, erat lectus convallis velit, at sodales purus lacus quis magna. Proin sed luctus augue.</p>",
+      "link": {
+        "url": "#",
+        "text": "Optional link"
+      }
+    },
+    {
+      "image": "<img src='https://source.unsplash.com/random/1400x787' alt='Promo image' />",
+      "heading": {
+        "url": "",
+        "title": "Phasellus auctor, turpis at luctus finibus"
+      },
+      "body": ""
+    }
+  ]
+}

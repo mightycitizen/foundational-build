@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "link": "View",
+      "url": "/"
+    },
+    {
+      "link": "Edit",
+      "url": "/"
+    },
+    {
+      "link": "Revisions",
+      "url": "/"
+    }
+  ]
+}

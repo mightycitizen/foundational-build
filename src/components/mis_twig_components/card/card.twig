@@ -1,0 +1,55 @@
+<article class="card {{modifier_class}}{{ classes|default('') }}">
+
+  <div class="card__media">
+    {%
+      include '@demo_theme/media/media.twig' with {
+        "image": card.media.image,
+        "video": card.media.video,
+      } only
+    %}
+    {{ card.image }}
+  </div>
+
+  <div class="card__content">
+    {% if card.eyebrow %}
+      {%
+        include '@demo_theme/eyebrow/eyebrow.twig' with {
+          "text": card.eyebrow.text,
+          "classes": card.eyebrow.classes,
+        } only
+      %}
+    {% endif %}
+
+    {%
+      include '@demo_theme/heading/heading.twig' with {
+        "url": card.heading.url,
+        "title": card.heading.title,
+        "heading_level": card.heading.heading_level,
+        "classes": card.heading.classes
+      } only
+    %}
+
+    {% if card.subhead %}
+      {%
+        include '@demo_theme/heading/heading.twig' with {
+          "title": card.subhead.title,
+          "heading_level": card.subhead.heading_level,
+          "classes": card.subhead.classes
+        } only
+      %}
+    {% endif %}
+
+    {% if card.text %}
+      {%
+        include '@demo_theme/body/body.twig' with {
+          "body": card.text,
+        } only
+      %}
+    {% endif %}
+
+    {% if card.link %}
+      <a href="{{ card.link.url }}" class="card__link">{{ card.link.text }}</a>
+    {% endif %}
+  </div>
+
+</article>

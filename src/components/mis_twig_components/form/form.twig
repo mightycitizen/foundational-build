@@ -1,0 +1,22 @@
+{# If there's no modifier set a default one. #}
+{%
+  set modifier_class = modifier_class|default('default')
+%}
+
+<form>
+  {% for item in items %}
+    <div class="form-item form-item--{{ item.type }}">
+      <input id="{{ item.label|trim|lower }}"
+        type="{{ item.type }}"
+        class="form-item__input js-form-item" 
+        aria-describedby="required-message" required>
+      <label for="{{ item.label|trim|lower }}" class="form-item__label required-field">{{ item.label }}</label>
+      <div id="required-message" class="visually-hidden">This field is required.</div>
+    </div>
+  {% endfor %}
+  <div class="form-item form-item--textarea">
+    <textarea class="form-item__input js-form-item" id="message" name="messagetext"></textarea>
+    <label for="message" class="form-item__label required-field">Message</label>
+  </div>
+  <input type="submit" value="Submit">
+</form>

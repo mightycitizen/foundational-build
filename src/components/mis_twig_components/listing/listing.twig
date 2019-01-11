@@ -1,0 +1,38 @@
+<ul class="listing">
+
+{% for item in items %}
+  <li class="listing-item">
+
+    <div class="listing-item__media">
+      {{ item.image }}
+    </div>
+    
+    <div class="listing-item__content">
+        {%
+          include '@demo_theme/heading/heading.twig' with {
+            "url": item.heading.url,
+            "title": item.heading.title,
+            "heading_level": 2,
+            "classes": "listing-item__headline",
+          } only
+        %}
+
+        {% if item.body %}
+          {%
+            include '@demo_theme/body/body.twig' with {
+              "body": item.body,
+            } only
+          %}
+        {% endif %}
+
+        {% if item.link %}
+          <a class="listing-item__link" href="{{ item.link.url }}">{{ item.link.text }}</a>
+        {% endif %}
+    </div>
+  </li>
+
+  {% if items|length > 1 %}
+    <hr>
+  {% endif %}
+{% endfor %}
+</ul>

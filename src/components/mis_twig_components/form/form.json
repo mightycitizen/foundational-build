@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "type": "text",
+      "label": "Name"
+    },
+    {
+      "type": "email",
+      "label": "Email"
+    },
+    {
+      "type": "text",
+      "label": "Subject"
+    }
+  ]
+}

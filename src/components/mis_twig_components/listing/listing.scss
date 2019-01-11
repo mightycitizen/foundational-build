@@ -1,0 +1,75 @@
+// Listing
+//
+// This is the Listing component.
+//
+// Markup: listing.twig
+//
+// Style guide: Components.Listing
+
+// Import site utilities.
+@import '../../global/utils/init';
+
+.listing {
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 0 1.5rem;
+}
+
+.listing-item {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint($bp-xsm) {
+    flex-direction: row;
+  }
+
+  + hr {
+    border: 1px solid $color-alto;
+    margin: 2rem 0;
+
+    &:last-of-type {
+      border: 0;
+      margin: 0;
+    }
+
+    @include breakpoint($bp-xsm) {
+      margin: 2.5rem 0;
+    }
+  }
+}
+
+.listing-item__media {
+  flex: 1;
+}
+
+.listing-item__content {
+  flex: 2;
+
+  @include breakpoint($bp-xsm) {
+    margin-left: 1.5rem;
+  }
+}
+
+.listing-item__headline {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-top: 1rem;
+
+  @include breakpoint ($bp-xsm) {
+    margin-top: 0;
+  }
+
+  @include breakpoint($bp-sm) {
+    font-size: 2rem;
+  }
+}
+
+.listing-item__link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

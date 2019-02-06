@@ -8,29 +8,5 @@
       "name": "Jay Callicott",
       "email": "jay.callicott@mediacurrent.com"
     }
-  ],
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://bitbucket.org/mediacurrent/mis_twig_components.git"
-    }
-  ],
-  "minimum-stability": "dev",
-  "require": {
-    "composer/installers": "^1.2",
-    "cweagans/composer-patches": "^1.6",
-    "oomphinc/composer-installers-extender": "^1.1",
-    "mediacurrent/mis_twig_components": "dev-develop"
-  },
-  "extra": {
-    "composer-exit-on-patch-failure": true,
-    "installer-types": [
-      "custom-components"
-    ],
-    "installer-paths": {
-      "src/components/{$name}": [
-        "type:custom-components"
-      ]
-    }
-  }
+  ]
 }

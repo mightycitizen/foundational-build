@@ -176,12 +176,12 @@
             "source": {
                 "type": "git",
                 "url": "https://bitbucket.org/mediacurrent/mis_twig_components.git",
-                "reference": "38526059f86d1779a8c395d2a8266ac8f129dd00"
+                "reference": "cf1e7988ab27b7f7a0a5bf019c9ec595b86927db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://bitbucket.org/mediacurrent/mis_twig_components/get/38526059f86d1779a8c395d2a8266ac8f129dd00.zip",
-                "reference": "38526059f86d1779a8c395d2a8266ac8f129dd00",
+                "url": "https://bitbucket.org/mediacurrent/mis_twig_components/get/cf1e7988ab27b7f7a0a5bf019c9ec595b86927db.zip",
+                "reference": "cf1e7988ab27b7f7a0a5bf019c9ec595b86927db",
                 "shasum": ""
             },
             "type": "custom-components",
@@ -197,9 +197,9 @@
             "description": "Drupal Twig components",
             "homepage": "https://bitbucket.org/mediacurrent/mis_twig_components",
             "support": {
-                "source": "https://bitbucket.org/mediacurrent/mis_twig_components/src/38526059f86d1779a8c395d2a8266ac8f129dd00/?at=develop"
+                "source": "https://bitbucket.org/mediacurrent/mis_twig_components/src/cf1e7988ab27b7f7a0a5bf019c9ec595b86927db/?at=develop"
             },
-            "time": "2019-01-11T22:17:47+00:00"
+            "time": "2019-01-16T18:16:18+00:00"
         },
         {
             "name": "oomphinc/composer-installers-extender",

@@ -12,5 +12,9 @@
       "type": "text",
       "label": "Subject"
     }
-  ]
+  ],
+  "button": {
+    "type": "submit",
+    "value": "Submit"
+  }
 }

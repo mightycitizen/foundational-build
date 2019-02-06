@@ -45,7 +45,7 @@
 
   .map__text {
     width: 100%;
-    margin: 1.5rem 0 0 0;
+    margin: 1.5rem 0 0;
 
     @include breakpoint($bp-xsm) {
       flex: 1;

@@ -4,7 +4,9 @@
 
     "items": [
       {
-        "image": "<img src='https://source.unsplash.com/random/1400x787' alt='Test image alternative text'>",
+        "media": {
+          "image": "<img src='https://source.unsplash.com/random/1400x787' alt='Test image alternative text'>"
+        },
         "eyebrow": {
           "text": "Optional Short Title",
           "classes": " card__eyebrow"
@@ -26,7 +28,9 @@
         }
       },
       {
-        "image": "<img src='https://source.unsplash.com/random/1400x787' alt='Test image alternative text'>",
+        "media": {
+          "image": "<img src='https://source.unsplash.com/random/1400x787' alt='Test image alternative text'>"
+        },
         "eyebrow": {
           "text": "Optional Short Title",
           "classes": " card__eyebrow"
@@ -48,7 +52,9 @@
         }
       },
       {
-        "image": "<img src='https://source.unsplash.com/random/1400x787' alt='Test image alternative text'>",
+        "media": {
+          "image": "<img src='https://source.unsplash.com/random/1400x787' alt='Test image alternative text'>"
+        },
         "eyebrow": {
           "text": "Optional Short Title",
           "classes": " card__eyebrow"
@@ -78,7 +84,9 @@
 
     "items": [
       {
-        "image": "<img src='https://source.unsplash.com/random/1400x787' alt='Test image alternative text'>",
+        "media": {
+          "image": "<img src='https://source.unsplash.com/random/1400x787' alt='Test image alternative text'>"
+        },
         "eyebrow": "",
         "heading": {
           "url": "http://www.mediacurrent.com",
@@ -94,7 +102,9 @@
         }
       },
       {
-        "image": "<img src='https://source.unsplash.com/random/1400x787' alt='Test image alternative text'>",
+        "media": {
+          "image": "<img src='https://source.unsplash.com/random/1400x787' alt='Test image alternative text'>"
+        },
         "eyebrow": "",
         "heading": {
           "url": "http://www.mediacurrent.com",
@@ -110,7 +120,9 @@
         }
       },
       {
-        "image": "<img src='https://source.unsplash.com/random/1400x787' alt='Test image alternative text'>",
+        "media": {
+          "image": "<img src='https://source.unsplash.com/random/1400x787' alt='Test image alternative text'>"
+        },
         "eyebrow": "",
         "heading": {
           "url": "http://www.mediacurrent.com",

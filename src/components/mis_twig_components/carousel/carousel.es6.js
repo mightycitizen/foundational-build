@@ -13,8 +13,8 @@
    * @type {Drupal~behavior}
    */
   Drupal.behaviors.carousel = {
-    attach: function(context) {
-      $('.carousel__slick', context).slick({
+    attach: function() {
+      $('.carousel__slick').not('.slick-initialized').slick({
         dots: true,
       });
     },

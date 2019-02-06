@@ -3,7 +3,7 @@
 // This component can accepts a video embed
 // or image and includes a caption.
 //
-// Markup: media.twig
+// Markup: media-kss.twig
 //
 // Style guide: Components.media
 
@@ -19,9 +19,13 @@
 }
 
 .media-item__caption {
+  font-size: 0.9rem;
   margin-top: 0.32rem;
+  max-width: 100%;
+  word-wrap: break-word;
 
   @include breakpoint($bp-xsm) {
+    font-size: 1rem;
     margin-top: 0.8rem;
   }
 }
@@ -45,14 +49,8 @@
     width: 100%;
     position: absolute;
   }
-}
 
-.media-item__caption {
-  font-size: 0.9rem;
-  max-width: 100%;
-  word-wrap: break-word;
-
-  @include breakpoint($bp-xsm) {
-    font-size: 1rem;
+  video {
+    width: 100%;
   }
 }

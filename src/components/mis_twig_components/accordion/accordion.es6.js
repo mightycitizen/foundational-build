@@ -12,30 +12,30 @@
    *
    * @type {Drupal~behavior}
    */
-  Drupal.behaviors.filterAccordion = {
+  Drupal.behaviors.accordion = {
     attach: function(context) {
 
       const self = this;
-      const $faqAccordions = $('.faq-accordion', context);
+      const $accordions = $('.accordion', context);
 
-      $faqAccordions.each(function() {
-        const $faqAccordion = $(this);
+      $accordions.each(function() {
+        const $accordion = $(this);
 
         // Attach click handler for accordion.
-        const $toggle = $faqAccordion.find('.faq-accordion__toggle', context);
+        const $toggle = $accordion.find('.accordion__toggle', context);
         $toggle.on('click', function() {
-          self.toggleClickEvent($faqAccordion, $(this));
+          self.toggleClickEvent($accordion, $(this));
         });
       });
     },
-    toggleClickEvent: function($faqAccordion, $toggle) {
+    toggleClickEvent: function($accordion, $toggle) {
 
       // Identify the matching element.
-      const $content = $faqAccordion.find('#' + $toggle.attr('aria-controls'));
+      const $content = $accordion.find('#' + $toggle.attr('aria-controls'));
 
-      if (!$faqAccordion.hasClass('open')) {
+      if (!$accordion.hasClass('open')) {
         // Accordion does not have `.open`, so we are opening the accordion.
-        $faqAccordion.addClass('open');
+        $accordion.addClass('open');
         // Toggle the `aria-expanded`.
         $toggle.attr('aria-expanded', 'true');
         // Toggle the `aria-hidden` attribute on the content.
@@ -43,7 +43,7 @@
       }
       else {
         // Same as the if, but in reverse.
-        $faqAccordion.removeClass('open');
+        $accordion.removeClass('open');
         $toggle.attr('aria-expanded', 'false');
         $content.attr('aria-hidden', 'true');
       }

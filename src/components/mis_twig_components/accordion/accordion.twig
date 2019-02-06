@@ -1,0 +1,12 @@
+<section class="accordion__wrapper">
+  {% for item in items %}
+  <article class="accordion" role="presentation">
+    <button type="button" class="accordion__toggle" aria-controls="accordion__content-{{ item.accordion_instance }}" aria-expanded="false" id="accordion__toggle-{{ item.accordion_instance }}" aria-selected="false">
+      <span class="accordion__heading">{{ item.heading }}</span>
+    </button>
+    <div class="accordion__content" id="accordion__content-{{ item.accordion_instance }}" aria-hidden="true" aria-labelledby="accordion__content-{{ item.accordion_instance }}">
+      <p>{{ item.content }}</p>
+    </div>
+  </article>
+  {% endfor %}
+</section>

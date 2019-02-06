@@ -26,13 +26,13 @@
     border-bottom: 0;
     margin-right: 4px;
     background: $color-light-gray;
-    color: $color-primary;
+    color: $color-blue;
     text-decoration: none;
 
     &:hover,
     &.is-active {
       background: $color-white;
-      color: $color-primary;
+      color: $color-blue;
       text-decoration: none;
       border-bottom: 1px solid $color-white;
     }

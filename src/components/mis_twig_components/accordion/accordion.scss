@@ -1,20 +1,19 @@
-// FAQ Accordion
+// Accordion
 //
-// This is the FAQ Accordion component. It's an example.
-// This is an interactive version of the FAQ component.
+// This is the Accordion component. It's an example.
 //
-// Markup: faq-accordion.twig
+// Markup: accordion.twig
 //
-// Style guide: Components.FAQ Accordion
+// Style guide: Components.Accordion
 
 // Import site utilities.
 @import '../../global/utils/init';
 
-.faq-accordion__wrapper {
+.accordion__wrapper {
   max-width: 725px;
 }
 
-.faq-accordion {
+.accordion {
   background: $color-alto;
   border-top: 0;
   border-right: 1px solid $color-tundora;
@@ -32,7 +31,7 @@
   }
 }
 
-.faq-accordion__toggle {
+.accordion__toggle {
   border: 0;
   background: transparent;
   cursor: pointer;
@@ -43,7 +42,7 @@
   width: 100%;
 
   &::after {
-    content: url(../assets/faq-accordion__arrow.svg);
+    content: url('../assets/accordion__arrow.svg');
     height: 0;
     position: absolute;
     right: 0;
@@ -58,16 +57,16 @@
   }
 }
 
-.faq-accordion__q {
+.accordion__heading {
   font-size: 1rem;
   font-weight: bold;
   line-height: 1.625;
 }
 
-.faq-accordion__a {
-  max-height: 0px;
+.accordion__content {
+  max-height: 0;
   line-height: 1.625;
-  margin-top: 0px;
+  margin-top: 0;
   overflow: hidden;
   padding: 0 32px 0 0;
   transition: max-height 0.15s, margin-top 0.35s;

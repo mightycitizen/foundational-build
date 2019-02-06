@@ -1,0 +1,3 @@
+[submodule "src/components/mis_twig_components"]
+	path = src/components/mis_twig_components
+	url = git@bitbucket.org:mediacurrent/mis_twig_components.git

@@ -13,10 +13,6 @@
     {
       "type": "vcs",
       "url": "https://bitbucket.org/mediacurrent/mis_twig_components.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://git.drupal.org/project/thunder_admin.git"
     }
   ],
   "minimum-stability": "dev",

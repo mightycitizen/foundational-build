@@ -800,53 +800,53 @@ min.js and .css files must be included.</p>
                 <div class="kss-modifier kss-modifier-original">
                   <div class="kss-modifier-example">
                     <section class="carousel__wrapper">
-<ul class="carousel__list carousel__slick">
-  <li class="carousel-item">
-    <div class="carousel-item__media">
-        <div class="media-item">
+  <ul class="carousel__list carousel__slick">
+                  <li class="carousel-item">
+  <div class="carousel-item__media">
+      <div class="media-item">
     <img src='https://source.unsplash.com/random/1400x787' alt='test image' />
       </div>
-    </div>
-    <div class="carousel-item__content">
-      
+  </div>
+  <div class="carousel-item__content">
+    
 
   <h2 class="heading heading-2 carousel-item__title">
     Title Lorem Ipsum Dolor
   </h2>
-        <a href="#" class="button ">Button Text</a>
-    </div>
-  </li>
-  <li class="carousel-item">
-    <div class="carousel-item__media">
-        <div class="media-item">
+      <a href="#" class="button ">Button Text</a>
+  </div>
+</li>
+              <li class="carousel-item">
+  <div class="carousel-item__media">
+      <div class="media-item">
     <img src='https://source.unsplash.com/random/1400x787' alt='test image' />
       </div>
-    </div>
-    <div class="carousel-item__content">
-      
+  </div>
+  <div class="carousel-item__content">
+    
 
   <h2 class="heading heading-2 carousel-item__title">
     Title Lorem Ipsum Dolor
   </h2>
-        <a href="#" class="button ">Button Text</a>
-    </div>
-  </li>
-  <li class="carousel-item">
-    <div class="carousel-item__media">
-        <div class="media-item">
+      <a href="#" class="button ">Button Text</a>
+  </div>
+</li>
+              <li class="carousel-item">
+  <div class="carousel-item__media">
+      <div class="media-item">
     <img src='https://source.unsplash.com/random/1400x787' alt='test image' />
       </div>
-    </div>
-    <div class="carousel-item__content">
-      
+  </div>
+  <div class="carousel-item__content">
+    
 
   <h2 class="heading heading-2 carousel-item__title">
     Title Lorem Ipsum Dolor
   </h2>
-        <a href="#" class="button ">Button Text</a>
-    </div>
-  </li>
-</ul>
+      <a href="#" class="button ">Button Text</a>
+  </div>
+</li>
+            </ul>
 </section>
 
                   </div>
@@ -856,34 +856,17 @@ min.js and .css files must be included.</p>
                   <button class="js-show-markup">Show Markup Example</button>
                   <template>
                     <pre><code data-language="html">&lt;section class=&quot;carousel__wrapper&quot;&gt;
-&lt;ul class=&quot;carousel__list carousel__slick&quot;&gt;
-{% for item in list %}
-  &lt;li class=&quot;carousel-item&quot;&gt;
-    &lt;div class=&quot;carousel-item__media&quot;&gt;
-      {%
-        include &#039;@components/media/media.twig&#039; with {
-          &quot;image&quot;: item.image,
-        } only
-      %}
-    &lt;/div&gt;
-    &lt;div class=&quot;carousel-item__content&quot;&gt;
-      {%
-        include &#039;@components/heading/heading.twig&#039; with {
-          &quot;title&quot;: item.title,
-          &quot;heading_level&quot;: 2,
-          &quot;classes&quot;: &quot;carousel-item__title&quot;
-        } only
-      %}
-      {%
-        include &#039;@components/button/button.twig&#039; with {
-          &quot;text&quot;: item.button.text,
-          &quot;url&quot;: item.button.url,
-        } only
-      %}
-    &lt;/div&gt;
-  &lt;/li&gt;
-{% endfor %}
-&lt;/ul&gt;
+  &lt;ul class=&quot;carousel__list carousel__slick&quot;&gt;
+    {% block carousel_items %}
+      {% for item in list %}
+        {%
+          include &#039;@components/carousel/carousel-item.twig&#039; with {
+            &quot;item&quot;: item
+          } only
+        %}
+      {% endfor %}
+    {% endblock %}
+  &lt;/ul&gt;
 &lt;/section&gt;
 </code></pre>
                   </template>

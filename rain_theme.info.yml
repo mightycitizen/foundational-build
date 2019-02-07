@@ -39,7 +39,6 @@ base theme: stable
 #       component:
 #         /core/themes/stable/css/views/views.module.css: false
 
-
 # The "libraries-extend:" section will allow you to add your own JS or CSS to
 # existing libraries.
 # libraries-extend:

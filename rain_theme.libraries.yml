@@ -6,6 +6,7 @@ global:
     # base, layout, component, state, theme
     base:
       dist/css/global.css: {}
+      dist/css/style.css: {}
 
 
 # Example external library.

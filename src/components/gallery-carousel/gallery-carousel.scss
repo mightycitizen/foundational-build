@@ -74,7 +74,7 @@
 
   &.slick-current {
     &::before {
-      content: "\25B2";
+      content: '\25B2';
       position: absolute;
       top: -26px;
       color: $color-blue;

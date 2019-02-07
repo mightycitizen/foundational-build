@@ -52,13 +52,13 @@ textarea[aria-invalid] {
 
 .required-field {
   &::after {
-    content: "*";
+    content: '*';
     color: $color-req-red;
     display: inline-block;
   }
 }
 
-input[type="submit"] {
+input[type='submit'] {
   margin-top: 20px;
 }
 

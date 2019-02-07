@@ -1,0 +1,7 @@
+<article class="faq-item">
+  <h2 class="faq-item__q">{{ item.question }}</h2>
+  <p class="faq-item__a">{{ item.answer }}</p>
+  {% if item.link %}
+    <a href="{{ item.link_address }}" class="faq-item__link">{{ item.link }}</a>
+  {% endif %}
+</article>

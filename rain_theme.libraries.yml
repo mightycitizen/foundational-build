@@ -34,3 +34,8 @@ card:
   css:
     theme:
       dist/css/card.css: {}
+
+faq:
+  css:
+    theme:
+      dist/css/faq.css: {}

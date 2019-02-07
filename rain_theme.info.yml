@@ -1,4 +1,4 @@
-# Generated on 2019-01-11 using generator-mc-d8-theme 1.4.0
+# Generated on 2019-02-07 using generator-mc-d8-theme 1.4.0
 
 # Drupal's .info.yml files allow themers to easily specify some of the static
 # properties of your theme. Properties such as its name, libraries of style
@@ -11,7 +11,7 @@
 
 name: Rain Theme
 type: theme
-description: Base theme for the Rain install profile.
+description: Drupal 8 theme for Rain distribution.
 package: Other
 core: 8.x
 # Classy vs. Stable as a base theme: https://www.lullabot.com/articles/a-tale-of-two-base-themes-in-drupal-8-core
@@ -39,9 +39,11 @@ base theme: stable
 #       component:
 #         /core/themes/stable/css/views/views.module.css: false
 
+
 # The "libraries-extend:" section will allow you to add your own JS or CSS to
 # existing libraries.
 # libraries-extend:
+
 
 # The "libraries:" section will add a library to _all_ pages.
 libraries:
@@ -49,6 +51,7 @@ libraries:
   # Example adding the webfonts library to every page.
   # See rain_theme.libraries.yml for more info.
   #- rain_theme/webfonts
+
 
 # This section is used by the contrib module, Component Libraries. It allows you
 # to reference .twig files in your sass/ directory by using the Twig namespace:
@@ -60,9 +63,6 @@ component-libraries:
       - src/components
       - src/layout
       - src/templates
-  components:
-    paths:
-     - src/components
 
 # This section lists the regions defined in the theme (our base theme) default
 # page.html.twig and maintenance-page.html.twig files. The name before

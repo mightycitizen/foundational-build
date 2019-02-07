@@ -4,21 +4,21 @@
   <li class="carousel-item">
     <div class="carousel-item__media">
       {%
-        include '@components/media/media.twig' with {
+        include '@rain_theme/media/media.twig' with {
           "image": item.image,
         } only
       %}
     </div>
     <div class="carousel-item__content">
       {%
-        include '@components/heading/heading.twig' with {
+        include '@rain_theme/heading/heading.twig' with {
           "title": item.title,
           "heading_level": 2,
           "classes": "carousel-item__title"
         } only
       %}
       {%
-        include '@components/button/button.twig' with {
+        include '@rain_theme/button/button.twig' with {
           "text": item.button.text,
           "url": item.button.url,
         } only

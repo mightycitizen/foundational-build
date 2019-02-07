@@ -1,6 +1,6 @@
 <section class="hero">
   {%
-    include '@components/media/media.twig' with {
+    include '@rain_theme/media/media.twig' with {
       "image": media.image,
       "video": media.video
     } only
@@ -8,14 +8,14 @@
 
   <div class="hero__content">
     {%
-      include '@components/eyebrow/eyebrow.twig' with {
+      include '@rain_theme/eyebrow/eyebrow.twig' with {
         "text": eyebrow.text,
         "classes": eyebrow.classes,
       } only
     %}
 
     {%
-      include '@components/heading/heading.twig' with {
+      include '@rain_theme/heading/heading.twig' with {
         "title": heading.title,
         "heading_level": heading.level,
         "classes": heading.classes
@@ -23,14 +23,14 @@
     %}
 
     {%
-      include '@components/body/body.twig' with {
+      include '@rain_theme/body/body.twig' with {
         "body": body.text,
         "classes": body.classes
       } only
     %}
 
     {%
-      include '@components/button/button.twig' with {
+      include '@rain_theme/button/button.twig' with {
         "text": button.text,
         "url": button.url,
       } only

@@ -50,7 +50,7 @@ set classes = [
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {% include '@components/card/card.twig' with {
+      {% include '@rain_theme/card/card.twig' with {
         "card": {
           "media": {
             image: content.field_media

@@ -6,6 +6,8 @@ global:
     # base, layout, component, state, theme
     base:
       dist/css/global.css: {}
+
+
 # Example external library.
 # webfonts:
 #   version: 1.x
@@ -27,8 +29,3 @@ global:
 #   dependencies:
 #     - rain_theme/clearfix
 #     - rain_theme/visually-hidden
-#card:
-#  version: VERSION
-#  css:
-#    theme:
-#      dist/css/card.css: {}

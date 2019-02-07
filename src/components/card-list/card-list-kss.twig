@@ -1,6 +1,6 @@
 {% if card.section_title %}
     {%
-      include '@components/heading/heading.twig' with {
+      include '@rain_theme/heading/heading.twig' with {
         "title": card.section_title,
         "heading_level": 2,
         "classes": "card-list__title"
@@ -12,7 +12,7 @@
   {% for item in card.items %}
     <li class="card-list__item">
       {%
-        include '@components/card/card.twig' with {
+        include '@rain_theme/card/card.twig' with {
           "card": item,
           "classes": ""
         } only
@@ -25,7 +25,7 @@
 
 {% if card_wide.section_title %}
     {%
-      include '@components/heading/heading.twig' with {
+      include '@rain_theme/heading/heading.twig' with {
         "title": card_wide.section_title,
         "heading_level": 2,
         "classes": "card-list__title"
@@ -37,7 +37,7 @@
   {% for item in card_wide.items %}
     <li class="card-list__item">
       {%
-        include '@components/card/card.twig' with {
+        include '@rain_theme/card/card.twig' with {
           "card": item,
           "classes": "card--wide"
         } only

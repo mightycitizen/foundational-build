@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Style Guide</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="../all/all.css">
+
+</head>
+<body id="kss-node">
+  <div class="kss-wrapper">
+
+    <div class="kss-sidebar">
+      <div class="kss-sidebar-inner">
+        <header class="kss-header">
+          <h1 class="kss-doc-title">Style Guide</h1>
+        </header>
+        <nav class="kss-nav">
+          <ul class="kss-menu">
+            <li class="kss-menu-item"><a href="./"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
+                          <li class="kss-menu-item">
+                <a href="section-components.html"><span class="kss-ref">1</span><span class="kss-name">Components</span></a>
+                              </li>
+                          <li class="kss-menu-item">
+                <a href="section-icons.html"><span class="kss-ref">2</span><span class="kss-name">Icons</span></a>
+                              </li>
+                          <li class="kss-menu-item">
+                <a href="section-colors.html"><span class="kss-ref">3</span><span class="kss-name">Colors</span></a>
+                              </li>
+                          <li class="kss-menu-item">
+                <a href="section-type.html"><span class="kss-ref">4</span><span class="kss-name">Type</span></a>
+                              </li>
+                        <li><button class="kss-menu-full-width js-full-width" title="Remove navigation and padding to show what a component looks like at full page width.">Remove Navigation</button></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="kss-content">
+      <article role="main" class="kss-article">
+      
+        
+                            <div id="kssref-components-hero" class="kss-section kss-depth-2">
+            <div class="kss-style">
+                            <h2 class="kss-title kss-title--level-2">
+                <a class="kss-title__permalink" href="#kssref-components-hero">
+                  Hero
+                </a>
+              </h2>
+
+                              <div class="kss-description">
+                  <p>This is the Hero component.
+Most often placed at the top of pages.</p>
+
+                </div>
+              
+                          </div>
+
+                          <div class="kss-modifier-block">
+
+                <div class="kss-modifier kss-modifier-original">
+                  <div class="kss-modifier-example">
+                    <section class="hero">
+    <div class="media-item">
+    <img src='https://source.unsplash.com/random/1400x787' alt='test image' />
+      </div>
+
+  <div class="hero__content">
+    <span class="eyebrow hero__eyebrow">
+  Subhead Could Be Here
+</span>
+
+    
+
+  <h2 class="heading heading-2 hero__heading">
+    Title Lorem Ipsum Dolor
+  </h2>
+
+    <div class="body-text hero__body ">
+  Some sites need a tagline mauris ac dui sit amet sem facilisis finibus vitae et mi.
+</div>
+
+      <a href="#" class="button ">Learn more</a>
+  </div>
+</section>
+
+                  </div>
+                </div>
+
+                                                <div class="kss-markup">
+                  <button class="js-show-markup">Show Markup Example</button>
+                  <template>
+                    <pre><code data-language="html">&lt;section class=&quot;hero&quot;&gt;
+  {%
+    include &#039;@rain_theme/media/media.twig&#039; with {
+      &quot;image&quot;: media.image,
+      &quot;video&quot;: media.video
+    } only
+  %}
+
+  &lt;div class=&quot;hero__content&quot;&gt;
+    {%
+      include &#039;@rain_theme/eyebrow/eyebrow.twig&#039; with {
+        &quot;text&quot;: eyebrow.text,
+        &quot;classes&quot;: eyebrow.classes,
+      } only
+    %}
+
+    {%
+      include &#039;@rain_theme/heading/heading.twig&#039; with {
+        &quot;title&quot;: heading.title,
+        &quot;heading_level&quot;: heading.level,
+        &quot;classes&quot;: heading.classes
+      } only
+    %}
+
+    {%
+      include &#039;@rain_theme/body/body.twig&#039; with {
+        &quot;body&quot;: body.text,
+        &quot;classes&quot;: body.classes
+      } only
+    %}
+
+    {%
+      include &#039;@rain_theme/button/button.twig&#039; with {
+        &quot;text&quot;: button.text,
+        &quot;url&quot;: button.url,
+      } only
+    %}
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+                  </template>
+                </div>
+                              </div>
+
+                                    </div>
+                    </article>
+    </div>
+</div>
+
+<!-- SCRIPTS -->
+<!-- Fake drupalSettings -->
+<script type="application/json" data-drupal-selector="drupal-settings-json">
+  {}
+</script>
+<!-- / Fake drupalSettings -->
+<script src="/core/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/core/assets/vendor/jquery-once/jquery.once.min.js"></script>
+<script src="/core/assets/vendor/domready/ready.min.js"></script>
+<script src="/core/misc/drupalSettingsLoader.js"></script>
+<script src="/core/misc/drupal.js"></script>
+<script src="/core/misc/drupal.init.js"></script>
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/rainbow.min.js"></script>
+<script src="kss-assets/main.js"></script>
+
+
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>

@@ -14,7 +14,7 @@
   .accordion:first-of-type {
     border: 1px solid #464646; }
   .accordion.open {
-    background: #fff; }
+    background: #FFF; }
 
 .accordion__toggle {
   border: 0;

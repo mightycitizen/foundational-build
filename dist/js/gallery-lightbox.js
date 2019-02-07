@@ -20,11 +20,6 @@
         rel: 'gallery-lightbox'
       });
 
-      // Make colorbox overlay responsive.
-      $.colorbox.settings.onLoad = function () {
-        colorboxResize();
-      };
-
       // Customize colorbox dimensions
       var colorboxResize = function colorboxResize(resize) {
         var width = '90%';
@@ -47,6 +42,11 @@
             'width': width
           });
         }
+      };
+
+      // Make colorbox overlay responsive.
+      $.colorbox.settings.onLoad = function () {
+        colorboxResize();
       };
 
       //In case of window being resized

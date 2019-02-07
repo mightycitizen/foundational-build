@@ -1,0 +1,32 @@
+.messages {
+  background-color: #f3faef;
+  background-image: url("../assets/check.svg");
+  background-position: 10px 20px;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  border: 1px solid #77b259;
+  -webkit-box-shadow: -8px 0 0 #77b259;
+  box-shadow: -8px 0 0 #77b259;
+  color: #404040;
+  font-weight: 500;
+  margin: 10px 0;
+  padding: 16px 45px;
+  /**
+   * Changes background color to yellow/beige.
+   */
+  /**
+   * Changes background color to red.
+   */ }
+  .messages.messages--warning {
+    background-color: #fdf8ed;
+    background-image: url("../assets/warning.svg");
+    color: #734c00;
+    -webkit-box-shadow: -8px 0 0 #734c00;
+    box-shadow: -8px 0 0 #734c00;
+    border-color: #734c00; }
+  .messages.messages--error {
+    background-color: #fcf4f2;
+    background-image: url("../assets/error.svg");
+    border-color: #a51b00;
+    -webkit-box-shadow: -8px 0 0 #e62600;
+    box-shadow: -8px 0 0 #e62600; }

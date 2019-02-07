@@ -1,0 +1,73 @@
+.carousel__wrapper {
+  margin: 0 auto;
+  max-width: 1024px; }
+
+.carousel-item {
+  position: relative; }
+
+.carousel-item__content {
+  display: block;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: #ddd;
+  min-width: 300px;
+  padding: 1rem 0.5rem;
+  top: 35%;
+  text-align: center; }
+  @media (min-width: 40em) {
+    .carousel-item__content {
+      padding: 1rem 1.5rem; } }
+
+.carousel-item__title {
+  font-size: 1.5rem;
+  font-weight: normal; }
+  @media (min-width: 40em) {
+    .carousel-item__title {
+      font-size: 2rem; } }
+  @media (min-width: 55em) {
+    .carousel-item__title {
+      font-size: 3rem; } }
+
+.carousel__slick .slick-prev,
+.carousel__slick .slick-next {
+  top: 80%;
+  z-index: 1;
+  height: 50px;
+  width: 50px; }
+  @media (min-width: 40em) {
+    .carousel__slick .slick-prev,
+    .carousel__slick .slick-next {
+      top: 90%; } }
+  .carousel__slick .slick-prev::before,
+  .carousel__slick .slick-next::before {
+    font-size: 48px; }
+
+.carousel__slick .slick-prev {
+  left: 20%; }
+  @media (min-width: 40em) {
+    .carousel__slick .slick-prev {
+      left: 40%; } }
+
+.carousel__slick .slick-next {
+  right: 20%; }
+  @media (min-width: 40em) {
+    .carousel__slick .slick-next {
+      right: 40%; } }
+
+.slick-dots {
+  bottom: -35px; }
+  .slick-dots li {
+    height: 35px;
+    width: 35px; }
+    .slick-dots li button {
+      height: 35px;
+      width: 35px; }
+      .slick-dots li button::before {
+        font-size: 20px;
+        height: 35px;
+        position: initial;
+        width: 35px; }

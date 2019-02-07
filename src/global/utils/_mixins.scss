@@ -47,3 +47,42 @@
     #{$property}: $value;
   }
 }
+
+// Vertical align mixin.
+@mixin vertical-align($position: relative) {
+  display: block;
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Horizontal align mixin.
+@mixin horizontal-align($position: relative) {
+  display: inline-block;
+  left: 50%;
+  position: $position;
+  transform: translateX(-50%);
+}
+
+// Center align mixin.
+@mixin center-align($position: relative) {
+  display: block;
+  left: 50%;
+  position: $position;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Mixin for wireframe style large heading.
+@mixin wire-large-heading {
+  font-size: 1.5rem;
+  font-weight: normal;
+
+  @include breakpoint($bp-xsm) {
+    font-size: 2rem;
+  }
+
+  @include breakpoint($bp-sm) {
+    font-size: 3rem;
+  }
+}

@@ -35,7 +35,17 @@ card:
     theme:
       dist/css/card.css: {}
 
+carousel:
+  css:
+    theme:
+      dist/css/carousel.css: {}
+
 faq:
   css:
     theme:
       dist/css/faq.css: {}
+
+hero:
+  css:
+    theme:
+      dist/css/hero.css: {}

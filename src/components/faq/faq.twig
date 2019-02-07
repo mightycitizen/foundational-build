@@ -2,7 +2,7 @@
   {% block faq_items %}
     {% for item in items %}
       {%
-        include '@rain_theme/faq/faq-item.twig' with {
+        include '@components/faq/faq-item.twig' with {
           "item": item,
         } only
       %}

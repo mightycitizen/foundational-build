@@ -26,7 +26,10 @@ module.exports = {
       ],
       destination: dirname + '/dist/style-guide',
       builder: dirname + '/src/style-guide/builder',
-      namespace: 'rain_theme:' + dirname + '/src/components/',
+      namespace: [
+        'rain_theme:' + dirname + '/src/components/',
+        'components:' + dirname + '/src/components/'
+      ],
       'extend-drupal8': true,
       // The css and js paths are URLs, like '/misc/jquery.js'.
       // The following paths are relative to the generated style guide.

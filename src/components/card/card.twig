@@ -2,7 +2,7 @@
 
   <div class="card__media">
     {%
-      include '@rain_theme/media/media.twig' with {
+      include '@components/media/media.twig' with {
         "image": card.media.image,
         "video": card.media.video,
       } only
@@ -12,7 +12,7 @@
   <div class="card__content">
     {% if card.eyebrow %}
       {%
-        include '@rain_theme/eyebrow/eyebrow.twig' with {
+        include '@components/eyebrow/eyebrow.twig' with {
           "text": card.eyebrow.text,
           "classes": card.eyebrow.classes,
         } only
@@ -20,7 +20,7 @@
     {% endif %}
 
     {%
-      include '@rain_theme/heading/heading.twig' with {
+      include '@components/heading/heading.twig' with {
         "url": card.heading.url,
         "title": card.heading.title,
         "heading_level": card.heading.heading_level,
@@ -30,7 +30,7 @@
 
     {% if card.subhead %}
       {%
-        include '@rain_theme/heading/heading.twig' with {
+        include '@components/heading/heading.twig' with {
           "title": card.subhead.title,
           "heading_level": card.subhead.heading_level,
           "classes": card.subhead.classes
@@ -40,7 +40,7 @@
 
     {% if card.text %}
       {%
-        include '@rain_theme/body/body.twig' with {
+        include '@components/body/body.twig' with {
           "body": card.text,
         } only
       %}

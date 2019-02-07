@@ -279,7 +279,7 @@ the group styles.</p>
                   <template>
                     <pre><code data-language="html">{% if card.section_title %}
     {%
-      include &#039;@rain_theme/heading/heading.twig&#039; with {
+      include &#039;@components/heading/heading.twig&#039; with {
         &quot;title&quot;: card.section_title,
         &quot;heading_level&quot;: 2,
         &quot;classes&quot;: &quot;card-list__title&quot;
@@ -291,7 +291,7 @@ the group styles.</p>
   {% for item in card.items %}
     &lt;li class=&quot;card-list__item&quot;&gt;
       {%
-        include &#039;@rain_theme/card/card.twig&#039; with {
+        include &#039;@components/card/card.twig&#039; with {
           &quot;card&quot;: item,
           &quot;classes&quot;: &quot;&quot;
         } only
@@ -304,7 +304,7 @@ the group styles.</p>
 
 {% if card_wide.section_title %}
     {%
-      include &#039;@rain_theme/heading/heading.twig&#039; with {
+      include &#039;@components/heading/heading.twig&#039; with {
         &quot;title&quot;: card_wide.section_title,
         &quot;heading_level&quot;: 2,
         &quot;classes&quot;: &quot;card-list__title&quot;
@@ -316,7 +316,7 @@ the group styles.</p>
   {% for item in card_wide.items %}
     &lt;li class=&quot;card-list__item&quot;&gt;
       {%
-        include &#039;@rain_theme/card/card.twig&#039; with {
+        include &#039;@components/card/card.twig&#039; with {
           &quot;card&quot;: item,
           &quot;classes&quot;: &quot;card--wide&quot;
         } only

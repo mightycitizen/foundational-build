@@ -1,6 +1,6 @@
 {% if section_title %}
   {%
-    include '@rain_theme/heading/heading.twig' with {
+    include '@components/heading/heading.twig' with {
       "title": section_title,
       "heading_level": 2,
       "classes": "gallery-lightbox__title"
@@ -10,7 +10,7 @@
 
 {% if intro_text %}
   {%
-    include '@rain_theme/body/body.twig' with {
+    include '@components/body/body.twig' with {
       "body": intro_text,
       "classes": "gallery-lightbox__intro-text"
     } only

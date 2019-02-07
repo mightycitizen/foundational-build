@@ -63,7 +63,7 @@
 <p>Call the <code>.get()</code> function passing it the icon name.</p>
 <p>(Optional) The second argument is any classes you would like to apply to the svg element.</p>
 <p><strong>Example:</strong></p>
-<pre class="hljs"><code class="language-">{% import '@rain_theme/icons/icons.twig' as icons %}
+<pre class="hljs"><code class="language-">{% import '@components/icons/icons.twig' as icons %}
 {{ icons.get('facebook', 'icon icon--facebook') }}
 </code></pre>
 <p>This will render the svg inline with whatever class or classes are
@@ -108,7 +108,7 @@ passed as the second argument.</p>
                                                 <div class="kss-markup">
                   <button class="js-show-markup">Show Markup Example</button>
                   <template>
-                    <pre><code data-language="html">{% import &quot;@rain_theme/icons/icons.twig&quot; as icons %}
+                    <pre><code data-language="html">{% import &quot;@components/icons/icons.twig&quot; as icons %}
 &lt;div class=&quot;kss-icons&quot;&gt;
 {% for item in items %}
   &lt;div class=&quot;kss-icons__item&quot;&gt;

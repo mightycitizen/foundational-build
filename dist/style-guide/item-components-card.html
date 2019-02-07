@@ -160,7 +160,7 @@
 
   &lt;div class=&quot;card__media&quot;&gt;
     {%
-      include &#039;@rain_theme/media/media.twig&#039; with {
+      include &#039;@components/media/media.twig&#039; with {
         &quot;image&quot;: card.media.image,
         &quot;video&quot;: card.media.video,
       } only
@@ -170,7 +170,7 @@
   &lt;div class=&quot;card__content&quot;&gt;
     {% if card.eyebrow %}
       {%
-        include &#039;@rain_theme/eyebrow/eyebrow.twig&#039; with {
+        include &#039;@components/eyebrow/eyebrow.twig&#039; with {
           &quot;text&quot;: card.eyebrow.text,
           &quot;classes&quot;: card.eyebrow.classes,
         } only
@@ -178,7 +178,7 @@
     {% endif %}
 
     {%
-      include &#039;@rain_theme/heading/heading.twig&#039; with {
+      include &#039;@components/heading/heading.twig&#039; with {
         &quot;url&quot;: card.heading.url,
         &quot;title&quot;: card.heading.title,
         &quot;heading_level&quot;: card.heading.heading_level,
@@ -188,7 +188,7 @@
 
     {% if card.subhead %}
       {%
-        include &#039;@rain_theme/heading/heading.twig&#039; with {
+        include &#039;@components/heading/heading.twig&#039; with {
           &quot;title&quot;: card.subhead.title,
           &quot;heading_level&quot;: card.subhead.heading_level,
           &quot;classes&quot;: card.subhead.classes
@@ -198,7 +198,7 @@
 
     {% if card.text %}
       {%
-        include &#039;@rain_theme/body/body.twig&#039; with {
+        include &#039;@components/body/body.twig&#039; with {
           &quot;body&quot;: card.text,
         } only
       %}

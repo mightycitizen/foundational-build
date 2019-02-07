@@ -68,17 +68,15 @@
                 <div class="kss-modifier kss-modifier-original">
                   <div class="kss-modifier-example">
                     <section class="faq">
-      <article class="faq-item">
-      <h2 class="faq-item__q">Question 1 curabitur aliquet quam id dui posuere blandit?</h2>
-      <p class="faq-item__a">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. </p>
-              <a href="http://www.google.com" class="faq-item__link">Optional Link 1</a>
-          </article>
-      <article class="faq-item">
-      <h2 class="faq-item__q">Question 2 curabitur aliquet quam id dui posuere blandit?</h2>
-      <p class="faq-item__a">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. </p>
-              <a href="#" class="faq-item__link">Optional Link 2</a>
-          </article>
-  </section>
+            <article class="faq-item">
+  <h2 class="faq-item__q">Question 1 curabitur aliquet quam id dui posuere blandit?</h2>
+  <p class="faq-item__a">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. </p>
+      <a href="http://www.google.com" class="faq-item__link">Optional Link 1</a>
+  </article>          <article class="faq-item">
+  <h2 class="faq-item__q">Question 2 curabitur aliquet quam id dui posuere blandit?</h2>
+  <p class="faq-item__a">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. </p>
+      <a href="#" class="faq-item__link">Optional Link 2</a>
+  </article>      </section>
 
                   </div>
                 </div>
@@ -87,15 +85,15 @@
                   <button class="js-show-markup">Show Markup Example</button>
                   <template>
                     <pre><code data-language="html">&lt;section class=&quot;faq&quot;&gt;
-  {% for item in items %}
-    &lt;article class=&quot;faq-item&quot;&gt;
-      &lt;h2 class=&quot;faq-item__q&quot;&gt;{{ item.question }}&lt;/h2&gt;
-      &lt;p class=&quot;faq-item__a&quot;&gt;{{ item.answer }}&lt;/p&gt;
-      {% if item.link %}
-        &lt;a href=&quot;{{ item.link_address }}&quot; class=&quot;faq-item__link&quot;&gt;{{ item.link }}&lt;/a&gt;
-      {% endif %}
-    &lt;/article&gt;
-  {% endfor %}
+  {% block faq_items %}
+    {% for item in items %}
+      {%
+        include &#039;@components/faq/faq-item.twig&#039; with {
+          &quot;item&quot;: item,
+        } only
+      %}
+    {% endfor %}
+  {% endblock %}
 &lt;/section&gt;
 </code></pre>
                   </template>

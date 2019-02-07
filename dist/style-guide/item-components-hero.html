@@ -100,7 +100,7 @@ Most often placed at the top of pages.</p>
                   <template>
                     <pre><code data-language="html">&lt;section class=&quot;hero&quot;&gt;
   {%
-    include &#039;@rain_theme/media/media.twig&#039; with {
+    include &#039;@components/media/media.twig&#039; with {
       &quot;image&quot;: media.image,
       &quot;video&quot;: media.video
     } only
@@ -108,14 +108,14 @@ Most often placed at the top of pages.</p>
 
   &lt;div class=&quot;hero__content&quot;&gt;
     {%
-      include &#039;@rain_theme/eyebrow/eyebrow.twig&#039; with {
+      include &#039;@components/eyebrow/eyebrow.twig&#039; with {
         &quot;text&quot;: eyebrow.text,
         &quot;classes&quot;: eyebrow.classes,
       } only
     %}
 
     {%
-      include &#039;@rain_theme/heading/heading.twig&#039; with {
+      include &#039;@components/heading/heading.twig&#039; with {
         &quot;title&quot;: heading.title,
         &quot;heading_level&quot;: heading.level,
         &quot;classes&quot;: heading.classes
@@ -123,14 +123,14 @@ Most often placed at the top of pages.</p>
     %}
 
     {%
-      include &#039;@rain_theme/body/body.twig&#039; with {
+      include &#039;@components/body/body.twig&#039; with {
         &quot;body&quot;: body.text,
         &quot;classes&quot;: body.classes
       } only
     %}
 
     {%
-      include &#039;@rain_theme/button/button.twig&#039; with {
+      include &#039;@components/button/button.twig&#039; with {
         &quot;text&quot;: button.text,
         &quot;url&quot;: button.url,
       } only

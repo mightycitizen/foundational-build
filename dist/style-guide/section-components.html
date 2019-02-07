@@ -440,7 +440,7 @@
 
   &lt;div class=&quot;card__media&quot;&gt;
     {%
-      include &#039;@rain_theme/media/media.twig&#039; with {
+      include &#039;@components/media/media.twig&#039; with {
         &quot;image&quot;: card.media.image,
         &quot;video&quot;: card.media.video,
       } only
@@ -450,7 +450,7 @@
   &lt;div class=&quot;card__content&quot;&gt;
     {% if card.eyebrow %}
       {%
-        include &#039;@rain_theme/eyebrow/eyebrow.twig&#039; with {
+        include &#039;@components/eyebrow/eyebrow.twig&#039; with {
           &quot;text&quot;: card.eyebrow.text,
           &quot;classes&quot;: card.eyebrow.classes,
         } only
@@ -458,7 +458,7 @@
     {% endif %}
 
     {%
-      include &#039;@rain_theme/heading/heading.twig&#039; with {
+      include &#039;@components/heading/heading.twig&#039; with {
         &quot;url&quot;: card.heading.url,
         &quot;title&quot;: card.heading.title,
         &quot;heading_level&quot;: card.heading.heading_level,
@@ -468,7 +468,7 @@
 
     {% if card.subhead %}
       {%
-        include &#039;@rain_theme/heading/heading.twig&#039; with {
+        include &#039;@components/heading/heading.twig&#039; with {
           &quot;title&quot;: card.subhead.title,
           &quot;heading_level&quot;: card.subhead.heading_level,
           &quot;classes&quot;: card.subhead.classes
@@ -478,7 +478,7 @@
 
     {% if card.text %}
       {%
-        include &#039;@rain_theme/body/body.twig&#039; with {
+        include &#039;@components/body/body.twig&#039; with {
           &quot;body&quot;: card.text,
         } only
       %}
@@ -727,7 +727,7 @@ the group styles.</p>
                   <template>
                     <pre><code data-language="html">{% if card.section_title %}
     {%
-      include &#039;@rain_theme/heading/heading.twig&#039; with {
+      include &#039;@components/heading/heading.twig&#039; with {
         &quot;title&quot;: card.section_title,
         &quot;heading_level&quot;: 2,
         &quot;classes&quot;: &quot;card-list__title&quot;
@@ -739,7 +739,7 @@ the group styles.</p>
   {% for item in card.items %}
     &lt;li class=&quot;card-list__item&quot;&gt;
       {%
-        include &#039;@rain_theme/card/card.twig&#039; with {
+        include &#039;@components/card/card.twig&#039; with {
           &quot;card&quot;: item,
           &quot;classes&quot;: &quot;&quot;
         } only
@@ -752,7 +752,7 @@ the group styles.</p>
 
 {% if card_wide.section_title %}
     {%
-      include &#039;@rain_theme/heading/heading.twig&#039; with {
+      include &#039;@components/heading/heading.twig&#039; with {
         &quot;title&quot;: card_wide.section_title,
         &quot;heading_level&quot;: 2,
         &quot;classes&quot;: &quot;card-list__title&quot;
@@ -764,7 +764,7 @@ the group styles.</p>
   {% for item in card_wide.items %}
     &lt;li class=&quot;card-list__item&quot;&gt;
       {%
-        include &#039;@rain_theme/card/card.twig&#039; with {
+        include &#039;@components/card/card.twig&#039; with {
           &quot;card&quot;: item,
           &quot;classes&quot;: &quot;card--wide&quot;
         } only
@@ -861,21 +861,21 @@ min.js and .css files must be included.</p>
   &lt;li class=&quot;carousel-item&quot;&gt;
     &lt;div class=&quot;carousel-item__media&quot;&gt;
       {%
-        include &#039;@rain_theme/media/media.twig&#039; with {
+        include &#039;@components/media/media.twig&#039; with {
           &quot;image&quot;: item.image,
         } only
       %}
     &lt;/div&gt;
     &lt;div class=&quot;carousel-item__content&quot;&gt;
       {%
-        include &#039;@rain_theme/heading/heading.twig&#039; with {
+        include &#039;@components/heading/heading.twig&#039; with {
           &quot;title&quot;: item.title,
           &quot;heading_level&quot;: 2,
           &quot;classes&quot;: &quot;carousel-item__title&quot;
         } only
       %}
       {%
-        include &#039;@rain_theme/button/button.twig&#039; with {
+        include &#039;@components/button/button.twig&#039; with {
           &quot;text&quot;: item.button.text,
           &quot;url&quot;: item.button.url,
         } only
@@ -949,17 +949,15 @@ min.js and .css files must be included.</p>
                 <div class="kss-modifier kss-modifier-original">
                   <div class="kss-modifier-example">
                     <section class="faq">
-      <article class="faq-item">
-      <h2 class="faq-item__q">Question 1 curabitur aliquet quam id dui posuere blandit?</h2>
-      <p class="faq-item__a">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. </p>
-              <a href="http://www.google.com" class="faq-item__link">Optional Link 1</a>
-          </article>
-      <article class="faq-item">
-      <h2 class="faq-item__q">Question 2 curabitur aliquet quam id dui posuere blandit?</h2>
-      <p class="faq-item__a">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. </p>
-              <a href="#" class="faq-item__link">Optional Link 2</a>
-          </article>
-  </section>
+            <article class="faq-item">
+  <h2 class="faq-item__q">Question 1 curabitur aliquet quam id dui posuere blandit?</h2>
+  <p class="faq-item__a">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. </p>
+      <a href="http://www.google.com" class="faq-item__link">Optional Link 1</a>
+  </article>          <article class="faq-item">
+  <h2 class="faq-item__q">Question 2 curabitur aliquet quam id dui posuere blandit?</h2>
+  <p class="faq-item__a">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. </p>
+      <a href="#" class="faq-item__link">Optional Link 2</a>
+  </article>      </section>
 
                   </div>
                 </div>
@@ -968,15 +966,15 @@ min.js and .css files must be included.</p>
                   <button class="js-show-markup">Show Markup Example</button>
                   <template>
                     <pre><code data-language="html">&lt;section class=&quot;faq&quot;&gt;
-  {% for item in items %}
-    &lt;article class=&quot;faq-item&quot;&gt;
-      &lt;h2 class=&quot;faq-item__q&quot;&gt;{{ item.question }}&lt;/h2&gt;
-      &lt;p class=&quot;faq-item__a&quot;&gt;{{ item.answer }}&lt;/p&gt;
-      {% if item.link %}
-        &lt;a href=&quot;{{ item.link_address }}&quot; class=&quot;faq-item__link&quot;&gt;{{ item.link }}&lt;/a&gt;
-      {% endif %}
-    &lt;/article&gt;
-  {% endfor %}
+  {% block faq_items %}
+    {% for item in items %}
+      {%
+        include &#039;@components/faq/faq-item.twig&#039; with {
+          &quot;item&quot;: item,
+        } only
+      %}
+    {% endfor %}
+  {% endblock %}
 &lt;/section&gt;
 </code></pre>
                   </template>
@@ -1057,7 +1055,7 @@ min.js and .css files must be included.</p>
     &lt;label for=&quot;message&quot; class=&quot;form-item__label required-field&quot;&gt;Message&lt;/label&gt;
   &lt;/div&gt;
   {%
-    include &#039;@rain_theme/button/button.twig&#039; with {
+    include &#039;@components/button/button.twig&#039; with {
       &quot;type&quot;: button.type,
       &quot;value&quot;: button.value
     } only
@@ -1175,7 +1173,7 @@ must be included.</p>
                   <template>
                     <pre><code data-language="html">{% if section_title %}
   {%
-    include &#039;@rain_theme/heading/heading.twig&#039; with {
+    include &#039;@components/heading/heading.twig&#039; with {
       &quot;title&quot;: section_title,
       &quot;heading_level&quot;: 2,
       &quot;classes&quot;: &quot;gallery-carousel__title&quot;
@@ -1185,7 +1183,7 @@ must be included.</p>
 
 {% if intro_text %}
   {%
-    include &#039;@rain_theme/body/body.twig&#039; with {
+    include &#039;@components/body/body.twig&#039; with {
       &quot;body&quot;: intro_text,
       &quot;classes&quot;: &quot;gallery-carousel__intro-text&quot;
     } only
@@ -1313,7 +1311,7 @@ must be included.</p>
                   <template>
                     <pre><code data-language="html">{% if section_title %}
   {%
-    include &#039;@rain_theme/heading/heading.twig&#039; with {
+    include &#039;@components/heading/heading.twig&#039; with {
       &quot;title&quot;: section_title,
       &quot;heading_level&quot;: 2,
       &quot;classes&quot;: &quot;gallery-lightbox__title&quot;
@@ -1323,7 +1321,7 @@ must be included.</p>
 
 {% if intro_text %}
   {%
-    include &#039;@rain_theme/body/body.twig&#039; with {
+    include &#039;@components/body/body.twig&#039; with {
       &quot;body&quot;: intro_text,
       &quot;classes&quot;: &quot;gallery-lightbox__intro-text&quot;
     } only
@@ -1450,7 +1448,7 @@ Most often placed at the top of pages.</p>
                   <template>
                     <pre><code data-language="html">&lt;section class=&quot;hero&quot;&gt;
   {%
-    include &#039;@rain_theme/media/media.twig&#039; with {
+    include &#039;@components/media/media.twig&#039; with {
       &quot;image&quot;: media.image,
       &quot;video&quot;: media.video
     } only
@@ -1458,14 +1456,14 @@ Most often placed at the top of pages.</p>
 
   &lt;div class=&quot;hero__content&quot;&gt;
     {%
-      include &#039;@rain_theme/eyebrow/eyebrow.twig&#039; with {
+      include &#039;@components/eyebrow/eyebrow.twig&#039; with {
         &quot;text&quot;: eyebrow.text,
         &quot;classes&quot;: eyebrow.classes,
       } only
     %}
 
     {%
-      include &#039;@rain_theme/heading/heading.twig&#039; with {
+      include &#039;@components/heading/heading.twig&#039; with {
         &quot;title&quot;: heading.title,
         &quot;heading_level&quot;: heading.level,
         &quot;classes&quot;: heading.classes
@@ -1473,14 +1471,14 @@ Most often placed at the top of pages.</p>
     %}
 
     {%
-      include &#039;@rain_theme/body/body.twig&#039; with {
+      include &#039;@components/body/body.twig&#039; with {
         &quot;body&quot;: body.text,
         &quot;classes&quot;: body.classes
       } only
     %}
 
     {%
-      include &#039;@rain_theme/button/button.twig&#039; with {
+      include &#039;@components/button/button.twig&#039; with {
         &quot;text&quot;: button.text,
         &quot;url&quot;: button.url,
       } only
@@ -1545,7 +1543,7 @@ Most often placed at the top of pages.</p>
                   <template>
                     <pre><code data-language="html">{% for item in items %}
   {%
-    include &#039;@rain_theme/map/map.twig&#039; with {
+    include &#039;@components/map/map.twig&#039; with {
       map: item
     } only
   %}
@@ -1601,7 +1599,7 @@ or image and includes a caption.</p>
                   <template>
                     <pre><code data-language="html">{% for item in items %}
   {%
-    include &#039;@rain_theme/media/media.twig&#039; with {
+    include &#039;@components/media/media.twig&#039; with {
       &quot;image&quot;: item.image,
       &quot;video&quot;: item.video,
       &quot;caption&quot;: item.caption
@@ -1760,7 +1758,7 @@ or image and includes a caption.</p>
                   <template>
                     <pre><code data-language="html">{% for item in items %}
   {%
-    include &#039;@rain_theme/quote/quote.twig&#039; with {
+    include &#039;@components/quote/quote.twig&#039; with {
       quote: item
     } only
   %}

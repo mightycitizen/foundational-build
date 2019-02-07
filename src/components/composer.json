@@ -1,0 +1,12 @@
+{
+  "name": "mediacurrent/mis_twig_components",
+  "type": "drupal-theme",
+  "description": "Drupal Twig components",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Jay Callicott",
+      "email": "jay.callicott@mediacurrent.com"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{% for item in items %}
+  {%
+    include '@components/quote/quote.twig' with {
+      quote: item
+    } only
+  %}
+{% endfor %}

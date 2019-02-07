@@ -1,0 +1,32 @@
+{% if section_title %}
+  {%
+    include '@components/heading/heading.twig' with {
+      "title": section_title,
+      "heading_level": 2,
+      "classes": "gallery-lightbox__title"
+    } only
+  %}
+{% endif %}
+
+{% if intro_text %}
+  {%
+    include '@components/body/body.twig' with {
+      "body": intro_text,
+      "classes": "gallery-lightbox__intro-text"
+    } only
+  %}
+{% endif %}
+
+
+<ul class="gallery-lightbox">
+
+  {% for item in items %}
+    <li class="gallery-lightbox-item">
+      <a href="{{ item.media }}" title="{{ item.media_description }}">
+        <img src="{{ item.media_thumb }}" class="gallery-lightbox-item__media" alt="{{ item.media_description }}"/>
+        <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
+      </a>
+    </li>
+  {% endfor %}
+
+</ul>

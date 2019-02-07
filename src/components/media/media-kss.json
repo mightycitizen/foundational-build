@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "video": "<iframe width='560' height='315' src='https://www.youtube.com/embed/Wm4ZmMaYGOE' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>",
+      "caption": "Video media item caption. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper."
+    },
+    {
+      "image": "<img src='https://source.unsplash.com/random/1400x787' alt='test image' />",
+      "caption": "Image media item caption. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper."
+    }
+  ]
+}

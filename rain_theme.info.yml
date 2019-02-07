@@ -39,11 +39,9 @@ base theme: stable
 #       component:
 #         /core/themes/stable/css/views/views.module.css: false
 
-
 # The "libraries-extend:" section will allow you to add your own JS or CSS to
 # existing libraries.
 # libraries-extend:
-
 
 # The "libraries:" section will add a library to _all_ pages.
 libraries:
@@ -51,7 +49,6 @@ libraries:
   # Example adding the webfonts library to every page.
   # See rain_theme.libraries.yml for more info.
   #- rain_theme/webfonts
-
 
 # This section is used by the contrib module, Component Libraries. It allows you
 # to reference .twig files in your sass/ directory by using the Twig namespace:
@@ -63,6 +60,9 @@ component-libraries:
       - src/components
       - src/layout
       - src/templates
+  mis_twig_components:
+    paths:
+      - src/components/mis_twig_components
 
 # This section lists the regions defined in the theme (our base theme) default
 # page.html.twig and maintenance-page.html.twig files. The name before

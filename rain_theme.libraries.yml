@@ -29,3 +29,8 @@ global:
 #   dependencies:
 #     - rain_theme/clearfix
 #     - rain_theme/visually-hidden
+
+card:
+  css:
+    theme:
+      dist/css/card.css: {}

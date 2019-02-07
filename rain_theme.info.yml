@@ -63,6 +63,9 @@ component-libraries:
       - src/components
       - src/layout
       - src/templates
+  components:
+    paths:
+      - src/components
 
 # This section lists the regions defined in the theme (our base theme) default
 # page.html.twig and maintenance-page.html.twig files. The name before

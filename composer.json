@@ -1,7 +1,7 @@
 {
   "name": "mediacurrent/rain_theme",
   "description": "Mediacurrent Rain starter theme.",
-  "type": "project",
+  "type": "drupal-theme",
   "license": "GPL-2.0-or-later",
   "authors": [
     {

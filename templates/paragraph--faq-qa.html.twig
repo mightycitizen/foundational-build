@@ -49,14 +49,17 @@ set classes = [
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {% include '@components/faq/faq-item.twig' with {
+      {% embed '@components/accordion/accordion-item.twig' with {
         "item": {
-          "question": content.field_question,
-          "answer": content.field_answer,
-          "link": content.field_link[0]['#title'],
-          "link_address": content.field_link[0]['#url']
-        }
+          "heading": content.field_question
+        },
+        "content": content
       } only %}
+        {% block accordion_content %}
+          {{ content.field_answer }}
+          {{ content.field_link }}
+        {% endblock %}
+      {% endembed %}
     {% endblock %}
   </div>
 {% endblock paragraph %}

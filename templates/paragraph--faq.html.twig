@@ -38,7 +38,7 @@
  * @ingroup themeable
  */
 #}
-{{ attach_library('rain_theme/faq') }}
+{{ attach_library('rain_theme/accordion') }}
 {%
 set classes = [
   'paragraph',
@@ -50,10 +50,10 @@ set classes = [
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {% embed '@components/faq/faq.twig' with { content: content } only %}
-        {% block faq_items %}
+      {% embed '@components/accordion/accordion.twig' with { content: content } only %}
+        {% block accordion_items %}
           {{ content.field_faq_items }}
-        {% endblock faq_items %}
+        {% endblock accordion_items %}
       {% endembed %}
     {% endblock %}
   </div>

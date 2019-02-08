@@ -31,6 +31,13 @@ global:
 #     - rain_theme/clearfix
 #     - rain_theme/visually-hidden
 
+accordion:
+  css:
+    theme:
+      dist/css/accordion.css: {}
+  js:
+    dist/js/accordion.js: {}
+
 card:
   css:
     theme:

@@ -9,14 +9,16 @@
 {% endif %}
 
 <ul class="card-list {{modifier_class}}{{ classes|default('') }}">
-  {% for item in items %}
-    <li class="card-list__item">
-      {%
-        include '@components/card/card.twig' with {
-          "card": item,
-          "classes": ""
-        } only
-      %}
-    </li>
-  {% endfor %}
+  {% block card_items %}
+    {% for item in items %}
+      <li class="card-list__item">
+        {%
+          include '@components/card/card.twig' with {
+            "card": item,
+            "classes": ""
+          } only
+        %}
+      </li>
+    {% endfor %}
+  {% endblock %}
 </ul>

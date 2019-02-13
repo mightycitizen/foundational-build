@@ -37,23 +37,70 @@ accordion:
       dist/css/accordion.css: {}
   js:
     dist/js/accordion.js: {}
+  dependencies:
+    - rain_theme/body
+
+body:
+  css:
+    theme:
+      dist/css/body.css: {}
 
 card:
   css:
     theme:
       dist/css/card.css: {}
+  dependencies:
+  - rain_theme/body
+
+card-list:
+  css:
+    theme:
+      dist/css/card-list.css: {}
 
 carousel:
   css:
     theme:
       dist/css/carousel.css: {}
+  js:
+    dist/js/carousel.js: {}
+  dependencies:
+    - rain_theme/slick
 
 faq:
   css:
     theme:
       dist/css/faq.css: {}
 
+gallery-carousel:
+  css:
+    theme:
+      dist/css/gallery-carousel.css: {}
+  js:
+    dist/js/gallery-carousel.js: {}
+  dependencies:
+    - rain_theme/slick
+
 hero:
   css:
     theme:
       dist/css/hero.css: {}
+  dependencies:
+    - rain_theme/body
+
+media:
+  css:
+    theme:
+      dist/css/media.css: {}
+
+quote:
+  css:
+    theme:
+      dist/css/quote.css: {}
+
+slick:
+  css:
+    theme:
+      dist/vendor/slick-carousel/slick.css: {}
+      dist/vendor/slick-carousel/slick-theme.css: {}
+  js:
+    dist/vendor/slick-carousel/slick.js: {}

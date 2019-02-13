@@ -17,16 +17,14 @@
   %}
 {% endif %}
 
-
 <ul class="gallery-lightbox">
-
-  {% for item in items %}
-    <li class="gallery-lightbox-item">
-      <a href="{{ item.media }}" title="{{ item.media_description }}">
-        <img src="{{ item.media_thumb }}" class="gallery-lightbox-item__media" alt="{{ item.media_description }}"/>
-        <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
-      </a>
-    </li>
-  {% endfor %}
-
+  {% block gallery_items %}
+    {% for item in items %}
+      {%
+        include '@components/gallery-lightbox/gallery-lightbox-item.twig' with {
+          "item": item
+        } only
+      %}
+    {% endfor %}
+  {% endblock %}
 </ul>

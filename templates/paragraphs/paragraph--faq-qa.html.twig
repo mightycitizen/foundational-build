@@ -38,28 +38,14 @@
  * @ingroup themeable
  */
 #}
-{%
-set classes = [
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
-]
-%}
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {% embed '@components/accordion/accordion-item.twig' with {
-        "item": {
-          "heading": content.field_question
-        },
-        "content": content
-      } only %}
-        {% block accordion_content %}
-          {{ content.field_answer }}
-          {{ content.field_link }}
-        {% endblock %}
-      {% endembed %}
-    {% endblock %}
-  </div>
-{% endblock paragraph %}
+{% embed '@components/accordion/accordion-item.twig' with {
+  "item": {
+    "heading": content.field_question
+  },
+  "content": content
+} only %}
+  {% block accordion_content %}
+    {{ content.field_answer }}
+    {{ content.field_link }}
+  {% endblock %}
+{% endembed %}

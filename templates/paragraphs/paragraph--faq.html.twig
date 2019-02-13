@@ -39,22 +39,8 @@
  */
 #}
 {{ attach_library('rain_theme/accordion') }}
-{%
-set classes = [
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
-]
-%}
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {% embed '@components/accordion/accordion.twig' with { content: content } only %}
-        {% block accordion_items %}
-          {{ content.field_faq_items }}
-        {% endblock accordion_items %}
-      {% endembed %}
-    {% endblock %}
-  </div>
-{% endblock paragraph %}
+{% embed '@components/accordion/accordion.twig' with { content: content } only %}
+  {% block accordion_items %}
+    {{ content.field_faq_items }}
+  {% endblock accordion_items %}
+{% endembed %}

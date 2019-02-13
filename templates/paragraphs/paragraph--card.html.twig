@@ -39,46 +39,32 @@
  */
 #}
 {{ attach_library('rain_theme/card') }}
-{%
-set classes = [
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
-]
-%}
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {%  set media_type = content.field_media['#items'].entity.bundle() %}
-      {% include '@components/card/card.twig' with {
-        "modifier_class": "",
-        "card": {
-          "media": {
-            image: media_type == 'image' ? content.field_media : null,
-            video: media_type == 'video' ? content.field_media : null
-          },
-          "eyebrow": {
-            "text": content.field_short_title,
-            "classes": "card__eyebrow"
-          },
-          "heading": {
-            "title": content.field_title,
-            "heading_level": "2",
-            "classes": "card__title"
-          },
-          "subhead": {
-            "title": content.field_subhead,
-            "heading_level": "3",
-            "classes": "card__subhead"
-          },
-          "text": content.field_summary,
-          "link": {
-            "url": content.field_link[0]['#url'],
-            "text": content.field_link[0]['#title']
-          }
-        }
-      } only %}
-    {% endblock %}
-  </div>
-{% endblock paragraph %}
+{% set media_type = content.field_media['#items'].entity.bundle() %}
+{% include '@components/card/card.twig' with {
+  "modifier_class": "",
+  "card": {
+    "media": {
+      image: media_type == 'image' ? content.field_media : null,
+      video: media_type == 'video' ? content.field_media : null
+    },
+    "eyebrow": {
+      "text": content.field_short_title,
+      "classes": "card__eyebrow"
+    },
+    "heading": {
+      "title": content.field_title,
+      "heading_level": "2",
+      "classes": "card__title"
+    },
+    "subhead": {
+      "title": content.field_subhead,
+      "heading_level": "3",
+      "classes": "card__subhead"
+    },
+    "text": content.field_summary,
+    "link": {
+      "url": content.field_link[0]['#url'],
+      "text": content.field_link[0]['#title']
+    }
+  }
+} only %}

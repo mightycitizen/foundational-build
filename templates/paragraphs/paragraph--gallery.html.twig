@@ -39,30 +39,16 @@
  */
 #}
 {{ attach_library('rain_theme/gallery-lightbox') }}
-{%
-set classes = [
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
-]
-%}
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {% embed '@components/gallery-lightbox/gallery-lightbox.twig' with {
-          section_title: content.field_title,
-          intro_text: content.field_body,
-          content: content
-        } only %}
-        {% block gallery_items %}
-          {% for i in content.field_media_items['#items'] %}
-            <li class="gallery-lightbox-item">
-              {{ content.field_media_items[loop.index0] }}
-            </li>
-          {% endfor %}
-        {% endblock %}
-      {% endembed %}
-    {% endblock %}
-  </div>
-{% endblock paragraph %}
+{% embed '@components/gallery-lightbox/gallery-lightbox.twig' with {
+    section_title: content.field_title,
+    intro_text: content.field_body,
+    content: content
+  } only %}
+  {% block gallery_items %}
+    {% for i in content.field_media_items['#items'] %}
+      <li class="gallery-lightbox-item">
+        {{ content.field_media_items[loop.index0] }}
+      </li>
+    {% endfor %}
+  {% endblock %}
+{% endembed %}

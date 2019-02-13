@@ -39,23 +39,9 @@
  */
 #}
 {{ attach_library('rain_theme/media') }}
-{%
-set classes = [
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
-]
-%}
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {%  set media_type = content.field_media['#items'].entity.bundle() %}
-      {% include '@components/media/media.twig' with {
-        "image": media_type == 'image' ? content.field_media : null,
-        "video": media_type == 'video' ? content.field_media : null,
-        "caption": null
-      } only %}
-    {% endblock %}
-  </div>
-{% endblock paragraph %}
+{% set media_type = content.field_media['#items'].entity.bundle() %}
+{% include '@components/media/media.twig' with {
+  "image": media_type == 'image' ? content.field_media : null,
+  "video": media_type == 'video' ? content.field_media : null,
+  "caption": null
+} only %}

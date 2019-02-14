@@ -1,0 +1,6 @@
+/**
+ * Override Bartik field type image style.
+ */
+body .node .field--type-image {
+  float: inherit;
+  margin: inherit; }

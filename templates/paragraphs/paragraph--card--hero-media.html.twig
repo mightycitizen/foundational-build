@@ -38,13 +38,37 @@
  * @ingroup themeable
  */
 #}
-{% include '@components/carousel/carousel-item.twig' with {
-  "item": {
-    "image": content.field_media,
-    "title": content.field_title,
+{% if count > 1 %}
+  {% include '@components/carousel/carousel-item.twig' with {
+    "item": {
+      "image": content.field_media,
+      "title": content.field_title,
+      "button": {
+        "text": content.field_link[0]['#title'],
+        "url": content.field_link[0]['#url']
+      }
+    }
+  } only %}
+{% else %}
+  {% include '@components/hero/hero.twig' with {
+    "media": {
+      "image": content.field_media
+    },
+    "eyebrow": {
+      "text": content.field_subhead
+    },
+    "heading": {
+      "title": content.field_title,
+      "level": "2",
+      "classes": "hero__heading"
+    },
+    "body": {
+      "text": content.field_summary,
+      "classes": "hero__body"
+    },
     "button": {
       "text": content.field_link[0]['#title'],
       "url": content.field_link[0]['#url']
     }
-  }
-} only %}
+  } only %}
+{% endif %}

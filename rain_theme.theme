@@ -6,6 +6,22 @@
  */
 
 /**
+ * Implements hook_preprocess_HOOK() for paragraphs.
+ */
+function rain_theme_preprocess_paragraph(&$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+
+  // Get the parent bundle.
+  $parent_bundle = $paragraph->getParentEntity()->bundle();
+
+  // Pass along total count to template.
+  if ($parent_bundle == 'hero_media') {
+    $variables['count'] = $paragraph->getParentEntity()->get('field_card')->count();
+  }
+}
+
+/**
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
 function rain_theme_preprocess_html(array &$variables) {

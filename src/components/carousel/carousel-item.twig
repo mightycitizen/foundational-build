@@ -14,11 +14,13 @@
         "classes": "carousel-item__title"
       } only
     %}
-    {%
-      include '@components/button/button.twig' with {
-        "text": item.button.text,
-        "url": item.button.url,
-      } only
-    %}
+    {% if item.button.text %}
+      {%
+        include '@components/button/button.twig' with {
+          "text": item.button.text,
+          "url": item.button.url,
+        } only
+      %}
+    {% endif %}
   </div>
 </li>

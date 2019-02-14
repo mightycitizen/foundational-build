@@ -38,11 +38,16 @@
  * @ingroup themeable
  */
 #}
-{{ attach_library('rain_theme/carousel') }}
-{% embed '@components/carousel/carousel.twig' with { content: content } only %}
-{% block carousel_items %}
-  {% for i in content.field_card['#items'] %}
-    {{ content.field_card[loop.index0] }}
-  {% endfor %}
-{% endblock %}
-{% endembed %}
+{% if content.field_card['#items']|length > 1 %}
+  {{ attach_library('rain_theme/carousel') }}
+  {% embed '@components/carousel/carousel.twig' with { content: content } only %}
+    {% block carousel_items %}
+      {% for i in content.field_card['#items'] %}
+        {{ content.field_card[loop.index0] }}
+      {% endfor %}
+    {% endblock %}
+  {% endembed %}
+{% else %}
+  {{ attach_library('rain_theme/hero') }}
+  {{ content.field_card }}
+{% endif %}

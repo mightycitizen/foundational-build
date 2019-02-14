@@ -1202,3 +1202,9 @@ input[type='submit'] {
     .quote--left .quote__cite-media img {
       border-radius: 100px; }
 
+/**
+ * Override Bartik field type image style.
+ */
+body .node .field--type-image {
+  float: inherit;
+  margin: inherit; }

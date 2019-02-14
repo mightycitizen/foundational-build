@@ -190,31 +190,28 @@
                 <div class="kss-modifier kss-modifier-original">
                   <div class="kss-modifier-example">
                     <section class="accordion__wrapper">
-    <article class="accordion" role="presentation">
-    <button type="button" class="accordion__toggle" aria-controls="accordion__content-1" aria-expanded="false" id="accordion__toggle-1" aria-selected="false">
-      <span class="accordion__heading">Curabitur aliquet quam id dui posuere blandit.</span>
-    </button>
-    <div class="accordion__content" id="accordion__content-1" aria-hidden="true" aria-labelledby="accordion__content-1">
-      <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
-    </div>
-  </article>
-    <article class="accordion" role="presentation">
-    <button type="button" class="accordion__toggle" aria-controls="accordion__content-2" aria-expanded="false" id="accordion__toggle-2" aria-selected="false">
-      <span class="accordion__heading">Curabitur aliquet quam</span>
-    </button>
-    <div class="accordion__content" id="accordion__content-2" aria-hidden="true" aria-labelledby="accordion__content-2">
-      <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
-    </div>
-  </article>
-    <article class="accordion" role="presentation">
-    <button type="button" class="accordion__toggle" aria-controls="accordion__content-3" aria-expanded="false" id="accordion__toggle-3" aria-selected="false">
-      <span class="accordion__heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu cursus euismod quis viverra nibh cras pulvinar?</span>
-    </button>
-    <div class="accordion__content" id="accordion__content-3" aria-hidden="true" aria-labelledby="accordion__content-3">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est sit amet facilisis magna etiam tempor orci. Auctor eu augue ut lectus arcu bibendum at varius. Risus ultricies tristique nulla aliquet enim tortor at auctor.</p>
-    </div>
-  </article>
-  </section>
+            <article class="accordion" role="presentation">
+  <button type="button" class="accordion__toggle" aria-controls="accordion__content-1" aria-expanded="false" id="accordion__toggle-1" aria-selected="false">
+    <span class="accordion__heading">Curabitur aliquet quam id dui posuere blandit.</span>
+  </button>
+  <div class="accordion__content" id="accordion__content-1" aria-hidden="true" aria-labelledby="accordion__content-1">
+          <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
+      </div>
+</article>          <article class="accordion" role="presentation">
+  <button type="button" class="accordion__toggle" aria-controls="accordion__content-2" aria-expanded="false" id="accordion__toggle-2" aria-selected="false">
+    <span class="accordion__heading">Curabitur aliquet quam</span>
+  </button>
+  <div class="accordion__content" id="accordion__content-2" aria-hidden="true" aria-labelledby="accordion__content-2">
+          <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
+      </div>
+</article>          <article class="accordion" role="presentation">
+  <button type="button" class="accordion__toggle" aria-controls="accordion__content-3" aria-expanded="false" id="accordion__toggle-3" aria-selected="false">
+    <span class="accordion__heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu cursus euismod quis viverra nibh cras pulvinar?</span>
+  </button>
+  <div class="accordion__content" id="accordion__content-3" aria-hidden="true" aria-labelledby="accordion__content-3">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est sit amet facilisis magna etiam tempor orci. Auctor eu augue ut lectus arcu bibendum at varius. Risus ultricies tristique nulla aliquet enim tortor at auctor.</p>
+      </div>
+</article>      </section>
                   </div>
                 </div>
 
@@ -222,16 +219,15 @@
                   <button class="js-show-markup">Show Markup Example</button>
                   <template>
                     <pre><code data-language="html">&lt;section class=&quot;accordion__wrapper&quot;&gt;
-  {% for item in items %}
-  &lt;article class=&quot;accordion&quot; role=&quot;presentation&quot;&gt;
-    &lt;button type=&quot;button&quot; class=&quot;accordion__toggle&quot; aria-controls=&quot;accordion__content-{{ item.accordion_instance }}&quot; aria-expanded=&quot;false&quot; id=&quot;accordion__toggle-{{ item.accordion_instance }}&quot; aria-selected=&quot;false&quot;&gt;
-      &lt;span class=&quot;accordion__heading&quot;&gt;{{ item.heading }}&lt;/span&gt;
-    &lt;/button&gt;
-    &lt;div class=&quot;accordion__content&quot; id=&quot;accordion__content-{{ item.accordion_instance }}&quot; aria-hidden=&quot;true&quot; aria-labelledby=&quot;accordion__content-{{ item.accordion_instance }}&quot;&gt;
-      &lt;p&gt;{{ item.content }}&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/article&gt;
-  {% endfor %}
+  {% block accordion_items %}
+    {% for item in items %}
+      {%
+        include &#039;@components/accordion/accordion-item.twig&#039; with {
+        &quot;item&quot;: item,
+      } only
+      %}
+    {% endfor %}
+  {% endblock %}
 &lt;/section&gt;</code></pre>
                   </template>
                 </div>
@@ -813,8 +809,8 @@ min.js and .css files must be included.</p>
   <h2 class="heading heading-2 carousel-item__title">
     Title Lorem Ipsum Dolor
   </h2>
-      <a href="#" class="button ">Button Text</a>
-  </div>
+            <a href="#" class="button ">Button Text</a>
+      </div>
 </li>
               <li class="carousel-item">
   <div class="carousel-item__media">
@@ -828,8 +824,8 @@ min.js and .css files must be included.</p>
   <h2 class="heading heading-2 carousel-item__title">
     Title Lorem Ipsum Dolor
   </h2>
-      <a href="#" class="button ">Button Text</a>
-  </div>
+            <a href="#" class="button ">Button Text</a>
+      </div>
 </li>
               <li class="carousel-item">
   <div class="carousel-item__media">
@@ -843,8 +839,8 @@ min.js and .css files must be included.</p>
   <h2 class="heading heading-2 carousel-item__title">
     Title Lorem Ipsum Dolor
   </h2>
-      <a href="#" class="button ">Button Text</a>
-  </div>
+            <a href="#" class="button ">Button Text</a>
+      </div>
 </li>
             </ul>
 </section>
@@ -1232,59 +1228,48 @@ must be included.</p>
   <p>Optional summary text, turpis at luctus finibus, erat lectus convallis velit, at sodales purus lacus quis magna. Curabitur imperdiet sapien libero, fringilla ullamcorper nibh ullamcorper vitae. Proin sed luctus augue.</p>
 </div>
 
-
 <ul class="gallery-lightbox">
-
-      <li class="gallery-lightbox-item">
-      <a href="../assets/gallery1.jpg" title="Surfing photo 1 here!">
-        <img src="../assets/gallery1--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 1 here!"/>
-        <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
-      </a>
-    </li>
-      <li class="gallery-lightbox-item">
-      <a href="../assets/gallery2.jpg" title="Surfing photo 2 here!">
-        <img src="../assets/gallery2--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 2 here!"/>
-        <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
-      </a>
-    </li>
-      <li class="gallery-lightbox-item">
-      <a href="../assets/gallery3.jpg" title="Surfing photo 3 here!">
-        <img src="../assets/gallery3--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 3 here!"/>
-        <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
-      </a>
-    </li>
-      <li class="gallery-lightbox-item">
-      <a href="../assets/gallery4.jpg" title="Surfing photo 4 here!">
-        <img src="../assets/gallery4--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 4 here!"/>
-        <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
-      </a>
-    </li>
-      <li class="gallery-lightbox-item">
-      <a href="../assets/gallery5.jpg" title="Surfing photo 5 here!">
-        <img src="../assets/gallery5--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 5 here!"/>
-        <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
-      </a>
-    </li>
-      <li class="gallery-lightbox-item">
-      <a href="../assets/gallery6.jpg" title="Surfing photo 6 here!">
-        <img src="../assets/gallery6--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 6 here!"/>
-        <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
-      </a>
-    </li>
-      <li class="gallery-lightbox-item">
-      <a href="../assets/gallery7.jpg" title="Surfing photo 7 here!">
-        <img src="../assets/gallery7--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 7 here!"/>
-        <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
-      </a>
-    </li>
-      <li class="gallery-lightbox-item">
-      <a href="../assets/gallery8.jpg" title="Surfing photo 8 here!">
-        <img src="../assets/gallery8--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 8 here!"/>
-        <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
-      </a>
-    </li>
-  
-</ul>
+            <li class="gallery-lightbox-item">
+  <a href="../assets/gallery1.jpg" title="Surfing photo 1 here!">
+    <img src="../assets/gallery1--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 1 here!"/>
+    <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
+  </a>
+</li>          <li class="gallery-lightbox-item">
+  <a href="../assets/gallery2.jpg" title="Surfing photo 2 here!">
+    <img src="../assets/gallery2--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 2 here!"/>
+    <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
+  </a>
+</li>          <li class="gallery-lightbox-item">
+  <a href="../assets/gallery3.jpg" title="Surfing photo 3 here!">
+    <img src="../assets/gallery3--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 3 here!"/>
+    <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
+  </a>
+</li>          <li class="gallery-lightbox-item">
+  <a href="../assets/gallery4.jpg" title="Surfing photo 4 here!">
+    <img src="../assets/gallery4--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 4 here!"/>
+    <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
+  </a>
+</li>          <li class="gallery-lightbox-item">
+  <a href="../assets/gallery5.jpg" title="Surfing photo 5 here!">
+    <img src="../assets/gallery5--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 5 here!"/>
+    <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
+  </a>
+</li>          <li class="gallery-lightbox-item">
+  <a href="../assets/gallery6.jpg" title="Surfing photo 6 here!">
+    <img src="../assets/gallery6--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 6 here!"/>
+    <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
+  </a>
+</li>          <li class="gallery-lightbox-item">
+  <a href="../assets/gallery7.jpg" title="Surfing photo 7 here!">
+    <img src="../assets/gallery7--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 7 here!"/>
+    <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
+  </a>
+</li>          <li class="gallery-lightbox-item">
+  <a href="../assets/gallery8.jpg" title="Surfing photo 8 here!">
+    <img src="../assets/gallery8--thumb.jpg" class="gallery-lightbox-item__media" alt="Surfing photo 8 here!"/>
+    <img src="../assets/expand-icon.svg" class="gallery-lightbox-item__expand" alt="View full media."/>
+  </a>
+</li>      </ul>
 
                   </div>
                 </div>
@@ -1311,18 +1296,16 @@ must be included.</p>
   %}
 {% endif %}
 
-
 &lt;ul class=&quot;gallery-lightbox&quot;&gt;
-
-  {% for item in items %}
-    &lt;li class=&quot;gallery-lightbox-item&quot;&gt;
-      &lt;a href=&quot;{{ item.media }}&quot; title=&quot;{{ item.media_description }}&quot;&gt;
-        &lt;img src=&quot;{{ item.media_thumb }}&quot; class=&quot;gallery-lightbox-item__media&quot; alt=&quot;{{ item.media_description }}&quot;/&gt;
-        &lt;img src=&quot;../assets/expand-icon.svg&quot; class=&quot;gallery-lightbox-item__expand&quot; alt=&quot;View full media.&quot;/&gt;
-      &lt;/a&gt;
-    &lt;/li&gt;
-  {% endfor %}
-
+  {% block gallery_items %}
+    {% for item in items %}
+      {%
+        include &#039;@components/gallery-lightbox/gallery-lightbox-item.twig&#039; with {
+          &quot;item&quot;: item
+        } only
+      %}
+    {% endfor %}
+  {% endblock %}
 &lt;/ul&gt;
 </code></pre>
                   </template>
@@ -1419,8 +1402,8 @@ Most often placed at the top of pages.</p>
   Some sites need a tagline mauris ac dui sit amet sem facilisis finibus vitae et mi.
 </div>
 
-      <a href="#" class="button ">Learn more</a>
-  </div>
+            <a href="#" class="button ">Learn more</a>
+      </div>
 </section>
 
                   </div>
@@ -1460,12 +1443,14 @@ Most often placed at the top of pages.</p>
       } only
     %}
 
-    {%
-      include &#039;@components/button/button.twig&#039; with {
-        &quot;text&quot;: button.text,
-        &quot;url&quot;: button.url,
-      } only
-    %}
+    {% if button.text %}
+      {%
+        include &#039;@components/button/button.twig&#039; with {
+          &quot;text&quot;: button.text,
+          &quot;url&quot;: button.url,
+        } only
+      %}
+    {% endif %}
   &lt;/div&gt;
 &lt;/section&gt;
 </code></pre>

@@ -88,8 +88,8 @@ Most often placed at the top of pages.</p>
   Some sites need a tagline mauris ac dui sit amet sem facilisis finibus vitae et mi.
 </div>
 
-      <a href="#" class="button ">Learn more</a>
-  </div>
+            <a href="#" class="button ">Learn more</a>
+      </div>
 </section>
 
                   </div>
@@ -129,12 +129,14 @@ Most often placed at the top of pages.</p>
       } only
     %}
 
-    {%
-      include &#039;@components/button/button.twig&#039; with {
-        &quot;text&quot;: button.text,
-        &quot;url&quot;: button.url,
-      } only
-    %}
+    {% if button.text %}
+      {%
+        include &#039;@components/button/button.twig&#039; with {
+          &quot;text&quot;: button.text,
+          &quot;url&quot;: button.url,
+        } only
+      %}
+    {% endif %}
   &lt;/div&gt;
 &lt;/section&gt;
 </code></pre>

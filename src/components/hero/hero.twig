@@ -29,11 +29,13 @@
       } only
     %}
 
-    {%
-      include '@components/button/button.twig' with {
-        "text": button.text,
-        "url": button.url,
-      } only
-    %}
+    {% if button.text %}
+      {%
+        include '@components/button/button.twig' with {
+          "text": button.text,
+          "url": button.url,
+        } only
+      %}
+    {% endif %}
   </div>
 </section>

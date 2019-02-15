@@ -41,7 +41,7 @@
 {{ attach_library('rain_theme/card') }}
 {% set media_type = content.field_media['#items'].entity.bundle() %}
 {% include '@components/card/card.twig' with {
-  "modifier_class": "card--wide",
+  "modifier_class": paragraph.field_card_layout.0.value == 'wide' ? 'card--wide' : '',
   "card": {
     "media": {
       image: media_type == 'image' ? content.field_media : null,

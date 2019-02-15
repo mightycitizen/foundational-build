@@ -1,7 +1,42 @@
 /**
- * Override Bartik field type image style.
+ * Default spacing for layout container.
  */
-body .node .field--type-image {
-  float: inherit;
-  margin: inherit;
+.layout-container {
+  margin: 1em auto;
+  max-width: 1280px;
+}
+
+/**
+ * Message spacing
+ */
+.messages {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/**
+ * Sample form styles.
+ */
+.form-composite > .fieldset-wrapper > .description, .form-item .description {
+  margin-top: .5em;
+}
+
+.form-item input {
+  border: 1px solid #000;
+  font-size: 1rem;
+  padding: .5rem;
+
+  &:focus {
+    border: 1px solid #666;
+    box-shadow: 0 0 6px #666;
+    outline: none;
+  }
+}
+
+.form-item label {
+  margin-bottom: .5em;
+}
+
+.button {
+  padding: .5em .7em;
 }

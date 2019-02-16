@@ -17,14 +17,15 @@
 /**
  * Sample form styles.
  */
-.form-composite > .fieldset-wrapper > .description, .form-item .description {
-  margin-top: .5em;
+.form-composite > .fieldset-wrapper > .description,
+.form-item .description {
+  margin-top: 0.5em;
 }
 
 .form-item input {
   border: 1px solid #000;
   font-size: 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
 
   &:focus {
     border: 1px solid #666;
@@ -34,9 +35,20 @@
 }
 
 .form-item label {
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 .button {
-  padding: .5em .7em;
+  padding: 0.5em 0.7em;
+}
+
+/**
+ * Field spacing
+ */
+.field__item.clearfix {
+  margin-bottom: 20px;
+
+  .field__item.clearfix {
+    margin-bottom: 0;
+  }
 }

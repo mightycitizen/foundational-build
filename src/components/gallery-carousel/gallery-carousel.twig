@@ -22,7 +22,9 @@
   {% for item in carousel_items %}
     <li class="gallery-carousel-item">
       <img src="{{ item.media }}" class="gallery-carousel-item__media" alt="{{ item.media_description }}"/>
-      <p class="gallery-carousel-item__text">{{ item.media_description }}</p>
+      {% if item.media_description %}
+        <p class="gallery-carousel-item__text">{{ item.media_description }}</p>
+      {% endif %}
     </li>
   {% endfor %}
 

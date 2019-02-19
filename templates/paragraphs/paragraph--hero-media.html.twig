@@ -39,14 +39,25 @@
  */
 #}
 {% if content.field_card['#items']|length > 1 %}
-  {{ attach_library('rain_theme/carousel') }}
-  {% embed '@components/carousel/carousel.twig' with { content: content } only %}
-    {% block carousel_items %}
-      {% for i in content.field_card['#items'] %}
-        {{ content.field_card[loop.index0] }}
-      {% endfor %}
-    {% endblock %}
-  {% endembed %}
+  {% if carousel_items %}
+    {{ attach_library('rain_theme/gallery-carousel') }}
+    {# carousel_items, carousel_thumbs provided by preprocess #}
+    {% include '@components/gallery-carousel/gallery-carousel.twig' with {
+       "section_title": content.field_title,
+       "intro_text": content.field_subhead,
+       "carousel_items": carousel_items,
+       "carousel_nav_items": carousel_thumbs
+    } only %}
+  {% else %}
+    {{ attach_library('rain_theme/carousel') }}
+    {% embed '@components/carousel/carousel.twig' with { content: content } only %}
+      {% block carousel_items %}
+        {% for i in content.field_card['#items'] %}
+          {{ content.field_card[loop.index0] }}
+        {% endfor %}
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
 {% else %}
   {{ attach_library('rain_theme/hero') }}
   {{ content.field_card }}

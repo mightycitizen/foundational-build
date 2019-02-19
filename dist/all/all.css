@@ -1210,6 +1210,18 @@ input[type='submit'] {
   max-width: 1280px; }
 
 /**
+ * Added class to show media on the right side.
+ */
+@media (min-width: 40em) {
+  body .card--media-right {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse; }
+    body .card--media-right .card__content {
+      margin: 0 1.5rem 0 0; } }
+
+/**
  * Message spacing
  */
 .messages {

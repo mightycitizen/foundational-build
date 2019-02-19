@@ -48,3 +48,9 @@
     {% endfor %}
   {% endblock %}
 {% endembed %}
+<div>
+  {% include '@components/button/button.twig' with {
+    "url": content.field_link[0]['#url'],
+    "text": content.field_link[0]['#title']
+  } only %}
+</div>

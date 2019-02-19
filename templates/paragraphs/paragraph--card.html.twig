@@ -40,8 +40,15 @@
 #}
 {{ attach_library('rain_theme/card') }}
 {% set media_type = content.field_media['#items'].entity.bundle() %}
+{% set layout = paragraph.field_card_layout.0.value %}
+{% set modifier_class = '' %}
+{% if layout == 'wide' %}
+  {% set modifier_class = 'card--wide' %}
+{% elseif layout == 'wide_right' %}
+  {% set modifier_class = 'card--wide card--media-right' %}
+{% endif %}
 {% include '@components/card/card.twig' with {
-  "modifier_class": paragraph.field_card_layout.0.value == 'wide' ? 'card--wide' : '',
+  "modifier_class": modifier_class,
   "card": {
     "media": {
       image: media_type == 'image' ? content.field_media : null,

@@ -7,19 +7,6 @@
 }
 
 /**
- * Added class to show media on the right side.
- */
-@media (min-width: 40em) {
-  body .card--media-right {
-    flex-direction: row-reverse;
-
-    .card__content {
-      margin: 0 1.5rem 0 0;
-    }
-  }
-}
-
-/**
  * Message spacing
  */
 .messages {

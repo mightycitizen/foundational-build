@@ -967,6 +967,10 @@ input[type='submit'] {
       margin-bottom: 3rem; } }
 
 
+.map__link {
+  display: inline-block;
+  margin-top: 1.5rem; }
+
 .map--2col {
   -webkit-box-align: center;
   -ms-flex-align: center;

@@ -6,11 +6,20 @@
       </div>
     </div>
     <div class="map__text">
-      <h2 class="map__location">{{ map.address.location }}</h2>
+      {% if map.eyebrow %}
+        {%
+          include '@components/eyebrow/eyebrow.twig' with {
+            "text": map.eyebrow.text,
+            "classes": map.eyebrow.classes,
+          } only
+        %}
+      {% endif %}
+      <h2 class="map__location">{{ map.location }}</h2>
       <p class="map__address">
-        {{ map.address.street}} 
-        <br>
-        {{ map.address.city_state}}
+        {{ map.address }}
+        {% if map.link %}
+          <a href="{{ map.link.url }}" class="map__link">{{ map.link.text }}</a>
+        {% endif %}
       </p>
     </div>
   </section>

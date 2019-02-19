@@ -7,7 +7,12 @@
 // Style guide: Components.Map
 
 // Import site utilities.
-@import '../../global/utils/init';
+@import "../../global/utils/init";
+
+.map__link {
+  display: inline-block;
+  margin-top: 1.5rem;
+}
 
 // Styles for two-colum map layout.
 // Includes address text.

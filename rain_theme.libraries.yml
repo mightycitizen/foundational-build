@@ -8,7 +8,6 @@ global:
       dist/css/global.css: {}
       dist/css/style.css: {}
 
-
 # Example external library.
 # webfonts:
 #   version: 1.x
@@ -50,7 +49,7 @@ card:
     theme:
       dist/css/card.css: {}
   dependencies:
-  - rain_theme/body
+    - rain_theme/body
 
 card-list:
   css:
@@ -86,6 +85,11 @@ hero:
       dist/css/hero.css: {}
   dependencies:
     - rain_theme/body
+
+map:
+  css:
+    theme:
+      dist/css/map.css: {}
 
 media:
   css:

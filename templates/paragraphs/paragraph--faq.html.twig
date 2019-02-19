@@ -39,6 +39,12 @@
  */
 #}
 {{ attach_library('rain_theme/accordion') }}
+{%
+  include '@components/heading/heading.twig' with {
+    "title": content.field_title,
+    "heading_level": "2"
+  } only
+%}
 {% embed '@components/accordion/accordion.twig' with { content: content } only %}
   {% block accordion_items %}
     {{ content.field_faq_items }}

@@ -1220,7 +1220,8 @@ input[type='submit'] {
  */
 .layout-container {
   margin: 1em auto;
-  max-width: 1280px; }
+  max-width: 1280px;
+  padding: 0 1em; }
 
 /**
  * Message spacing

@@ -21,35 +21,39 @@ function rain_theme_preprocess_paragraph(&$variables) {
   if ($parent_bundle == 'hero_media') {
     $variables['count'] = $paragraph->getParentEntity()->get('field_card')->count();
   }
-  // We want to render a gallery carousel if the title is set.
-  elseif ($paragraph->bundle() == 'hero_media') {
-    if (!empty($paragraph->get('field_title')->value)) {
-      $carousel_items = [];
-      $carousel_thumbs = [];
+  // We want to render a gallery carousel if "gallery_carousel" is the parent.
+  elseif ($paragraph->bundle() == 'gallery_carousel') {
+    $carousel_items = [];
+    $carousel_thumbs = [];
 
-      $count = $paragraph->get('field_card')->count();
+    $count = $paragraph->get('field_card')->count();
 
-      // Populate thumbs and images.
-      for ($c = 0; $c < $count; $c++) {
-        $card = $paragraph->get('field_card')[$c]->entity;
-        $image_url = file_create_url($card->get('field_media')->entity->get('field_image')->entity->getFileUri());
-
-        $item = [
-          'media' => $image_url,
-          'media_description' => $card->get('field_summary')->value,
-        ];
-
-        $thumb = [
-          'media_thumb' => $image_url,
-        ];
-
-        $carousel_items[] = $item;
-        $carousel_thumbs[] = $thumb;
+    // Populate thumbs and images.
+    for ($c = 0; $c < $count; $c++) {
+      $card = $paragraph->get('field_card')[$c]->entity;
+      $image_url = file_create_url($card->get('field_media')->entity->get('field_image')->entity->getFileUri());
+      if ($card->hasField('field_thumb')) {
+        $thumb_url = file_create_url($card->get('field_thumb')->entity->getFileUri());
+      }
+      else {
+        $thumb_url = $image_url;
       }
 
-      $variables['carousel_items'] = $carousel_items;
-      $variables['carousel_thumbs'] = $carousel_thumbs;
+      $item = [
+        'media' => $image_url,
+        'media_description' => $card->get('field_summary')->value,
+      ];
+
+      $thumb = [
+        'media_thumb' => $thumb_url,
+      ];
+
+      $carousel_items[] = $item;
+      $carousel_thumbs[] = $thumb;
     }
+
+    $variables['carousel_items'] = $carousel_items;
+    $variables['carousel_thumbs'] = $carousel_thumbs;
   }
 }
 

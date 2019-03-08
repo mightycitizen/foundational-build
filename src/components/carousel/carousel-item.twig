@@ -6,21 +6,23 @@
       } only
     %}
   </div>
-  <div class="carousel-item__content">
-    {%
-      include '@components/heading/heading.twig' with {
-        "title": item.title,
-        "heading_level": 2,
-        "classes": "carousel-item__title"
-      } only
-    %}
-    {% if item.button.text %}
+  {% if item.title.0 %}
+    <div class="carousel-item__content">
       {%
-        include '@components/button/button.twig' with {
-          "text": item.button.text,
-          "url": item.button.url,
+        include '@components/heading/heading.twig' with {
+          "title": item.title,
+          "heading_level": 2,
+          "classes": "carousel-item__title"
         } only
       %}
-    {% endif %}
-  </div>
+      {% if item.button.text %}
+        {%
+          include '@components/button/button.twig' with {
+            "text": item.button.text,
+            "url": item.button.url,
+          } only
+        %}
+      {% endif %}
+    </div>
+  {% endif %}
 </li>

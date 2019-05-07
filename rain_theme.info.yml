@@ -61,7 +61,6 @@ component-libraries:
     paths:
       - src/components
       - src/layout
-      - src/templates
   components:
     paths:
       - src/components

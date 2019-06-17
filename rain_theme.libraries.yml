@@ -7,6 +7,9 @@ global:
     base:
       dist/css/global.css: {}
       dist/css/style.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
 
 # Example external library.
 # webfonts:

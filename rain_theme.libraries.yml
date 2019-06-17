@@ -65,6 +65,13 @@ carousel:
   dependencies:
     - rain_theme/slick
 
+colorbox:
+  css:
+    theme:
+      dist/vendor/colorbox/colorbox.css: {}
+  js:
+    dist/vendor/colorbox/jquery.colorbox-min.js: {}
+
 faq:
   css:
     theme:
@@ -76,8 +83,15 @@ gallery-carousel:
       dist/css/gallery-carousel.css: {}
   js:
     dist/js/gallery-carousel.js: {}
+
+gallery-lightbox:
+  css:
+    theme:
+      dist/css/gallery-lightbox.css: {}
+  js:
+    dist/js/gallery-lightbox.js: {}
   dependencies:
-    - rain_theme/slick
+    - rain_theme/colorbox  
 
 hero:
   css:

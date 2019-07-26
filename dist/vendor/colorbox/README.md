@@ -1,0 +1,1 @@
+This library uses a Colorbox fork at https://github.com/bramd/colorbox which adds accessibility improvements.

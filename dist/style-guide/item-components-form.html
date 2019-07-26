@@ -72,31 +72,31 @@
       <input id="name"
         type="text"
         class="form-item__input js-form-item"
-        aria-describedby="required-message" required>
+        aria-describedby="required-message-0" required>
       <label for="name" class="form-item__label required-field">Name</label>
-      <div id="required-message" class="visually-hidden">This field is required.</div>
+      <div id="required-message-0" class="visually-hidden">This field is required.</div>
     </div>
       <div class="form-item form-item--email">
       <input id="email"
         type="email"
         class="form-item__input js-form-item"
-        aria-describedby="required-message" required>
+        aria-describedby="required-message-1" required>
       <label for="email" class="form-item__label required-field">Email</label>
-      <div id="required-message" class="visually-hidden">This field is required.</div>
+      <div id="required-message-1" class="visually-hidden">This field is required.</div>
     </div>
       <div class="form-item form-item--text">
       <input id="subject"
         type="text"
         class="form-item__input js-form-item"
-        aria-describedby="required-message" required>
+        aria-describedby="required-message-2" required>
       <label for="subject" class="form-item__label required-field">Subject</label>
-      <div id="required-message" class="visually-hidden">This field is required.</div>
+      <div id="required-message-2" class="visually-hidden">This field is required.</div>
     </div>
     <div class="form-item form-item--textarea">
     <textarea class="form-item__input js-form-item" id="message" name="messagetext"></textarea>
     <label for="message" class="form-item__label required-field">Message</label>
   </div>
-    <input type="submit" class="button " value="Submit">
+    <input name="submit" type="submit" class="button " value="Submit">
 </form>
 
                   </div>
@@ -111,9 +111,9 @@
       &lt;input id=&quot;{{ item.label|trim|lower }}&quot;
         type=&quot;{{ item.type }}&quot;
         class=&quot;form-item__input js-form-item&quot;
-        aria-describedby=&quot;required-message&quot; required&gt;
+        aria-describedby=&quot;required-message-{{ loop.index0 }}&quot; required&gt;
       &lt;label for=&quot;{{ item.label|trim|lower }}&quot; class=&quot;form-item__label required-field&quot;&gt;{{ item.label }}&lt;/label&gt;
-      &lt;div id=&quot;required-message&quot; class=&quot;visually-hidden&quot;&gt;This field is required.&lt;/div&gt;
+      &lt;div id=&quot;required-message-{{ loop.index0 }}&quot; class=&quot;visually-hidden&quot;&gt;This field is required.&lt;/div&gt;
     &lt;/div&gt;
   {% endfor %}
   &lt;div class=&quot;form-item form-item--textarea&quot;&gt;
@@ -123,7 +123,8 @@
   {%
     include &#039;@components/button/button.twig&#039; with {
       &quot;type&quot;: button.type,
-      &quot;value&quot;: button.value
+      &quot;value&quot;: button.value,
+      &quot;name&quot;: &quot;submit&quot;
     } only
   %}
 &lt;/form&gt;

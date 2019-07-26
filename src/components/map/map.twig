@@ -14,7 +14,9 @@
           } only
         %}
       {% endif %}
-      <h2 class="map__location">{{ map.location }}</h2>
+      {% if map.location %}
+        <h2 class="map__location">{{ map.location }}</h2>
+      {% endif %}
       <p class="map__address">
         {{ map.address }}
         {% if map.link %}

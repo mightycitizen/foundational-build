@@ -90,9 +90,9 @@
                     <pre><code data-language="html">{% if url %}
   &lt;a href=&quot;{{ url }}&quot; class=&quot;button {{ modifier_class }}&quot;&gt;{{ text }}&lt;/a&gt;
 {% elseif value %}
-  &lt;input type=&quot;{{ type }}&quot; class=&quot;button {{ modifier_class }}&quot; value=&quot;{{ value }}&quot;&gt;
+  &lt;input name=&quot;{{ name }}&quot; type=&quot;{{ type }}&quot; class=&quot;button {{ modifier_class }}&quot; value=&quot;{{ value }}&quot;&gt;
 {% else %}
-  &lt;button type=&quot;{{ type }}&quot; class=&quot;button {{ modifier_class }}&quot;&gt;{{ text }}&lt;/button&gt;
+  &lt;button name=&quot;{{ name }}&quot; type=&quot;{{ type }}&quot; class=&quot;button {{ modifier_class }}&quot;&gt;{{ text }}&lt;/button&gt;
 {% endif %}
 </code></pre>
                   </template>

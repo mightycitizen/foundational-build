@@ -190,21 +190,21 @@
                 <div class="kss-modifier kss-modifier-original">
                   <div class="kss-modifier-example">
                     <section class="accordion__wrapper">
-            <article class="accordion" role="presentation">
+            <article class="accordion">
   <button type="button" class="accordion__toggle" aria-controls="accordion__content-1" aria-expanded="false" id="accordion__toggle-1" aria-selected="false">
     <span class="accordion__heading">Curabitur aliquet quam id dui posuere blandit.</span>
   </button>
   <div class="accordion__content" id="accordion__content-1" aria-hidden="true" aria-labelledby="accordion__content-1">
           <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
       </div>
-</article>          <article class="accordion" role="presentation">
+</article>          <article class="accordion">
   <button type="button" class="accordion__toggle" aria-controls="accordion__content-2" aria-expanded="false" id="accordion__toggle-2" aria-selected="false">
     <span class="accordion__heading">Curabitur aliquet quam</span>
   </button>
   <div class="accordion__content" id="accordion__content-2" aria-hidden="true" aria-labelledby="accordion__content-2">
           <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
       </div>
-</article>          <article class="accordion" role="presentation">
+</article>          <article class="accordion">
   <button type="button" class="accordion__toggle" aria-controls="accordion__content-3" aria-expanded="false" id="accordion__toggle-3" aria-selected="false">
     <span class="accordion__heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu cursus euismod quis viverra nibh cras pulvinar?</span>
   </button>
@@ -314,9 +314,9 @@
                     <pre><code data-language="html">{% if url %}
   &lt;a href=&quot;{{ url }}&quot; class=&quot;button {{ modifier_class }}&quot;&gt;{{ text }}&lt;/a&gt;
 {% elseif value %}
-  &lt;input type=&quot;{{ type }}&quot; class=&quot;button {{ modifier_class }}&quot; value=&quot;{{ value }}&quot;&gt;
+  &lt;input name=&quot;{{ name }}&quot; type=&quot;{{ type }}&quot; class=&quot;button {{ modifier_class }}&quot; value=&quot;{{ value }}&quot;&gt;
 {% else %}
-  &lt;button type=&quot;{{ type }}&quot; class=&quot;button {{ modifier_class }}&quot;&gt;{{ text }}&lt;/button&gt;
+  &lt;button name=&quot;{{ name }}&quot; type=&quot;{{ type }}&quot; class=&quot;button {{ modifier_class }}&quot;&gt;{{ text }}&lt;/button&gt;
 {% endif %}
 </code></pre>
                   </template>
@@ -349,7 +349,7 @@
   <div class="card__media">
       <div class="media-item">
     <div class="media-item__responsive-video">
-      <iframe width='560' height='315' src='https://www.youtube.com/embed/SN1i8-kJYg0' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>
+      <iframe title='Friday 5: 5 Questions about Gatsby.js' width='560' height='315' src='https://www.youtube.com/embed/SN1i8-kJYg0' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>
     </div>
       </div>
   </div>
@@ -396,7 +396,7 @@
   <div class="card__media">
       <div class="media-item">
     <div class="media-item__responsive-video">
-      <iframe width='560' height='315' src='https://www.youtube.com/embed/SN1i8-kJYg0' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>
+      <iframe title='Friday 5: 5 Questions about Gatsby.js' width='560' height='315' src='https://www.youtube.com/embed/SN1i8-kJYg0' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>
     </div>
       </div>
   </div>
@@ -985,31 +985,31 @@ min.js and .css files must be included.</p>
       <input id="name"
         type="text"
         class="form-item__input js-form-item"
-        aria-describedby="required-message" required>
+        aria-describedby="required-message-0" required>
       <label for="name" class="form-item__label required-field">Name</label>
-      <div id="required-message" class="visually-hidden">This field is required.</div>
+      <div id="required-message-0" class="visually-hidden">This field is required.</div>
     </div>
       <div class="form-item form-item--email">
       <input id="email"
         type="email"
         class="form-item__input js-form-item"
-        aria-describedby="required-message" required>
+        aria-describedby="required-message-1" required>
       <label for="email" class="form-item__label required-field">Email</label>
-      <div id="required-message" class="visually-hidden">This field is required.</div>
+      <div id="required-message-1" class="visually-hidden">This field is required.</div>
     </div>
       <div class="form-item form-item--text">
       <input id="subject"
         type="text"
         class="form-item__input js-form-item"
-        aria-describedby="required-message" required>
+        aria-describedby="required-message-2" required>
       <label for="subject" class="form-item__label required-field">Subject</label>
-      <div id="required-message" class="visually-hidden">This field is required.</div>
+      <div id="required-message-2" class="visually-hidden">This field is required.</div>
     </div>
     <div class="form-item form-item--textarea">
     <textarea class="form-item__input js-form-item" id="message" name="messagetext"></textarea>
     <label for="message" class="form-item__label required-field">Message</label>
   </div>
-    <input type="submit" class="button " value="Submit">
+    <input name="submit" type="submit" class="button " value="Submit">
 </form>
 
                   </div>
@@ -1024,9 +1024,9 @@ min.js and .css files must be included.</p>
       &lt;input id=&quot;{{ item.label|trim|lower }}&quot;
         type=&quot;{{ item.type }}&quot;
         class=&quot;form-item__input js-form-item&quot;
-        aria-describedby=&quot;required-message&quot; required&gt;
+        aria-describedby=&quot;required-message-{{ loop.index0 }}&quot; required&gt;
       &lt;label for=&quot;{{ item.label|trim|lower }}&quot; class=&quot;form-item__label required-field&quot;&gt;{{ item.label }}&lt;/label&gt;
-      &lt;div id=&quot;required-message&quot; class=&quot;visually-hidden&quot;&gt;This field is required.&lt;/div&gt;
+      &lt;div id=&quot;required-message-{{ loop.index0 }}&quot; class=&quot;visually-hidden&quot;&gt;This field is required.&lt;/div&gt;
     &lt;/div&gt;
   {% endfor %}
   &lt;div class=&quot;form-item form-item--textarea&quot;&gt;
@@ -1036,7 +1036,8 @@ min.js and .css files must be included.</p>
   {%
     include &#039;@components/button/button.twig&#039; with {
       &quot;type&quot;: button.type,
-      &quot;value&quot;: button.value
+      &quot;value&quot;: button.value,
+      &quot;name&quot;: &quot;submit&quot;
     } only
   %}
 &lt;/form&gt;
@@ -1483,12 +1484,11 @@ Most often placed at the top of pages.</p>
                         <section class="map map--2col">
     <div class="map__wrapper">
       <div class="map__embed">
-        <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.774880930825!2d-84.26094208478435!3d34.07528468059962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f59e300bf9fbd1%3A0xff48a1f3922040f7!2s3180+North+Point+Pkwy+Building+200%2C+Suite+208%2C+Alpharetta%2C+GA+30005!5e0!3m2!1sen!2sus!4v1543593538702' width='600' height='450' frameborder='0' style='border:0' allowfullscreen></iframe>
+        <iframe title='Google Maps' src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.774880930825!2d-84.26094208478435!3d34.07528468059962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f59e300bf9fbd1%3A0xff48a1f3922040f7!2s3180+North+Point+Pkwy+Building+200%2C+Suite+208%2C+Alpharetta%2C+GA+30005!5e0!3m2!1sen!2sus!4v1543593538702' width='600' height='450' frameborder='0' style='border:0' allowfullscreen></iframe>
       </div>
     </div>
     <div class="map__text">
-            <h2 class="map__location"></h2>
-      <p class="map__address">
+                  <p class="map__address">
         [object Object]
               </p>
     </div>
@@ -1497,7 +1497,7 @@ Most often placed at the top of pages.</p>
   <div style="margin-bottom: 2rem"></div>
     <section class="map map--full">
     <div class="map__embed">
-      <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.774880930825!2d-84.26094208478435!3d34.07528468059962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f59e300bf9fbd1%3A0xff48a1f3922040f7!2s3180+North+Point+Pkwy+Building+200%2C+Suite+208%2C+Alpharetta%2C+GA+30005!5e0!3m2!1sen!2sus!4v1543593538702' width='600' height='450' frameborder='0' style='border:0' allowfullscreen></iframe>
+      <iframe title='Google Maps' src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.774880930825!2d-84.26094208478435!3d34.07528468059962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f59e300bf9fbd1%3A0xff48a1f3922040f7!2s3180+North+Point+Pkwy+Building+200%2C+Suite+208%2C+Alpharetta%2C+GA+30005!5e0!3m2!1sen!2sus!4v1543593538702' width='600' height='450' frameborder='0' style='border:0' allowfullscreen></iframe>
     </div>
   </section>
   
@@ -1546,7 +1546,7 @@ or image and includes a caption.</p>
                   <div class="kss-modifier-example">
                         <div class="media-item">
     <div class="media-item__responsive-video">
-      <iframe width='560' height='315' src='https://www.youtube.com/embed/SN1i8-kJYg0' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>
+      <iframe title='Friday 5: 5 Questions about Gatsby.js' width='560' height='315' src='https://www.youtube.com/embed/SN1i8-kJYg0' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>
     </div>
           <div class="media-item__caption">
         Video media item caption. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper.

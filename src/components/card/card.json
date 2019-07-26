@@ -1,7 +1,7 @@
 {
   "card": {
     "media": {
-      "video": "<iframe title='Friday 5: 5 Questions about Gatsby.js' width='560' height='315' src='https://www.youtube.com/embed/SN1i8-kJYg0' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>"
+      "image": "<img src='https://source.unsplash.com/PhYq704ffdA/1400x787' alt='test image' />"
     },
     "eyebrow": {
       "text": "Optional Short Title",

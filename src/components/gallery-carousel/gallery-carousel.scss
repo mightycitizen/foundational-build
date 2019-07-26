@@ -23,10 +23,6 @@
   text-align: center;
 }
 
-.gallery-carousel {
-  margin-bottom: 2rem;
-}
-
 .gallery-carousel-item {
   &:hover {
     > .gallery-carousel-item__text {
@@ -91,6 +87,8 @@
 
 // Slick overrides
 .gallery-carousel {
+  margin-bottom: 2rem;
+
   .slick-prev,
   .slick-next {
     height: 50px;

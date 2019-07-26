@@ -4,9 +4,9 @@
       <input id="{{ item.label|trim|lower }}"
         type="{{ item.type }}"
         class="form-item__input js-form-item"
-        aria-describedby="required-message" required>
+        aria-describedby="required-message-{{ loop.index0 }}" required>
       <label for="{{ item.label|trim|lower }}" class="form-item__label required-field">{{ item.label }}</label>
-      <div id="required-message" class="visually-hidden">This field is required.</div>
+      <div id="required-message-{{ loop.index0 }}" class="visually-hidden">This field is required.</div>
     </div>
   {% endfor %}
   <div class="form-item form-item--textarea">
@@ -16,7 +16,8 @@
   {%
     include '@components/button/button.twig' with {
       "type": button.type,
-      "value": button.value
+      "value": button.value,
+      "name": "submit"
     } only
   %}
 </form>

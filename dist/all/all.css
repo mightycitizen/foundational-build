@@ -485,6 +485,12 @@ li {
 .body-text {
   line-height: 1.625; }
 
+.breadcrumb a {
+  text-decoration: none;
+  color: #0C5C7F; }
+  .breadcrumb a:hover {
+    text-decoration: underline; }
+
 .button,
 input[type='submit'] {
   background-color: #3300CC;
@@ -1256,3 +1262,13 @@ input[type='submit'] {
   margin-bottom: 20px; }
   .field__item.clearfix .field__item.clearfix {
     margin-bottom: 0; }
+
+.tabs .is-active {
+  background-color: #888b8d; }
+  .tabs .is-active a {
+    color: #404040; }
+
+.tabs a {
+  color: #0C5C7F; }
+  .tabs a:hover {
+    color: #0C5C7F; }

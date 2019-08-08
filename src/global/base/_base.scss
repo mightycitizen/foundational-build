@@ -79,6 +79,25 @@ h6 {
   margin: 0 0 1rem;
 }
 
+h1 {
+  @include heading1;
+}
+
+h2 {
+  @include heading2;
+}
+
+h3 {
+  @include heading3;
+}
+
+h4 {
+  @include heading4;
+}
+
+h5 {
+  @include heading5;
+}
 /* Grouping content
    ========================================================================== */
 
@@ -291,6 +310,16 @@ button::-moz-focus-inner,
   padding: 0;
 }
 
+input[type='submit' i] {
+  border-width: 0;
+  background-color: $color-admin-blue;
+  color: $color-white;
+
+  &:hover {
+    background-color: darken($color: $color-admin-blue, $amount: 10%);
+  }
+}
+
 /**
  * Restore the focus styles unset by the previous rule.
  */
@@ -449,4 +478,8 @@ li {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.description {
+  font-style: italic;
 }

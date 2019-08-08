@@ -61,6 +61,46 @@ h6 {
   font-size: 1.25rem;
   margin: 0 0 1rem; }
 
+h1 {
+  font-family: 'Neue Haas Grotesk W01 Disp', 'Arial', sans-serif;
+  color: #464646;
+  font-size: 3.6rem; }
+  @media (min-width: 64em) {
+    h1 {
+      font-size: 4.4rem; } }
+
+h2 {
+  font-family: 'Neue Haas Grotesk W01 Disp', 'Arial', sans-serif;
+  color: #464646;
+  font-size: 3rem; }
+  @media (min-width: 64em) {
+    h2 {
+      font-size: 3.8rem; } }
+
+h3 {
+  font-family: 'Neue Haas Grotesk W01 Disp', 'Arial', sans-serif;
+  color: #464646;
+  font-size: 2.4rem; }
+  @media (min-width: 64em) {
+    h3 {
+      font-size: 3rem; } }
+
+h4 {
+  font-family: 'Neue Haas Grotesk W01 Disp', 'Arial', sans-serif;
+  color: #464646;
+  font-size: 2rem; }
+  @media (min-width: 64em) {
+    h4 {
+      font-size: 2.6rem; } }
+
+h5 {
+  font-family: 'Neue Haas Grotesk W01 Disp', 'Arial', sans-serif;
+  color: #464646;
+  font-size: 1.8rem; }
+  @media (min-width: 64em) {
+    h5 {
+      font-size: 2.1rem; } }
+
 /* Grouping content
    ========================================================================== */
 /**
@@ -264,6 +304,13 @@ button::-moz-focus-inner,
   border-style: none;
   padding: 0; }
 
+input[type='submit' i] {
+  border-width: 0;
+  background-color: #0C5C7F;
+  color: #FFF; }
+  input[type='submit' i]:hover {
+    background-color: #083a50; }
+
 /**
  * Restore the focus styles unset by the previous rule.
  */
@@ -418,3 +465,6 @@ li {
   margin: 0;
   padding: 0;
   list-style: none; }
+
+.description {
+  font-style: italic; }

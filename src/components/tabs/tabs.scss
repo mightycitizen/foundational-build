@@ -1,0 +1,21 @@
+// Import site utilities.
+@import '../../global/utils/init';
+
+.tabs {
+  .is-active {
+    background-color: $color-oslo-gray;
+
+    a {
+      color: $color-black;
+    }
+
+  }
+
+  a {
+    color: $color-admin-blue;
+
+    &:hover {
+      color: $color-admin-blue;
+    }
+  }
+}

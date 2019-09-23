@@ -35,7 +35,7 @@ function rain_theme_preprocess_paragraph(&$variables) {
       for ($c = 0; $c < $count; $c++) {
         $card = $paragraph->get('field_card')[$c]->entity;
         $image_url = file_create_url($card->get('field_media')->entity->get('field_image')->entity->getFileUri());
-        if ($card->hasField('field_thumb')) {
+        if ($card->hasField('field_thumb') && !empty($card->get('field_thumb')->entity)) {
           $thumb_url = file_create_url($card->get('field_thumb')->entity->getFileUri());
         }
         else {

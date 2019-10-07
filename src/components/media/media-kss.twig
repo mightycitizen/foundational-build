@@ -1,9 +1,0 @@
-{% for item in items %}
-  {%
-    include '@components/media/media.twig' with {
-      "image": item.image,
-      "video": item.video,
-      "caption": item.caption
-    } only
-  %}
-{% endfor %}

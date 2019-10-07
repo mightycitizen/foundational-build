@@ -132,7 +132,7 @@ rules:
   no-extends: 1
 
   # Prefer no ID selectors.
-  no-ids: 0
+  no-ids: 1
 
   # Prefer no importants.
   no-important: 1

@@ -1,7 +1,7 @@
 {
   "button": {
     "url": "",
-    "modifier": "",
+    "modifier": "button--small",
     "text": "Button",
     "name": "action",
     "type": "button",

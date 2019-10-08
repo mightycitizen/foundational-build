@@ -8,7 +8,7 @@
   padding: 0; }
   @media screen and (min-width: 768px) {
     .tabs.primary::after {
-      background-color: #4F5B66;
+      background-color: #4f5b66;
       bottom: 0;
       content: '';
       display: block;
@@ -28,9 +28,9 @@
         display: inline-block;
         margin: 0 8px 0 0; } }
   .tabs.primary a {
-    background-color: #A7ADBA;
-    border: 1px solid #4F5B66;
-    color: #4F5B66;
+    background-color: #a7adba;
+    border: 1px solid #4f5b66;
+    color: #4f5b66;
     display: block;
     padding: 8px 24px;
     text-decoration: none; }
@@ -39,14 +39,14 @@
         border-bottom: 0; } }
   .tabs.primary a:focus,
   .tabs.primary a:hover {
-    background-color: #FFFFFF;
-    border: 1px solid #4F5B66;
+    background-color: #ffffff;
+    border: 1px solid #4f5b66;
     border-bottom: 0;
-    color: #1B2B34; }
+    color: #1b2b34; }
   .tabs.primary .is-active a {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-bottom: 0;
-    color: #1B2B34; }
+    color: #1b2b34; }
 
 .tabs.secondary {
   margin-top: 10px; }
@@ -56,16 +56,16 @@
     margin: 8px 16px 4px 0; }
   .tabs.secondary a {
     background-color: transparent;
-    border-bottom: 2px solid #65737E;
-    color: #4F5B66;
+    border-bottom: 2px solid #65737e;
+    color: #4f5b66;
     display: block;
     padding: 8px 12px 4px; }
   .tabs.secondary .is-active a,
   .tabs.secondary a:focus,
   .tabs.secondary a:hover {
     background-color: transparent;
-    border-color: #1B2B34;
-    color: #1B2B34;
+    border-color: #1b2b34;
+    color: #1b2b34;
     text-decoration: none; }
 
 .tabs__local-actions {

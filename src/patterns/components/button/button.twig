@@ -1,1 +1,7 @@
-<button type="button" class="button {{ modifier_class }}"{{ modifier_class == 'is-disabled' ? ' disabled' }}>{{ text }}</button>
+{% if button.url %}
+  <a href="{{ button.url }}" class="button {{ button.modifier ? button.modifier : '' }}">{{ button.text }}</a>
+{% elseif button.value %}
+  <input name="{{ button.name }}" type="{{ button.type }}" class="button {{ button.modifier ? ' ' ~ button.modifier }}" value="{{ button.value }}">
+{% else %}
+  <button name="{{ button.name }}" type="{{ button.type }}" class="button {{ button.modifier ? ' ' ~ button.modifier }}">{{ button.text }}</button>
+{% endif %}

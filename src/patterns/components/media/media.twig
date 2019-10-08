@@ -1,14 +1,14 @@
 <div class="media-item">
-  {% if video %}
+  {% if media.video %}
     <div class="media-item__responsive-video">
-      {{ video }}
+      {{ media.video }}
     </div>
   {% else %}
-    {{ image }}
+    {{ media.image }}
   {% endif %}
-  {% if caption %}
+  {% if media.caption %}
     <div class="media-item__caption">
-      {{ caption }}
+      {{ media.caption }}
     </div>
   {% endif %}
 </div>

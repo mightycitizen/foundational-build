@@ -1,10 +1,7 @@
 {
   "button": {
-    "url": "",
+    "url": "https://www.mediacurrent.com",
     "modifier": "button--small",
-    "text": "Button",
-    "name": "action",
-    "type": "button",
-    "value": ""
+    "text": "Small Button"
   }
 }

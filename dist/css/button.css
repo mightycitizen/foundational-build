@@ -1,30 +1,25 @@
-.button {
+.button,
+input[type='submit'] {
+  background-color: #3300cc;
+  border: 2px solid #3300cc;
+  color: #ffffff;
   display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
   text-align: center;
-  line-height: 1;
-  cursor: pointer;
-  background-color: #5FB3B3;
-  font-weight: bold;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
-  vertical-align: middle;
-  border: 1px solid transparent;
-  border-radius: 0;
-  padding: 10px 20px; }
-  .button:hover, .button:active {
-    color: #FFFFFF;
-    background-color: #408686; }
-  .button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed; }
-
-.button--primary {
-  padding: 10px 20px;
-  color: #6699CC;
-  background-color: #FFFFFF;
-  border: 3px solid #FFFFFF;
-  border-radius: 3px; }
-  .button--primary:hover, .button--primary:active {
-    color: #6699CC;
-    text-decoration: none;
-    border: 3px solid #3973ac;
-    background-color: rgba(255, 255, 255, 0.85); }
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.25s, color 0.25s; }
+  .button:hover,
+  input[type='submit']:hover {
+    background-color: #ffffff;
+    color: #3300cc; }
+  @media screen and (min-width: 768px) {
+    .button,
+    input[type='submit'] {
+      font-size: 1rem;
+      padding: 1rem 2rem; } }
+  .button.button--small,
+  input[type='submit'].button--small {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem; }

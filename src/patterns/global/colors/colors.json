@@ -24,6 +24,10 @@
       {
         "name": "$color-danube",
         "hex": "#6699CC"
+      },
+      {
+        "name": "$color-blue",
+        "hex": "#3300cc"
       }
     ],
     "Black &amp; White": [

@@ -2,9 +2,9 @@
   "button": {
     "url": "",
     "modifier": "",
-    "text": "Button",
-    "name": "action",
+    "text": "",
+    "name": "input",
     "type": "button",
-    "value": ""
+    "value": "Button Input"
   }
 }

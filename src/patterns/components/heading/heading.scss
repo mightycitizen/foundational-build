@@ -1,0 +1,14 @@
+// Heading
+//
+// This is the heading component. It provides basic styles for headings throughout the site.
+
+// Import site utilities.
+@import '../../global/utils/init';
+
+.heading--link {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

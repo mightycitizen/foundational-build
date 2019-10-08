@@ -1,5 +1,5 @@
 {% if button.url %}
-  <a href="{{ button.url }}" class="button {{ button.modifier ? button.modifier : '' }}">{{ button.text }}</a>
+  <a href="{{ button.url }}" class="button{{ button.modifier ? button.modifier : '' }}">{{ button.text }}</a>
 {% elseif button.value %}
   <input name="{{ button.name }}" type="{{ button.type }}" class="button {{ button.modifier ? ' ' ~ button.modifier }}" value="{{ button.value }}">
 {% else %}

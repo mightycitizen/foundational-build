@@ -1,0 +1,49 @@
+<article class="card{{ card.modifier ? ' ' ~ card.modifier }}">
+
+  <div class="card__media">
+    {% if card.media.image %}
+      {{ card.media.image }}
+    {% elseif card.media.video %}
+      {{ card.media.video }}
+    {% endif %}
+      {{ card.media.caption }}
+  </div>
+
+  <div class="card__content">
+    {% if card.eyebrow %}
+      {%
+        include '@rain_theme/eyebrow/eyebrow.twig' with {
+          "text": card.eyebrow.text,
+          "classes": card.eyebrow.classes,
+        } only
+      %}
+    {% endif %}
+
+    {%
+      include '@rain_theme/heading/heading.twig' with {
+        "heading": card.heading
+      } only
+    %}
+
+    {% if card.subhead %}
+      {%
+        include '@rain_theme/heading/heading.twig' with {
+          "heading": card.subhead
+        } only
+      %}
+    {% endif %}
+
+    {% if card.text %}
+      {%
+        include '@rain_theme/body-text/body-text.twig' with {
+          "body_text": card.card_text
+        } only
+      %}
+    {% endif %}
+
+    {% if card.link %}
+      <a href="{{ card.link.url }}" class="card__link">{{ card.link.text }}</a>
+    {% endif %}
+  </div>
+
+</article>

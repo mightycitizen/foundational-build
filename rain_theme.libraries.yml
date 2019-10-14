@@ -29,6 +29,38 @@ global:
 #     - rain_theme/clearfix
 #     - rain_theme/visually-hidden
 
+button:
+  css:
+    component:
+      dist/css/button.css: {}
+
+card:
+  css:
+    component:
+      dist/css/card.css: {}
+
+card-list:
+  css:
+    component:
+      dist/css/card-list.css: {}
+  dependencies:
+    - rain_theme/card
+
+eyebrow:
+  css:
+    component:
+      dist/css/eyebrow.css: {}
+
+heading:
+  css:
+    component:
+      dist/css/heading.css: {}
+
+media:
+  css:
+    component:
+      dist/css/media.css: {}
+
 message:
   css:
     component:
@@ -37,8 +69,3 @@ tabs:
   css:
     component:
       dist/css/tabs.css: {}
-button:
-  css:
-    component:
-      dist/css/button.css: {}
-

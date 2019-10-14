@@ -1,3 +1,5 @@
+{{ attach_library('rain_theme/card') }}
+
 <article class="card{{ card.modifier ? ' ' ~ card.modifier }}">
 
   <div class="card__media">
@@ -13,8 +15,7 @@
     {% if card.eyebrow %}
       {%
         include '@rain_theme/eyebrow/eyebrow.twig' with {
-          "text": card.eyebrow.text,
-          "classes": card.eyebrow.classes,
+          "eyebrow": card.eyebrow
         } only
       %}
     {% endif %}

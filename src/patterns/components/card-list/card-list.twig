@@ -1,0 +1,25 @@
+{{ attach_library('appliedsystems/card-list') }}
+
+{% if section_title %}
+    {%
+      include '@rain_theme/heading/heading.twig' with {
+        "title": section_title,
+        "heading_level": 2,
+        "classes": "card-list__title"
+      } only
+    %}
+{% endif %}
+
+{% block card_items %}
+  <ul class="card-list">
+    {% for item in items %}
+      <li class="card-list__item">
+        {%
+          include '@rain_theme/card/card.twig' with {
+            "card": item.card
+          } only
+        %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

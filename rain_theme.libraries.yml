@@ -29,6 +29,13 @@ global:
 #     - rain_theme/clearfix
 #     - rain_theme/visually-hidden
 
+accordion:
+  css:
+    component:
+      dist/css/accordion.css: {}
+  js:
+    dist/js/accordion.es6.js: {}
+
 button:
   css:
     component:

@@ -12,8 +12,7 @@
       {% if map.eyebrow %}
         {%
           include '@rain_theme/eyebrow/eyebrow.twig' with {
-            "text": map.eyebrow.text,
-            "classes": map.eyebrow.classes,
+            "eyebrow": map.eyebrow
           } only
         %}
       {% endif %}

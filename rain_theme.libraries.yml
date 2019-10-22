@@ -63,6 +63,11 @@ heading:
     component:
       dist/css/heading.css: {}
 
+map:
+  css:
+    component:
+      dist/css/map.css: {}
+
 media:
   css:
     component:
@@ -72,6 +77,7 @@ message:
   css:
     component:
       dist/css/message.css: {}
+
 tabs:
   css:
     component:

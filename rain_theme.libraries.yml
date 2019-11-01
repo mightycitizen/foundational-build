@@ -60,9 +60,10 @@ colorbox:
   js:
     dist/js/jquery.colorbox.js: {}
   dependencies:
-    - core/jquery
     - core/drupal
+    - core/drupalSettings
     - core/jquery.once
+    - core/jquery
 
 gallery-lightbox:
   css:

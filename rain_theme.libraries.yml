@@ -88,6 +88,15 @@ eyebrow:
     component:
       dist/css/eyebrow.css: {}
 
+gallery-carousel:
+  css:
+    component:
+      dist/css/gallery-carousel.css: {}
+  js:
+    dist/js/gallery-carousel.es6.js: {}
+  dependencies:
+    - rain_theme/slick
+
 heading:
   css:
     component:

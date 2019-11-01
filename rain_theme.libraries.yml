@@ -53,6 +53,15 @@ card-list:
   dependencies:
     - rain_theme/card
 
+carousel:
+  css:
+    component:
+      dist/css/carousel.css: {}
+  js:
+    dist/js/carousel.es6.js: {}
+  dependencies:
+    - rain_theme/slick
+
 eyebrow:
   css:
     component:
@@ -77,6 +86,14 @@ message:
   css:
     component:
       dist/css/message.css: {}
+
+slick:
+  css:
+    theme:
+      dist/css/slick.css: {}
+      dist/css/slick-theme.css: {}
+  js:
+    dist/js/slick.min.js: {}
 
 tabs:
   css:

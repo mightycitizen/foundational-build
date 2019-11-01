@@ -53,6 +53,15 @@ card-list:
   dependencies:
     - rain_theme/card
 
+carousel:
+  css:
+    component:
+      dist/css/carousel.css: {}
+  js:
+    dist/js/carousel.es6.js: {}
+  dependencies:
+    - rain_theme/slick
+
 colorbox:
   css:
     theme:
@@ -98,6 +107,19 @@ message:
   css:
     component:
       dist/css/message.css: {}
+
+slick:
+  css:
+    theme:
+      dist/css/slick.css: {}
+      dist/css/slick-theme.css: {}
+  js:
+    dist/js/slick.min.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/jquery
 
 tabs:
   css:

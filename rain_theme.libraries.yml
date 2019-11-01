@@ -53,6 +53,27 @@ card-list:
   dependencies:
     - rain_theme/card
 
+colorbox:
+  css:
+    theme:
+      dist/css/colorbox.css: {}
+  js:
+    dist/js/jquery.colorbox.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/jquery
+
+gallery-lightbox:
+  css:
+    theme:
+      dist/css/gallery-lightbox.css: {}
+  js:
+    dist/js/gallery-lightbox.js: {}
+  dependencies:
+    - rain_theme/colorbox
+
 eyebrow:
   css:
     component:

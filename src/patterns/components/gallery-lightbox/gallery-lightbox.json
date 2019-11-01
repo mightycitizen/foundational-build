@@ -3,43 +3,43 @@
   "intro_text": "<p>Optional summary text, turpis at luctus finibus, erat lectus convallis velit, at sodales purus lacus quis magna. Curabitur imperdiet sapien libero, fringilla ullamcorper nibh ullamcorper vitae. Proin sed luctus augue.</p>",
   "items": [
     {
-      "media": "https://source.unsplash.com/FIKD9t5_5zQ/720x405",
-      "media_thumb": "https://source.unsplash.com/FIKD9t5_5zQ/320x180",
+      "media": "../../../dist/images/gallery1.jpg",
+      "media_thumb": "../../../dist/images/gallery1--thumb.jpg",
       "media_description": "Surfing photo 1 here!"
     },
     {
-      "media": "https://source.unsplash.com/FIKD9t5_5zQ/720x405",
-      "media_thumb": "https://source.unsplash.com/FIKD9t5_5zQ/320x180",
+      "media": "../../../dist/images/gallery2.jpg",
+      "media_thumb": "../../../dist/images/gallery2--thumb.jpg",
       "media_description": "Surfing photo 2 here!"
     },
     {
-      "media": "https://source.unsplash.com/FIKD9t5_5zQ/720x405",
-      "media_thumb": "https://source.unsplash.com/FIKD9t5_5zQ/320x180",
+      "media": "../../../dist/images/gallery3.jpg",
+      "media_thumb": "../../../dist/images/gallery3--thumb.jpg",
       "media_description": "Surfing photo 3 here!"
     },
     {
-      "media": "https://source.unsplash.com/FIKD9t5_5zQ/720x405",
-      "media_thumb": "https://source.unsplash.com/FIKD9t5_5zQ/320x180",
+      "media": "../../../dist/images/gallery4.jpg",
+      "media_thumb": "../../../dist/images/gallery4--thumb.jpg",
       "media_description": "Surfing photo 4 here!"
     },
     {
-      "media": "https://source.unsplash.com/FIKD9t5_5zQ/720x405",
-      "media_thumb": "https://source.unsplash.com/FIKD9t5_5zQ/320x180",
+      "media": "../../../dist/images/gallery5.jpg",
+      "media_thumb": "../../../dist/images/gallery5--thumb.jpg",
       "media_description": "Surfing photo 5 here!"
     },
     {
-      "media": "https://source.unsplash.com/FIKD9t5_5zQ/720x405",
-      "media_thumb": "https://source.unsplash.com/FIKD9t5_5zQ/320x180",
+      "media": "../../../dist/images/gallery6.jpg",
+      "media_thumb": "../../../dist/images/gallery6--thumb.jpg",
       "media_description": "Surfing photo 6 here!"
     },
     {
-      "media": "https://source.unsplash.com/FIKD9t5_5zQ/720x405",
-      "media_thumb": "https://source.unsplash.com/FIKD9t5_5zQ/320x180",
+      "media": "../../../dist/images/gallery7.jpg",
+      "media_thumb": "../../../dist/images/gallery7--thumb.jpg",
       "media_description": "Surfing photo 7 here!"
     },
     {
-      "media": "https://source.unsplash.com/FIKD9t5_5zQ/720x405",
-      "media_thumb": "https://source.unsplash.com/FIKD9t5_5zQ/320x180",
+      "media": "../../../dist/images/gallery8.jpg",
+      "media_thumb": "../../../dist/images/gallery8--thumb.jpg",
       "media_description": "Surfing photo 8 here!"
     }
   ]

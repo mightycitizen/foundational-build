@@ -23,7 +23,9 @@
     {% for item in items %}
       {%
         include '@rain_theme/gallery-lightbox/gallery-lightbox-item.twig' with {
-          "item": item
+          "media": item.media,
+          "media_thumb": item.media_thumb,
+          "media_description": item.media_description
         } only
       %}
     {% endfor %}

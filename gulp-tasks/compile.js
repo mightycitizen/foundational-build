@@ -25,7 +25,7 @@ function handleError(err) {
 module.exports = {
   // Compile Sass.
   compileSass: function() {
-    return src(['./src/patterns/**/**/*.scss', './src/vendor/**/*.css'])
+    return src('./src/patterns/**/**/*.scss')
       .pipe(sass({ outputStyle: 'nested' }).on('error', handleError))
       .pipe(
         prefix({
@@ -43,9 +43,7 @@ module.exports = {
 
   // Compile JavaScript.
   compileJS: function() {
-    return src(['./src/patterns/**/**/*.js', './src/vendor/**/*.js'], {
-      base: './'
-    })
+    return src(['./src/patterns/**/**/*.js'], { base: './' })
       .pipe(sourcemaps.init())
       .pipe(babel())
       .pipe(

@@ -58,11 +58,10 @@ colorbox:
     theme:
       dist/css/colorbox.css: {}
   js:
-    dist/js/jquery.colorbox-min.js: {}
+    dist/js/jquery.colorbox.js: {}
   dependencies:
     - core/jquery
     - core/drupal
-    - core/jquery.once
 
 gallery-lightbox:
   css:

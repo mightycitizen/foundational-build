@@ -1,7 +1,0 @@
-{% if url %}
-  <a href="{{ url }}" class="button {{ modifier_class }}">{{ text }}</a>
-{% elseif value %}
-  <input name="{{ name }}" type="{{ type }}" class="button {{ modifier_class }}" value="{{ value }}">
-{% else %}
-  <button name="{{ name }}" type="{{ type }}" class="button {{ modifier_class }}">{{ text }}</button>
-{% endif %}

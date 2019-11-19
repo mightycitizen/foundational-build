@@ -1,9 +1,0 @@
-{% for item in items %}
-  {%
-    include '@components/map/map.twig' with {
-      map: item
-    } only
-  %}
-  {# <div> below only included to add space between examples in style guide. #}
-  <div style="margin-bottom: 2rem"></div>
-{% endfor %}

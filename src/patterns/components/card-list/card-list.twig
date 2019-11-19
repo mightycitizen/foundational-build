@@ -10,16 +10,16 @@
     %}
 {% endif %}
 
-{% block card_items %}
-  <ul class="card-list">
-    {% for item in items %}
-      <li class="card-list__item">
-        {%
-          include '@rain_theme/card/card.twig' with {
-            "card": item.card
-          } only
-        %}
-      </li>
-    {% endfor %}
-  </ul>
-{% endblock %}
+<ul class="card-list">
+  {% block card_items %}
+      {% for item in items %}
+        <li class="card-list__item">
+          {%
+            include '@rain_theme/card/card.twig' with {
+              "card": item.card
+            } only
+          %}
+        </li>
+      {% endfor %}
+  {% endblock %}
+</ul>

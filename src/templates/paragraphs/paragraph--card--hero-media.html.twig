@@ -51,24 +51,26 @@
   } only %}
 {% else %}
   {% include '@rain_theme/hero/hero.twig' with {
-    "media": {
-      "image": content.field_media
-    },
-    "eyebrow": {
-      "text": content.field_short_title
-    },
-    "heading": {
-      "title": content.field_title,
-      "level": "2",
-      "classes": "hero__heading"
-    },
-    "body": {
-      "text": content.field_summary,
-      "classes": "hero__body"
-    },
-    "button": {
-      "text": content.field_link[0]['#title'],
-      "url": content.field_link[0]['#url']
+    "hero": {
+      "media": {
+        "image": content.field_media
+      },
+      "eyebrow": {
+        "text": content.field_short_title
+      },
+      "heading": {
+        "title": content.field_title,
+        "level": "2",
+        "classes": "hero__heading"
+      },
+      "body": {
+        "text": content.field_summary,
+        "classes": "hero__body"
+      },
+      "button": {
+        "text": content.field_link[0]['#title'],
+        "url": content.field_link[0]['#url']
+      }
     }
   } only %}
 {% endif %}

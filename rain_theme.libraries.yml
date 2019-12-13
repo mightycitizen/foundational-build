@@ -97,6 +97,11 @@ gallery-carousel:
   dependencies:
     - rain_theme/slick
 
+hero:
+  css:
+    component:
+      dist/css/hero.css: {}
+
 heading:
   css:
     component:

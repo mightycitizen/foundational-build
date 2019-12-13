@@ -1,6 +1,6 @@
 {{ attach_library('rain_theme/card') }}
 
-<article class="card{{ card.modifier ? ' ' ~ card.modifier }}
+<article class="card {{ card.modifier_class ? ' ' ~ card.modifier_class }}
   {{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
 

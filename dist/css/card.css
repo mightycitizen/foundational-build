@@ -1,0 +1,49 @@
+.card {
+  background-color: #FFF; }
+  .card .card__content {
+    margin: 2rem 0 0; }
+
+.card__eyebrow {
+  display: block;
+  font-size: 0.75rem; }
+
+.card__title {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-top: 1.5rem; }
+  @media screen and (min-width: 768px) {
+    .card__title {
+      font-size: 2rem; } }
+
+.card__subhead {
+  font-size: 1.25rem;
+  font-weight: normal; }
+  @media screen and (min-width: 768px) {
+    .card__subhead {
+      font-size: 1.5rem; } }
+
+.card__link {
+  display: inline-block;
+  margin-top: 1.5rem; }
+
+.card--wide {
+  display: flex;
+  flex-direction: column; }
+  @media screen and (min-width: 544px) {
+    .card--wide {
+      flex-direction: row; } }
+  .card--wide .card__media {
+    flex: 1; }
+  .card--wide .card__content {
+    flex: 1; }
+    @media screen and (min-width: 544px) {
+      .card--wide .card__content {
+        margin: 0 0 0 1.5rem; } }
+  .card--wide .card__eyebrow {
+    margin-top: 0; }
+
+@media screen and (min-width: 544px) {
+  .card--media-right {
+    flex-direction: row-reverse; }
+    .card--media-right .card__content {
+      margin: 0 1.5rem 0 0; } }

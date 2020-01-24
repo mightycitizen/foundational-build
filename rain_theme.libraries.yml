@@ -74,6 +74,11 @@ colorbox:
     - core/jquery.once
     - core/jquery
 
+columns:
+  css:
+    component:
+      dist/css/columns.css: {}
+
 gallery-lightbox:
   css:
     theme:

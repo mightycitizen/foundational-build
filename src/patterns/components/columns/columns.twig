@@ -1,0 +1,17 @@
+{{ attach_library('rain_theme/columns') }}
+
+{#
+  This file is intended to only provide an
+  example presentation of columns.
+  The columns__items may not be needed in basic implementations.
+#}
+
+<div class="columns">
+  {% block column_items %}
+    {% for item in items %}
+      <div class="columns__item">
+        {{ item.content }}
+      </div>
+    {% endfor %}
+  {% endblock %}
+</div>

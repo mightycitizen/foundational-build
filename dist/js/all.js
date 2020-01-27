@@ -67,11 +67,6 @@
       this.slickCardCarousel();
     },
     slickCardCarousel: function slickCardCarousel() {
-      // $('.card-carousel__slick').not('.slick-initialized').slick({
-      //   dots: true,
-      //   infinite: true,
-      //   slidesToShow: 3
-      // });
       $('.card-carousel__slick').slick({
         dots: true,
         infinite: false,

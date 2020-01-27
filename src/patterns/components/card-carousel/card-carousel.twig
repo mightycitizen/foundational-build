@@ -1,0 +1,34 @@
+{{ attach_library('rain_theme/card-carousel') }}
+
+<section class="card-carousel__wrapper{{ attributes ? ' ' ~ attributes.class}}"
+  {{- attributes ? attributes|without(class) -}}>
+  {% if section_title %}
+    {%
+      include '@rain_theme/heading/heading.twig' with {
+        "heading": {
+          "title": section_title,
+          "heading_level": 2,
+          "classes": "card-carousel__title"
+        }
+      } only
+    %}
+  {% endif %}
+  <ul class="card-carousel__list card-carousel__slick">
+    {% block carousel_items %}
+      {% for item in items %}
+        <li class="card-carousel-item">
+          {% embed '@rain_theme/card/card.twig' with {
+            "card": item.card
+          } %}
+            {% block card_media %}
+            <a href="{{ item.card.media.image }}" title="{{ item.card.media.caption }}" class="card-carousel-item__media">
+              <img src="{{ item.card.media.thumb }}" alt="{{ item.card.media.caption }}" class="card-carousel-item__media-thumb"/>
+              <img src="../../../dist/images/expand-icon.svg" class="card-carousel-item__expand" alt="View full media."/>
+            </a>
+            {% endblock %}
+          {% endembed %}
+        </li>
+      {% endfor %}
+    {% endblock %}
+  </ul>
+</section>

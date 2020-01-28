@@ -46,6 +46,15 @@ card:
     component:
       dist/css/card.css: {}
 
+card-carousel:
+  css:
+    component:
+      dist/css/card-carousel.css: {}
+  dependencies:
+    - rain_theme/card
+    - rain_theme/slick
+    - rain_theme/colorbox
+
 card-list:
   css:
     component:

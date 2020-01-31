@@ -21,7 +21,7 @@
     {% if hero.heading %}
       {%
         include '@rain_theme/heading/heading.twig' with {
-          "heading": hero.heading
+          "heading": hero.heading,
         } only
       %}
     {% endif %}
@@ -30,7 +30,7 @@
       {%
         include '@rain_theme/body-text/body-text.twig' with {
           "body_text": hero.body.body_text,
-          "classes": hero.body.classes
+          "modifier": hero.body.classes
         } only
       %}
     {% endif %}

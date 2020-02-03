@@ -38,12 +38,14 @@
  * @ingroup themeable
  */
 #}
-{%
-  include '@rain_theme/heading/heading.twig' with {
-    "heading": {
-      "title": content.field_title,
-      "heading_level": "2"
-    }
-  } only
-%}
+{% if content.field_title %}
+  {%
+    include '@rain_theme/heading/heading.twig' with {
+      "heading": {
+        "title": content.field_title,
+        "heading_level": "2"
+      }
+    } only
+  %}
+{% endif %}
 {{ content|without('field_title') }}

@@ -392,6 +392,9 @@ input[type='submit'] {
   @media screen and (min-width: 768px) {
     .carousel-item__title {
       font-size: 3rem; } }
+  @media screen and (max-width: 543px) {
+    .carousel-item__title {
+      font-size: 1.25rem; } }
 
 .carousel__slick .slick-prev,
 .carousel__slick .slick-next {
@@ -406,6 +409,10 @@ input[type='submit'] {
   .carousel__slick .slick-prev::before,
   .carousel__slick .slick-next::before {
     font-size: 48px; }
+    @media screen and (max-width: 543px) {
+      .carousel__slick .slick-prev::before,
+      .carousel__slick .slick-next::before {
+        font-size: 38px; } }
 
 .carousel__slick .slick-prev {
   left: 20%; }

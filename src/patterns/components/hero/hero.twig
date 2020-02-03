@@ -13,7 +13,7 @@
     {% if hero.eyebrow %}
       {%
         include '@rain_theme/eyebrow/eyebrow.twig' with {
-          "eyebrow": hero.eyebrow,
+          "eyebrow": hero.eyebrow
         } only
       %}
     {% endif %}
@@ -30,7 +30,7 @@
       {%
         include '@rain_theme/body-text/body-text.twig' with {
           "body_text": hero.body.body_text,
-          "classes": hero.body.classes
+          "modifier": hero.body.classes
         } only
       %}
     {% endif %}

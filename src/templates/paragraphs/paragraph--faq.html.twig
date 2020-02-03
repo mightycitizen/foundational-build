@@ -38,12 +38,16 @@
  * @ingroup themeable
  */
 #}
-{%
-  include '@rain_theme/heading/heading.twig' with {
-    "title": content.field_title,
-    "heading_level": "2"
-  } only
-%}
+{% if content.field_title %}
+  {%
+    include '@rain_theme/heading/heading.twig' with {
+      "heading": {
+        "title": content.field_title,
+        "heading_level": "2"
+      }
+    } only
+  %}
+{% endif %}
 {% embed '@rain_theme/accordion/accordion.twig' with { content: content } only %}
   {% block accordion_items %}
     {{ content.field_faq_items }}

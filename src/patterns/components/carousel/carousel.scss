@@ -7,7 +7,7 @@
 
 .carousel-item__content {
   @include center-align(absolute);
-  background: $color-alto;
+  background: $color-transparent-white;
   min-width: 300px;
   padding: 1rem 0.5rem;
   top: 35%;

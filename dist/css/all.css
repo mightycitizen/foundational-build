@@ -361,10 +361,6 @@ input[type='submit'] {
     .card--media-right .card__content {
       margin: 0 1.5rem 0 0; } }
 
-.carousel__wrapper {
-  margin: 0 auto;
-  max-width: 1024px; }
-
 .carousel-item {
   position: relative; }
 

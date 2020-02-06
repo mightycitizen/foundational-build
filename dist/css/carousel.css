@@ -1,7 +1,3 @@
-.carousel__wrapper {
-  margin: 0 auto;
-  max-width: 1024px; }
-
 .carousel-item {
   position: relative; }
 
@@ -11,7 +7,7 @@
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: #ddd;
+  background: rgba(255, 255, 255, 0.8);
   min-width: 300px;
   padding: 1rem 0.5rem;
   top: 35%;
@@ -29,6 +25,9 @@
   @media screen and (min-width: 768px) {
     .carousel-item__title {
       font-size: 3rem; } }
+  @media screen and (max-width: 543px) {
+    .carousel-item__title {
+      font-size: 1.25rem; } }
 
 .carousel__slick .slick-prev,
 .carousel__slick .slick-next {
@@ -43,6 +42,10 @@
   .carousel__slick .slick-prev::before,
   .carousel__slick .slick-next::before {
     font-size: 48px; }
+    @media screen and (max-width: 543px) {
+      .carousel__slick .slick-prev::before,
+      .carousel__slick .slick-next::before {
+        font-size: 38px; } }
 
 .carousel__slick .slick-prev {
   left: 20%; }

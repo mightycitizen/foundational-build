@@ -1,18 +1,13 @@
 // Import site utilities.
 @import '../../global/utils/init';
 
-.carousel__wrapper {
-  margin: 0 auto;
-  max-width: 1024px;
-}
-
 .carousel-item {
   position: relative;
 }
 
 .carousel-item__content {
   @include center-align(absolute);
-  background: $color-alto;
+  background: $color-transparent-white;
   min-width: 300px;
   padding: 1rem 0.5rem;
   top: 35%;
@@ -25,6 +20,10 @@
 
 .carousel-item__title {
   @include wire-large-heading;
+
+  @include breakpoint($bp-under-xsm) {
+    font-size: 1.25rem;
+  }
 }
 
 // Overriding Slick styles for style guide
@@ -46,6 +45,10 @@
 
     &::before {
       font-size: 48px;
+
+      @include breakpoint($bp-under-xsm) {
+        font-size: 38px;
+      }
     }
   }
 

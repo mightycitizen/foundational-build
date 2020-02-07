@@ -6,6 +6,18 @@
   The columns__items may not be needed in basic implementations.
 #}
 
+{% if section_title %}
+  {%
+    include '@rain_theme/heading/heading.twig' with {
+      "heading": {
+        "title": section_title,
+        "heading_level": 2,
+        "modifier": "columns__title"
+      }
+    } only
+  %}
+{% endif %}
+
 <div class="columns">
   {% block column_items %}
     {% for item in items %}

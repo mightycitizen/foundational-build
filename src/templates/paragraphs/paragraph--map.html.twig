@@ -40,7 +40,7 @@
 #}
 {% include '@rain_theme/map/map.twig' with {
   "map": {
-    "map_embed": content.field_map,
+    "map_embed": content.field_map ? content.field_map : content.field_location,
     "location": content.field_title,
     "address": content.field_body,
     "eyebrow": {

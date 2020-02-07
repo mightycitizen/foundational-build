@@ -67,26 +67,26 @@
       right: 40%;
     }
   }
-}
 
-// Make dots below carousel larger.
-// Improves navigation UX, especially mobile.
-.slick-dots {
-  bottom: -35px;
+  // Make dots below carousel larger.
+  // Improves navigation UX, especially mobile.
+  .slick-dots {
+    bottom: -50px;
 
-  li {
-    height: 35px;
-    width: 35px;
-
-    button {
+    li {
       height: 35px;
       width: 35px;
 
-      &::before {
-        font-size: 20px;
+      button {
         height: 35px;
-        position: initial;
         width: 35px;
+
+        &::before {
+          font-size: 20px;
+          height: 35px;
+          position: initial;
+          width: 35px;
+        }
       }
     }
   }

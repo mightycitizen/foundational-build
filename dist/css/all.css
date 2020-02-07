@@ -451,15 +451,15 @@ input[type='submit'] {
     .carousel__slick .slick-next {
       right: 40%; } }
 
-.slick-dots {
+.carousel__slick .slick-dots {
   bottom: -35px; }
-  .slick-dots li {
+  .carousel__slick .slick-dots li {
     height: 35px;
     width: 35px; }
-    .slick-dots li button {
+    .carousel__slick .slick-dots li button {
       height: 35px;
       width: 35px; }
-      .slick-dots li button::before {
+      .carousel__slick .slick-dots li button::before {
         font-size: 20px;
         height: 35px;
         position: initial;

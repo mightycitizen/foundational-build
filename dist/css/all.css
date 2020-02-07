@@ -640,6 +640,11 @@ input[type='submit'] {
     .columns {
       max-width: 1600px; } }
 
+.columns__title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px; }
+
 .columns__item {
   margin-bottom: 1.5rem; }
 

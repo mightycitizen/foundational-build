@@ -50,6 +50,8 @@ card-carousel:
   css:
     component:
       dist/css/card-carousel.css: {}
+  js:
+    dist/js/card-carousel.es6.js: {}
   dependencies:
     - rain_theme/card
     - rain_theme/slick

@@ -1,0 +1,19 @@
+.quote-carousel {
+  margin-bottom: 2rem; }
+  .quote-carousel .slick-prev,
+  .quote-carousel .slick-next {
+    height: 50px;
+    width: 50px;
+    z-index: 1; }
+    .quote-carousel .slick-prev::before,
+    .quote-carousel .slick-next::before {
+      color: #3300CC;
+      font-size: 48px; }
+  .quote-carousel .slick-prev {
+    left: 0; }
+  .quote-carousel .slick-next {
+    right: 0; }
+  .quote-carousel .slick-track {
+    display: flex;
+    align-items: center;
+    justify-content: center; }

@@ -399,7 +399,7 @@ input[type='submit'] {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: #ddd;
+  background: rgba(255, 255, 255, 0.8);
   min-width: 300px;
   padding: 1rem 0.5rem;
   top: 35%;
@@ -452,7 +452,7 @@ input[type='submit'] {
       right: 40%; } }
 
 .carousel__slick .slick-dots {
-  bottom: -35px; }
+  bottom: -50px; }
   .carousel__slick .slick-dots li {
     height: 35px;
     width: 35px; }
@@ -1001,6 +1001,26 @@ input[type='submit'] {
   color: #a23433;
   background-image: url("../images/error.svg");
   border-color: #a23433; }
+
+.quote-carousel {
+  margin-bottom: 2rem; }
+  .quote-carousel .slick-prev,
+  .quote-carousel .slick-next {
+    height: 50px;
+    width: 50px;
+    z-index: 1; }
+    .quote-carousel .slick-prev::before,
+    .quote-carousel .slick-next::before {
+      color: #3300CC;
+      font-size: 48px; }
+  .quote-carousel .slick-prev {
+    left: 0; }
+  .quote-carousel .slick-next {
+    right: 0; }
+  .quote-carousel .slick-track {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
 
 .quote {
   text-align: center;

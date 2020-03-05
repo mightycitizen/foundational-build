@@ -1,0 +1,33 @@
+// Import site utilities.
+@import '../../global/utils/init';
+
+// Slick overrides
+.quote-carousel {
+  margin-bottom: 2rem;
+
+  .slick-prev,
+  .slick-next {
+    height: 50px;
+    width: 50px;
+    z-index: 1;
+
+    &::before {
+      color: $color-blue;
+      font-size: 48px;
+    }
+  }
+
+  .slick-prev {
+    left: 0;
+  }
+
+  .slick-next {
+    right: 0;
+  }
+
+  .slick-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

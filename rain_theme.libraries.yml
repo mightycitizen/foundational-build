@@ -136,6 +136,21 @@ message:
     component:
       dist/css/message.css: {}
 
+quote:
+  css:
+    component:
+      dist/css/quote.css: {}
+
+quote-carousel:
+  css:
+    component:
+      dist/css/quote-carousel.css: {}
+  js:
+    component:
+      dist/css/quote-carousel.es6.js: {}
+  dependencies:
+    - rain_theme/slick
+
 slick:
   css:
     theme:

@@ -38,12 +38,15 @@
  * @ingroup themeable
  */
 #}
-{% include '@rain_theme/quote/quote.twig' with {
-  "quote": {
-    "modifier_class": "",
-    "quote": content.field_quote.0,
-    "image": null,
-    "name": content.field_author.0,
-    "job": content.field_job_title.0
-  }
-} only %}
+{% extends '@paragraphs/paragraph.html.twig' %}
+{% block content %}
+  {% include '@rain_theme/quote/quote.twig' with {
+    "quote": {
+      "modifier_class": "quote--left",
+      "quote": content.field_quote.0,
+      "image": null,
+      "name": content.field_author.0,
+      "job": content.field_job_title.0
+    }
+  } only %}
+{% endblock %}

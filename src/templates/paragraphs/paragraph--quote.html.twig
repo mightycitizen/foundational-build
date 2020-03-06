@@ -40,11 +40,12 @@
 #}
 {% extends '@paragraphs/paragraph.html.twig' %}
 {% block content %}
+{{ kint (content)}}
   {% include '@rain_theme/quote/quote.twig' with {
     "quote": {
       "modifier_class": "",
       "quote": content.field_quote.0,
-      "image": null,
+      "image": content.field_thumb.0,
       "name": content.field_author.0,
       "job": content.field_job_title.0
     }

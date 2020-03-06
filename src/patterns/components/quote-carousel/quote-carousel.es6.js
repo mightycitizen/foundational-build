@@ -23,7 +23,6 @@
             arrows: true,
             fade: false,
             appendArrows: $nav,
-
           });
         });
     }

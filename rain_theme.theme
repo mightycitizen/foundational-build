@@ -59,6 +59,21 @@ function rain_theme_preprocess_paragraph(&$variables) {
       $variables['carousel_thumbs'] = $carousel_thumbs;
     }
   }
+  $paragraph_preprocess_function = 'rain_theme_preprocess_paragraph__' . $paragraph->bundle();
+  if (function_exists($paragraph_preprocess_function)) {
+    $paragraph_preprocess_function($variables);
+  }
+}
+
+function rain_theme_preprocess_paragraph__quote_carousel(&$variables) {
+  $total_items = $variables['content']['field_quotes']['#items']->count();
+  $carousel_items = [];
+  if ($total_items) {
+    for( $i = 0; $i < $total_items; $i++) {
+      $carousel_items[] = $variables['content']['field_quotes'][$i];
+    }
+  }
+  $variables['carousel_items'] = $carousel_items;
 }
 
 /**

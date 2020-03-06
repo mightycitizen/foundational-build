@@ -1324,11 +1324,13 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   Drupal.behaviors.quoteCarousel = {
     attach: function attach(context) {
       $('.quote-carousel__slick', context).once('quoteCarousel').each(function () {
+        var $nav = $(this).parent().find('.slick-pager');
         $(this).slick({
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
-          fade: false
+          fade: false,
+          appendArrows: $nav
         });
       });
     }

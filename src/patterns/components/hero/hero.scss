@@ -7,7 +7,7 @@
 
 .hero__content {
   @include center-align(absolute);
-  background: $color-alto;
+  background: $color-transparent-white;
   margin-right: -50%;
   max-width: 95%;
   padding: 1rem;

@@ -17,10 +17,17 @@
   width: 100%; }
 
 .card-carousel-item__expand {
+  display: block;
   position: absolute;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 32px;
+  height: 32px;
   right: 15px;
   bottom: 15px;
-  transition: bottom 0.25s; }
+  transition: bottom 0.25s;
+  cursor: pointer; }
 
 .card-carousel__slick .slick-prev::before,
 .card-carousel__slick .slick-next::before {

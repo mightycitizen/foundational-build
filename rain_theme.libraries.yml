@@ -97,6 +97,11 @@ gallery-lightbox:
   dependencies:
     - rain_theme/colorbox
 
+event-card:
+  css:
+    component:
+      dist/css/event-card.css: {}
+
 eyebrow:
   css:
     component:

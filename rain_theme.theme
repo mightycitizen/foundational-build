@@ -170,7 +170,19 @@ function rain_theme_preprocess_node(array &$variables) {
         'url' => $variables['url'],
         'text' => t('Read More >'),
       ];
-      //ksm($variables);
+      if (!empty($variables['content']['field_dates'])) {
+        $dates = $variables['content']['field_dates']['#items']->first()->getValue();
+        // If there is a start date from the date range, capture those dates in
+        // a variable.
+        if ($dates['value']) {
+          $unix_time = strtotime($dates['value']);
+          $formatted_date = \Drupal::service('date.formatter')->format($unix_time, 'custom', 'M');
+          $variables['event_date']['month'] = \Drupal::service('date.formatter')->format($unix_time, 'custom', 'M');
+          $variables['event_date']['day'] = \Drupal::service('date.formatter')->format($unix_time, 'custom', 'd');
+          $variables['event_date']['week'] = \Drupal::service('date.formatter')->format($unix_time, 'custom', 'l');
+          $variables['event_date']['display'] = \Drupal::service('date.formatter')->format($unix_time, 'custom', 'l d');
+        }
+      }
     }
   }
   // Default to turning off byline/submitted.

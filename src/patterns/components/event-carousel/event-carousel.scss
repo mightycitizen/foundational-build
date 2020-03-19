@@ -1,0 +1,17 @@
+// Import site utilities.
+@import '../../global/utils/init';
+
+.event-carousel__wrapper {
+  &::before {
+    background-color: gray;
+    content: '';
+    width: 80%;
+  }
+}
+
+.event-carousel__navigation {
+  margin-left: auto;
+  width: 200px;
+
+  @include slick-pager;
+}

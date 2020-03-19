@@ -102,6 +102,15 @@ event-card:
     component:
       dist/css/event-card.css: {}
 
+event-carousel:
+  css:
+    component:
+      dist/css/event-carousel.css: {}
+  js:
+    dist/js/event-carousel.es6.js: {}
+  dependencies:
+    - rain_theme/slick
+
 eyebrow:
   css:
     component:

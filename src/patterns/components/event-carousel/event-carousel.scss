@@ -2,16 +2,38 @@
 @import '../../global/utils/init';
 
 .event-carousel__wrapper {
-  &::before {
+  position: relative;
+  /*
+  &::after {
     background-color: gray;
-    content: '';
+    content:'\A';
+    position: absolute;
+    top: -50px;
+    bottom: -50px;
+    right: 0;
+    background-color: $color-;
     width: 80%;
+    z-index: -1;
   }
+  */
 }
 
+.event-carousel {
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 1150px;
+
+  .slick-list {
+    padding: 0 80px 0 0;
+  }
+
+}
+
+
 .event-carousel__navigation {
+  @include slick-pager;
+
   margin-left: auto;
   width: 200px;
-
-  @include slick-pager;
 }

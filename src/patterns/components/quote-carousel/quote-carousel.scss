@@ -7,8 +7,8 @@
 }
 
 .quote-carousel__navigation {
+  @include slick-pager;
+
   margin-left: auto;
   width: 200px;
-
-  @include slick-pager;
 }

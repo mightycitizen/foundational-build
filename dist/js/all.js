@@ -176,7 +176,7 @@
       $('.event-carousel__slick', context).once('eventCarousel').each(function () {
         var $nav = $(this).parent().find('.slick-pager');
         $(this).slick({
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1,
           arrows: true,
           fade: false,

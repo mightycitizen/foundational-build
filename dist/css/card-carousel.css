@@ -18,6 +18,7 @@
 
 .card-carousel-item__expand {
   display: block;
+  background-color: transparent;
   position: absolute;
   border: 0;
   padding: 0;

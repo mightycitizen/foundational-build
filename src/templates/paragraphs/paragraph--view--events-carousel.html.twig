@@ -38,16 +38,17 @@
  * @ingroup themeable
  */
 #}
-<div class="paragraph-views {{ wrapper_class }}">
-  {% if content.field_title %}
-    {%
-      include '@rain_theme/heading/heading.twig' with {
-        "heading": {
-          "title": content.field_title,
-          "heading_level": "2"
-        }
-      } only
-    %}
-  {% endif %}
-  {{ content|without('field_title') }}
-</div>
+{% extends '@paragraphs/paragraph.html.twig' %}
+{% block content %}
+  {% embed '@rain_theme/event-carousel/event-carousel.twig' with {
+    heading: {
+      title: content.field_title,
+      heading_level: 2,
+    },
+    views_content: content|without('field_title'),
+  } only %}
+    {% block carousel_items %}
+      {{ views_content }}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

@@ -16,7 +16,7 @@
     attach: function (context) {
       $('.event-carousel__slick', context).once('eventCarousel')
         .each(function () {
-          let $nav = $(this).parent().find('.slick-pager');
+          let $nav = $(this).closest('.event-carousel').find('.slick-pager');
           $(this).slick({
             slidesToShow: 3,
             slidesToScroll: 1,

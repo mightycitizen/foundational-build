@@ -15,7 +15,7 @@
   Drupal.behaviors.eventCarousel = {
     attach: function attach(context) {
       $('.event-carousel__slick', context).once('eventCarousel').each(function () {
-        var $nav = $(this).parent().find('.slick-pager');
+        var $nav = $(this).closest('.event-carousel').find('.slick-pager');
         $(this).slick({
           slidesToShow: 3,
           slidesToScroll: 1,

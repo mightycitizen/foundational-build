@@ -1,9 +1,16 @@
 {{ attach_library('rain_theme/event-carousel') }}
 
 <section class="event-carousel__wrapper{{ attributes ? ' ' ~ attributes.class}}">
+  {% if heading.title %}
+    {%
+      include '@rain_theme/heading/heading.twig' with {
+        "heading": heading
+      } only
+    %}
+  {% endif %}
   <div class="event-carousel">
-    <ul class="event-carousel__list event-carousel__slick">
-      {% block carousel_items %}
+    {% block carousel_items %}
+      <ul class="event-carousel__list event-carousel__slick">
         {% for item in items %}
           <li class="event-carousel-item">
             {%
@@ -13,8 +20,8 @@
             %}
           </li>
         {% endfor %}
-      {% endblock %}
-    </ul>
+      </ul>
+    {% endblock %}
     <div class="event-carousel__navigation">
       <div class="slick-pager"></div>
     </div>

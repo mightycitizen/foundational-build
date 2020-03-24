@@ -1,4 +1,9 @@
 {
+  "heading": {
+    "title": "Events",
+    "heading_level": 2,
+    "classes": "event-carousel__title"
+  },
   "items": [
     {
       "card": {

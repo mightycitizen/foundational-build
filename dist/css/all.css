@@ -256,10 +256,10 @@ h6 {
 
 
 .breadcrumb__container {
-  background-color: #3300CC; }
+  background-color: #404040; }
 
 .breadcrumb {
-  padding: 15px; }
+  padding: 15px 30px; }
 
 .breadcrumb__item {
   color: #FFF;
@@ -697,30 +697,6 @@ input[type='submit'] {
 
 .columns__item {
   margin-bottom: 1.5rem; }
-
-.event-card {
-  margin-bottom: 30px; }
-  @media screen and (min-width: 768px) {
-    .event-card {
-      max-height: 200px; } }
-
-.event-card__title {
-  text-decoration: none; }
-
-.event-card__times {
-  margin-bottom: 15px; }
-
-.event-card__dates {
-  display: flex;
-  margin-bottom: 15px; }
-  @media screen and (min-width: 768px) {
-    .event-card__dates {
-      align-items: flex-start;
-      align-self: flex-start;
-      margin-right: 15px; } }
-
-.event-card__summary {
-  margin-bottom: 15px; }
 
 .event-date-tiles {
   display: flex;
@@ -1525,7 +1501,7 @@ input[type='submit'] {
     .search-api-page-block-form-search-results .search__submit-icon svg {
       height: 20px; }
       .search-api-page-block-form-search-results .search__submit-icon svg path {
-        fill: #464646; }
+        fill: #FFF; }
   .search-api-page-block-form-search-results .search__submit-text {
     position: absolute !important;
     height: 1px;
@@ -1540,7 +1516,8 @@ input[type='submit'] {
   align-items: center; }
 
 .site-logo {
-  margin-right: 30px; }
+  margin-right: 30px;
+  width: 100px; }
 
 .site-name a {
   color: #464646;
@@ -1554,6 +1531,8 @@ input[type='submit'] {
   color: #FFF;
   background-color: #3300CC;
   margin-top: 80px; }
+  .site-footer .site-logo g {
+    fill: #FFF; }
 
 .site-footer__inner {
   max-width: 90%;
@@ -1859,6 +1838,7 @@ input[type='submit'] {
 
 .slick-arrow.slick-hidden {
   display: none; }
+
 
 .tabs {
   list-style: none;

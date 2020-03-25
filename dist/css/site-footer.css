@@ -2,6 +2,8 @@
   color: #FFF;
   background-color: #3300CC;
   margin-top: 80px; }
+  .site-footer .site-logo g {
+    fill: #FFF; }
 
 .site-footer__inner {
   max-width: 90%;

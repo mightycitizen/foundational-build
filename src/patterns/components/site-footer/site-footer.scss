@@ -4,6 +4,12 @@
   color: $color-white;
   background-color: $color-blue;
   margin-top: 80px;
+
+  .site-logo {
+    g {
+      fill: $color-white;
+    }
+  }
 }
 
 .site-footer__inner {

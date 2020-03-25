@@ -3,7 +3,8 @@
   align-items: center; }
 
 .site-logo {
-  margin-right: 30px; }
+  margin-right: 30px;
+  width: 100px; }
 
 .site-name a {
   color: #464646;

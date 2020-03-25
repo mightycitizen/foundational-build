@@ -760,6 +760,21 @@ input[type='submit'] {
   align-self: center;
   margin-right: 15px; }
 
+.event-date-time {
+  display: flex;
+  flex-wrap: wrap; }
+
+.event-date-time__times {
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+.event-date-time__time {
+  margin-bottom: 10px; }
+
+.event-date-time__label {
+  font-weight: bold; }
+
 
 .gallery-carousel__title {
   font-size: 1.5rem;

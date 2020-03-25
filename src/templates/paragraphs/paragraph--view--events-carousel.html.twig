@@ -46,6 +46,7 @@
       heading_level: 2,
     },
     views_content: content|without('field_title'),
+    links: links,
   } only %}
     {% block carousel_items %}
       {{ views_content }}

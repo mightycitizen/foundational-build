@@ -6,6 +6,8 @@
  */
 
 use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_preprocess_HOOK() for paragraphs.
@@ -83,6 +85,15 @@ function rain_theme_preprocess_paragraph__quote_carousel(&$variables) {
   $variables['carousel_items'] = $carousel_items;
 }
 
+/**
+ * Callback to preprocess the views paragraph.
+ */
+function rain_theme_preprocess_paragraph__view(&$variables) {
+  $view_ref = $variables['paragraph']->field_view_ref->getValue();
+  if ($view_ref[0]['target_id'] === 'events' && $view_ref[0]['display_id'] === 'carousel') {
+    $variables['links'] = Link::fromTextAndUrl('View All Events', Url::fromUri('internal:/events'));
+  }
+}
 
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.

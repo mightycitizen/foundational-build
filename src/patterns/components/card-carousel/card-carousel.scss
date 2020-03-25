@@ -25,10 +25,18 @@
 }
 
 .card-carousel-item__expand {
+  display: block;
+  background-color: transparent;
   position: absolute;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 32px;
+  height: 32px;
   right: 15px;
   bottom: 15px;
   transition: bottom 0.25s;
+  cursor: pointer;
 }
 
 .card-carousel__slick {

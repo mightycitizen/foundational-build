@@ -14,9 +14,11 @@
    */
   Drupal.behaviors.carousel = {
     attach: function() {
-      $('.carousel__slick').not('.slick-initialized').slick({
-        dots: true,
-      });
-    },
+      $('.carousel__slick')
+        .not('.slick-initialized')
+        .slick({
+          dots: true
+        });
+    }
   };
 })(document, Drupal, jQuery);

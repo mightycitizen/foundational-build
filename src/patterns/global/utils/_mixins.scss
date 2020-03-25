@@ -91,6 +91,12 @@
   }
 }
 
+@mixin max-width {
+  margin: 0 auto;
+  max-width: 1600px;
+  width: 100%;
+}
+
 @mixin layout-content {
   max-width: 90%;
   width: auto;

@@ -25,5 +25,10 @@
     <div class="event-carousel__navigation">
       <div class="slick-pager"></div>
     </div>
+    {% if links %}
+    <div class="event-carousel__links">
+      {{ links }}
+    <div>
+    {% endif %}
   </div>
 </section>

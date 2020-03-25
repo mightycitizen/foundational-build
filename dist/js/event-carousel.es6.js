@@ -14,14 +14,18 @@
 
   Drupal.behaviors.eventCarousel = {
     attach: function attach(context) {
-      $('.event-carousel__slick', context).once('eventCarousel').each(function () {
+      // We want to only have the slick carousel trigger once or we will
+      // have a lot of pagers being appended on ajax trigger.
+      $('.event-carousel', context).once('eventCarousel').each(function () {
+        var $list = $('.event-carousel__list', $(this));
         var $nav = $(this).closest('.event-carousel').find('.slick-pager');
-        $(this).slick({
+        $list.slick({
           slidesToShow: 3,
           slidesToScroll: 1,
           arrows: true,
           fade: false,
-          appendArrows: $nav
+          appendArrows: $nav,
+          infinite: false
         });
       });
     }

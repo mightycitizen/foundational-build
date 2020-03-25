@@ -4,6 +4,7 @@
     "heading_level": 2,
     "classes": "event-carousel__title"
   },
+  "links": "<a href='#'>View All Events</a>",
   "items": [
     {
       "card": {
@@ -18,7 +19,7 @@
           "text": "Read More >"
         },
         "date": {
-          "month": "Dec",
+          "month": "Jan",
           "day": "13",
           "week": "Wednesday",
           "display": "Wednesday 13"
@@ -38,10 +39,10 @@
           "text": "Read More >"
         },
         "date": {
-          "month": "Dec",
-          "day": "13",
+          "month": "Feb",
+          "day": "14",
           "week": "Wednesday",
-          "display": "Wednesday 13"
+          "display": "Wednesday 14"
         }
       }
     },
@@ -58,10 +59,10 @@
           "text": "Read More >"
         },
         "date": {
-          "month": "Dec",
-          "day": "13",
+          "month": "Mar",
+          "day": "15",
           "week": "Wednesday",
-          "display": "Wednesday 13"
+          "display": "Wednesday 15"
         }
       }
     },
@@ -78,10 +79,10 @@
           "text": "Read More >"
         },
         "date": {
-          "month": "Dec",
-          "day": "13",
+          "month": "Apr",
+          "day": "16",
           "week": "Wednesday",
-          "display": "Wednesday 13"
+          "display": "Wednesday 16"
         }
       },
     },
@@ -98,10 +99,10 @@
           "text": "Read More >"
         },
         "date": {
-          "month": "Dec",
-          "day": "13",
+          "month": "Jul",
+          "day": "17",
           "week": "Wednesday",
-          "display": "Wednesday 13"
+          "display": "Wednesday 17"
         }
       }
     },
@@ -118,10 +119,10 @@
           "text": "Read More >"
         },
         "date": {
-          "month": "Dec",
-          "day": "13",
+          "month": "Jun",
+          "day": "18",
           "week": "Wednesday",
-          "display": "Wednesday 13"
+          "display": "Wednesday 18"
         }
       }
     }

@@ -1,0 +1,23 @@
+.event-card {
+  margin-bottom: 30px; }
+  @media screen and (min-width: 768px) {
+    .event-card {
+      max-height: 200px; } }
+
+.event-card__title {
+  text-decoration: none; }
+
+.event-card__times {
+  margin-bottom: 15px; }
+
+.event-card__dates {
+  display: flex;
+  margin-bottom: 15px; }
+  @media screen and (min-width: 768px) {
+    .event-card__dates {
+      align-items: flex-start;
+      align-self: flex-start;
+      margin-right: 15px; } }
+
+.event-card__summary {
+  margin-bottom: 15px; }

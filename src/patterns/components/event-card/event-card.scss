@@ -1,0 +1,35 @@
+// Styling for Event Cards.
+
+// Import site utilities.
+@import '../../global/utils/init';
+
+.event-card {
+  margin-bottom: 30px;
+
+  @include breakpoint($bp-sm) {
+    max-height: 200px;
+  }
+}
+
+.event-card__title {
+  text-decoration: none;
+}
+
+.event-card__times {
+  margin-bottom: 15px;
+}
+
+.event-card__dates {
+  display: flex;
+  margin-bottom: 15px;
+
+  @include breakpoint($bp-sm) {
+    align-items: flex-start;
+    align-self: flex-start;
+    margin-right: 15px;
+  }
+}
+
+.event-card__summary {
+  margin-bottom: 15px;
+}

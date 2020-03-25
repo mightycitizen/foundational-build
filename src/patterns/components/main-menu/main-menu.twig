@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+{{ attach_library('rain_theme/main-menu') }}
+
+<section class="main-menu__container">
+  <div class="main-menu__navicon">
+    <button class="navicon">
+      <span class="navicon__bar"></span>
+      <span class="navicon__bar"></span>
+      <span class="navicon__bar"></span>
+    </button>
+    <span class="navicon__text element-invisible">{{ 'Menu'|t }}</span>
+  </div>
+
+  {% import _self as menus %}
+
+  {#
+    We call a macro which calls itself to render the full tree.
+    @see http://twig.sensiolabs.org/doc/tags/macro.html
+  #}
+  {{ menus.menu_links(items, attributes, 0) }}
+
+  {#
+    The drupal template will need to have this nav html added to wrap this.
+    <nav class="main-menu" id="a11y-menu" role="navigation" aria-label="Main menu">
+    </nav>
+  #}
+
+  {% macro menu_links(items, attributes) %}
+    <nav class="main-menu" id="a11y-menu" role="navigation" aria-label="Main menu">
+      {% import _self as menus %}
+      {% if items %}
+        <ul{{ attributes|without('class') }} role="menu" class="nav menu list-reset">
+          {% for item in items %}
+            <li class="menu-item" {{ item.attributes|without('class') }} role="menuitem">
+              <a href="{{ item.url }}">{% if item.title %}{{ item.title }}{% else %}{{ item.text }}{% endif %}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </nav>
+  {% endmacro %}
+</section>

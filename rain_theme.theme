@@ -6,6 +6,8 @@
  */
 
 use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_preprocess_HOOK() for paragraphs.
@@ -16,7 +18,11 @@ function rain_theme_preprocess_paragraph(&$variables) {
 
   // Get the parent bundle.
   $parent_bundle = $paragraph->getParentEntity()->bundle();
-
+  if ($paragraph->bundle() === 'view') {
+    // Add wrapper to the paragraph views.
+    $view_ref = $variables['paragraph']->field_view_ref->getValue();
+    $variables['wrapper_class'] = str_replace('-', '_', $view_ref[0]['target_id'] . '-' . $view_ref[0]['display_id'] . '__wrapper');
+  }
   // Pass along total count to template.
   if ($parent_bundle == 'hero_media') {
     if ($paragraph->getParentEntity()->hasField('field_card')) {
@@ -65,15 +71,28 @@ function rain_theme_preprocess_paragraph(&$variables) {
   }
 }
 
+/**
+ * Callback to preprocess the Quote Carousel paragraph.
+ */
 function rain_theme_preprocess_paragraph__quote_carousel(&$variables) {
   $total_items = $variables['content']['field_quotes']['#items']->count();
   $carousel_items = [];
   if ($total_items) {
-    for( $i = 0; $i < $total_items; $i++) {
+    for ($i = 0; $i < $total_items; $i++) {
       $carousel_items[] = $variables['content']['field_quotes'][$i];
     }
   }
   $variables['carousel_items'] = $carousel_items;
+}
+
+/**
+ * Callback to preprocess the views paragraph.
+ */
+function rain_theme_preprocess_paragraph__view(&$variables) {
+  $view_ref = $variables['paragraph']->field_view_ref->getValue();
+  if ($view_ref[0]['target_id'] === 'events' && $view_ref[0]['display_id'] === 'carousel') {
+    $variables['links'] = Link::fromTextAndUrl('View All Events', Url::fromUri('internal:/events'));
+  }
 }
 
 /**
@@ -164,6 +183,27 @@ function rain_theme_theme_suggestions_fieldset_alter(array &$suggestions, array 
  * Implements hook_preprocess_node().
  */
 function rain_theme_preprocess_node(array &$variables) {
+  if (!empty($variables['view_mode']) && $variables['view_mode'] === 'carousel') {
+    if ($variables['node']->bundle() === 'event') {
+      $variables['link'] = [
+        'url' => $variables['url'],
+        'text' => t('Read More >'),
+      ];
+      if (!empty($variables['content']['field_dates'])) {
+        $dates = $variables['content']['field_dates']['#items']->first()->getValue();
+        // If there is a start date from the date range, capture those dates in
+        // a variable.
+        if ($dates['value']) {
+          $unix_time = strtotime($dates['value']);
+          $formatted_date = \Drupal::service('date.formatter')->format($unix_time, 'custom', 'M');
+          $variables['event_date']['month'] = \Drupal::service('date.formatter')->format($unix_time, 'custom', 'M');
+          $variables['event_date']['day'] = \Drupal::service('date.formatter')->format($unix_time, 'custom', 'd');
+          $variables['event_date']['week'] = \Drupal::service('date.formatter')->format($unix_time, 'custom', 'l');
+          $variables['event_date']['display'] = \Drupal::service('date.formatter')->format($unix_time, 'custom', 'l d');
+        }
+      }
+    }
+  }
   // Default to turning off byline/submitted.
   //$variables['display_submitted'] = FALSE;
 }
@@ -210,4 +250,17 @@ function rain_theme_preprocess_details(array &$variables) {
  */
 function rain_theme_theme_suggestions_details_alter(array &$suggestions, array $variables) {
 
+}
+
+/**
+ * Implements hook_theme_suggestions_paragraph_alter().
+ */
+function rain_theme_theme_suggestions_paragraph_alter(array &$suggestions, array $variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['elements']['#paragraph'];
+  if ($paragraph->bundle() === 'view') {
+    $view_ref = $paragraph->field_view_ref->getValue();
+    // Add suggestions for paragraph views with different views id and block.
+    $suggestions[] = 'paragraph__view__' . $view_ref[0]['target_id'] . '_' . $view_ref[0]['display_id'];
+  }
 }

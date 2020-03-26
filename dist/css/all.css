@@ -737,6 +737,9 @@ input[type='submit'] {
     display: flex;
     align-items: center;
     justify-content: center; }
+  .event-carousel__navigation .slick-pager {
+    width: 100px;
+    margin: 0 auto; }
 
 
 .gallery-carousel__title {

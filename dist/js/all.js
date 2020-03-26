@@ -186,6 +186,8 @@
           appendArrows: $nav,
           infinite: false,
           responsive: [{
+            // Not sure why the width being 1024 does not trigger this break
+            // point, when showing a 1024 wide desktop screen.
             breakpoint: 1025,
             settings: {
               slidesToShow: 2

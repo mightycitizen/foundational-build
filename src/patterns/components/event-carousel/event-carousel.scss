@@ -44,4 +44,9 @@
 .event-carousel__navigation {
   @include slick-pager;
   margin-top: 3rem;
+
+  .slick-pager {
+    width: 100px;
+    margin: 0 auto;
+  }
 }

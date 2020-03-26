@@ -27,7 +27,7 @@
           appendArrows: $nav,
           infinite: false,
           responsive: [{
-            breakpoint: 1023,
+            breakpoint: 1025,
             settings: {
               slidesToShow: 2
             }

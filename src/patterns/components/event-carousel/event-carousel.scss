@@ -2,45 +2,46 @@
 @import '../../global/utils/init';
 
 .event-carousel__wrapper {
-  max-width: 1330px;
   margin: auto;
+  padding-left: 1rem;
+  width: 100%;
+  max-width: 1300px;
 }
 
 .event-carousel {
   margin-left: auto;
   position: relative;
-  padding: 30px 0;
-  width: 1165px;
 
-  .slick-list {
-    padding: 0 90px 0 0;
+  @include breakpoint(1165px) {
+    padding: 30px 0;
 
-    .slick-slide {
-      width: 335px;
-      margin: 0;
+    .slick-list {
+       padding: 0 90px 0 0;
+       &::before {
+        content: '\A';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 5rem;
+        background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
+        background-position: 50% 50%;
+        background-origin: padding-box;
+        background-clip: border-box;
+        background-size: auto auto;
+        z-index: 10;
+      }
     }
   }
 
-  &::before {
-    content: '\A';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 5rem;
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
-    background-position: 50% 50%;
-    background-origin: padding-box;
-    background-clip: border-box;
-    background-size: auto auto;
-    z-index: 10;
+  .slick-slide {
+    width: 335px;
+    margin: 0;
   }
+
 }
 
 .event-carousel__navigation {
   @include slick-pager;
-
-  position: absolute;
-  top: 50%;
-  left: -10rem;
+  margin-top: 3rem;
 }

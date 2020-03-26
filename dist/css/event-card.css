@@ -1,7 +1,7 @@
 .event-card {
   position: relative;
   background-color: #FFF;
-  margin: 10px;
+  margin: 10px auto;
   width: 335px;
   height: 440px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);

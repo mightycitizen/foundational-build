@@ -26,6 +26,20 @@
           fade: false,
           appendArrows: $nav,
           infinite: false,
+          responsive: [
+            {
+              breakpoint: 1023,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
         });
       });
     }

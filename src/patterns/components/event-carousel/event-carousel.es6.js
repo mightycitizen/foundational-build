@@ -17,7 +17,8 @@
       // We want to only have the slick carousel trigger once or we will
       // have a lot of pagers being appended on ajax trigger.
       $('.event-carousel', context).once('eventCarousel').each(function () {
-        const $list = $('.event-carousel__list', $(this));
+        const $parentContainer = $(this);
+        const $list = $('.event-carousel__list', $parentContainer);
         let $nav = $(this).closest('.event-carousel').find('.slick-pager');
         $list.slick({
           slidesToShow: 3,
@@ -42,6 +43,10 @@
               },
             },
           ],
+        });
+        $list.on('afterChange', function (event, slick) {
+          const isLastSlide = slick.$nextArrow.hasClass('slick-disabled');
+          $parentContainer.toggleClass('fade', !isLastSlide);
         });
       });
     }

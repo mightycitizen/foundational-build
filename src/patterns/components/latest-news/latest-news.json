@@ -2,7 +2,7 @@
   "items": [
     {
       "card": {
-        "modifier": "",
+        "modifier": "horizontal",
         "media": {
           "video": "",
           "image": "<img src='https://source.unsplash.com/PhYq704ffdA/640x360' alt='test image' />",
@@ -34,11 +34,6 @@
     {
       "card": {
         "modifier": "",
-        "media": {
-          "video": "",
-          "image": "<img src='https://source.unsplash.com/PhYq704ffdA/640x360' alt='test image' />",
-          "caption": "Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper."
-        },
         "eyebrow": {
           "text": "Optional eyebrow",
           "modifier": " card__eyebrow"
@@ -65,11 +60,6 @@
     {
       "card": {
         "modifier": "",
-        "media": {
-          "video": "",
-          "image": "<img src='https://source.unsplash.com/PhYq704ffdA/640x360' alt='test image' />",
-          "caption": "Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper."
-        },
         "eyebrow": {
           "text": "Optional eyebrow",
           "modifier": " card__eyebrow"
@@ -96,11 +86,6 @@
     {
       "card": {
         "modifier": "",
-        "media": {
-          "video": "",
-          "image": "<img src='https://source.unsplash.com/PhYq704ffdA/640x360' alt='test image' />",
-          "caption": "Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper."
-        },
         "eyebrow": {
           "text": "Optional eyebrow",
           "modifier": " card__eyebrow"

@@ -2,17 +2,17 @@
 <section class="latest-news{{ attributes ? ' ' ~ attributes.class}}">
   <div class="latest-news__list">
     {% block card_items %}
-      <ul class="latest-news__items">
+      <div class="latest-news__items">
         {% for item in items %}
-          <li class="latest-news__card">
+          <div class="latest-news__card">
             {%
               include '@rain_theme/card/card.twig' with {
                 card: item.card,
               } only
             %}
-          </li>
+          </div>
         {% endfor %}
-      </ul>
+      </div>
     {% endblock %}
   </div>
 </section>

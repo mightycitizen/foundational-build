@@ -227,3 +227,23 @@ function rain_theme_theme_suggestions_paragraph_alter(array &$suggestions, array
     $suggestions[] = 'paragraph__view__' . $view_ref[0]['target_id'] . '_' . $view_ref[0]['display_id'];
   }
 }
+
+/**
+ * Implements hook_preprocess_preprocess_views_view_fields().
+ */
+function rain_theme_preprocess_views_view_fields__latest_news__block_1(array &$variables) {
+  // Separate the link and the text for the more link.
+  if (isset($variables['fields']['view_node'])) {
+    $more_link = Url::fromRoute('entity.node.canonical', ['node' => $variables['row']->nid]);
+    $variables['more_link'] = [
+      'url' => $more_link->toString(),
+      'text' => t('Read more'),
+    ];
+  }
+  if (isset($variables['row']->index)) {
+    if ($variables['row']->index === 0) {
+      // Make the first card horizontal display.
+      $variables['modifier'] = 'horizontal';
+    }
+  }
+}

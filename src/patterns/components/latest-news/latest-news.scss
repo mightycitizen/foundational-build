@@ -1,2 +1,38 @@
 // Import site utilities.
 @import '../../global/utils/init';
+
+.latest-news__list {
+  max-width: $bp-xl;
+  margin: auto;
+}
+
+.latest-news__items {
+  grid-template-columns: repeat(3, 1fr);
+  // sass-lint:disable no-misspelled-properties
+  row-gap: 75px;
+  column-gap: 6rem;
+
+  & .latest-news__item {
+    display: none;
+  }
+
+  @include breakpoint($bp-sm) {
+    display: grid;
+  }
+}
+
+.latest-news__card {
+  margin-right: 6rem;
+
+  .card__media {
+    display: none;
+  }
+
+  &:first-child {
+    grid-column: 1 / 4;
+
+    .card__media {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{{ attach_library('rain_theme/latest-news') }}
+<section class="latest-news{{ attributes ? ' ' ~ attributes.class}}">
+  <div class="latest-news__list">
+    {% block card_items %}
+      <ul class="latest-news__items">
+        {% for item in items %}
+          <li class="latest-news__card">
+            {%
+              include '@rain_theme/card/card.twig' with {
+                card: item.card,
+              } only
+            %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endblock %}
+  </div>
+</section>

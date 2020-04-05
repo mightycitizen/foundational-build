@@ -1324,6 +1324,40 @@ input[type='submit'] {
   background-image: url("../images/error.svg");
   border-color: #a23433; }
 
+.two-col-layout {
+  max-width: 90%;
+  width: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; }
+  @media screen and (min-width: 1540px) {
+    .two-col-layout {
+      max-width: 1600px; } }
+  @media screen and (min-width: 1024px) {
+    .two-col-layout {
+      flex-direction: row; } }
+  .two-col-layout .region-content {
+    flex: 3;
+    padding: 30px 0; }
+    @media screen and (min-width: 1024px) {
+      .two-col-layout .region-content {
+        max-width: 75%; } }
+  .two-col-layout .layout-sidebar-right {
+    flex: 1;
+    padding: 30px; }
+
+body:not(.page-node-type-homepage):not(.page-node-type-landing) .layout-content {
+  max-width: 90%;
+  width: auto;
+  margin: 0 auto; }
+  @media screen and (min-width: 1540px) {
+    body:not(.page-node-type-homepage):not(.page-node-type-landing) .layout-content {
+      max-width: 1600px; } }
+  body:not(.page-node-type-homepage):not(.page-node-type-landing) .layout-content .page-title {
+    margin: 0; }
+  body:not(.page-node-type-homepage):not(.page-node-type-landing) .layout-content .text-card {
+    margin: 0; }
+
 .pager {
   text-align: center;
   margin-bottom: 3rem;

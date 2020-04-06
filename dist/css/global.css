@@ -22,6 +22,7 @@
 body .paragraph--type--text {
   margin-bottom: 30px; }
 
+body .paragraph--type--map,
 body .paragraph--type--view,
 body .paragraph--type--faq,
 body .paragraph--type--quote,
@@ -29,6 +30,7 @@ body .paragraph--type--hero-media,
 body .paragraph--type--card-list,
 body .paragraph--type--card {
   margin-bottom: 50px; }
+  body .paragraph--type--map .paragraph--type--card,
   body .paragraph--type--view .paragraph--type--card,
   body .paragraph--type--faq .paragraph--type--card,
   body .paragraph--type--quote .paragraph--type--card,
@@ -46,6 +48,12 @@ body .paragraph--type--card {
       max-width: 1600px; } }
 
 .horizontal-align {
+  display: inline-block;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%); }
+
+.vertical-align {
   display: inline-block;
   left: 50%;
   position: relative;

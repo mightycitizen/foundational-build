@@ -7,3 +7,8 @@
 .horizontal-align {
   @include horizontal-align;
 }
+
+// Use vertical align plugin.
+.vertical-align {
+  @include horizontal-align;
+}

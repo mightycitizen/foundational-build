@@ -1,5 +1,5 @@
 .main-menu {
-  background-color: #3300CC;
+  background-color: #003954;
   display: none; }
   @media screen and (min-width: 768px) {
     .main-menu {
@@ -36,7 +36,7 @@
       color: #FFF; }
 
 .main-menu__navicon {
-  background-color: #3300CC;
+  background-color: #003954;
   display: flex;
   align-items: center;
   color: #FFF;
@@ -46,7 +46,7 @@
       display: none; } }
 
 .navicon {
-  background-color: #3300CC;
+  background-color: #003954;
   cursor: pointer;
   display: block;
   height: 60px;

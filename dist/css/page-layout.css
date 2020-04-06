@@ -20,14 +20,25 @@
     flex: 1;
     padding: 30px; }
 
-body:not(.page-node-type-homepage):not(.page-node-type-landing) .layout-content {
+.container {
   max-width: 90%;
   width: auto;
   margin: 0 auto; }
   @media screen and (min-width: 1540px) {
-    body:not(.page-node-type-homepage):not(.page-node-type-landing) .layout-content {
+    .container {
       max-width: 1600px; } }
-  body:not(.page-node-type-homepage):not(.page-node-type-landing) .layout-content .page-title {
-    margin: 0; }
-  body:not(.page-node-type-homepage):not(.page-node-type-landing) .layout-content .text-card {
-    margin: 0; }
+
+.paragraph--type--hero-media,
+.paragraph--type--card-list,
+.paragraph--type--card {
+  margin-bottom: 100px; }
+  .paragraph--type--hero-media .paragraph--type--card,
+  .paragraph--type--card-list .paragraph--type--card,
+  .paragraph--type--card .paragraph--type--card {
+    margin-bottom: 0; }
+
+.horizontal-align {
+  display: inline-block;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%); }

@@ -28,17 +28,20 @@
 }
 
 // Add a layout wrapper for all pages, except homepage and landing pages.
-.layout-content {
-  body:not(.page-node-type-homepage):not(.page-node-type-landing) & {
-    @include layout-content;
+.container {
+  @include layout-content;
+}
 
-    // For page titles within layout content, remove the extra margins.
-    .page-title {
-      margin: 0;
-    }
+.paragraph--type--hero-media,
+.paragraph--type--card-list,
+.paragraph--type--card {
+  margin-bottom: 100px;
 
-    .text-card {
-      margin: 0;
-    }
+  .paragraph--type--card {
+    margin-bottom: 0;
   }
+}
+
+.horizontal-align {
+  @include horizontal-align;
 }

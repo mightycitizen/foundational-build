@@ -37,7 +37,7 @@
       background-color: #FFF; }
   .search-api-page-block-form-search-results button[type='submit'],
   .search-api-page-block-form-search-results input[type='submit'] {
-    background-color: #3300CC;
+    background-color: #003954;
     border: 0;
     display: block;
     height: calc(100% - 10px);

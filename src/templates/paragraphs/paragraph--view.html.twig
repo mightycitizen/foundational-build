@@ -44,7 +44,6 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'container'
   ]
 %}
 {% block paragraph %}
@@ -55,7 +54,8 @@
           include '@rain_theme/heading/heading.twig' with {
             "heading": {
               "title": content.field_title,
-              "heading_level": "2"
+              "heading_level": "2",
+              "modifier": "container",
             }
           } only
         %}

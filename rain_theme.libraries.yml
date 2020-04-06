@@ -188,6 +188,11 @@ pager:
     component:
       dist/css/pager.css: {}
 
+quote:
+  css:
+    component:
+      dist/css/quote.css: {}
+
 search-box:
   css:
     component:

@@ -19,6 +19,15 @@
   font-display: fallback;
   src: url("../fonts/lato-regularitalic-webfont.woff2") format("woff2"), url("../fonts/lato-regularitalic-webfont.woff") format("woff"); }
 
+body .paragraph--type--hero-media,
+body .paragraph--type--card-list,
+body .paragraph--type--card {
+  margin-bottom: 100px; }
+  body .paragraph--type--hero-media .paragraph--type--card,
+  body .paragraph--type--card-list .paragraph--type--card,
+  body .paragraph--type--card .paragraph--type--card {
+    margin-bottom: 0; }
+
 html {
   font-family: "Lato", "Arial", sans-serif;
   font-size: 100%;

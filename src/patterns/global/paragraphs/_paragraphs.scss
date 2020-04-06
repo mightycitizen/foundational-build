@@ -1,0 +1,11 @@
+body {
+  .paragraph--type--hero-media,
+  .paragraph--type--card-list,
+  .paragraph--type--card {
+    margin-bottom: 100px;
+
+    .paragraph--type--card {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -19,26 +19,3 @@
   .two-col-layout .layout-sidebar-right {
     flex: 1;
     padding: 30px; }
-
-.container {
-  max-width: 90%;
-  width: auto;
-  margin: 0 auto; }
-  @media screen and (min-width: 1540px) {
-    .container {
-      max-width: 1600px; } }
-
-.paragraph--type--hero-media,
-.paragraph--type--card-list,
-.paragraph--type--card {
-  margin-bottom: 100px; }
-  .paragraph--type--hero-media .paragraph--type--card,
-  .paragraph--type--card-list .paragraph--type--card,
-  .paragraph--type--card .paragraph--type--card {
-    margin-bottom: 0; }
-
-.horizontal-align {
-  display: inline-block;
-  left: 50%;
-  position: relative;
-  transform: translateX(-50%); }

@@ -26,22 +26,3 @@
     padding: 30px;
   }
 }
-
-// Add a layout wrapper for all pages, except homepage and landing pages.
-.container {
-  @include layout-content;
-}
-
-.paragraph--type--hero-media,
-.paragraph--type--card-list,
-.paragraph--type--card {
-  margin-bottom: 100px;
-
-  .paragraph--type--card {
-    margin-bottom: 0;
-  }
-}
-
-.horizontal-align {
-  @include horizontal-align;
-}

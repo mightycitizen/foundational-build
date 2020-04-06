@@ -1,0 +1,9 @@
+// Add max-width.
+.container {
+  @include layout-content;
+}
+
+// Use horizontal align plugin.
+.horizontal-align {
+  @include horizontal-align;
+}

@@ -6,7 +6,7 @@
   .site-header-middle & {
 
     @include breakpoint($bp-sm) {
-      max-width: 350px;
+      max-width: 400px;
     }
   }
 }

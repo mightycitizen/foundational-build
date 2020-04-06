@@ -1517,6 +1517,11 @@ input[type='submit'] {
       .quote--left .quote__cite-media {
         margin: 0 1.375rem 0 0; } }
 
+.search-api-results {
+  margin-top: 50px; }
+  .search-api-results .search-api-page-block-form-search-results {
+    margin-bottom: 50px; }
+
 @media screen and (min-width: 768px) {
   .site-header-middle .search-form {
     max-width: 350px; } }

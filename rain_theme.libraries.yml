@@ -198,6 +198,11 @@ quote:
     component:
       dist/css/quote.css: {}
 
+search-api-results:
+  css:
+    component:
+      dist/css/search-api-results.css: {}
+
 search-box:
   css:
     component:

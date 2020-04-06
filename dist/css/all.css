@@ -54,10 +54,10 @@ body .paragraph--type--card {
   transform: translateX(-50%); }
 
 .vertical-align {
-  display: inline-block;
-  left: 50%;
+  display: block;
   position: relative;
-  transform: translateX(-50%); }
+  top: 50%;
+  transform: translateY(-50%); }
 
 html {
   font-family: "Lato", "Arial", sans-serif;

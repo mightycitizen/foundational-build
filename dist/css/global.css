@@ -28,6 +28,20 @@ body .paragraph--type--card {
   body .paragraph--type--card .paragraph--type--card {
     margin-bottom: 0; }
 
+.container {
+  max-width: 90%;
+  width: auto;
+  margin: 0 auto; }
+  @media screen and (min-width: 1540px) {
+    .container {
+      max-width: 1600px; } }
+
+.horizontal-align {
+  display: inline-block;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%); }
+
 html {
   font-family: "Lato", "Arial", sans-serif;
   font-size: 100%;

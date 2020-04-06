@@ -178,6 +178,11 @@ page-layout:
     component:
       dist/css/page-layout.css: {}
 
+page-title:
+  css:
+    component:
+      dist/css/page-title.css: {}
+
 pager:
   css:
     component:

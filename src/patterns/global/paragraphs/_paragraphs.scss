@@ -1,11 +1,15 @@
 body {
+  .paragraph--type--text {
+    margin-bottom: 30px;
+  }
+
   .paragraph--type--view,
   .paragraph--type--faq,
   .paragraph--type--quote,
   .paragraph--type--hero-media,
   .paragraph--type--card-list,
   .paragraph--type--card {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 
     .paragraph--type--card {
       margin-bottom: 0;

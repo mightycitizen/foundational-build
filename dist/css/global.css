@@ -19,13 +19,16 @@
   font-display: fallback;
   src: url("../fonts/lato-regularitalic-webfont.woff2") format("woff2"), url("../fonts/lato-regularitalic-webfont.woff") format("woff"); }
 
+body .paragraph--type--text {
+  margin-bottom: 30px; }
+
 body .paragraph--type--view,
 body .paragraph--type--faq,
 body .paragraph--type--quote,
 body .paragraph--type--hero-media,
 body .paragraph--type--card-list,
 body .paragraph--type--card {
-  margin-bottom: 100px; }
+  margin-bottom: 50px; }
   body .paragraph--type--view .paragraph--type--card,
   body .paragraph--type--faq .paragraph--type--card,
   body .paragraph--type--quote .paragraph--type--card,

@@ -173,6 +173,11 @@ message:
     component:
       dist/css/message.css: {}
 
+news-teaser:
+  css:
+    component:
+      dist/css/news-teaser.css: {}
+
 page-layout:
   css:
     component:

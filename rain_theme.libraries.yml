@@ -173,6 +173,11 @@ message:
     component:
       dist/css/message.css: {}
 
+page-layout:
+  css:
+    component:
+      dist/css/page-layout.css: {}
+
 pager:
   css:
     component:
@@ -183,10 +188,22 @@ search-box:
     component:
       dist/css/search-box.css: {}
 
+site-branding:
+  css:
+    component:
+      dist/css/site-branding.css: {}
+
+site-footer:
+  css:
+    component:
+      dist/css/site-footer.css: {}
+
 site-header:
   css:
     component:
       dist/css/site-header.css: {}
+  dependencies:
+    - rain_theme/l-flex
 
 slick:
   css:
@@ -205,3 +222,8 @@ tabs:
   css:
     component:
       dist/css/tabs.css: {}
+
+user-account-nav:
+  css:
+    component:
+      dist/css/user-account-nav.css: {}

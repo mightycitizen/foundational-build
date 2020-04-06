@@ -1,0 +1,44 @@
+// Import site utilities.
+@import '../../global/utils/init';
+
+// Two column layout
+// when there is a sidebar.
+.two-col-layout {
+  @include layout-content;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint($bp-md) {
+    flex-direction: row;
+  }
+
+  .region-content {
+    flex: 3;
+    padding: 30px 0;
+
+    @include breakpoint($bp-md) {
+      max-width: 75%;
+    }
+  }
+
+  .layout-sidebar-right {
+    flex: 1;
+    padding: 30px;
+  }
+}
+
+// Add a layout wrapper for all pages, except homepage and landing pages.
+.layout-content {
+  body:not(.page-node-type-homepage):not(.page-node-type-landing) & {
+    @include layout-content;
+
+    // For page titles within layout content, remove the extra margins.
+    .page-title {
+      margin: 0;
+    }
+
+    .text-card {
+      margin: 0;
+    }
+  }
+}

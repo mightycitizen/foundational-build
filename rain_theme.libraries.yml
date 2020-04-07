@@ -167,21 +167,48 @@ main-menu:
   css:
     component:
       dist/css/main-menu.css: {}
+  js:
+    dist/js/main-menu.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
 
 message:
   css:
     component:
       dist/css/message.css: {}
 
+news-teaser:
+  css:
+    component:
+      dist/css/news-teaser.css: {}
+
 page-layout:
   css:
     component:
       dist/css/page-layout.css: {}
 
+page-title:
+  css:
+    component:
+      dist/css/page-title.css: {}
+
 pager:
   css:
     component:
       dist/css/pager.css: {}
+
+quote:
+  css:
+    component:
+      dist/css/quote.css: {}
+
+search-api-results:
+  css:
+    component:
+      dist/css/search-api-results.css: {}
 
 search-box:
   css:

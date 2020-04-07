@@ -38,14 +38,28 @@
  * @ingroup themeable
  */
 #}
-{% if content.field_card['#items']|length > 1 %}
-  {% embed '@rain_theme/carousel/carousel.twig' with { content: content } only %}
-    {% block carousel_items %}
-      {% for i in content.field_card['#items'] %}
-        {{ content.field_card[loop.index0] }}
-      {% endfor %}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {% if content.field_card['#items']|length > 1 %}
+        {% embed '@rain_theme/carousel/carousel.twig' with { content: content } only %}
+          {% block carousel_items %}
+            {% for i in content.field_card['#items'] %}
+              {{ content.field_card[loop.index0] }}
+            {% endfor %}
+          {% endblock %}
+        {% endembed %}
+      {% else %}
+        {{ content.field_card }}
+      {% endif %}      
     {% endblock %}
-  {% endembed %}
-{% else %}
-  {{ content.field_card }}
-{% endif %}
+  </div>
+{% endblock paragraph %}

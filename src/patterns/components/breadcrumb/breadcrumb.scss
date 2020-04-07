@@ -5,7 +5,8 @@
 }
 
 .breadcrumb {
-  padding: 15px 30px;
+  @include layout-content;
+  padding: 15px 0;
 }
 
 .breadcrumb__item {

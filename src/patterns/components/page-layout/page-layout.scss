@@ -26,19 +26,3 @@
     padding: 30px;
   }
 }
-
-// Add a layout wrapper for all pages, except homepage and landing pages.
-.layout-content {
-  body:not(.page-node-type-homepage):not(.page-node-type-landing) & {
-    @include layout-content;
-
-    // For page titles within layout content, remove the extra margins.
-    .page-title {
-      margin: 0;
-    }
-
-    .text-card {
-      margin: 0;
-    }
-  }
-}

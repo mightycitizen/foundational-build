@@ -10,6 +10,15 @@
 // This should only be imported and loaded once.
 @import 'fonts/fonts';
 
+// Import Rain paragraphs default styles.
+@import 'paragraphs/paragraphs';
+
+// Import utility classes.
+@import 'utils/classes';
+
+// Import lists styles.
+@import 'lists/lists';
+
 // Base
 //
 // Plain html element styling. Shouldn't require

@@ -27,7 +27,11 @@
   <section {{ attributes.addClass(classes) }}>
       {% if site_logo %}
         <a href="{{ path('<front>') }}" rel="home" class="site-logo">
-          <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
+          {% if site_logo_svg %}
+            {{ site_logo_svg|raw }}
+          {% else %}
+            <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="site-logo"/>
+          {% endif %}
         </a>
       {% endif %}
       {% if site_name %}

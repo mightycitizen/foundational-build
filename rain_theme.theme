@@ -155,7 +155,16 @@ function rain_theme_theme_suggestions_node_alter(array &$suggestions, array $var
  * Implements hook_preprocess_HOOK().
  */
 function rain_theme_preprocess_block(array &$variables) {
-
+  // Use inline svg in the branding block.
+  if ($variables['plugin_id'] == 'system_branding_block') {
+    if (isset($variables['site_logo'])) {
+      $logo_path = DRUPAL_ROOT . $variables['site_logo'];
+      // If logo is a SVG lets load it content so we can inline it.
+      if (strlen($logo_path) - strpos($logo_path, '.svg') === 4) {
+        $variables['site_logo_svg'] = file_get_contents($logo_path);
+      }
+    }
+  }
 }
 
 /**
@@ -182,8 +191,13 @@ function rain_theme_theme_suggestions_fieldset_alter(array &$suggestions, array 
  * Implements hook_preprocess_node().
  */
 function rain_theme_preprocess_node(array &$variables) {
-  // Default to turning off byline/submitted.
-  //$variables['display_submitted'] = FALSE;
+  if (!empty($variables['elements']['#node']) && is_object($variables['elements']['#node']) && method_exists($variables['elements']['#node'], 'getType')) {
+    // Ensure that the node variable exists and is an object.
+    $function = __FUNCTION__ . '_' . $variables['elements']['#node']->getType();
+    if (function_exists($function)) {
+      $function($variables);
+    }
+  }
 }
 
 /**

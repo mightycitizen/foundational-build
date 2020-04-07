@@ -338,7 +338,7 @@ input[type='submit'] {
 .card-carousel__slick .slick-prev::before,
 .card-carousel__slick .slick-next::before {
   color: #3300CC;
-  font-size: 2rem; }
+  font-size: 20px; }
 
 .card-list__title {
   font-size: 1.5rem;

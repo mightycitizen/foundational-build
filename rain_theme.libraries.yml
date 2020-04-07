@@ -167,6 +167,13 @@ main-menu:
   css:
     component:
       dist/css/main-menu.css: {}
+  js:
+    dist/js/main-menu.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
 
 message:
   css:

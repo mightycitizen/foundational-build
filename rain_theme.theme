@@ -24,6 +24,9 @@ function rain_theme_preprocess_paragraph(&$variables) {
       $variables['count'] = $paragraph->getParentEntity()->get('field_card')->count();
     }
   }
+  elseif ($paragraph->bundle() == 'card_list') {
+    $variables['layout'] = $paragraph->get('field_card_list_layout')->value;
+  }
   // We want to render a gallery carousel if "gallery_carousel" is the parent.
   elseif ($paragraph->bundle() == 'gallery_carousel') {
     $carousel_items = [];

@@ -52,7 +52,7 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {% if layout == 'carousel' %}
-        {% embed '@rain_theme/card-carousel/card-carousel.twig' with { csection_title: content.field_title, content: content } only %}
+        {% embed '@rain_theme/card-carousel/card-carousel.twig' with { section_title: content.field_title, content: content } only %}
           {% block carousel_items %}
             {% for i in content.field_card['#items'] %}
               <li class="card-carousel-item">

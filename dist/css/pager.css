@@ -17,11 +17,11 @@
   margin: 5px;
   padding: unset; }
   .pager__item.is-active, .pager__item:hover {
-    background-color: #3300CC;
+    background-color: #003954;
     border-radius: 100%; }
   .pager__item.pager__item--next, .pager__item.pager__item--previous {
     align-items: center;
-    background-color: #3300CC;
+    background-color: #003954;
     border-radius: 50%;
     display: flex;
     margin: 5px;
@@ -41,7 +41,7 @@
 
 .pager__control {
   align-items: center;
-  color: #3300CC;
+  color: #003954;
   display: flex;
   font-size: 1.125rem;
   justify-content: center;

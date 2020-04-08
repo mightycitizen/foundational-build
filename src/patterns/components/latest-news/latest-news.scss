@@ -22,7 +22,6 @@
 }
 
 .latest-news__card {
-  margin-right: 6rem;
 
   .card__media {
     display: none;
@@ -33,6 +32,12 @@
 
     .card__media {
       display: block;
+    }
+
+    @include breakpoint($bp-sm) {
+      .card__content {
+        margin-left: 6rem;
+      }
     }
   }
 }

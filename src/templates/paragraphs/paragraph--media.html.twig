@@ -38,9 +38,23 @@
  * @ingroup themeable
  */
 #}
-{% set media_type = content.field_media['#items'].entity.bundle() %}
-{% include '@rain_theme/media/media.twig' with {
-  "image": media_type == 'image' ? content.field_media['#items'].entity.field_image|view : null,
-  "video": media_type == 'video' ? content.field_media['#items'].entity.field_media_video_embed_field|view : null,
-  "caption": content.field_media['#items'].entity.field_caption|view
-} only %}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {% set media_type = content.field_media['#items'].entity.bundle() %}
+      {% include '@rain_theme/media/media.twig' with {
+        "image": media_type == 'image' ? content.field_media['#items'].entity.field_image|view : null,
+        "video": media_type == 'video' ? content.field_media['#items'].entity.field_media_video_embed_field|view : null,
+        "caption": content.field_media['#items'].entity.field_caption|view
+      } only %}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

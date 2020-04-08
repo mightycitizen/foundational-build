@@ -1,7 +1,7 @@
 .button,
 input[type='submit'] {
-  background-color: #3300CC;
-  border: 2px solid #3300CC;
+  background-color: #003954;
+  border: 2px solid #003954;
   color: #FFF;
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -13,7 +13,7 @@ input[type='submit'] {
   .button:hover,
   input[type='submit']:hover {
     background-color: #FFF;
-    color: #3300CC; }
+    color: #003954; }
   @media screen and (min-width: 768px) {
     .button,
     input[type='submit'] {

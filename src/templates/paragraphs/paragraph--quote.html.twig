@@ -38,12 +38,28 @@
  * @ingroup themeable
  */
 #}
-{% include '@rain_theme/quote/quote.twig' with {
-  "quote": {
-    "modifier_class": "",
-    "quote": content.field_quote.0,
-    "image": null,
-    "name": content.field_author.0,
-    "job": content.field_job_title.0
-  }
-} only %}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'horizontal-align'
+  ]
+%}
+
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {% include '@rain_theme/quote/quote.twig' with {
+        "quote": {
+          "modifier_class": "",
+          "quote": content.field_quote.0,
+          "image": null,
+          "name": content.field_author.0,
+          "job": content.field_job_title.0
+        }
+      } only %}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

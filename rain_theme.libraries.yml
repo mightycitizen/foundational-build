@@ -36,10 +36,20 @@ accordion:
   js:
     dist/js/accordion.es6.js: {}
 
+authors:
+  css:
+    component:
+      dist/css/authors.css: {}
+
 button:
   css:
     component:
       dist/css/button.css: {}
+
+breadcrumb:
+  css:
+    component:
+      dist/css/breadcrumb.css: {}
 
 card:
   css:
@@ -104,6 +114,11 @@ eyebrow:
     component:
       dist/css/eyebrow.css: {}
 
+event-teaser:
+  css:
+    component:
+      dist/css/event-teaser.css: {}
+
 gallery-carousel:
   css:
     component:
@@ -123,6 +138,21 @@ heading:
     component:
       dist/css/heading.css: {}
 
+l-2x:
+  css:
+    component:
+      dist/css/l-2x.css: {}
+
+l-3x:
+  css:
+    component:
+      dist/css/l-3x.css: {}
+
+l-flex:
+  css:
+    component:
+      dist/css/l-flex.css: {}
+
 map:
   css:
     component:
@@ -133,10 +163,74 @@ media:
     component:
       dist/css/media.css: {}
 
+main-menu:
+  css:
+    component:
+      dist/css/main-menu.css: {}
+  js:
+    dist/js/main-menu.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+
 message:
   css:
     component:
       dist/css/message.css: {}
+
+news-teaser:
+  css:
+    component:
+      dist/css/news-teaser.css: {}
+
+page-layout:
+  css:
+    component:
+      dist/css/page-layout.css: {}
+
+page-title:
+  css:
+    component:
+      dist/css/page-title.css: {}
+
+pager:
+  css:
+    component:
+      dist/css/pager.css: {}
+
+quote:
+  css:
+    component:
+      dist/css/quote.css: {}
+
+search-api-results:
+  css:
+    component:
+      dist/css/search-api-results.css: {}
+
+search-box:
+  css:
+    component:
+      dist/css/search-box.css: {}
+
+site-branding:
+  css:
+    component:
+      dist/css/site-branding.css: {}
+
+site-footer:
+  css:
+    component:
+      dist/css/site-footer.css: {}
+
+site-header:
+  css:
+    component:
+      dist/css/site-header.css: {}
+  dependencies:
+    - rain_theme/l-flex
 
 slick:
   css:
@@ -155,3 +249,8 @@ tabs:
   css:
     component:
       dist/css/tabs.css: {}
+
+user-account-nav:
+  css:
+    component:
+      dist/css/user-account-nav.css: {}

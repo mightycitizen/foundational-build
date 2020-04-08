@@ -1,0 +1,27 @@
+.breadcrumb__container {
+  background-color: #404040; }
+
+.breadcrumb {
+  max-width: 90%;
+  width: auto;
+  margin: 0 auto;
+  padding: 15px 0; }
+  @media screen and (min-width: 1540px) {
+    .breadcrumb {
+      max-width: 1600px; } }
+
+.breadcrumb__item {
+  color: #FFF;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+  .breadcrumb__item:not(:first-of-type)::before {
+    content: '>';
+    color: #FFF;
+    margin: 0 10px; }
+  .breadcrumb__item a {
+    text-decoration: none;
+    color: #FFF; }
+    .breadcrumb__item a:hover {
+      text-decoration: underline; }

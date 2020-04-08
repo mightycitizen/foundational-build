@@ -21,4 +21,13 @@
 
 .columns__item {
   margin-bottom: 1.5rem;
+  width: 50%;
+}
+
+.columns-count-3 .columns__item {
+   width: 33%;
+}
+
+.columns-count-4 .columns__item {
+  width: 25%;
 }

@@ -18,7 +18,8 @@
       flex-direction: row; } }
 
 .card-list__item {
-  margin: 3rem 0 0; }
+  margin: 3rem 0 0;
+  flex: 1; }
   .card-list__item:first-of-type {
     margin: 0; }
   @media screen and (min-width: 544px) {

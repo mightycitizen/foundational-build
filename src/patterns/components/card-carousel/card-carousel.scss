@@ -45,7 +45,30 @@
   .slick-next {
     &::before {
       color: $color-blue;
-      font-size: 20px;
+      font-size: 40px;
+    }
+  }
+
+  // Make dots below carousel larger.
+  // Improves navigation UX, especially mobile.
+  .slick-dots {
+    bottom: -50px;
+
+    li {
+      height: 35px;
+      width: 35px;
+
+      button {
+        height: 35px;
+        width: 35px;
+
+        &::before {
+          font-size: 20px;
+          height: 35px;
+          position: initial;
+          width: 35px;
+        }
+      }
     }
   }
 }

@@ -33,4 +33,18 @@
 .card-carousel__slick .slick-prev::before,
 .card-carousel__slick .slick-next::before {
   color: #3300CC;
-  font-size: 20px; }
+  font-size: 40px; }
+
+.card-carousel__slick .slick-dots {
+  bottom: -50px; }
+  .card-carousel__slick .slick-dots li {
+    height: 35px;
+    width: 35px; }
+    .card-carousel__slick .slick-dots li button {
+      height: 35px;
+      width: 35px; }
+      .card-carousel__slick .slick-dots li button::before {
+        font-size: 20px;
+        height: 35px;
+        position: initial;
+        width: 35px; }

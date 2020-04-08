@@ -948,8 +948,13 @@ input[type='submit'] {
   transition: opacity 0.25s;
   width: 100%; }
 
-.gallery-carousel__nav .slick-track {
-  padding: 20px 0; }
+.gallery-carousel.slick-slider {
+  padding-left: 0; }
+
+.gallery-carousel__nav.slick-slider {
+  padding-left: 0; }
+  .gallery-carousel__nav.slick-slider .slick-track {
+    padding: 20px 0; }
 
 .gallery-carousel__nav-item {
   border: 3px solid transparent;

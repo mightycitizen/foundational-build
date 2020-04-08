@@ -1,11 +1,3 @@
-.card-carousel__wrapper {
-  max-width: 90%;
-  width: auto;
-  margin: 0 auto; }
-  @media screen and (min-width: 1540px) {
-    .card-carousel__wrapper {
-      max-width: 1600px; } }
-
 .card-carousel-item {
   margin: 30px; }
 
@@ -30,21 +22,22 @@
   transition: bottom 0.25s;
   cursor: pointer; }
 
-.card-carousel__slick .slick-prev::before,
-.card-carousel__slick .slick-next::before {
-  color: #003954;
-  font-size: 40px; }
-
-.card-carousel__slick .slick-dots {
-  bottom: -50px; }
-  .card-carousel__slick .slick-dots li {
-    height: 35px;
-    width: 35px; }
-    .card-carousel__slick .slick-dots li button {
+.card-carousel__list.card-carousel__slick {
+  padding-left: 0; }
+  .card-carousel__list.card-carousel__slick .slick-prev::before,
+  .card-carousel__list.card-carousel__slick .slick-next::before {
+    color: #003954;
+    font-size: 40px; }
+  .card-carousel__list.card-carousel__slick .slick-dots {
+    bottom: -50px; }
+    .card-carousel__list.card-carousel__slick .slick-dots li {
       height: 35px;
       width: 35px; }
-      .card-carousel__slick .slick-dots li button::before {
-        font-size: 20px;
+      .card-carousel__list.card-carousel__slick .slick-dots li button {
         height: 35px;
-        position: initial;
         width: 35px; }
+        .card-carousel__list.card-carousel__slick .slick-dots li button::before {
+          font-size: 20px;
+          height: 35px;
+          position: initial;
+          width: 35px; }

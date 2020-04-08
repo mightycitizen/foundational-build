@@ -5,14 +5,16 @@
   {{- attributes ? attributes|without(class) -}}>
 
   {% block card_media %}
-    <div class="card__media">
-      {% if card.media.image %}
-        {{ card.media.image }}
-      {% elseif card.media.video %}
-        {{ card.media.video }}
-      {% endif %}
-        {{ card.media.caption }}
-    </div>
+    {% if card.media.image or card.media.video %}
+      <div class="card__media">
+        {% if card.media.image %}
+          {{ card.media.image }}
+        {% elseif card.media.video %}
+          {{ card.media.video }}
+        {% endif %}
+          {{ card.media.caption }}
+      </div>
+    {% endif %}  
   {% endblock %}
 
   <div class="card__content">

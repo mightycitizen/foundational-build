@@ -1,3 +1,4 @@
+{% import '@rain_theme/icons/_icons-macro.twig' as icons %}
 {{ attach_library('rain_theme/card-carousel') }}
 
 <section class="card-carousel__wrapper{{ attributes ? ' ' ~ attributes.class}}"
@@ -23,7 +24,7 @@
             {% block card_media %}
               <a href="{{ item.card.media.image }}" title="{{ item.card.media.caption }}" class="card-carousel-item__media">
                 <img src="{{ item.card.media.thumb }}" alt="{{ item.card.media.caption }}" class="card-carousel-item__media-thumb"/>
-                <img src="../../../dist/images/expand-icon.svg" class="card-carousel-item__expand" alt="View full media."/>
+                <button aria-label="View full media" class="card-carousel-item__expand">{{ icons.get('expand')}}</button>
               </a>
             {% endblock %}
           {% endembed %}

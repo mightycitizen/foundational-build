@@ -40,7 +40,7 @@
 #}
 {% set media_type = content.field_media['#items'].entity.bundle() %}
 {% include '@rain_theme/media/media.twig' with {
-  "image": media_type == 'image' ? content.field_media : null,
-  "video": media_type == 'video' ? content.field_media : null,
-  "caption": null
+  "image": media_type == 'image' ? content.field_media['#items'].entity.field_image|view : null,
+  "video": media_type == 'video' ? content.field_media['#items'].entity.field_media_video_embed_field|view : null,
+  "caption": content.field_media['#items'].entity.field_caption|view
 } only %}

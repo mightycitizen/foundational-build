@@ -4,6 +4,9 @@
 <h{{ heading.heading_level|default('2')}} class="heading{{ heading.modifier ? ' ' ~ heading.modifier }}
   {{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
+  {% if heading.icon %}
+    {{ heading.icon }}
+  {% endif %}
   {% if heading.url %}
     <a href="{{ heading.url }}" class="heading--link">{{ heading.title }}</a>
   {% else %}

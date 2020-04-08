@@ -22,6 +22,7 @@
 body .paragraph--type--text {
   margin-bottom: 30px; }
 
+body .paragraph--type--block,
 body .paragraph--type--embed,
 body .paragraph--type--map,
 body .paragraph--type--view,
@@ -34,6 +35,7 @@ body .paragraph--type--hero-media,
 body .paragraph--type--card-list,
 body .paragraph--type--card {
   margin-bottom: 50px; }
+  body .paragraph--type--block .paragraph--type--card,
   body .paragraph--type--embed .paragraph--type--card,
   body .paragraph--type--map .paragraph--type--card,
   body .paragraph--type--view .paragraph--type--card,

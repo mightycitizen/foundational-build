@@ -1,12 +1,13 @@
 {% if title %}
-  {%
-    include '@rain_theme/heading/heading.twig' with {
-      "heading": {
-        "title": title,
-        "heading_level": "2",
-        "modifier": "heading--section",
-      },
-      "attributes": title_attributes.addClass("container"),
-    } only
-  %}
+  <div class="container">
+    {%
+      include '@rain_theme/heading/heading.twig' with {
+        "heading": {
+          "title": title,
+          "heading_level": "2",
+          "modifier": "heading--section",
+        },
+      } only
+    %}
+  </div>  
 {% endif %}

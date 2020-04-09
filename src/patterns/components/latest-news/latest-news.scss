@@ -5,12 +5,6 @@
   margin: 0 1rem;
 }
 
-.latest-news__list,
-.latest-news__title {
-  max-width: $bp-xl;
-  margin: auto;
-}
-
 .latest-news__items {
   grid-template-columns: repeat(3, 1fr);
   // sass-lint:disable no-misspelled-properties

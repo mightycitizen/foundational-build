@@ -11,14 +11,16 @@
  * themed in menu-local-task.html.twig.
  */
 #}
-{% embed "@rain_theme/tabs/tabs.twig" with {
-  primary: primary,
-  secondary: secondary
-} only %}
-  {% block primary %}
-    {{ primary }}
-  {% endblock %}
-  {% block secondary %}
-    {{ secondary }}
-  {% endblock %}
-{% endembed %}
+<div class="container">
+  {% embed "@rain_theme/tabs/tabs.twig" with {
+    primary: primary,
+    secondary: secondary
+  } only %}
+    {% block primary %}
+      {{ primary }}
+    {% endblock %}
+    {% block secondary %}
+      {{ secondary }}
+    {% endblock %}
+  {% endembed %}
+</div>

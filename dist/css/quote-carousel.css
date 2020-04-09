@@ -13,7 +13,7 @@
     position: relative; }
     .quote-carousel__navigation .slick-prev::before,
     .quote-carousel__navigation .slick-next::before {
-      color: #3300CC;
+      color: #003954;
       font-size: 48px; }
   .quote-carousel__navigation .slick-prev {
     left: auto; }

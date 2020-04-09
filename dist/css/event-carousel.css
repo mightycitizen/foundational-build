@@ -41,7 +41,7 @@
     position: relative; }
     .event-carousel__navigation .slick-prev::before,
     .event-carousel__navigation .slick-next::before {
-      color: #3300CC;
+      color: #003954;
       font-size: 48px; }
   .event-carousel__navigation .slick-prev {
     left: auto; }

@@ -38,6 +38,15 @@
  * @ingroup themeable
  */
 #}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'container'
+  ]
+%}
 
 {# We triggering a full render of the content variable. #}
 {% set rendered_content = content|render %}
@@ -85,15 +94,21 @@
   }
 %}
 
-{% include '@rain_theme/card/card.twig' with {
-    card: {
-      modifier: modifier_class,
-      media: media_content,
-      eyebrow: eyebrow_content,
-      heading: heading_content,
-      subhead: subheading_content,
-      summary_text: content.field_summary,
-      link: link
-    }
-  } only
-%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {% include '@rain_theme/card/card.twig' with {
+          card: {
+            modifier: modifier_class,
+            media: media_content,
+            eyebrow: eyebrow_content,
+            heading: heading_content,
+            subhead: subheading_content,
+            summary_text: content.field_summary,
+            link: link
+          }
+        } only
+      %}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

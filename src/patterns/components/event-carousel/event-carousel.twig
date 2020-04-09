@@ -1,0 +1,36 @@
+{{ attach_library('rain_theme/event-carousel') }}
+
+<section class="event-carousel_container{{ attributes ? ' ' ~ attributes.class}}">
+  <div class="event-carousel__wrapper">
+    {% if heading.title %}
+      {%
+        include '@rain_theme/heading/heading.twig' with {
+          "heading": heading
+        } only
+      %}
+    {% endif %}
+    <div class="event-carousel fade">
+      {% block carousel_items %}
+        <ul class="event-carousel__list event-carousel__slick">
+          {% for item in items %}
+            <li class="event-carousel-item">
+              {%
+                include '@rain_theme/event-card/event-card.twig' with {
+                  card: item.card,
+                } only
+              %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endblock %}
+      <div class="event-carousel__navigation">
+        <div class="slick-pager"></div>
+      </div>
+    </div>
+    {% if links %}
+      <div class="event-carousel__links">
+        {{ links }}
+      </div>
+    {% endif %}
+  </div>
+</section>

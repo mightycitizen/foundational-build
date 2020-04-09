@@ -2,7 +2,7 @@
 
 <blockquote class="quote {{ quote.modifier_class }}">
   <p class="quote__text">{{ quote.quote }}</p>
-  <cite class="quote__cite">
+  <cite class="quote__cite{{ quote.image ? ' has-media' : ''}}">
   {% if quote.image %}
     <div class="quote__cite-media">
       {{ quote.image }}

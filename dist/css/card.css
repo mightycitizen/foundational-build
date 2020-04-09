@@ -1,5 +1,11 @@
 .card {
   background-color: #FFF; }
+  @media screen and (min-width: 768px) {
+    .card.horizontal {
+      display: flex; }
+      .card.horizontal .card__media,
+      .card.horizontal .card__content {
+        flex: 50%; } }
   .card .card__content {
     margin: 2rem 0 0; }
 

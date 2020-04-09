@@ -109,6 +109,20 @@ gallery-lightbox:
   dependencies:
     - rain_theme/colorbox
 
+event-card:
+  css:
+    component:
+      dist/css/event-card.css: {}
+
+event-carousel:
+  css:
+    component:
+      dist/css/event-carousel.css: {}
+  js:
+    dist/js/event-carousel.es6.js: {}
+  dependencies:
+    - rain_theme/slick
+
 eyebrow:
   css:
     component:
@@ -204,6 +218,15 @@ quote:
   css:
     component:
       dist/css/quote.css: {}
+
+quote-carousel:
+  css:
+    component:
+      dist/css/quote-carousel.css: {}
+  js:
+    dist/js/quote-carousel.es6.js: {}
+  dependencies:
+    - rain_theme/slick
 
 search-api-results:
   css:

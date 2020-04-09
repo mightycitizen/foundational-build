@@ -1,0 +1,14 @@
+{% extends '@paragraphs/paragraph.html.twig' %}
+{% block content %}
+  {% embed '@rain_theme/quote-carousel/quote-carousel.twig' with {
+    "items": carousel_items,
+  } only %}
+    {% block carousel_items %}
+      {% for item in items %}
+      <li class="quote-carousel-item">
+        {{ item|render }}
+      </li>
+      {% endfor %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

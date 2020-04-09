@@ -4,6 +4,17 @@
 .card {
   background-color: $color-white;
 
+  @include breakpoint($bp-sm) {
+    &.horizontal {
+      display: flex;
+
+      .card__media,
+      .card__content {
+        flex: 50%;
+      }
+    }
+  }
+
   .card__content {
     margin: 2rem 0 0;
   }

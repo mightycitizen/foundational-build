@@ -5,7 +5,6 @@
  * Functions to support theming in the rain_theme theme.
  */
 
-use Drupal\image\Entity\ImageStyle;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
 
@@ -99,32 +98,14 @@ function rain_theme_preprocess_paragraph__view(&$variables) {
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
 function rain_theme_preprocess_html(array &$variables) {
-  /* Add class to html tag */
-  //$variables['html_attributes']->addClass('no-js');
 
-  // Don't display the site name twice on the front page
-  // (and potentially others)
-  /*if (isset($variables['head_title_array']['title'])
-    && isset($variables['head_title_array']['name'])
-    && ($variables['head_title_array']['title'] == $variables['head_title_array']['name'])) {
-    $variables['head_title'] = $variables['head_title_array']['name'];
-  }*/
 }
 
 /**
  * Implements hook_page_attachments_alter().
  */
 function rain_theme_page_attachments_alter(array &$page) {
-  // Tell IE to use latest rendering engine (not to use compatibility mode).
-  /*$ie_edge = [
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
-    '#attributes' => [
-    'http-equiv' => 'X-UA-Compatible',
-    'content' => 'IE=edge',
-    ],
-  ];
-  $page['#attached']['html_head'][] = [$ie_edge, 'ie_edge'];*/
+
 }
 
 /**
@@ -145,11 +126,7 @@ function rain_theme_theme_suggestions_page_alter(array &$suggestions, array $var
  * Implements hook_theme_suggestions_node_alter().
  */
 function rain_theme_theme_suggestions_node_alter(array &$suggestions, array $variables) {
-  /*$node = $variables['elements']['#node'];
 
-  if ($variables['elements']['#view_mode'] == "full") {
-
-  }*/
 }
 
 /**
@@ -163,20 +140,14 @@ function rain_theme_preprocess_block(array &$variables) {
  * Implements hook_theme_suggestions_field_alter().
  */
 function rain_theme_theme_suggestions_field_alter(array &$suggestions, array $variables) {
-  /*$element = $variables['element'];
-  $suggestions[] = 'field__' . $element['#view_mode'];
-  $suggestions[] = 'field__' . $element['#view_mode'] . '__' . $element['#field_name'];*/
+
 }
 
 /**
  * Implements hook_theme_suggestions_field_alter().
  */
 function rain_theme_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
-  /*$element = $variables['element'];
-  if (isset($element['#attributes']['class'])
-    && in_array('form-composite', $element['#attributes']['class'])) {
-    $suggestions[] = 'fieldset__form_composite';
-  }*/
+
 }
 
 /**
@@ -204,45 +175,37 @@ function rain_theme_preprocess_node(array &$variables) {
       }
     }
   }
-  // Default to turning off byline/submitted.
-  //$variables['display_submitted'] = FALSE;
 }
 
 /**
  * Implements hook_theme_suggestions_views_view_alter().
  */
 function rain_theme_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
-
 }
 
 /**
  * Implements hook_preprocess_form().
  */
 function rain_theme_preprocess_form(array &$variables) {
-  //$variables['attributes']['novalidate'] = 'novalidate';
 }
 
 /**
  * Implements hook_preprocess_select().
  */
 function rain_theme_preprocess_select(array &$variables) {
-  //$variables['attributes']['class'][] = 'select-chosen';
 }
 
 /**
  * Implements hook_preprocess_field().
  */
 function rain_theme_preprocess_field(array &$variables, $hook) {
-  /*switch ($variables['element']['#field_name']) {
-  }*/
 }
 
 /**
  * Implements hook_preprocess_details().
  */
 function rain_theme_preprocess_details(array &$variables) {
-  /*$variables['attributes']['class'][] = 'details';
-  $variables['summary_attributes']['class'] = 'summary';*/
+
 }
 
 /**
@@ -262,5 +225,25 @@ function rain_theme_theme_suggestions_paragraph_alter(array &$suggestions, array
     $view_ref = $paragraph->field_view_ref->getValue();
     // Add suggestions for paragraph views with different views id and block.
     $suggestions[] = 'paragraph__view__' . $view_ref[0]['target_id'] . '_' . $view_ref[0]['display_id'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_preprocess_views_view_fields().
+ */
+function rain_theme_preprocess_views_view_fields__latest_news__block_1(array &$variables) {
+  // Separate the link and the text for the more link.
+  if (isset($variables['fields']['view_node'])) {
+    $more_link = Url::fromRoute('entity.node.canonical', ['node' => $variables['row']->nid]);
+    $variables['more_link'] = [
+      'url' => $more_link->toString(),
+      'text' => t('Read more'),
+    ];
+  }
+  if (isset($variables['row']->index)) {
+    if ($variables['row']->index === 0) {
+      // Make the first card horizontal display.
+      $variables['modifier'] = 'horizontal';
+    }
   }
 }

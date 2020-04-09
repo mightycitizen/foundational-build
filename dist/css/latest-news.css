@@ -1,0 +1,25 @@
+.latest-news__list {
+  max-width: 1540px;
+  margin: auto; }
+
+.latest-news__items {
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 75px;
+  -moz-column-gap: 6rem;
+  column-gap: 6rem; }
+  .latest-news__items .latest-news__item {
+    display: none; }
+  @media screen and (min-width: 768px) {
+    .latest-news__items {
+      display: grid; } }
+
+.latest-news__card .card__media {
+  display: none; }
+
+.latest-news__card:first-child {
+  grid-column: 1 / 4; }
+  .latest-news__card:first-child .card__media {
+    display: block; }
+  @media screen and (min-width: 768px) {
+    .latest-news__card:first-child .card__content {
+      margin-left: 6rem; } }

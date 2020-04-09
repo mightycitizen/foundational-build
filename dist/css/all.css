@@ -77,6 +77,9 @@ body .paragraph--type--card {
   margin-right: 0;
   padding-left: 40px; }
 
+body .slick-slider {
+  padding-left: 0; }
+
 html {
   font-family: "Lato", "Arial", sans-serif;
   font-size: 100%;

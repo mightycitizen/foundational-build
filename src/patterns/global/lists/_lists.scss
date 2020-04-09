@@ -9,3 +9,8 @@
     padding-left: 40px;
   }
 }
+
+// Prevent slick sliders from using padding.
+body .slick-slider {
+  padding-left: 0;
+}

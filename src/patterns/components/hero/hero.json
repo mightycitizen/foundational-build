@@ -5,16 +5,16 @@
     },
     "eyebrow": {
       "text": "Subhead Could Be Here",
-      "classes": " hero__eyebrow"
+      "modifier": " hero__eyebrow"
     },
     "heading": {
       "title": "Title Lorem Ipsum Dolor",
       "level": "2",
-      "classes": "hero__heading"
+      "modifier": "hero__heading"
     },
     "body": {
       "body_text": "Some sites need a tagline mauris ac dui sit amet sem facilisis finibus vitae et mi.",
-      "classes": "hero__body"
+      "modifier": "hero__body"
     },
     "hero_body": "Some sites need a tagline mauris ac dui sit amet sem facilisis finibus vitae et mi.",
     "button": {

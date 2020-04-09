@@ -34,7 +34,13 @@
   width: 100%;
 }
 
-.gallery-carousel__nav {
+.gallery-carousel.slick-slider {
+  padding-left: 0;
+}
+
+.gallery-carousel__nav.slick-slider {
+  padding-left: 0;
+
   .slick-track {
     padding: 20px 0;
   }

@@ -1,5 +1,9 @@
 {
-  "title": "Latest News",
+  "heading": {
+    "title": "Latest News",
+    "heading_level": 2,
+    "modifier": "latest-news__title"
+  },
   "items": [
     {
       "card": {

@@ -1,7 +1,3 @@
-.latest-news__list {
-  max-width: 1540px;
-  margin: auto; }
-
 .latest-news__items {
   grid-template-columns: repeat(3, 1fr);
   row-gap: 75px;

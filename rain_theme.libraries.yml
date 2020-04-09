@@ -152,6 +152,11 @@ heading:
     component:
       dist/css/heading.css: {}
 
+latest-news:
+  css:
+    component:
+      dist/css/latest-news.css: {}
+
 l-2x:
   css:
     component:

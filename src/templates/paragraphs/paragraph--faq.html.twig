@@ -51,16 +51,17 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {% if content.field_title %}
-        {%
-          include '@rain_theme/heading/heading.twig' with {
-            "heading": {
-              "title": content.field_title,
-              "heading_level": "2",
-              "modifier": "heading--section",
-            },
-            "attributes": title_attributes.addClass("container"),
-          } only
-        %}
+        <div class="container">
+          {%
+            include '@rain_theme/heading/heading.twig' with {
+              "heading": {
+                "title": content.field_title,
+                "heading_level": "2",
+                "modifier": "heading--section",
+              },
+            } only
+          %}
+        </div>  
       {% endif %}
       {% embed '@rain_theme/accordion/accordion.twig' with { content: content } only %}
         {% block accordion_items %}

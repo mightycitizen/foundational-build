@@ -92,16 +92,17 @@
   {{ title_suffix }}
 
   {% if content.field_subhead %}
-    {%
-      include '@rain_theme/heading/heading.twig' with {
-        "heading": {
-          "title": content.field_subhead,
-          "heading_level": "2",
-          "modifier": "heading--section",
-        },
-        "attributes": title_attributes.addClass("container"),
-      } only
-    %}
+    <div class="container">
+      {%
+        include '@rain_theme/heading/heading.twig' with {
+          "heading": {
+            "title": content.field_subhead,
+            "heading_level": "2",
+            "modifier": "heading--section",
+          },
+        } only
+      %}
+    </div>
   {% endif %}
 
   <div{{ content_attributes.addClass('node__content') }}>

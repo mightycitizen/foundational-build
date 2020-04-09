@@ -137,6 +137,11 @@ heading:
     component:
       dist/css/heading.css: {}
 
+latest-news:
+  css:
+    component:
+      dist/css/latest-news.css: {}
+
 map:
   css:
     component:

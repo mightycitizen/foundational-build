@@ -983,7 +983,11 @@ input[type='submit'] {
 .invisible {
   visibility: hidden; }
 
-.latest-news__list {
+.latest-news {
+  margin: 0 1rem; }
+
+.latest-news__list,
+.latest-news__title {
   max-width: 1540px;
   margin: auto; }
 

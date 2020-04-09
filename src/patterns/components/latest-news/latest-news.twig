@@ -1,13 +1,9 @@
 {{ attach_library('rain_theme/latest-news') }}
 <section class="latest-news{{ attributes ? ' ' ~ attributes.class}}">
-  {% if title %}
+  {% if heading.title %}
     {%
       include '@rain_theme/heading/heading.twig' with {
-        "heading": {
-          "title": title,
-          "heading_level": 2,
-          "modifier": "latest-news__title"
-        }
+        "heading": heading,
       } only
     %}
   {% endif %}

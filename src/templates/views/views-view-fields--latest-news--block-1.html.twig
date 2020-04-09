@@ -34,7 +34,8 @@
   index: row.index,
   card: {
     heading: {
-      title: fields.title.content
+      title: fields.title.content,
+      modifier: 'card__title',
     },
     modifier: modifier|default('vertical'),
     eyebrow: {
@@ -47,7 +48,9 @@
 } only %}
   {% block card_media %}
     {% if (index is same as (0)) %}
-      {{ fields.field_thumbnail.content }}
+      <div class="card__media">
+        {{ fields.field_thumbnail.content }}
+      </div>
     {% endif %}
   {% endblock %}
 {% endembed %}

@@ -16,10 +16,14 @@
  * @see template_preprocess_views_view_list()
  */
 #}
-<div class="latest-news__items">
-  {% for row in rows %}
-    <div class="latest-news__card">
-      {{- row.content -}}
+{% embed '@rain_theme/latest-news/latest-news.twig' %}
+  {% block card_items %}
+    <div class="latest-news__items">
+      {% for row in rows %}
+        <div class="latest-news__card">
+          {{- row.content -}}
+        </div>
+      {% endfor %}
     </div>
-  {% endfor %}
-</div>
+  {% endblock %}
+{% endembed %}

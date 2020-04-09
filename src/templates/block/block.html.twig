@@ -35,7 +35,16 @@
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
-    <h2{{ title_attributes.addClass(['container']) }}>{{ label }}</h2>
+    {%
+      include '@rain_theme/heading/heading.twig' with {
+        "heading": {
+          "title": label,
+          "heading_level": "2",
+          "modifier": "heading--section",
+        },
+        "attributes": title_attributes.addClass("container"),
+      } only
+    %}
   {% endif %}
   {{ title_suffix }}
   {% block content %}

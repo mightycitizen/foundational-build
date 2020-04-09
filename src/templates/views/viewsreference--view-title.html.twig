@@ -1,11 +1,11 @@
 {% if title %}
   {%
     include '@rain_theme/heading/heading.twig' with {
-    "heading": {
+      "heading": {
         "title": title,
         "heading_level": "2",
-        "modifier": "container",
-    }
+      },
+      "attributes": title_attributes.addClass('container'),
     } only
   %}
 {% endif %}

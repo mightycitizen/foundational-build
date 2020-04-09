@@ -4,7 +4,7 @@
     include '@rain_theme/heading/heading.twig' with {
       "title": section_title,
       "heading_level": 2,
-      "classes": "gallery-lightbox__title"
+      "modifier": "gallery-lightbox__title"
     } only
   %}
 {% endif %}
@@ -13,7 +13,7 @@
   {%
     include '@rain_theme/body-text/body-text.twig' with {
       "body_text": intro_text,
-      "classes": "gallery-lightbox__intro-text"
+      "modifier": "gallery-lightbox__intro-text"
     } only
   %}
 {% endif %}

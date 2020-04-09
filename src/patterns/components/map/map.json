@@ -9,7 +9,7 @@
     },
     "eyebrow": {
       "text": "Optional subtitle",
-      "classes": ""
+      "modifier": ""
     }
   }
 }

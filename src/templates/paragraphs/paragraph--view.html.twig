@@ -38,17 +38,18 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-    'paragraph-views',
-    wrapper_class,
-  ]
-%}
+{% extends '@paragraphs/paragraph.html.twig' %}
 {% block paragraph %}
+  {%
+    set classes = [
+      'paragraph',
+      'paragraph--type--' ~ paragraph.bundle|clean_class,
+      view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+      not paragraph.isPublished() ? 'paragraph--unpublished',
+      'paragraph-views',
+      wrapper_class,
+    ]
+  %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {% if content.field_title %}
@@ -62,9 +63,16 @@
               },
             } only
           %}
-        </div>  
+        </div>
       {% endif %}
-      {{ content|without('field_title') }}
+      {{ content|without('field_title', 'field_link') }}
+      {% if content.field_link %}
+        <div class="container">
+          <div class="links">
+            {{ content.field_link }}
+          </div>
+        </div>
+      {% endif %}
     {% endblock %}
   </div>
 {% endblock paragraph %}

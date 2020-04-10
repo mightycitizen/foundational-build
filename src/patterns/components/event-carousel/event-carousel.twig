@@ -2,13 +2,15 @@
 
 <section class="event-carousel_container{{ attributes ? ' ' ~ attributes.class}}">
   <div class="event-carousel__wrapper">
-    {% if heading.title %}
-      {%
-        include '@rain_theme/heading/heading.twig' with {
-          "heading": heading
-        } only
-      %}
-    {% endif %}
+    {% block carousel_title %}
+      {% if heading.title %}
+        {%
+          include '@rain_theme/heading/heading.twig' with {
+            "heading": heading
+          } only
+        %}
+      {% endif %}
+    {% endblock %}
     <div class="event-carousel fade">
       {% block carousel_items %}
         <ul class="event-carousel__list event-carousel__slick">
@@ -27,10 +29,12 @@
         <div class="slick-pager"></div>
       </div>
     </div>
-    {% if links %}
-      <div class="event-carousel__links">
-        {{ links }}
-      </div>
-    {% endif %}
+    {% block carousel_links %}
+      {% if links %}
+        <div class="event-carousel__links links">
+          {{ links }}
+        </div>
+      {% endif %}
+    {% endblock %}
   </div>
 </section>

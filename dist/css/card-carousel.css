@@ -1,5 +1,7 @@
 .card-carousel-item {
   margin: 20px; }
+  .card-carousel-item .card__title {
+    margin-top: 0; }
 
 .card-carousel-item__media {
   display: block;

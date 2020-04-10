@@ -2,6 +2,15 @@
 body {
   .paragraph--type--text {
     margin-bottom: 30px;
+
+    ul,
+    ol {
+      margin-top: 1em;
+      margin-bottom: 1 em;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 40px;
+    }
   }
 
   .paragraph--type--block,

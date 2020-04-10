@@ -21,6 +21,13 @@
 
 body .paragraph--type--text {
   margin-bottom: 30px; }
+  body .paragraph--type--text ul,
+  body .paragraph--type--text ol {
+    margin-top: 1em;
+    margin-bottom: 1 em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px; }
 
 body .paragraph--type--block,
 body .paragraph--type--embed,
@@ -68,17 +75,6 @@ body .paragraph--type--card {
   position: relative;
   top: 50%;
   transform: translateY(-50%); }
-
-.block-system-main-block ul,
-.block-system-main-block ol {
-  margin-top: 1em;
-  margin-bottom: 1 em;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 40px; }
-
-body .slick-slider {
-  padding-left: 0; }
 
 html {
   font-family: "Lato", "Arial", sans-serif;

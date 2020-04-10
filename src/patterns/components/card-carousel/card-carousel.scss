@@ -13,6 +13,10 @@
 
 .card-carousel-item {
   margin: 20px;
+
+  .card__title {
+    margin-top: 0;
+  }
 }
 
 .card-carousel-item__media {

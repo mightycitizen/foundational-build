@@ -15,8 +15,8 @@
     }
   }
 
-  .card__content {
-    margin: 2rem 0 0;
+  .card__media {
+    margin-bottom: 2rem;
   }
 }
 
@@ -60,6 +60,7 @@
 
   .card__media {
     flex: 1;
+    margin-bottom: 0;
   }
 
   .card__content {

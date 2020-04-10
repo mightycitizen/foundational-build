@@ -1,3 +1,6 @@
+.card-carousel__wrapper {
+  padding-bottom: 10px; }
+
 .card-carousel-item {
   margin: 20px; }
   .card-carousel-item .card__title {

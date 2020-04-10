@@ -366,6 +366,9 @@ input[type='submit'] {
     font-size: 0.875rem;
     padding: 0.5rem 1rem; }
 
+.card-carousel__wrapper {
+  padding-bottom: 10px; }
+
 .card-carousel-item {
   margin: 20px; }
   .card-carousel-item .card__title {
@@ -1281,7 +1284,6 @@ input[type='submit'] {
 
 .latest-news__items {
   grid-template-columns: repeat(3, 1fr);
-  row-gap: 75px;
   -moz-column-gap: 6rem;
   column-gap: 6rem; }
   .latest-news__items .latest-news__item {

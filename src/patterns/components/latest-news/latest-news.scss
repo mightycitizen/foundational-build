@@ -4,7 +4,6 @@
 .latest-news__items {
   grid-template-columns: repeat(3, 1fr);
   // sass-lint:disable no-misspelled-properties
-  row-gap: 75px;
   column-gap: 6rem;
 
   & .latest-news__item {

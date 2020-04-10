@@ -367,12 +367,7 @@ input[type='submit'] {
     padding: 0.5rem 1rem; }
 
 .card-carousel__wrapper {
-  max-width: 90%;
-  width: auto;
-  margin: 0 auto; }
-  @media screen and (min-width: 1540px) {
-    .card-carousel__wrapper {
-      max-width: 1600px; } }
+  padding-bottom: 10px; }
 
 .card-carousel-item {
   margin: 20px; }
@@ -1288,7 +1283,6 @@ input[type='submit'] {
 
 .latest-news__items {
   grid-template-columns: repeat(3, 1fr);
-  row-gap: 75px;
   -moz-column-gap: 6rem;
   column-gap: 6rem; }
   .latest-news__items .latest-news__item {

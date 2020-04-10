@@ -32,7 +32,6 @@
 // Repositions prev & next button,
 // also makes them larger
 .carousel__slick.slick-slider {
-  padding-left: 0;
 
   .slick-prev,
   .slick-next {
@@ -74,7 +73,6 @@
   // Improves navigation UX, especially mobile.
   .slick-dots {
     bottom: -50px;
-    padding-left: 0;
 
     li {
       height: 35px;

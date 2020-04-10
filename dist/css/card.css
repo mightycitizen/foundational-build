@@ -6,8 +6,8 @@
       .card.horizontal .card__media,
       .card.horizontal .card__content {
         flex: 50%; } }
-  .card .card__content {
-    margin: 2rem 0 0; }
+  .card .card__media {
+    margin-bottom: 2rem; }
 
 .card__eyebrow {
   display: block;
@@ -39,7 +39,8 @@
     .card--wide {
       flex-direction: row; } }
   .card--wide .card__media {
-    flex: 1; }
+    flex: 1;
+    margin-bottom: 0; }
   .card--wide .card__content {
     flex: 1; }
     @media screen and (min-width: 544px) {

@@ -16,16 +16,16 @@
     </div>
   {% endif %}
   <div class="news-teaser__content">
-    <a class="news-teaser__title" href="{{ link }}">
-      {%
-        include '@rain_theme/heading/heading.twig' with {
-          "heading": {
-            "title": title,
-            "heading_level": "2"
-          }
-        } only
-      %}
-    </a>
+    {%
+      include '@rain_theme/heading/heading.twig' with {
+        "heading": {
+          "title": title,
+          "heading_level": "2",
+          "url": link,
+          "modifier": "news-teaser__title",
+        }
+      } only
+    %}
     <div class="news-teaser__date">
       {{ authored_date }}
     </div>

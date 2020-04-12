@@ -44,13 +44,26 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'container'
+    'container',
   ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content }}
+      {% if content.field_title %}
+        <div class="container">
+          {%
+            include '@rain_theme/heading/heading.twig' with {
+              "heading": {
+                "title": content.field_title,
+                "heading_level": "2",
+                "modifier": "heading--section",
+              },
+            } only
+          %}
+        </div>  
+      {% endif %}
+      {{ content|without('field_title') }}
     {% endblock %}
   </div>
 {% endblock paragraph %}

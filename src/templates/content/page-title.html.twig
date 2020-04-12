@@ -12,9 +12,11 @@
  *   displayed after the main title tag that appears in the template.
  */
 #}
-{%
-  include '@rain_theme/page-title/page-title.twig' with {
-    title: title,
-    heading_level: 1,
-  } only
-%}
+{% if title %}
+  {%
+    include '@rain_theme/page-title/page-title.twig' with {
+      title: title,
+      heading_level: 1,
+    } only
+  %}
+{% endif %}

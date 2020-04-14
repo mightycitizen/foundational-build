@@ -8,8 +8,6 @@
 $info = [
   // Available colors and color labels used in theme.
   'fields' => [
-    'primary-dark' => t('Primary dark background'),
-    'secondary-dark' => t('Secondary dark background'),
     'text' => t('Text color'),
     'link' => t('Link and primary dark background color'),
     'base' => t('Secondary dark color'),

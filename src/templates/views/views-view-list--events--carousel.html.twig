@@ -18,9 +18,12 @@
  * @ingroup themeable
  */
 #}
-
-<ul class="event-carousel__list event-carousel__slick">
-  {% for row in rows %}
-    <li class="event-carousel-item">{{ row.content }}</li>
-  {% endfor %}
-</ul>
+{% embed '@rain_theme/event-carousel/event-carousel.twig' %}
+ {% block carousel_items %}
+    <ul class="event-carousel__list event-carousel__slick">
+      {% for row in rows %}
+        <li class="event-carousel-item">{{ row.content }}</li>
+      {% endfor %}
+    </ul>
+  {% endblock %}
+{% endembed %}

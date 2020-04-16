@@ -32,7 +32,7 @@
       } only
     %}
 
-    {% if card.subhead %}
+    {% if card.subhead.title|render %}
       {%
         include '@rain_theme/heading/heading.twig' with {
           "heading": card.subhead

@@ -828,12 +828,6 @@ input[type='submit'] {
   display: inline-block;
   margin-top: 1.5rem; }
 
-.event-carousel__wrapper {
-  margin: 40px auto;
-  padding-left: 1rem;
-  width: 100%;
-  max-width: 1300px; }
-
 .event-carousel {
   margin-left: auto;
   position: relative; }

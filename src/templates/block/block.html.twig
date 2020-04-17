@@ -32,21 +32,23 @@
     'block-' ~ plugin_id|clean_class,
   ]
 %}
-<div{{ attributes.addClass(classes) }}>
-  {% if label %}
-    <div class="container">
-      {%
-        include '@rain_theme/heading/heading.twig' with {
-          "heading": {
-            "title": label,
-            "heading_level": "2",
-            "modifier": "heading--section",
-          },
-        } only
-      %}
-    </div>  
-  {% endif %}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
-</div>
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    {% if label %}
+      <div class="container">
+        {%
+          include '@rain_theme/heading/heading.twig' with {
+            "heading": {
+              "title": label,
+              "heading_level": "2",
+              "modifier": "heading--section",
+            },
+          } only
+        %}
+      </div>  
+    {% endif %}
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
+{% endif %}

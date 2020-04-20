@@ -1,10 +1,4 @@
 .page-title {
-  max-width: 90%;
-  width: auto;
-  margin: 0 auto;
   padding: 30px 0 15px; }
-  @media screen and (min-width: 1540px) {
-    .page-title {
-      max-width: 1600px; } }
   .page-title .heading {
     font-size: 3rem; }

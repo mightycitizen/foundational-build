@@ -2,13 +2,7 @@
   background-color: #404040; }
 
 .breadcrumb {
-  max-width: 90%;
-  width: auto;
-  margin: 0 auto;
   padding: 15px 0; }
-  @media screen and (min-width: 1540px) {
-    .breadcrumb {
-      max-width: 1600px; } }
 
 .breadcrumb__item {
   color: #FFF;

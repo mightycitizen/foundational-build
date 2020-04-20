@@ -6,15 +6,9 @@
     fill: #FFF; }
 
 .site-footer__inner {
-  max-width: 90%;
-  width: auto;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   padding: 30px; }
-  @media screen and (min-width: 1540px) {
-    .site-footer__inner {
-      max-width: 1600px; } }
   @media screen and (max-width: 767px) {
     .site-footer__inner {
       flex-direction: column;

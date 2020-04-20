@@ -1,12 +1,6 @@
 .event-teaser {
-  max-width: 90%;
-  width: auto;
-  margin: 0 auto;
   display: flex;
   margin-bottom: 30px; }
-  @media screen and (min-width: 1540px) {
-    .event-teaser {
-      max-width: 1600px; } }
   @media screen and (max-width: 767px) {
     .event-teaser {
       flex-direction: column; } }

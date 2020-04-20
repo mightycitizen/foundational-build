@@ -22,7 +22,18 @@
     {
       "title": "Menu Item 2",
       "url": "#",
-      "active_trail": true
+      "active_trail": true,
+      "sublinks": [
+        {
+          "text": "Vestibulum ac diam",
+          "url": "#"
+        },
+        {
+          "text": "Mauris blandit aliquet",
+          "active": true,
+          "url": "#"
+        }
+      ]
     },
     {
       "title": "Menu Item 3",

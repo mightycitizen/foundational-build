@@ -29,20 +29,35 @@
     }
 
     .menu-item {
+      background: $color-blue;
       align-items: center;
       display: flex;
-      padding: 0;
+      flex-wrap: wrap;
+      padding: 0 16px 0 0;
       position: relative;
+      transition: background $transition;
+
+      @include breakpoint($bp-sm) {
+        padding: 0;
+
+        &:hover,
+        &:focus {
+          background: darken($color-blue, 10%);
+        }
+      }
 
       a {
         display: block;
         padding: 25px;
         flex: 1;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
-      &:hover,
-      &:focus {
-        @include darken;
+      &.js-opened {
+        background: darken($color-blue, 10%);
       }
 
       &.menu-item--has-submenu {
@@ -50,11 +65,24 @@
           padding: 25px 45px 25px 25px;
         }
 
+        &.js-opened {
+          > .menu__submenu {
+            // height: auto;
+            max-height: 1000px;
+          }
+
+          > .menu-item-toggle {
+            transform: none;
+          }
+        }
+
         @include breakpoint($bp-sm) {
           &:hover,
-          &:focus {
+          &:focus,
+          &.js-opened {
             > .menu__submenu {
-              height: auto;
+              // height: auto;
+              max-height: 1000px;
             }
 
             > .menu-item-toggle {
@@ -66,16 +94,31 @@
     }
 
     .menu__submenu {
-      background: $color-blue;
-      height: 0;
+      background: transparent;
+      // height: 0;
       left: 0;
       list-style: none;
       overflow: hidden;
-      position: absolute;
+      max-height: 0px;
+      position: initial;
       top: 100%;
       white-space: nowrap;
+      width: 100%;
+      transition: max-height $transition;
+
+      @include breakpoint($bp-sm) {
+        background: darken($color-blue, 10%);
+        position: absolute;
+        width: auto;
+      }
 
       .menu__submenu-item {
+        @include breakpoint($bp-sm) {
+          &:hover {
+            background: $color-blue;
+          }
+        }
+
         a {
           padding: 25px;
         }
@@ -159,14 +202,17 @@
 }
 
 .menu-item-toggle {
-  background: transparent;
-  border: 0;
-  height: 50px;
+  background: $color-blue;
+  border: 2px solid $color-white;
+  border-radius: 50px;
+  height: 40px;
   padding: 5px;
-  width: 50px;
+  width: 40px;
   transform: rotate(180deg);
 
   @include breakpoint($bp-sm) {
+    background: transparent;
+    border: 0;
     height: 100%;
     position: absolute;
     right: 12px;

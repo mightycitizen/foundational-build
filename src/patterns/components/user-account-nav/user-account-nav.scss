@@ -4,7 +4,6 @@
   background: $color-black;
 
   .menu {
-    @include max-width;
     display: flex;
     align-items: center;
     justify-content: flex-end;

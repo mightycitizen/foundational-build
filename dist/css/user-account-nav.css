@@ -1,9 +1,6 @@
 .user-account-nav {
   background: #404040; }
   .user-account-nav .menu {
-    margin: 0 auto;
-    max-width: 1600px;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;

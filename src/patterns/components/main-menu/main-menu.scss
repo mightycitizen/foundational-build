@@ -29,14 +29,98 @@
     }
 
     .menu-item {
+      background: $color-blue;
+      align-items: center;
       display: flex;
-      padding: 0;
+      flex-wrap: wrap;
+      padding: 0 16px 0 0;
+      position: relative;
+      transition: background $transition;
+
+      @include breakpoint($bp-sm) {
+        padding: 0;
+
+        &:hover,
+        &:focus {
+          background: darken($color-blue, 10%);
+        }
+      }
 
       a {
+        display: block;
         padding: 25px;
+        flex: 1;
 
         &:hover {
-          @include darken;
+          text-decoration: underline;
+        }
+      }
+
+      &.js-opened {
+        background: darken($color-blue, 10%);
+      }
+
+      &.menu-item--has-submenu {
+        a {
+          padding: 25px 45px 25px 25px;
+        }
+
+        &.js-opened {
+          > .menu__submenu {
+            // height: auto;
+            max-height: 1000px;
+          }
+
+          > .menu-item-toggle {
+            transform: none;
+          }
+        }
+
+        @include breakpoint($bp-sm) {
+          &:hover,
+          &:focus,
+          &.js-opened {
+            > .menu__submenu {
+              // height: auto;
+              max-height: 1000px;
+            }
+
+            > .menu-item-toggle {
+              transform: none;
+            }
+          }
+        }
+      }
+    }
+
+    .menu__submenu {
+      background: transparent;
+      // height: 0;
+      left: 0;
+      list-style: none;
+      overflow: hidden;
+      max-height: 0px;
+      position: initial;
+      top: 100%;
+      white-space: nowrap;
+      width: 100%;
+      transition: max-height $transition;
+
+      @include breakpoint($bp-sm) {
+        background: darken($color-blue, 10%);
+        position: absolute;
+        width: auto;
+      }
+
+      .menu__submenu-item {
+        @include breakpoint($bp-sm) {
+          &:hover {
+            background: $color-blue;
+          }
+        }
+
+        a {
+          padding: 25px;
         }
       }
     }
@@ -114,5 +198,36 @@
 
   &:nth-child(3) {
     transform: translate(0, 0.375rem);
+  }
+}
+
+.menu-item-toggle {
+  background: $color-blue;
+  border: 2px solid $color-white;
+  border-radius: 50px;
+  height: 40px;
+  padding: 5px;
+  width: 40px;
+  transform: rotate(180deg);
+
+  @include breakpoint($bp-sm) {
+    background: transparent;
+    border: 0;
+    height: 100%;
+    position: absolute;
+    right: 12px;
+    width: auto;
+  }
+
+  .menu-item-toggle__icon {
+    width: 12px;
+  }
+
+  .menu-item-toggle__text {
+    height: 0;
+    left: -1000em;
+    overflow: hidden;
+    position: absolute;
+    width: 0;
   }
 }

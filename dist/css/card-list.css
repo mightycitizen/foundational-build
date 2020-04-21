@@ -1,13 +1,5 @@
 .card-list__title {
-  font-size: 1.5rem;
-  font-weight: normal;
   margin-bottom: 2rem; }
-  @media screen and (min-width: 544px) {
-    .card-list__title {
-      font-size: 2rem; } }
-  @media screen and (min-width: 768px) {
-    .card-list__title {
-      font-size: 3rem; } }
 
 .card-list {
   display: flex;

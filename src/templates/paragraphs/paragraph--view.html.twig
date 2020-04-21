@@ -67,16 +67,17 @@
       {% endif %}
       {{ content|without('field_title', 'field_link') }}
       {% if content.field_link %}
-        <div class="container">
-          {% if content.field_link[0]['#url'] %}
-            {% include '@rain_theme/button/button.twig' with {
-              "button": {
-                "url": content.field_link[0]['#url'],
-                "text": content.field_link[0]['#title'],
-                "modifier": "button--margin-top",
-              }
-            } only %}
-          {% endif %}
+        <div class="button__container container">
+          <div class="button__inner">
+            {% if content.field_link[0]['#url'] %}
+              {% include '@rain_theme/button/button.twig' with {
+                "button": {
+                  "url": content.field_link[0]['#url'],
+                  "text": content.field_link[0]['#title'],
+                }
+              } only %}
+            {% endif %}
+          </div>  
         </div>
       {% endif %}
     {% endblock %}

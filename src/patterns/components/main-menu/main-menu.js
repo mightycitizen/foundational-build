@@ -16,7 +16,8 @@
           if ($parent.hasClass('js-opened')) {
             $parent.removeClass('js-opened');
             $target.attr('aria-hidden', 'true');
-          } else {
+          }
+          else {
             $parent.addClass('js-opened');
             $target.attr('aria-hidden', 'false');
           }

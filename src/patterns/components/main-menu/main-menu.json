@@ -3,7 +3,7 @@
     {
       "title": "Menu Item 1",
       "url": "#",
-      "sublinks": [
+      "below": [
         {
           "text": "Vestibulum ac diam",
           "url": "#"
@@ -23,7 +23,7 @@
       "title": "Menu Item 2",
       "url": "#",
       "active_trail": true,
-      "sublinks": [
+      "below": [
         {
           "text": "Vestibulum ac diam",
           "url": "#"

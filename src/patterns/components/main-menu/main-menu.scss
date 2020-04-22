@@ -3,6 +3,8 @@
 .main-menu {
   background-color: $color-blue;
   display: none;
+  position: relative;
+  z-index: 1;
 
   @include breakpoint($bp-sm) {
     display: block;
@@ -113,6 +115,8 @@
       }
 
       .menu__submenu-item {
+        min-width: 150px;
+
         @include breakpoint($bp-sm) {
           &:hover {
             background: $color-blue;

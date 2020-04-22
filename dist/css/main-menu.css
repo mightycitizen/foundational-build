@@ -1,6 +1,8 @@
 .main-menu {
   background-color: #003954;
-  display: none; }
+  display: none;
+  position: relative;
+  z-index: 1; }
   @media screen and (min-width: 768px) {
     .main-menu {
       display: block; } }
@@ -71,11 +73,13 @@
           background: #001621;
           position: absolute;
           width: auto; } }
-      @media screen and (min-width: 768px) {
-        .main-menu .menu .menu__submenu .menu__submenu-item:hover {
-          background: #003954; } }
-      .main-menu .menu .menu__submenu .menu__submenu-item a {
-        padding: 25px; }
+      .main-menu .menu .menu__submenu .menu__submenu-item {
+        min-width: 150px; }
+        @media screen and (min-width: 768px) {
+          .main-menu .menu .menu__submenu .menu__submenu-item:hover {
+            background: #003954; } }
+        .main-menu .menu .menu__submenu .menu__submenu-item a {
+          padding: 25px; }
   .main-menu .menu-item--active-trail {
     background-color: #464646; }
     .main-menu .menu-item--active-trail a.is-active {

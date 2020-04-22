@@ -101,7 +101,7 @@
       left: 0;
       list-style: none;
       overflow: hidden;
-      max-height: 0px;
+      max-height: 0;
       position: initial;
       top: 100%;
       white-space: nowrap;
@@ -130,7 +130,7 @@
     }
   }
 
-  .menu-item--active-trail {
+  .menu-item.menu-item--active-trail {
     background-color: $color-tundora;
 
     a {

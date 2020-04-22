@@ -1347,7 +1347,7 @@ input[type='submit'] {
       left: 0;
       list-style: none;
       overflow: hidden;
-      max-height: 0px;
+      max-height: 0;
       position: initial;
       top: 100%;
       white-space: nowrap;
@@ -1365,9 +1365,9 @@ input[type='submit'] {
             background: #003954; } }
         .main-menu .menu .menu__submenu .menu__submenu-item a {
           padding: 25px; }
-  .main-menu .menu-item--active-trail {
+  .main-menu .menu-item.menu-item--active-trail {
     background-color: #464646; }
-    .main-menu .menu-item--active-trail a.is-active {
+    .main-menu .menu-item.menu-item--active-trail a.is-active {
       color: #FFF; }
 
 .main-menu__navicon {

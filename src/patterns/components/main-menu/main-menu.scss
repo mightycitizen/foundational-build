@@ -58,16 +58,20 @@
         }
       }
 
-      &.js-opened {
+      &.js-open {
         background: darken($color-blue, 10%);
       }
 
       &.menu-item--has-submenu {
         a {
-          padding: 25px 45px 25px 25px;
+          padding: 15px 45px 15px 25px;
+
+          @include breakpoint($bp-sm) {
+            padding: 25px 45px 25px 25px;
+          }
         }
 
-        &.js-opened {
+        &.js-open {
           > .menu__submenu {
             // height: auto;
             max-height: 1000px;
@@ -79,11 +83,16 @@
         }
 
         @include breakpoint($bp-sm) {
+          > .menu__submenu {
+            display: none;
+          }
+
           &:hover,
           &:focus,
-          &.js-opened {
+          &.js-open {
             > .menu__submenu {
               // height: auto;
+              display: block;
               max-height: 1000px;
             }
 
@@ -124,7 +133,31 @@
         }
 
         a {
-          padding: 25px;
+          padding: 15px 60px;
+
+          @include breakpoint($bp-sm) {
+            padding: 15px 25px;
+          }
+        }
+
+        &:first-child {
+          a {
+            padding: 0 15px 15px 60px;
+
+            @include breakpoint($bp-sm) {
+              padding: 25px 15px 15px 25px;
+            }
+          }
+        }
+
+        &:last-child {
+          a {
+            padding: 15px 15px 15px 60px;
+
+            @include breakpoint($bp-sm) {
+              padding: 15px 25px 25px 25px;
+            }
+          }
         }
       }
     }

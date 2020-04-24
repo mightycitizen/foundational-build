@@ -1329,18 +1329,24 @@ input[type='submit'] {
         flex: 1; }
         .main-menu .menu .menu-item a:hover {
           text-decoration: underline; }
-      .main-menu .menu .menu-item.js-opened {
+      .main-menu .menu .menu-item.js-open {
         background: #001621; }
       .main-menu .menu .menu-item.menu-item--has-submenu a {
-        padding: 25px 45px 25px 25px; }
-      .main-menu .menu .menu-item.menu-item--has-submenu.js-opened > .menu__submenu {
+        padding: 15px 45px 15px 25px; }
+        @media screen and (min-width: 768px) {
+          .main-menu .menu .menu-item.menu-item--has-submenu a {
+            padding: 25px 45px 25px 25px; } }
+      .main-menu .menu .menu-item.menu-item--has-submenu.js-open > .menu__submenu {
         max-height: 1000px; }
-      .main-menu .menu .menu-item.menu-item--has-submenu.js-opened > .menu-item-toggle {
+      .main-menu .menu .menu-item.menu-item--has-submenu.js-open > .menu-item-toggle {
         transform: none; }
       @media screen and (min-width: 768px) {
-        .main-menu .menu .menu-item.menu-item--has-submenu:hover > .menu__submenu, .main-menu .menu .menu-item.menu-item--has-submenu:focus > .menu__submenu, .main-menu .menu .menu-item.menu-item--has-submenu.js-opened > .menu__submenu {
+        .main-menu .menu .menu-item.menu-item--has-submenu > .menu__submenu {
+          display: none; }
+        .main-menu .menu .menu-item.menu-item--has-submenu:hover > .menu__submenu, .main-menu .menu .menu-item.menu-item--has-submenu:focus > .menu__submenu, .main-menu .menu .menu-item.menu-item--has-submenu.js-open > .menu__submenu {
+          display: block;
           max-height: 1000px; }
-        .main-menu .menu .menu-item.menu-item--has-submenu:hover > .menu-item-toggle, .main-menu .menu .menu-item.menu-item--has-submenu:focus > .menu-item-toggle, .main-menu .menu .menu-item.menu-item--has-submenu.js-opened > .menu-item-toggle {
+        .main-menu .menu .menu-item.menu-item--has-submenu:hover > .menu-item-toggle, .main-menu .menu .menu-item.menu-item--has-submenu:focus > .menu-item-toggle, .main-menu .menu .menu-item.menu-item--has-submenu.js-open > .menu-item-toggle {
           transform: none; } }
     .main-menu .menu .menu__submenu {
       background: transparent;
@@ -1364,7 +1370,20 @@ input[type='submit'] {
           .main-menu .menu .menu__submenu .menu__submenu-item:hover {
             background: #003954; } }
         .main-menu .menu .menu__submenu .menu__submenu-item a {
-          padding: 25px; }
+          padding: 15px 60px; }
+          @media screen and (min-width: 768px) {
+            .main-menu .menu .menu__submenu .menu__submenu-item a {
+              padding: 15px 25px; } }
+        .main-menu .menu .menu__submenu .menu__submenu-item:first-child a {
+          padding: 0 15px 15px 60px; }
+          @media screen and (min-width: 768px) {
+            .main-menu .menu .menu__submenu .menu__submenu-item:first-child a {
+              padding: 25px 15px 15px 25px; } }
+        .main-menu .menu .menu__submenu .menu__submenu-item:last-child a {
+          padding: 15px 15px 15px 60px; }
+          @media screen and (min-width: 768px) {
+            .main-menu .menu .menu__submenu .menu__submenu-item:last-child a {
+              padding: 15px 25px 25px 25px; } }
   .main-menu .menu-item.menu-item--active-trail {
     background-color: #464646; }
     .main-menu .menu-item.menu-item--active-trail a.is-active {

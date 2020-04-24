@@ -1363,30 +1363,39 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 !function (document, Drupal, $) {
   'use strict';
 
-  Drupal.behaviors.mobileMenu = {
+  Drupal.behaviors.mainMenu = {
     attach: function attach(context) {
       $('.main-menu__navicon', context).click(function () {
         $(this).toggleClass('active');
         $('.main-menu').toggleClass('active');
-      }); // Submenu toggle buttons
-
-      $('.menu-item-toggle', context).on('click', function () {
-        var $self = $(this);
-        var $parent = $self.parent();
-        var $target = $self.siblings('.menu__submenu');
-
-        if ($('.main-menu__navicon', context).is(':visible')) {
-          if ($parent.hasClass('js-opened')) {
-            $parent.removeClass('js-opened');
-            $target.attr('aria-hidden', 'true');
-          } else {
-            $parent.addClass('js-opened');
-            $target.attr('aria-hidden', 'false');
-          }
+      });
+      $('li.menu-item--has-submenu', context).hover(function () {
+        if ($('.main-menu__navicon', context).is(':hidden')) {
+          /* Mouse enter */
+          $(this).addClass('js-open');
+          $(this).children('a').attr('aria-expanded', 'true');
+        }
+      }, function () {
+        if ($('.main-menu__navicon', context).is(':hidden')) {
+          /* Mouse leave */
+          var $self = $(this);
+          setTimeout(function () {
+            $self.removeClass('js-open');
+            $self.children('a').attr('aria-expanded', 'false');
+          }, 1000);
+        }
+      });
+      $('.menu-item-toggle', context).click(function () {
+        if ($(this).parent().hasClass('js-open')) {
+          $(this).parent().removeClass('js-open');
+          $(this).siblings('a').attr('aria-expanded', 'false');
+        } else {
+          $(this).parent().addClass('js-open');
+          $(this).siblings('a').attr('aria-expanded', 'true');
         }
       });
       $(window).resize(function () {
-        $('li.menu-item--has-submenu').removeClass('js-opened');
+        $('li.menu-item--has-submenu').removeClass('js-open');
       });
     }
   };

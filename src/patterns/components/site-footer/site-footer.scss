@@ -28,7 +28,6 @@
     margin: 0;
 
     .menu-item {
-
       &:not(:last-of-type) {
         margin-right: 40px;
       }
@@ -87,9 +86,14 @@
 
   .region-addendum {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     flex-wrap: wrap;
     flex: 1;
     justify-content: space-between;
+
+    @include breakpoint($bp-under-sm) {
+      align-items: center;
+      flex-direction: column;
+    }
   }
 }

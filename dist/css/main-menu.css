@@ -98,7 +98,7 @@
           padding: 15px 15px 15px 60px; }
           @media screen and (min-width: 768px) {
             .main-menu .menu .menu__submenu .menu__submenu-item:last-child a {
-              padding: 15px 25px 25px 25px; } }
+              padding: 15px 25px 25px; } }
   .main-menu .menu-item.menu-item--active-trail {
     background-color: #464646; }
     .main-menu .menu-item.menu-item--active-trail a.is-active {

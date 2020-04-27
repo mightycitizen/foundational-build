@@ -1383,7 +1383,7 @@ input[type='submit'] {
           padding: 15px 15px 15px 60px; }
           @media screen and (min-width: 768px) {
             .main-menu .menu .menu__submenu .menu__submenu-item:last-child a {
-              padding: 15px 25px 25px 25px; } }
+              padding: 15px 25px 25px; } }
   .main-menu .menu-item.menu-item--active-trail {
     background-color: #464646; }
     .main-menu .menu-item.menu-item--active-trail a.is-active {
@@ -1960,10 +1960,14 @@ input[type='submit'] {
   background-color: #404040; }
   .site-footer__addendum .region-addendum {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     flex-wrap: wrap;
     flex: 1;
     justify-content: space-between; }
+    @media screen and (max-width: 767px) {
+      .site-footer__addendum .region-addendum {
+        align-items: center;
+        flex-direction: column; } }
 
 .site-header-middle {
   padding: 30px 0; }

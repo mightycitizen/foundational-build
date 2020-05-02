@@ -1,9 +1,6 @@
 .accordion__wrapper {
   max-width: 725px; }
 
-.accordion__title {
-  font-size: 2rem; }
-
 .accordion {
   background: #ddd;
   border-top: 0;

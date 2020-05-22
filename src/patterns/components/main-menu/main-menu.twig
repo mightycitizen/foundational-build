@@ -41,12 +41,11 @@
 
   {#
     The drupal template will need to have this nav html added to wrap this.
-    <nav class="main-menu" id="a11y-menu" role="navigation" aria-label="Main menu">
-    </nav>
+    <nav class="main-menu" id="a11y-menu" aria-label="Main menu"></nav>
   #}
 
   {% macro menu_links(items, attributes) %}
-    <nav class="main-menu" id="a11y-menu" role="navigation" aria-label="Main menu">
+    <nav class="main-menu" id="a11y-menu" aria-label="Main menu">
       {% import _self as menus %}
       {% if items %}
         <ul{{ attributes|without('class') }} role="menu" class="nav menu list-reset">

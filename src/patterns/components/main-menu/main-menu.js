@@ -2,38 +2,62 @@
   'use strict';
   Drupal.behaviors.mainMenu = {
     attach: function (context) {
-      $('.main-menu__navicon', context).click(function () {
+      const $navicon = $('.main-menu__navicon', context);
+      const $menuItemToggle = $('.menu-item-toggle', context);
+
+      $(document).keyup(function(e) {
+        // `27` is the code for the escape key.
+        if (e.which === 27) {
+          if ($navicon.hasClass('active')) {
+            $navicon.trigger('click');
+          }
+
+          $menuItemToggle.each(function() {
+            const $this = $(this);
+            if ($this.parent().hasClass('js-open')) {
+              $this.trigger('click');
+            }
+          });
+        }
+      });
+
+      $navicon.click(function () {
         $(this).toggleClass('active');
         $('.main-menu').toggleClass('active');
       });
 
       $('li.menu-item--has-submenu', context).hover(
         function () {
+          // Mouse enter.
           if ($('.main-menu__navicon', context).is(':hidden')) {
-            /* Mouse enter */
-            $(this).addClass('js-open');
-            $(this).children('a').attr('aria-expanded', 'true');
+            $(this)
+              .addClass('js-open')
+              .children('a')
+              .attr('aria-expanded', 'true');
           }
         },
         function () {
           if ($('.main-menu__navicon', context).is(':hidden')) {
-            /* Mouse leave */
-            const $self = $(this);
+            // Mouse leave.
             setTimeout(function () {
-              $self.removeClass('js-open');
-              $self.children('a').attr('aria-expanded', 'false');
+              $(this)
+                .removeClass('js-open')
+                .children('a')
+                .attr('aria-expanded', 'false');
             }, 1000);
           }
         }
       );
 
-      $('.menu-item-toggle', context).click(function () {
-        if ($(this).parent().hasClass('js-open')) {
-          $(this).parent().removeClass('js-open');
-          $(this).siblings('a').attr('aria-expanded', 'false');
-        } else {
-          $(this).parent().addClass('js-open');
-          $(this).siblings('a').attr('aria-expanded', 'true');
+      $menuItemToggle.click(function () {
+        const $this = $(this);
+        if ($this.parent().hasClass('js-open')) {
+          $this.parent().removeClass('js-open');
+          $this.siblings('a').attr('aria-expanded', 'false');
+        }
+        else {
+          $this.parent().addClass('js-open');
+          $this.siblings('a').attr('aria-expanded', 'true');
         }
       });
 

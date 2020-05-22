@@ -26,8 +26,9 @@
       <span class="navicon__bar"></span>
       <span class="navicon__bar"></span>
       <span class="navicon__bar"></span>
+      <span class="visually-hidden">{{ 'Show/Hide Main Menu'|t }}</span>
     </button>
-    <span class="navicon__text element-invisible">{{ 'Menu'|t }}</span>
+    <span class="navicon__text">{{ 'Menu'|t }}</span>
   </div>
 
   {% import _self as menus %}
@@ -52,7 +53,7 @@
           {% for item in items %}
             <li class="menu-item{{ item.below ? ' menu-item--has-submenu' }}{{ item.in_active_trail ? ' menu-item--active-trail' }}" {{ item.attributes|without('class') }} role="menuitem">
               <a href="{{ item.url|render ? item.url : '#' }}"{{ item.in_active_trail ? ' class="is-active"' }} {{ item.below ? 'aria-expanded="false" aria-haspopup="true"'}}>{% if item.title %}{{ item.title }}{% else %}{{ item.text }}{% endif %}</a>
-                
+
                 {% if item.below %}
                   <button class="menu-item-toggle">
                     <svg aria-hidden="true" class="menu-item-toggle__icon" xmlns="http://www.w3.org/2000/svg" width="30" height="22" viewBox="0 0 30 22"><path fill="#FFFFFF" d="M0 22L15 0l15 22"/></svg>
@@ -66,7 +67,7 @@
                     {% endfor %}
                   </ul>
                 {% endif %}
-            
+
             </li>
           {% endfor %}
         </ul>

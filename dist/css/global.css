@@ -19,43 +19,6 @@
   font-display: fallback;
   src: url("../fonts/lato-regularitalic-webfont.woff2") format("woff2"), url("../fonts/lato-regularitalic-webfont.woff") format("woff"); }
 
-body .paragraph--type--text {
-  margin-bottom: 30px; }
-  body .paragraph--type--text ul,
-  body .paragraph--type--text ol {
-    margin-top: 1em;
-    margin-bottom: 1 em;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 40px; }
-
-body .paragraph--type--block,
-body .paragraph--type--embed,
-body .paragraph--type--map,
-body .paragraph--type--view,
-body .paragraph--type--faq,
-body .paragraph--type--quote,
-body .paragraph--type--media,
-body .paragraph--type--gallery,
-body .paragraph--type--gallery-carousel,
-body .paragraph--type--hero-media,
-body .paragraph--type--card-list,
-body .paragraph--type--card {
-  margin-bottom: 50px; }
-  body .paragraph--type--block .paragraph--type--card,
-  body .paragraph--type--embed .paragraph--type--card,
-  body .paragraph--type--map .paragraph--type--card,
-  body .paragraph--type--view .paragraph--type--card,
-  body .paragraph--type--faq .paragraph--type--card,
-  body .paragraph--type--quote .paragraph--type--card,
-  body .paragraph--type--media .paragraph--type--card,
-  body .paragraph--type--gallery .paragraph--type--card,
-  body .paragraph--type--gallery-carousel .paragraph--type--card,
-  body .paragraph--type--hero-media .paragraph--type--card,
-  body .paragraph--type--card-list .paragraph--type--card,
-  body .paragraph--type--card .paragraph--type--card {
-    margin-bottom: 0; }
-
 .container {
   max-width: 90%;
   width: auto;
@@ -75,6 +38,48 @@ body .paragraph--type--card {
   position: relative;
   top: 50%;
   transform: translateY(-50%); }
+
+body .paragraph--type--text {
+  margin-bottom: 30px; }
+  body .paragraph--type--text ul,
+  body .paragraph--type--text ol {
+    margin-top: 1em;
+    margin-bottom: 1 em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px; }
+
+body .paragraph--type--block,
+body .paragraph--type--embed,
+body .paragraph--type--form,
+body .paragraph--type--map,
+body .paragraph--type--view,
+body .paragraph--type--faq,
+body .paragraph--type--quote,
+body .paragraph--type--media,
+body .paragraph--type--gallery,
+body .paragraph--type--hero-media,
+body .paragraph--type--card-list,
+body .paragraph--type--card {
+  margin-bottom: 50px; }
+  body .paragraph--type--block .paragraph--type--card,
+  body .paragraph--type--embed .paragraph--type--card,
+  body .paragraph--type--form .paragraph--type--card,
+  body .paragraph--type--map .paragraph--type--card,
+  body .paragraph--type--view .paragraph--type--card,
+  body .paragraph--type--faq .paragraph--type--card,
+  body .paragraph--type--quote .paragraph--type--card,
+  body .paragraph--type--media .paragraph--type--card,
+  body .paragraph--type--gallery .paragraph--type--card,
+  body .paragraph--type--hero-media .paragraph--type--card,
+  body .paragraph--type--card-list .paragraph--type--card,
+  body .paragraph--type--card .paragraph--type--card {
+    margin-bottom: 0; }
+
+.paragraph--type--quote-carousel {
+  margin-bottom: -100px; }
+  .paragraph--type--quote-carousel .paragraph--type--quote {
+    margin-bottom: 0; }
 
 html {
   font-family: "Lato", "Arial", sans-serif;

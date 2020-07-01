@@ -39,12 +39,10 @@
         function () {
           if ($('.main-menu__navicon', context).is(':hidden')) {
             // Mouse leave.
-            setTimeout(function () {
-              $(this)
-                .removeClass('js-open')
-                .children('a')
-                .attr('aria-expanded', 'false');
-            }, 1000);
+            $(this)
+              .removeClass('js-open')
+              .children('a')
+              .attr('aria-expanded', 'false');
           }
         }
       );

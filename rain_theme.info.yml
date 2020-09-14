@@ -14,6 +14,7 @@ type: theme
 description: Drupal 8 theme for Rain distribution.
 package: Other
 core: 8.x
+core_version_requirement: '^8 || ^9'
 # Classy vs. Stable as a base theme: https://www.lullabot.com/articles/a-tale-of-two-base-themes-in-drupal-8-core
 base theme: classy
 

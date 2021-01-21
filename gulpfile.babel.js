@@ -4,6 +4,9 @@
 // Include gulp helpers.
 const { series, parallel, watch } = require('gulp');
 
+
+
+
 // Include Pattern Lab and config.
 const config = require('./patternlab-config.json');
 const patternlab = require('@pattern-lab/core')(config);
@@ -19,6 +22,8 @@ const { cleanCSS, cleanJS } = require('./gulp-tasks/clean.js');
 const { concatCSS, concatJS } = require('./gulp-tasks/concat.js');
 const { moveFonts, movePatternCSS } = require('./gulp-tasks/move.js');
 const server = require('browser-sync').create();
+const webpack = require('webpack-stream');
+
 
 // Compile Our Sass and JS
 exports.compile = parallel(compileSass, compileJS, moveFonts, movePatternCSS);
@@ -94,7 +99,7 @@ function buildPatternlab(done) {
 function watchFiles() {
   // Watch all my sass files and compile sass if a file changes.
   watch(
-    './src/patterns/**/**/*.scss',
+    ['./src/patterns/**/**/*.scss','./src/assets/**/*.scss'],
     series(parallel(lintSass, compileSass), concatCSS, (done) => {
       server.reload('*.css');
       done();
@@ -103,7 +108,7 @@ function watchFiles() {
 
   // Watch all my JS files and compile if a file changes.
   watch(
-    './src/patterns/**/**/*.js',
+    ['./src/patterns/**/**/*.js', './src/assets/js/**/*.js'],
     series(parallel(lintJS, compileJS), concatJS, (done) => {
       server.reload('*.js');
       done();

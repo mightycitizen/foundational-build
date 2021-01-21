@@ -11,6 +11,29 @@ const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 const rename = require('gulp-rename');
 
+import webpackStream from 'webpack-stream';
+import webpack2      from 'webpack';
+
+const PRODUCTION = false
+
+let webpackConfig = {
+  mode: (PRODUCTION ? 'production' : 'development'),
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [ "@babel/preset-env" ],
+            compact: false
+          }
+        }
+      }
+    ]
+  },
+  // devtool: !PRODUCTION && 'source-map'
+}
 /**
  * Error handler function so we can see when errors happen.
  * @param {object} err error that was thrown
@@ -25,7 +48,7 @@ function handleError(err) {
 module.exports = {
   // Compile Sass.
   compileSass: function() {
-    return src(['./src/patterns/**/**/*.scss', './src/vendor/**/*.css'])
+    return src(['./src/patterns/**/**/*.scss', './src/vendor/**/*.css','./src/assets/scss/**/*.scss'])
       .pipe(sass({ outputStyle: 'nested' }).on('error', handleError))
       .pipe(
         prefix({
@@ -43,11 +66,12 @@ module.exports = {
 
   // Compile JavaScript.
   compileJS: function() {
-    return src(['./src/patterns/**/**/*.js', './src/vendor/**/*.js'], {
+    return src(['./src/patterns/**/**/*.js', './src/vendor/**/*.js','./src/assets/js/**/*.js'], {
       base: './'
     })
       .pipe(sourcemaps.init())
       .pipe(babel())
+      .pipe(webpackStream(webpackConfig, webpack2))
       .pipe(
         rename(function(path) {
           // Currently not using ES6 modules so for now

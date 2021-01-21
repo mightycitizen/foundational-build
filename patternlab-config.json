@@ -90,6 +90,8 @@
     "inreview",
     "complete"
   ],
+  "patternExportPreserveDirectoryStructure": true,
+  "patternExportRaw": true,
   "patternExportDirectory": "./pattern_exports/",
   "patternExportPatternPartials": [],
   "serverOptions": {

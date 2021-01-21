@@ -5,8 +5,8 @@
       "card": {
         "modifier": "",
         "media": {
-          "thumb": "../../../src/assets/gallery1--thumb.jpg",
-          "image": "../../../src/assets/gallery1.jpg",
+          "thumb": "../../../src/assets/images/gallery1--thumb.jpg",
+          "image": "../../../src/assets/images/gallery1.jpg",
           "caption": "Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna."
         },
         "eyebrow": {
@@ -36,8 +36,8 @@
       "card": {
         "modifier": "",
         "media": {
-          "thumb": "../../../src/assets/gallery2--thumb.jpg",
-          "image": "../../../src/assets/gallery2.jpg",
+          "thumb": "../../../src/assets/images/gallery2--thumb.jpg",
+          "image": "../../../src/assets/images/gallery2.jpg",
           "caption": "Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna."
         },
         "eyebrow": {
@@ -67,8 +67,8 @@
       "card": {
         "modifier": "",
         "media": {
-          "thumb": "../../../src/assets/gallery3--thumb.jpg",
-          "image": "../../../src/assets/gallery3.jpg",
+          "thumb": "../../../src/assets/images/gallery3--thumb.jpg",
+          "image": "../../../src/assets/images/gallery3.jpg",
           "caption": "Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna."
         },
         "eyebrow": {
@@ -98,8 +98,8 @@
       "card": {
         "modifier": "",
         "media": {
-          "thumb": "../../../src/assets/gallery4--thumb.jpg",
-          "image": "../../../src/assets/gallery4.jpg",
+          "thumb": "../../../src/assets/images/gallery4--thumb.jpg",
+          "image": "../../../src/assets/images/gallery4.jpg",
           "caption": "Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna."
         },
         "eyebrow": {

@@ -11,21 +11,15 @@
     "clean": "gulp clean",
     "gulp": "gulp"
   },
-  "babel": {
-    "sourceType": "unambiguous",
-    "presets": [
-      [
-        "@babel/preset-env"
-      ]
-    ]
-  },
   "browserslist": [
     "last 2 versions",
     "not dead"
   ],
   "devDependencies": {
+    "@babel/register": "^7.0.0",
+    "babel-loader": "^8.0.4",
     "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-env": "^7.12.11",
     "@pattern-lab/core": "^5.7.0",
     "@pattern-lab/engine-twig-php": "^5.7.1",
     "@pattern-lab/uikit-workshop": "^5.7.1",
@@ -41,7 +35,11 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sass-lint": "^1.4.0",
-    "gulp-sourcemaps": "^2.6.5"
+    "gulp-sourcemaps": "^2.6.5",
+    "webpack-stream": "^6.1.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "slick-carousel": "^1.8.1"
+  }
 }

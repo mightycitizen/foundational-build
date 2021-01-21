@@ -1,4 +1,4 @@
-{{ attach_library('rain_theme/card') }}
+
 
 <article class="card {{ card.modifier ? ' ' ~ card.modifier }}
   {{- attributes ? ' ' ~ attributes.class -}}"
@@ -14,7 +14,7 @@
         {% endif %}
           {{ card.media.caption }}
       </div>
-    {% endif %}  
+    {% endif %}
   {% endblock %}
 
   <div class="card__content">

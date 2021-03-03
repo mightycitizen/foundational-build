@@ -47,6 +47,15 @@
     ]
   },
   "logLevel": "info",
+  "plugins": {
+    "@pattern-lab/plugin-tab": {
+      "enabled": true,
+      "initialized": false,
+      "options": {
+        "tabsToAdd": ["json"]
+      }
+    }
+  },
   "outputFileSuffixes": {
     "rendered": ".rendered",
     "rawTemplate": "",

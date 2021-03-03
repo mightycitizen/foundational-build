@@ -1,0 +1,9 @@
+
+
+<ul class="accordion" data-accordion>
+  {% for item in items %}
+    {%
+      include '/components/accordion/_accordion-item.twig' with {item: item} only
+    %}
+  {% endfor %}
+</ul>

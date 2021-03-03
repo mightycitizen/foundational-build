@@ -19,7 +19,7 @@
 @include foundation-button;
 @include foundation-button-group;
 @include foundation-close-button;
-@include foundation-label;
+//@include foundation-label;
 @include foundation-progress-bar;
 @include foundation-slider;
 @include foundation-switch;
@@ -68,7 +68,8 @@
   "components/cta",
   "components/hero",
   "components/links",
-  "components/listing";
+  "components/listing",
+  "components/text";
 
 @import
   "layout/section";

@@ -1,9 +1,0 @@
-{% set headingLevel = 2 %}
-{% if heading.level is not empty %}
-  {% set headingLevel = heading.level %}
-{% endif %}
-<section class="section section--{{ modifier }}">
-  <div class="grid-container">
-    <h{{ headingLevel }}>{{ heading.text }}</h{{ headingLevel }}>
-  </div>
-</section>

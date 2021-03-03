@@ -2582,32 +2582,6 @@ a.button:hover, a.button:focus {
     font-size: 2em;
     line-height: 1; }
 
-.label {
-  display: inline-block;
-  padding: 0.33333rem 0.5rem;
-  border-radius: 0;
-  font-size: 0.8rem;
-  line-height: 1;
-  white-space: nowrap;
-  cursor: default;
-  background: #266093;
-  color: #fefefe; }
-  .label.primary {
-    background: #266093;
-    color: #fefefe; }
-  .label.secondary {
-    background: #1381b9;
-    color: #0a0a0a; }
-  .label.success {
-    background: #3adb76;
-    color: #0a0a0a; }
-  .label.warning {
-    background: #ffae00;
-    color: #0a0a0a; }
-  .label.alert {
-    background: #cc4b37;
-    color: #fefefe; }
-
 .progress {
   height: 1rem;
   margin-bottom: 1rem;
@@ -4759,12 +4733,36 @@ a.thumbnail {
   margin-bottom: 1.25rem;
   padding-bottom: 1.25rem; }
 
+.helper {
+  font-size: 0.875rem; }
+
+.label {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.02; }
+
+.meta {
+  font-weight: bold; }
+
+.divider {
+  display: inline-block;
+  margin: 0 0.625rem; }
+  .divider:after {
+    content: "|"; }
+
 .section {
-  padding: 1.25rem 0; }
+  padding: 2.5rem 0; }
+  .section *:last-child {
+    margin-bottom: 0; }
   .section--secondary {
     background-color: #1381b9; }
   .section--primary {
     background-color: #266093; }
+  .section--padded {
+    padding: 5rem 0; }
+  .section--tight {
+    padding: 1.25rem 0; }
 
 :root {
   --lity-z-index-base:9990;

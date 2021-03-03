@@ -1,7 +1,1 @@
-
-
-{% if button.url %}
-  <a href="{{ button.url }}" class="button{{ button.modifier ? ' ' ~ button.modifier }}">{{ button.text }}</a>
-{% else %}
-  <button class="button{{ button.modifier ? ' ' ~ button.modifier }}">{{ button.text }}</button>
-{% endif %}
+{% include '/components/button/_button.twig' with {button: button} only %}

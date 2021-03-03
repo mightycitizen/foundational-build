@@ -3,8 +3,6 @@
     <span class="accordion__heading">{{ item.heading }}</span>
   </a>
   <div class="accordion-content" data-tab-content id="accordion__content-{{ item.accordion_instance }}" aria-hidden="true" aria-labelledby="accordion__content-{{ item.accordion_instance }}">
-    {% block accordion_content %}
-      {{ item.content }}
-    {% endblock %}
+    {{ item.content }}
   </div>
 </li>

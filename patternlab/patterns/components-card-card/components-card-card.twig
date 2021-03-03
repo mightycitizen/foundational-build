@@ -1,10 +1,20 @@
-<div class="card" >
+<div class="card {{ card.modifier }}" >
+  {% if card.header is not empty %}
   <div class="card-divider">
-    This is a header
+    {{ card.header }}
   </div>
-  <img src="assets/img/generic/rectangle-1.jpg">
+  {% endif %}
+  {% if card.image is not empty %}
+    <img src="{{ card.image.src }}" alt="{{ card.image.alt }}">
+  {% endif %}
   <div class="card-section">
-    <h4>This is a card.</h4>
-    <p>It has an easy to override visual style, and is appropriately subdued.</p>
+    <h{{ card.heading.level }} class="{{ card.heading.modifier }}">{{ card.heading.text }}</h{{ card.heading.level }}>
+    {% if card.summary is not empty %}
+
+      <p>{{ card.summary }}</p>
+    {% endif %}
+    {% if card.link is not empty %}
+      <a href="{{ card.link.url }}" class="button">{{ card.link.text }}</a>
+    {% endif %}
   </div>
 </div>

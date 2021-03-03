@@ -43,6 +43,7 @@
   "dependencies": {
     "foundation-sites": "^6.6.3",
     "jquery": "^3.5.1",
+    "lity": "^2.4.1",
     "motion-ui": "^2.0.3",
     "slick-carousel": "^1.8.1"
   }

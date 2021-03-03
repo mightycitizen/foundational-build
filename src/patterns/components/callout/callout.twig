@@ -1,1 +1,5 @@
-"image": "<img src='https://source.unsplash.com/PhYq704ffdA/640x360' alt='test image' />",
+<div class="callout {{ modifier }}">
+  {% if content is not empty %}
+    {{ content | raw }}
+  {% endif %}
+</div>

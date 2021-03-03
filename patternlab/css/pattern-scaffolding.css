@@ -8,13 +8,17 @@
  * By default we want to add padding so the style guide is more
  * readable. This can be overridden in each patterns data file.
  */
-.pl {
-  padding: 35px;
+.pl, .pl-c-main {
+  padding: 0 !important;
 }
 
 .no-padding {
   padding: 0;
 }
+
+/* .pl-c-pattern__header, .pl-c-category, .pl-c-pattern__title{
+  padding: 0 30px;
+} */
 
 #sg-patterns {
   -webkit-box-sizing: border-box !important;

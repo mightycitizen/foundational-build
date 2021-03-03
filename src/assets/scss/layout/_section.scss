@@ -1,0 +1,6 @@
+.section{
+  padding: rem-calc(20 0);
+  &--secondary{
+    background-color: $secondary-color;
+  }
+}

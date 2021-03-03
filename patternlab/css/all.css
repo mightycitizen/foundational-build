@@ -4738,6 +4738,11 @@ a.thumbnail {
   -webkit-animation-delay: 700ms !important;
   animation-delay: 700ms !important; }
 
+.section {
+  padding: 1.25rem 0; }
+  .section--secondary {
+    background-color: #1381b9; }
+
 /* Slick slider styles */
 .slick-slider {
   position: relative;

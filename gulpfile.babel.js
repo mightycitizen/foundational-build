@@ -35,7 +35,7 @@ exports.lint = parallel(lintSass, lintJS);
 exports.compress = compressAssets;
 
 // Concat all CSS and JS files into a master bundle.
-exports.concat = parallel(concatCSS, concatJS);
+exports.concat = parallel(concatCSS);
 
 // Clean all directories.
 exports.clean = parallel(cleanCSS, cleanJS);
@@ -109,7 +109,7 @@ function watchFiles() {
   // Watch all my JS files and compile if a file changes.
   watch(
     ['./src/patterns/**/**/*.js', './src/assets/js/**/*.js'],
-    series(parallel(lintJS, compileJS), concatJS, (done) => {
+    series(parallel(lintJS, compileJS), (done) => {
       server.reload('*.js');
       done();
     })
@@ -133,7 +133,7 @@ exports.watch = series(
     moveFonts,
     movePatternCSS
   ),
-  parallel(concatCSS, concatJS),
+  concatCSS,
   series(watchPatternlab, serve, watchFiles)
 );
 
@@ -152,6 +152,6 @@ exports.default = series(
     moveFonts,
     movePatternCSS
   ),
-  parallel(concatCSS, concatJS),
+  concatCSS,
   buildPatternlab
 );

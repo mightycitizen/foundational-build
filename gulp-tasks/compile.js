@@ -48,8 +48,10 @@ function handleError(err) {
 module.exports = {
   // Compile Sass.
   compileSass: function() {
-    return src(['./src/patterns/**/**/*.scss', './src/vendor/**/*.css','./src/assets/scss/**/*.scss'])
-      .pipe(sass({ outputStyle: 'nested' }).on('error', handleError))
+    return src(['./src/assets/scss/**/*.scss'])
+      .pipe(sass({
+        includePaths: ['./node_modules/foundation-sites/scss', './node_modules/motion-ui/src'],
+        outputStyle: 'nested' }).on('error', handleError))
       .pipe(
         prefix({
           cascade: false
@@ -66,25 +68,20 @@ module.exports = {
 
   // Compile JavaScript.
   compileJS: function() {
-    return src(['./src/patterns/**/**/*.js', './src/vendor/**/*.js','./src/assets/js/**/*.js'], {
+    return src(['./src/assets/js/**/*.js'], {
       base: './'
     })
+
       .pipe(sourcemaps.init())
       .pipe(babel())
       .pipe(webpackStream(webpackConfig, webpack2))
       .pipe(
         rename(function(path) {
-          // Currently not using ES6 modules so for now
-          // es6 files are compiled into individual JS files.
-          // Eventually this can use ES6 Modules and compile
-          // all files within a component directory into a single
-          // foo.bundle.js file. In that case the bundle name should
-          // reflect the components directory name.
-          path.dirname = '';
-          return path;
+          path.basename = 'app'
+          return path
         })
       )
-      .pipe(sourcemaps.write('./'))
+      //.pipe(sourcemaps.write('./'))
       .pipe(dest('./dist/js'));
   }
 };

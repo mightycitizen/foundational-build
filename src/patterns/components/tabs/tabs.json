@@ -1,26 +1,29 @@
 {
-  "htmlClass": "no-padding",
-  "primary": true,
+  "id": "example-tabs",
   "tabs": [
     {
       "text": "View",
-      "link": "#view",
-      "is_active": true
+      "id": "view",
+      "is_active": true,
+      "content": "Lorem ipsum 1"
     },
     {
       "text": "Edit",
-      "link": "#edit",
-      "is_active": false
+      "id": "edit",
+      "is_active": false,
+      "content": "Lorem ipsum 2"
     },
     {
       "text": "Delete",
-      "link": "#delete",
-      "is_active": false
+      "id": "delete",
+      "is_active": false,
+      "content": "Lorem ipsum 3"
     },
     {
       "text": "Revisions",
-      "link": "#revisions",
-      "is_active": false
+      "id": "revisions",
+      "is_active": false,
+      "content": "Lorem ipsum 4"
     }
   ]
 }

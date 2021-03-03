@@ -11,6 +11,6 @@ npm-debug.log
 *.map
 
 # Ignore Patternlab files that change every time.
-patternlab
+#patternlab
 dependencyGraph.json
 

@@ -2,6 +2,7 @@
   "name": "rain_theme",
   "version": "2.0.0",
   "scripts": {
+    "start": "npm run watch",
     "build": "gulp",
     "compile": "gulp compile",
     "watch": "gulp watch",
@@ -39,7 +40,9 @@
     "webpack-stream": "^6.1.1"
   },
   "dependencies": {
+    "foundation-sites": "^6.6.3",
     "jquery": "^3.5.1",
+    "motion-ui": "^2.0.3",
     "slick-carousel": "^1.8.1"
   }
 }

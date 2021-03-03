@@ -1,0 +1,71 @@
+{#
+/**
+ * @file
+ * Display for theme color swatches.
+ *
+ * Each color swatch is populated from the json file within
+ * this same directory (colors.json). Add or remove
+ * any colors there.
+ */
+#}
+{% set sections = {
+    "Brand": [
+      {
+        "name": "Primary",
+        "hex": primary
+      },
+      {
+        "name": "Secondary",
+        "hex": secondary
+      }
+    ],
+    "Black &amp; White": [
+      {
+        "name": "Black",
+        "hex": black
+      },
+      {
+        "name": "White",
+        "hex": white
+      }
+    ],
+    "Grays": [
+      {
+        "name": "Light Gray",
+        "hex": lightGray
+      },
+      {
+        "name": "Medium Gray",
+        "hex": mediumGray
+      },
+      {
+        "name": "Dark Gray",
+        "hex": darkGray
+      }
+    ],
+    "Supporting": [
+      {
+        "name": "Success",
+        "hex": success
+      },
+      {
+        "name": "Alert",
+        "hex": alert
+      },
+      {
+        "name": "Warning",
+        "hex": warning
+      }
+    ]
+  }
+
+%}
+
+{% for title, section in sections %}
+  <h3>{{ title }}</h3>
+  {% for color in section %}
+    <div class="pl-swatch" style="background-color: {{ color.hex }}">
+      <div class="pl-swatch__hex">{{ color.name }}<br>{{ color.hex }}</div>
+    </div>
+  {% endfor %}
+{% endfor %}

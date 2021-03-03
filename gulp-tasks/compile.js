@@ -11,6 +11,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 const rename = require('gulp-rename');
 
+
 import webpackStream from 'webpack-stream';
 import webpack2      from 'webpack';
 
@@ -47,6 +48,7 @@ function handleError(err) {
 // Export our tasks.
 module.exports = {
   // Compile Sass.
+
   compileSass: function() {
     return src(['./src/assets/scss/**/*.scss'])
       .pipe(sass({

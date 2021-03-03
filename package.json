@@ -17,13 +17,13 @@
     "not dead"
   ],
   "devDependencies": {
-    "@babel/register": "^7.0.0",
-    "babel-loader": "^8.0.4",
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.0.0",
     "@pattern-lab/core": "^5.7.0",
     "@pattern-lab/engine-twig-php": "^5.7.1",
     "@pattern-lab/uikit-workshop": "^5.7.1",
+    "babel-loader": "^8.0.4",
     "browser-sync": "^2.26.7",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
@@ -32,6 +32,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-eslint": "^5.0.0",
     "gulp-imagemin": "^6.0.0",
+    "gulp-json-data-to-sass": "^1.0.1",
     "gulp-order": "^1.2.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",

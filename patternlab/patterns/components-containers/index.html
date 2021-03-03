@@ -19,10 +19,10 @@
 	<!-- Index of Patterns -->
 	<div class="pl-c-pattern-index">
 	
-			<div id="viewall-components-callout" class="pl-c-category">
+			<div id="viewall-components-containers" class="pl-c-category">
 					
 				<h2 class="pl-c-category__title">
-					<a href="../../patterns/components-callout&#x2F;index.html" class="pl-c-category__title-link patternLink" data-patternpartial="viewall-components-callout">callout</a>
+					<a href="../../patterns/components-containers&#x2F;index.html" class="pl-c-category__title-link patternLink" data-patternpartial="viewall-components-containers">containers</a>
 				</h2><!--end pl-c-category__title-->
 
 				<div class="pl-c-category__description pl-c-text-passage">
@@ -30,21 +30,21 @@
 				</div><!--end pl-c-category__description-->
 				
 			</div><!--end pl-c-category-->
-							<div id="components-callout" class="pl-c-pattern">
+							<div id="components-accordion" class="pl-c-pattern">
 
 				<div class="pl-c-pattern__header">
 
 					<h3 class="pl-c-pattern__title">
 
-						<a href="../../patterns/components-callout-callout&#x2F;components-callout-callout.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="components-callout" title="Link to Pattern">
-							Callout
+						<a href="../../patterns/components-containers-accordion&#x2F;components-containers-accordion.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="components-accordion" title="Link to Pattern">
+							Accordion
 
 
 						</a><!--end pl-c-pattern__title-link-->
 
 					</h3><!--end pl-c-pattern__title-->
 
-					<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-components-callout" data-patternpartial="components-callout" title="View Pattern Info">
+					<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-components-accordion" data-patternpartial="components-accordion" title="View Pattern Info">
 						<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
 						<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
 						<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
@@ -63,34 +63,57 @@
 
 				</div><!--end pl-c-pattern__header-->
 
-				<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-components-callout">
+				<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-components-accordion">
 			    </div><!--end pl-c-pattern__extra-->
 
 				<div class="pl-js-pattern-example">
-				<div class="callout ">
-      <h5>This is a callout.</h5><p>It has an easy to override visual style, and is appropriately subdued.</p><a href="#">It's dangerous to go alone, take this.</a>
+				<ul class="accordion" data-accordion>
+      <li class="accordion-item is-active" data-accordion-item>
+  <a href="#" class="accordion-title" aria-controls="accordion__content-1" aria-expanded="false" id="accordion__toggle-1" aria-selected="false">
+    <span class="accordion__heading">Curabitur aliquet quam id dui posuere blandit.</span>
+  </a>
+  <div class="accordion-content" data-tab-content id="accordion__content-1" aria-hidden="true" aria-labelledby="accordion__content-1">
+    <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
   </div>
+</li>
+      <li class="accordion-item " data-accordion-item>
+  <a href="#" class="accordion-title" aria-controls="accordion__content-2" aria-expanded="false" id="accordion__toggle-2" aria-selected="false">
+    <span class="accordion__heading">Curabitur aliquet quam</span>
+  </a>
+  <div class="accordion-content" data-tab-content id="accordion__content-2" aria-hidden="true" aria-labelledby="accordion__content-2">
+    <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
+  </div>
+</li>
+      <li class="accordion-item " data-accordion-item>
+  <a href="#" class="accordion-title" aria-controls="accordion__content-3" aria-expanded="false" id="accordion__toggle-3" aria-selected="false">
+    <span class="accordion__heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu cursus euismod quis viverra nibh cras pulvinar?</span>
+  </a>
+  <div class="accordion-content" data-tab-content id="accordion__content-3" aria-hidden="true" aria-labelledby="accordion__content-3">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est sit amet facilisis magna etiam tempor orci. Auctor eu augue ut lectus arcu bibendum at varius. Risus ultricies tristique nulla aliquet enim tortor at auctor.</p>
+  </div>
+</li>
+  </ul>
 				</div><!--end pl-js-pattern-example-->
 
-				<script type="text/json" id="pl-pattern-data-components-callout" class="pl-js-pattern-data">
-				{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternType":"components","patternSubtype":"callout"},"patternExtension":"twig","patternName":"Callout","patternPartial":"components-callout","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+				<script type="text/json" id="pl-pattern-data-components-accordion" class="pl-js-pattern-data">
+				{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternType":"components","patternSubtype":"containers"},"patternExtension":"twig","patternName":"Accordion","patternPartial":"components-accordion","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
 				</script>
 
-			</div><!--end pl-c-pattern-->			<div id="components-callout-alert" class="pl-c-pattern">
+			</div><!--end pl-c-pattern-->			<div id="components-carousel" class="pl-c-pattern">
 
 				<div class="pl-c-pattern__header">
 
 					<h3 class="pl-c-pattern__title">
 
-						<a href="../../patterns/components-callout-callout-alert&#x2F;components-callout-callout-alert.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="components-callout-alert" title="Link to Pattern">
-							Callout Alert
+						<a href="../../patterns/components-containers-carousel&#x2F;components-containers-carousel.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="components-carousel" title="Link to Pattern">
+							Carousel
 
 
 						</a><!--end pl-c-pattern__title-link-->
 
 					</h3><!--end pl-c-pattern__title-->
 
-					<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-components-callout-alert" data-patternpartial="components-callout-alert" title="View Pattern Info">
+					<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-components-carousel" data-patternpartial="components-carousel" title="View Pattern Info">
 						<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
 						<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
 						<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
@@ -109,34 +132,39 @@
 
 				</div><!--end pl-c-pattern__header-->
 
-				<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-components-callout-alert">
+				<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-components-carousel">
 			    </div><!--end pl-c-pattern__extra-->
 
 				<div class="pl-js-pattern-example">
-				<div class="callout alert">
-      <h5>This is a callout.</h5><p>It has an easy to override visual style, and is appropriately subdued.</p><a href="#">It's dangerous to go alone, take this.</a>
+				<div class="one-time">
+      <div>
+      <img src="//placehold.it/200x200" alt="">
+    </div>
+      <div>
+      <img src="//placehold.it/200x200" alt="">
+    </div>
   </div>
 				</div><!--end pl-js-pattern-example-->
 
-				<script type="text/json" id="pl-pattern-data-components-callout-alert" class="pl-js-pattern-data">
-				{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternType":"components","patternSubtype":"callout"},"patternExtension":"twig","patternName":"Callout Alert","patternPartial":"components-callout-alert","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+				<script type="text/json" id="pl-pattern-data-components-carousel" class="pl-js-pattern-data">
+				{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternType":"components","patternSubtype":"containers"},"patternExtension":"twig","patternName":"Carousel","patternPartial":"components-carousel","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
 				</script>
 
-			</div><!--end pl-c-pattern-->			<div id="components-callout-secondary" class="pl-c-pattern">
+			</div><!--end pl-c-pattern-->			<div id="components-modal" class="pl-c-pattern">
 
 				<div class="pl-c-pattern__header">
 
 					<h3 class="pl-c-pattern__title">
 
-						<a href="../../patterns/components-callout-callout-secondary&#x2F;components-callout-callout-secondary.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="components-callout-secondary" title="Link to Pattern">
-							Callout Secondary
+						<a href="../../patterns/components-containers-modal&#x2F;components-containers-modal.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="components-modal" title="Link to Pattern">
+							Modal
 
 
 						</a><!--end pl-c-pattern__title-link-->
 
 					</h3><!--end pl-c-pattern__title-->
 
-					<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-components-callout-secondary" data-patternpartial="components-callout-secondary" title="View Pattern Info">
+					<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-components-modal" data-patternpartial="components-modal" title="View Pattern Info">
 						<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
 						<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
 						<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
@@ -155,34 +183,51 @@
 
 				</div><!--end pl-c-pattern__header-->
 
-				<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-components-callout-secondary">
+				<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-components-modal">
 			    </div><!--end pl-c-pattern__extra-->
 
 				<div class="pl-js-pattern-example">
-				<div class="callout secondary">
-      <h5>This is a callout.</h5><p>It has an easy to override visual style, and is appropriately subdued.</p><a href="#">It's dangerous to go alone, take this.</a>
-  </div>
+				<a data-lity href="#inline">Open</a>
+<div id="inline" class="lity-hide">
+        <form>
+            <fieldset style="border:0;">
+                <ul style="list-style:none">
+                    <li>
+                        <label for="input">Input</label>
+                        <input type="text" required="" name="name" id="input">
+                    </li>
+                    <li>
+                        <label for="textarea" style="width:100%">Textarea</label><br>
+                        <textarea id="textarea" rows="10" style="width:100%"></textarea>
+                    </li>
+                    <li>
+                        <input type="submit">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </div>
 				</div><!--end pl-js-pattern-example-->
 
-				<script type="text/json" id="pl-pattern-data-components-callout-secondary" class="pl-js-pattern-data">
-				{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternType":"components","patternSubtype":"callout"},"patternExtension":"twig","patternName":"Callout Secondary","patternPartial":"components-callout-secondary","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+				<script type="text/json" id="pl-pattern-data-components-modal" class="pl-js-pattern-data">
+				{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternType":"components","patternSubtype":"containers"},"patternExtension":"twig","patternName":"Modal","patternPartial":"components-modal","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
 				</script>
 
-			</div><!--end pl-c-pattern-->			<div id="components-callout-success" class="pl-c-pattern">
+			</div><!--end pl-c-pattern-->			<div id="components-tabs" class="pl-c-pattern">
 
 				<div class="pl-c-pattern__header">
 
 					<h3 class="pl-c-pattern__title">
 
-						<a href="../../patterns/components-callout-callout-success&#x2F;components-callout-callout-success.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="components-callout-success" title="Link to Pattern">
-							Callout Success
+						<a href="../../patterns/components-containers-tabs&#x2F;components-containers-tabs.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="components-tabs" title="Link to Pattern">
+							Tabs
 
 
 						</a><!--end pl-c-pattern__title-link-->
 
 					</h3><!--end pl-c-pattern__title-->
 
-					<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-components-callout-success" data-patternpartial="components-callout-success" title="View Pattern Info">
+					<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-components-tabs" data-patternpartial="components-tabs" title="View Pattern Info">
 						<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
 						<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
 						<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
@@ -201,17 +246,37 @@
 
 				</div><!--end pl-c-pattern__header-->
 
-				<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-components-callout-success">
+				<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-components-tabs">
 			    </div><!--end pl-c-pattern__extra-->
 
 				<div class="pl-js-pattern-example">
-				<div class="callout success">
-      <h5>This is a callout.</h5><p>It has an easy to override visual style, and is appropriately subdued.</p><a href="#">It's dangerous to go alone, take this.</a>
-  </div>
+				<ul class="tabs" data-tabs id="example-tabs">
+      <li class="tabs-title is-active"><a href="#view" aria-selected="true">View</a></li>
+      <li class="tabs-title "><a href="#edit" aria-selected="true">Edit</a></li>
+      <li class="tabs-title "><a href="#delete" aria-selected="true">Delete</a></li>
+      <li class="tabs-title "><a href="#revisions" aria-selected="true">Revisions</a></li>
+  </ul>
+
+<div class="tabs-content" data-tabs-content="example-tabs">
+
+          <div id="view" class="tabs-panel is-active">
+        Lorem ipsum 1
+      </div>
+          <div id="edit" class="tabs-panel ">
+        Lorem ipsum 2
+      </div>
+          <div id="delete" class="tabs-panel ">
+        Lorem ipsum 3
+      </div>
+          <div id="revisions" class="tabs-panel ">
+        Lorem ipsum 4
+      </div>
+    
+</div>
 				</div><!--end pl-js-pattern-example-->
 
-				<script type="text/json" id="pl-pattern-data-components-callout-success" class="pl-js-pattern-data">
-				{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternType":"components","patternSubtype":"callout"},"patternExtension":"twig","patternName":"Callout Success","patternPartial":"components-callout-success","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+				<script type="text/json" id="pl-pattern-data-components-tabs" class="pl-js-pattern-data">
+				{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternType":"components","patternSubtype":"containers"},"patternExtension":"twig","patternName":"Tabs","patternPartial":"components-tabs","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
 				</script>
 
 			</div><!--end pl-c-pattern-->
@@ -220,11 +285,11 @@
 </div><!--end pl-c-main-->
 <!--DO NOT REMOVE-->
 <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
-  {"patternPartial":"viewall-components-callout"}
+  {"patternPartial":"viewall-components-containers"}
 </script>
 
 <script>
-  window.patternData = {"patternPartial":"viewall-components-callout"};
+  window.patternData = {"patternPartial":"viewall-components-containers"};
 </script>
 
 <script>

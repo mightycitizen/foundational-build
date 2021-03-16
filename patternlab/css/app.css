@@ -4712,6 +4712,19 @@ a.thumbnail {
   -webkit-animation-delay: 700ms !important;
   animation-delay: 700ms !important; }
 
+.a2a_svg {
+  max-width: 1.5625rem;
+  max-height: 1.5625rem;
+  margin-right: 0.9375rem;
+  background-color: #266093 !important; }
+
+.a2a_kit {
+  margin-bottom: 2.1875rem; }
+  .a2a_kit_label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.9375rem; }
+
 .cta {
   background-color: #212944;
   color: #fefefe;
@@ -4732,6 +4745,42 @@ a.thumbnail {
   border-bottom: 1px solid #cacaca;
   margin-bottom: 1.25rem;
   padding-bottom: 1.25rem; }
+
+/* ------------------ Tooltip ------------------ */
+.tippy-box,
+.tippy-tooltip {
+  background: #266093;
+  border-radius: 3px;
+  color: #fefefe;
+  font-size: 0.75rem;
+  font-weight: bold;
+  max-width: 10.25rem !important;
+  padding: 0.6rem 0.65rem;
+  text-align: left; }
+  .tippy-box h2,
+  .tippy-box h3,
+  .tippy-box h4,
+  .tippy-tooltip h2,
+  .tippy-tooltip h3,
+  .tippy-tooltip h4 {
+    font-size: 1rem; }
+
+.tippy-close {
+  display: none; }
+
+.tippy-content {
+  padding: 0; }
+
+.tippy-tooltip[data-placement^=left] > .tippy-arrow {
+  border-right-color: #266093; }
+
+.tippy-arrow {
+  border-right-color: #266093;
+  color: #266093;
+  height: 0;
+  width: 0; }
+  .tippy-arrow:before {
+    display: inline-block; }
 
 .helper {
   font-size: 0.875rem; }
@@ -4946,6 +4995,42 @@ a.thumbnail {
 
 .lity-hide {
   display: none; }
+
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?4dsgeb");
+  src: url("../fonts/icomoon.eot?4dsgeb#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?4dsgeb") format("truetype"), url("../fonts/icomoon.woff?4dsgeb") format("woff"), url("../fonts/icomoon.svg?4dsgeb#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-home3:before {
+  content: ""; }
+
+.icon-play:before {
+  content: ""; }
+
+.icon-book:before {
+  content: ""; }
+
+.icon-bubbles:before {
+  content: ""; }
+
+.icon-heart:before {
+  content: ""; }
 
 /* Slick slider styles */
 .slick-slider {
@@ -6036,3 +6121,54 @@ a.thumbnail {
     .p-y-10 {
       padding-top: 6.3rem !important;
       padding-bottom: 6.3rem !important; } }
+
+.radio-button {
+  display: inline-block; }
+  .radio-button:not(foo) input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    width: 0; }
+    .radio-button:not(foo) input[type="radio"] + label {
+      width: 100%;
+      margin: 0; }
+    .radio-button:not(foo) input[type="radio"]:checked + label {
+      background-color: #1381b9 !important;
+      color: #fefefe; }
+
+.icon.tiny {
+  font-size: 0.625rem; }
+
+.icon.small {
+  font-size: 0.875rem; }
+
+.icon.medium {
+  font-size: 1.25rem; }
+
+.icon.large {
+  font-size: 1.625rem; }
+
+ul, ol {
+  margin-bottom: 1.875rem; }
+  ul li, ol li {
+    margin-bottom: 0.9375rem; }
+  ul:not(foo), ol:not(foo) {
+    list-style-type: none;
+    counter-reset: list; }
+    ul:not(foo) li, ol:not(foo) li {
+      position: relative; }
+      ul:not(foo) li:before, ol:not(foo) li:before {
+        counter-increment: list;
+        content: counter(list) ".";
+        position: absolute;
+        right: 100%;
+        margin-right: 0.625rem;
+        color: #266093;
+        display: inline-block; }
+
+ul:not(foo) li:before {
+  content: '';
+  background-color: #266093;
+  width: 0.3125rem;
+  height: 0.3125rem;
+  top: 0.6875rem;
+  border-radius: 100%; }

@@ -1,0 +1,38 @@
+
+    ul, ol{
+      margin-bottom: rem-calc(30);
+      li{
+        margin-bottom: rem-calc(15);
+      }
+      &:not(foo){
+        list-style-type: none;
+        counter-reset: list;
+        li{
+          position: relative;
+          &:before{
+            counter-increment: list;
+            content: counter(list)  ".";
+            position: absolute;
+            right: 100%;
+            margin-right: rem-calc(10);
+            color: $primary-color;
+            display: inline-block;
+          }
+        }
+      }
+    }
+    ul{
+      &:not(foo){
+        li{
+          &:before{
+            content: '';
+            background-color: $primary-color;
+            width: rem-calc(5);
+            height: rem-calc(5);
+            top: rem-calc(11);
+            border-radius: 100%;
+
+          }
+        }
+      }
+    }

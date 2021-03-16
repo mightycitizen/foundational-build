@@ -1,0 +1,14 @@
+.icon{
+  &.tiny{
+    font-size: rem-calc(10);
+  }
+  &.small{
+    font-size: rem-calc(14);
+  }
+  &.medium{
+    font-size: rem-calc(20);
+  }
+  &.large{
+    font-size: rem-calc(26);
+  }
+}

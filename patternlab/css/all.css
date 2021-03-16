@@ -6261,16 +6261,16 @@ input[type="radio"].custom:not(foo) + label:before, input[type="radio"].custom:n
     color: #fefefe;
     background-color: #1381b9; }
 
-ul, ol {
+ul:not([class]), ol:not([class]) {
   margin-bottom: 1.875rem; }
-  ul li, ol li {
+  ul:not([class]) li, ol:not([class]) li {
     margin-bottom: 0.9375rem; }
-  ul:not(foo), ol:not(foo) {
+  ul:not([class]):not(foo), ol:not([class]):not(foo) {
     list-style-type: none;
     counter-reset: list; }
-    ul:not(foo) li, ol:not(foo) li {
+    ul:not([class]):not(foo) li, ol:not([class]):not(foo) li {
       position: relative; }
-      ul:not(foo) li:before, ol:not(foo) li:before {
+      ul:not([class]):not(foo) li:before, ol:not([class]):not(foo) li:before {
         counter-increment: list;
         content: counter(list) ".";
         position: absolute;
@@ -6279,7 +6279,7 @@ ul, ol {
         color: #266093;
         display: inline-block; }
 
-ul:not(foo) li:before {
+ul:not([class]):not(foo) li:before {
   content: '';
   background-color: #266093;
   width: 0.3125rem;

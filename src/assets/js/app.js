@@ -3,13 +3,58 @@ import $ from 'jquery';
 import Lity from 'lity';
 import './lib/foundation-explicit-pieces';
 import tippy from 'tippy.js';
-
+import LazyLoad from 'vanilla-lazyload';
 
 //$(document).on('click', '[data-lity]', lity);
 
 $(document).foundation();
 
+$(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
+  // newSize is the name of the now-current breakpoint, oldSize is the previous breakpoint
+});
+
+
+// In-page smooth scroll, exclude from modal windows
+$(document).on('click', 'a[href^="#"]:not([href="#"]):not([data-lity])',
+  function(event) {
+    // On-page links
+    event.preventDefault();
+
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      var targetHash = this.hash.substring(1);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 500);
+
+      }
+    }
+  });
+
+
 $(document).ready(function(){
+
+  // ↑ True for "medium" or larger (by default)
+  //Foundation.MediaQuery.is('medium up');
+  //Foundation.MediaQuery.atLeast('medium');
+
+  // → True for "medium" only
+  //Foundation.MediaQuery.is('medium only');
+  //Foundation.MediaQuery.only('medium');
+
+  // ↓ True for "medium" or larger
+  //Foundation.MediaQuery.is('medium down');
+  //Foundation.MediaQuery.upTo('medium');
+
   var tippies = document.querySelectorAll("[data-tippy-content]");
   tippy(tippies, {
     hideOnClick: false,
@@ -69,6 +114,11 @@ $(document).ready(function(){
       elem.reference.classList.add("tippy-initialized");
     },
   });
+  new LazyLoad({
+    elements_selector: ".js-lazy"
+    // ... more custom settings?
+  });
+
   $('.one-time').slick({
     dots: true,
     infinite: true,

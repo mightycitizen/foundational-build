@@ -21,7 +21,7 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/register": "^7.0.0",
     "@pattern-lab/core": "^5.14.1",
-    "@pattern-lab/engine-twig-php": "^5.7.1",
+    "@pattern-lab/engine-twig-php": "^5.14.1",
     "@pattern-lab/uikit-workshop": "^5.14.1",
     "babel-loader": "^8.0.4",
     "browser-sync": "^2.26.14",

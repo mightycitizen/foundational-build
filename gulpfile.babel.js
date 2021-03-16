@@ -95,7 +95,7 @@ function buildPatternlab(done) {
 
 function buildVariables(){
 
-    return src('src/patterns/global/base/**/*.json')
+    return src('src/_patterns/global/base/**/*.json')
         .pipe(jsonToSass({
             sass: 'src/assets/scss/_variables.scss',
             prefix: 'theme',

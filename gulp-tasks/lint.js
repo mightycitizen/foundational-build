@@ -13,6 +13,7 @@ module.exports = {
   // Lint Sass based on .sass-lint.yml config.
   lintSass: function() {
     return src([
+      './src/assets/scss/**/*.scss',
       './src/patterns/{global,layout,components}/**/*.scss',
       '!./src/patterns/global/utils/*'
     ])
@@ -23,6 +24,7 @@ module.exports = {
   // Lint JavaScript based on .eslintrc config.
   lintJS: function() {
     return src([
+      './src/assets/js/**/*.js',
       './src/patterns/{global,layout,components}/**/*.js',
       '!./src/patterns/components/**/vendors/*'
     ])

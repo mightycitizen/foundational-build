@@ -112,14 +112,14 @@ function buildVariables(){
 function watchFiles() {
   // Watch all my sass files and compile sass if a file changes.
   watch(['./src/patterns/global/base/**/*.json'],
-    series(buildVariables, parallel(lintSass, compileSass), concatCSS, (done) => {
+    series(buildVariables, compileSass, concatCSS, (done) => {
       server.reload('*.css');
       done();
     })
   )
   watch(
     ['./src/patterns/**/**/*.scss','./src/assets/**/*.scss'],
-    series(parallel(lintSass, compileSass), concatCSS, (done) => {
+    series(compileSass, concatCSS, (done) => {
       server.reload('*.css');
       done();
     })

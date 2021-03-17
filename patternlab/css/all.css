@@ -6552,3 +6552,16 @@ ul:not([class]):not(foo) li:before {
   height: 0.3125rem;
   top: 0.6875rem;
   border-radius: 100%; }
+
+blockquote {
+  border-left: 0;
+  position: relative;
+  padding-left: 2.5rem; }
+  blockquote:before {
+    font-family: "icomoon";
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -0.3125rem;
+    color: #266093;
+    font-size: 1.875rem; }

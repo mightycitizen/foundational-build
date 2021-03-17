@@ -1,0 +1,20 @@
+@import '../vendor/icomoon/variables';
+$arrow-size: 20;
+.accordion-menu {
+  .is-accordion-submenu-parent:not(.has-submenu-toggle) {
+    > a:after{
+      font-family: $icomoon-font-family;
+      content: $icon-chevron-down;
+      border: none;
+      width: rem-calc($arrow-size);
+      height: rem-calc($arrow-size);
+      margin-top: rem-calc(-0.5*$arrow-size);
+
+    }
+    &[aria-expanded="true"]{
+      > a:after{
+        transform: scaleY(-1);
+      }
+    }
+  }
+}

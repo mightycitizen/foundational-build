@@ -58,8 +58,8 @@ $hamburger-color: $primary-color;
       transform: translateX(-50%);
     }
   }
-  &.is-active{
-    .hambuger{
+  &:not(.is-active){
+    .hamburger{
       &-icon{
         &-bar{
           transition: 0.3s opacity;
@@ -67,7 +67,7 @@ $hamburger-color: $primary-color;
       }
     }
   }
-  &:not(.is-active){
+  &.is-active{
     //display: none;
     .hamburger{
       &-text{

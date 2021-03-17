@@ -1,24 +1,16 @@
-<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
-  <div class="title-bar-title">Menu</div>
+<div  data-responsive-toggle="responsive-menu" data-hide-for="medium">
+  {% include "components/misc/hamburger.twig" with {
+    toggle: "responsive-menu"
+  } %}
 </div>
 
-<div class="top-bar" id="responsive-menu">
+<div class="top-bar" id="responsive-menu" data-toggler>
   <div class="top-bar-left">
     <ul class="vertical medium-horizontal menu" data-responsive-menu="accordion medium-dropdown">
       <li>
         <a href="#">Item 1</a>
         <ul class="vertical menu">
-          <li>
-            <a href="#">Item 1A</a>
-            <ul class="vertical menu">
-              <li><a href="#">Item 1A</a></li>
-              <li><a href="#">Item 1B</a></li>
-              <li><a href="#">Item 1C</a></li>
-              <li><a href="#">Item 1D</a></li>
-              <li><a href="#">Item 1E</a></li>
-            </ul>
-          </li>
+          <li><a href="#">Item 1A</a></li>
           <li><a href="#">Item 1B</a></li>
         </ul>
       </li>

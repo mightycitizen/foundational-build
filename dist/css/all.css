@@ -4780,23 +4780,23 @@ a.thumbnail {
       position: absolute;
       left: 50%;
       transform: translateX(-50%); }
-  .hamburger.is-active .hambuger-icon-bar {
+  .hamburger:not(.is-active) .hamburger-icon-bar {
     transition: 0.3s opacity; }
-  .hamburger:not(.is-active) .hamburger-text {
+  .hamburger.is-active .hamburger-text {
     margin-top: 1.5625rem; }
-    .hamburger:not(.is-active) .hamburger-text:after {
+    .hamburger.is-active .hamburger-text:after {
       color: #1381b9; }
-  .hamburger:not(.is-active) .hamburger-icon {
+  .hamburger.is-active .hamburger-icon {
     margin-top: -1.1875rem; }
-    .hamburger:not(.is-active) .hamburger-icon-bar, .hamburger:not(.is-active) .hamburger-icon:before, .hamburger:not(.is-active) .hamburger-icon:after {
+    .hamburger.is-active .hamburger-icon-bar, .hamburger.is-active .hamburger-icon:before, .hamburger.is-active .hamburger-icon:after {
       background-color: #1381b9; }
-    .hamburger:not(.is-active) .hamburger-icon-bar {
+    .hamburger.is-active .hamburger-icon-bar {
       opacity: 0; }
-    .hamburger:not(.is-active) .hamburger-icon:before, .hamburger:not(.is-active) .hamburger-icon:after {
+    .hamburger.is-active .hamburger-icon:before, .hamburger.is-active .hamburger-icon:after {
       top: 1.5625rem; }
-    .hamburger:not(.is-active) .hamburger-icon:before {
+    .hamburger.is-active .hamburger-icon:before {
       transform: rotate(45deg); }
-    .hamburger:not(.is-active) .hamburger-icon:after {
+    .hamburger.is-active .hamburger-icon:after {
       transform: rotate(-45deg); }
 
 .read-more:after {
@@ -4827,6 +4827,17 @@ a.thumbnail {
   border-bottom: 1px solid #cacaca;
   margin-bottom: 1.25rem;
   padding-bottom: 1.25rem; }
+
+.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a:after {
+  font-family: "icomoon";
+  content: "";
+  border: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: -0.625rem; }
+
+.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)[aria-expanded="true"] > a:after {
+  transform: scaleY(-1); }
 
 /* ------------------ Tooltip ------------------ */
 .tippy-box,

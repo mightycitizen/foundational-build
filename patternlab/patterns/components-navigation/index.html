@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1615993528880" media="all" />
-    <link rel="stylesheet" href="../../css/all.css?1615993528880" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1615994088593" media="all" />
+    <link rel="stylesheet" href="../../css/all.css?1615994088593" media="all" />
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1615993528880" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1615994088593" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -123,27 +123,22 @@
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
-  <div class="title-bar-title">Menu</div>
+			<div  data-responsive-toggle="responsive-menu" data-hide-for="medium">
+  <button class="hamburger" type="button" id="hamburger" data-toggle="responsive-menu" data-toggler=".is-active" aria-label="Toggle navigation">
+  <span class="hamburger-icon">
+    <span class="hamburger-icon-bar"></span>
+  </span>
+  <span class="hamburger-text">Menu</span>
+</button>
 </div>
 
-<div class="top-bar" id="responsive-menu">
+<div class="top-bar" id="responsive-menu" data-toggler>
   <div class="top-bar-left">
     <ul class="vertical medium-horizontal menu" data-responsive-menu="accordion medium-dropdown">
       <li>
         <a href="#">Item 1</a>
         <ul class="vertical menu">
-          <li>
-            <a href="#">Item 1A</a>
-            <ul class="vertical menu">
-              <li><a href="#">Item 1A</a></li>
-              <li><a href="#">Item 1B</a></li>
-              <li><a href="#">Item 1C</a></li>
-              <li><a href="#">Item 1D</a></li>
-              <li><a href="#">Item 1E</a></li>
-            </ul>
-          </li>
+          <li><a href="#">Item 1A</a></li>
           <li><a href="#">Item 1B</a></li>
         </ul>
       </li>
@@ -168,7 +163,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-components-menu" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternGroup":"components","patternSubgroup":"navigation"},"patternExtension":"twig","patternName":"Menu","patternPartial":"components-menu","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"components-hamburger","lineagePath":"../../patterns/components-misc-hamburger/components-misc-hamburger.rendered.html"}],"lineage":[{"lineagePattern":"components-hamburger","lineagePath":"../../patterns/components-misc-hamburger/components-misc-hamburger.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"components","patternSubgroup":"navigation"},"patternExtension":"twig","patternName":"Menu","patternPartial":"components-menu","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -218,10 +213,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1615993528880">
+<script id="pl-js-polyfill-insert-1615994088593">
   (function() {
     if (self != top) {
-      var cb = '1615993528880';
+      var cb = '1615994088593';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -234,7 +229,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1615993528880" nomodule>
+<script id="pl-js-insert-1615994088593" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -257,6 +252,6 @@
   <script src="/core/misc/drupal.init.js"></script>
   -->
   <!-- Concatenated by Gulp so you don't have to manually add each file. -->
-  <script src="../../js/app.js?1615993528880"></script>
+  <script src="../../js/app.js?1615994088593"></script>
 </body>
 </html>

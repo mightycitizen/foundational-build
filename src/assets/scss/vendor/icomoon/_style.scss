@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?keq6k1');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?keq6k1#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?keq6k1') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?keq6k1') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?keq6k1##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?hzvag5');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?hzvag5#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?hzvag5') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?hzvag5') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?hzvag5##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,6 +27,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-chevron-right {
+  &:before {
+    content: $icon-chevron-right;
+  }
+}
+.icon-chevron-left {
+  &:before {
+    content: $icon-chevron-left;
+  }
+}
+.icon-chevron-down {
+  &:before {
+    content: $icon-chevron-down;
+  }
+}
+.icon-chevron-up {
+  &:before {
+    content: $icon-chevron-up;
+  }
+}
 .icon-home {
   &:before {
     content: $icon-home;
@@ -115,6 +135,11 @@
 .icon-pinterest {
   &:before {
     content: $icon-pinterest;
+  }
+}
+.icon-file-pdf {
+  &:before {
+    content: $icon-file-pdf;
   }
 }
 

@@ -41,20 +41,15 @@ $(document).on('click', 'a[href^="#"]:not([href="#"]):not([data-lity])',
   });
 
 
-$(document).ready(function(){
+function sliderPagination(slick){
+  if (slick.$dots){
+    const numSlides = slick.$dots.find('>li').length;
+    slick.$slider.toggleClass('slider-pagers', numSlides > 1);
+    slick.$slider.toggleClass('slider-pagination', numSlides > 3);
+  }
+}
 
-  // ↑ True for "medium" or larger (by default)
-  //Foundation.MediaQuery.is('medium up');
-  //Foundation.MediaQuery.atLeast('medium');
-
-  // → True for "medium" only
-  //Foundation.MediaQuery.is('medium only');
-  //Foundation.MediaQuery.only('medium');
-
-  // ↓ True for "medium" or larger
-  //Foundation.MediaQuery.is('medium down');
-  //Foundation.MediaQuery.upTo('medium');
-
+const initTippy = () => {
   var tippies = document.querySelectorAll("[data-tippy-content]");
   tippy(tippies, {
     hideOnClick: false,
@@ -114,18 +109,55 @@ $(document).ready(function(){
       elem.reference.classList.add("tippy-initialized");
     },
   });
+}
+
+const initLazy = () => {
   new LazyLoad({
     elements_selector: ".js-lazy"
     // ... more custom settings?
   });
+}
 
-  $('.one-time').slick({
+const initSlider = () => {
+
+  const $slider = $('.js-slider');
+
+  $slider.on('breakpoint', function (event, slick, breakpoint){
+    sliderPagination(slick);
+  })
+
+  $slider.slick({
+    slidesToScroll: 1,
+    rows: 0,
+    prevArrow: '<button class="slick-prev">Previous</button>',
+    nextArrow: '<button class="slick-next">Next</button>',
     dots: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    adaptiveHeight: true
+    dotsClass: 'slick-dots',
+    appendArrows: '.slick-nav',
+    appendDots: '.slick-nav',
+    adaptiveHeight: true,
+    waitForAnimate: false
   });
+
+}
+
+$(document).ready(function(){
+
+  // ↑ True for "medium" or larger (by default)
+  //Foundation.MediaQuery.is('medium up');
+  //Foundation.MediaQuery.atLeast('medium');
+
+  // → True for "medium" only
+  //Foundation.MediaQuery.is('medium only');
+  //Foundation.MediaQuery.only('medium');
+
+  // ↓ True for "medium" or larger
+  //Foundation.MediaQuery.is('medium down');
+  //Foundation.MediaQuery.upTo('medium');
+
+  initTippy();
+  initLazy();
+  initSlider();
 
 
 })

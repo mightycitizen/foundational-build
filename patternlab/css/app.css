@@ -4846,6 +4846,109 @@ a.thumbnail {
   .tippy-arrow:before {
     display: inline-block; }
 
+[data-tippy-content] {
+  margin-left: 0.1875rem;
+  display: inline-block;
+  vertical-align: middle;
+  color: #266093; }
+
+.slick-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.9375rem;
+  list-style-type: none; }
+  .slick-dots li, .slick-dots li:last-child {
+    padding: 0.9375rem 0.5625rem;
+    padding-bottom: 0.875rem !important; }
+    @media print, screen and (min-width: 64em) {
+      .slick-dots li, .slick-dots li:last-child {
+        padding-top: 0.6875rem;
+        padding-bottom: 0.6875rem !important; } }
+  .slick-dots li.slick-active button, .slick-dots li.active button {
+    background: #1381b9; }
+  .slick-dots li:before {
+    content: "";
+    display: none; }
+  .slick-dots button {
+    width: 0.625rem;
+    height: 0.625rem;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    border-radius: 50%;
+    background: #1381b9; }
+    .slick-dots button:hover, .slick-dots button:focus {
+      background: #1381b9; }
+
+.slick-arrow {
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 0.1875rem;
+  margin-left: 0;
+  margin-right: 1.0625rem;
+  font-size: 0;
+  line-height: 0;
+  color: #1381b9;
+  text-decoration: none;
+  cursor: pointer; }
+  @media print, screen and (min-width: 64em) {
+    .slick-arrow {
+      margin-right: 0;
+      padding-right: 0.125rem; } }
+  .slick-arrow:before {
+    font-size: 1.875rem;
+    line-height: 1;
+    font-family: "icomoon"; }
+    @media print, screen and (min-width: 64em) {
+      .slick-arrow:before {
+        font-size: 1.125rem;
+        line-height: 1; } }
+  .slick-arrow.slick-prev:before {
+    content: ""; }
+  .slick-arrow.slick-next {
+    padding-right: 0;
+    padding-left: 0.1875rem;
+    margin-right: 0;
+    margin-left: 1.0625rem; }
+    @media print, screen and (min-width: 64em) {
+      .slick-arrow.slick-next {
+        margin-right: 0;
+        margin-left: 0;
+        padding-right: 0;
+        padding-left: 0.125rem; } }
+    .slick-arrow.slick-next:before {
+      content: ""; }
+  .slick-arrow.slick-disabled, .slick-arrow.slick-disabled:focus {
+    color: #e6e6e6;
+    pointer-events: none; }
+    html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .slick-arrow.slick-disabled:focus {
+      color: #e6e6e6; }
+
+.slick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; }
+  .slick-nav .slick-prev {
+    order: 1;
+    margin-right: 0; }
+  .slick-nav .slick-next {
+    order: 3;
+    margin-left: 0; }
+  .slick-nav .slick-dots {
+    order: 2;
+    flex-wrap: wrap;
+    max-width: calc(100% - 68px); }
+    .slick-nav .slick-dots .slick-active button {
+      background: #cacaca; }
+    .slick-nav .slick-dots button {
+      background: #1381b9; }
+
 .helper {
   font-size: 0.875rem; }
 
@@ -5062,8 +5165,8 @@ a.thumbnail {
 
 @font-face {
   font-family: "icomoon";
-  src: url("../fonts/icomoon.eot?keq6k1");
-  src: url("../fonts/icomoon.eot?keq6k1#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?keq6k1") format("truetype"), url("../fonts/icomoon.woff?keq6k1") format("woff"), url("../fonts/icomoon.svg?keq6k1#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?hzvag5");
+  src: url("../fonts/icomoon.eot?hzvag5#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?hzvag5") format("truetype"), url("../fonts/icomoon.woff?hzvag5") format("woff"), url("../fonts/icomoon.svg?hzvag5#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block; }
@@ -5080,6 +5183,18 @@ a.thumbnail {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.icon-chevron-right:before {
+  content: ""; }
+
+.icon-chevron-left:before {
+  content: ""; }
+
+.icon-chevron-down:before {
+  content: ""; }
+
+.icon-chevron-up:before {
+  content: ""; }
 
 .icon-home:before {
   content: ""; }
@@ -5134,6 +5249,9 @@ a.thumbnail {
 
 .icon-pinterest:before {
   content: ""; }
+
+.icon-file-pdf:before {
+  content: ""; }
 
 /* Slick slider styles */
 .slick-slider {

@@ -1,4 +1,6 @@
+
 @import '../vendor/icomoon/variables';
+$arrow-margin-xxlarge: 25px;
 $peekaboo-space: 30px;
 
 .slick-wrap{
@@ -187,18 +189,6 @@ $peekaboo-space: 30px;
 	}
 
 	&.slick-next {
-		padding-right: 0;
-		padding-left: rem-calc(3);
-		margin-right: 0;
-		margin-left: rem-calc(17);
-
-		@include breakpoint(large) {
-			margin-right: 0;
-			margin-left: 0;
-			padding-right: 0;
-			padding-left: rem-calc(2);
-		}
-
 		&:before {
 			content: $icon-chevron-right;
 		}
@@ -274,9 +264,11 @@ $peekaboo-space: 30px;
 			}
 			&.slick-prev{
 				right: 100%;
+				margin-right: rem-calc($arrow-margin-xxlarge);
 			}
 			&.slick-next{
 				left: 100%;
+				margin-left: rem-calc($arrow-margin-xxlarge);
 			}
 		}
 	}

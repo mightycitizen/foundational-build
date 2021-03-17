@@ -1,6 +1,7 @@
 @import "../vendor/icomoon/variables";
 .accordion{
   &-title{
+    padding-right: rem-calc(40);
     &:before{
       font-family: $icomoon-font-family;
       content: $icon-chevron-down !important;

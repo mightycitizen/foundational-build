@@ -4802,15 +4802,15 @@ a.thumbnail {
 .read-more:after {
   content: ">"; }
 
-.accordion-title:before {
-  font-family: "icomoon";
-  content: "" !important; }
-
-.is-active > .accordion-title:before {
-  transform: rotate(180deg); }
-
-.accordion-title:hover, .accordion-title:focus {
-  color: #fefefe; }
+.accordion-title {
+  padding-right: 2.5rem; }
+  .accordion-title:before {
+    font-family: "icomoon";
+    content: "" !important; }
+  .is-active > .accordion-title:before {
+    transform: rotate(180deg); }
+  .accordion-title:hover, .accordion-title:focus {
+    color: #fefefe; }
 
 .accordion-item:not(:last-child) {
   border-bottom: 2px solid #fefefe; }
@@ -4974,19 +4974,8 @@ a.thumbnail {
         line-height: 1; } }
   .slick-arrow.slick-prev:before {
     content: ""; }
-  .slick-arrow.slick-next {
-    padding-right: 0;
-    padding-left: 0.1875rem;
-    margin-right: 0;
-    margin-left: 1.0625rem; }
-    @media print, screen and (min-width: 64em) {
-      .slick-arrow.slick-next {
-        margin-right: 0;
-        margin-left: 0;
-        padding-right: 0;
-        padding-left: 0.125rem; } }
-    .slick-arrow.slick-next:before {
-      content: ""; }
+  .slick-arrow.slick-next:before {
+    content: ""; }
   .slick-arrow.slick-disabled, .slick-arrow.slick-disabled:focus {
     color: #e6e6e6;
     pointer-events: none; }
@@ -5026,9 +5015,11 @@ a.thumbnail {
       .slick-nav .slick-arrow:before {
         font-size: 1.875rem; }
       .slick-nav .slick-arrow.slick-prev {
-        right: 100%; }
+        right: 100%;
+        margin-right: 1.5625rem; }
       .slick-nav .slick-arrow.slick-next {
-        left: 100%; } }
+        left: 100%;
+        margin-left: 1.5625rem; } }
 
 .helper {
   font-size: 0.875rem; }

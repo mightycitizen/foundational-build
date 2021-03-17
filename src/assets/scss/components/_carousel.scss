@@ -1,7 +1,11 @@
 @import '../vendor/icomoon/variables';
 
+.slick-wrap{
+	position: relative;
+}
+
 .slick-slider{
-	&:not(.slider-pagers){
+	&:not(.slick-pagers){
 		+ .slick-nav{
 			display: none;
 		}
@@ -233,6 +237,36 @@
 
 		button {
 			background: $secondary-color;
+		}
+	}
+	@include breakpoint(xxlarge){
+		&:not(:empty){
+			margin-bottom: rem-calc(50);
+			.slick-dots{
+				margin-top: rem-calc(50);
+			}
+		}
+
+		.slick-dots{
+			// top: 0;
+			//margin-top: rem-calc(-50);
+			position: absolute;
+		}
+		.slick-arrow{
+
+			position: absolute;
+			top: 50%;
+
+			transform: translateY(-50%);
+			&:before{
+				font-size: rem-calc(30);
+			}
+			&.slick-prev{
+				right: 100%;
+			}
+			&.slick-next{
+				left: 100%;
+			}
 		}
 	}
 }

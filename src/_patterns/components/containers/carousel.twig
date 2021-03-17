@@ -1,21 +1,25 @@
 <div class="grid-container">
-  <div class="js-slider">
-    {% for slide in slides %}
-      <div class="text-center">
-        <blockquote>Lorem ipsum dolor sit amet</blockquote>
-      </div>
-    {% endfor %}
-  </div>
-  <div class="slick-nav"></div>
+  <div class="slick-wrap">
+    <div class="js-slick">
+      {% for slide in slides %}
+        <div class="text-center">
+          <blockquote>Lorem ipsum dolor sit amet</blockquote>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="slick-nav"></div>
 
+  </div>
 </div>
 <div class="grid-container">
-  <div class="js-slider--cards">
-    {% for i in range (i, 5) %}
-        {% include "components/teasers/card.twig" with card %}
-    {% endfor %}
+  <div class="slick-wrap">
+    <div class="js-slick--cards">
+      {% for i in range (i, 5) %}
+          {% include "components/teasers/card.twig" with card %}
+      {% endfor %}
+    </div>
+    <div class="slick-nav"></div>
   </div>
-  <div class="slick-nav"></div>
 </div>
 
 

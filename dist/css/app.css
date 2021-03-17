@@ -4865,7 +4865,10 @@ a.thumbnail {
   vertical-align: middle;
   color: #266093; }
 
-.slick-slider:not(.slider-pagers) + .slick-nav {
+.slick-wrap {
+  position: relative; }
+
+.slick-slider:not(.slick-pagers) + .slick-nav {
   display: none; }
 
 .slick-slider.slick-pagination + .slick-nav .slick-dots li {
@@ -5001,6 +5004,23 @@ a.thumbnail {
       background: #cacaca; }
     .slick-nav .slick-dots button {
       background: #1381b9; }
+  @media screen and (min-width: 90em) {
+    .slick-nav:not(:empty) {
+      margin-bottom: 3.125rem; }
+      .slick-nav:not(:empty) .slick-dots {
+        margin-top: 3.125rem; }
+    .slick-nav .slick-dots {
+      position: absolute; }
+    .slick-nav .slick-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); }
+      .slick-nav .slick-arrow:before {
+        font-size: 1.875rem; }
+      .slick-nav .slick-arrow.slick-prev {
+        right: 100%; }
+      .slick-nav .slick-arrow.slick-next {
+        left: 100%; } }
 
 .helper {
   font-size: 0.875rem; }

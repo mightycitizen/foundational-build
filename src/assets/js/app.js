@@ -120,7 +120,7 @@ const initLazy = () => {
 
 const initSlider = () => {
 
-  const $slider = $('.js-slider');
+  const $slider = $('.js-slick');
 
   $slider.each(function(){
     const $this = $(this);
@@ -148,7 +148,7 @@ const initSlider = () => {
 
   })
 
-  const $sliderCards = $('.js-slider--cards');
+  const $sliderCards = $('.js-slick--cards');
 
   $sliderCards.each(function(){
     const $this = $(this);

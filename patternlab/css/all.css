@@ -4802,6 +4802,19 @@ a.thumbnail {
 .read-more:after {
   content: ">"; }
 
+.accordion-title:before {
+  font-family: "icomoon";
+  content: "" !important; }
+
+.is-active > .accordion-title:before {
+  transform: rotate(180deg); }
+
+.accordion-title:hover, .accordion-title:focus {
+  color: #fefefe; }
+
+.accordion-item:not(:last-child) {
+  border-bottom: 2px solid #fefefe; }
+
 .listing .item *:last-child {
   margin-bottom: 0; }
 

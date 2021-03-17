@@ -1,0 +1,22 @@
+@import "../vendor/icomoon/variables";
+.accordion{
+  &-title{
+    &:before{
+      font-family: $icomoon-font-family;
+      content: $icon-chevron-down !important;
+    }
+    .is-active > &{
+      &:before{
+        transform: rotate(180deg);
+      }
+    }
+    &:hover, &:focus{
+      color: $white;
+    }
+  }
+  &-item{
+    &:not(:last-child){
+      border-bottom: 2px solid $white;
+    }
+  }
+}

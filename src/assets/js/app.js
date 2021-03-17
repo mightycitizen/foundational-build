@@ -122,22 +122,27 @@ const initSlider = () => {
 
   const $slider = $('.js-slider');
 
-  $slider.on('breakpoint', function (event, slick, breakpoint){
-    sliderPagination(slick);
-  })
+  $slider.each(function(){
+    const $this = $(this);
 
-  $slider.slick({
-    slidesToScroll: 1,
-    rows: 0,
-    prevArrow: '<button class="slick-prev">Previous</button>',
-    nextArrow: '<button class="slick-next">Next</button>',
-    dots: true,
-    dotsClass: 'slick-dots',
-    appendArrows: '.slick-nav',
-    appendDots: '.slick-nav',
-    adaptiveHeight: true,
-    waitForAnimate: false
-  });
+    $this.on('breakpoint', function (event, slick, breakpoint){
+      sliderPagination(slick);
+    })
+
+    $this.slick({
+      slidesToScroll: 1,
+      rows: 0,
+      prevArrow: '<button class="slick-prev">Previous</button>',
+      nextArrow: '<button class="slick-next">Next</button>',
+      dots: true,
+      dotsClass: 'slick-dots',
+      appendArrows: $this.next('.slick-nav'),
+      appendDots: $this.next('.slick-nav'),
+      adaptiveHeight: true,
+      waitForAnimate: false
+    });
+
+  })
 
 }
 

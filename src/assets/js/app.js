@@ -44,8 +44,8 @@ $(document).on('click', 'a[href^="#"]:not([href="#"]):not([data-lity])',
 function sliderPagination(slick){
   if (slick.$dots){
     const numSlides = slick.$dots.find('>li').length;
-    slick.$slider.toggleClass('slider-pagers', numSlides > 1);
-    slick.$slider.toggleClass('slider-pagination', numSlides > 3);
+    slick.$slider.toggleClass('slick-pagers', numSlides > 1);
+    slick.$slider.toggleClass('slick-pagination', numSlides > 3);
   }
 }
 
@@ -125,6 +125,10 @@ const initSlider = () => {
   $slider.each(function(){
     const $this = $(this);
 
+    $this.on('init', function (event, slick, breakpoint){
+      sliderPagination(slick);
+    })
+
     $this.on('breakpoint', function (event, slick, breakpoint){
       sliderPagination(slick);
     })
@@ -140,6 +144,53 @@ const initSlider = () => {
       appendDots: $this.next('.slick-nav'),
       adaptiveHeight: true,
       waitForAnimate: false
+    });
+
+  })
+
+  const $sliderCards = $('.js-slider--cards');
+
+  $sliderCards.each(function(){
+    const $this = $(this);
+
+    $this.on('init', function (event, slick, breakpoint){
+      sliderPagination(slick);
+    })
+
+    $this.on('breakpoint', function (event, slick, breakpoint){
+      sliderPagination(slick);
+    })
+
+    $this.slick({
+      slidesToScroll: 3,
+      slidesToShow: 3,
+      rows: 0,
+      prevArrow: '<button class="slick-prev">Previous</button>',
+      nextArrow: '<button class="slick-next">Next</button>',
+      dots: true,
+      dotsClass: 'slick-dots',
+      appendArrows: $this.next('.slick-nav'),
+      appendDots: $this.next('.slick-nav'),
+      adaptiveHeight: true,
+      waitForAnimate: false,
+      responsive: [
+        {
+        breakpoint: '1199',
+        settings: {
+          slidesToScroll: 2,
+          slidesToShow: 2
+        }
+      },
+        {
+        breakpoint: '768',
+        settings: {
+          slidesToScroll: 1,
+          slidesToShow: 1
+
+        }
+
+      }
+      ]
     });
 
   })

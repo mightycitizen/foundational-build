@@ -1,4 +1,83 @@
 @import '../vendor/icomoon/variables';
+
+.slick-slider{
+	&:not(.slider-pagers){
+		+ .slick-nav{
+			display: none;
+		}
+	}
+
+	&.slick-pagination {
+
+		+ .slick-nav{
+			// position: relative;
+
+
+				.slick-dots{
+					// margin-top: rem-calc(5);
+					li{
+						padding-left: rem-calc(3);
+						padding-right: rem-calc(3);
+					}
+					button{
+						font-size: $pagination-font-size;
+						color: $pagination-item-color;
+						background-color: transparent;
+						font-weight: bold;
+						cursor: pointer;
+						padding: $pagination-item-padding;
+						border-radius: 0;
+						height: auto;
+						line-height: $paragraph-lineheight;
+						width: auto;
+						display: inline-block;
+					}
+					.slick-active{
+						button{
+							background-color: $pagination-item-background-current;
+						}
+					}
+				}
+				@include breakpoint(xlphone down){
+					.slick-dots{
+						counter-reset: pages;
+						li{
+							counter-increment: pages;
+							&:not(.slick-active):not(:last-child){
+								position: absolute;
+								opacity: 0;
+								z-index: -1;
+							}
+							button{
+								padding: rem-calc(0);
+								background-color: transparent !important;
+								pointer-events: none;
+							}
+							&:last-child{
+								button{
+									&:before{
+										content: " of "
+									}
+								}
+								&.slick-active{
+									button{
+										&:before{
+											content: counter(pages) " of ";
+										}
+									}
+								}
+
+							}
+						}
+					}
+				}
+
+
+		}
+	}
+}
+
+
 .slick-dots {
 	display: flex;
 	align-items: center;

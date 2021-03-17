@@ -4865,6 +4865,46 @@ a.thumbnail {
   vertical-align: middle;
   color: #266093; }
 
+.slick-slider:not(.slider-pagers) + .slick-nav {
+  display: none; }
+
+.slick-slider.slick-pagination + .slick-nav .slick-dots li {
+  padding-left: 0.1875rem;
+  padding-right: 0.1875rem; }
+
+.slick-slider.slick-pagination + .slick-nav .slick-dots button {
+  font-size: 0.875rem;
+  color: #0a0a0a;
+  background-color: transparent;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.1875rem 0.625rem;
+  border-radius: 0;
+  height: auto;
+  line-height: 1.6;
+  width: auto;
+  display: inline-block; }
+
+.slick-slider.slick-pagination + .slick-nav .slick-dots .slick-active button {
+  background-color: #266093; }
+
+.slick-slider.slick-pagination + .slick-nav .slick-dots {
+  counter-reset: pages; }
+  .slick-slider.slick-pagination + .slick-nav .slick-dots li {
+    counter-increment: pages; }
+    .slick-slider.slick-pagination + .slick-nav .slick-dots li:not(.slick-active):not(:last-child) {
+      position: absolute;
+      opacity: 0;
+      z-index: -1; }
+    .slick-slider.slick-pagination + .slick-nav .slick-dots li button {
+      padding: 0;
+      background-color: transparent !important;
+      pointer-events: none; }
+    .slick-slider.slick-pagination + .slick-nav .slick-dots li:last-child button:before {
+      content: " of "; }
+    .slick-slider.slick-pagination + .slick-nav .slick-dots li:last-child.slick-active button:before {
+      content: counter(pages) " of "; }
+
 .slick-dots {
   display: flex;
   align-items: center;

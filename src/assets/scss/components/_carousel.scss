@@ -1,17 +1,28 @@
 @import '../vendor/icomoon/variables';
+$peekaboo-space: 30px;
 
 .slick-wrap{
 	position: relative;
 }
 
 .slick-slider{
-	&:not(.slick-pagers){
+	&.has-peekaboo{
+		@include breakpoint(small only){
+			overflow: hidden;
+			padding-right: rem-calc($peekaboo-space);
+			margin-right: -0.5*map-get($grid-container-padding,'small');
+			.slick-list{
+				overflow: visible !important;
+			}
+		}
+	}
+	&:not(.has-pagers){
 		+ .slick-nav{
 			display: none;
 		}
 	}
 
-	&.slick-pagination {
+	&.has-pagination {
 
 		+ .slick-nav{
 			// position: relative;

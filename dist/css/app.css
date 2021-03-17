@@ -4868,14 +4868,22 @@ a.thumbnail {
 .slick-wrap {
   position: relative; }
 
-.slick-slider:not(.slick-pagers) + .slick-nav {
+@media print, screen and (max-width: 39.99875em) {
+  .slick-slider.has-peekaboo {
+    overflow: hidden;
+    padding-right: 1.875rem;
+    margin-right: -10px; }
+    .slick-slider.has-peekaboo .slick-list {
+      overflow: visible !important; } }
+
+.slick-slider:not(.has-pagers) + .slick-nav {
   display: none; }
 
-.slick-slider.slick-pagination + .slick-nav .slick-dots li {
+.slick-slider.has-pagination + .slick-nav .slick-dots li {
   padding-left: 0.1875rem;
   padding-right: 0.1875rem; }
 
-.slick-slider.slick-pagination + .slick-nav .slick-dots button {
+.slick-slider.has-pagination + .slick-nav .slick-dots button {
   font-size: 0.875rem;
   color: #0a0a0a;
   background-color: transparent;
@@ -4888,24 +4896,24 @@ a.thumbnail {
   width: auto;
   display: inline-block; }
 
-.slick-slider.slick-pagination + .slick-nav .slick-dots .slick-active button {
+.slick-slider.has-pagination + .slick-nav .slick-dots .slick-active button {
   background-color: #266093; }
 
-.slick-slider.slick-pagination + .slick-nav .slick-dots {
+.slick-slider.has-pagination + .slick-nav .slick-dots {
   counter-reset: pages; }
-  .slick-slider.slick-pagination + .slick-nav .slick-dots li {
+  .slick-slider.has-pagination + .slick-nav .slick-dots li {
     counter-increment: pages; }
-    .slick-slider.slick-pagination + .slick-nav .slick-dots li:not(.slick-active):not(:last-child) {
+    .slick-slider.has-pagination + .slick-nav .slick-dots li:not(.slick-active):not(:last-child) {
       position: absolute;
       opacity: 0;
       z-index: -1; }
-    .slick-slider.slick-pagination + .slick-nav .slick-dots li button {
+    .slick-slider.has-pagination + .slick-nav .slick-dots li button {
       padding: 0;
       background-color: transparent !important;
       pointer-events: none; }
-    .slick-slider.slick-pagination + .slick-nav .slick-dots li:last-child button:before {
+    .slick-slider.has-pagination + .slick-nav .slick-dots li:last-child button:before {
       content: " of "; }
-    .slick-slider.slick-pagination + .slick-nav .slick-dots li:last-child.slick-active button:before {
+    .slick-slider.has-pagination + .slick-nav .slick-dots li:last-child.slick-active button:before {
       content: counter(pages) " of "; }
 
 .slick-dots {

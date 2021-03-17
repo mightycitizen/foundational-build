@@ -44,8 +44,8 @@ $(document).on('click', 'a[href^="#"]:not([href="#"]):not([data-lity])',
 function sliderPagination(slick){
   if (slick.$dots){
     const numSlides = slick.$dots.find('>li').length;
-    slick.$slider.toggleClass('slick-pagers', numSlides > 1);
-    slick.$slider.toggleClass('slick-pagination', numSlides > 3);
+    slick.$slider.toggleClass('has-pagers', numSlides > 1);
+    slick.$slider.toggleClass('has-pagination', numSlides > 3);
   }
 }
 
@@ -168,6 +168,7 @@ const initSlider = () => {
       prevArrow: '<button class="slick-prev">Previous</button>',
       nextArrow: '<button class="slick-next">Next</button>',
       dots: true,
+      infinite: false,
       dotsClass: 'slick-dots',
       appendArrows: $this.next('.slick-nav'),
       appendDots: $this.next('.slick-nav'),

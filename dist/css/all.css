@@ -5027,26 +5027,33 @@ a.thumbnail {
   background-color: #e6e6e6;
   z-index: 100;
   width: 12.5rem;
-  top: 50%; }
+  top: 0; }
 
 .js-slick--center .slick-list {
   overflow: visible; }
 
 .js-slick--center .slick-slide {
-  width: 31.25rem; }
+  width: 31.25rem;
+  transform: translateY(5rem);
+  transition: 0.75s transform;
+  will-change: margin; }
   .js-slick--center .slick-slide .card-section {
-    transition: 0.3s background-color; }
-  .js-slick--center .slick-slide .card-image {
-    transition: 0.3s max-height;
+    will-change: background-color;
+    transition: 0.75s background-color; }
+  .js-slick--center .slick-slide:not(.slick-current) .card-image, .js-slick--center .slick-slide:not(.slick-current) .button {
+    will-change: opacity, max-height;
+    transition: 0.75s max-height, 0.75s opacity;
     opacity: 0;
     max-height: 0;
     overflow: hidden; }
-  .js-slick--center .slick-slide.slick-current .card-section {
-    background-color: #1381b9;
-    color: #fefefe; }
-  .js-slick--center .slick-slide.slick-current .card-image {
-    max-height: 62.5rem;
-    opacity: 1; }
+  .js-slick--center .slick-slide.slick-current {
+    transform: translateY(0); }
+    .js-slick--center .slick-slide.slick-current .card-section {
+      background-color: #1381b9;
+      color: #fefefe; }
+    .js-slick--center .slick-slide.slick-current .card-image, .js-slick--center .slick-slide.slick-current .button {
+      max-height: 62.5rem;
+      opacity: 1; }
 
 /* ------------------ Tooltip ------------------ */
 .tippy-box,

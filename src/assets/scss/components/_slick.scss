@@ -270,12 +270,13 @@ $slide-margin: map-get($grid-container-padding,'medium');
 
 
 .js-slick--center{
+	$transition-duration: 0.75s;
 	+ .slick-nav{
 		position: absolute;
 		background-color: $light-gray;
 		z-index: 100;
 		width: rem-calc(200);
-		top: 50%;
+		top: 0;
 
 	}
 	.slick-list{
@@ -283,21 +284,32 @@ $slide-margin: map-get($grid-container-padding,'medium');
 	}
 	.slick-slide{
 		width: rem-calc(500);
+		transform: translateY(#{rem-calc(80)});
+		transition: $transition-duration transform;
+		will-change: margin;
 		.card-section{
-			transition: 0.3s background-color;
+			will-change: background-color;
+			transition: $transition-duration background-color;
 		}
-		.card-image{
-			transition: 0.3s max-height;
-			opacity: 0;
-			max-height: 0;
-			overflow: hidden;
+
+		&:not(.slick-current){
+			.card-image, .button{ // selectors to hide
+				will-change: opacity, max-height;
+				transition: $transition-duration max-height, $transition-duration opacity;
+				opacity: 0;
+				max-height: 0;
+				overflow: hidden;
+			}
 		}
+
 		&.slick-current{
+			transform: translateY(#{rem-calc(0)});
+
 			.card-section{
 				background-color: $secondary-color;
 				color: $white;
 			}
-			.card-image{ // selector that's hidden
+			.card-image, .button{  // selectors to hide
 				max-height: rem-calc(1000);
 				opacity: 1;
 			}

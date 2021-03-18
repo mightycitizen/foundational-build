@@ -3898,7 +3898,9 @@ a.thumbnail {
   flex-wrap: wrap; }
   .top-bar,
   .top-bar ul {
-    background-color: #e6e6e6; }
+    background-color: transparent; }
+  .top-bar ul ul {
+    background-color: #fefefe; }
   .top-bar input {
     max-width: 200px;
     margin-right: 1rem; }
@@ -4752,6 +4754,10 @@ a.thumbnail {
   background-color: #266093;
   color: #fefefe;
   padding: 2.5rem; }
+  .hero .breadcrumbs {
+    color: inherit; }
+    .hero .breadcrumbs a {
+      color: inherit; }
 
 .hamburger {
   background: transparent;
@@ -5099,6 +5105,14 @@ a.thumbnail {
   display: inline-block;
   vertical-align: middle;
   color: #266093; }
+
+.top-bar .top > li > a {
+  color: inherit; }
+  .top-bar .top > li > a:hover, .top-bar .top > li > a:focus, .top-bar .top > li > a.hover {
+    color: inherit; }
+
+.top-bar .top > li.is-active > a {
+  color: inherit !important; }
 
 .helper {
   font-size: 0.875rem; }

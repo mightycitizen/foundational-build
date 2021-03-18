@@ -65,17 +65,17 @@
 @include motion-ui-animations;
 
 @import
+  "components/accordion",
   "components/add2any",
+  "components/breadcrumb",
   "components/cta",
   "components/hero",
   "components/hamburger",
   "components/links",
-  "components/accordion",
   "components/listing",
   "components/menu",
-  "components/breadcrumb",
-  "components/tooltip",
   "components/slick",
+  "components/tooltip",
   "components/text";
 
 @import
@@ -83,8 +83,8 @@
   "layout/wrapper";
 
 @import
-  "vendor/lity",
   "vendor/icomoon/style",
+  "vendor/lity",
   "vendor/slick";
 
 @import

@@ -5,13 +5,28 @@ import './lib/foundation-explicit-pieces';
 import tippy from 'tippy.js';
 import LazyLoad from 'vanilla-lazyload';
 
-//$(document).on('click', '[data-lity]', lity);
+
 
 $(document).foundation();
 
-$(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
-  // newSize is the name of the now-current breakpoint, oldSize is the previous breakpoint
-});
+// $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
+//   // newSize is the name of the now-current breakpoint, oldSize is the previous breakpoint
+// });
+
+const initLityAccessibility = () => {
+  const dataAttr = 'trigger';
+  $(document).on('click', '[data-lity]', function(event) {
+    const $trigger = $(this);
+    $('.lity').attr('data-' + dataAttr,$trigger.attr('id'));
+  });
+
+  $(document).on('lity:close', function(event, instance) {
+    const $lity = instance.element();
+    const $trigger = $('#'+$lity.data(dataAttr));
+    $trigger.focus();
+  });
+}
+
 
 
 // In-page smooth scroll, exclude from modal windows
@@ -26,7 +41,7 @@ $(document).on('click', 'a[href^="#"]:not([href="#"]):not([data-lity])',
     ) {
       // Figure out element to scroll to
       var target = $(this.hash);
-      var targetHash = this.hash.substring(1);
+      //var targetHash = this.hash.substring(1);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       // Does a scroll target exist?
       if (target.length) {
@@ -215,6 +230,7 @@ $(document).ready(function(){
   initTippy();
   initLazy();
   initSlider();
+  initLityAccessibility();
 
 
 })

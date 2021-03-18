@@ -4712,6 +4712,19 @@ a.thumbnail {
   -webkit-animation-delay: 700ms !important;
   animation-delay: 700ms !important; }
 
+.accordion-title {
+  padding-right: 2.5rem; }
+  .accordion-title:before {
+    font-family: "icomoon";
+    content: "" !important; }
+  .is-active > .accordion-title:before {
+    transform: rotate(180deg); }
+  .accordion-title:hover, .accordion-title:focus {
+    color: #fefefe; }
+
+.accordion-item:not(:last-child) {
+  border-bottom: 2px solid #fefefe; }
+
 .a2a_svg {
   max-width: 1.5625rem;
   max-height: 1.5625rem;
@@ -4724,6 +4737,10 @@ a.thumbnail {
     display: block;
     font-weight: bold;
     margin-bottom: 0.9375rem; }
+
+.breadcrumbs li:not(:last-child):after {
+  font-family: "icomoon";
+  content: ""; }
 
 .cta {
   background-color: #212944;
@@ -4807,19 +4824,6 @@ a.thumbnail {
   margin-left: 0.4375rem;
   font-size: 0.875rem; }
 
-.accordion-title {
-  padding-right: 2.5rem; }
-  .accordion-title:before {
-    font-family: "icomoon";
-    content: "" !important; }
-  .is-active > .accordion-title:before {
-    transform: rotate(180deg); }
-  .accordion-title:hover, .accordion-title:focus {
-    color: #fefefe; }
-
-.accordion-item:not(:last-child) {
-  border-bottom: 2px solid #fefefe; }
-
 .listing .item *:last-child {
   margin-bottom: 0; }
 
@@ -4838,52 +4842,6 @@ a.thumbnail {
 
 .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)[aria-expanded="true"] > a:after {
   transform: scaleY(-1); }
-
-.breadcrumbs li:not(:last-child):after {
-  font-family: "icomoon";
-  content: ""; }
-
-/* ------------------ Tooltip ------------------ */
-.tippy-box,
-.tippy-tooltip {
-  background: #266093;
-  border-radius: 3px;
-  color: #fefefe;
-  font-size: 0.75rem;
-  font-weight: bold;
-  max-width: 10.25rem !important;
-  padding: 0.6rem 0.65rem;
-  text-align: left; }
-  .tippy-box h2,
-  .tippy-box h3,
-  .tippy-box h4,
-  .tippy-tooltip h2,
-  .tippy-tooltip h3,
-  .tippy-tooltip h4 {
-    font-size: 1rem; }
-
-.tippy-close {
-  display: none; }
-
-.tippy-content {
-  padding: 0; }
-
-.tippy-tooltip[data-placement^=left] > .tippy-arrow {
-  border-right-color: #266093; }
-
-.tippy-arrow {
-  border-right-color: #266093;
-  color: #266093;
-  height: 0;
-  width: 0; }
-  .tippy-arrow:before {
-    display: inline-block; }
-
-[data-tippy-content] {
-  margin-left: 0.1875rem;
-  display: inline-block;
-  vertical-align: middle;
-  color: #266093; }
 
 .slick-slide {
   margin: 0 0.9375rem; }
@@ -5042,6 +5000,48 @@ a.thumbnail {
         left: 100%;
         margin-left: 1.5625rem; } }
 
+/* ------------------ Tooltip ------------------ */
+.tippy-box,
+.tippy-tooltip {
+  background: #266093;
+  border-radius: 3px;
+  color: #fefefe;
+  font-size: 0.75rem;
+  font-weight: bold;
+  max-width: 10.25rem !important;
+  padding: 0.6rem 0.65rem;
+  text-align: left; }
+  .tippy-box h2,
+  .tippy-box h3,
+  .tippy-box h4,
+  .tippy-tooltip h2,
+  .tippy-tooltip h3,
+  .tippy-tooltip h4 {
+    font-size: 1rem; }
+
+.tippy-close {
+  display: none; }
+
+.tippy-content {
+  padding: 0; }
+
+.tippy-tooltip[data-placement^=left] > .tippy-arrow {
+  border-right-color: #266093; }
+
+.tippy-arrow {
+  border-right-color: #266093;
+  color: #266093;
+  height: 0;
+  width: 0; }
+  .tippy-arrow:before {
+    display: inline-block; }
+
+[data-tippy-content] {
+  margin-left: 0.1875rem;
+  display: inline-block;
+  vertical-align: middle;
+  color: #266093; }
+
 .helper {
   font-size: 0.875rem; }
 
@@ -5072,6 +5072,96 @@ a.thumbnail {
     padding: 5rem 0; }
   .section--tight {
     padding: 1.25rem 0; }
+
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?hzvag5");
+  src: url("../fonts/icomoon.eot?hzvag5#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?hzvag5") format("truetype"), url("../fonts/icomoon.woff?hzvag5") format("woff"), url("../fonts/icomoon.svg?hzvag5#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-chevron-right:before {
+  content: ""; }
+
+.icon-chevron-left:before {
+  content: ""; }
+
+.icon-chevron-down:before {
+  content: ""; }
+
+.icon-chevron-up:before {
+  content: ""; }
+
+.icon-home:before {
+  content: ""; }
+
+.icon-phone:before {
+  content: ""; }
+
+.icon-bubbles:before {
+  content: ""; }
+
+.icon-quotes-left:before {
+  content: ""; }
+
+.icon-quotes-right:before {
+  content: ""; }
+
+.icon-search:before {
+  content: ""; }
+
+.icon-star:before {
+  content: ""; }
+
+.icon-heart:before {
+  content: ""; }
+
+.icon-info:before {
+  content: ""; }
+
+.icon-cross:before {
+  content: ""; }
+
+.icon-checkmark:before {
+  content: ""; }
+
+.icon-facebook:before {
+  content: ""; }
+
+.icon-instagram:before {
+  content: ""; }
+
+.icon-twitter:before {
+  content: ""; }
+
+.icon-rss:before {
+  content: ""; }
+
+.icon-youtube:before {
+  content: ""; }
+
+.icon-linkedin:before {
+  content: ""; }
+
+.icon-pinterest:before {
+  content: ""; }
+
+.icon-file-pdf:before {
+  content: ""; }
 
 :root {
   --lity-z-index-base:9990;
@@ -5255,96 +5345,6 @@ a.thumbnail {
 
 .lity-hide {
   display: none; }
-
-@font-face {
-  font-family: "icomoon";
-  src: url("../fonts/icomoon.eot?hzvag5");
-  src: url("../fonts/icomoon.eot?hzvag5#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?hzvag5") format("truetype"), url("../fonts/icomoon.woff?hzvag5") format("woff"), url("../fonts/icomoon.svg?hzvag5#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block; }
-
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.icon-chevron-right:before {
-  content: ""; }
-
-.icon-chevron-left:before {
-  content: ""; }
-
-.icon-chevron-down:before {
-  content: ""; }
-
-.icon-chevron-up:before {
-  content: ""; }
-
-.icon-home:before {
-  content: ""; }
-
-.icon-phone:before {
-  content: ""; }
-
-.icon-bubbles:before {
-  content: ""; }
-
-.icon-quotes-left:before {
-  content: ""; }
-
-.icon-quotes-right:before {
-  content: ""; }
-
-.icon-search:before {
-  content: ""; }
-
-.icon-star:before {
-  content: ""; }
-
-.icon-heart:before {
-  content: ""; }
-
-.icon-info:before {
-  content: ""; }
-
-.icon-cross:before {
-  content: ""; }
-
-.icon-checkmark:before {
-  content: ""; }
-
-.icon-facebook:before {
-  content: ""; }
-
-.icon-instagram:before {
-  content: ""; }
-
-.icon-twitter:before {
-  content: ""; }
-
-.icon-rss:before {
-  content: ""; }
-
-.icon-youtube:before {
-  content: ""; }
-
-.icon-linkedin:before {
-  content: ""; }
-
-.icon-pinterest:before {
-  content: ""; }
-
-.icon-file-pdf:before {
-  content: ""; }
 
 /* Slick slider styles */
 .slick-slider {

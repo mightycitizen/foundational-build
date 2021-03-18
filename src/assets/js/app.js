@@ -7,6 +7,8 @@ import LazyLoad from 'vanilla-lazyload';
 import Litepicker from 'litepicker';
 import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json';
 
+
+// initialize Foundation
 $(document).foundation();
 
 // $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
@@ -71,10 +73,10 @@ $(document).on('click', 'a[href^="#"]:not([href="#"]):not([data-lity])',
 
       }
     }
-  });
+});
 
 
-function slickPagination(slick){
+const slickPagination = (slick) => {
   if (slick.$dots){
     const numSlides = slick.$dots.find('>li').length;
     slick.$slider.toggleClass('has-pagers', numSlides > 1);
@@ -183,7 +185,6 @@ const initSlick = () => {
 
   const $slickCards = $('.js-slick--cards');
 
-  console.log(Foundation.MediaQuery.queries);
   $slickCards.each(function(){
     const $this = $(this);
 

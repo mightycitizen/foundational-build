@@ -10,6 +10,7 @@ const prefix = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 const rename = require('gulp-rename');
+sass.compiler = require('sass');
 
 
 import webpackStream from 'webpack-stream';
@@ -52,8 +53,8 @@ module.exports = {
   compileSass: function() {
     return src(['./src/assets/scss/**/*.scss','./src/patterns/**/**/*.scss'])
       .pipe(sass({
-        includePaths: ['./node_modules/foundation-sites/scss', './node_modules/motion-ui/src'],
-        outputStyle: 'nested' }).on('error', handleError))
+        includePaths: ['./node_modules/foundation-sites/scss', './node_modules/motion-ui/src']
+        }).on('error', handleError))
       .pipe(
         prefix({
           cascade: false

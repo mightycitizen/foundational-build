@@ -1,9 +1,12 @@
-$theme-medium: 640;
-$theme-large: 1024;
-$theme-xlarge: 1200;
-$theme-xxlarge: 1440;
+$theme-mediumBreakpoint: 640;
+$theme-largeBreakpoint: 1024;
+$theme-xlargeBreakpoint: 1200;
+$theme-xxlargeBreakpoint: 1440;
 
 $theme-primary: #266093;
+$theme-primary: #266093;
+$theme-primaryVariants-lightest: 20%;
+$theme-primaryVariants-lighter: #266093;
 $theme-secondary: #1381b9;
 $theme-success: #3adb76;
 $theme-warning: #ffae00;

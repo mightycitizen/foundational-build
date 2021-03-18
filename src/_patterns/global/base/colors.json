@@ -1,9 +1,15 @@
 {
   "primary": "#266093",
+  "primaryVariants": {
+    "lightest": "20%",
+    "lighter": "#266093"
+  },
   "secondary": "#1381b9",
+
   "success": "#3adb76",
   "warning": "#ffae00",
   "alert": "#cc4b37",
+
   "lightGray": "#e6e6e6",
   "mediumGray": "#cacaca",
   "darkGray": "#8a8a8a",

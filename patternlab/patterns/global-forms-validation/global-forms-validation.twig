@@ -1,5 +1,10 @@
 <form action="" data-abide novalidate>
   <div class="form-control">
+    <label for="text">Text *</label>
+    <input type="text" id="text" required>
+    <span class="form-error">Text is required</span>
+  </div>
+  <div class="form-control">
     {% include 'global/forms/radio-buttons.twig' with {
       required: true,
       field_append: "_validation"
@@ -11,5 +16,6 @@
       field_append: "_validation"
     } %}
   </div>
+
   <button type="submit" class="button">Submit</button>
 </form>

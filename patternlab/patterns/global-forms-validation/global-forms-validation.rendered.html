@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1616088300940" media="all" />
-    <link rel="stylesheet" href="../../css/all.css?1616088300940" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1616088712311" media="all" />
+    <link rel="stylesheet" href="../../css/all.css?1616088712311" media="all" />
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     
@@ -14,6 +14,11 @@
 
   </head>
   <body class=""><form action="" data-abide novalidate>
+  <div class="form-control">
+    <label for="text">Text *</label>
+    <input type="text" id="text" required>
+    <span class="form-error">Text is required</span>
+  </div>
   <div class="form-control">
     
   <fieldset class="options">
@@ -23,7 +28,8 @@
       <li><label for="radio2_validation"><input id="radio2_validation" value="2" name="radio_validation" type="radio" class="radio" required > Option 2</label></li>
       <li><label for="radio3_validation"><input id="radio3_validation" value="3" name="radio_validation" type="radio" class="radio" required > Option 3</label></li>
     </ul>
-  </fieldset>
+          <span class="form-error">Radio is required</span>
+      </fieldset>
 
   </div>
   <div class="form-control">
@@ -34,8 +40,10 @@
       <li><label for="checkbox2_validation"><input id="checkbox2_validation" name="checkbox_validation" value="B" type="checkbox" required > Choice B</label></li>
       <li><label for="checkbox3_validation"><input id="checkbox3_validation" name="checkbox_validation" value="C" type="checkbox" required > Choice C</label></li>
     </ul>
-  </fieldset>
+          <span class="form-error">Checkbox is required</span>
+      </fieldset>
   </div>
+
   <button type="submit" class="button">Submit</button>
 </form><!--DO NOT REMOVE-->
 <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
@@ -79,10 +87,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1616088300940">
+<script id="pl-js-polyfill-insert-1616088712311">
   (function() {
     if (self != top) {
-      var cb = '1616088300940';
+      var cb = '1616088712311';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -95,7 +103,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1616088300940" nomodule>
+<script id="pl-js-insert-1616088712311" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -118,6 +126,6 @@
   <script src="/core/misc/drupal.init.js"></script>
   -->
   <!-- Concatenated by Gulp so you don't have to manually add each file. -->
-  <script src="../../js/app.js?1616088300940"></script>
+  <script src="../../js/app.js?1616088712311"></script>
 </body>
 </html>

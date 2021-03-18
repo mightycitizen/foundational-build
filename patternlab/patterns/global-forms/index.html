@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1616088300940" media="all" />
-    <link rel="stylesheet" href="../../css/all.css?1616088300940" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1616088712311" media="all" />
+    <link rel="stylesheet" href="../../css/all.css?1616088712311" media="all" />
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1616088300940" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1616088712311" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -74,7 +74,7 @@
       <li><label for="checkbox2"><input id="checkbox2" name="checkbox" value="B" type="checkbox" > Choice B</label></li>
       <li><label for="checkbox3"><input id="checkbox3" name="checkbox" value="C" type="checkbox" > Choice C</label></li>
     </ul>
-  </fieldset>
+      </fieldset>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-global-checkbox" class="pl-js-pattern-data">
@@ -222,7 +222,7 @@
       <li><label for="radio2"><input id="radio2" value="2" name="radio" type="radio" class="radio" > Option 2</label></li>
       <li><label for="radio3"><input id="radio3" value="3" name="radio" type="radio" class="radio" > Option 3</label></li>
     </ul>
-  </fieldset>
+      </fieldset>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-global-radio-buttons" class="pl-js-pattern-data">
@@ -422,6 +422,11 @@
 			<div class="pl-js-pattern-example">
 			<form action="" data-abide novalidate>
   <div class="form-control">
+    <label for="text">Text *</label>
+    <input type="text" id="text" required>
+    <span class="form-error">Text is required</span>
+  </div>
+  <div class="form-control">
     
   <fieldset class="options">
     <legend>Radio *</legend>
@@ -430,7 +435,8 @@
       <li><label for="radio2_validation"><input id="radio2_validation" value="2" name="radio_validation" type="radio" class="radio" required > Option 2</label></li>
       <li><label for="radio3_validation"><input id="radio3_validation" value="3" name="radio_validation" type="radio" class="radio" required > Option 3</label></li>
     </ul>
-  </fieldset>
+          <span class="form-error">Radio is required</span>
+      </fieldset>
 
   </div>
   <div class="form-control">
@@ -441,8 +447,10 @@
       <li><label for="checkbox2_validation"><input id="checkbox2_validation" name="checkbox_validation" value="B" type="checkbox" required > Choice B</label></li>
       <li><label for="checkbox3_validation"><input id="checkbox3_validation" name="checkbox_validation" value="C" type="checkbox" required > Choice C</label></li>
     </ul>
-  </fieldset>
+          <span class="form-error">Checkbox is required</span>
+      </fieldset>
   </div>
+
   <button type="submit" class="button">Submit</button>
 </form>
 			</div><!--end pl-js-pattern-example-->
@@ -498,10 +506,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1616088300940">
+<script id="pl-js-polyfill-insert-1616088712311">
   (function() {
     if (self != top) {
-      var cb = '1616088300940';
+      var cb = '1616088712311';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -514,7 +522,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1616088300940" nomodule>
+<script id="pl-js-insert-1616088712311" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -537,6 +545,6 @@
   <script src="/core/misc/drupal.init.js"></script>
   -->
   <!-- Concatenated by Gulp so you don't have to manually add each file. -->
-  <script src="../../js/app.js?1616088300940"></script>
+  <script src="../../js/app.js?1616088712311"></script>
 </body>
 </html>

@@ -4817,11 +4817,15 @@ a.thumbnail {
     .hamburger.is-active .hamburger-icon:after {
       transform: rotate(-45deg); }
 
-.read-more:after {
-  font-family: "icomoon";
-  content: "";
-  margin-left: 0.4375rem;
-  font-size: 0.875rem; }
+.read-more {
+  position: relative;
+  box-shadow: 0 3px #1381b9;
+  padding-bottom: 2px; }
+  .read-more:after {
+    font-family: "icomoon";
+    content: "";
+    margin-left: 0.4375rem;
+    font-size: 0.875rem; }
 
 .listing .item *:last-child {
   margin-bottom: 0; }

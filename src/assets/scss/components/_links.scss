@@ -1,5 +1,10 @@
 @import '../vendor/icomoon/variables';
 .read-more{
+  position: relative;
+  box-shadow: 0 3px $secondary-color;
+  padding-bottom: 2px;
+
+
   &:after{
     font-family: $icomoon-font-family;
     content: $icon-chevron-right;

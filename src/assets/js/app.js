@@ -5,7 +5,7 @@ import './lib/foundation-explicit-pieces';
 import tippy from 'tippy.js';
 import LazyLoad from 'vanilla-lazyload';
 import Litepicker from 'litepicker';
-
+import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json';
 
 $(document).foundation();
 
@@ -182,6 +182,8 @@ const initSlick = () => {
   })
 
   const $slickCards = $('.js-slick--cards');
+
+  console.log(Foundation.MediaQuery.queries);
   $slickCards.each(function(){
     const $this = $(this);
 
@@ -208,14 +210,14 @@ const initSlick = () => {
       waitForAnimate: false,
       responsive: [
         {
-        breakpoint: '1199',
+        breakpoint: largeBreakpoint,
         settings: {
           slidesToScroll: 2,
           slidesToShow: 2
         }
       },
         {
-        breakpoint: '768',
+        breakpoint: mediumBreakpoint,
         settings: {
           slidesToScroll: 1,
           slidesToShow: 1

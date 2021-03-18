@@ -1,6 +1,6 @@
 
 
-<ul class="accordion" data-accordion>
+<ul class="accordion"  data-accordion data-allow-all-closed="true">
   {% for item in items %}
     {%
       include 'components/containers/_accordion-item.twig' with {item: item} only

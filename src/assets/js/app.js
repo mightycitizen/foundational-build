@@ -25,7 +25,7 @@ const initLityAccessibility = () => {
     if (!triggerId){
       triggerId = 'lity-' + randomId();
       $trigger.attr('id', triggerId);
-      console.log(triggerId);
+
     }
     $('.lity').attr('data-' + dataAttr,triggerId);
   });

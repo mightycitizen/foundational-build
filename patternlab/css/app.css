@@ -4720,7 +4720,8 @@ a.thumbnail {
   .is-active > .accordion-title:before {
     transform: rotate(180deg); }
   .accordion-title:hover, .accordion-title:focus {
-    color: #fefefe; }
+    color: #fefefe;
+    background-color: transparent; }
 
 .accordion-item:not(:last-child) {
   border-bottom: 2px solid #fefefe; }

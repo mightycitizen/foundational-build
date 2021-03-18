@@ -147,3 +147,19 @@ input[type="radio"] {
     }
   }
 }
+
+input.js-date{
+	padding-right: rem-calc(0);
+	background-image: url('../images/calendar.png');
+	background-size: rem-calc(15);
+	background-position: calc(100% - #{rem-calc(10)}) center;
+	background-repeat: no-repeat;
+
+	&::-webkit-calendar-picker-indicator {
+		opacity: 0;
+		width: rem-calc(25);
+		-webkit-appearance: none;
+		margin-left: 0;
+	}
+
+}

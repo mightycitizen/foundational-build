@@ -4,7 +4,7 @@ import Lity from 'lity';
 import './lib/foundation-explicit-pieces';
 import tippy from 'tippy.js';
 import LazyLoad from 'vanilla-lazyload';
-
+import Litepicker from 'litepicker';
 
 
 $(document).foundation();
@@ -15,6 +15,14 @@ $(document).foundation();
 
 const randomId = () => {
   return Math.random().toString(36).substr(2, 9);
+}
+
+const initDatepicker = () => {
+  $('.js-date').each(function(){
+    new Litepicker({
+      element: $(this)[0]
+    });
+  })
 }
 
 const initLityAccessibility = () => {
@@ -241,6 +249,7 @@ $(document).ready(function(){
   initLazy();
   initSlider();
   initLityAccessibility();
+  initDatepicker();
 
 
 })

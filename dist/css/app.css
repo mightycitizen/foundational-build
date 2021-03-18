@@ -4854,6 +4854,18 @@ a.thumbnail {
     height: 1.25rem !important;
     margin-top: -0.625rem !important; }
 
+.pagination-previous a:hover, .pagination-next a:hover {
+  background-color: transparent;
+  color: #266093; }
+
+.pagination-previous.disabled:before, .pagination-previous a:before {
+  font-family: "icomoon";
+  content: ""; }
+
+.pagination-next.disabled:after, .pagination-next a:after {
+  font-family: "icomoon";
+  content: ""; }
+
 .slick-slide {
   margin: 0 0.9375rem; }
 
@@ -6532,6 +6544,18 @@ input[type="radio"].custom:not(foo) + label:before, input[type="radio"].custom:n
   border: 1px solid #cacaca;
   border-left: 0;
   padding: 0 0.625rem; }
+
+input.js-date {
+  padding-right: 0;
+  background-image: url("../images/calendar.png");
+  background-size: 0.9375rem;
+  background-position: calc(100% - 0.625rem) center;
+  background-repeat: no-repeat; }
+  input.js-date::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    width: 1.5625rem;
+    -webkit-appearance: none;
+    margin-left: 0; }
 
 .icon.tiny {
   font-size: 0.625rem; }

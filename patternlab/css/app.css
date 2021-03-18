@@ -5034,6 +5034,8 @@ a.thumbnail {
 
 .js-slick--center .slick-slide {
   width: 31.25rem; }
+  .js-slick--center .slick-slide .card-section {
+    transition: 0.3s background-color; }
   .js-slick--center .slick-slide .card-image {
     transition: 0.3s max-height;
     opacity: 0;

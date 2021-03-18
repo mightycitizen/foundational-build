@@ -251,7 +251,7 @@ const initSlick = () => {
       appendArrows: $this.next('.slick-nav'),
       appendDots: $this.next('.slick-nav'),
       variableWidth: true,
-      waitForAnimate: false,
+      waitForAnimate: true,
       responsive: [
         {
         breakpoint: '1199',

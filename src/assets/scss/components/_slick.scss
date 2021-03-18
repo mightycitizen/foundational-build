@@ -283,6 +283,9 @@ $slide-margin: map-get($grid-container-padding,'medium');
 	}
 	.slick-slide{
 		width: rem-calc(500);
+		.card-section{
+			transition: 0.3s background-color;
+		}
 		.card-image{
 			transition: 0.3s max-height;
 			opacity: 0;

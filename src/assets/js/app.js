@@ -1,11 +1,12 @@
-import 'slick-carousel';
+
 import $ from 'jquery';
-import 'lity';
-import './lib/foundation-explicit-pieces';
-import tippy from 'tippy.js';
-import LazyLoad from 'vanilla-lazyload';
-import Litepicker from 'litepicker';
-import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json';
+import 'slick-carousel'; // carousel/slider
+import 'lity'; // modal
+import './lib/foundation-explicit-pieces'; // pick and choose Foundation plugins
+import tippy from 'tippy.js'; // tooltip
+import LazyLoad from 'vanilla-lazyload'; // lazy loading
+import Litepicker from 'litepicker'; // date picker
+import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
 
 
 // initialize Foundation

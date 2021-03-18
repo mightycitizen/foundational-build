@@ -5033,10 +5033,12 @@ a.thumbnail {
   overflow: visible; }
 
 .js-slick--center .slick-slide {
-  width: 31.25rem;
   transform: translateY(5rem);
   transition: 0.75s transform;
   will-change: margin; }
+  @media screen and (min-width: 31.25em) {
+    .js-slick--center .slick-slide {
+      width: 31.25rem; } }
   .js-slick--center .slick-slide .card-section {
     will-change: background-color;
     transition: 0.75s background-color; }

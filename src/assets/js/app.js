@@ -1,6 +1,6 @@
 import 'slick-carousel';
 import $ from 'jquery';
-import Lity from 'lity';
+import 'lity';
 import './lib/foundation-explicit-pieces';
 import tippy from 'tippy.js';
 import LazyLoad from 'vanilla-lazyload';
@@ -254,21 +254,11 @@ const initSlick = () => {
       waitForAnimate: true,
       responsive: [
         {
-        breakpoint: '1199',
+        breakpoint: '500',
         settings: {
-          slidesToScroll: 2,
-          slidesToShow: 2
+          adaptiveHeight: true
         }
-      },
-        {
-        breakpoint: '768',
-        settings: {
-          slidesToScroll: 1,
-          slidesToShow: 1
-
         }
-
-      }
       ]
     });
 

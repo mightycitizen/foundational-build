@@ -283,7 +283,9 @@ $slide-margin: map-get($grid-container-padding,'medium');
 		overflow: visible;
 	}
 	.slick-slide{
-		width: rem-calc(500);
+		@include breakpoint(500){
+			width: rem-calc(500);
+		}
 		transform: translateY(#{rem-calc(80)});
 		transition: $transition-duration transform;
 		will-change: margin;

@@ -13,11 +13,21 @@ $(document).foundation();
 //   // newSize is the name of the now-current breakpoint, oldSize is the previous breakpoint
 // });
 
+const randomId = () => {
+  return Math.random().toString(36).substr(2, 9);
+}
+
 const initLityAccessibility = () => {
   const dataAttr = 'trigger';
   $(document).on('click', '[data-lity]', function(event) {
     const $trigger = $(this);
-    $('.lity').attr('data-' + dataAttr,$trigger.attr('id'));
+    let triggerId = $trigger.attr('id');
+    if (!triggerId){
+      triggerId = 'lity-' + randomId();
+      $trigger.attr('id', triggerId);
+      console.log(triggerId);
+    }
+    $('.lity').attr('data-' + dataAttr,triggerId);
   });
 
   $(document).on('lity:close', function(event, instance) {

@@ -5131,6 +5131,28 @@ a.thumbnail {
   .section--tight {
     padding: 1.25rem 0; }
 
+html, body, .l-wrapper {
+  min-height: 100vh; }
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column; }
+
+.l-main {
+  flex: 1; }
+
+.l-header {
+  padding: 1.875rem 0;
+  background-color: #266093;
+  color: #fefefe;
+  flex: none; }
+
+.l-footer {
+  padding: 1.875rem 0;
+  background-color: #0a0a0a;
+  color: #fefefe;
+  flex: none; }
+
 @font-face {
   font-family: "icomoon";
   src: url("../fonts/icomoon.eot?hzvag5");

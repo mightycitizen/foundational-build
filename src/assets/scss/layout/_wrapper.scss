@@ -1,0 +1,29 @@
+html, body, .l-wrapper{
+  min-height: 100vh;
+}
+
+
+.l-wrapper{
+  display: flex;
+  flex-direction: column;
+//  min-height: 100%;
+}
+
+.l-main{
+  flex: 1;
+}
+
+.l-header{
+  padding: rem-calc(30 0);
+  background-color: $primary-color;
+  color: $white;
+  flex: none;
+}
+
+
+.l-footer{
+  padding: rem-calc(30 0);
+  background-color: $black;
+  color: $white;
+  flex: none;
+}

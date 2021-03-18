@@ -5,36 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1616095620745" media="all" />
-    <link rel="stylesheet" href="../../css/all.css?1616095620745" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1616096158347" media="all" />
+    <link rel="stylesheet" href="../../css/all.css?1616096158347" media="all" />
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     
     <!-- End Pattern Lab -->
 
   </head>
-  <body class=""><header class="l-header">
+  <body class=""><div class="l-wrapper">
+  <header class="l-header">
   <div class="grid-container">
       Header
   </div>
 </header>
-<section class="section">
+  <div class="l-main">
+      <section class="section">
   <div class="grid-container">
     <h2>Section Heading</h2>
     <p>Summary</p>
   </div>
 </section>
-<header class="l-footer">
+  </div>
+  <header class="l-footer">
   <div class="grid-container">
     Footer
   </div>
-</header><!--DO NOT REMOVE-->
+</header>
+
+</div><!--DO NOT REMOVE-->
 <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
-  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"layout-header","lineagePath":"../../patterns/layout-wrapper-header/layout-wrapper-header.rendered.html"},{"lineagePattern":"layout-section","lineagePath":"../../patterns/layout-sections-section/layout-sections-section.rendered.html"},{"lineagePattern":"layout-footer","lineagePath":"../../patterns/layout-wrapper-footer/layout-wrapper-footer.rendered.html"}],"lineage":[{"lineagePattern":"layout-header","lineagePath":"../../patterns/layout-wrapper-header/layout-wrapper-header.rendered.html"},{"lineagePattern":"layout-section","lineagePath":"../../patterns/layout-sections-section/layout-sections-section.rendered.html"},{"lineagePattern":"layout-footer","lineagePath":"../../patterns/layout-wrapper-footer/layout-wrapper-footer.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"pages","patternSubgroup":""},"patternExtension":"twig","patternName":"Home","patternPartial":"pages-home","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"pages-wrapper","lineagePath":"../../patterns/pages-_wrapper/pages-_wrapper.rendered.html"},{"lineagePattern":"layout-section","lineagePath":"../../patterns/layout-sections-section/layout-sections-section.rendered.html"}],"lineage":[{"lineagePattern":"pages-wrapper","lineagePath":"../../patterns/pages-_wrapper/pages-_wrapper.rendered.html"},{"lineagePattern":"layout-section","lineagePath":"../../patterns/layout-sections-section/layout-sections-section.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"pages","patternSubgroup":""},"patternExtension":"twig","patternName":"Home","patternPartial":"pages-home","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
 </script>
 
 <script>
-  window.patternData = {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"layout-header","lineagePath":"../../patterns/layout-wrapper-header/layout-wrapper-header.rendered.html"},{"lineagePattern":"layout-section","lineagePath":"../../patterns/layout-sections-section/layout-sections-section.rendered.html"},{"lineagePattern":"layout-footer","lineagePath":"../../patterns/layout-wrapper-footer/layout-wrapper-footer.rendered.html"}],"lineage":[{"lineagePattern":"layout-header","lineagePath":"../../patterns/layout-wrapper-header/layout-wrapper-header.rendered.html"},{"lineagePattern":"layout-section","lineagePath":"../../patterns/layout-sections-section/layout-sections-section.rendered.html"},{"lineagePattern":"layout-footer","lineagePath":"../../patterns/layout-wrapper-footer/layout-wrapper-footer.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"pages","patternSubgroup":""},"patternExtension":"twig","patternName":"Home","patternPartial":"pages-home","patternState":"","patternEngineName":"twig-php","extraOutput":{}};
+  window.patternData = {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"pages-wrapper","lineagePath":"../../patterns/pages-_wrapper/pages-_wrapper.rendered.html"},{"lineagePattern":"layout-section","lineagePath":"../../patterns/layout-sections-section/layout-sections-section.rendered.html"}],"lineage":[{"lineagePattern":"pages-wrapper","lineagePath":"../../patterns/pages-_wrapper/pages-_wrapper.rendered.html"},{"lineagePattern":"layout-section","lineagePath":"../../patterns/layout-sections-section/layout-sections-section.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"pages","patternSubgroup":""},"patternExtension":"twig","patternName":"Home","patternPartial":"pages-home","patternState":"","patternEngineName":"twig-php","extraOutput":{}};
 </script>
 
 <script>
@@ -70,10 +75,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1616095620745">
+<script id="pl-js-polyfill-insert-1616096158347">
   (function() {
     if (self != top) {
-      var cb = '1616095620745';
+      var cb = '1616096158347';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -86,7 +91,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1616095620745" nomodule>
+<script id="pl-js-insert-1616096158347" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -109,6 +114,6 @@
   <script src="/core/misc/drupal.init.js"></script>
   -->
   <!-- Concatenated by Gulp so you don't have to manually add each file. -->
-  <script src="../../js/app.js?1616095620745"></script>
+  <script src="../../js/app.js?1616096158347"></script>
 </body>
 </html>

@@ -1,3 +1,6 @@
-{% include "layout/00-wrapper/header.twig" %}
-{% include "layout/01-sections/section.twig" %}
-{% include "layout/00-wrapper/footer.twig" %}
+{% extends 'pages/_wrapper.twig' %}
+
+{% block main %}
+  {% include "layout/01-sections/section.twig" %}
+{% endblock %}
+

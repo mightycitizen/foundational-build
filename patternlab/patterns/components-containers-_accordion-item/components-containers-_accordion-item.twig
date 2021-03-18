@@ -1,8 +1,8 @@
 <li class="accordion-item {% if item.accordion_instance == "1" %}is-active{% endif %}" data-accordion-item>
-  <a href="#" class="accordion-title" aria-controls="accordion__content-{{ item.accordion_instance }}" aria-expanded="false" id="accordion__toggle-{{ item.accordion_instance }}" aria-selected="false">
-    <span class="accordion__heading">{{ item.heading }}</span>
+  <a role="button" class="accordion-title" aria-controls="accordion-{{ item.accordion_instance }}" aria-expanded="false" id="accordion-toggle-{{ item.accordion_instance }}" aria-selected="false">
+    {{ item.heading }}
   </a>
-  <div class="accordion-content" data-tab-content id="accordion__content-{{ item.accordion_instance }}" aria-hidden="true" aria-labelledby="accordion__content-{{ item.accordion_instance }}">
+  <div class="accordion-content" data-tab-content id="accordion-{{ item.accordion_instance }}" aria-hidden="true" aria-labelledby="accordion-{{ item.accordion_instance }}">
     {{ item.content }}
   </div>
 </li>

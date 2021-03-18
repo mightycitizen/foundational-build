@@ -4834,14 +4834,24 @@ a.thumbnail {
 
 .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a:after {
   font-family: "icomoon";
-  content: "";
-  border: none;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-top: -0.625rem; }
+  content: "" !important;
+  border: none !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  margin-top: -0.625rem !important; }
 
 .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)[aria-expanded="true"] > a:after {
   transform: scaleY(-1); }
+
+.dropdown > li.is-dropdown-submenu-parent > a {
+  padding-right: 1.875rem !important; }
+  .dropdown > li.is-dropdown-submenu-parent > a:after {
+    font-family: "icomoon";
+    content: "" !important;
+    border: none !important;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    margin-top: -0.625rem !important; }
 
 .slick-slide {
   margin: 0 0.9375rem; }

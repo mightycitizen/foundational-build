@@ -8,9 +8,8 @@
   &:after{
     font-family: $icomoon-font-family;
     content: $icon-chevron-right;
-    //display: inline-block;
-    //vertical-align: middle;
     margin-left: rem-calc(7);
     font-size: rem-calc(14);
+    // position: absolute; // underline not underneath arrow
   }
 }

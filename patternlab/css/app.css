@@ -5034,14 +5034,15 @@ a.thumbnail {
 
 .js-slick--center .slick-slide {
   width: 31.25rem; }
-  .js-slick--center .slick-slide img {
-    transition: 0.3s max-height, 0.3s opacity;
+  .js-slick--center .slick-slide .card-image {
+    transition: 0.3s max-height;
     opacity: 0;
-    max-height: 0; }
+    max-height: 0;
+    overflow: hidden; }
   .js-slick--center .slick-slide.slick-current .card-section {
     background-color: #1381b9;
     color: #fefefe; }
-  .js-slick--center .slick-slide.slick-current img {
+  .js-slick--center .slick-slide.slick-current .card-image {
     max-height: 62.5rem;
     opacity: 1; }
 

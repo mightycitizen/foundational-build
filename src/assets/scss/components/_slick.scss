@@ -283,17 +283,18 @@ $slide-margin: map-get($grid-container-padding,'medium');
 	}
 	.slick-slide{
 		width: rem-calc(500);
-		img{
-			transition: 0.3s max-height, 0.3s opacity;
+		.card-image{
+			transition: 0.3s max-height;
 			opacity: 0;
 			max-height: 0;
+			overflow: hidden;
 		}
 		&.slick-current{
 			.card-section{
 				background-color: $secondary-color;
 				color: $white;
 			}
-			img{ // selector that's hidden
+			.card-image{ // selector that's hidden
 				max-height: rem-calc(1000);
 				opacity: 1;
 			}

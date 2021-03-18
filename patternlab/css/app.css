@@ -5004,24 +5004,46 @@ a.thumbnail {
     .slick-nav .slick-dots button {
       background: #1381b9; }
   @media screen and (min-width: 90em) {
-    .slick-nav:not(:empty) {
+    .slick-slider:not(.js-slick--center) + .slick-nav:not(:empty) {
       margin-bottom: 3.125rem; }
-      .slick-nav:not(:empty) .slick-dots {
-        margin-top: 3.125rem; }
-    .slick-nav .slick-dots {
-      position: absolute; }
-    .slick-nav .slick-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%); }
-      .slick-nav .slick-arrow:before {
-        font-size: 1.875rem; }
-      .slick-nav .slick-arrow.slick-prev {
-        right: 100%;
-        margin-right: 1.5625rem; }
-      .slick-nav .slick-arrow.slick-next {
-        left: 100%;
-        margin-left: 1.5625rem; } }
+      .slick-slider:not(.js-slick--center) + .slick-nav:not(:empty) .slick-dots {
+        margin-top: 3.125rem;
+        position: absolute; }
+      .slick-slider:not(.js-slick--center) + .slick-nav:not(:empty) .slick-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%); }
+        .slick-slider:not(.js-slick--center) + .slick-nav:not(:empty) .slick-arrow:before {
+          font-size: 1.875rem; }
+        .slick-slider:not(.js-slick--center) + .slick-nav:not(:empty) .slick-arrow.slick-prev {
+          right: 100%;
+          margin-right: 1.5625rem; }
+        .slick-slider:not(.js-slick--center) + .slick-nav:not(:empty) .slick-arrow.slick-next {
+          left: 100%;
+          margin-left: 1.5625rem; } }
+
+.js-slick--center + .slick-nav {
+  position: absolute;
+  background-color: #e6e6e6;
+  z-index: 100;
+  width: 12.5rem;
+  top: 50%; }
+
+.js-slick--center .slick-list {
+  overflow: visible; }
+
+.js-slick--center .slick-slide {
+  width: 31.25rem; }
+  .js-slick--center .slick-slide img {
+    transition: 0.3s max-height, 0.3s opacity;
+    opacity: 0;
+    max-height: 0; }
+  .js-slick--center .slick-slide.slick-current .card-section {
+    background-color: #1381b9;
+    color: #fefefe; }
+  .js-slick--center .slick-slide.slick-current img {
+    max-height: 62.5rem;
+    opacity: 1; }
 
 /* ------------------ Tooltip ------------------ */
 .tippy-box,

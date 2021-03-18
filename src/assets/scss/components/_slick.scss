@@ -241,35 +241,63 @@ $slide-margin: map-get($grid-container-padding,'medium');
 		}
 	}
 	@include breakpoint(xxlarge){
-		&:not(:empty){
+		.slick-slider:not(.js-slick--center) + &:not(:empty){
 			margin-bottom: rem-calc(50);
 			.slick-dots{
 				margin-top: rem-calc(50);
+				position: absolute;
+			}
+			.slick-arrow{
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				&:before{
+					font-size: rem-calc(30);
+				}
+				&.slick-prev{
+					right: 100%;
+					margin-right: rem-calc($arrow-margin-xxlarge);
+				}
+				&.slick-next{
+					left: 100%;
+					margin-left: rem-calc($arrow-margin-xxlarge);
+				}
 			}
 		}
 
-		.slick-dots{
-			// top: 0;
-			//margin-top: rem-calc(-50);
-			position: absolute;
-		}
-		.slick-arrow{
+	}
+}
 
-			position: absolute;
-			top: 50%;
 
-			transform: translateY(-50%);
-			&:before{
-				font-size: rem-calc(30);
+.js-slick--center{
+	+ .slick-nav{
+		position: absolute;
+		background-color: $light-gray;
+		z-index: 100;
+		width: rem-calc(200);
+		top: 50%;
+
+	}
+	.slick-list{
+		overflow: visible;
+	}
+	.slick-slide{
+		width: rem-calc(500);
+		img{
+			transition: 0.3s max-height, 0.3s opacity;
+			opacity: 0;
+			max-height: 0;
+		}
+		&.slick-current{
+			.card-section{
+				background-color: $secondary-color;
+				color: $white;
 			}
-			&.slick-prev{
-				right: 100%;
-				margin-right: rem-calc($arrow-margin-xxlarge);
-			}
-			&.slick-next{
-				left: 100%;
-				margin-left: rem-calc($arrow-margin-xxlarge);
+			img{ // selector that's hidden
+				max-height: rem-calc(1000);
+				opacity: 1;
 			}
 		}
+
 	}
 }

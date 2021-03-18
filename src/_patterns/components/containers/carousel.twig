@@ -10,8 +10,6 @@
     <div class="slick-nav"></div>
 
   </div>
-</div>
-<div class="grid-container">
   <div class="slick-wrap">
     <div class="js-slick--cards has-peekaboo">
       {% for i in range (i, 5) %}
@@ -20,6 +18,33 @@
     </div>
     <div class="slick-nav"></div>
   </div>
+</div>
+<div class="slick-wrap">
+  <div class="js-slick--center">
+      {% for i in range (i, 5) %}
+          {% include "components/teasers/card.twig" with {
+          "card": {
+            "modifier": "",
+            "image": {
+              "src": "https://source.unsplash.com/PhYq704ffdA/640x360",
+              "alt": "Alt Text"
+            },
+            "heading": {
+              "text": "Phasellus auctor, turpis",
+              "level": "2",
+              "url": "#"
+            },
+            "summary": "This copy is optional, if nothing is entered nothing will display. Facit nulla in vulputate vulputate aliquam. Commodo esse habent tation nam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed orci lacus.",
+            "link": {
+              "url": "#",
+              "text":"Optional Link"
+            }
+          }
+        }
+ %}
+      {% endfor %}
+  </div>
+  <div class="slick-nav"></div>
 </div>
 
 

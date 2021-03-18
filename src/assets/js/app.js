@@ -74,7 +74,7 @@ $(document).on('click', 'a[href^="#"]:not([href="#"]):not([data-lity])',
   });
 
 
-function sliderPagination(slick){
+function slickPagination(slick){
   if (slick.$dots){
     const numSlides = slick.$dots.find('>li').length;
     slick.$slider.toggleClass('has-pagers', numSlides > 1);
@@ -151,19 +151,19 @@ const initLazy = () => {
   });
 }
 
-const initSlider = () => {
+const initSlick = () => {
 
-  const $slider = $('.js-slick');
+  const $slick = $('.js-slick');
 
-  $slider.each(function(){
+  $slick.each(function(){
     const $this = $(this);
 
     $this.on('init', function (event, slick, breakpoint){
-      sliderPagination(slick);
+      slickPagination(slick);
     })
 
     $this.on('breakpoint', function (event, slick, breakpoint){
-      sliderPagination(slick);
+      slickPagination(slick);
     })
 
     $this.slick({
@@ -181,17 +181,16 @@ const initSlider = () => {
 
   })
 
-  const $sliderCards = $('.js-slick--cards');
-
-  $sliderCards.each(function(){
+  const $slickCards = $('.js-slick--cards');
+  $slickCards.each(function(){
     const $this = $(this);
 
     $this.on('init', function (event, slick, breakpoint){
-      sliderPagination(slick);
+      slickPagination(slick);
     })
 
     $this.on('breakpoint', function (event, slick, breakpoint){
-      sliderPagination(slick);
+      slickPagination(slick);
     })
 
     $this.slick({
@@ -227,7 +226,53 @@ const initSlider = () => {
       ]
     });
 
-  })
+  });
+
+  const $slickCenter = $('.js-slick--center');
+  $slickCenter.each(function(){
+    const $this = $(this);
+
+    $this.on('init', function (event, slick, breakpoint){
+      slickPagination(slick);
+    })
+
+    $this.on('breakpoint', function (event, slick, breakpoint){
+      slickPagination(slick);
+    })
+
+    $this.slick({
+      centerMode: true,
+      centerPadding: '50px',
+      prevArrow: '<button class="slick-prev">Previous</button>',
+      nextArrow: '<button class="slick-next">Next</button>',
+      dots: true,
+      infinite: false,
+      dotsClass: 'slick-dots',
+      appendArrows: $this.next('.slick-nav'),
+      appendDots: $this.next('.slick-nav'),
+      variableWidth: true,
+      waitForAnimate: false,
+      responsive: [
+        {
+        breakpoint: '1199',
+        settings: {
+          slidesToScroll: 2,
+          slidesToShow: 2
+        }
+      },
+        {
+        breakpoint: '768',
+        settings: {
+          slidesToScroll: 1,
+          slidesToShow: 1
+
+        }
+
+      }
+      ]
+    });
+
+  });
 
 }
 
@@ -247,7 +292,7 @@ $(document).ready(function(){
 
   initTippy();
   initLazy();
-  initSlider();
+  initSlick();
   initLityAccessibility();
   initDatepicker();
 

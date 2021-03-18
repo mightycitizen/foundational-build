@@ -2,6 +2,12 @@
 @import '../vendor/icomoon/variables';
 $arrow-margin-xxlarge: 25px;
 $peekaboo-space: 30px;
+$slide-margin: map-get($grid-container-padding,'medium');
+
+.slick-slide{
+	margin: 0 rem-calc(0.5*$slide-margin);
+}
+
 
 .slick-wrap{
 	position: relative;
@@ -115,6 +121,16 @@ $peekaboo-space: 30px;
 			}
 		}
 
+		button{
+			width: rem-calc(10);
+			height: rem-calc(10);
+			display: block;
+			font-size: 0;
+			line-height: 0;
+			border-radius: 50%;
+			background: $medium-gray;
+		}
+
 		&.slick-active,
 		&.active {
 
@@ -129,22 +145,6 @@ $peekaboo-space: 30px;
 		}
 	}
 
-	button{
-		//@include animate(background);
-		//@include size(rem-calc(10));
-		width: rem-calc(10);
-		height: rem-calc(10);
-		display: block;
-		font-size: 0;
-		line-height: 0;
-		border-radius: 50%;
-		background: $secondary-color;
-
-		&:hover,
-		&:focus {
-			background: $secondary-color;
-		}
-	}
 }
 
 .slick-arrow {

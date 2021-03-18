@@ -4839,6 +4839,10 @@ a.thumbnail {
 .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)[aria-expanded="true"] > a:after {
   transform: scaleY(-1); }
 
+.breadcrumbs li:not(:last-child):after {
+  font-family: "icomoon";
+  content: ""; }
+
 /* ------------------ Tooltip ------------------ */
 .tippy-box,
 .tippy-tooltip {
@@ -4880,6 +4884,9 @@ a.thumbnail {
   display: inline-block;
   vertical-align: middle;
   color: #266093; }
+
+.slick-slide {
+  margin: 0 0.9375rem; }
 
 .slick-wrap {
   position: relative; }
@@ -4945,21 +4952,19 @@ a.thumbnail {
       .slick-dots li, .slick-dots li:last-child {
         padding-top: 0.6875rem;
         padding-bottom: 0.6875rem !important; } }
-  .slick-dots li.slick-active button, .slick-dots li.active button {
-    background: #1381b9; }
-  .slick-dots li:before {
-    content: "";
-    display: none; }
-  .slick-dots button {
+  .slick-dots li button {
     width: 0.625rem;
     height: 0.625rem;
     display: block;
     font-size: 0;
     line-height: 0;
     border-radius: 50%;
+    background: #cacaca; }
+  .slick-dots li.slick-active button, .slick-dots li.active button {
     background: #1381b9; }
-    .slick-dots button:hover, .slick-dots button:focus {
-      background: #1381b9; }
+  .slick-dots li:before {
+    content: "";
+    display: none; }
 
 .slick-arrow {
   border-radius: 50%;

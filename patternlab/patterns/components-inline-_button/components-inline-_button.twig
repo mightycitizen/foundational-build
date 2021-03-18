@@ -3,5 +3,10 @@
 {% if button.url %}
   <a href="{{ button.url }}" class="button{{ button.modifier ? ' ' ~ button.modifier }}">{{ button.text }}</a>
 {% else %}
-  <button class="button{{ button.modifier ? ' ' ~ button.modifier }}">{{ button.text }}</button>
+  <button class="button{{ button.modifier ? ' ' ~ button.modifier }}">
+    {{ button.text }}
+    {% if button.icon %}
+      <i class="icon-{{ button.icon }}"></i>
+    {% endif %}
+  </button>
 {% endif %}

@@ -287,6 +287,38 @@
   color: #252f16;
 }
 
+.bg-accent {
+  background-color: #00cbcf;
+}
+
+.bg-accent-light {
+  background-color: #2bfbff;
+}
+
+.color-accent {
+  color: #00cbcf;
+}
+
+.color-accent-light {
+  color: #2bfbff;
+}
+
+.bg-accent {
+  background-color: #00cbcf;
+}
+
+.bg-accent-dark {
+  background-color: #008e91;
+}
+
+.color-accent {
+  color: #00cbcf;
+}
+
+.color-accent-dark {
+  color: #008e91;
+}
+
 .bg-gray {
   background-color: #ccc;
 }

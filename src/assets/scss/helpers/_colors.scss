@@ -38,7 +38,9 @@ $additional-palette: ();
 @include generateVariants($primary, 'primary');
 @include generateVariants($secondary, 'secondary');
 @include generateVariants($tertiary, 'tertiary');
+@include generateVariants($accent, 'accent');
 @include generateVariants($gray, 'gray');
+
 
 
 //@debug $additional-palette;

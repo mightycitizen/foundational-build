@@ -33,6 +33,13 @@
     }
   },
 
+  "accent": {
+    "default": "#00cbcf",
+    "variants": {
+      "light": "30%",
+      "dark": "-30%"
+    }
+  },
 
 
   "success": "#3adb76",

@@ -127,6 +127,70 @@
   color: #a65d26;
 }
 
+.bg-tertiary {
+  background-color: #7a9c49;
+}
+
+.bg-tertiary-lightest {
+  background-color: #bdd29f;
+}
+
+.color-tertiary {
+  color: #7a9c49;
+}
+
+.color-tertiary-lightest {
+  color: #bdd29f;
+}
+
+.bg-tertiary {
+  background-color: #7a9c49;
+}
+
+.bg-tertiary-lighter {
+  background-color: #a3c079;
+}
+
+.color-tertiary {
+  color: #7a9c49;
+}
+
+.color-tertiary-lighter {
+  color: #a3c079;
+}
+
+.bg-tertiary {
+  background-color: #7a9c49;
+}
+
+.bg-tertiary-darker {
+  background-color: #627d3a;
+}
+
+.color-tertiary {
+  color: #7a9c49;
+}
+
+.color-tertiary-darker {
+  color: #627d3a;
+}
+
+.bg-tertiary {
+  background-color: #7a9c49;
+}
+
+.bg-tertiary-darkest {
+  background-color: #556d33;
+}
+
+.color-tertiary {
+  color: #7a9c49;
+}
+
+.color-tertiary-darkest {
+  color: #556d33;
+}
+
 .bg-grays {
   background-color: #ccc;
 }

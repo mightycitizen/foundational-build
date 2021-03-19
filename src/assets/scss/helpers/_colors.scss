@@ -35,6 +35,7 @@ $additional-palette: ();
 
 @include generateVariants($primary, $variants, 'primary');
 @include generateVariants($secondary, $variants, 'secondary');
+@include generateVariants($tertiary, $variants, 'tertiary');
 @include generateVariants($grays, $variants, 'grays');
 
 

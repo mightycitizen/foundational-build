@@ -17,6 +17,17 @@
       "darkest": "-30%"
     }
   },
+  "tertiary": {
+    "default": "#7a9c49",
+    "variants": {
+      "lightest": "50%",
+      "lighter": "30%",
+      "darker": "-20%",
+      "darkest": "-30%"
+    }
+  },
+
+
 
   "success": "#3adb76",
   "warning": "#ffae00",

@@ -1,9 +1,9 @@
-$primary: (default: #266093, variants: (lightest: 20%, lighter: #9fd2ff, darker: -20%, darkest: -70%));
-$secondary: (default: #d6884d, variants: (lightest: 50%, lighter: 30%, darker: -20%, darkest: -30%));
-$tertiary: (default: #7a9c49, variants: (lightest: 50%, lighter: 30%, darker: -20%, darkest: -30%));
+$primary: (default: #266093, variants: (lightest: 70%, lighter: 50%, light: 30%, dark: -30%, darker: -50%, darkest: -70%));
+$secondary: (default: #d6884d, variants: (lightest: 70%, lighter: 50%, light: 30%, dark: -30%, darker: -50%, darkest: -70%));
+$tertiary: (default: #7a9c49, variants: (lightest: 70%, lighter: 50%, light: 30%, dark: -30%, darker: -50%, darkest: -70%));
 $success: #3adb76;
 $warning: #ffae00;
 $alert: #cc4b37;
-$grays: (default: #ccc, variants: (lightest: 40%, lighter: 30%, darker: -20%, darkest: -30%));
+$grays: (default: #ccc, variants: (lightest: 40%, lighter: 30%, light: 10%, dark: -10%, darker: -20%, darkest: -30%));
 $black: #0a0a0a;
 $white: #fefefe;

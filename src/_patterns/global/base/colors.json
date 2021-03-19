@@ -2,28 +2,34 @@
   "primary": {
     "default": "#266093",
     "variants": {
-      "lightest": "20%",
-      "lighter": "#9fd2ff",
-      "darker": "-20%",
+      "lightest": "70%",
+      "lighter": "50%",
+      "light": "30%",
+      "dark": "-30%",
+      "darker": "-50%",
       "darkest": "-70%"
     }
   },
   "secondary": {
     "default": "#d6884d",
     "variants": {
-      "lightest": "50%",
-      "lighter": "30%",
-      "darker": "-20%",
-      "darkest": "-30%"
+      "lightest": "70%",
+      "lighter": "50%",
+      "light": "30%",
+      "dark": "-30%",
+      "darker": "-50%",
+      "darkest": "-70%"
     }
   },
   "tertiary": {
     "default": "#7a9c49",
     "variants": {
-      "lightest": "50%",
-      "lighter": "30%",
-      "darker": "-20%",
-      "darkest": "-30%"
+      "lightest": "70%",
+      "lighter": "50%",
+      "light": "30%",
+      "dark": "-30%",
+      "darker": "-50%",
+      "darkest": "-70%"
     }
   },
 
@@ -38,6 +44,8 @@
     "variants": {
       "lightest": "40%",
       "lighter": "30%",
+      "light": "10%",
+      "dark": "-10%",
       "darker": "-20%",
       "darkest": "-30%"
     }

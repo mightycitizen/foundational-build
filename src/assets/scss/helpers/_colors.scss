@@ -1,5 +1,5 @@
 
-$variants: 'lightest', 'lighter', 'darker', 'darkest';
+$variants: 'lightest', 'lighter', 'light', 'dark', 'darker', 'darkest';
 
 @function map-set($map, $key, $value) {
   $new: ($key: $value);

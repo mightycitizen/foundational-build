@@ -17,7 +17,7 @@ html, body, .l-wrapper{
 
 .l-header{
   padding: rem-calc(30 0);
-  background-color: $secondary-color;
+  background-color: map-get($additional-palette,'secondary-darkest');
   color: $white;
   flex: none;
 }

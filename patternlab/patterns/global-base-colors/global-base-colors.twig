@@ -9,7 +9,7 @@
  */
 #}
 
-{% set variants = [ 'lightest', 'lighter', 'light', 'dark', 'darker', 'darkest'] %}
+
 {% set sections = {
     "Brand": [
       {
@@ -66,10 +66,11 @@
         {% include 'global/base/_swatch.twig' with {
             hex: color.colors.default
           }%}
-        {% for variant in variants %}
+
+
+        {% for key, value in color.colors.variants %}
           {% include 'global/base/_swatch.twig' with {
-              hex: color.colors.variants[variant],
-              type: variant
+              type: key
             }%}
         {% endfor %}
       </div>

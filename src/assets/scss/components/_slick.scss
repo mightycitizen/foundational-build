@@ -61,7 +61,7 @@ $slide-margin: map-get($grid-container-padding,'medium');
 						}
 					}
 				}
-				@include breakpoint(xlphone down){
+				@include breakpoint(small only){
 					.slick-dots{
 						counter-reset: pages;
 						li{

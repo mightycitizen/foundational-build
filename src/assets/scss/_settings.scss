@@ -69,31 +69,22 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: $theme-primary,
-  secondary: $theme-secondary,
-  success: $theme-success,
-  warning: $theme-warning,
-  alert: $theme-alert,
+  primary: map-get($primary,'default'),
+  secondary: map-get($secondary, 'default'),
+  success: $success,
+  warning: $warning,
+  alert: $alert,
 );
 
-$colors: 'primary', 'secondary';
 
-$additional-palette: ();
-@each $color in $colors {
-
-  $additional-palette: map-merge($additional-palette, ($color'-light': $theme-#{$color}Lighter));
-}
-
-
-
-$light-gray: $theme-lightGray;
-$medium-gray: $theme-mediumGray;
-$dark-gray: $theme-darkGray;
-$black: $theme-black;
-$white: $theme-white;
+$light-gray: map-get($additional-palette,'grays-lighter');
+$medium-gray: map-get($grays,'default');
+$dark-gray: map-get($additional-palette,'grays-darker');
+$black: $black;
+$white: $white;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: $theme-primaryFontFamily;
+$body-font-family: $primaryFontFamily;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -118,10 +109,10 @@ $print-hrefs: true;
 
 $breakpoints: (
   small: 0,
-  medium: $theme-mediumBreakpoint,
-  large: $theme-largeBreakpoint,
-  xlarge: $theme-xlargeBreakpoint,
-  xxlarge: $theme-xxlargeBreakpoint,
+  medium: $mediumBreakpoint,
+  large: $largeBreakpoint,
+  xlarge: $xlargeBreakpoint,
+  xxlarge: $xxlargeBreakpoint,
 );
 $breakpoints-hidpi: (
   hidpi-1: 1,

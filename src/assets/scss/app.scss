@@ -1,9 +1,16 @@
 @charset 'utf-8';
 // this file is created by the json to sass gulp task,
 // see .json files in src/_patterns/global/base/*.json
-@import 'helpers/functions';
+@import
+  'helpers/functions';
 
-@import 'variables';
+@import
+  'variables/breakpoints',
+  'variables/fonts',
+  'variables/colors';
+
+@import 'helpers/colors';
+
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
@@ -95,6 +102,7 @@
 
 @import
   "helpers/spacing",
+  "helpers/fonts",
   "helpers/mixins";
 
 @import

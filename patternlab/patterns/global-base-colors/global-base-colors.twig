@@ -8,18 +8,20 @@
  * any colors there.
  */
 #}
+
+{% set variants = [ 'lightest', 'lighter', 'darker', 'darkest'] %}
 {% set sections = {
     "Brand": [
       {
         "name": "Primary",
-        "hex": primary
+        "colors": primary
       },
       {
         "name": "Secondary",
-        "hex": secondary
+        "colors": secondary
       }
     ],
-    "Black &amp; White": [
+    "Neutrals": [
       {
         "name": "Black",
         "hex": black
@@ -27,20 +29,10 @@
       {
         "name": "White",
         "hex": white
-      }
-    ],
-    "Grays": [
-      {
-        "name": "Light Gray",
-        "hex": lightGray
       },
       {
-        "name": "Medium Gray",
-        "hex": mediumGray
-      },
-      {
-        "name": "Dark Gray",
-        "hex": darkGray
+        "name": "Grays",
+        "colors": grays
       }
     ],
     "Supporting": [
@@ -64,8 +56,24 @@
 {% for title, section in sections %}
   <h3>{{ title }}</h3>
   {% for color in section %}
-    <div class="pl-swatch" style="background-color: {{ color.hex }}">
-      <div class="pl-swatch__hex">{{ color.name }}<br>{{ color.hex }}</div>
-    </div>
+
+    {% if color.colors.default %}
+      <div>
+        {% include 'global/base/_swatch.twig' with {
+            hex: color.colors.default
+          }%}
+        {% for variant in variants %}
+          {% include 'global/base/_swatch.twig' with {
+              hex: color.colors.variants[variant],
+              type: variant
+            }%}
+        {% endfor %}
+      </div>
+
+    {% else %}
+      {% include 'global/base/_swatch.twig' with {
+        hex: color.hex
+      }%}
+    {% endif %}
   {% endfor %}
 {% endfor %}

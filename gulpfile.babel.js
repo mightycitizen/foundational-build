@@ -2,7 +2,7 @@
 'use strict';
 
 // Include gulp helpers.
-const { series, src, parallel, watch } = require('gulp');
+const { series, src, dest, parallel, watch } = require('gulp');
 
 
 
@@ -23,7 +23,7 @@ const { concatCSS } = require('./gulp-tasks/concat.js');
 const { moveFonts, movePatternCSS } = require('./gulp-tasks/move.js');
 const server = require('browser-sync').create();
 //const webpack = require('webpack-stream');
-const jsonToSass = require('gulp-json-data-to-sass');
+const jsonCss = require('gulp-json-css');
 
 
 // Compile Our Sass and JS
@@ -96,12 +96,10 @@ function buildPatternlab(done) {
 function buildVariables(){
 
     return src('src/_patterns/global/base/**/*.json')
-        .pipe(jsonToSass({
-            sass: 'src/assets/scss/_variables.scss',
-            prefix: 'theme',
-            suffix: '',
-            separator: '-'
-        }));
+        .pipe(jsonCss({
+            keepObjects: true
+        }))
+        .pipe(dest('src/assets/scss/variables/'));
 
 }
 
@@ -111,14 +109,14 @@ function buildVariables(){
  */
 function watchFiles() {
   // Watch all my sass files and compile sass if a file changes.
-  watch(['./src/patterns/global/base/**/*.json'],
+  watch(['./src/_patterns/global/base/**/*.json'],
     series(buildVariables, compileSass, concatCSS, (done) => {
       server.reload('*.css');
       done();
     })
   )
   watch(
-    ['./src/patterns/**/**/*.scss','./src/assets/**/*.scss'],
+    ['./src/_patterns/**/**/*.scss','./src/assets/**/*.scss'],
     series(compileSass, concatCSS, (done) => {
       server.reload('*.css');
       done();
@@ -127,7 +125,7 @@ function watchFiles() {
 
   // Watch all my JS files and compile if a file changes.
   watch(
-    ['./src/patterns/**/**/*.js', './src/assets/js/**/*.js'],
+    ['./src/_patterns/**/**/*.js', './src/assets/js/**/*.js'],
     series(parallel(lintJS, compileJS), (done) => {
       server.reload('*.js');
       done();

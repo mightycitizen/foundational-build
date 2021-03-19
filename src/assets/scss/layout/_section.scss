@@ -3,12 +3,7 @@
   *:last-child{
     margin-bottom: 0;
   }
-  &--secondary{
-    background-color: $secondary-color;
-  }
-  &--primary{
-    background-color: $primary-color;
-  }
+
   &--padded{
     padding: rem-calc(80 0);
   }

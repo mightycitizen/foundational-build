@@ -32,6 +32,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-eslint": "^5.0.0",
     "gulp-imagemin": "^6.0.0",
+    "gulp-json-css": "^0.2.3",
     "gulp-json-data-to-sass": "^1.0.1",
     "gulp-order": "^1.2.0",
     "gulp-rename": "^1.4.0",

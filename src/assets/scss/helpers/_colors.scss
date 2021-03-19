@@ -1,0 +1,41 @@
+
+$variants: 'lightest', 'lighter', 'darker', 'darkest';
+
+@function map-set($map, $key, $value) {
+  $new: ($key: $value);
+  @return map-merge($map, $new);
+}
+
+$additional-palette: ();
+
+@mixin generateVariants($map, $variants, $color){
+  @each $variant in $variants{
+    $default-color: map-get($map, 'default');
+    $output: map-get(map-get($map,'variants'), $variant);
+    @if (is-percentage($output)){
+      $output: scale-color($default-color,$lightness: $output);
+    }
+    .bg-#{$color}{
+      background-color: $default-color;
+    }
+    .bg-#{$color}-#{$variant}{
+      background-color: $output;
+    }
+
+    .color-#{$color}{
+      color: $default-color;
+    }
+    .color-#{$color}-#{$variant}{
+      color: $output;
+    }
+
+    $additional-palette: map-set($additional-palette, '#{$color}-#{$variant}', $output) !global;
+  }
+}
+
+@include generateVariants($primary, $variants, 'primary');
+@include generateVariants($secondary, $variants, 'secondary');
+@include generateVariants($grays, $variants, 'grays');
+
+
+//@debug $additional-palette;

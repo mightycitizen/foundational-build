@@ -77,9 +77,9 @@ $foundation-palette: (
 );
 
 
-$light-gray: map-get($additional-palette,'grays-lighter');
-$medium-gray: map-get($grays,'default');
-$dark-gray: map-get($additional-palette,'grays-darker');
+$light-gray: map-get($additional-palette,'gray-lighter');
+$medium-gray: map-get($gray,'default');
+$dark-gray: map-get($additional-palette,'gray-darker');
 $black: $black;
 $white: $white;
 $body-background: $white;

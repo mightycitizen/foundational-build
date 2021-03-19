@@ -39,15 +39,15 @@
   "warning": "#ffae00",
   "alert": "#cc4b37",
 
-  "grays": {
+  "gray": {
     "default": "#ccc",
     "variants": {
-      "lightest": "40%",
-      "lighter": "30%",
-      "light": "10%",
-      "dark": "-10%",
-      "darker": "-20%",
-      "darkest": "-30%"
+      "lightest": "70%",
+      "lighter": "50%",
+      "light": "30%",
+      "dark": "-30%",
+      "darker": "-50%",
+      "darkest": "-70%"
     }
   },
 

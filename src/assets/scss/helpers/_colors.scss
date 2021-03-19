@@ -1,5 +1,5 @@
 
-$variants: 'lightest', 'lighter', 'light', 'dark', 'darker', 'darkest';
+
 
 @function map-set($map, $key, $value) {
   $new: ($key: $value);
@@ -8,35 +8,37 @@ $variants: 'lightest', 'lighter', 'light', 'dark', 'darker', 'darkest';
 
 $additional-palette: ();
 
-@mixin generateVariants($map, $variants, $color){
-  @each $variant in $variants{
+@mixin generateVariants($map, $color){
+  $variants: map-get($map, 'variants');
+  @each $key, $value in $variants {
+
     $default-color: map-get($map, 'default');
-    $output: map-get(map-get($map,'variants'), $variant);
-    @if (is-percentage($output)){
+    $output: $value;
+    @if (is-percentage($value)){
       $output: scale-color($default-color,$lightness: $output);
     }
     .bg-#{$color}{
       background-color: $default-color;
     }
-    .bg-#{$color}-#{$variant}{
+    .bg-#{$color}-#{$key}{
       background-color: $output;
     }
 
     .color-#{$color}{
       color: $default-color;
     }
-    .color-#{$color}-#{$variant}{
+    .color-#{$color}-#{$key}{
       color: $output;
     }
 
-    $additional-palette: map-set($additional-palette, '#{$color}-#{$variant}', $output) !global;
+    $additional-palette: map-set($additional-palette, '#{$color}-#{$key}', $output) !global;
   }
 }
 
-@include generateVariants($primary, $variants, 'primary');
-@include generateVariants($secondary, $variants, 'secondary');
-@include generateVariants($tertiary, $variants, 'tertiary');
-@include generateVariants($gray, $variants, 'gray');
+@include generateVariants($primary, 'primary');
+@include generateVariants($secondary, 'secondary');
+@include generateVariants($tertiary, 'tertiary');
+@include generateVariants($gray, 'gray');
 
 
 //@debug $additional-palette;

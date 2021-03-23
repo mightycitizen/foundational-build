@@ -1,4 +1,5 @@
 .card{
+  max-width: rem-calc(500);
   &--click{
     position: relative;
     a{

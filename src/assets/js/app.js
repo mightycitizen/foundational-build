@@ -28,6 +28,13 @@ const initDatepicker = () => {
   })
 }
 
+const initFoundationAccessibility = () => {
+  // accordion accessibility
+  $(document).on('click', '.accordion-trigger', function(event){
+    $(this).parents('.accordion-item').find('.accordion-title').click();
+  })
+}
+
 const initLityAccessibility = () => {
   const dataAttr = 'trigger';
   $(document).on('click', '[data-lity]', function(event) {
@@ -288,6 +295,7 @@ $(document).ready(function(){
   initLazy();
   initSlick();
   initLityAccessibility();
+  initFoundationAccessibility();
   initDatepicker();
 
 

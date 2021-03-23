@@ -6755,6 +6755,9 @@ a.thumbnail image {
   content: "";
 }
 
+.card {
+  max-width: 31.25rem;
+}
 .card--click {
   position: relative;
 }

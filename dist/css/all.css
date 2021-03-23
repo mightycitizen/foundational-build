@@ -4767,7 +4767,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   border-radius: 0 0 0 0;
 }
 .accordion-title:hover, .accordion-title:focus {
-  background-color: #d6884d;
+  background-color: #1b4367;
 }
 .accordion-title::before {
   position: absolute;
@@ -6727,6 +6727,8 @@ a.thumbnail image {
 }
 .accordion-title:hover, .accordion-title:focus {
   color: #fefefe;
+}
+.accordion-title:focus {
   background-color: transparent;
 }
 .accordion-item:not(:last-child) {
@@ -6764,10 +6766,7 @@ a.thumbnail image {
   color: #fefefe;
   padding: 2.5rem;
 }
-.hero .breadcrumbs {
-  color: inherit;
-}
-.hero .breadcrumbs a {
+.hero .breadcrumbs, .hero .breadcrumbs li, .hero .breadcrumbs a {
   color: inherit;
 }
 
@@ -6952,29 +6951,27 @@ a.thumbnail image {
 .slick-slider.has-pagination + .slick-nav .slick-dots .slick-active button {
   background-color: #266093;
 }
-@media print, screen and (max-width: 39.99875em) {
-  .slick-slider.has-pagination + .slick-nav .slick-dots {
-    counter-reset: pages;
-  }
-  .slick-slider.has-pagination + .slick-nav .slick-dots li {
-    counter-increment: pages;
-  }
-  .slick-slider.has-pagination + .slick-nav .slick-dots li:not(.slick-active):not(:last-child) {
-    position: absolute;
-    opacity: 0;
-    z-index: -1;
-  }
-  .slick-slider.has-pagination + .slick-nav .slick-dots li button {
-    padding: 0;
-    background-color: transparent !important;
-    pointer-events: none;
-  }
-  .slick-slider.has-pagination + .slick-nav .slick-dots li:last-child button:before {
-    content: " of ";
-  }
-  .slick-slider.has-pagination + .slick-nav .slick-dots li:last-child.slick-active button:before {
-    content: counter(pages) " of ";
-  }
+.slick-slider.has-pagination + .slick-nav .slick-dots {
+  counter-reset: pages;
+}
+.slick-slider.has-pagination + .slick-nav .slick-dots li {
+  counter-increment: pages;
+}
+.slick-slider.has-pagination + .slick-nav .slick-dots li:not(.slick-active):not(:last-child) {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.slick-slider.has-pagination + .slick-nav .slick-dots li button {
+  padding: 0;
+  background-color: transparent !important;
+  pointer-events: none;
+}
+.slick-slider.has-pagination + .slick-nav .slick-dots li:last-child button:before {
+  content: " of ";
+}
+.slick-slider.has-pagination + .slick-nav .slick-dots li:last-child.slick-active button:before {
+  content: counter(pages) " of ";
 }
 
 .slick-dots {
@@ -7057,6 +7054,9 @@ a.thumbnail image {
 html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .slick-arrow.slick-disabled:focus {
   color: #e6e6e6;
 }
+.slick-arrow:hover {
+  color: #76421b;
+}
 
 .slick-nav {
   display: flex;
@@ -7076,12 +7076,6 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   order: 2;
   flex-wrap: wrap;
   max-width: calc(100% - 68px);
-}
-.slick-nav .slick-dots .slick-active button {
-  background: #ccc;
-}
-.slick-nav .slick-dots button {
-  background: #d6884d;
 }
 @media screen and (min-width: 90em) {
   .slick-slider:not(.js-slick--center) + .slick-nav:not(:empty) {

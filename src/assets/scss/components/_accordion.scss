@@ -13,8 +13,11 @@
     }
     &:hover, &:focus{
       color: $white;
+    }
+    &:focus{
       background-color: transparent;
     }
+
   }
   &-item{
     &:not(:last-child){

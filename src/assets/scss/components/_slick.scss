@@ -61,39 +61,39 @@ $slide-margin: map-get($grid-container-padding,'medium');
 						}
 					}
 				}
-				@include breakpoint(small only){
-					.slick-dots{
-						counter-reset: pages;
-						li{
-							counter-increment: pages;
-							&:not(.slick-active):not(:last-child){
-								position: absolute;
-								opacity: 0;
-								z-index: -1;
-							}
+
+				.slick-dots{
+					counter-reset: pages;
+					li{
+						counter-increment: pages;
+						&:not(.slick-active):not(:last-child){
+							position: absolute;
+							opacity: 0;
+							z-index: -1;
+						}
+						button{
+							padding: rem-calc(0);
+							background-color: transparent !important;
+							pointer-events: none;
+						}
+						&:last-child{
 							button{
-								padding: rem-calc(0);
-								background-color: transparent !important;
-								pointer-events: none;
+								&:before{
+									content: " of "
+								}
 							}
-							&:last-child{
+							&.slick-active{
 								button{
 									&:before{
-										content: " of "
+										content: counter(pages) " of ";
 									}
 								}
-								&.slick-active{
-									button{
-										&:before{
-											content: counter(pages) " of ";
-										}
-									}
-								}
-
 							}
+
 						}
 					}
 				}
+
 
 
 		}
@@ -206,6 +206,9 @@ $slide-margin: map-get($grid-container-padding,'medium');
 			}
 		}
 	}
+	&:hover{
+		color: map-get($additional-palette,'secondary-darker');
+	}
 }
 .slick-nav{
 	display: flex;
@@ -228,17 +231,7 @@ $slide-margin: map-get($grid-container-padding,'medium');
 		flex-wrap: wrap;
 		max-width: calc(100% - 68px);
 
-		.slick-active {
 
-			button {
-				background: $medium-gray;
-			}
-		}
-
-
-		button {
-			background: $secondary-color;
-		}
 	}
 	@include breakpoint(xxlarge){
 		.slick-slider:not(.js-slick--center) + &:not(:empty){

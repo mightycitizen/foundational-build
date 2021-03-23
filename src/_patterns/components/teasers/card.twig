@@ -1,4 +1,4 @@
-<div class="card {{ card.modifier }}" >
+<div class="card {{ card.modifier }} {% if card.clickCard %}card--click{% endif %}" >
   {% if card.header is not empty %}
   <div class="card-divider">
     {{ card.header }}

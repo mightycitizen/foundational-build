@@ -6755,6 +6755,18 @@ a.thumbnail image {
   content: "";
 }
 
+.card--click {
+  position: relative;
+}
+.card--click a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .cta {
   background-color: #212944;
   color: #fefefe;

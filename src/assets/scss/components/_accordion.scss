@@ -37,19 +37,22 @@
       counter-increment: steps;
       position: relative;
       padding-left: rem-calc(60);
-      &:after{
+      display: flex;
+      .accordion-icon{
         position: absolute;
         left: 0;
         top: 0;
         height: 100%;
         display: inline-flex;
-        content: counter(steps);
         font-weight: bold;
         align-items: center;
         padding: rem-calc(15);
-        font-size: rem-calc(24);
+        font-size: rem-calc(18);
         background-color: map-get($additional-palette, 'primary-darker');
-
+        &:not([class*=icon-]):before{
+          content: counter(steps);
+          font-size: rem-calc(24);
+        }
       }
     }
   }

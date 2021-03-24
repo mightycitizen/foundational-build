@@ -31,4 +31,26 @@
       border-bottom: 2px solid $white;
     }
   }
+  &--icons{
+    counter-set: steps;
+    .accordion-title{
+      counter-increment: steps;
+      position: relative;
+      padding-left: rem-calc(60);
+      &:after{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        display: inline-flex;
+        content: counter(steps);
+        font-weight: bold;
+        align-items: center;
+        padding: rem-calc(15);
+        font-size: rem-calc(24);
+        background-color: map-get($additional-palette, 'primary-darker');
+
+      }
+    }
+  }
 }

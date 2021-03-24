@@ -6737,6 +6737,27 @@ a.thumbnail image {
 .accordion-item:not(:last-child) {
   border-bottom: 2px solid #fefefe;
 }
+.accordion--icons {
+  counter-set: steps;
+}
+.accordion--icons .accordion-title {
+  counter-increment: steps;
+  position: relative;
+  padding-left: 3.75rem;
+}
+.accordion--icons .accordion-title:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: inline-flex;
+  content: counter(steps);
+  font-weight: bold;
+  align-items: center;
+  padding: 0.9375rem;
+  font-size: 1.5rem;
+  background-color: #13304a;
+}
 
 .a2a_svg {
   max-width: 1.5625rem;

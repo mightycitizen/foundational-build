@@ -7,10 +7,10 @@
   {% endfor %}
 </ul>
 
-<div class="tabs-content" data-tabs-content="example-tabs">
+<div class="tabs-content" data-tabs-content="{{ id }}">
 
     {% for tab in tabs %}
-      <div id="{{ tab.id }}" class="tabs-panel {{tab.is_active ? 'is-active'}}">
+      <div tabindex="0" id="{{ tab.id }}" class="tabs-panel {{tab.is_active ? 'is-active'}}">
         {{ tab.content }}
       </div>
     {% endfor %}

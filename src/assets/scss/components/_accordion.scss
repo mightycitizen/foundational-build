@@ -1,5 +1,12 @@
 @import "../vendor/icomoon/variables";
 .accordion{
+  &-heading{
+    &:focus-within{
+      + .accordion-title{
+        background-color: $accordion-item-background-hover;
+      }
+    }
+  }
   &-title{
     padding-right: rem-calc(40);
     &:before{

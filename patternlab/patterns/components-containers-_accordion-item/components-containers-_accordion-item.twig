@@ -1,5 +1,5 @@
 <li class="accordion-item {% if item.accordion_instance == "1" %}is-active{% endif %}" data-accordion-item>
-  <h3><button class="accordion-trigger" {% if item.accordion_instance == "1" %}aria-expanded="true"{% endif %}>{{ item.heading }}</button></h3>
+  <h3 class="show-for-sr accordion-heading"><button class="accordion-trigger" {% if item.accordion_instance == "1" %}aria-expanded="true"{% endif %}>{{ item.heading }}</button></h3>
   <a aria-hidden tabindex="0" class="accordion-title" aria-controls="accordion-{{ item.accordion_instance }}" id="accordion-toggle-{{ item.accordion_instance }}">
     {{ item.heading }}
   </a>

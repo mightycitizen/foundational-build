@@ -6715,6 +6715,9 @@ a.thumbnail image {
   animation-delay: 700ms !important;
 }
 
+.accordion-heading:focus-within + .accordion-title {
+  background-color: #1b4367;
+}
 .accordion-title {
   padding-right: 2.5rem;
 }
@@ -7239,6 +7242,32 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .divider:after {
   content: "|";
+}
+
+.step-list {
+  counter-set: steps;
+  list-style-type: none;
+}
+.step-list li {
+  counter-increment: steps;
+  position: relative;
+  padding-left: 4.375rem;
+  margin-left: 0;
+}
+.step-list li:not(:last-child) {
+  margin-bottom: 1.875rem;
+}
+.step-list li > *:last-child {
+  margin-bottom: 0;
+}
+.step-list li:before {
+  content: counter(steps);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #266093;
 }
 
 .section {

@@ -7263,8 +7263,11 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .step-list li:before {
   content: counter(steps);
   position: absolute;
+  width: 4.375rem;
+  padding-right: 1.25rem;
+  text-align: right;
   left: 0;
-  top: 0;
+  top: -0.4375rem;
   font-size: 3rem;
   font-weight: bold;
   color: #266093;

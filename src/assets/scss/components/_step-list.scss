@@ -15,8 +15,11 @@
     &:before{
       content: counter(steps);
       position: absolute;
+      width: rem-calc(70);
+      padding-right: rem-calc(20);
+      text-align: right;
       left: 0;
-      top: 0;
+      top: rem-calc(-7);
       font-size: rem-calc(48);
       font-weight: bold;
       color: $primary-color;

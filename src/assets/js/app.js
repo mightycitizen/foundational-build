@@ -64,7 +64,7 @@ window.onYouTubeIframeAPIReady = function(){
           // width: '660',
 
 
-          playerVars: { 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 0 , 'showInfo': 0, 'mute': 1,'rel': 0},
+          playerVars: { 'origin': 'https://mightycitizen.github.io/','enablejsapi': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 0 , 'showInfo': 0, 'mute': 1,'rel': 0},
           videoId: youtubeId,
           events: {
               'onReady': onPlayerReady,

@@ -7,7 +7,7 @@ import tippy from 'tippy.js'; // tooltip
 import LazyLoad from 'vanilla-lazyload'; // lazy loading
 import Litepicker from 'litepicker'; // date picker
 import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
-
+import selectize from 'selectize';
 
 // initialize Foundation
 $(document).foundation();
@@ -18,6 +18,10 @@ $(document).foundation();
 
 const randomId = () => {
   return Math.random().toString(36).substr(2, 9);
+}
+
+const initSelectize = () => {
+  $('.js-selectize').selectize();
 }
 
 const initDatepicker = () => {
@@ -297,6 +301,7 @@ $(document).ready(function(){
   initLityAccessibility();
   initFoundationAccessibility();
   initDatepicker();
+  initSelectize();
 
 
 })

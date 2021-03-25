@@ -16,6 +16,16 @@ $(document).foundation();
 //   // newSize is the name of the now-current breakpoint, oldSize is the previous breakpoint
 // });
 
+$.fn.isInViewport = function() {
+  var elementTop = $(this).offset().top;
+  var elementBottom = $(this).offset().top + $(this).outerHeight();
+  var viewportTop = $(window).scrollTop();
+  let offsetFactor = 1;
+  const dataOffset = $(this).data('offset');
+  if (dataOffset) offsetFactor = eval(dataOffset);
+  return viewportTop + offsetFactor*$(window).outerHeight() > elementTop && viewportTop < elementBottom;
+};
+
 const randomId = () => {
   return Math.random().toString(36).substr(2, 9);
 }

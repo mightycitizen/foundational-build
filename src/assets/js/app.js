@@ -93,14 +93,12 @@ window.onYouTubeIframeAPIReady = function(){
 
       function onPlayerStateChange(event) {
         if (firstPlay){
-          setTimeout(() => {
-            holder.addClass(initializedClass);
-          }, 3250);
           if (trigger !== 'background'){
             setTimeout(() => {
               player.pauseVideo();
-            }, 100);
+            }, 50);
           }
+          holder.addClass(initializedClass);
         }
 
         if ( event.data == 1 ) {

@@ -7314,6 +7314,67 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   content: "";
 }
 
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.loader div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  -webkit-animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.loader div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+  animation-delay: -0.45s;
+}
+.loader div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+  animation-delay: -0.3s;
+}
+.loader div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+  animation-delay: -0.15s;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.video-wrapper .video-loader {
+  color: #fefefe;
+  display: flex;
+  pointer-events: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
 .video-wrapper .youtube-player {
   opacity: 0;
 }
@@ -7336,13 +7397,40 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   display: block;
   z-index: -2;
 }
-.video-wrapper.is-initialized.is-playing .youtube-player {
+.video-wrapper .video-container:before, .video-wrapper .video-container:after {
+  transition: 1.25s transform 2.8s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  content: "";
+  display: block;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  height: 6.25rem;
+  background-color: #0a0a0a;
+  z-index: 1;
+}
+.video-wrapper .video-container:before {
+  top: 0;
+}
+.video-wrapper .video-container:after {
+  bottom: 0;
+}
+.video-wrapper.is-initialized .video-loader {
+  opacity: 0;
+}
+.video-wrapper.is-initialized .video-container:before {
+  transform: translateY(-6.25rem);
+}
+.video-wrapper.is-initialized .video-container:after {
+  transform: translateY(6.25rem);
+}
+.video-wrapper.is-playing .youtube-player {
   opacity: 1;
   transition: 1s opacity;
 }
-.video-wrapper.is-initialized.is-playing .video-image-wrapper {
+.video-wrapper.is-playing .video-image-wrapper {
   opacity: 0;
-  transition: 1s opacity 0.25s;
+  transition: 1s opacity;
 }
 .video-wrapper[data-video-trigger=background] {
   position: relative;

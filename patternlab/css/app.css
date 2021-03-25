@@ -7186,6 +7186,70 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   opacity: 1;
 }
 
+.table-scroll {
+  width: 100%;
+  margin-bottom: 0.9375rem;
+}
+@media print, screen and (max-width: 39.99875em) {
+  .table-scroll {
+    padding-bottom: 0.3125rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: relative;
+    max-width: none !important;
+  }
+  .table-scroll table {
+    min-width: 120%;
+    margin-left: -0.0625rem;
+  }
+  .table-scroll-wrapper {
+    position: relative;
+  }
+  .table-scroll-wrapper:before, .table-scroll-wrapper:after {
+    content: "";
+    position: absolute;
+  }
+  .table-scroll-wrapper:after {
+    width: 2.1875rem;
+    height: 160%;
+    background: radial-gradient(at right, rgba(204, 204, 204, 0.4) 0%, rgba(204, 204, 204, 0) 50%);
+    right: 0;
+    top: -30%;
+    opacity: 1;
+    transition: 0.3s opacity;
+    z-index: 1;
+  }
+  .table-scroll-wrapper:before {
+    right: 0;
+  }
+  .table-scroll-wrapper.is-end:after {
+    opacity: 0;
+  }
+  .table-scroll:before, .table-scroll-wrapper:before {
+    top: 0;
+    height: calc(100% - 1.25rem);
+    background-color: #e6e6e6;
+    z-index: 1;
+    width: 0.0625rem;
+  }
+  .table-scroll:before {
+    left: 0;
+    height: calc(100% - 0.3125rem);
+    content: "";
+    position: absolute;
+  }
+}
+@media print, screen and (min-width: 64em) {
+  .table-scroll {
+    margin-bottom: 2.5rem;
+  }
+}
+.table-scroll table {
+  width: 100%;
+  table-layout: fixed;
+  margin-bottom: 0;
+}
+
 /* ------------------ Tooltip ------------------ */
 .tippy-box,
 .tippy-tooltip {

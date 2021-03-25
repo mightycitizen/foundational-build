@@ -35,6 +35,9 @@ const initSelectize = () => {
 }
 
 const initVideo = () => {
+  const
+    initializedClass = 'is-initialized',
+    playingClass = 'is-playing';
   var tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";
@@ -53,8 +56,6 @@ window.onYouTubeIframeAPIReady = function(){
           vid = holder.find('.youtube-player'),
           player,
           playing = false,
-          initializedClass = 'is-initialized',
-          playingClass = 'is-playing',
           trigger = holder.data('video-trigger'),
           firstPlay = true;
 
@@ -143,7 +144,7 @@ window.onYouTubeIframeAPIReady = function(){
 
 $('[data-video-trigger="click"]').on('click', function(){
   if ($(this).hasClass('is-playing')){
-    $(this).trigger('pause');
+    $(this).trigger('pause').removeClass(playingClass);
   }else{
     $(this).trigger('play');
   }

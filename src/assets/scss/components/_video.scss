@@ -21,6 +21,7 @@
         &-wrapper{
           width: 100%;
           position: relative;
+          transition: 1s opacity;
         }
         display: block;
         width: 100%;
@@ -79,7 +80,6 @@
       }
       .video-image-wrapper{
         opacity: 0;
-        transition: 1s opacity;
 
       }
     }

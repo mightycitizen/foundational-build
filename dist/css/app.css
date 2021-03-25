@@ -7385,6 +7385,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .video-wrapper .video-image-wrapper {
   width: 100%;
   position: relative;
+  transition: 1s opacity;
 }
 .video-wrapper .video-container {
   position: absolute;
@@ -7398,7 +7399,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   z-index: -2;
 }
 .video-wrapper .video-container:before, .video-wrapper .video-container:after {
-  transition: 1.25s transform 2.8s;
+  transition: 1.25s transform 2.85s;
   transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   content: "";
   display: block;
@@ -7430,7 +7431,6 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .video-wrapper.is-playing .video-image-wrapper {
   opacity: 0;
-  transition: 1s opacity;
 }
 .video-wrapper[data-video-trigger=background] {
   position: relative;

@@ -15,8 +15,11 @@ sass.compiler = require('sass');
 
 import webpackStream from 'webpack-stream';
 import webpack2      from 'webpack';
+import yargs         from 'yargs';
 
-const PRODUCTION = false
+
+//const PRODUCTION = true;
+const PRODUCTION = !!(yargs.argv.production);
 
 let webpackConfig = {
   mode: (PRODUCTION ? 'production' : 'development'),

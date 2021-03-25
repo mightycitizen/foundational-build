@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "scripts": {
     "start": "npm run watch",
-    "build": "gulp",
+    "build": "gulp --production",
     "compile": "gulp compile",
     "watch": "gulp watch",
     "styleguide": "gulp styleguide",
@@ -53,6 +53,7 @@
     "selectize": "^0.12.6",
     "slick-carousel": "^1.8.1",
     "tippy.js": "^6.3.1",
-    "vanilla-lazyload": "^17.3.1"
+    "vanilla-lazyload": "^17.3.1",
+    "yargs": "^16.2.0"
   }
 }

@@ -138,7 +138,7 @@ window.onYouTubeIframeAPIReady = function(){
 $(window).on('scroll', Foundation.util.throttle(
   function(){
 
-    $('.video-wrapper').each(function(){
+    $('.video-wrapper[data-video-trigger="scroll"]').each(function(){
       if ($(this).find('.youtube-player').isInViewport()){
         $(this).trigger('play');
       }else{

@@ -1,6 +1,29 @@
 .video{
   &-wrapper{
-    position: relative;
+
+    .video{
+
+      &-image{
+        &-wrapper{
+          width: 100%;
+          position: relative;
+        }
+        display: block;
+        width: 100%;
+      }
+      &-container{
+        position: absolute;
+        overflow: hidden;
+        background-color:$black;
+        left: 0;
+        top: 0%;
+        width: 100%;
+        height: 100%;
+        display: block;
+        z-index: -2;
+      }
+
+    }
     &.is-playing{
       .video-image-wrapper{
         opacity: 0;
@@ -8,53 +31,58 @@
 
       }
     }
-  }
-
-  &-image{
-    &-wrapper{
-      width: 100%;
+    &[data-video-trigger="background"]{
       position: relative;
-      &:before, &:after{
-        content: "";
-        display: block;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        position: absolute;
+      .youtube-player{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
-      &:before{
-        @include triangle(40px 30px, $black, right);
-        z-index: 1;
-        margin-left: rem-calc(5);
-      }
-      &:after{
-        width: rem-calc(80);
-        height: rem-calc(80);
-        background-color: $white;
-        border-radius: 100%;
+
+    }
+    &[data-video-trigger="scroll"]{
+      position: relative;
+
+
+      .video{
+
+        &-image{
+          &-wrapper{
+            &:before, &:after{
+              content: "";
+              display: block;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              position: absolute;
+            }
+            &:before{
+              @include triangle(40px 30px, $black, right);
+              z-index: 1;
+              margin-left: rem-calc(5);
+            }
+            &:after{
+              width: rem-calc(80);
+              height: rem-calc(80);
+              background-color: $white;
+              border-radius: 100%;
+            }
+          }
+        }
+        &-container{
+          position: absolute;
+          overflow: hidden;
+          background-color:$black;
+          left: 0;
+          top: 0%;
+          width: 100%;
+          height: 100%;
+          display: block;
+          z-index: -2;
+        }
+
       }
     }
-    display: block;
-    width: 100%;
-    //height: 100%;
-    //object-fit: cover;
-  }
-  &-container{
-    position: absolute;
-    z-index: -1;
-    overflow: hidden;
-    background-color:$black;
-
-
-  }
-  &-container{
-    position: absolute;
-    left: 0;
-    top: 0%;
-    width: 100%;
-    height: 100%;
-    display: block;
-    z-index: -2;
   }
 
 

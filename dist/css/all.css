@@ -7314,22 +7314,42 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   content: "";
 }
 
-.video-wrapper {
+.video-wrapper .video-image {
+  display: block;
+  width: 100%;
+}
+.video-wrapper .video-image-wrapper {
+  width: 100%;
   position: relative;
+}
+.video-wrapper .video-container {
+  position: absolute;
+  overflow: hidden;
+  background-color: #0a0a0a;
+  left: 0;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -2;
 }
 .video-wrapper.is-playing .video-image-wrapper {
   opacity: 0;
   transition: 1s opacity 0.25s;
 }
-.video-image {
-  display: block;
-  width: 100%;
-}
-.video-image-wrapper {
-  width: 100%;
+.video-wrapper[data-video-trigger=background] {
   position: relative;
 }
-.video-image-wrapper:before, .video-image-wrapper:after {
+.video-wrapper[data-video-trigger=background] .youtube-player {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.video-wrapper[data-video-trigger=scroll] {
+  position: relative;
+}
+.video-wrapper[data-video-trigger=scroll] .video-image-wrapper:before, .video-wrapper[data-video-trigger=scroll] .video-image-wrapper:after {
   content: "";
   display: block;
   left: 50%;
@@ -7337,7 +7357,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   transform: translate(-50%, -50%);
   position: absolute;
 }
-.video-image-wrapper:before {
+.video-wrapper[data-video-trigger=scroll] .video-image-wrapper:before {
   height: 0;
   width: 0;
   border-left: 30px solid #0a0a0a;
@@ -7346,20 +7366,16 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   z-index: 1;
   margin-left: 0.3125rem;
 }
-.video-image-wrapper:after {
+.video-wrapper[data-video-trigger=scroll] .video-image-wrapper:after {
   width: 5rem;
   height: 5rem;
   background-color: #fefefe;
   border-radius: 100%;
 }
-.video-container {
+.video-wrapper[data-video-trigger=scroll] .video-container {
   position: absolute;
-  z-index: -1;
   overflow: hidden;
   background-color: #0a0a0a;
-}
-.video-container {
-  position: absolute;
   left: 0;
   top: 0%;
   width: 100%;

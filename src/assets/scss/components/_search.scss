@@ -1,0 +1,11 @@
+@import '../vendor/icomoon/variables';
+
+.search{
+  &-toggle{
+    &.is-active{
+      .icon-search:before{
+        content: $icon-cross;
+      }
+    }
+  }
+}

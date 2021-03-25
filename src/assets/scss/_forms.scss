@@ -72,8 +72,8 @@ input[type="checkbox"] {
       +label {
 
         &:before {
-          background-color: $secondary-color;
-          border-color: $secondary-color;
+          background-color: $primary-color;
+          border-color: $primary-color;
         }
 
 
@@ -144,6 +144,7 @@ input[type="radio"] {
       border: $input-border;
       border-left: 0;
       padding: rem-calc(0 10);
+      background-color: $white;
     }
   }
 }

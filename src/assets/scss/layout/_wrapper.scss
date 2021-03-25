@@ -20,6 +20,9 @@ html, body, .l-wrapper{
   background-color: map-get($additional-palette,'secondary-darkest');
   color: $white;
   flex: none;
+  .search-toggle{
+    color: inherit;
+  }
 }
 
 

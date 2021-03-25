@@ -7246,27 +7246,8 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   color: inherit !important;
 }
 
-.helper {
-  font-size: 0.875rem;
-}
-
-.label {
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  letter-spacing: 0.02;
-}
-
-.meta {
-  font-weight: bold;
-}
-
-.divider {
-  display: inline-block;
-  margin: 0 0.625rem;
-}
-.divider:after {
-  content: "|";
+.search-toggle.is-active .icon-search:before {
+  content: "";
 }
 
 .helper {
@@ -7352,6 +7333,9 @@ html, body, .l-wrapper {
   background-color: #472810;
   color: #fefefe;
   flex: none;
+}
+.l-header .search-toggle {
+  color: inherit;
 }
 
 .l-footer {
@@ -9669,8 +9653,8 @@ input[type=checkbox].custom:not(foo) + label:after {
   font-size: 0.625rem;
 }
 input[type=checkbox].custom:not(foo):checked + label:before {
-  background-color: #d6884d;
-  border-color: #d6884d;
+  background-color: #266093;
+  border-color: #266093;
 }
 
 input[type=radio].custom:not(foo) + label:after {
@@ -9713,6 +9697,7 @@ input[type=radio].custom:not(foo) + label:before, input[type=radio].custom:not(f
   border: 1px solid #ccc;
   border-left: 0;
   padding: 0 0.625rem;
+  background-color: #fefefe;
 }
 
 input.js-date {

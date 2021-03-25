@@ -4,6 +4,13 @@
       <div class="cell medium-4">Header</div>
       <div class="cell medium-8">
         {% include 'components/navigation/menu.twig' %}
+        <button data-toggle="search-form search-toggle" data-toggler="is-active" id="search-toggle" class="search-toggle">
+          <span class="show-for-sr">Search</span>
+          <span class="icon-search"></span>
+        </button>
+        <div id="search-form" data-toggler=".hide" class="hide search-form">
+          {% include 'components/misc/simple-form.twig' %}
+        </div>
       </div>
     </div>
   </div>

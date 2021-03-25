@@ -64,7 +64,7 @@ window.onYouTubeIframeAPIReady = function(){
           // width: '660',
 
 
-          playerVars: { 'origin': 'https://mightycitizen.github.io/','enablejsapi': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 0 , 'showInfo': 0, 'mute': 1,'rel': 0},
+          playerVars: { 'enablejsapi': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 0 , 'showInfo': 0, 'mute': 1,'rel': 0},
           videoId: youtubeId,
           events: {
               'onReady': onPlayerReady,
@@ -74,7 +74,7 @@ window.onYouTubeIframeAPIReady = function(){
 
       function onPlayerReady() {
         player.playVideo();
-        player.pauseVideo();
+        if (holder.data('video-trigger') !== 'background') player.pauseVideo();
         init = true;
         setVideoSize();
 
@@ -135,10 +135,12 @@ window.onYouTubeIframeAPIReady = function(){
 }
 
 
+
+
 $(window).on('scroll', Foundation.util.throttle(
   function(){
 
-    $('.video-wrapper[data-video-trigger="scroll"]').each(function(){
+    $('[data-video-trigger="scroll"]').each(function(){
       if ($(this).find('.youtube-player').isInViewport()){
         $(this).trigger('play');
       }else{

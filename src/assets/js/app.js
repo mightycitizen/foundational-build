@@ -53,8 +53,10 @@ window.onYouTubeIframeAPIReady = function(){
           vid = holder.find('.youtube-player'),
           player,
           playing = false,
+          initializedClass = 'is-initialized',
           playingClass = 'is-playing',
-          init = false;
+          trigger = holder.data('video-trigger'),
+          firstPlay = true;
 
       vid.attr('tabindex', -1);
       const youtubeId = vid.data('youtube-id');
@@ -64,7 +66,7 @@ window.onYouTubeIframeAPIReady = function(){
           // width: '660',
 
 
-          playerVars: { 'enablejsapi': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 0 , 'showInfo': 0, 'mute': 1,'rel': 0},
+          playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 0 , 'showInfo': 0, 'mute': 1,'rel': 0},
           videoId: youtubeId,
           events: {
               'onReady': onPlayerReady,
@@ -74,9 +76,6 @@ window.onYouTubeIframeAPIReady = function(){
 
       function onPlayerReady() {
         player.playVideo();
-        if (holder.data('video-trigger') !== 'background') player.pauseVideo();
-        init = true;
-        setVideoSize();
 
         holder.bind('play', function(){
           if (!playing) {
@@ -93,33 +92,42 @@ window.onYouTubeIframeAPIReady = function(){
       }
 
       function onPlayerStateChange(event) {
-          // video playing
-          if (init){
-            if ( event.data == 1 ) {
-                playing = true;
-                holder.addClass(playingClass);
-            }
-            // video paused
-            if ( event.data == 2 ) {
-                playing = false;
-                holder.removeClass(playingClass)
-            }
+        if (firstPlay){
+          setTimeout(() => {
+            holder.addClass(initializedClass);
+          }, 3250);
+          if (trigger !== 'background'){
+            setTimeout(() => {
+              player.pauseVideo();
+            }, 100);
           }
+        }
+
+        if ( event.data == 1 ) {
+          playing = true;
+          holder.addClass(playingClass);
+        }else{
+          playing = false;
+          holder.removeClass(playingClass)
+        }
+
+        firstPlay = false;
+
       }
 
-      function setVideoSize(){
-          var w = holder.width()+200,
-              h = holder.height()+200;
+      // function setVideoSize(){
+      //     var w = holder.width()+200,
+      //         h = holder.height()+200;
 
-          if (w/h > 16/9){
-              player.setSize(w, w/16*9);
-              vid.css({'left': '0px'});
-          } else {
-              player.setSize(h/9*16, h);
-              vid.css({'left': ( -(h/9*16) / 2 ) + holder.width() / 2 });
-              vid.css({'top': -(h - holder.height()) / 2 });
-          }
-      }
+      //     if (w/h > 16/9){
+      //         player.setSize(w, w/16*9);
+      //         vid.css({'left': '0px'});
+      //     } else {
+      //         player.setSize(h/9*16, h);
+      //         vid.css({'left': ( -(h/9*16) / 2 ) + holder.width() / 2 });
+      //         vid.css({'top': -(h - holder.height()) / 2 });
+      //     }
+      // }
 
       player.clickHandler = (e) => {
           e.preventDefault();

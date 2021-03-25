@@ -7314,6 +7314,9 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   content: "";
 }
 
+.video-wrapper .youtube-player {
+  opacity: 0;
+}
 .video-wrapper .video-image {
   display: block;
   width: 100%;
@@ -7333,7 +7336,11 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   display: block;
   z-index: -2;
 }
-.video-wrapper.is-playing .video-image-wrapper {
+.video-wrapper.is-initialized.is-playing .youtube-player {
+  opacity: 1;
+  transition: 1s opacity;
+}
+.video-wrapper.is-initialized.is-playing .video-image-wrapper {
   opacity: 0;
   transition: 1s opacity 0.25s;
 }

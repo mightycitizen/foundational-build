@@ -1,8 +1,9 @@
 .video{
   &-wrapper{
-
+    .youtube-player{
+      opacity: 0;
+    }
     .video{
-
       &-image{
         &-wrapper{
           width: 100%;
@@ -24,7 +25,11 @@
       }
 
     }
-    &.is-playing{
+    &.is-initialized.is-playing{
+      .youtube-player{
+        opacity: 1;
+        transition: 1s opacity;
+      }
       .video-image-wrapper{
         opacity: 0;
         transition: 1s opacity 0.25s;

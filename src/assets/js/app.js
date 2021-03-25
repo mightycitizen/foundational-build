@@ -143,7 +143,7 @@ window.onYouTubeIframeAPIReady = function(){
 
 
 $('[data-video-trigger="click"]').on('click', function(){
-  if ($(this).hasClass('is-playing')){
+  if ($(this).hasClass(playingClass)){
     $(this).trigger('pause').removeClass(playingClass);
   }else{
     $(this).trigger('play');

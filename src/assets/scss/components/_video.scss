@@ -45,7 +45,12 @@
       }
 
     }
-    &[data-video-trigger="scroll"]{
+
+    &[data-video-trigger="click"]{
+      cursor: pointer;
+    }
+
+    &[data-video-trigger="scroll"], &[data-video-trigger="click"]{
       position: relative;
 
 

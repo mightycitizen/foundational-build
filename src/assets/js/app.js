@@ -143,11 +143,16 @@ window.onYouTubeIframeAPIReady = function(){
 }
 
 
-
+$('[data-video-trigger="click"]').on('click', function(){
+  if ($(this).hasClass('is-playing')){
+    $(this).trigger('pause');
+  }else{
+    $(this).trigger('play');
+  }
+});
 
 $(window).on('scroll', Foundation.util.throttle(
   function(){
-
     $('[data-video-trigger="scroll"]').each(function(){
       if ($(this).find('.youtube-player').isInViewport()){
         $(this).trigger('play');

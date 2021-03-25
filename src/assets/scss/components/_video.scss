@@ -1,0 +1,61 @@
+.video{
+  &-wrapper{
+    position: relative;
+    &.is-playing{
+      .video-image-wrapper{
+        opacity: 0;
+        transition: 1s opacity 0.25s;
+
+      }
+    }
+  }
+
+  &-image{
+    &-wrapper{
+      width: 100%;
+      position: relative;
+      &:before, &:after{
+        content: "";
+        display: block;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+      }
+      &:before{
+        @include triangle(40px 30px, $black, right);
+        z-index: 1;
+        margin-left: rem-calc(5);
+      }
+      &:after{
+        width: rem-calc(80);
+        height: rem-calc(80);
+        background-color: $white;
+        border-radius: 100%;
+      }
+    }
+    display: block;
+    width: 100%;
+    //height: 100%;
+    //object-fit: cover;
+  }
+  &-container{
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    background-color:$black;
+
+
+  }
+  &-container{
+    position: absolute;
+    left: 0;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: -2;
+  }
+
+
+}

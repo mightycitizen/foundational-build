@@ -2,6 +2,7 @@
 // this file is created by the json to sass gulp task,
 // see .json files in src/_patterns/global/base/*.json
 @import
+  "helpers/mixins",
   'helpers/functions';
 
 @import
@@ -91,6 +92,7 @@
   "components/tooltip",
   "components/top-bar",
   "components/search",
+  "components/video",
   "components/text",
   "components/step-list";
 
@@ -106,8 +108,7 @@
 
 @import
   "helpers/spacing",
-  "helpers/fonts",
-  "helpers/mixins";
+  "helpers/fonts";
 
 @import
   "forms",

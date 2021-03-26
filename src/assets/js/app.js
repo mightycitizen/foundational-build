@@ -8,8 +8,11 @@ import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
 import Litepicker from 'litepicker'; // @litepicker date picker
 import selectize from 'selectize'; // @selectize custom select dropdowns
 import Twig from 'twig'; // @twig
+import eventsTemplate from '../../_patterns/components/misc/_event.twig';
 
 import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
+
+//console.log(eventsTemplate)
 
 // @foundation init
 $(document).foundation();
@@ -34,9 +37,10 @@ const randomId = () => {
 }
 
 class Ajax {
-  constructor(endpoint){
+  constructor(endpoint, $results){
     this.options = {
-      endpoint
+      endpoint,
+      $results
     }
   }
   init(){
@@ -44,12 +48,13 @@ class Ajax {
     this.loadData();
   }
   loadData(){
-    $.getJSON( this.options.endpoint, function( data ) {
-      var items = [];
+    const self = this;
+    $.getJSON( self.options.endpoint, function( data ) {
+      console.log(eventsTemplate);
       console.log(data);
-      // Twig.renderFile('./js/event.twig', data, (err, html) => {
-      //   console.log(html);
-      // })
+      const template = Twig.twig({ data: eventsTemplate});
+      self.options.$results.html(template.render(data));
+
       // $.each( data, function( key, val ) {
       //   items.push( "<li id='" + key + "'>" + val + "</li>" );
       // });
@@ -67,7 +72,7 @@ class Ajax {
 
 // @ajax init
 const initAjax = () => {
-  const events = new Ajax('/js/data/events.json');
+  const events = new Ajax('/js/data/events.json', $('[data-events]'));
   events.init();
 }
 

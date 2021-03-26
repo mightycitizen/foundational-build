@@ -1,3 +1,11 @@
-<div>
-  {{ title }}
-</div>
+<h2>Ajax</h2>
+<div data-events></div>
+
+<h2>Partial include</h2>
+{% include 'components/misc/_event.twig' with {
+  "events": [
+    {
+      "title": "Event 1"
+    }
+  ]
+} %}

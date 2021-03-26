@@ -12,7 +12,6 @@ const babel = require('gulp-babel');
 const rename = require('gulp-rename');
 sass.compiler = require('sass');
 
-
 import webpackStream from 'webpack-stream';
 import webpack2      from 'webpack';
 import yargs         from 'yargs';
@@ -34,6 +33,10 @@ let webpackConfig = {
             compact: false
           }
         }
+      },
+      {
+        test: /\.twig$/i,
+        use: 'raw-loader',
       }
     ]
   },

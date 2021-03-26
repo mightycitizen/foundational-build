@@ -1,5 +1,7 @@
-
 {
-  "title": "Event 1"
+  "events": [
+    {
+      "title": "Event 1"
+    }
+  ]
 }
-

@@ -1,20 +1,20 @@
 
 import $ from 'jquery';
-import './lib/foundation-explicit-pieces'; // #foundation pick and choose Foundation plugins
-import 'slick-carousel'; // #slick carousel/slider
-import 'lity'; // #lity modal
-import tippy from 'tippy.js'; // #tippy tooltip
-import LazyLoad from 'vanilla-lazyload'; // #lazy lazy image and iframe loading
-import Litepicker from 'litepicker'; // #litepicker date picker
-import selectize from 'selectize'; // #selectize custom select dropdowns
+import './lib/foundation-explicit-pieces'; // @foundation pick and choose Foundation plugins
+import 'slick-carousel'; // @slick carousel/slider
+import 'lity'; // @lity modal
+import tippy from 'tippy.js'; // @tippy tooltip
+import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
+import Litepicker from 'litepicker'; // @litepicker date picker
+import selectize from 'selectize'; // @selectize custom select dropdowns
 
 import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
 
 
-// #foundation init
+// @foundation init
 $(document).foundation();
 
-// #foundation breakpoint event trigger
+// @foundation breakpoint event trigger
 // $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
 //   // newSize is the name of the now-current breakpoint, oldSize is the previous breakpoint
 // });
@@ -33,7 +33,7 @@ const randomId = () => {
   return Math.random().toString(36).substr(2, 9);
 }
 
-// #selectize init
+// @selectize init
 const initSelectize = () => {
   $('.js-selectize').selectize();
 }
@@ -188,7 +188,7 @@ const initTableScroll = () => {
 }
 
 
-// #litepicker init
+// @litepicker init
 const initDatepicker = () => {
   $('.js-date').each(function(){
     new Litepicker({
@@ -198,7 +198,7 @@ const initDatepicker = () => {
 }
 
 
-// #foundation accessibility init
+// @foundation accessibility init
 const initFoundationAccessibility = () => {
   // accordion accessibility
   $(document).on('click', '.accordion-trigger', function(event){
@@ -206,7 +206,7 @@ const initFoundationAccessibility = () => {
   })
 }
 
-// #lity accessibility init
+// @lity accessibility init
 const initLityAccessibility = () => {
   const dataAttr = 'trigger';
   $(document).on('click', '[data-lity]', function(event) {
@@ -253,7 +253,7 @@ $(document).on('click', 'a[href^="#"]:not([href="#"]):not([data-lity])',
     }
 });
 
-// #slick init pagination
+// @slick init pagination
 const slickPagination = (slick) => {
   if (slick.$dots){
     const numSlides = slick.$dots.find('>li').length;
@@ -325,7 +325,7 @@ const initTippy = () => {
 }
 
 
-// #lazy init
+// @lazy init
 const initLazy = () => {
   new LazyLoad({
     elements_selector: ".js-lazy"
@@ -334,7 +334,7 @@ const initLazy = () => {
 }
 
 
-// #slick init
+// @slick init
 const initSlick = () => {
 
   const $slick = $('.js-slick');
@@ -465,13 +465,13 @@ $(document).ready(function(){
   //Foundation.MediaQuery.is('medium down');
   //Foundation.MediaQuery.upTo('medium');
 
-  initTippy(); // #tippy init call
-  initLazy(); // #lazy init call
-  initSlick(); // #slick init call
-  initLityAccessibility(); // #lity init accessibility call
-  initFoundationAccessibility();  // #foundation init accessibility call
-  initDatepicker(); // #litepicker init call
-  initSelectize(); // #selectize init call
+  initTippy(); // @tippy init call
+  initLazy(); // @lazy init call
+  initSlick(); // @slick init call
+  initLityAccessibility(); // @lity init accessibility call
+  initFoundationAccessibility();  // @foundation init accessibility call
+  initDatepicker(); // @litepicker init call
+  initSelectize(); // @selectize init call
   initTableScroll(); // #table-scroll init call
   initVideo(); // #video init call
 

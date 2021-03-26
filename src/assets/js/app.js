@@ -1,5 +1,5 @@
 
-import $ from 'jquery';
+import $, { isArray } from 'jquery';
 import './lib/foundation-explicit-pieces'; // @foundation pick and choose Foundation plugins
 import 'slick-carousel'; // @slick carousel/slider
 import 'lity'; // @lity modal
@@ -42,37 +42,65 @@ class Ajax {
       endpoint,
       $results
     }
+    this.id = $results.attr('id');
+    this.$filters = $('[data-ajax-form=' + this.id + ']')
   }
   init(){
     this.bindEvents();
     this.loadData();
   }
+  updateResults(){
+    const self = this;
+    let data = self.data;
+    console.log(self.dataFiltered);
+    if (self.dataFiltered) data = self.dataFiltered;
+    const template = Twig.twig({ data: eventsTemplate });
+    self.options.$results.html(template.render(data));
+  }
+  filterResults(){
+    const self = this;
+    let dataFiltered = self.data;
+
+    self.$filters.find('[data-filter]:checked').each(function(){
+      const value = $(this).attr('value');
+      const name = $(this).attr('name');
+      //console.log(dataFiltered);
+      //console.log(value);
+      //console.log()
+      let events = dataFiltered.events.filter(item => {
+        let currValue = item[name];
+        if (Array.isArray(currValue)){
+          console.log(currValue);
+          return currValue.length > 0 && currValue.some(arrayItem => arrayItem.toString() === value )
+        }else{
+          return item[name].toString() === value
+        }
+      });
+    });
+
+    self.dataFiltered = dataFiltered;
+    console.log(self.dataFiltered);
+
+  }
   loadData(){
     const self = this;
     $.getJSON( self.options.endpoint, function( data ) {
-      console.log(eventsTemplate);
-      console.log(data);
-      const template = Twig.twig({ data: eventsTemplate});
-      self.options.$results.html(template.render(data));
-
-      // $.each( data, function( key, val ) {
-      //   items.push( "<li id='" + key + "'>" + val + "</li>" );
-      // });
-
-      // $( "<ul/>", {
-      //   "class": "my-new-list",
-      //   html: items.join( "" )
-      // }).appendTo( "body" );
+      self.data = data;
+      self.updateResults();
     });
   }
   bindEvents(){
-
+    const self = this;
+    self.$filters.find('[data-filter]').on('change', function(){
+      self.filterResults();
+      self.updateResults();
+    })
   }
 }
 
 // @ajax init
 const initAjax = () => {
-  const events = new Ajax('/js/data/events.json', $('[data-events]'));
+  const events = new Ajax('/js/data/events.json', $('[data-ajax]'));
   events.init();
 }
 

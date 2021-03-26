@@ -1,5 +1,19 @@
 <h2>Ajax</h2>
-<div data-events></div>
+<div data-ajax id="events">
+</div>
+<div data-ajax-form="events">
+  <fieldset>
+    <legend>Category</legend>
+    <span>
+      <input data-filter class="custom" type="radio" name="category" id="category_all" value="" checked/>
+      <label for="category_all">All</label>
+    </span>
+    <span>
+      <input data-filter class="custom" type="radio" name="category" id="category_1" value="20"/>
+      <label for="category_1">Category 1</label>
+    </span>
+  </fieldset>
+</div>
 
 <h2>Partial include</h2>
 <div>

@@ -1,7 +1,12 @@
 {
   "events": [
     {
-      "title": "Event 1"
+      "title": "Event 1",
+      "category": [20,24]
+    },
+    {
+      "title": "Event 2",
+      "category": []
     }
   ]
 }

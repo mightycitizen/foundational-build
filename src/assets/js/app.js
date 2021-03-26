@@ -39,7 +39,7 @@ const initSelectize = () => {
 }
 
 
-// #video init
+// @video init
 const initVideo = () => {
   const
     initializedClass = 'is-initialized',
@@ -473,7 +473,7 @@ $(document).ready(function(){
   initDatepicker(); // @litepicker init call
   initSelectize(); // @selectize init call
   initTableScroll(); // #table-scroll init call
-  initVideo(); // #video init call
+  initVideo(); // @video init call
 
 })
 

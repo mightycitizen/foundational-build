@@ -94,7 +94,10 @@
     "color": "light",
     "density": "compact",
     "layout": "horizontal",
-    "noViewAll": false
+    "noViewAll": false,
+    "logo": {
+      "url": "/patternlab/"
+    }
   },
   "uikits": [
     {

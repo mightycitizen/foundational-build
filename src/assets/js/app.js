@@ -1,17 +1,20 @@
 
 import $ from 'jquery';
-import 'slick-carousel'; // carousel/slider
-import 'lity'; // modal
-import './lib/foundation-explicit-pieces'; // pick and choose Foundation plugins
-import tippy from 'tippy.js'; // tooltip
-import LazyLoad from 'vanilla-lazyload'; // lazy loading
-import Litepicker from 'litepicker'; // date picker
-import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
-import selectize from 'selectize';
+import './lib/foundation-explicit-pieces'; // #foundation pick and choose Foundation plugins
+import 'slick-carousel'; // #slick carousel/slider
+import 'lity'; // #lity modal
+import tippy from 'tippy.js'; // #tippy tooltip
+import LazyLoad from 'vanilla-lazyload'; // #lazy lazy image and iframe loading
+import Litepicker from 'litepicker'; // #litepicker date picker
+import selectize from 'selectize'; // #selectize custom select dropdowns
 
-// initialize Foundation
+import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
+
+
+// #foundation init
 $(document).foundation();
 
+// #foundation breakpoint event trigger
 // $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
 //   // newSize is the name of the now-current breakpoint, oldSize is the previous breakpoint
 // });
@@ -30,139 +33,144 @@ const randomId = () => {
   return Math.random().toString(36).substr(2, 9);
 }
 
+// #selectize init
 const initSelectize = () => {
   $('.js-selectize').selectize();
 }
 
+
+// #video init
 const initVideo = () => {
   const
     initializedClass = 'is-initialized',
     playingClass = 'is-playing';
+
   var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
 
-// 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
+  window.onYouTubeIframeAPIReady = function(){
 
-window.onYouTubeIframeAPIReady = function(){
-
-  $('.video-wrapper').each(function(){
-
-
-      var holder = $(this),
-          vid = holder.find('.youtube-player'),
-          player,
-          playing = false,
-          trigger = holder.data('video-trigger'),
-          firstPlay = true;
-
-      vid.attr('tabindex', -1);
-      const youtubeId = vid.data('youtube-id');
-      player = new YT.Player(vid[0], {
-
-          // height: '450',
-          // width: '660',
+    $('.video-wrapper').each(function(){
 
 
-          playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 0 , 'showInfo': 0, 'mute': 1,'rel': 0},
-          videoId: youtubeId,
-          events: {
-              'onReady': onPlayerReady,
-              'onStateChange': onPlayerStateChange
-          }
-      });
+        var holder = $(this),
+            vid = holder.find('.youtube-player'),
+            player,
+            playing = false,
+            trigger = holder.data('video-trigger'),
+            firstPlay = true;
 
-      function onPlayerReady() {
-        player.playVideo();
+        vid.attr('tabindex', -1);
+        const youtubeId = vid.data('youtube-id');
+        player = new YT.Player(vid[0], {
 
-        holder.bind('play', function(){
-          if (!playing) {
-              player.playVideo();
-          }
-        })
+            // height: '450',
+            // width: '660',
 
-        holder.bind('pause', function(){
-          if (playing) {
-            player.pauseVideo();
-          }
-        })
 
-      }
+            playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 0 , 'showInfo': 0, 'mute': 1,'rel': 0},
+            videoId: youtubeId,
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
 
-      function onPlayerStateChange(event) {
-        if (firstPlay){
-          if (trigger !== 'background'){
-            setTimeout(() => {
+        function onPlayerReady() {
+          player.playVideo();
+
+          holder.bind('play', function(){
+            if (!playing) {
+                player.playVideo();
+            }
+          })
+
+          holder.bind('pause', function(){
+            if (playing) {
               player.pauseVideo();
-            }, 50);
-          }
-          holder.addClass(initializedClass);
+            }
+          })
+
         }
 
-        if ( event.data == 1 ) {
-          playing = true;
-          holder.addClass(playingClass);
-        }else{
-          playing = false;
-          holder.removeClass(playingClass)
+        function onPlayerStateChange(event) {
+          if (firstPlay){
+            if (trigger !== 'background'){
+              setTimeout(() => {
+                player.pauseVideo();
+              }, 50);
+            }
+            holder.addClass(initializedClass);
+          }
+
+          if ( event.data == 1 ) {
+            playing = true;
+            holder.addClass(playingClass);
+          }else{
+            playing = false;
+            holder.removeClass(playingClass)
+          }
+
+          firstPlay = false;
+
         }
 
-        firstPlay = false;
+        // function setVideoSize(){
+        //     var w = holder.width()+200,
+        //         h = holder.height()+200;
 
-      }
+        //     if (w/h > 16/9){
+        //         player.setSize(w, w/16*9);
+        //         vid.css({'left': '0px'});
+        //     } else {
+        //         player.setSize(h/9*16, h);
+        //         vid.css({'left': ( -(h/9*16) / 2 ) + holder.width() / 2 });
+        //         vid.css({'top': -(h - holder.height()) / 2 });
+        //     }
+        // }
 
-      // function setVideoSize(){
-      //     var w = holder.width()+200,
-      //         h = holder.height()+200;
+        player.clickHandler = (e) => {
+            e.preventDefault();
+            if (!playing) {
+                player.playVideo();
+            } else {
+                player.pauseVideo();
+            }
+        }
 
-      //     if (w/h > 16/9){
-      //         player.setSize(w, w/16*9);
-      //         vid.css({'left': '0px'});
-      //     } else {
-      //         player.setSize(h/9*16, h);
-      //         vid.css({'left': ( -(h/9*16) / 2 ) + holder.width() / 2 });
-      //         vid.css({'top': -(h - holder.height()) / 2 });
-      //     }
-      // }
-
-      player.clickHandler = (e) => {
-          e.preventDefault();
-          if (!playing) {
-              player.playVideo();
-          } else {
-              player.pauseVideo();
-          }
-      }
-
-
-  });
-}
-
-
-$('[data-video-trigger="click"]').on('click', function(){
-  if ($(this).hasClass(playingClass)){
-    $(this).trigger('pause').removeClass(playingClass);
-  }else{
-    $(this).trigger('play');
-  }
-});
-
-$(window).on('scroll', Foundation.util.throttle(
-  function(){
-    $('[data-video-trigger="scroll"]').each(function(){
-      if ($(this).find('.youtube-player').isInViewport()){
-        $(this).trigger('play');
-      }else{
-        $(this).trigger('pause');
-      }
 
     });
-  }, 50));
+  }
+
+
+  $('[data-video-trigger="click"]').on('click', function(){
+    if ($(this).hasClass(playingClass)){
+      $(this).trigger('pause').removeClass(playingClass);
+    }else{
+      $(this).trigger('play');
+    }
+  });
+
+  $(window).on('scroll', Foundation.util.throttle(
+    function(){
+      $('[data-video-trigger="scroll"]').each(function(){
+        if ($(this).find('.youtube-player').isInViewport()){
+          $(this).trigger('play');
+        }else{
+          $(this).trigger('pause');
+        }
+
+      });
+    }, 50));
 }
 
+
+// #table-scroll init
 const initTableScroll = () => {
   $('table').each(function(){
     $(this).wrap('<div class="table-scroll-wrapper"></div>');
@@ -179,6 +187,8 @@ const initTableScroll = () => {
 
 }
 
+
+// #litepicker init
 const initDatepicker = () => {
   $('.js-date').each(function(){
     new Litepicker({
@@ -187,6 +197,8 @@ const initDatepicker = () => {
   })
 }
 
+
+// #foundation accessibility init
 const initFoundationAccessibility = () => {
   // accordion accessibility
   $(document).on('click', '.accordion-trigger', function(event){
@@ -194,6 +206,7 @@ const initFoundationAccessibility = () => {
   })
 }
 
+// #lity accessibility init
 const initLityAccessibility = () => {
   const dataAttr = 'trigger';
   $(document).on('click', '[data-lity]', function(event) {
@@ -213,8 +226,6 @@ const initLityAccessibility = () => {
     $trigger.focus();
   });
 }
-
-
 
 // In-page smooth scroll, exclude from modal windows
 $(document).on('click', 'a[href^="#"]:not([href="#"]):not([data-lity])',
@@ -242,7 +253,7 @@ $(document).on('click', 'a[href^="#"]:not([href="#"]):not([data-lity])',
     }
 });
 
-
+// #slick init pagination
 const slickPagination = (slick) => {
   if (slick.$dots){
     const numSlides = slick.$dots.find('>li').length;
@@ -313,6 +324,8 @@ const initTippy = () => {
   });
 }
 
+
+// #lazy init
 const initLazy = () => {
   new LazyLoad({
     elements_selector: ".js-lazy"
@@ -320,6 +333,8 @@ const initLazy = () => {
   });
 }
 
+
+// #slick init
 const initSlick = () => {
 
   const $slick = $('.js-slick');
@@ -450,15 +465,15 @@ $(document).ready(function(){
   //Foundation.MediaQuery.is('medium down');
   //Foundation.MediaQuery.upTo('medium');
 
-  initTippy();
-  initLazy();
-  initSlick();
-  initLityAccessibility();
-  initFoundationAccessibility();
-  initDatepicker();
-  initSelectize();
-  initTableScroll();
-  initVideo();
+  initTippy(); // #tippy init call
+  initLazy(); // #lazy init call
+  initSlick(); // #slick init call
+  initLityAccessibility(); // #lity init accessibility call
+  initFoundationAccessibility();  // #foundation init accessibility call
+  initDatepicker(); // #litepicker init call
+  initSelectize(); // #selectize init call
+  initTableScroll(); // #table-scroll init call
+  initVideo(); // #video init call
 
 })
 

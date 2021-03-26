@@ -136,7 +136,7 @@ class Ajax {
 
 // @ajax init
 const initAjax = () => {
-  const events = new Ajax('/js/data/events.json', $('[data-ajax]'), 'events');
+  const events = new Ajax('/dist/js/data/events.json', $('[data-ajax]'), 'events');
   events.init();
 }
 

@@ -7,12 +7,10 @@ import tippy from 'tippy.js'; // @tippy tooltip
 import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
 import Litepicker from 'litepicker'; // @litepicker date picker
 import selectize from 'selectize'; // @selectize custom select dropdowns
-import Twig from 'twig'; // @twig
-import eventsTemplate from '../../_patterns/components/misc/_event.twig';
+import Twig from 'twig'; // @twig used with @ajax
+import eventsTemplate from '../../_patterns/components/misc/_event.twig'; // used with @ajax
 
 import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
-
-//console.log(eventsTemplate)
 
 // @foundation init
 $(document).foundation();

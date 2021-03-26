@@ -52,10 +52,9 @@ class Ajax {
   updateResults(){
     const self = this;
     let data = self.data;
-    console.log(self.dataFiltered);
     if (self.dataFiltered) data = self.dataFiltered;
     const template = Twig.twig({ data: eventsTemplate });
-    self.options.$results.html(template.render(data));
+    self.options.$results.html(template.render({ events: data }));
   }
   filterResults(){
     const self = this;
@@ -64,28 +63,26 @@ class Ajax {
     self.$filters.find('[data-filter]:checked').each(function(){
       const value = $(this).attr('value');
       const name = $(this).attr('name');
-      //console.log(dataFiltered);
-      //console.log(value);
-      //console.log()
-      let events = dataFiltered.events.filter(item => {
-        let currValue = item[name];
-        if (Array.isArray(currValue)){
-          console.log(currValue);
-          return currValue.length > 0 && currValue.some(arrayItem => arrayItem.toString() === value )
-        }else{
-          return item[name].toString() === value
-        }
-      });
+      if (value !== ''){
+        dataFiltered = dataFiltered.filter(item => {
+          let currValue = item[name];
+          if (Array.isArray(currValue)){
+            return currValue.length > 0 && currValue.some(arrayItem => arrayItem.toString() === value )
+          }else{
+            return item[name].toString() === value
+          }
+        });
+      }
     });
 
     self.dataFiltered = dataFiltered;
-    console.log(self.dataFiltered);
+
 
   }
   loadData(){
     const self = this;
     $.getJSON( self.options.endpoint, function( data ) {
-      self.data = data;
+      self.data = data.events;
       self.updateResults();
     });
   }

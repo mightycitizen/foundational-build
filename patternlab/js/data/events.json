@@ -2,10 +2,12 @@
   "events": [
     {
       "title": "Event 1",
+      "description": "Here is a description",
       "category": [20,24]
     },
     {
       "title": "Event 2",
+      "description": "",
       "category": []
     }
   ]

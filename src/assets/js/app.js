@@ -37,10 +37,11 @@ const randomId = () => {
 }
 
 class Ajax {
-  constructor(endpoint, $results){
+  constructor(endpoint, $results, key){
     this.options = {
       endpoint,
-      $results
+      $results,
+      key
     }
     this.id = $results.attr('id');
     this.$filters = $('[data-ajax-form=' + this.id + ']')
@@ -54,7 +55,7 @@ class Ajax {
     let data = self.data;
     if (self.dataFiltered) data = self.dataFiltered;
     const template = Twig.twig({ data: eventsTemplate });
-    self.options.$results.html(template.render({ events: data }));
+    self.options.$results.html(template.render({ [self.options.key]: data }));
   }
   filterResults(){
     const self = this;
@@ -75,6 +76,18 @@ class Ajax {
       }
     });
 
+    self.$filters.find('[data-filter-keywords]').each(function(){
+      const value = $(this).val();
+      const fields = $(this).data('filter-keywords').split(',');
+      if (value !== ''){
+        dataFiltered = dataFiltered.filter(item => {
+          return fields.some(field => {
+            return item[field].includes(value)
+          })
+        });
+      }
+    });
+
     self.dataFiltered = dataFiltered;
 
 
@@ -82,13 +95,13 @@ class Ajax {
   loadData(){
     const self = this;
     $.getJSON( self.options.endpoint, function( data ) {
-      self.data = data.events;
+      self.data = data[self.options.key];
       self.updateResults();
     });
   }
   bindEvents(){
     const self = this;
-    self.$filters.find('[data-filter]').on('change', function(){
+    self.$filters.find('[data-filter], [data-filter-keywords]').on('change', function(){
       self.filterResults();
       self.updateResults();
     })
@@ -97,7 +110,7 @@ class Ajax {
 
 // @ajax init
 const initAjax = () => {
-  const events = new Ajax('/js/data/events.json', $('[data-ajax]'));
+  const events = new Ajax('/js/data/events.json', $('[data-ajax]'), 'events');
   events.init();
 }
 

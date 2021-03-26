@@ -7435,6 +7435,12 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .video-wrapper[data-video-trigger=background] {
   position: relative;
 }
+.video-wrapper[data-video-trigger=background] .video-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .video-wrapper[data-video-trigger=background] .youtube-player {
   width: 100%;
   height: 100%;

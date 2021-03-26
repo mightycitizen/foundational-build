@@ -38,6 +38,35 @@ const initSelectize = () => {
   $('.js-selectize').selectize();
 }
 
+// @smooth-scroll init
+const initSmoothScroll = () => {
+  // In-page smooth scroll, exclude from modal windows
+  $(document).on('click', 'a[href^="#"]:not([href="#"]):not([data-lity])',
+  function(event) {
+    // On-page links
+    event.preventDefault();
+
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      //var targetHash = this.hash.substring(1);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 500);
+
+      }
+    }
+  });
+}
+
 
 // @video init
 const initVideo = () => {
@@ -227,33 +256,7 @@ const initLityAccessibility = () => {
   });
 }
 
-// In-page smooth scroll, exclude from modal windows
-$(document).on('click', 'a[href^="#"]:not([href="#"]):not([data-lity])',
-  function(event) {
-    // On-page links
-    event.preventDefault();
-
-    if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
-      location.hostname == this.hostname
-    ) {
-      // Figure out element to scroll to
-      var target = $(this.hash);
-      //var targetHash = this.hash.substring(1);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      // Does a scroll target exist?
-      if (target.length) {
-        // Only prevent default if animation is actually gonna happen
-
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 500);
-
-      }
-    }
-});
-
-// @slick init pagination
+// @slick pagination helper function
 const slickPagination = (slick) => {
   if (slick.$dots){
     const numSlides = slick.$dots.find('>li').length;
@@ -474,6 +477,6 @@ $(document).ready(function(){
   initSelectize(); // @selectize init call
   initTableScroll(); // #table-scroll init call
   initVideo(); // @video init call
-
+  initSmoothScroll(); // @smooth-scroll init
 })
 

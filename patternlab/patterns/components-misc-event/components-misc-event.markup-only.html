@@ -1,53 +1,60 @@
-<h2>Ajax</h2>
-<div data-ajax id="events">
-</div>
-<div data-ajax-form="events">
-  <span>
-    <input type="text" data-filter-keywords="title,description" name="keywords">
-  </span>
-  <fieldset>
-    <legend>Radio Category</legend>
-    <span>
-      <input data-filter class="custom" type="radio" name="categories" id="category_all" value="" checked/>
-      <label for="category_all">All</label>
-    </span>
-    <span>
-      <input data-filter class="custom" type="radio" name="categories" id="category_1" value="20"/>
-      <label for="category_1">Category 1</label>
-    </span>
-  </fieldset>
-  <fieldset data-filter-checkbox="groups">
-    <legend>Checkbox Group</legend>
+<div class="grid-container">
+  <h2>Ajax</h2>
+  <div class="grid-x grid-margin-x" data-sticky-container id="event-content">
+    <div class="cell medium-4" >
+    <div data-ajax-form="events" data-sticky data-sticky-on="medium" data-anchor="event-content">
+        <span>
+          <input type="text" data-filter-keywords="title,description" name="keywords">
+        </span>
+        <fieldset>
+          <legend>Radio Category</legend>
           <span>
-        <input class="custom" type="checkbox" name="groups" id="checkbox_0" value="0"/>
-        <label for="checkbox_0">Group 0</label>
-      </span>
+            <input data-filter class="custom" type="radio" name="categories" id="category_all" value="" checked/>
+            <label for="category_all">All</label>
+          </span>
           <span>
-        <input class="custom" type="checkbox" name="groups" id="checkbox_1" value="1"/>
-        <label for="checkbox_1">Group 1</label>
-      </span>
-          <span>
-        <input class="custom" type="checkbox" name="groups" id="checkbox_2" value="2"/>
-        <label for="checkbox_2">Group 2</label>
-      </span>
-          <span>
-        <input class="custom" type="checkbox" name="groups" id="checkbox_3" value="3"/>
-        <label for="checkbox_3">Group 3</label>
-      </span>
-          <span>
-        <input class="custom" type="checkbox" name="groups" id="checkbox_4" value="4"/>
-        <label for="checkbox_4">Group 4</label>
-      </span>
-          <span>
-        <input class="custom" type="checkbox" name="groups" id="checkbox_5" value="5"/>
-        <label for="checkbox_5">Group 5</label>
-      </span>
-    
-  </fieldset>
-</div>
+            <input data-filter class="custom" type="radio" name="categories" id="category_1" value="20"/>
+            <label for="category_1">Category 1</label>
+          </span>
+        </fieldset>
+        <fieldset data-filter-checkbox="groups">
+          <legend>Checkbox Group</legend>
+                      <span>
+              <input class="custom" type="checkbox" name="groups" id="checkbox_0" value="0"/>
+              <label for="checkbox_0">Group 0</label>
+            </span>
+                      <span>
+              <input class="custom" type="checkbox" name="groups" id="checkbox_1" value="1"/>
+              <label for="checkbox_1">Group 1</label>
+            </span>
+                      <span>
+              <input class="custom" type="checkbox" name="groups" id="checkbox_2" value="2"/>
+              <label for="checkbox_2">Group 2</label>
+            </span>
+                      <span>
+              <input class="custom" type="checkbox" name="groups" id="checkbox_3" value="3"/>
+              <label for="checkbox_3">Group 3</label>
+            </span>
+                      <span>
+              <input class="custom" type="checkbox" name="groups" id="checkbox_4" value="4"/>
+              <label for="checkbox_4">Group 4</label>
+            </span>
+                      <span>
+              <input class="custom" type="checkbox" name="groups" id="checkbox_5" value="5"/>
+              <label for="checkbox_5">Group 5</label>
+            </span>
+          
+        </fieldset>
+      </div>
 
-<h2>Partial include</h2>
-<div>
+    </div>
+    <div class="cell medium-8">
+      <div data-ajax id="events"></div>
+    </div>
+  </div>
+
+  <h2>Partial include</h2>
+  <div>
       <div class="card">
       <div class="card-section">
         <h2>Event 1</h2>
@@ -59,3 +66,6 @@
       </div>
     </div>
   </div>
+
+
+</div>

@@ -1,38 +1,46 @@
-<h2>Ajax</h2>
-<div data-ajax id="events">
-</div>
-<div data-ajax-form="events">
-  <span>
-    <input type="text" data-filter-keywords="title,description" name="keywords">
-  </span>
-  <fieldset>
-    <legend>Radio Category</legend>
-    <span>
-      <input data-filter class="custom" type="radio" name="categories" id="category_all" value="" checked/>
-      <label for="category_all">All</label>
-    </span>
-    <span>
-      <input data-filter class="custom" type="radio" name="categories" id="category_1" value="20"/>
-      <label for="category_1">Category 1</label>
-    </span>
-  </fieldset>
-  <fieldset data-filter-checkbox="groups">
-    <legend>Checkbox Group</legend>
-    {% for i in range (i, 5) %}
-      <span>
-        <input class="custom" type="checkbox" name="groups" id="checkbox_{{ i }}" value="{{ i }}"/>
-        <label for="checkbox_{{ i }}">Group {{ i }}</label>
-      </span>
-    {% endfor %}
+<div class="grid-container">
+  <h2>Ajax</h2>
+  <div class="grid-x grid-margin-x" data-sticky-container id="event-content">
+    <div class="cell medium-4" >
+    <div data-ajax-form="events" data-sticky data-sticky-on="medium" data-anchor="event-content">
+        <span>
+          <input type="text" data-filter-keywords="title,description" name="keywords">
+        </span>
+        <fieldset>
+          <legend>Radio Category</legend>
+          <span>
+            <input data-filter class="custom" type="radio" name="categories" id="category_all" value="" checked/>
+            <label for="category_all">All</label>
+          </span>
+          <span>
+            <input data-filter class="custom" type="radio" name="categories" id="category_1" value="20"/>
+            <label for="category_1">Category 1</label>
+          </span>
+        </fieldset>
+        <fieldset data-filter-checkbox="groups">
+          <legend>Checkbox Group</legend>
+          {% for i in range (i, 5) %}
+            <span>
+              <input class="custom" type="checkbox" name="groups" id="checkbox_{{ i }}" value="{{ i }}"/>
+              <label for="checkbox_{{ i }}">Group {{ i }}</label>
+            </span>
+          {% endfor %}
 
-  </fieldset>
-</div>
+        </fieldset>
+      </div>
 
-<h2>Partial include</h2>
-{% include 'components/misc/_event.twig' with {
-  "events": [
-    {
-      "title": "Event 1"
-    }
-  ]
-} %}
+    </div>
+    <div class="cell medium-8">
+      <div data-ajax id="events"></div>
+    </div>
+  </div>
+
+  <h2>Partial include</h2>
+  {% include 'components/misc/_event.twig' with {
+    "events": [
+      {
+        "title": "Event 1"
+      }
+    ]
+  } %}
+</div>

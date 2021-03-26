@@ -6,15 +6,25 @@
     <input type="text" data-filter-keywords="title,description" name="keywords">
   </span>
   <fieldset>
-    <legend>Category</legend>
+    <legend>Radio Category</legend>
     <span>
-      <input data-filter class="custom" type="radio" name="category" id="category_all" value="" checked/>
+      <input data-filter class="custom" type="radio" name="categories" id="category_all" value="" checked/>
       <label for="category_all">All</label>
     </span>
     <span>
-      <input data-filter class="custom" type="radio" name="category" id="category_1" value="20"/>
+      <input data-filter class="custom" type="radio" name="categories" id="category_1" value="20"/>
       <label for="category_1">Category 1</label>
     </span>
+  </fieldset>
+  <fieldset data-filter-checkbox="groups">
+    <legend>Checkbox Group</legend>
+    {% for i in range (i, 5) %}
+      <span>
+        <input class="custom" type="checkbox" name="groups" id="checkbox_{{ i }}" value="{{ i }}"/>
+        <label for="checkbox_{{ i }}">Group {{ i }}</label>
+      </span>
+    {% endfor %}
+
   </fieldset>
 </div>
 

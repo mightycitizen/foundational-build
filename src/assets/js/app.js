@@ -61,16 +61,42 @@ class Ajax {
     const self = this;
     let dataFiltered = self.data;
 
-    self.$filters.find('[data-filter]:checked').each(function(){
+    self.$filters.find('input[data-filter][type="radio"]:checked').each(function(){
       const value = $(this).attr('value');
       const name = $(this).attr('name');
       if (value !== ''){
         dataFiltered = dataFiltered.filter(item => {
           let currValue = item[name];
+          if (!currValue) return false;
+          //console.log(currValue);
           if (Array.isArray(currValue)){
-            return currValue.length > 0 && currValue.some(arrayItem => arrayItem.toString() === value )
+            return currValue.length > 0 && currValue.some(arrayItem => arrayItem.id.toString() === value )
           }else{
-            return item[name].toString() === value
+            return currValue.id.toString() === value
+          }
+        });
+      }
+    });
+
+    self.$filters.find('[data-filter-checkbox]').each(function(){
+      const name = $(this).data('filter-checkbox');
+      let values = [];
+
+      $(this).find('input[type="checkbox"]:checked').each(function(){
+        values.push($(this).val());
+      });
+
+      if (values.length > 0){
+
+        dataFiltered = dataFiltered.filter(item => {
+          let currValue = item[name];
+          if (!currValue) return false;
+          if (Array.isArray(currValue)){
+            if (currValue.length === 0) return false;
+            let intersection = currValue.filter(arrayItem => values.some(value => arrayItem.id.toString() === value));
+            return intersection.length > 0
+          }else{
+            return values.includes(currValue.id.toString())
           }
         });
       }
@@ -101,7 +127,7 @@ class Ajax {
   }
   bindEvents(){
     const self = this;
-    self.$filters.find('[data-filter], [data-filter-keywords]').on('change', function(){
+    self.$filters.find('[data-filter], [data-filter-keywords], [data-filter-checkbox] input[type="checkbox"]').on('change', function(){
       self.filterResults();
       self.updateResults();
     })

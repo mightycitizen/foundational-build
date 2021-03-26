@@ -3,10 +3,42 @@
     {
       "title": "Event 1",
       "description": "Here is a description",
-      "category": [20,24]
+      "groups": [{
+        "id": 1,
+        "title": "Group 1",
+        "url": "/"
+      },{
+        "id": 2,
+        "title": "Group 2",
+        "url": "/"
+      }],
+      "categories": [{
+        "id": 20,
+        "title": "Category 1",
+        "url": "/"
+      },{
+        "id": 23,
+        "title": "Category 2",
+        "url": "/"
+      }]
     },
     {
       "title": "Event 2",
+      "description": "",
+      "category": []
+    },
+    {
+      "title": "Event 3",
+      "description": "",
+      "category": []
+    },
+    {
+      "title": "Event 4",
+      "description": "",
+      "category": []
+    },
+    {
+      "title": "Event 5",
       "description": "",
       "category": []
     }

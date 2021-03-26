@@ -85,10 +85,8 @@
     &[data-video-trigger="background"]{
       position: relative;
       .video-container{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include center;
+        min-width: rem-calc(2000);
       }
       .youtube-player{
         width: 100%;
@@ -113,10 +111,7 @@
             &:before, &:after{
               content: "";
               display: block;
-              left: 50%;
-              top: 50%;
-              transform: translate(-50%, -50%);
-              position: absolute;
+              @include center;
             }
             &:before{
               @include triangle(40px 30px, $black, right);

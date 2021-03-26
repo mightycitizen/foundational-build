@@ -242,8 +242,7 @@ $slide-margin: map-get($grid-container-padding,'medium');
 			}
 			.slick-arrow{
 				position: absolute;
-				top: 50%;
-				transform: translateY(-50%);
+				@include vertical-center;
 				&:before{
 					font-size: rem-calc(30);
 				}

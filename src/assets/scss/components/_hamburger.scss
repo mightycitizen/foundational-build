@@ -35,8 +35,7 @@ $hamburger-color: $primary-color;
       pointer-events: none;
     }
     &-bar{
-      transform: translateY(-50%);
-      top: 50%;
+      @include vertical-center;
     }
 
     &:before{

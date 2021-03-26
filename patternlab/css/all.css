@@ -6846,8 +6846,9 @@ a.thumbnail image {
   pointer-events: none;
 }
 .hamburger-icon-bar {
-  transform: translateY(-50%);
+  position: absolute;
   top: 50%;
+  transform: translateY(-50%);
 }
 .hamburger-icon:before {
   transform: translateY(0px);
@@ -7129,6 +7130,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     position: absolute;
   }
   .slick-slider:not(.js-slick--center) + .slick-nav:not(:empty) .slick-arrow {
+    position: absolute;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -7440,6 +7442,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  min-width: 125rem;
 }
 .video-wrapper[data-video-trigger=background] .youtube-player {
   width: 100%;
@@ -7456,10 +7459,10 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .video-wrapper[data-video-trigger=scroll] .video-image-wrapper:before, .video-wrapper[data-video-trigger=scroll] .video-image-wrapper:after, .video-wrapper[data-video-trigger=click] .video-image-wrapper:before, .video-wrapper[data-video-trigger=click] .video-image-wrapper:after {
   content: "";
   display: block;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .video-wrapper[data-video-trigger=scroll] .video-image-wrapper:before, .video-wrapper[data-video-trigger=click] .video-image-wrapper:before {
   height: 0;

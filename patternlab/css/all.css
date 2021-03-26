@@ -6743,7 +6743,7 @@ a.thumbnail image {
 .accordion--icons .accordion-title {
   counter-increment: steps;
   position: relative;
-  padding-left: 3.75rem;
+  padding-left: 4.0625rem;
   display: flex;
 }
 .accordion--icons .accordion-title .accordion-icon {
@@ -6754,7 +6754,9 @@ a.thumbnail image {
   display: inline-flex;
   font-weight: bold;
   align-items: center;
-  padding: 0.9375rem;
+  justify-content: center;
+  padding: 0.9375rem 0.75rem;
+  width: 3.125rem;
   font-size: 1.125rem;
   background-color: #13304a;
 }

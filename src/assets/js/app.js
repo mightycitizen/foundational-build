@@ -7,9 +7,9 @@ import tippy from 'tippy.js'; // @tippy tooltip
 import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
 import Litepicker from 'litepicker'; // @litepicker date picker
 import selectize from 'selectize'; // @selectize custom select dropdowns
+import Twig from 'twig'; // @twig
 
 import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
-
 
 // @foundation init
 $(document).foundation();
@@ -31,6 +31,44 @@ $.fn.isInViewport = function() {
 
 const randomId = () => {
   return Math.random().toString(36).substr(2, 9);
+}
+
+class Ajax {
+  constructor(endpoint){
+    this.options = {
+      endpoint
+    }
+  }
+  init(){
+    this.bindEvents();
+    this.loadData();
+  }
+  loadData(){
+    $.getJSON( this.options.endpoint, function( data ) {
+      var items = [];
+      console.log(data);
+      // Twig.renderFile('./js/event.twig', data, (err, html) => {
+      //   console.log(html);
+      // })
+      // $.each( data, function( key, val ) {
+      //   items.push( "<li id='" + key + "'>" + val + "</li>" );
+      // });
+
+      // $( "<ul/>", {
+      //   "class": "my-new-list",
+      //   html: items.join( "" )
+      // }).appendTo( "body" );
+    });
+  }
+  bindEvents(){
+
+  }
+}
+
+// @ajax init
+const initAjax = () => {
+  const events = new Ajax('/js/data/events.json');
+  events.init();
 }
 
 // @selectize init
@@ -478,5 +516,6 @@ $(document).ready(function(){
   initTableScroll(); // #table-scroll init call
   initVideo(); // @video init call
   initSmoothScroll(); // @smooth-scroll init
+  initAjax(); // @ajax init
 })
 

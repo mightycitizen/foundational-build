@@ -36,7 +36,7 @@
     .accordion-title{
       counter-increment: steps;
       position: relative;
-      padding-left: rem-calc(60);
+      padding-left: rem-calc(65);
       display: flex;
       .accordion-icon{
         position: absolute;
@@ -46,7 +46,9 @@
         display: inline-flex;
         font-weight: bold;
         align-items: center;
-        padding: rem-calc(15);
+        justify-content: center;
+        padding: rem-calc(15 12);
+        width: rem-calc(50);
         font-size: rem-calc(18);
         background-color: map-get($additional-palette, 'primary-darker');
         &:not([class*=icon-]):before{

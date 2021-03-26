@@ -36,7 +36,7 @@
         display: block;
         z-index: -2;
         &:before, &:after{
-          transition: 1.25s transform 2.85s;
+          transition: 1.25s transform 2.9s;
           transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
           content: '';
           display: block;

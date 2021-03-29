@@ -36,7 +36,7 @@
         display: block;
         z-index: -2;
         &:before, &:after{
-          transition: 3s transform 2.25s;
+          transition: 1s transform;
           transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
           content: '';
           display: block;
@@ -85,8 +85,20 @@
     &[data-video-trigger="background"]{
       position: relative;
       .video-container{
-        @include center;
-        min-width: rem-calc(2000);
+        overflow: hidden;
+        iframe{
+          box-sizing: border-box;
+          height: 56.25vw;
+          left: 50%;
+          min-height: 100%;
+          min-width: 100%;
+          transform: translate(-50%, -50%);
+          position: absolute;
+          top: 50%;
+          width: 177.77777778vh;
+
+        }
+
       }
       .youtube-player{
         width: 100%;

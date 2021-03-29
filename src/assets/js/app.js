@@ -241,7 +241,7 @@ const initVideo = () => {
 
           function onPlayerReady() {
             player.playVideo();
-
+            setVideoSize();
             holder.bind('play', function(){
               if (!playing) {
                   player.playVideo();
@@ -291,6 +291,20 @@ const initVideo = () => {
           //         vid.css({'top': -(h - holder.height()) / 2 });
           //     }
           // }
+
+          function setVideoSize(){
+            var w = holder.width()+200,
+                h = holder.height()+200;
+
+            if (w/h > 16/9){
+                player.setSize(w, w/16*9);
+                vid.css({'left': '0px'});
+            } else {
+                player.setSize(h/9*16, h);
+                vid.css({'left': ( -(h/9*16) / 2 ) + holder.width() / 2 });
+                vid.css({'top': -(h - holder.height()) / 2 });
+            }
+          }
 
           player.clickHandler = (e) => {
               e.preventDefault();

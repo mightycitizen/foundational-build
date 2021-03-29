@@ -147,6 +147,10 @@ class Ajax {
   }
   bindEvents(){
     const self = this;
+    // self.$filters.on('submit', function(e){
+    //   e.preventDefault();
+    //   //self.updateResults();
+    // })
     self.$filters.find('button[type="reset"]').on('click', function(){
       delete self.dataFiltered;
       self.$filters.find('.is-active').removeClass('is-active'); // don't love this

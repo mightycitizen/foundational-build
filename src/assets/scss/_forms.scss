@@ -134,11 +134,12 @@ input[type="radio"] {
   &.simple{
     input.input-group-field{
       border-right: 0;
-      &:focus{
-        + .input-group-button{
-          border: $input-border-focus;
-          border-left: 0;
-        }
+    }
+
+    input.input-group-field:focus, .input-wrapper:focus-within{
+      + .input-group-button{
+        border: $input-border-focus;
+        border-left: 0;
       }
     }
     .input-group-button{

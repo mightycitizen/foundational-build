@@ -9946,7 +9946,7 @@ input[type=radio].custom:not(foo) + label:before, input[type=radio].custom:not(f
 .input-group.simple input.input-group-field {
   border-right: 0;
 }
-.input-group.simple input.input-group-field:focus + .input-group-button {
+.input-group.simple input.input-group-field:focus + .input-group-button, .input-group.simple .input-wrapper:focus-within + .input-group-button {
   border: 1px solid #666666;
   border-left: 0;
 }

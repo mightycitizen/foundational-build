@@ -6,12 +6,20 @@
         <form data-ajax-form="events" data-sticky data-sticky-on="medium" data-anchor="event-content">
           <div>
             <label for="keywords">Keywords</label>
-            <div class="input-wrapper">
-              <input type="text" id="keywords" placeholder="Search title, description" data-filter-keywords="title,description" name="keywords">
-              <button type="button" data-clear="keywords" class="input-clear">
-                <span class="icon-cross"></span>
-                <span class="show-for-sr">Clear keywords</span>
-              </button>
+            <div class="input-group simple">
+              <div class="input-wrapper">
+                <input type="text" id="keywords" placeholder="Search title, description" data-filter-keywords="title,description" name="keywords" class="input-group-field">
+                <button type="button" data-clear="keywords" class="input-clear">
+                  <span class="icon-cross"></span>
+                  <span class="show-for-sr">Clear keywords</span>
+                </button>
+              </div>
+              <div class="input-group-button">
+                <button type="button"  value="Submit">
+                  <span class="show-for-sr">Search</span>
+                  <span class="icon-search"></span>
+                </button>
+              </div>
             </div>
           </div>
           <hr>

@@ -226,11 +226,6 @@ const initVideo = () => {
           vid.attr('tabindex', -1);
           const youtubeId = vid.data('youtube-id');
           player = new YT.Player(vid[0], {
-
-              // height: '450',
-              // width: '660',
-
-
               playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 0 , 'showInfo': 0, 'mute': 1,'rel': 0},
               videoId: youtubeId,
               events: {
@@ -277,21 +272,6 @@ const initVideo = () => {
             firstPlay = false;
 
           }
-
-          // function setVideoSize(){
-          //     var w = holder.width()+200,
-          //         h = holder.height()+200;
-
-          //     if (w/h > 16/9){
-          //         player.setSize(w, w/16*9);
-          //         vid.css({'left': '0px'});
-          //     } else {
-          //         player.setSize(h/9*16, h);
-          //         vid.css({'left': ( -(h/9*16) / 2 ) + holder.width() / 2 });
-          //         vid.css({'top': -(h - holder.height()) / 2 });
-          //     }
-          // }
-
           function setVideoSize(){
             var w = holder.width()+200,
                 h = holder.height()+200;

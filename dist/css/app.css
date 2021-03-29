@@ -7462,6 +7462,9 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .video-wrapper[data-video-trigger=click] {
   cursor: pointer;
 }
+.video-wrapper[data-video-trigger=click]:hover .video-image-wrapper:after {
+  background-color: #a65d26;
+}
 .video-wrapper[data-video-trigger=scroll], .video-wrapper[data-video-trigger=click] {
   position: relative;
 }
@@ -7476,7 +7479,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .video-wrapper[data-video-trigger=scroll] .video-image-wrapper:before, .video-wrapper[data-video-trigger=click] .video-image-wrapper:before {
   height: 0;
   width: 0;
-  border-left: 30px solid #0a0a0a;
+  border-left: 30px solid #fefefe;
   border-bottom: 20px solid transparent;
   border-top: 20px solid transparent;
   z-index: 1;
@@ -7485,7 +7488,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .video-wrapper[data-video-trigger=scroll] .video-image-wrapper:after, .video-wrapper[data-video-trigger=click] .video-image-wrapper:after {
   width: 5rem;
   height: 5rem;
-  background-color: #fefefe;
+  background-color: #d6884d;
   border-radius: 100%;
 }
 .video-wrapper[data-video-trigger=scroll] .video-container, .video-wrapper[data-video-trigger=click] .video-container {

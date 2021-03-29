@@ -135,6 +135,7 @@ class Ajax {
     const self = this;
     self.$filters.find('button[type="reset"]').on('click', function(){
       delete self.dataFiltered;
+      self.$filters.find('.is-active').removeClass('is-active'); // don't love this
       self.updateResults();
     })
     self.$filters.find('[data-filter], [data-filter-keywords], [data-filter-checkbox] input[type="checkbox"]').on('change', function(){
@@ -215,97 +216,94 @@ const initVideo = () => {
   window.onYouTubeIframeAPIReady = function(){
 
     $('.video-wrapper').each(function(){
+          var holder = $(this),
+              vid = holder.find('.youtube-player'),
+              player,
+              playing = false,
+              trigger = holder.data('video-trigger'),
+              firstPlay = true;
+
+          vid.attr('tabindex', -1);
+          const youtubeId = vid.data('youtube-id');
+          player = new YT.Player(vid[0], {
+
+              // height: '450',
+              // width: '660',
 
 
-        var holder = $(this),
-            vid = holder.find('.youtube-player'),
-            player,
-            playing = false,
-            trigger = holder.data('video-trigger'),
-            firstPlay = true;
+              playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 0 , 'showInfo': 0, 'mute': 1,'rel': 0},
+              videoId: youtubeId,
+              events: {
+                  'onReady': onPlayerReady,
+                  'onStateChange': onPlayerStateChange
+              }
+          });
 
-        vid.attr('tabindex', -1);
-        const youtubeId = vid.data('youtube-id');
-        player = new YT.Player(vid[0], {
+          function onPlayerReady() {
+            player.playVideo();
 
-            // height: '450',
-            // width: '660',
+            holder.bind('play', function(){
+              if (!playing) {
+                  player.playVideo();
+              }
+            })
 
-
-            playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 0 , 'showInfo': 0, 'mute': 1,'rel': 0},
-            videoId: youtubeId,
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-            }
-        });
-
-        function onPlayerReady() {
-          player.playVideo();
-
-          holder.bind('play', function(){
-            if (!playing) {
-                player.playVideo();
-            }
-          })
-
-          holder.bind('pause', function(){
-            if (playing) {
-              player.pauseVideo();
-            }
-          })
-
-        }
-
-        function onPlayerStateChange(event) {
-          if (firstPlay){
-            if (trigger !== 'background'){
-              setTimeout(() => {
+            holder.bind('pause', function(){
+              if (playing) {
                 player.pauseVideo();
-              }, 50);
-            }
-            holder.addClass(initializedClass);
+              }
+            })
+
           }
 
-          if ( event.data == 1 ) {
-            playing = true;
-            holder.addClass(playingClass);
-          }else{
-            playing = false;
-            holder.removeClass(playingClass)
+          function onPlayerStateChange(event) {
+            if (firstPlay){
+              if (trigger !== 'background'){
+                setTimeout(() => {
+                  player.pauseVideo();
+                }, 50);
+              }
+              holder.addClass(initializedClass);
+            }
+
+            if ( event.data == 1 ) {
+              playing = true;
+              holder.addClass(playingClass);
+            }else{
+              playing = false;
+              holder.removeClass(playingClass)
+            }
+
+            firstPlay = false;
+
           }
 
-          firstPlay = false;
+          // function setVideoSize(){
+          //     var w = holder.width()+200,
+          //         h = holder.height()+200;
 
-        }
+          //     if (w/h > 16/9){
+          //         player.setSize(w, w/16*9);
+          //         vid.css({'left': '0px'});
+          //     } else {
+          //         player.setSize(h/9*16, h);
+          //         vid.css({'left': ( -(h/9*16) / 2 ) + holder.width() / 2 });
+          //         vid.css({'top': -(h - holder.height()) / 2 });
+          //     }
+          // }
 
-        // function setVideoSize(){
-        //     var w = holder.width()+200,
-        //         h = holder.height()+200;
-
-        //     if (w/h > 16/9){
-        //         player.setSize(w, w/16*9);
-        //         vid.css({'left': '0px'});
-        //     } else {
-        //         player.setSize(h/9*16, h);
-        //         vid.css({'left': ( -(h/9*16) / 2 ) + holder.width() / 2 });
-        //         vid.css({'top': -(h - holder.height()) / 2 });
-        //     }
-        // }
-
-        player.clickHandler = (e) => {
-            e.preventDefault();
-            if (!playing) {
-                player.playVideo();
-            } else {
-                player.pauseVideo();
-            }
-        }
+          player.clickHandler = (e) => {
+              e.preventDefault();
+              if (!playing) {
+                  player.playVideo();
+              } else {
+                  player.pauseVideo();
+              }
+          }
 
 
     });
   }
-
 
   $('[data-video-trigger="click"]').on('click', function(){
     if ($(this).hasClass(playingClass)){

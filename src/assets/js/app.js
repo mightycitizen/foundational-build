@@ -43,6 +43,8 @@ class Ajax {
     }
     this.id = $results.attr('id');
     this.$filters = $('[data-ajax-form=' + this.id + ']')
+    this.$noResults = $('[data-ajax-no-results=' + this.id + ']');
+    this.$numResults = $('[data-ajax-num-results=' + this.id + ']');
   }
   init(){
     this.bindEvents();
@@ -54,6 +56,9 @@ class Ajax {
     if (self.dataFiltered) data = self.dataFiltered;
     const template = Twig.twig({ data: eventsTemplate });
     self.options.$results.html(template.render({ [self.options.key]: data }));
+    this.$noResults.toggleClass('hide', data.length > 0);
+    this.$numResults.find('.value').text(data.length);
+    this.$numResults.toggleClass('hide', data.length === 0);
   }
   filterResults(){
     const self = this;

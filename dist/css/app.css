@@ -7349,6 +7349,9 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   -webkit-animation-delay: -0.15s;
   animation-delay: -0.15s;
 }
+.is-loaded .loader {
+  display: none;
+}
 
 @-webkit-keyframes loader {
   0% {

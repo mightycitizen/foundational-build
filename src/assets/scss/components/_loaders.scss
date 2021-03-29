@@ -28,6 +28,9 @@
       animation-delay: -0.15s;
     }
   }
+  .is-loaded &{
+    display: none;
+  }
 }
 
 @keyframes loader {

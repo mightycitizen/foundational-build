@@ -35,12 +35,15 @@ const randomId = () => {
 }
 
 class Ajax {
-  constructor(endpoint, $results, key){
+  constructor(endpoint, $results, key, filterRefresh){
     this.options = {
       endpoint,
-      $results,
-      key
+      key,
+      filterRefresh
     }
+
+    this.$results = $results;
+
     this.id = $results.attr('id');
     this.$filters = $('[data-ajax-form=' + this.id + ']')
     this.$noResults = $('[data-ajax-no-results=' + this.id + ']');
@@ -55,7 +58,7 @@ class Ajax {
     let data = self.data;
     if (self.dataFiltered) data = self.dataFiltered;
     const template = Twig.twig({ data: eventsTemplate });
-    self.options.$results.html(template.render({ [self.options.key]: data }));
+    self.$results.html(template.render({ [self.options.key]: data }));
     this.$noResults.toggleClass('hide', data.length > 0);
     this.$numResults.find('.value').text(data.length);
     this.$numResults.toggleClass('hide', data.length === 0);
@@ -63,72 +66,83 @@ class Ajax {
   filterResults(){
     const self = this;
     let dataFiltered = self.data;
-    self.$filters.find('input[data-filter]:checked').each(function(){
-      const value = $(this).attr('value');
-      const name = $(this).attr('name');
-      if (value !== ''){
-        dataFiltered = dataFiltered.filter(item => {
-          let currValue = item[name];
-          if (!currValue) return false;
-          //console.log(currValue);
-          if (Array.isArray(currValue)){
+    if (self.options.filterRefresh){
+      self.loadData();
+    }else{
+      self.$filters.find('input[data-filter]:checked').each(function(){
+        const value = $(this).attr('value');
+        const name = $(this).attr('name');
+        if (value !== ''){
+          dataFiltered = dataFiltered.filter(item => {
+            let currValue = item[name];
+            if (!currValue) return false;
+            //console.log(currValue);
+            if (Array.isArray(currValue)){
 
-            return currValue.length > 0 && currValue.some(arrayItem => {
-              const checkVal = arrayItem.id || arrayItem;
-              return checkVal.toString() === value })
-          }else{
-            const checkVal = currValue.id || currValue;
-            return checkVal.toString() === value
-          }
-        });
-      }
-    });
-
-    self.$filters.find('[data-filter-checkbox]').each(function(){
-      const name = $(this).data('filter-checkbox');
-      let values = [];
-
-      $(this).find('input[type="checkbox"]:checked').each(function(){
-        values.push($(this).val());
+              return currValue.length > 0 && currValue.some(arrayItem => {
+                const checkVal = arrayItem.id || arrayItem;
+                return checkVal.toString() === value })
+            }else{
+              const checkVal = currValue.id || currValue;
+              return checkVal.toString() === value
+            }
+          });
+        }
       });
+      self.$filters.find('[data-filter-checkbox]').each(function(){
+        const name = $(this).data('filter-checkbox');
+        let values = [];
 
-      if (values.length > 0){
-
-        dataFiltered = dataFiltered.filter(item => {
-          let currValue = item[name];
-          if (!currValue) return false;
-          if (Array.isArray(currValue)){
-            if (currValue.length === 0) return false;
-            let intersection = currValue.filter(arrayItem => values.some(value => arrayItem.id.toString() === value));
-            return intersection.length > 0
-          }else{
-            return values.includes(currValue.id.toString())
-          }
+        $(this).find('input[type="checkbox"]:checked').each(function(){
+          values.push($(this).val());
         });
-      }
-    });
 
-    self.$filters.find('[data-filter-keywords]').each(function(){
-      const value = $(this).val();
-      const fields = $(this).data('filter-keywords').split(',');
-      if (value !== ''){
-        dataFiltered = dataFiltered.filter(item => {
-          return fields.some(field => {
-            return item[field].includes(value)
-          })
-        });
-      }
-    });
+        if (values.length > 0){
 
-    self.dataFiltered = dataFiltered;
-
+          dataFiltered = dataFiltered.filter(item => {
+            let currValue = item[name];
+            if (!currValue) return false;
+            if (Array.isArray(currValue)){
+              if (currValue.length === 0) return false;
+              let intersection = currValue.filter(arrayItem => values.some(value => arrayItem.id.toString() === value));
+              return intersection.length > 0
+            }else{
+              return values.includes(currValue.id.toString())
+            }
+          });
+        }
+      });
+      self.$filters.find('[data-filter-keywords]').each(function(){
+        const value = $(this).val();
+        const fields = $(this).data('filter-keywords').split(',');
+        if (value !== ''){
+          dataFiltered = dataFiltered.filter(item => {
+            return fields.some(field => {
+              return item[field].includes(value)
+            })
+          });
+        }
+      });
+      self.dataFiltered = dataFiltered;
+    }
 
   }
   loadData(){
     const self = this;
-    $.getJSON( self.options.endpoint, function( data ) {
+    let ajaxOptions = {
+      url: self.options.endpoint,
+      method: 'GET'
+    };
+
+    if (self.options.filterRefresh){
+      //ajaxOptions.method = 'POST';
+      ajaxOptions.data = self.$filters.serialize();
+    }
+
+    $.ajax( ajaxOptions).done(function( data ) {
       self.data = data[self.options.key];
       self.updateResults();
+      self.$results.addClass('is-loaded');
     });
   }
   bindEvents(){

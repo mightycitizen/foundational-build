@@ -79,7 +79,7 @@
       }
       .video-image-wrapper{
         opacity: 0;
-        transition: 0.5s opacity 0.25s;
+        transition: 0.5s opacity;
       }
     }
     &[data-video-trigger="background"]{

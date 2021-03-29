@@ -7434,7 +7434,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .video-wrapper.is-playing .video-image-wrapper {
   opacity: 0;
-  transition: 0.5s opacity 0.25s;
+  transition: 0.5s opacity;
 }
 .video-wrapper[data-video-trigger=background] {
   position: relative;

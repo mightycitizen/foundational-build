@@ -13,11 +13,11 @@
         "url": "/"
       }],
       "categories": [{
-        "id": 20,
+        "id": 1,
         "title": "Category 1",
         "url": "/"
       },{
-        "id": 23,
+        "id": 2,
         "title": "Category 2",
         "url": "/"
       }]

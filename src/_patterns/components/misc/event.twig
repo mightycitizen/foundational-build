@@ -13,10 +13,12 @@
             <input data-filter class="custom" type="radio" name="categories" id="category_all" value="" checked/>
             <label for="category_all">All</label>
           </span>
-          <span>
-            <input data-filter class="custom" type="radio" name="categories" id="category_1" value="20"/>
-            <label for="category_1">Category 1</label>
-          </span>
+          {% for i in range (i, 2) %}
+            <span>
+              <input data-filter class="custom" type="radio" name="categories" id="category_{{ i }}" value="{{ i }}"/>
+              <label for="category_{{ i }}">Category {{ i }}</label>
+            </span>
+          {% endfor %}
         </fieldset>
         <fieldset data-filter-checkbox="groups">
           <legend>Checkbox Group</legend>

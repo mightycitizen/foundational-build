@@ -133,6 +133,10 @@ class Ajax {
   }
   bindEvents(){
     const self = this;
+    self.$filters.find('button[type="reset"]').on('click', function(){
+      delete self.dataFiltered;
+      self.updateResults();
+    })
     self.$filters.find('[data-filter], [data-filter-keywords], [data-filter-checkbox] input[type="checkbox"]').on('change', function(){
       self.filterResults();
       self.updateResults();

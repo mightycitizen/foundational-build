@@ -10037,4 +10037,18 @@ blockquote:before {
   font-size: 1.875rem;
 }
 
+[class*=bg-] hr {
+  border-bottom-color: #666666;
+}
+[class*=bg-][class*=dark] hr {
+  border-bottom-color: #fefefe;
+}
+
+[class*=bg-][class*=dark] {
+  color: #fefefe;
+}
+[class*=bg-][class*=dark] label {
+  color: inherit;
+}
+
 

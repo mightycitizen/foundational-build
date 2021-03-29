@@ -48,6 +48,7 @@ class Ajax {
     this.$filters = $('[data-ajax-form=' + this.id + ']')
     this.$noResults = $('[data-ajax-no-results=' + this.id + ']');
     this.$numResults = $('[data-ajax-num-results=' + this.id + ']');
+    this.$toggles = $('[data-ajax-toggles=' + this.id + ']');
   }
   init(){
     this.bindEvents();
@@ -145,18 +146,39 @@ class Ajax {
       self.$results.addClass('is-loaded');
     });
   }
+  getLabel(field){
+    const id = field.attr('id');
+    const $label = $('label[for='+ id +']');
+    if (!$label) return false;
+    return $label.text();
+  }
+  buildToggles(elem){
+    const label = this.getLabel(elem);
+    if (label) this.$toggles.append('<button class="button tiny" type="button" data-ajax-toggle="'+elem.attr('id')+'">'+label+'<span class="icon-cross"></span></button>');
+  }
   bindEvents(){
     const self = this;
-    // self.$filters.on('submit', function(e){
-    //   e.preventDefault();
-    //   //self.updateResults();
-    // })
+    $(document).on('click', '[data-ajax-toggle]', function(e){
+      const { currentTarget } = e;
+      const fieldId = $(this).data('ajax-toggle');
+      if (fieldId){
+        $('#'+fieldId).prop('checked', false).trigger('change');
+      }
+      console.log($(currentTarget));
+      $(currentTarget).remove();
+    })
     self.$filters.find('button[type="reset"]').on('click', function(){
       delete self.dataFiltered;
       self.$filters.find('.is-active').removeClass('is-active'); // don't love this
       self.updateResults();
     })
-    self.$filters.find('[data-filter], [data-filter-keywords], [data-filter-checkbox] input[type="checkbox"]').on('change', function(){
+    self.$filters.find('[data-filter-keywords]').on('change', function(){
+      self.filterResults();
+      self.updateResults();
+    });
+    self.$filters.find('[data-filter], [data-filter-checkbox] input[type="checkbox"]').on('change', function(e){
+      const { checked } = e.target;
+      if (checked) self.buildToggles($(this));
       self.filterResults();
       self.updateResults();
     })

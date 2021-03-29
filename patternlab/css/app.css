@@ -9963,6 +9963,23 @@ select {
   background-size: 12px 12px;
 }
 
+.input-wrapper {
+  position: relative;
+}
+.input-clear {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  font-size: 0.625rem;
+  opacity: 0;
+  padding: 0.625rem;
+  cursor: pointer;
+}
+.is-active + .input-clear {
+  opacity: 1;
+}
+
 .icon.tiny {
   font-size: 0.625rem;
 }

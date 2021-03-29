@@ -44,21 +44,3 @@ $additional-palette: ();
 
 
 //@debug $additional-palette;
-
-
-
-hr{
-  [class*=bg-] &{
-    border-bottom-color: $dark-gray;
-  }
-  [class*=bg-][class*=dark] &{
-    border-bottom-color: $white;
-  }
-}
-
-[class*=bg-][class*=dark]{
-  color: $white;
-  label{
-    color: inherit;
-  }
-}

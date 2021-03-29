@@ -144,6 +144,19 @@ class Ajax {
   }
 }
 
+// @form helpers init
+const initFormHelpers = () => {
+  $('[data-clear]').each(function(){
+    const $field = $('#'+$(this).data('clear'));
+    $field.on('change', function(){
+      $(this).toggleClass('is-active', $field.val() !== '');
+    })
+    $(this).on('click', function(){
+      if ($field) $field.val('').trigger('change');
+    })
+  });
+}
+
 // @ajax init
 const initAjax = () => {
   const events = new Ajax('/js/data/events.json', $('[data-ajax]'), 'events');
@@ -596,5 +609,6 @@ $(document).ready(function(){
   initVideo(); // @video init call
   initSmoothScroll(); // @smooth-scroll init
   initAjax(); // @ajax init
+  initFormHelpers(); // @form helpers init
 })
 

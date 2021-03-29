@@ -9865,6 +9865,7 @@ input[type=radio].custom:not(foo) + label:before {
   height: 1rem;
   width: 1rem;
   top: 0.3125rem;
+  background-color: #fefefe;
 }
 input[type=checkbox].custom:not(foo) + label:hover, input[type=checkbox].custom:not(foo) + label:focus,
 input[type=radio].custom:not(foo) + label:hover,

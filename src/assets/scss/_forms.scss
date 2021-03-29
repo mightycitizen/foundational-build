@@ -21,6 +21,7 @@ input[type="radio"].custom {
         height: rem-calc(16);
         width: rem-calc(16);
         top: rem-calc(5);
+        background-color: $white;
       }
 
       &:hover,

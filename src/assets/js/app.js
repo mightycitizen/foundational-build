@@ -1,5 +1,5 @@
 
-import $, { isArray } from 'jquery';
+import $ from 'jquery';
 import './lib/foundation-explicit-pieces'; // @foundation pick and choose Foundation plugins
 import 'slick-carousel'; // @slick carousel/slider
 import 'lity'; // @lity modal
@@ -58,8 +58,7 @@ class Ajax {
   filterResults(){
     const self = this;
     let dataFiltered = self.data;
-
-    self.$filters.find('input[data-filter][type="radio"]:checked').each(function(){
+    self.$filters.find('input[data-filter]:checked').each(function(){
       const value = $(this).attr('value');
       const name = $(this).attr('name');
       if (value !== ''){
@@ -68,9 +67,13 @@ class Ajax {
           if (!currValue) return false;
           //console.log(currValue);
           if (Array.isArray(currValue)){
-            return currValue.length > 0 && currValue.some(arrayItem => arrayItem.id.toString() === value )
+
+            return currValue.length > 0 && currValue.some(arrayItem => {
+              const checkVal = arrayItem.id || arrayItem;
+              return checkVal.toString() === value })
           }else{
-            return currValue.id.toString() === value
+            const checkVal = currValue.id || currValue;
+            return checkVal.toString() === value
           }
         });
       }
@@ -134,7 +137,7 @@ class Ajax {
 
 // @ajax init
 const initAjax = () => {
-  const events = new Ajax('/dist/js/data/events.json', $('[data-ajax]'), 'events');
+  const events = new Ajax('/js/data/events.json', $('[data-ajax]'), 'events');
   events.init();
 }
 

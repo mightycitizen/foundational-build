@@ -25,7 +25,8 @@
     {
       "title": "Event 2",
       "description": "",
-      "category": []
+      "category": [],
+      "active": 1
     },
     {
       "title": "Event 3",

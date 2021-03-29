@@ -66,10 +66,10 @@
       "data": "patternlab/styleguide/data/",
       "annotations": "patternlab/annotations/",
       "styleguide": "patternlab/styleguide/",
-      "js": "patternlab/dist/js",
-      "images": "patternlab/dist/images",
-      "fonts": "patternlab/dist/fonts",
-      "css": "patternlab/dist/css"
+      "js": "patternlab/js",
+      "images": "patternlab/images",
+      "fonts": "patternlab/fonts",
+      "css": "patternlab/css"
     }
   },
   "patternExtension": "twig",

@@ -7,6 +7,7 @@
           <label for="keywords">Keywords</label>
           <input type="text" id="keywords" data-filter-keywords="title,description" name="keywords">
         </div>
+        <hr>
         <fieldset>
           <legend>Radio Category</legend>
           <span>
@@ -20,6 +21,7 @@
             </span>
           {% endfor %}
         </fieldset>
+        <hr>
         <fieldset data-filter-checkbox="groups">
           <legend>Checkbox Group</legend>
           {% for i in range (i, 5) %}
@@ -30,8 +32,14 @@
           {% endfor %}
 
         </fieldset>
+        <div>
+          <hr>
+            <span>
+              <input data-filter class="custom" type="checkbox" name="active" id="checkbox_single" value="1"/>
+              <label for="checkbox_single">Active</label>
+            </span>
+        </div>
       </div>
-
     </div>
     <div class="cell medium-8">
       <div data-ajax id="events"></div>

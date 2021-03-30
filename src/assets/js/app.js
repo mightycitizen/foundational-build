@@ -258,6 +258,7 @@ class Ajax {
 
     if (self.options.filterRefresh){
       //ajaxOptions.method = 'POST';
+      console.log(self.$filters.serialize());
       ajaxOptions.data = self.$filters.serialize();
     }
 
@@ -316,11 +317,18 @@ class Ajax {
       }
       $(currentTarget).remove();
     })
-    self.$filters.find('button[type="reset"]').on('click', function(){
+    self.$filters.on('reset', function(){
       delete self.dataFiltered;
+      self.total = self.data.length;
       self.clearToggles();
       self.$filters.find('.is-active').removeClass('is-active'); // don't love this for removing the input-clear Xes
-      self.updateResults();
+      if (self.options.filterRefresh){
+        setTimeout(() => {
+          self.loadData();
+        }, (50));
+      }else{
+        self.updateResults();
+      }
     })
     self.$filters.find('[data-filter-keywords]').on('change', function(){
       self.filterResults();
@@ -350,7 +358,7 @@ const initFormHelpers = () => {
 
 // @ajax init
 const initAjax = () => {
-  const events = new Ajax('/js/data/events.json', $('[data-ajax]'), 'events', false, 1);
+  const events = new Ajax('/js/data/events.json', $('[data-ajax]'), 'events', false,true, 1);
   events.init();
 }
 

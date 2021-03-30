@@ -126,7 +126,7 @@ class Ajax {
     let links = {}
     let pageBase;
     let paginationObject;
-    if (self.options.endpointRefresh){
+    if (self.options.filterRefresh){
       // @craft pagination
       const paginationData = self.meta.pagination;
       links = paginationData.links;
@@ -142,7 +142,10 @@ class Ajax {
     links.pages = [];
     paginationObject.pages.map(page => {
       let url = page;
-      if (self.options.endpointRefresh) pageBase.replace(/page=(\d)+/,'page=' + page);
+      console.log(self.options.filterRefresh);
+      console.log(pageBase);
+      if (self.options.filterRefresh && pageBase) url = pageBase.replace(/page=(\d)+/,'page=' + page);
+      console.log(url)
       links.pages.push({
         url,
         pageIndex: page,

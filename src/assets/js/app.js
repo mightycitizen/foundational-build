@@ -58,7 +58,10 @@ class Ajax {
     const self = this;
     let data = self.data;
     if (self.dataFiltered) data = self.dataFiltered;
+    //console.log(eventsTemplate);
     const template = Twig.twig({ data: eventsTemplate });
+    //console.log(template);
+    //console.log(data);
     self.$results.html(template.render({ [self.options.key]: data }));
     this.$noResults.toggleClass('hide', data.length > 0);
     this.$numResults.find('.value').text(data.length);
@@ -119,12 +122,14 @@ class Ajax {
         if (value !== ''){
           dataFiltered = dataFiltered.filter(item => {
             return fields.some(field => {
-              return item[field].includes(value)
+              //console.log(item[field]);
+              return item[field].toLowerCase().includes(value.toLowerCase())
             })
           });
         }
       });
       self.dataFiltered = dataFiltered;
+      self.updateResults();
     }
 
   }
@@ -140,8 +145,9 @@ class Ajax {
       ajaxOptions.data = self.$filters.serialize();
     }
 
-    $.ajax( ajaxOptions).done(function( data ) {
-      self.data = data[self.options.key];
+    $.ajax( ajaxOptions).done(function( response ) {
+      response = response.data || response;
+      self.data = response;
       self.updateResults();
       self.$results.addClass('is-loaded');
     });
@@ -151,6 +157,9 @@ class Ajax {
     const $label = $('label[for='+ id +']');
     if (!$label) return false;
     return $label.text();
+  }
+  clearToggles(){
+    this.$toggles.html('');
   }
   updateToggles(elem, checked){
 
@@ -165,6 +174,10 @@ class Ajax {
   }
   bindEvents(){
     const self = this;
+    self.$filters.on('submit', function(e){
+      e.preventDefault();
+    })
+
     $(document).on('click', '[data-ajax-toggle]', function(e){
       const { currentTarget } = e;
       const fieldId = $(this).data('ajax-toggle');
@@ -175,22 +188,17 @@ class Ajax {
     })
     self.$filters.find('button[type="reset"]').on('click', function(){
       delete self.dataFiltered;
-      self.$toggles.html('');
-      self.$filters.find('.is-active').removeClass('is-active'); // don't love this
+      self.clearToggles();
+      self.$filters.find('.is-active').removeClass('is-active'); // don't love this for removing the input-clear Xes
       self.updateResults();
     })
     self.$filters.find('[data-filter-keywords]').on('change', function(){
       self.filterResults();
-      self.updateResults();
     });
     self.$filters.find('[data-filter], [data-filter-checkbox] input[type="checkbox"]').on('change', function(e){
       const { checked } = e.target;
-
       self.updateToggles($(this), checked);
-
-
       self.filterResults();
-      self.updateResults();
     })
   }
 }

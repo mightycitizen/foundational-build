@@ -18,9 +18,11 @@ $(document).foundation();
 
 // @foundation breakpoint event trigger
 $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
+   // @lity breakpoint trigger
   lityCheck();
 });
 
+ // @lity breakpoint trigger
 const lityCheck = () => {
   $('.lity-mobile').toggleClass('lity-hide',Foundation.MediaQuery.only('small'));
 }
@@ -298,9 +300,7 @@ class Ajax {
 
   bindEvents(){
     const self = this;
-    self.$filters.on('submit', function(e){
-      e.preventDefault();
-    })
+
     this.$pagination.on('click', 'a', function(e){
       e.preventDefault();
       const page = $(e.target).data('ajax-page');
@@ -324,23 +324,23 @@ class Ajax {
       self.total = self.data.length;
       self.clearToggles();
       self.$filters.find('.is-active').removeClass('is-active'); // don't love this for removing the input-clear Xes
-      if (self.options.filterRefresh){
-        setTimeout(() => {
-          self.loadData();
-        }, (50));
-      }else{
-        self.updateResults();
-      }
+      setTimeout(() => {
+        self.$filters.trigger('submit');
+      }, (50));
+
     })
     self.$filters.find('[data-filter-keywords]').on('change', function(){
       self.filterResults();
       //self.updateResults();
     });
+    self.$filters.on('submit', function(e){
+      e.preventDefault();
+      self.filterResults();
+    })
     self.$filters.find('[data-filter], [data-filter-checkbox] input[type="checkbox"]').on('change', function(e){
       const { checked } = e.target;
       self.updateToggles($(this), checked);
-      self.filterResults();
-      //self.updateResults();
+      if (self.$filters.find('[type="submit"]:visible').length === 0) self.$filters.trigger('submit');
     })
   }
 }
@@ -360,7 +360,7 @@ const initFormHelpers = () => {
 
 // @ajax init
 const initAjax = () => {
-  const events = new Ajax('/js/data/events.json', $('[data-ajax]'), 'events', false, 1);
+  const events = new Ajax('/js/data/events.json', $('[data-ajax]'), 'events', true, 1);
   events.init();
 }
 
@@ -553,7 +553,7 @@ const initDatepicker = () => {
 const initFoundationAccessibility = () => {
   // accordion accessibility
   $(document).on('click', '.accordion-trigger', function(event){
-    $(this).parents('.accordion-item').find('.accordion-title').click();
+    $(this).parents('.accordion-item').find('.accordion-title').trigger('click');
   })
 }
 
@@ -789,7 +789,8 @@ $(document).ready(function(){
   // ↓ True for "medium" or larger
   //Foundation.MediaQuery.is('medium down');
   //Foundation.MediaQuery.upTo('medium');
-  lityCheck();
+
+  lityCheck(); // @lity breakpoint trigger
 
   initTippy(); // @tippy init call
   initLazy(); // @lazy init call

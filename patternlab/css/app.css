@@ -9986,11 +9986,13 @@ select {
   right: 0;
   font-size: 0.625rem;
   opacity: 0;
-  padding: 0.625rem;
+  padding: 0.625rem 0.3125rem;
   cursor: pointer;
+  pointer-events: none;
 }
 .is-active + .input-clear {
   opacity: 1;
+  pointer-events: all;
 }
 
 .icon.tiny {

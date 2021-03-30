@@ -152,9 +152,16 @@ class Ajax {
     if (!$label) return false;
     return $label.text();
   }
-  buildToggles(elem){
+  updateToggles(elem, checked){
+
     const label = this.getLabel(elem);
-    if (label) this.$toggles.append('<button class="button tiny" type="button" data-ajax-toggle="'+elem.attr('id')+'">'+label+'<span class="icon-cross"></span></button>');
+    const type = elem.attr('type');
+    const name = elem.attr('name');
+    const value = elem.attr('value');
+    const id = elem.attr('id');
+    if (type === 'radio') this.$toggles.find('[data-ajax-radio="' + name + '"]').remove();
+    if (label && value !== '' && checked) this.$toggles.append('<button class="button" type="button" data-ajax-' + type + '="' + name + '" data-ajax-toggle="'+ id +'">'+label+'<span class="icon-cross"></span></button>');
+    if (!checked && type === 'checkbox') this.$toggles.find('[data-ajax-toggle="' + id + '"]').remove();
   }
   bindEvents(){
     const self = this;
@@ -164,11 +171,11 @@ class Ajax {
       if (fieldId){
         $('#'+fieldId).prop('checked', false).trigger('change');
       }
-      console.log($(currentTarget));
       $(currentTarget).remove();
     })
     self.$filters.find('button[type="reset"]').on('click', function(){
       delete self.dataFiltered;
+      self.$toggles.html('');
       self.$filters.find('.is-active').removeClass('is-active'); // don't love this
       self.updateResults();
     })
@@ -178,7 +185,10 @@ class Ajax {
     });
     self.$filters.find('[data-filter], [data-filter-checkbox] input[type="checkbox"]').on('change', function(e){
       const { checked } = e.target;
-      if (checked) self.buildToggles($(this));
+
+      self.updateToggles($(this), checked);
+
+
       self.filterResults();
       self.updateResults();
     })

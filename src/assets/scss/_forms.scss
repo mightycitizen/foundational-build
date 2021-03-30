@@ -184,10 +184,12 @@ select{
     right: rem-calc(0);
     font-size: rem-calc(10);
     opacity: 0;
-    padding: rem-calc(10);
+    padding: rem-calc(10 5);
     cursor: pointer;
+    pointer-events: none;
     .is-active + & {
       opacity: 1;
+      pointer-events: all;
     }
   }
 }

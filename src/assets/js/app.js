@@ -317,7 +317,7 @@ class Ajax {
       }
       $(currentTarget).remove();
     })
-    self.$filters.on('reset', function(){
+    self.$filters.on('reset', function(e){
       delete self.dataFiltered;
       self.total = self.data.length;
       self.clearToggles();
@@ -358,7 +358,7 @@ const initFormHelpers = () => {
 
 // @ajax init
 const initAjax = () => {
-  const events = new Ajax('/js/data/events.json', $('[data-ajax]'), 'events', false,true, 1);
+  const events = new Ajax('/js/data/events.json', $('[data-ajax]'), 'events', false, 1);
   events.init();
 }
 

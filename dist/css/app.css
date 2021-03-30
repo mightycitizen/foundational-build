@@ -10079,6 +10079,6 @@ blockquote:before {
 [class*=bg-][class*=dark] {
   color: #fefefe;
 }
-[class*=bg-][class*=dark] label {
+[class*=bg-][class*=dark] label, [class*=bg-][class*=dark] .pagination a {
   color: inherit;
 }

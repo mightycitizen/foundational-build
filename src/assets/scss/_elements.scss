@@ -73,7 +73,7 @@ hr{
 
 [class*=bg-][class*=dark]{
   color: $white;
-  label{
+  label, .pagination a{
     color: inherit;
   }
 }

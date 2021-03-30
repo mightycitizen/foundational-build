@@ -17,9 +17,13 @@ import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_pat
 $(document).foundation();
 
 // @foundation breakpoint event trigger
-// $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
-//   // newSize is the name of the now-current breakpoint, oldSize is the previous breakpoint
-// });
+$(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
+  lityCheck();
+});
+
+const lityCheck = () => {
+  $('.lity-mobile').toggleClass('lity-hide',Foundation.MediaQuery.only('small'));
+}
 
 function buildPagination(
   totalItems,
@@ -257,8 +261,6 @@ class Ajax {
 
 
     if (self.options.filterRefresh){
-      //ajaxOptions.method = 'POST';
-      console.log(self.$filters.serialize());
       ajaxOptions.data = self.$filters.serialize();
     }
 
@@ -787,6 +789,7 @@ $(document).ready(function(){
   // ↓ True for "medium" or larger
   //Foundation.MediaQuery.is('medium down');
   //Foundation.MediaQuery.upTo('medium');
+  lityCheck();
 
   initTippy(); // @tippy init call
   initLazy(); // @lazy init call

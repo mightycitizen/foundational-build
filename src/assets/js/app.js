@@ -8,7 +8,8 @@ import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
 import Litepicker from 'litepicker'; // @litepicker date picker
 import selectize from 'selectize'; // @selectize custom select dropdowns
 import Twig from 'twig'; // @twig used with @ajax
-import eventsTemplate from '../../_patterns/components/misc/_event.twig'; // used with @ajax
+import resultsTemplate from '../../_patterns/components/misc/_event.twig'; // used with @ajax
+import paginationTemplate from '../../_patterns/components/listing/pagination.twig'; // used with @ajax
 
 import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
 
@@ -19,6 +20,68 @@ $(document).foundation();
 // $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
 //   // newSize is the name of the now-current breakpoint, oldSize is the previous breakpoint
 // });
+
+function buildPagination(
+  totalItems,
+  currentPage = 1,
+  pageSize = 10,
+  maxPages = 10
+) {
+  // calculate total pages
+  let totalPages = Math.ceil(totalItems / pageSize);
+
+  // ensure current page isn't out of range
+  if (currentPage < 1) {
+      currentPage = 1;
+  } else if (currentPage > totalPages) {
+      currentPage = totalPages;
+  }
+
+  let startPage, endPage;
+  if (totalPages <= maxPages) {
+      // total pages less than max so show all pages
+      startPage = 1;
+      endPage = totalPages;
+  } else {
+      // total pages more than max so calculate start and end pages
+      let maxPagesBeforeCurrentPage = Math.floor(maxPages / 2);
+      let maxPagesAfterCurrentPage = Math.ceil(maxPages / 2) - 1;
+      if (currentPage <= maxPagesBeforeCurrentPage) {
+          // current page near the start
+          startPage = 1;
+          endPage = maxPages;
+      } else if (currentPage + maxPagesAfterCurrentPage >= totalPages) {
+          // current page near the end
+          startPage = totalPages - maxPages + 1;
+          endPage = totalPages;
+      } else {
+          // current page somewhere in the middle
+          startPage = currentPage - maxPagesBeforeCurrentPage;
+          endPage = currentPage + maxPagesAfterCurrentPage;
+      }
+  }
+
+  // calculate start and end item indexes
+  let startIndex = (currentPage - 1) * pageSize;
+  let endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
+
+  // create an array of pages to ng-repeat in the pager control
+  let pages = Array.from(Array((endPage + 1) - startPage).keys()).map(i => startPage + i);
+
+  // return object with all pager properties required by the view
+  return {
+      totalItems: totalItems,
+      currentPage: currentPage,
+      pageSize: pageSize,
+      totalPages: totalPages,
+      startPage: startPage,
+      endPage: endPage,
+      startIndex: startIndex,
+      endIndex: endIndex,
+      pages: pages
+  };
+}
+
 
 $.fn.isInViewport = function() {
   var elementTop = $(this).offset().top;
@@ -35,11 +98,12 @@ const randomId = () => {
 }
 
 class Ajax {
-  constructor(endpoint, $results, key, filterRefresh){
+  constructor(endpoint, $results, key, filterRefresh, numPerPage){
     this.options = {
       endpoint,
       key,
-      filterRefresh
+      filterRefresh,
+      numPerPage
     }
 
     this.$results = $results;
@@ -49,23 +113,60 @@ class Ajax {
     this.$noResults = $('[data-ajax-no-results=' + this.id + ']');
     this.$numResults = $('[data-ajax-num-results=' + this.id + ']');
     this.$toggles = $('[data-ajax-toggles=' + this.id + ']');
+    this.$pagination = $('[data-ajax-pagination=' + this.id + ']');
+    this.currentPage = 1;
   }
   init(){
     this.bindEvents();
     this.loadData();
   }
+  updatePagination(){
+    const self = this;
+    const template = Twig.twig({ data: paginationTemplate });
+    let links = {}
+    let pageBase;
+    let paginationObject;
+    if (self.options.endpointRefresh){
+      // @craft pagination
+      const paginationData = self.meta.pagination;
+      links = paginationData.links;
+      pageBase = links.next || links.previous;
+      paginationObject = buildPagination(paginationData.total,paginationData.current_page, self.options.numPerPage)
+    }else{
+      paginationObject = buildPagination(self.total,self.currentPage, self.options.numPerPage);
+      if (paginationObject.currentPage !== 1) links.previous = paginationObject.currentPage - 1;
+      if (paginationObject.currentPage < paginationObject.totalPages) links.next = paginationObject.currentPage + 1;
+
+    }
+
+    links.pages = [];
+    paginationObject.pages.map(page => {
+      let url = page;
+      if (self.options.endpointRefresh) pageBase.replace(/page=(\d)+/,'page=' + page);
+      links.pages.push({
+        url,
+        pageIndex: page,
+        current: paginationObject.currentPage === page
+      });
+    })
+
+
+
+    self.$pagination.html(template.render({ links }));
+  }
   updateResults(){
     const self = this;
     let data = self.data;
     if (self.dataFiltered) data = self.dataFiltered;
-    //console.log(eventsTemplate);
-    const template = Twig.twig({ data: eventsTemplate });
-    //console.log(template);
-    //console.log(data);
+    if (!self.options.endpointRefresh && self.options.numPerPage){
+      data = data.slice((self.currentPage - 1) * self.options.numPerPage, self.currentPage * self.options.numPerPage);
+    }
+    const template = Twig.twig({ data: resultsTemplate });
     self.$results.html(template.render({ [self.options.key]: data }));
     this.$noResults.toggleClass('hide', data.length > 0);
-    this.$numResults.find('.value').text(data.length);
+    this.$numResults.find('.value').text(self.total);
     this.$numResults.toggleClass('hide', data.length === 0);
+    if (self.options.numPerPage) self.updatePagination();
   }
   filterResults(){
     const self = this;
@@ -122,7 +223,6 @@ class Ajax {
         if (value !== ''){
           dataFiltered = dataFiltered.filter(item => {
             return fields.some(field => {
-              //console.log(item[field]);
               return item[field].toLowerCase().includes(value.toLowerCase())
             })
           });
@@ -133,12 +233,20 @@ class Ajax {
     }
 
   }
-  loadData(){
+  loadData(url){
     const self = this;
+    if (!url){
+      url = self.options.endpoint
+      if (self.options.numPerPage){
+        url = url + '?limit=' + self.options.numPerPage
+      }
+    }
+
     let ajaxOptions = {
-      url: self.options.endpoint,
+      url,
       method: 'GET'
     };
+
 
     if (self.options.filterRefresh){
       //ajaxOptions.method = 'POST';
@@ -146,7 +254,11 @@ class Ajax {
     }
 
     $.ajax( ajaxOptions).done(function( response ) {
+      if (self.options.numPerPage && response.meta) self.meta = response.meta;
       response = response.data || response;
+      self.total = response.length;
+      // @craft pagination
+      if (self.meta && self.meta.pagination) self.total = self.meta.pagination.total;
       self.data = response;
       self.updateResults();
       self.$results.addClass('is-loaded');
@@ -172,12 +284,22 @@ class Ajax {
     if (label && value !== '' && checked) this.$toggles.append('<button class="button" type="button" data-ajax-' + type + '="' + name + '" data-ajax-toggle="'+ id +'">'+label+'<span class="icon-cross"></span></button>');
     if (!checked && type === 'checkbox') this.$toggles.find('[data-ajax-toggle="' + id + '"]').remove();
   }
+
   bindEvents(){
     const self = this;
     self.$filters.on('submit', function(e){
       e.preventDefault();
     })
-
+    this.$pagination.on('click', 'a', function(e){
+      e.preventDefault();
+      const page = $(e.target).data('ajax-page');
+      if (self.options.filterRefresh){
+        self.loadData(page);
+      }else{
+        self.currentPage = page;
+        self.updateResults();
+      }
+    })
     $(document).on('click', '[data-ajax-toggle]', function(e){
       const { currentTarget } = e;
       const fieldId = $(this).data('ajax-toggle');
@@ -194,11 +316,13 @@ class Ajax {
     })
     self.$filters.find('[data-filter-keywords]').on('change', function(){
       self.filterResults();
+      //self.updateResults();
     });
     self.$filters.find('[data-filter], [data-filter-checkbox] input[type="checkbox"]').on('change', function(e){
       const { checked } = e.target;
       self.updateToggles($(this), checked);
       self.filterResults();
+      //self.updateResults();
     })
   }
 }
@@ -218,7 +342,7 @@ const initFormHelpers = () => {
 
 // @ajax init
 const initAjax = () => {
-  const events = new Ajax('/js/data/events.json', $('[data-ajax]'), 'events');
+  const events = new Ajax('/js/data/events.json', $('[data-ajax]'), 'events', false, 1);
   events.init();
 }
 

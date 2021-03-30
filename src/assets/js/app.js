@@ -132,6 +132,7 @@ class Ajax {
       links = paginationData.links;
       pageBase = links.next || links.previous;
       paginationObject = buildPagination(paginationData.total,paginationData.current_page, self.options.numPerPage)
+      // need @drupal pagination
     }else{
       paginationObject = buildPagination(self.total,self.currentPage, self.options.numPerPage);
       if (paginationObject.currentPage !== 1) links.previous = paginationObject.currentPage - 1;
@@ -139,26 +140,29 @@ class Ajax {
 
     }
 
-    links.pages = [];
-    paginationObject.pages.map(page => {
-      let url = page;
-      console.log(self.options.filterRefresh);
-      console.log(pageBase);
-      if (self.options.filterRefresh && pageBase) url = pageBase.replace(/page=(\d)+/,'page=' + page);
-      console.log(url)
-      links.pages.push({
-        url,
-        pageIndex: page,
-        current: paginationObject.currentPage === page
-      });
-    })
+    if (paginationObject.totalPages > 1){
 
+      links.pages = [];
+      paginationObject.pages.map(page => {
+        let url = page;
 
+        if (self.options.filterRefresh && pageBase) url = pageBase.replace(/page=(\d)+/,'page=' + page);
 
-    self.$pagination.html(template.render({ links }));
+        links.pages.push({
+          url,
+          pageIndex: page,
+          current: paginationObject.currentPage === page
+        });
+      })
+      self.$pagination.html(template.render({ links }));
+    }
+  }
+  clearPagination(){
+    this.$pagination.html('');
   }
   updateResults(){
     const self = this;
+    self.clearPagination();
     let data = self.data;
     if (self.dataFiltered) data = self.dataFiltered;
     if (!self.options.endpointRefresh && self.options.numPerPage){
@@ -232,6 +236,7 @@ class Ajax {
         }
       });
       self.dataFiltered = dataFiltered;
+      self.total = dataFiltered.length;
       self.updateResults();
     }
 

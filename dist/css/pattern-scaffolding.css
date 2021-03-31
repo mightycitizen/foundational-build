@@ -58,6 +58,10 @@
   font-size: 24px !important;
 }
 
+.pl-c-pattern-index{
+  padding: 0 20px;
+}
+
 .pl-icons__item {
   display: inline-block;
   position: relative;

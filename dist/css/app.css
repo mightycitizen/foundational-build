@@ -7400,6 +7400,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .video-wrapper .youtube-player {
   opacity: 0;
+  pointer-events: none;
 }
 .video-wrapper .video-image {
   display: block;
@@ -7408,35 +7409,6 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .video-wrapper .video-image-wrapper {
   width: 100%;
   position: relative;
-}
-.video-wrapper .video-container {
-  position: absolute;
-  overflow: hidden;
-  background-color: #0a0a0a;
-  left: 0;
-  top: 0%;
-  width: 100%;
-  height: 100%;
-  display: block;
-  z-index: -2;
-}
-.video-wrapper .video-container:before, .video-wrapper .video-container:after {
-  transition: 1s transform;
-  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  content: "";
-  display: block;
-  width: 100%;
-  left: 0;
-  position: absolute;
-  height: 50%;
-  background-color: #0a0a0a;
-  z-index: 1;
-}
-.video-wrapper .video-container:before {
-  top: 0;
-}
-.video-wrapper .video-container:after {
-  bottom: 0;
 }
 .video-wrapper.is-initialized .video-loader {
   opacity: 0;
@@ -7459,7 +7431,33 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   position: relative;
 }
 .video-wrapper[data-video-trigger=background] .video-container {
+  position: absolute;
   overflow: hidden;
+  background-color: #0a0a0a;
+  left: 0;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -2;
+}
+.video-wrapper[data-video-trigger=background] .video-container:before, .video-wrapper[data-video-trigger=background] .video-container:after {
+  transition: 1s transform;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  content: "";
+  display: block;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  height: 50%;
+  background-color: #0a0a0a;
+  z-index: 1;
+}
+.video-wrapper[data-video-trigger=background] .video-container:before {
+  top: 0;
+}
+.video-wrapper[data-video-trigger=background] .video-container:after {
+  bottom: 0;
 }
 .video-wrapper[data-video-trigger=background] .video-container iframe {
   box-sizing: border-box;
@@ -7487,6 +7485,15 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .video-wrapper[data-video-trigger=scroll], .video-wrapper[data-video-trigger=click] {
   position: relative;
 }
+.video-wrapper[data-video-trigger=scroll] .video-image, .video-wrapper[data-video-trigger=click] .video-image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: center;
+  object-fit: center;
+}
+.video-wrapper[data-video-trigger=scroll] .video-image-wrapper, .video-wrapper[data-video-trigger=click] .video-image-wrapper {
+  z-index: 1;
+}
 .video-wrapper[data-video-trigger=scroll] .video-image-wrapper:before, .video-wrapper[data-video-trigger=scroll] .video-image-wrapper:after, .video-wrapper[data-video-trigger=click] .video-image-wrapper:before, .video-wrapper[data-video-trigger=click] .video-image-wrapper:after {
   content: "";
   display: block;
@@ -7511,15 +7518,17 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   border-radius: 100%;
 }
 .video-wrapper[data-video-trigger=scroll] .video-container, .video-wrapper[data-video-trigger=click] .video-container {
-  position: absolute;
   overflow: hidden;
-  background-color: #0a0a0a;
-  left: 0;
-  top: 0%;
-  width: 100%;
+  position: absolute;
   height: 100%;
-  display: block;
-  z-index: -2;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.video-wrapper[data-video-trigger=scroll] .video-container .youtube-player, .video-wrapper[data-video-trigger=click] .video-container .youtube-player {
+  margin-top: -100px;
+  margin-bottom: -100px;
+  min-width: 100%;
 }
 
 .helper {

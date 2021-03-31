@@ -360,7 +360,7 @@ const initFormHelpers = () => {
 
 // @ajax init
 const initAjax = () => {
-  const events = new Ajax('/js/data/events.json', $('[data-ajax]'), 'events', true, 1);
+  const events = new Ajax('/js/data/events.json', $('[data-ajax]'), 'events', false, 1);
   events.init();
 }
 

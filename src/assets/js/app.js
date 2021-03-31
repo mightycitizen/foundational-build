@@ -475,11 +475,12 @@ const initVideo = () => {
           function setVideoSize(){
             var w = holder.width(),
                 h = holder.height();
-            if (w/h > 16/9){
+
+            if (w/h > 1){
                 player.setSize(w, 200 + w/16*9);
                 vid.css({'left': '0px'});
             } else {
-                player.setSize(h/9*16 + 200, h);
+                player.setSize(h/9*16, h + 200);
                 vid.css({'left': ( -(h/9*16) / 2 ) + holder.width() / 2 });
                 vid.css({'top': -(h - holder.height()) / 2 });
             }
@@ -493,6 +494,10 @@ const initVideo = () => {
                   player.pauseVideo();
               }
           }
+        $(window).on('resize', Foundation.util.throttle(
+          function(){
+            setVideoSize();
+          }, 50));
 
 
     });

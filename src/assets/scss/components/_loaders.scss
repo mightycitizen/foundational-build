@@ -8,9 +8,9 @@
     box-sizing: border-box;
     display: block;
     position: absolute;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
+    width: 100%;
+    height: 100%;
+    //margin: 8px;
     border: 8px solid #fff;
     border-radius: 50%;
     animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
@@ -30,6 +30,17 @@
   }
   .is-loaded &{
     display: none;
+  }
+  .button &{
+    width: rem-calc(15);
+    height: rem-calc(15);
+    margin-top: rem-calc(-1);
+    margin-left: rem-calc(8);
+    margin-right: rem-calc(-3);
+    vertical-align: middle;
+    div{
+      border-width: 4px;
+    }
   }
 }
 

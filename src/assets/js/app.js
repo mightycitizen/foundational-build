@@ -10,6 +10,7 @@ import selectize from 'selectize'; // @selectize custom select dropdowns
 import Twig from 'twig'; // @twig used with @ajax
 import resultsTemplate from '../../_patterns/components/misc/_event.twig'; // used with @ajax
 import paginationTemplate from '../../_patterns/components/listing/pagination.twig'; // used with @ajax
+import loaderTemplate from '../../_patterns/components/misc/loader.twig'; // used with @ajax
 
 import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
 
@@ -169,6 +170,10 @@ class Ajax {
   updateResults(){
     const self = this;
     self.clearPagination();
+
+    setTimeout(() => {
+      self.$filters.find('button[type="submit"][disabled]').prop('disabled', false).find('.loader').remove();
+    }, (50));
     let data = self.data;
     if (self.dataFiltered) data = self.dataFiltered;
     if (!self.options.endpointRefresh && self.options.numPerPage){
@@ -355,6 +360,12 @@ const initFormHelpers = () => {
     $(this).on('click', function(){
       if ($field) $field.val('').trigger('change');
     })
+  });
+  $('form:not([data-abide])').on('submit', function(){
+    $(this).find('[type="submit"]').prop('disabled', true).append(loaderTemplate);
+  })
+  $('[data-abide]').on('formvalid.zf.abide', function(){
+    $(this).find('[type="submit"]').prop('disabled', true).append(loaderTemplate);
   });
 }
 

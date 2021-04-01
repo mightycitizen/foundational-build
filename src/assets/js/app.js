@@ -361,11 +361,15 @@ const initFormHelpers = () => {
       if ($field) $field.val('').trigger('change');
     })
   });
+
+  const disableSubmit = (elem) => {
+    elem.prop('disabled', true).append(loaderTemplate);
+  }
   $('form:not([data-abide])').on('submit', function(){
-    $(this).find('[type="submit"]').prop('disabled', true).append(loaderTemplate);
+    disableSubmit($(this).find('[type="submit"]'));
   })
   $('[data-abide]').on('formvalid.zf.abide', function(){
-    $(this).find('[type="submit"]').prop('disabled', true).append(loaderTemplate);
+    disableSubmit($(this).find('[type="submit"]'));
   });
 }
 

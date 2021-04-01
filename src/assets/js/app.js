@@ -172,7 +172,7 @@ class Ajax {
     self.clearPagination();
 
     setTimeout(() => {
-      self.$filters.find('button[type="submit"][disabled]').prop('disabled', false).find('.loader').remove();
+      window.enableSubmit(self.$filters.find('button[type="submit"][disabled]'));
     }, (50));
     let data = self.data;
     if (self.dataFiltered) data = self.dataFiltered;
@@ -365,6 +365,11 @@ const initFormHelpers = () => {
   const disableSubmit = (elem) => {
     elem.prop('disabled', true).append(loaderTemplate);
   }
+
+  window.enableSubmit = (elem) => {
+    elem.prop('disabled', false).find('.loader').remove();
+  }
+
   $('form:not([data-abide])').on('submit', function(){
     disableSubmit($(this).find('[type="submit"]'));
   })

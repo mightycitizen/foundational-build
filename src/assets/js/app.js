@@ -116,11 +116,11 @@ class Ajax {
     this.$results = $results;
 
     this.id = $results.attr('id');
-    this.$filters = $('[data-ajax-form=' + this.id + ']')
-    this.$noResults = $('[data-ajax-no-results=' + this.id + ']');
-    this.$numResults = $('[data-ajax-num-results=' + this.id + ']');
-    this.$toggles = $('[data-ajax-toggles=' + this.id + ']');
-    this.$pagination = $('[data-ajax-pagination=' + this.id + ']');
+    this.$filters = $('[data-ajaxify-form=' + this.id + ']')
+    this.$noResults = $('[data-ajaxify-no-results=' + this.id + ']');
+    this.$numResults = $('[data-ajaxify-num-results=' + this.id + ']');
+    this.$toggles = $('[data-ajaxify-toggles=' + this.id + ']');
+    this.$pagination = $('[data-ajaxify-pagination=' + this.id + ']');
     this.currentPage = 1;
   }
   init(){
@@ -298,9 +298,9 @@ class Ajax {
     const name = elem.attr('name');
     const value = elem.attr('value');
     const id = elem.attr('id');
-    if (type === 'radio') this.$toggles.find('[data-ajax-radio="' + name + '"]').remove();
-    if (label && value !== '' && checked) this.$toggles.append('<button class="button" type="button" data-ajax-' + type + '="' + name + '" data-ajax-toggle="'+ id +'">'+label+'<span class="icon-cross"></span></button>');
-    if (!checked && type === 'checkbox') this.$toggles.find('[data-ajax-toggle="' + id + '"]').remove();
+    if (type === 'radio') this.$toggles.find('[data-ajaxify-radio="' + name + '"]').remove();
+    if (label && value !== '' && checked) this.$toggles.append('<button class="button" type="button" data-ajaxify-' + type + '="' + name + '" data-ajaxify-toggle="'+ id +'">'+label+'<span class="icon-cross"></span></button>');
+    if (!checked && type === 'checkbox') this.$toggles.find('[data-ajaxify-toggle="' + id + '"]').remove();
   }
 
   bindEvents(){
@@ -316,7 +316,7 @@ class Ajax {
         self.updateResults();
       }
     })
-    $(document).on('click', '[data-ajax-toggle]', function(e){
+    $(document).on('click', '[data-ajaxify-toggle]', function(e){
       const { currentTarget } = e;
       const fieldId = $(this).data('ajax-toggle');
       if (fieldId){
@@ -370,7 +370,7 @@ const initFormHelpers = () => {
     elem.prop('disabled', false).find('.loader').remove();
   }
 
-  $('form:not([data-abide])').on('submit', function(){
+  $('form:not([data-abide]):not([data-freeform])').on('submit', function(){
     disableSubmit($(this).find('[type="submit"]'));
   })
   $('[data-abide]').on('formvalid.zf.abide', function(){
@@ -380,7 +380,7 @@ const initFormHelpers = () => {
 
 // @ajax init
 const initAjax = () => {
-  const events = new Ajax('/js/data/events.json', $('[data-ajax]'), 'events', false, 1);
+  const events = new Ajax('/js/data/events.json', $('[data-ajaxify]'), 'events', false, 1);
   events.init();
 }
 

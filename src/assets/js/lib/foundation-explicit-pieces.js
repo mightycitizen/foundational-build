@@ -12,7 +12,7 @@ import { Timer } from 'foundation-sites/js/foundation.util.timer';
 import { Touch } from 'foundation-sites/js/foundation.util.touch';
 import { Triggers } from 'foundation-sites/js/foundation.util.triggers';
 import { Abide } from 'foundation-sites/js/foundation.abide';
-import { Accordion } from 'foundation-sites/js/foundation.accordion';
+import { Accordion } from './overrides/foundation.accordion.js';
 import { AccordionMenu } from 'foundation-sites/js/foundation.accordionMenu';
 // import { Drilldown } from 'foundation-sites/js/foundation.drilldown';
 import { Dropdown } from 'foundation-sites/js/foundation.dropdown';
@@ -28,7 +28,7 @@ import { ResponsiveToggle } from 'foundation-sites/js/foundation.responsiveToggl
 import { Slider } from 'foundation-sites/js/foundation.slider';
 import { SmoothScroll } from 'foundation-sites/js/foundation.smoothScroll';
 import { Sticky } from 'foundation-sites/js/foundation.sticky';
-import { Tabs } from 'foundation-sites/js/foundation.tabs';
+import { Tabs } from './overrides/foundation.tabs.js';
 import { Toggler } from 'foundation-sites/js/foundation.toggler';
 // import { Tooltip } from 'foundation-sites/js/foundation.tooltip';
 // import { ResponsiveAccordionTabs } from 'foundation-sites/js/foundation.responsiveAccordionTabs';

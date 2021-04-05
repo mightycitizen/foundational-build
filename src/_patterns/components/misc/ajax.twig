@@ -5,8 +5,8 @@
       <div class="cell medium-4" >
         <a href="#filters" data-lity class="hide-for-medium button">Filters</a>
         <div id="filters" class="lity-mobile">
-          <form data-ajax-form="events" data-sticky data-sticky-on="medium" data-anchor="event-content">
-            <div data-ajax-toggles="events" class="button-group tiny"></div>
+          <form data-ajaxify-form="events" data-sticky data-sticky-on="medium" data-anchor="event-content">
+            <div data-ajaxify-toggles="events" class="button-group tiny"></div>
             <div>
               <label for="keywords">Keywords</label>
               <div class="input-group simple">
@@ -67,14 +67,14 @@
         </div>
       </div>
       <div class="cell medium-8">
-        <p data-ajax-num-results="events">There were <strong class="value"></strong> results for your search/filters</p>
-        <div data-ajax id="events">
+        <p data-ajaxify-num-results="events">There were <strong class="value"></strong> results for your search/filters</p>
+        <div data-ajaxify id="events">
           {% include 'components/misc/loader.twig' %}
         </div>
-        <div data-ajax-no-results="events" class="hide">
+        <div data-ajaxify-no-results="events" class="hide">
           <p>There were no results for your search/filters</p>
         </div>
-        <div data-ajax-pagination="events"></div>
+        <div data-ajaxify-pagination="events"></div>
       </div>
     </div>
   </div>

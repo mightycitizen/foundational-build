@@ -9,6 +9,8 @@
   }
   &-title{
     padding-right: rem-calc(40);
+    width: 100%;
+    text-align: left;
     &:before{
       font-family: $icomoon-font-family;
       content: $icon-chevron-down !important;

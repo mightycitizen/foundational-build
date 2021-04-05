@@ -6720,6 +6720,8 @@ a.thumbnail image {
 }
 .accordion-title {
   padding-right: 2.5rem;
+  width: 100%;
+  text-align: left;
 }
 .accordion-title:before {
   font-family: "icomoon";

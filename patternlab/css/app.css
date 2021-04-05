@@ -7337,6 +7337,19 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     max-width: none !important;
   }
 }
+.tabs-title button {
+  color: #266093;
+  font-size: 0.75rem;
+  padding: 1.25rem 1.5rem;
+}
+.tabs-title button:hover {
+  background-color: #fefefe;
+}
+.tabs-title.is-active button {
+  background-color: #e6e6e6;
+  color: #266093;
+}
+
 .loader {
   display: inline-block;
   position: relative;

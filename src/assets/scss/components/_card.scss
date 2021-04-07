@@ -12,5 +12,8 @@
         height: 100%;
       }
     }
+    &:focus-within{
+      box-shadow: 0 0 6px 1px rgba($medium-gray, 0.5);
+    }
   }
 }

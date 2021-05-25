@@ -683,8 +683,85 @@ const initLazy = () => {
 }
 
 
+// @menu helpers
+const initMenuHelpers = () => {
+  const menuId = 'responsive-menu';
+  $(document).on('toggled.zf.responsiveToggle',e => {
+    if (e.target.dataset.responsiveToggle === menuId){
+      $('body').toggleClass('has-menu', $('#'+menuId).is(':visible'));
+    }
+  });
+  const activeSelector = '.js-dropdown-active';
+  const grandchildClass = 'has-grandchild';
+  $('#' + menuId).on('show.zf.dropdownMenu', e => {
+    const $menu = $(e.target);
+    const $activeChild = $menu.find(activeSelector).first();
+    const $activeGrandchild = $activeChild.find(activeSelector);
+    if ($activeGrandchild.is(':visible')){
+      $activeChild.css('min-height', $activeGrandchild.outerHeight()).addClass(grandchildClass);
+      if ($activeGrandchild.parent().hasClass('opens-left')) $activeChild.addClass('child-opens-left');
+    }else{
+      $activeChild.css('min-height', 0).removeClass(grandchildClass).removeClass('child-opens-left');
+    }
+  }).on('hide.zf.dropdownMenu', e => {
+    const $menu = $(e.target);
+
+    $menu.find('.'+grandchildClass).removeClass(grandchildClass).css('min-height',0);
+  })
+}
+
+
 // @slick init
 const initSlick = () => {
+
+  // @slick mobile init
+  const initSlickMobile = () => {
+    const $slickMobile = $('.js-slick--mobile');
+
+    $slickMobile.each(function(){
+      const $this = $(this);
+
+      $this.on('init', function (event, slick, breakpoint){
+        slickPagination(slick);
+      })
+
+      $this.on('breakpoint', function (event, slick, breakpoint){
+        slickPagination(slick);
+      })
+
+      $this.slick({
+        slidesToScroll: 1,
+        rows: 0,
+        prevArrow: '<button class="slick-prev">Previous</button>',
+        nextArrow: '<button class="slick-next">Next</button>',
+        dots: true,
+        mobileFirst: true,
+        dotsClass: 'slick-dots',
+        appendArrows: $this.next('.slick-nav'),
+        appendDots: $this.next('.slick-nav'),
+        adaptiveHeight: true,
+        waitForAnimate: false,
+        responsive: [
+          {
+            breakpoint: mediumBreakpoint,
+            settings: 'unslick'
+          }
+        ]
+      });
+
+    })
+
+  }
+  initSlickMobile();
+  // @foundation breakpoint event trigger
+  $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
+
+    // @slick mobile reinit
+    if (newSize === 'small') initSlickMobile();
+
+  });
+
+
 
   const $slick = $('.js-slick');
 
@@ -826,6 +903,7 @@ $(document).ready(function(){
   initTableScroll(); // #table-scroll init call
   initVideo(); // @video init call
   initSmoothScroll(); // @smooth-scroll init
+  initMenuHelpers(); // @menu helpers
   initAjax(); // @ajax init
   initFormHelpers(); // @form helpers init
 })

@@ -1,0 +1,11 @@
+.no-shadow{
+  box-shadow: none;
+}
+
+.shadow{
+  box-shadow: $global-box-shadow;
+}
+
+.flip{
+  transform: scaleX(-1);
+}

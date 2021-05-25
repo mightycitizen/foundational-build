@@ -1,63 +1,42 @@
 {
   "primary": {
-    "default": "#266093",
+    "default": "#0080A4",
     "variants": {
-      "lightest": "70%",
-      "lighter": "50%",
-      "light": "30%",
-      "dark": "-30%",
-      "darker": "-50%",
-      "darkest": "-70%"
+      "lighter": "#99CEDD",
+      "lightest": "#cee8ef"
     }
   },
   "secondary": {
-    "default": "#d6884d",
+    "default": "#EEA600",
     "variants": {
-      "lightest": "70%",
-      "lighter": "50%",
-      "light": "30%",
-      "dark": "-30%",
-      "darker": "-50%",
-      "darkest": "-70%"
+      "light": "#ffcb52",
+      "lightest": "#FAE5B2"
     }
   },
   "tertiary": {
-    "default": "#7a9c49",
+    "default": "#73af8c",
     "variants": {
-      "lightest": "70%",
-      "lighter": "50%",
-      "light": "30%",
-      "dark": "-30%",
-      "darker": "-50%",
-      "darkest": "-70%"
+      "lightest": "#C9E9D6"
     }
   },
 
   "accent": {
-    "default": "#00cbcf",
-    "variants": {
-      "light": "30%",
-      "dark": "-30%"
-    }
+    "default": "#005A74"
   },
 
 
-  "success": "#3adb76",
-  "warning": "#ffae00",
-  "alert": "#cc4b37",
+  "success": "#73af8c",
+  "alert": "#d5383c",
+  "warning": "#EEA600",
 
   "gray": {
     "default": "#ccc",
     "variants": {
-      "lightest": "70%",
-      "lighter": "50%",
-      "light": "30%",
-      "dark": "-30%",
-      "darker": "-50%",
-      "darkest": "-70%"
+      "light": "#eee",
+      "dark": "#666"
     }
   },
 
-  "black": "#0a0a0a",
-  "white": "#fefefe"
+  "black": "#333",
+  "white": "#fff"
 }

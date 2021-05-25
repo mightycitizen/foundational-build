@@ -17,23 +17,54 @@ $additional-palette: ();
     @if (is-percentage($value)){
       $output: scale-color($default-color,$lightness: $output);
     }
-    .bg-#{$color}{
-      background-color: $default-color;
-    }
-    .bg-#{$color}-#{$key}{
-      background-color: $output;
-    }
 
     .color-#{$color}{
       color: $default-color;
     }
-    .color-#{$color}-#{$key}{
-      color: $output;
+
+    .fill-#{$color}{
+      path, polygon{
+        fill: $default-color;
+      }
     }
 
-    $additional-palette: map-set($additional-palette, '#{$color}-#{$key}', $output) !global;
+
+    .bg-solid-#{$color}{
+      background-color: $default-color;
+    }
+
+    .bg-gradient-#{$color}{
+      &:before{
+        background: linear-gradient(to bottom, $white 0%, $default-color 100%);
+      }
+    }
+    @if $output{
+      $additional-palette: map-set($additional-palette, '#{$color}-#{$key}', $output) !global;
+      .color-#{$color}-#{$key}{
+        color: $output;
+      }
+      .bg-solid-#{$color}-#{$key}{
+        background-color: $output;
+      }
+
+      .bg-gradient-#{$color}-#{$key}{
+        &:before{
+          background: linear-gradient(to bottom, $white 0%, rgba($output,1) 100%);
+        }
+      }
+    }
+
+    // .bg-gradient-#{$color}-#{$key}-flip{
+
+    //   background: linear-gradient(to bottom,$output 0px, $white 800px);
+    // }
+
+
+
+
   }
 }
+
 
 @include generateVariants($primary, 'primary');
 @include generateVariants($secondary, 'secondary');

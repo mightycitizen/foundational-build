@@ -193,3 +193,14 @@ select{
     }
   }
 }
+
+
+
+
+.button[disabled]{
+  &, &:hover, &:focus{
+    background-color: $medium-gray;
+    color: $dark-gray;
+    opacity: 1;
+  }
+}

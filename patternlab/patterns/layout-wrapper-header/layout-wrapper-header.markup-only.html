@@ -3,7 +3,7 @@
     <div class="grid-x grid-margin-x align-middle">
       <div class="cell medium-4">Header</div>
       <div class="cell medium-7">
-        <div  data-responsive-toggle="responsive-menu" data-hide-for="medium">
+        <div  data-responsive-toggle="responsive-menu" data-hide-for="large" class="top-bar_toggle" >
   <button class="hamburger" type="button" id="hamburger" data-toggle="responsive-menu" data-toggler=".is-active" aria-label="Toggle navigation">
   <span class="hamburger-icon">
     <span class="hamburger-icon-bar"></span>
@@ -12,30 +12,248 @@
 </button>
 </div>
 
-<div class="top-bar" id="responsive-menu" data-toggler=".is-active">
+<div class="top-bar" id="responsive-menu">
+  <div data-responsive-toggle="responsive-menu" data-hide-for="large">
+    <button class="top-bar_close hide-for-large" data-toggle="responsive-menu">
+      <span class="show-for-sr">Collapse menu</span>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
   <div class="top-bar-left">
-    <ul class="vertical medium-horizontal menu top" data-responsive-menu="accordion medium-dropdown">
-      <li>
-        <a href="#">Item 1</a>
-        <ul class="vertical menu">
-          <li><a href="#">Item 1A</a></li>
-          <li><a href="#">Item 1B</a></li>
-        </ul>
+    <ul class="vertical large-horizontal menu top" data-responsive-menu="accordion large-dropdown" data-click-open="true" data-disable-hover="true">
+            <li>
+        <a href="#">Membership</a>
+                <ul class="vertical menu">
+          <li class="parent-link"><a href="#" class="color-primary">Membership Overview</a></li>
+                      <li>
+              <a href="#">Item 1</a>
+                          </li>
+                      <li>
+              <a href="#">Item 2</a>
+                            <ul class="vertical menu">
+                <li><a href="#">Item 2 Overview</a></li>
+                                  <li>
+                    <a href="#">Item 1</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 2</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 3</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 2</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 3</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 2</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 3</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                              </ul>
+                          </li>
+                      <li>
+              <a href="#">Item 3</a>
+                          </li>
+                      <li>
+              <a href="#">Item 4</a>
+                          </li>
+                      <li>
+              <a href="#">Item 5</a>
+                          </li>
+                      <li>
+              <a href="#">Item 6</a>
+                          </li>
+                  </ul>
+              </li>
+            <li>
+        <a href="#">Legal Services</a>
+                <ul class="vertical menu">
+          <li class="parent-link"><a href="#" class="color-primary">Legal Services Overview</a></li>
+                      <li>
+              <a href="#">Item 1</a>
+                          </li>
+                      <li>
+              <a href="#">Item 2</a>
+                            <ul class="vertical menu">
+                <li><a href="#">Item 2 Overview</a></li>
+                                  <li>
+                    <a href="#">Item 1</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 2</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 3</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                              </ul>
+                          </li>
+                      <li>
+              <a href="#">Item 3</a>
+                          </li>
+                      <li>
+              <a href="#">Item 4</a>
+                          </li>
+                      <li>
+              <a href="#">Item 5</a>
+                          </li>
+                      <li>
+              <a href="#">Item 6</a>
+                          </li>
+                  </ul>
+              </li>
+            <li>
+        <a href="#">Professional Resources</a>
+                <ul class="vertical menu">
+          <li class="parent-link"><a href="#" class="color-primary">Professional Resources Overview</a></li>
+                      <li>
+              <a href="#">Item 1</a>
+                          </li>
+                      <li>
+              <a href="#">Item 2</a>
+                            <ul class="vertical menu">
+                <li><a href="#">Item 2 Overview</a></li>
+                                  <li>
+                    <a href="#">Item 1</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 2</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 3</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                              </ul>
+                          </li>
+                      <li>
+              <a href="#">Item 3</a>
+                          </li>
+                      <li>
+              <a href="#">Item 4</a>
+                          </li>
+                      <li>
+              <a href="#">Item 5</a>
+                          </li>
+                      <li>
+              <a href="#">Item 6</a>
+                          </li>
+                  </ul>
+              </li>
+            <li>
+        <a href="#">Advocacy</a>
+                <ul class="vertical menu">
+          <li class="parent-link"><a href="#" class="color-primary">Advocacy Overview</a></li>
+                      <li>
+              <a href="#">Item 1</a>
+                          </li>
+                      <li>
+              <a href="#">Item 2</a>
+                            <ul class="vertical menu">
+                <li><a href="#">Item 2 Overview</a></li>
+                                  <li>
+                    <a href="#">Item 1</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 2</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 3</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                              </ul>
+                          </li>
+                      <li>
+              <a href="#">Item 3</a>
+                          </li>
+                      <li>
+              <a href="#">Item 4</a>
+                          </li>
+                      <li>
+              <a href="#">Item 5</a>
+                          </li>
+                      <li>
+              <a href="#">Item 6</a>
+                          </li>
+                  </ul>
+              </li>
+            <li>
+        <a href="#">About Us</a>
+                <ul class="vertical menu">
+          <li class="parent-link"><a href="#" class="color-primary">About Us Overview</a></li>
+                      <li>
+              <a href="#">Item 1</a>
+                          </li>
+                      <li>
+              <a href="#">Item 2</a>
+                            <ul class="vertical menu">
+                <li><a href="#">Item 2 Overview</a></li>
+                                  <li>
+                    <a href="#">Item 1</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 2</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 3</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                              </ul>
+                          </li>
+                      <li>
+              <a href="#">Item 3</a>
+                          </li>
+                      <li>
+              <a href="#">Item 4</a>
+                          </li>
+                      <li>
+              <a href="#">Item 5</a>
+                          </li>
+                      <li>
+              <a href="#">Item 6</a>
+                          </li>
+                  </ul>
+              </li>
+      
+      <li class="search-wrapper">
+        <div id="search-form" class="search-form">
+          <form action="">
+  <div class="input-group simple">
+    <input class="input-group-field" type="search">
+    <div class="input-group-button">
+      <button type="submit"  value="Submit">
+        <span class="show-for-sr">Search</span>
+        <span class="icon-search"></span>
+      </button>
+    </div>
+  </div>
+</form>
+        </div>
       </li>
-      <li>
-        <a href="#">Item 2</a>
-        <ul class="vertical menu">
-          <li><a href="#">Item 2A</a></li>
-          <li><a href="#">Item 2B</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">Item 3</a>
-        <ul class="vertical menu">
-          <li><a href="#">Item 3A</a></li>
-          <li><a href="#">Item 3B</a></li>
-        </ul>
-      </li>
+
     </ul>
 
   </div>

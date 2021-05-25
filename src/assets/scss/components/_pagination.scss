@@ -1,7 +1,16 @@
 @import "../vendor/icomoon/variables";
 .pagination{
+  li{
+    vertical-align: middle;
+  }
+  .pagination-arrow{
+    font-size: rem-calc(25);
+    font-weight: normal;
+    padding: 0;
+  }
   &-previous, &-next{
     a{
+      color: $primary-color;
       &:hover{
         background-color: transparent;
         color: $primary-color;
@@ -18,6 +27,24 @@
     &.disabled:after, a:after{
       font-family: $icomoon-font-family;
       content: $icon-chevron-right;
+    }
+  }
+  &-page{
+    // font-family: 'Nunito Sans';
+    // font-weight: $global-weight-bold;
+    font-size: rem-calc(16);
+    strong{
+      @include size(32);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: $primary-color;
+      color: $white;
+      border-radius: 100%;
+    }
+    a{
+      color: $primary-color;
     }
   }
 }

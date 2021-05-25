@@ -1,17 +1,327 @@
+/* purgecss start ignore */
+/* purgecss start ignore */
+
+@import '../vendor/icomoon/variables';
 .top-bar{
-  .top{
-    > li{
+  font-family: $secondaryFontFamily;
+  font-weight: $global-weight-semibold;
+  &_close{
+    position: absolute;
+    top: rem-calc(15);
+    right: rem-calc(23);
+    font-size: rem-calc(50);
+    color: $primary-color;
+    cursor: pointer;
+    font-weight: normal;
+  }
+
+  @include breakpoint(medium down){
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    height: 100%;
+    overflow: auto;
+    background-color: $white;
+    padding: 0;
+    display: block;
+    @media only screen and (orientation: portrait) {
+      display: flex;
+    }
+
+    .top-bar-left{
+      padding: rem-calc(80 50);
+      //flex: none;
+    }
+    .accordion-menu{
+      a:not(.button){
+        color: map-get($accent,'default');
+        padding: rem-calc(10 15);
+      }
+    }
+    input{
+      max-width: none;
+    }
+    .utility{
+      margin-bottom: rem-calc(10);
+      a:not(.button){
+        color: $primary-color;
+      }
+    }
+    .search-wrapper{
+      margin-bottom: rem-calc(15);
+    }
+    .button{
+      padding: rem-calc(15 30);
+      display: inline-block;
+      margin-bottom: rem-calc(20);
+      //margin: rem-calc(20 0);
+    }
+    .input-group{
+      padding: rem-calc(10 0);
+    }
+    &_toggle{
+      display: flex;
+      justify-content: flex-end;
+    }
+    .parent-link{
       > a{
-        color: inherit;
-        &:hover, &:focus, &.hover{
-          color: inherit;
+        padding-left: 0;
+        font-size: rem-calc(20);
+        color: $primary-color;
+      }
+    }
+    .top{
+      > li {
+        &:not(.utility):not(.search-wrapper):not(:first-child){
+          border-top: $hr-border;
+        }
+        &:not(.utility){
+          > a{
+            font-size: rem-calc(18);
+            color: $primary-color;
+            padding: rem-calc(18 0);
+          }
+        }
+        > ul{ // children
+          padding-bottom: rem-calc(15);
+          margin-top: rem-calc(-10);
+          > li{
+
+            > a{
+
+            }
+
+            &.is-active{
+              //position: unset;
+              > a{
+
+                //background-color: map-get($additional-palette,'primary-lightest');
+                //position: relative;
+                &:after{
+                  position: absolute;
+                  right: rem-calc(10);
+                  top: 50%;
+                  transform: translateY(-50%);
+                  font-size: rem-calc(13);
+                  // font-family: $icomoon-font-family;
+                  // content: $icon-chevron-right;
+                }
+              }
+            }
+            > ul{ // grandchildren
+              padding-left: rem-calc(20);
+              a{
+                font-size: rem-calc(16);
+              }
+            }
+          }
         }
       }
-      &.is-active{
+    }
+    li{
+      &.is-accordion-submenu-parent{
         > a{
-          color: inherit !important;
+          position: relative;
+          &:after{
+            font-family: 'Nunito Sans';
+            font-weight: bold;
+            font-size: rem-calc(24);
+            right: rem-calc(2);
+            top: 50%;
+            width: rem-calc(13);
+            text-align: center;
+            transform: translateY(-50%);
+            position: absolute;
+            content: "+";
+          }
+        }
+        &[aria-expanded="true"]{
+          > a{
+            &:after{
+              content: '\2013';
+            }
+          }
         }
       }
     }
   }
+
+  @include breakpoint(large){
+
+    margin-left: rem-calc(-1*get-side($dropdownmenu-padding,'left'));
+    padding-right: 0;
+    a{
+      &:hover, &:focus:not(.is-active > a){
+        text-decoration: underline;
+      }
+    }
+    li{
+      margin-bottom: 0;
+    }
+    .top{
+
+      margin-top: rem-calc(-5);
+      justify-content: space-between;
+      //flex-wrap: nowrap;
+      > li {
+        @include breakpoint(1313px down){
+          > ul{
+            margin-top: rem-calc(-12);
+          }
+          > a{
+            font-size: rem-calc(16);
+            margin: rem-calc(10 0);
+            padding: rem-calc(10 6) !important;
+          }
+
+        }
+      }
+      .parent-link{
+        font-size: rem-calc(22);
+
+      }
+      > li { // top
+        > a{
+          color: inherit;
+          &:hover, &:focus{
+            color: inherit;
+            //text-decoration: underline;
+          }
+        }
+        &.is-active{
+          > a{
+            color: $white;
+            background-color: $primary-color;
+          }
+        }
+        > ul{ // children
+          box-shadow: none;
+          width: rem-calc(300);
+          padding: rem-calc(15 0);
+
+          // .parent-link{
+          //   font-size: rem-calc(22);
+          // }
+          &:after{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            height: 100%;
+            //ov
+            z-index: 0;
+            width: 100%;
+            box-shadow: $global-box-shadow;
+          }
+          a:not(.parent-link > a){
+            color: map-get($accent,'default');
+          }
+          &.child-opens-left{
+            &::after{
+              right: 0;
+              left: auto;
+            }
+          }
+
+          > li{
+
+
+            > a{
+              padding: rem-calc(14 18);
+
+            }
+
+            &.is-dropdown-submenu-parent{
+              > a{
+                position: relative;
+                &:after{
+                  position: absolute;
+                  right: rem-calc(10);
+                  top: 50%;
+                  //transform: translateY(-50%);
+                  font-size: rem-calc(13);
+                  font-family: $icomoon-font-family;
+                  content: $icon-chevron-right;
+                  opacity: 0;
+                  transform: translateX(-10px);
+                  transition: 0.3s transform;
+                }
+                &:hover, &:focus{
+                  &:after{
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+            &.is-active{
+              position: unset;
+              // &:before{
+              //   content: '';
+              //   width: 200%;
+              //   display: block;
+              //   background-color: red;
+              //   height: 3px;
+              // }
+              > a{
+
+                background-color: map-get($additional-palette,'primary-lightest');
+                &:after{
+                  transform: translateX(0px);
+                  opacity: 1;
+                }
+              }
+            }
+            &.opens-left{
+              > a{
+                &:after{
+                  right: auto;
+                  left: rem-calc(20);
+                  transform: scaleX(-1);
+                }
+              }
+              &.is-active{
+                > a{
+                  transition: 0.3s padding;
+                  padding-left: rem-calc(25);
+                  &:after{
+                    transition: none;
+                    transform: scaleX(-1) translateX(10px);
+                  }
+                }
+              }
+            }
+            > ul{ // grandchildren
+              box-shadow: none;
+              background-color: map-get($additional-palette,'primary-lightest');
+              min-height: 100%;
+              width: rem-calc(300);
+              padding: rem-calc(25 15);
+              a{
+                padding: rem-calc(10);
+              }
+            }
+          }
+          &.has-grandchild{
+            &:after{
+              width: 200%;
+            }
+          }
+        }
+      }
+    }
+    .input-group{
+      max-width: rem-calc(184);
+    }
+    .search-wrapper{
+      //padding-left: rem-calc(5);
+      justify-self: flex-end;
+      @include breakpoint(large){
+        padding: rem-calc(10 0);
+      }
+    }
+  }
 }
+/* purgecss end ignore */

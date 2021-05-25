@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1617812237467" media="all" />
-    <link rel="stylesheet" href="../../css/all.css?1617812237467" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1621976691185" media="all" />
+    <link rel="stylesheet" href="../../css/all.css?1621976691185" media="all" />
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     
@@ -19,7 +19,7 @@
     <div class="grid-x grid-margin-x align-middle">
       <div class="cell medium-4">Header</div>
       <div class="cell medium-7">
-        <div  data-responsive-toggle="responsive-menu" data-hide-for="medium">
+        <div  data-responsive-toggle="responsive-menu" data-hide-for="large" class="top-bar_toggle" >
   <button class="hamburger" type="button" id="hamburger" data-toggle="responsive-menu" data-toggler=".is-active" aria-label="Toggle navigation">
   <span class="hamburger-icon">
     <span class="hamburger-icon-bar"></span>
@@ -28,30 +28,248 @@
 </button>
 </div>
 
-<div class="top-bar" id="responsive-menu" data-toggler=".is-active">
+<div class="top-bar" id="responsive-menu">
+  <div data-responsive-toggle="responsive-menu" data-hide-for="large">
+    <button class="top-bar_close hide-for-large" data-toggle="responsive-menu">
+      <span class="show-for-sr">Collapse menu</span>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
   <div class="top-bar-left">
-    <ul class="vertical medium-horizontal menu top" data-responsive-menu="accordion medium-dropdown">
-      <li>
-        <a href="#">Item 1</a>
-        <ul class="vertical menu">
-          <li><a href="#">Item 1A</a></li>
-          <li><a href="#">Item 1B</a></li>
-        </ul>
+    <ul class="vertical large-horizontal menu top" data-responsive-menu="accordion large-dropdown" data-click-open="true" data-disable-hover="true">
+            <li>
+        <a href="#">Membership</a>
+                <ul class="vertical menu">
+          <li class="parent-link"><a href="#" class="color-primary">Membership Overview</a></li>
+                      <li>
+              <a href="#">Item 1</a>
+                          </li>
+                      <li>
+              <a href="#">Item 2</a>
+                            <ul class="vertical menu">
+                <li><a href="#">Item 2 Overview</a></li>
+                                  <li>
+                    <a href="#">Item 1</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 2</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 3</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 2</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 3</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 2</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 3</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                              </ul>
+                          </li>
+                      <li>
+              <a href="#">Item 3</a>
+                          </li>
+                      <li>
+              <a href="#">Item 4</a>
+                          </li>
+                      <li>
+              <a href="#">Item 5</a>
+                          </li>
+                      <li>
+              <a href="#">Item 6</a>
+                          </li>
+                  </ul>
+              </li>
+            <li>
+        <a href="#">Legal Services</a>
+                <ul class="vertical menu">
+          <li class="parent-link"><a href="#" class="color-primary">Legal Services Overview</a></li>
+                      <li>
+              <a href="#">Item 1</a>
+                          </li>
+                      <li>
+              <a href="#">Item 2</a>
+                            <ul class="vertical menu">
+                <li><a href="#">Item 2 Overview</a></li>
+                                  <li>
+                    <a href="#">Item 1</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 2</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 3</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                              </ul>
+                          </li>
+                      <li>
+              <a href="#">Item 3</a>
+                          </li>
+                      <li>
+              <a href="#">Item 4</a>
+                          </li>
+                      <li>
+              <a href="#">Item 5</a>
+                          </li>
+                      <li>
+              <a href="#">Item 6</a>
+                          </li>
+                  </ul>
+              </li>
+            <li>
+        <a href="#">Professional Resources</a>
+                <ul class="vertical menu">
+          <li class="parent-link"><a href="#" class="color-primary">Professional Resources Overview</a></li>
+                      <li>
+              <a href="#">Item 1</a>
+                          </li>
+                      <li>
+              <a href="#">Item 2</a>
+                            <ul class="vertical menu">
+                <li><a href="#">Item 2 Overview</a></li>
+                                  <li>
+                    <a href="#">Item 1</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 2</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 3</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                              </ul>
+                          </li>
+                      <li>
+              <a href="#">Item 3</a>
+                          </li>
+                      <li>
+              <a href="#">Item 4</a>
+                          </li>
+                      <li>
+              <a href="#">Item 5</a>
+                          </li>
+                      <li>
+              <a href="#">Item 6</a>
+                          </li>
+                  </ul>
+              </li>
+            <li>
+        <a href="#">Advocacy</a>
+                <ul class="vertical menu">
+          <li class="parent-link"><a href="#" class="color-primary">Advocacy Overview</a></li>
+                      <li>
+              <a href="#">Item 1</a>
+                          </li>
+                      <li>
+              <a href="#">Item 2</a>
+                            <ul class="vertical menu">
+                <li><a href="#">Item 2 Overview</a></li>
+                                  <li>
+                    <a href="#">Item 1</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 2</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 3</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                              </ul>
+                          </li>
+                      <li>
+              <a href="#">Item 3</a>
+                          </li>
+                      <li>
+              <a href="#">Item 4</a>
+                          </li>
+                      <li>
+              <a href="#">Item 5</a>
+                          </li>
+                      <li>
+              <a href="#">Item 6</a>
+                          </li>
+                  </ul>
+              </li>
+            <li>
+        <a href="#">About Us</a>
+                <ul class="vertical menu">
+          <li class="parent-link"><a href="#" class="color-primary">About Us Overview</a></li>
+                      <li>
+              <a href="#">Item 1</a>
+                          </li>
+                      <li>
+              <a href="#">Item 2</a>
+                            <ul class="vertical menu">
+                <li><a href="#">Item 2 Overview</a></li>
+                                  <li>
+                    <a href="#">Item 1</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 2</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 3</a>
+                  </li>
+                                  <li>
+                    <a href="#">Item 4</a>
+                  </li>
+                              </ul>
+                          </li>
+                      <li>
+              <a href="#">Item 3</a>
+                          </li>
+                      <li>
+              <a href="#">Item 4</a>
+                          </li>
+                      <li>
+              <a href="#">Item 5</a>
+                          </li>
+                      <li>
+              <a href="#">Item 6</a>
+                          </li>
+                  </ul>
+              </li>
+      
+      <li class="search-wrapper">
+        <div id="search-form" class="search-form">
+          <form action="">
+  <div class="input-group simple">
+    <input class="input-group-field" type="search">
+    <div class="input-group-button">
+      <button type="submit"  value="Submit">
+        <span class="show-for-sr">Search</span>
+        <span class="icon-search"></span>
+      </button>
+    </div>
+  </div>
+</form>
+        </div>
       </li>
-      <li>
-        <a href="#">Item 2</a>
-        <ul class="vertical menu">
-          <li><a href="#">Item 2A</a></li>
-          <li><a href="#">Item 2B</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">Item 3</a>
-        <ul class="vertical menu">
-          <li><a href="#">Item 3A</a></li>
-          <li><a href="#">Item 3B</a></li>
-        </ul>
-      </li>
+
     </ul>
 
   </div>
@@ -80,11 +298,14 @@
   </div>
 </header>
   <div class="l-main">
-      <section class="section">
-  <div class="grid-container">
-    <h2>Section Heading</h2>
-    <p>Summary</p>
-  </div>
+      
+<section class="section   ">
+    <div class="grid-container ">
+            
+        <div class="section_content">
+          </div>
+
+      </div>
 </section>
   </div>
   <header class="l-footer">
@@ -95,11 +316,11 @@
 
 </div><!--DO NOT REMOVE-->
 <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
-  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"pages-wrapper","lineagePath":"../../patterns/pages-_wrapper/pages-_wrapper.rendered.html"},{"lineagePattern":"layout-section","lineagePath":"../../patterns/layout-sections-section/layout-sections-section.rendered.html"}],"lineage":[{"lineagePattern":"pages-wrapper","lineagePath":"../../patterns/pages-_wrapper/pages-_wrapper.rendered.html"},{"lineagePattern":"layout-section","lineagePath":"../../patterns/layout-sections-section/layout-sections-section.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"pages","patternSubgroup":""},"patternExtension":"twig","patternName":"Home","patternPartial":"pages-home","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"pages-wrapper","lineagePath":"../../patterns/pages-_wrapper/pages-_wrapper.rendered.html"},{"lineagePattern":"components-section","lineagePath":"../../patterns/components-sections-section/components-sections-section.rendered.html"}],"lineage":[{"lineagePattern":"pages-wrapper","lineagePath":"../../patterns/pages-_wrapper/pages-_wrapper.rendered.html"},{"lineagePattern":"components-section","lineagePath":"../../patterns/components-sections-section/components-sections-section.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"pages","patternSubgroup":""},"patternExtension":"twig","patternName":"Home","patternPartial":"pages-home","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
 </script>
 
 <script>
-  window.patternData = {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"pages-wrapper","lineagePath":"../../patterns/pages-_wrapper/pages-_wrapper.rendered.html"},{"lineagePattern":"layout-section","lineagePath":"../../patterns/layout-sections-section/layout-sections-section.rendered.html"}],"lineage":[{"lineagePattern":"pages-wrapper","lineagePath":"../../patterns/pages-_wrapper/pages-_wrapper.rendered.html"},{"lineagePattern":"layout-section","lineagePath":"../../patterns/layout-sections-section/layout-sections-section.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"pages","patternSubgroup":""},"patternExtension":"twig","patternName":"Home","patternPartial":"pages-home","patternState":"","patternEngineName":"twig-php","extraOutput":{}};
+  window.patternData = {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"pages-wrapper","lineagePath":"../../patterns/pages-_wrapper/pages-_wrapper.rendered.html"},{"lineagePattern":"components-section","lineagePath":"../../patterns/components-sections-section/components-sections-section.rendered.html"}],"lineage":[{"lineagePattern":"pages-wrapper","lineagePath":"../../patterns/pages-_wrapper/pages-_wrapper.rendered.html"},{"lineagePattern":"components-section","lineagePath":"../../patterns/components-sections-section/components-sections-section.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"pages","patternSubgroup":""},"patternExtension":"twig","patternName":"Home","patternPartial":"pages-home","patternState":"","patternEngineName":"twig-php","extraOutput":{}};
 </script>
 
 <script>
@@ -135,10 +356,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1617812237467">
+<script id="pl-js-polyfill-insert-1621976691185">
   (function() {
     if (self != top) {
-      var cb = '1617812237467';
+      var cb = '1621976691185';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -151,7 +372,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1617812237467" nomodule>
+<script id="pl-js-insert-1621976691185" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -174,6 +395,6 @@
   <script src="/core/misc/drupal.init.js"></script>
   -->
   <!-- Concatenated by Gulp so you don't have to manually add each file. -->
-  <script src="../../js/app.js?1617812237467"></script>
+  <script src="../../js/app.js?1621976691185"></script>
 </body>
 </html>

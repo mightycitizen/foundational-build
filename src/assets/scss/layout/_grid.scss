@@ -1,0 +1,39 @@
+.grid{
+  &--narrow{
+    max-width: rem-calc(1110);
+  }
+  &--spaced{
+    &:not(:last-child){
+      margin-bottom: $paragraph-margin-bottom;
+    }
+  }
+  &-margin-x{
+    .cell{
+      &[class*=medium-]:not([class*=small-]){
+        @include breakpoint(small only){
+          &:not(:last-child){
+            margin-bottom: $paragraph-margin-bottom;
+          }
+        }
+      }
+      &[class*=large-]:not([class*=medium-]):not([class*=small-]){
+        @include breakpoint(medium down){
+          &:not(:last-child){
+            margin-bottom: $paragraph-margin-bottom;
+          }
+        }
+      }
+    }
+    &.tight-mobile-spacing{
+      .cell{
+        &[class*=medium-]{
+          @include breakpoint(small only){
+            &:not(:last-child){
+              margin-bottom: rem-calc(15);
+            }
+          }
+        }
+      }
+    }
+  }
+}

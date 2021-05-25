@@ -1,11 +1,21 @@
 @import '../vendor/icomoon/variables';
 .breadcrumbs{
+  font-family: $secondaryFontFamily;
+  font-weight: $global-weight-semibold;
   li{
     &:not(:last-child){
       &:after{
+        font-size: rem-calc(10);
+        margin-right: rem-calc(9);
+        display: inline-block;
         font-family: $icomoon-font-family;
         content: $icon-chevron-right;
       }
+    }
+  }
+  a{
+    &:hover, &:focus{
+      text-decoration: none;
     }
   }
 }

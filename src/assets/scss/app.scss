@@ -98,10 +98,11 @@
   "components/loaders",
   "components/video",
   "components/text",
+  "components/section",
   "components/step-list";
 
 @import
-  "layout/section",
+  "layout/grid",
   "layout/wrapper";
 
 @import
@@ -112,7 +113,11 @@
 
 @import
   "helpers/spacing",
+  "helpers/lists",
+  "helpers/misc",
+  "helpers/text",
   "helpers/fonts";
+
 
 @import
   "forms",

@@ -6,6 +6,14 @@
     transform: translateY(-50%);
 }
 
+
+@mixin horizontal-center(){
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
 @mixin center(){
     position: absolute;
     top: 50%;
@@ -42,4 +50,9 @@
       border-bottom: $width solid transparent;
       border-top: $width solid transparent;
   }
+}
+
+@mixin size($size){
+    width: rem-calc($size);
+    height: rem-calc($size);
 }

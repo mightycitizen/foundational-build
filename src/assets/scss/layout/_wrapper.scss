@@ -18,7 +18,7 @@ html, body, .l-wrapper{
 .l-header{
   padding: rem-calc(30 0);
   background-color: map-get($additional-palette,'secondary-darkest');
-  color: $white;
+  //color: $white;
   flex: none;
   .search-toggle{
     color: inherit;

@@ -776,6 +776,17 @@ const initSlick = () => {
       slickPagination(slick);
     })
 
+
+    // pause/play
+    $this.next('.slick-nav').find('.js-slick-toggle').on('click', function(){
+      //console.log($this.get(0).slick.paused);
+      if ($this.get(0).slick.paused){
+        $this.slick('slickPlay').removeClass('is-paused');
+      }else{
+        $this.slick('slickPause').addClass('is-paused');
+      }
+    })
+
     $this.slick({
       slidesToScroll: 1,
       rows: 0,

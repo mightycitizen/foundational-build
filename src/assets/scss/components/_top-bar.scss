@@ -65,13 +65,7 @@
       display: flex;
       justify-content: flex-end;
     }
-    .parent-link{
-      > a{
-        padding-left: 0;
-        font-size: rem-calc(20);
-        color: $primary-color;
-      }
-    }
+
     .top{
       > li {
         &:not(.utility):not(.search-wrapper):not(:first-child){
@@ -165,19 +159,6 @@
       margin-top: rem-calc(-5);
       justify-content: space-between;
       //flex-wrap: nowrap;
-      > li {
-        @include breakpoint(1313px down){
-          > ul{
-            margin-top: rem-calc(-12);
-          }
-          > a{
-            font-size: rem-calc(16);
-            margin: rem-calc(10 0);
-            padding: rem-calc(10 6) !important;
-          }
-
-        }
-      }
       .parent-link{
         font-size: rem-calc(22);
 

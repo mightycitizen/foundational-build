@@ -1,3 +1,19 @@
+.has-icon{
+  display: inline-flex;
+  .icon{
+    vertical-align: middle;
+    margin-right: rem-calc(7);
+    flex: none;
+  }
+  &:not(.align-middle){
+    align-items: flex-start;
+    justify-content: flex-start;
+    .icon{
+      margin-top: rem-calc(2);
+    }
+  }
+}
+
 .icon{
   &.tiny{
     font-size: rem-calc(10);

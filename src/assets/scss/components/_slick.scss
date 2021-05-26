@@ -8,6 +8,44 @@ $slide-margin: map-get($grid-container-padding,'medium');
 	margin: 0 rem-calc(0.5*$slide-margin);
 }
 
+$toggle-spacing: 18;
+.slick-toggle{
+	color: $primary-color;
+	cursor: pointer;
+	order: 3;
+	position: relative;
+	margin-left: rem-calc($toggle-spacing);
+	height: rem-calc(23);
+	display: inline-block;
+	width: rem-calc(18);
+	@include breakpoint(large){
+		font-size: rem-calc(30);
+		height: rem-calc(35);
+		width: rem-calc(25);
+	}
+	&:before{
+		content: "";
+		display: block;
+		position: absolute;
+		background-color: $tertiary-color;
+		height: 100%;
+		width: rem-calc(1);
+		left: rem-calc(-1*$toggle-spacing);
+		top: 0;
+	}
+	.active, .inactive{
+		left: 0;
+		@include vertical-center;
+	}
+	// .active{
+	// 	margin-top: -1px;
+	// 	margin-bottom: 1px;
+	// }
+	.inactive{
+		display: none;
+	}
+}
+
 
 .slick-wrap{
 	position: relative;
@@ -232,6 +270,19 @@ $slide-margin: map-get($grid-container-padding,'medium');
 		max-width: calc(100% - 68px);
 
 
+	}
+
+
+	.slick-slider.is-paused + &{
+		//background-color: red;
+		.slick-toggle{
+			.inactive{
+				display: block;
+			}
+			.active{
+				display: none;
+			}
+		}
 	}
 	@include breakpoint(xxlarge){
 		.slick-slider:not(.js-slick--center) + &:not(:empty){

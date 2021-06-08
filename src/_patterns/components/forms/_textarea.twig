@@ -1,0 +1,5 @@
+{% embed 'components/forms/_input.twig' %}
+  {% block field %}
+    <textarea name="{{ name }}" id="{{ id }}" {% if required %}required{% endif %} placeholder="{{ placeholder }}"></textarea>
+  {% endblock %}
+{% endembed %}

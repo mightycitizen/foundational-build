@@ -1,0 +1,18 @@
+<div></div><!-- to prevent :first-child styling in style guide -->
+{% include 'components/sections/section.twig' with {
+  class: "bg-solid-primary-lightest",
+  section_heading: "Section with Solid Background",
+  section_description: "Can be any of the brand colors",
+}%}
+{% include 'components/sections/section.twig' with {
+  class: "section--tight",
+  intro_class: "text-center",
+  section_heading: "Section Tight",
+  section_description: "Intro area can have alignment classes",
+}%}
+{% include 'components/sections/section.twig' with {
+  class: "bg-gradient-secondary-lightest",
+  section_heading: "Section with Gradient Background",
+  section_description: "Can be any of the brand colors",
+}%}
+<div></div><!-- to prevent :last-child styling in style guide -->

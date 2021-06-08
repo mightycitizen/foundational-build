@@ -1,0 +1,11 @@
+  <fieldset class="options">
+    <legend>{{ label }} {% if required %}*{% endif %}</legend>
+    <ul class="radio-group no-bullet">
+      {% for option in options %}
+        <li><label for="{{ field_id }}_{{ option.id ? option.id : option.value }}"><input id="{{ field_id }}_{{ option.id ? option.id : option.value }}" name="{{ field_name }}" value="{{ option.value }}" type="radio" {% if required %}required {% endif %}> {{ option.label }}</label></li>
+      {% endfor %}
+    </ul>
+    {% if required %}
+      <span class="form-error">{{ label }} is required</span>
+    {% endif %}
+  </fieldset>

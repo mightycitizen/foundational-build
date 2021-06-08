@@ -1,5 +1,5 @@
 .card{
-  max-width: rem-calc(500);
+  //max-width: rem-calc(500);
   &--click{
     position: relative;
     a{
@@ -14,6 +14,16 @@
     }
     &:focus-within{
       box-shadow: 0 0 6px 1px rgba($medium-gray, 0.5);
+    }
+  }
+
+  &--horizontal{
+    @include breakpoint(medium){
+      .cell{
+        &:not(:first-child):not([class*=medium-order-1]){
+          margin-left: rem-calc(10);
+        }
+      }
     }
   }
 }

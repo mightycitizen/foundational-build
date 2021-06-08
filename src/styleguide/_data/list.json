@@ -1,0 +1,52 @@
+{
+  "list": [
+    {
+      "label": "Label",
+      "heading": "Item Title",
+      "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
+      "date": "December 20, 2020",
+      "categories": [
+        {
+          "url": "#",
+          "text": "Category"
+        }
+      ]
+    },
+    {
+      "label": "Label",
+      "heading": "Item Title",
+      "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
+      "date": "December 20, 2020",
+      "categories": [
+        {
+          "url": "#",
+          "text": "Category"
+        }
+      ]
+    },
+    {
+      "label": "Label",
+      "heading": "Item Title",
+      "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
+      "date": "December 20, 2020",
+      "categories": [
+        {
+          "url": "#",
+          "text": "Category"
+        }
+      ]
+    },
+    {
+      "label": "Label",
+      "heading": "Item Title",
+      "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
+      "date": "December 20, 2020",
+      "categories": [
+        {
+          "url": "#",
+          "text": "Category"
+        }
+      ]
+    }
+  ]
+}

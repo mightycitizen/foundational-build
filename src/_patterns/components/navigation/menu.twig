@@ -1,5 +1,5 @@
 <div  data-responsive-toggle="responsive-menu" data-hide-for="large" class="top-bar_toggle" >
-  {% include "components/misc/hamburger.twig" with {
+  {% include "components/icons-logos/hamburger.twig" with {
     toggle: "responsive-menu"
   } %}
 </div>
@@ -16,13 +16,13 @@
       {% for link in menu %}
       <li>
         <a href="{{ link.url }}">{{ link.text }}</a>
-        {% if link.children is not empty %}
+        {% if link.children | default %}
         <ul class="vertical menu">
           <li class="parent-link"><a href="{{ link.url }}" class="color-primary">{{ link.text }} Overview</a></li>
           {% for child in link.children %}
             <li>
               <a href="{{ child.url }}">{{ child.text }}</a>
-              {% if child.children is not empty %}
+              {% if child.children | default %}
               <ul class="vertical menu">
                 <li><a href="{{ child.url }}">{{ child.text }} Overview</a></li>
                 {% for grandchild in child.children %}
@@ -41,7 +41,7 @@
 
       <li class="search-wrapper">
         <div id="search-form" class="search-form">
-          {% include 'components/misc/simple-form.twig' %}
+          {% include 'components/forms/simple-form.twig' %}
         </div>
       </li>
 

@@ -1,0 +1,19 @@
+{
+  "label": "Checkbox",
+  "field_id": "checkbox",
+  "field_name": "checkbox",
+  "options": [
+    {
+      "label": "Checkbox A",
+      "value": 0
+    },
+    {
+      "label": "Checkbox B",
+      "value": 1
+    },
+    {
+      "label": "Checkbox C",
+      "value": 2
+    }
+  ]
+}

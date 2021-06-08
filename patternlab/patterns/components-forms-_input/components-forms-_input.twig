@@ -1,0 +1,8 @@
+<div class="form-input">
+  <label for="{{ id }}">{{ label }} {% if required %}*{% endif %}</label>
+  {% block field %}
+  {% endblock %}
+  {% if required %}
+    <span class="form-error">{{ label }} is required</span>
+  {% endif %}
+</div>

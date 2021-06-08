@@ -1,0 +1,16 @@
+<section class="section">
+  <div class="grid-container" id="content">
+    <div class="grid-x grid-margin-x">
+      <div class="cell medium-8">
+          {% block content %}
+          {% endblock %}
+      </div>
+      <div class="cell medium-4">
+        <div data-sticky data-anchor="content" data-sticky-on="large">
+          {% block sidebar %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

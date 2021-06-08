@@ -1,0 +1,66 @@
+{% embed 'components/sections/section.twig' with {
+    "intro_class": "medium-text-center",
+    "section_heading": "Curriculum &amp; Instruction",
+    "section_description": "Description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+  }
+%}
+
+  {% set links = [
+    {
+      title: "Accountability",
+      url: "#"
+    },
+    {
+      title: "Assessment",
+      url: "#"
+    },
+    {
+      title: "Classroom Resources",
+      url: "#"
+    },{
+      title: "Courses Affected by Recent Law",
+      url: "#"
+    },{
+      title: "Graduation Requirements",
+      url: "#"
+    },{
+      title: "Link that is long and can wrap to two lines",
+      url: "#"
+    },{
+      title: "Special Education",
+      url: "#"
+    },{
+      title: "TEKS",
+      url: "#"
+    },{
+      title: "TEKS Resource System (formerly CSCOPE)",
+      url: "#"
+    }
+  ] %}
+  {% block section_content %}
+      <div class="links">
+
+        {% for link in links %}
+          {% if loop.first or loop.index0 % 3 == 0 %}
+            {% if loop.index0 % 3 == 0 and loop.first == false %}
+              </div>
+            {% endif %}
+            <div class="grid-x">
+          {% endif %}
+              <div class="cell medium-4">
+                {% include 'components/inline/read-more.twig' with {
+                      "readMore": {
+                        "class": "h3",
+                        "url": link.url,
+                        "text": link.title
+                      }
+                    }
+                %}
+              </div>
+          {% if loop.last %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+  {% endblock %}
+{% endembed %}

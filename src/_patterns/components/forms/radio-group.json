@@ -1,0 +1,19 @@
+{
+  "label": "Radio",
+  "field_id": "radio",
+  "field_name": "radio",
+  "options": [
+    {
+      "label": "Radio A",
+      "value": 0
+    },
+    {
+      "label": "Radio B",
+      "value": 1
+    },
+    {
+      "label": "Radio C",
+      "value": 2
+    }
+  ]
+}

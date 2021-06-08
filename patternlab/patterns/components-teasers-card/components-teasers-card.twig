@@ -1,21 +1,33 @@
 <div class="card {{ card.modifier }} {% if card.clickCard %}card--click{% endif %}" >
-  {% if card.header is not empty %}
+  {% if card.header | default %}
   <div class="card-divider">
     {{ card.header }}
   </div>
   {% endif %}
-  {% if card.image is not empty %}
+  {% if card.image | default %}
     <div class="card-image">
       <img src="{{ card.image.src }}" alt="{{ card.image.alt }}">
+      {% if card.flag | default %}
+        {% include 'components/inline/flag.twig' with {
+          flag_class: "card_flag"
+        }%}
+      {% endif %}
     </div>
   {% endif %}
   <div class="card-section">
-    <h{{ card.heading.level }} class="card-title {{ card.heading.modifier }}">{{ card.heading.text }}</h{{ card.heading.level }}>
-    {% if card.summary is not empty %}
+    {% if card.image | default is empty %}
+        {% if card.flag | default %}
+          {% include 'components/inline/flag.twig' with {
+            flag_class: "card_flag"
+          }%}
+      {% endif %}
+    {% endif %}
+    <h{{ card.heading.level }} class="card-title {{ card.heading.modifier | default }}">{{ card.heading.text }}</h{{ card.heading.level }}>
+    {% if card.summary | default %}
 
       <p>{{ card.summary }}</p>
     {% endif %}
-    {% if card.link is not empty %}
+    {% if card.link | default %}
       <a href="{{ card.link.url }}" class="button">{{ card.link.text }}</a>
     {% endif %}
   </div>

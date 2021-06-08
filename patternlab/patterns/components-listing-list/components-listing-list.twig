@@ -2,19 +2,20 @@
   {% for item in list %}
     <div class="item">
       <h2><a href="{{ item.url }}">{{ item.heading }}</a></h2>
-      {% if item.date is not empty %}<p class="label m-b-1">{{ item.date }}</p>{% endif %}
+      {% if item.label | default %}<p class="label m-b-1">{{ item.label }}</p>{% endif %}
       <p class="m-b-1">{{ item.summary }}</p>
       {% if item.categories | length %}
-      <ul class="inline-list inline-list--tight">
-        {% for category in item.categories %}
-          <li>
-            {% include 'components/inline/small-link.twig' with {
-                  url: category.url,
-                  text: category.title
-                } %}
-          </li>
-        {% endfor %}
-      </ul>
+       {% include 'components/inline/meta.twig' with {
+          date: category.date,
+          categories: [
+              {
+                url: category.url,
+                text: category.title
+              }
+          ]
+
+        } %}
+
       {% endif %}
     </div>
   {% endfor %}

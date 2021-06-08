@@ -1,0 +1,64 @@
+<form action="" data-abide novalidate>
+  {% include 'components/forms/_checkbox.twig' with {
+         field_id: "checkbox_single",
+         checkbox_value: "1",
+         name: "checkbox_single",
+         checkbox_label: "Checkbox Single"
+        }%}
+  {% include 'components/forms/_textarea.twig' with {
+      label: "Textarea",
+      name: "textarea",
+      id: "field_id_2",
+      placeholder: "Prompt Text",
+      required: true
+    } %}
+
+
+  {% include 'components/forms/radio-group.twig' with {
+    "required": true,
+    "label": "Radio",
+    "field_id": "radio_validation",
+    "field_name": "radio",
+    "options": [
+      {
+        "label": "Radio A",
+        "value": 0
+      },
+      {
+        "label": "Radio B",
+        "value": 1
+      },
+      {
+        "label": "Radio C",
+        "value": 2
+      }
+    ]
+  }
+  %}
+
+
+  {% include 'components/forms/checkbox-group.twig' with {
+      "label": "Checkbox",
+      "field_id": "checkbox_validation",
+      "field_name": "checkbox",
+      "options": [
+        {
+          "label": "Checkbox A",
+          "value": 0
+        },
+        {
+          "label": "Checkbox B",
+          "value": 1
+        },
+        {
+          "label": "Checkbox C",
+          "value": 2
+        }
+      ]
+    }
+
+    %}
+
+
+  <button type="submit" class="button">Submit</button>
+</form>

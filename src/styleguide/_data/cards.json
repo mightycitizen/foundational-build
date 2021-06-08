@@ -3,7 +3,7 @@
   "cards": [
     {
       "modifier": "",
-      "members_only": true,
+      "flag": "Flag Text",
       "image": {
         "src": "https://source.unsplash.com/GDokEYnOfnE/406x207",
         "alt": "Alt Text"

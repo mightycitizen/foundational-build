@@ -1,0 +1,11 @@
+{% extends 'pages/_wrapper.twig' %}
+
+{% block main %}
+  {% include "components/containers/hero.twig" %}
+  {% embed 'layout/structure/content-narrow.twig' %}
+    {% block section_content %}
+      {% include 'components/listing/list.twig' %}
+      {% include 'components/listing/pagination.twig' %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

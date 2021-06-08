@@ -71,12 +71,13 @@ $global-lineheight: 1.5;
 $foundation-palette: (
   primary: map-get($primary,'default'),
   secondary: map-get($secondary, 'default'),
+  tertiary: map-get($tertiary, 'default'),
   success: $success,
   warning: $warning,
   alert: $alert,
 );
 
-
+$tertiary-color: map-get($foundation-palette,'tertiary');
 $light-gray: map-get($additional-palette,'gray-lighter');
 $medium-gray: map-get($gray,'default');
 $dark-gray: map-get($additional-palette,'gray-darker');

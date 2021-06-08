@@ -16,14 +16,9 @@
     {% endblock %}
   </div>
 {% endset %}
-<section class="section {{ class }} {% if style %}section--{{ style }} {% endif %} {% if slash %}has-slash{% endif %}">
-  {% if slash %}
-    <div class="slash slash--top section_slash slash--small fill-primary">
-      {% include 'global/images/slash.twig' %}
-    </div>
-  {% endif %}
+<section class="section {{ class }} {% if style | default %}section--{{ style }} {% endif %}">
   <div class="grid-container {{ grid_class }}">
-    {% if style == 'side' %}
+    {% if style | default and style == 'side' %}
       <div class="grid-x align-middle">
         <div class="cell large-3">
           {{ section_intro }}

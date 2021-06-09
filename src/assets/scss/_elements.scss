@@ -60,24 +60,14 @@ blockquote{
 
 
 
-
-
-hr{
-  [class*=bg-] &{
-    border-bottom-color: $dark-gray;
-  }
-  [class*=bg-][class*=dark] &{
-    border-bottom-color: $white;
+h2, h3, h4{
+  a{
+    text-decoration: underline;
+    &:hover, &:focus{
+      text-decoration: none;
+    }
   }
 }
-
-[class*=bg-][class*=dark]{
-  color: $white;
-  label, .pagination a{
-    color: inherit;
-  }
-}
-
 
 
 

@@ -10418,18 +10418,11 @@ blockquote:before {
   font-size: 1.875rem;
 }
 
-[class*=bg-] hr {
-  border-bottom-color: #8a8a8a;
+h2 a, h3 a, h4 a {
+  text-decoration: underline;
 }
-[class*=bg-][class*=dark] hr {
-  border-bottom-color: #fff;
-}
-
-[class*=bg-][class*=dark] {
-  color: #fff;
-}
-[class*=bg-][class*=dark] label, [class*=bg-][class*=dark] .pagination a {
-  color: inherit;
+h2 a:hover, h2 a:focus, h3 a:hover, h3 a:focus, h4 a:hover, h4 a:focus {
+  text-decoration: none;
 }
 
 img:not([src]) {

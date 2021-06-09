@@ -1,5 +1,16 @@
 .card{
   //max-width: rem-calc(500);
+  position: relative;
+  .date{
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .flag{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
   &--click{
     position: relative;
     a{

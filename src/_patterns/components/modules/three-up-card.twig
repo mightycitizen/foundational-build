@@ -5,10 +5,11 @@
 %}
   {% block section_content %}
     <div class="slick-wrap">
-      <div class="grid-x grid-margin-x js-slick--mobile">
+      <div class="grid-x grid-margin-x js-slick--mobile" data-equalizer data-equalize-on="medium">
         {% for card in cards %}
           <div class="medium-4 cell">
             {% include 'components/teasers/card.twig' with {
+              equalize: true,
               card: card
             }%}
           </div>

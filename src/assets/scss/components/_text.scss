@@ -44,3 +44,13 @@
     font-size: rem-calc(13);
   }
 }
+
+
+.flag{
+  background-color: $light-gray;
+  padding: rem-calc(2 10);
+  text-transform: uppercase;
+  font-size: rem-calc(13);
+  font-weight: bold;
+  border: 1px solid $medium-gray;
+}

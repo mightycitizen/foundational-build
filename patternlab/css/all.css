@@ -6495,6 +6495,19 @@ a.thumbnail image {
   text-decoration: none;
 }
 
+.card {
+  position: relative;
+}
+.card .date {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.card .flag {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 .card--click {
   position: relative;
 }
@@ -7632,6 +7645,15 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .date_month {
   font-size: 0.8125rem;
+}
+
+.flag {
+  background-color: #e6e6e6;
+  padding: 0.125rem 0.625rem;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  font-weight: bold;
+  border: 1px solid #ccc;
 }
 
 .section {

@@ -8,14 +8,19 @@
   {% if card.image | default %}
     <div class="card-image">
       <img src="{{ card.image.src }}" alt="{{ card.image.alt }}">
+      {% if card.type.handle | default == 'event' and card.date | default %}
+        {% include 'components/inline/date.twig' with {
+          date: card.date
+        } %}
+      {% endif %}
       {% if card.flag | default %}
         {% include 'components/inline/flag.twig' with {
-          flag_class: "card_flag"
+          flag_text: card.flag
         }%}
       {% endif %}
     </div>
   {% endif %}
-  <div class="card-section">
+  <div class="card-section" {% if equalize | default %}data-equalizer-watch{% endif %}>
     {% if card.image | default is empty %}
         {% if card.flag | default %}
           {% include 'components/inline/flag.twig' with {

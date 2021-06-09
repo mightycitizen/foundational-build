@@ -1,0 +1,81 @@
+
+{
+  "cards": [
+    {
+      "type": {
+        "handle": "event",
+        "label": "Events"
+      },
+      "modifier": "",
+      "flag": "Test",
+      "image": {
+        "src": "https://source.unsplash.com/GDokEYnOfnE/406x207",
+        "alt": "Alt Text"
+      },
+      "heading": {
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "url": "#"
+      },
+      "link": {
+        "url": "#",
+        "text":"Optional Link"
+      },
+      "date": {
+        "month_short": "Dec",
+        "day": 20,
+        "full": "December 20, 2020"
+      }
+    },
+      {
+      "type": {
+        "handle": "event",
+        "label": "Events"
+      },
+      "modifier": "",
+      "members_only": false,
+      "image": {
+        "src": "https://source.unsplash.com/GDokEYnOfnE/406x207",
+        "alt": "Alt Text"
+      },
+      "heading": {
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Another line here to show multiple lines",
+        "url": "#"
+      },
+      "link": {
+        "url": "#",
+        "text":"Optional Link"
+      },
+      "date": {
+        "month_short": "Dec",
+        "day": 20,
+        "full": "December 20, 2020"
+      }
+    },
+      {
+      "type": {
+        "handle": "event",
+        "label": "Events"
+      },
+      "modifier": "",
+      "members_only": false,
+      "image": {
+        "src": "https://source.unsplash.com/GDokEYnOfnE/406x207",
+        "alt": "Alt Text"
+      },
+      "heading": {
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "url": "#"
+      },
+      "link": {
+        "url": "#",
+        "text":"Optional Link"
+      },
+      "date": {
+        "month_short": "Dec",
+        "day": 20,
+        "full": "December 20, 2020"
+      }
+    }
+  ]
+}
+

@@ -8,7 +8,7 @@
               <img data-src="{{ section_image.url }}" alt="{{ section_image.alt }}" class="js-lazy">
             </div>
           {% endif %}
-          <div class="cell medium-8">
+          <div class="cell {% if style | default is empty %}medium-8{% endif %}">
             <h2 class="section_heading">{{ section_heading }}</h2>
             {% if section_subheading | default %}
               <h3 class="section_subheading">{{ section_subheading }}</h3>

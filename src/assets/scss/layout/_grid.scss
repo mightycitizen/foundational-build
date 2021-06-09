@@ -24,6 +24,17 @@
         }
       }
     }
+    &.wide-mobile-spacing{
+      .cell{
+        &[class*=medium-]{
+          @include breakpoint(small only){
+            &:not(:last-child){
+              margin-bottom: rem-calc(40);
+            }
+          }
+        }
+      }
+    }
     &.tight-mobile-spacing{
       .cell{
         &[class*=medium-]{

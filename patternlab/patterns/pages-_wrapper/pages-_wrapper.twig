@@ -5,5 +5,11 @@
     {% endblock %}
   </div>
   {% include "layout/wrapper/footer.twig" %}
-
+  {% if cookie | default %}
+    {% include 'components/informational/alert.twig' with {
+      text: cookie,
+      closable: true,
+      alert_class: 'alert--sticky'
+    }%}
+  {% endif %}
 </div>

@@ -1,15 +1,100 @@
 .section{
-  padding: rem-calc(40 0);
+  $section-padding: 50;
+  $section-padding-medium: 95;
+  $section-padding-large: 115;
+  padding: rem-calc($section-padding 0 60);
+
   background-size: cover;
   background-position: center;
-  *:last-child{
-    margin-bottom: 0;
+
+  &_content{
+    &, .cell{
+      > *:last-child{
+        margin-bottom: 0;
+      }
+    }
   }
 
-  &--padded{
-    padding: rem-calc(80 0);
+  &_intro{
+    margin-bottom: rem-calc(35);
+    //font-size: rem-calc(20);
+    @include breakpoint(medium){
+      margin-bottom: rem-calc(40);
+//      font-size: $lead-font-size;
+    }
+    *:last-child{
+      margin-bottom: 0;
+    }
   }
+
+  @include breakpoint(xlarge){
+    padding: rem-calc(60 0);
+
+    &--padded{
+      padding: rem-calc(80 0);
+    }
+  }
+
+  &:not([class*=bg-]){
+    + .section{
+      &:not([class*=bg-solid-]){
+        padding-top: 0;
+
+      }
+    }
+    &.section--tight{
+      + .section{
+        &:not([class*=bg-solid-]){
+          margin-top: rem-calc(-30);
+          @include breakpoint(xlarge){
+            margin-top: rem-calc(-70);
+          }
+        }
+      }
+    }
+    &:not(.section--tight){
+      + .section{
+        &--tight{
+         margin-top: rem-calc(-30);
+          @include breakpoint(xlarge){
+            margin-top: rem-calc(-70);
+          }
+        }
+      }
+    }
+  }
+  &[class*=bg-]{
+    + .section--tight{
+
+      @include breakpoint(large){
+        padding-top: rem-calc(50);
+      }
+
+    }
+  }
+
   &--tight{
-    padding: rem-calc(20 0);
+
+    @include breakpoint(medium down){
+      + .section--tight{
+        margin-top: rem-calc(-25);
+      }
+    }
+    @include breakpoint(large){
+      + .section--tight{
+        margin-top: rem-calc(-80);
+      }
+      &:last-child{
+        padding-bottom: rem-calc(80);
+      }
+      + .section:not(.section--tight){
+        &:not([class*=bg-]){
+          margin-top: rem-calc(-70);
+        }
+        &[class*=bg-]{
+          padding-top: rem-calc($section-padding-medium);
+        }
+      }
+    }
   }
 }

@@ -178,6 +178,11 @@
     content: $icon-external-link;
   }
 }
+.icon-phone {
+  &:before {
+    content: $icon-phone;
+  }
+}
 .icon-twitter {
   &:before {
     content: $icon-twitter;
@@ -193,7 +198,7 @@
     content: $icon-facebook-f;
   }
 }
-.icon-envelope {
+.icon-email {
   &:before {
     content: $icon-envelope;
   }
@@ -231,6 +236,11 @@
 .icon-tumblr {
   &:before {
     content: $icon-tumblr;
+  }
+}
+.icon-pinterest-p {
+  &:before {
+    content: $icon-pinterest-p;
   }
 }
 .icon-commenting {

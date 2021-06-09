@@ -3890,51 +3890,6 @@ a.button:hover, a.button:focus {
   line-height: 1;
 }
 
-.progress {
-  height: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 0;
-  background-color: #ccc;
-}
-.progress.primary .progress-meter {
-  background-color: #0080A4;
-}
-.progress.secondary .progress-meter {
-  background-color: #EEA600;
-}
-.progress.tertiary .progress-meter {
-  background-color: #73af8c;
-}
-.progress.success .progress-meter {
-  background-color: #73af8c;
-}
-.progress.warning .progress-meter {
-  background-color: #EEA600;
-}
-.progress.alert .progress-meter {
-  background-color: #d5383c;
-}
-
-.progress-meter {
-  position: relative;
-  display: block;
-  width: 0%;
-  height: 100%;
-  background-color: #0080A4;
-}
-
-.progress-meter-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  font-size: 0.75rem;
-  font-weight: bold;
-  color: #fff;
-  white-space: nowrap;
-}
-
 .slider {
   position: relative;
   height: 0.5rem;
@@ -6465,6 +6420,14 @@ a.thumbnail image {
   font-size: 1.5rem;
 }
 
+.alert--sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: 0;
+}
+
 .a2a_svg {
   max-width: 1.5625rem;
   max-height: 1.5625rem;
@@ -7657,18 +7620,74 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 
 .section {
-  padding: 2.5rem 0;
+  padding: 3.125rem 0 3.75rem;
   background-size: cover;
   background-position: center;
 }
-.section *:last-child {
+.section_content > *:last-child, .section_content .cell > *:last-child {
   margin-bottom: 0;
 }
-.section--padded {
-  padding: 5rem 0;
+.section_intro {
+  margin-bottom: 2.1875rem;
 }
-.section--tight {
-  padding: 1.25rem 0;
+@media print, screen and (min-width: 40em) {
+  .section_intro {
+    margin-bottom: 2.5rem;
+  }
+}
+.section_intro *:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 75em) {
+  .section {
+    padding: 3.75rem 0;
+  }
+  .section--padded {
+    padding: 5rem 0;
+  }
+}
+.section:not([class*=bg-]) + .section:not([class*=bg-solid-]) {
+  padding-top: 0;
+}
+.section:not([class*=bg-]).section--tight + .section:not([class*=bg-solid-]) {
+  margin-top: -1.875rem;
+}
+@media screen and (min-width: 75em) {
+  .section:not([class*=bg-]).section--tight + .section:not([class*=bg-solid-]) {
+    margin-top: -4.375rem;
+  }
+}
+.section:not([class*=bg-]):not(.section--tight) + .section--tight {
+  margin-top: -1.875rem;
+}
+@media screen and (min-width: 75em) {
+  .section:not([class*=bg-]):not(.section--tight) + .section--tight {
+    margin-top: -4.375rem;
+  }
+}
+@media print, screen and (min-width: 64em) {
+  .section[class*=bg-] + .section--tight {
+    padding-top: 3.125rem;
+  }
+}
+@media print, screen and (max-width: 63.99875em) {
+  .section--tight + .section--tight {
+    margin-top: -1.5625rem;
+  }
+}
+@media print, screen and (min-width: 64em) {
+  .section--tight + .section--tight {
+    margin-top: -5rem;
+  }
+  .section--tight:last-child {
+    padding-bottom: 5rem;
+  }
+  .section--tight + .section:not(.section--tight):not([class*=bg-]) {
+    margin-top: -4.375rem;
+  }
+  .section--tight + .section:not(.section--tight)[class*=bg-] {
+    padding-top: 5.9375rem;
+  }
 }
 
 .step-list {
@@ -7714,6 +7733,11 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 @media print, screen and (max-width: 63.99875em) {
   .grid-margin-x .cell[class*=large-]:not([class*=medium-]):not([class*=small-]):not(:last-child) {
     margin-bottom: 1rem;
+  }
+}
+@media print, screen and (max-width: 39.99875em) {
+  .grid-margin-x.wide-mobile-spacing .cell[class*=medium-]:not(:last-child) {
+    margin-bottom: 2.5rem;
   }
 }
 @media print, screen and (max-width: 39.99875em) {
@@ -7892,6 +7916,10 @@ html, body, .l-wrapper {
   content: "";
 }
 
+.icon-phone:before {
+  content: "";
+}
+
 .icon-twitter:before {
   content: "";
 }
@@ -7904,7 +7932,7 @@ html, body, .l-wrapper {
   content: "";
 }
 
-.icon-envelope:before {
+.icon-email:before {
   content: "";
 }
 
@@ -7934,6 +7962,10 @@ html, body, .l-wrapper {
 
 .icon-tumblr:before {
   content: "";
+}
+
+.icon-pinterest-p:before {
+  content: "";
 }
 
 .icon-commenting:before {

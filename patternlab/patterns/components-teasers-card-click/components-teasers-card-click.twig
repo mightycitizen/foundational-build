@@ -1,3 +1,4 @@
+{% set heading_level = card.heading.level | default ? card.heading.level : 3 %}
 <div class="card {{ card.modifier }} {% if card.clickCard %}card--click{% endif %}" >
   {% if card.header | default %}
   <div class="card-divider">
@@ -22,7 +23,7 @@
           }%}
       {% endif %}
     {% endif %}
-    <h{{ card.heading.level }} class="card-title {{ card.heading.modifier | default }}">{{ card.heading.text }}</h{{ card.heading.level }}>
+    <h{{ heading_level }} class="card-title {{ card.heading.modifier | default }}">{{ card.heading.text }}</h{{ heading_level }}>
     {% if card.summary | default %}
 
       <p>{{ card.summary }}</p>

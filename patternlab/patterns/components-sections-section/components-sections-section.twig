@@ -23,7 +23,7 @@
     {% endblock %}
   </div>
 {% endset %}
-<section class="section {{ class }} {% if style | default %}section--{{ style }} {% endif %}">
+<section class="section {{ class }} {% if style | default %}section--{{ style }} {% endif %} {% if section_background | default %}js-lazy{% endif %}" {% if section_background | default %}data-bg="{{ section_background }}"{% endif %}>
   <div class="grid-container {{ grid_class }}">
     {% if style | default and (style == 'side' or style == 'half') %}
       <div class="grid-x align-middle">

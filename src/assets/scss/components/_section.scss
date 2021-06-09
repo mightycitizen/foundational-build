@@ -1,5 +1,7 @@
 .section{
   padding: rem-calc(40 0);
+  background-size: cover;
+  background-position: center;
   *:last-child{
     margin-bottom: 0;
   }

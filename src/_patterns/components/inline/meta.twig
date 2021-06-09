@@ -1,5 +1,9 @@
 <span class="meta">
-  December 10, 2020
-  <span class="divider"></span>
-  Categories: <a>Category Link</a>, <a>Category Link</a>
+  {{ date }}
+  {% if date | default and categories | length %}
+    <span class="divider"></span>
+  {% endif %}
+  {% if categories | length %}
+    Categories: {% for category in categories %}<a href="{{ category.url }}">{{ category.title }}</a>{% if loop.last == false %}, {% endif %}{% endfor %}
+  {% endif %}
 </span>

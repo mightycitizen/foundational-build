@@ -30,3 +30,17 @@
     content: "|";
   }
 }
+
+.date{
+  background-color: $primary-color;
+  color: $white;
+  font-weight: bold;
+  text-align: center;
+  padding: rem-calc(10 10);
+  line-height: 1.2;
+  text-transform: uppercase;
+  font-size: rem-calc(20);
+  &_month{
+    font-size: rem-calc(13);
+  }
+}

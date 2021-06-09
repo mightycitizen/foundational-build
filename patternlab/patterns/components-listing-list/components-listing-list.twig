@@ -1,22 +1,28 @@
 <div class="listing">
   {% for item in list %}
+    {% set label = item.label | default ? item.label : item.type.label | default %}
+    {% set item_type = item.type | default and item.type.handle ? item.type.handle : '' %}
     <div class="item">
-      <h2><a href="{{ item.url }}">{{ item.heading }}</a></h2>
-      {% if item.label | default %}<p class="label m-b-1">{{ item.label }}</p>{% endif %}
-      <p class="m-b-1">{{ item.summary }}</p>
-      {% if item.categories | length %}
-       {% include 'components/inline/meta.twig' with {
-          date: category.date,
-          categories: [
-              {
-                url: category.url,
-                text: category.title
-              }
-          ]
+      <div class="grid-x grid-margin-x">
+        {% if item_type == 'event' %}
+          <div class="cell large-1 small-2">
+            {% include 'components/inline/date.twig' %}
+          </div>
+        {% endif %}
+        <div class="cell {% if item_type == 'event' %}large-11 small-10{% endif %}">
+          <h2><a href="{{ item.url }}">{{ item.heading }}</a></h2>
+          {% if item.label | default %}<p class="label m-b-1">{{ item.label }}</p>{% endif %}
+          <p class="m-b-1">{{ item.summary }}</p>
+          {% if item.categories | length %}
+            {% include 'components/inline/meta.twig' with {
+                date: item_type | default != 'event' ? item.date.full : null,
+                categories: item.categories
 
-        } %}
+            } %}
 
-      {% endif %}
+          {% endif %}
+        </div>
+      </div>
     </div>
   {% endfor %}
 </div>

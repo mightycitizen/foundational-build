@@ -7359,11 +7359,11 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   position: absolute;
   width: 100%;
   height: 100%;
-  border: 8px solid #fff;
+  border: 8px solid #333;
   border-radius: 50%;
   -webkit-animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
+  border-color: #333 transparent transparent transparent;
 }
 .loader div:nth-child(1) {
   -webkit-animation-delay: -0.45s;
@@ -7952,7 +7952,7 @@ html, body, .l-wrapper {
   content: "";
 }
 
-.icon-youtube-play:before {
+.icon-youtube:before {
   content: "";
 }
 
@@ -7964,7 +7964,7 @@ html, body, .l-wrapper {
   content: "";
 }
 
-.icon-pinterest-p:before {
+.icon-pinterest:before {
   content: "";
 }
 

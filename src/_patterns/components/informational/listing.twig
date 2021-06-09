@@ -1,0 +1,10 @@
+<div class="grid-x grid-margin-x">
+  {% for item in items %}
+    <div class="cell small-4  text-right">
+      <strong {% if item.icon | default %} class="has-icon"{% endif %}>{% if item.icon | default %}<i class="icon icon-{{ item.icon }}"></i>{% endif %}{{ item.label }}:</strong>
+    </div>
+    <div class="cell small-8 ">
+      {{ item.value }}
+    </div>
+  {% endfor %}
+</div>

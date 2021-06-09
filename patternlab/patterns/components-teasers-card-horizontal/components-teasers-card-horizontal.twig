@@ -2,7 +2,7 @@
   <div class="card-section">
     <div class="grid-x grid-margin-x align-middle">
       <div class="cell medium-5 large-5 {% if card.image.alignment | default and card.image.alignment == 'right' %}medium-order-2{% endif %}">
-        {% if card.image is not empty %}
+        {% if card.image | default %}
           <div class="card-image">
             <img class="js-lazy" data-src="{{ card.image.src }}" alt="{{ card.image.alt }}">
           </div>
@@ -10,11 +10,11 @@
       </div>
       <div class="cell medium-7 large-7 {% if card.image.alignment  | default and card.image.alignment == 'right' %}medium-order-1{% endif %}">
        <h{{ card.heading.level }} class="card-title {{ card.heading.modifier  | default }}">{{ card.heading.text }}</h{{ card.heading.level }}>
-        {% if card.summary is not empty %}
+        {% if card.summary | default %}
 
           <p>{{ card.summary }}</p>
         {% endif %}
-        {% if card.link is not empty %}
+        {% if card.link | default %}
           <span class="h4">
             <a href="{{ card.link.url }}" class="{% if card.link.style  | default %}{{ card.link.style }}{% else %}read-more{% endif %}">{{ card.link.text }}</a>
           </span>

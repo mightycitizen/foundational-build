@@ -1,0 +1,16 @@
+{
+  "phone": {
+    "number": "(###) ### - ####",
+    "ext": "###"
+  },
+  "emails": [
+    {
+      "value": "example@domain.com",
+      "text": "Text"
+    },
+    {
+      "value": "example2@domain.com"
+    }
+  ],
+  "location": "Address here\r\nRoom\r\n"
+}

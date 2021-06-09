@@ -6424,7 +6424,7 @@ a.thumbnail image {
 }
 .accordion-title:before {
   font-family: "icomoon";
-  content: "" !important;
+  content: "" !important;
 }
 .is-active > .accordion-title:before {
   transform: rotate(180deg);
@@ -6489,7 +6489,7 @@ a.thumbnail image {
   margin-right: 0.5625rem;
   display: inline-block;
   font-family: "icomoon";
-  content: "";
+  content: "";
 }
 .breadcrumbs a:hover, .breadcrumbs a:focus {
   text-decoration: none;
@@ -6620,7 +6620,7 @@ a.thumbnail image {
 }
 .read-more:after {
   font-family: "icomoon";
-  content: "";
+  content: "";
   margin-left: 0.4375rem;
   font-size: 0.875rem;
 }
@@ -6636,7 +6636,7 @@ a.thumbnail image {
 
 .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a:after {
   font-family: "icomoon";
-  content: "" !important;
+  content: "" !important;
   border: none !important;
   width: 1.25rem !important;
   height: 1.25rem !important;
@@ -6651,7 +6651,7 @@ a.thumbnail image {
 }
 .dropdown > li.is-dropdown-submenu-parent > a:after {
   font-family: "icomoon";
-  content: "" !important;
+  content: "" !important;
   border: none !important;
   width: 1.25rem !important;
   height: 1.25rem !important;
@@ -6675,11 +6675,11 @@ a.thumbnail image {
 }
 .pagination-previous.disabled:before, .pagination-previous a:before {
   font-family: "icomoon";
-  content: "";
+  content: "";
 }
 .pagination-next.disabled:after, .pagination-next a:after {
   font-family: "icomoon";
-  content: "";
+  content: "";
 }
 .pagination-page {
   font-size: 1rem;
@@ -6868,10 +6868,10 @@ a.thumbnail image {
   }
 }
 .slick-arrow.slick-prev:before {
-  content: "";
+  content: "";
 }
 .slick-arrow.slick-next:before {
-  content: "";
+  content: "";
 }
 .slick-arrow.slick-disabled, .slick-arrow.slick-disabled:focus {
   color: #e6e6e6;
@@ -7287,7 +7287,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     top: 50%;
     font-size: 0.8125rem;
     font-family: "icomoon";
-    content: "";
+    content: "";
     opacity: 0;
     transform: translateX(-10px);
     transition: 0.3s transform;
@@ -7349,7 +7349,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   position: absolute;
 }
 .search-toggle.is-active .icon-search:before {
-  content: "";
+  content: "";
 }
 
 @media print, screen and (max-width: 39.99875em) {
@@ -7597,6 +7597,17 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   letter-spacing: 0.02;
 }
 
+.large-value {
+  font-family: "Lato", "Helvetica", "Arial", sans-serif;
+  font-size: 4rem;
+  line-height: 1.2;
+}
+@media screen and (min-width: 75em) {
+  .large-value {
+    font-size: 6.25rem;
+  }
+}
+
 .meta {
   font-weight: bold;
 }
@@ -7723,96 +7734,180 @@ html, body, .l-wrapper {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-chevron-right:before {
+.icon-quotes-left:before {
   content: "";
 }
 
-.icon-chevron-left:before {
-  content: "";
+.icon-plus:before {
+  content: "";
 }
 
-.icon-chevron-down:before {
-  content: "";
+.icon-question:before {
+  content: "";
 }
 
-.icon-chevron-up:before {
-  content: "";
-}
-
-.icon-home:before {
-  content: "";
-}
-
-.icon-phone:before {
-  content: "";
-}
-
-.icon-bubbles:before {
-  content: "";
-}
-
-.icon-quotes-left:before {
-  content: "";
-}
-
-.icon-quotes-right:before {
-  content: "";
+.icon-minus:before {
+  content: "";
 }
 
 .icon-search:before {
-  content: "";
+  content: "";
 }
 
-.icon-star:before {
-  content: "";
+.icon-check:before {
+  content: "";
 }
 
-.icon-heart:before {
-  content: "";
+.icon-close:before {
+  content: "";
 }
 
-.icon-info:before {
-  content: "";
+.icon-remove:before {
+  content: "";
 }
 
-.icon-cross:before {
-  content: "";
+.icon-times:before {
+  content: "";
 }
 
-.icon-checkmark:before {
-  content: "";
+.icon-home:before {
+  content: "";
 }
 
-.icon-facebook:before {
-  content: "";
+.icon-book:before {
+  content: "";
 }
 
-.icon-instagram:before {
-  content: "";
+.icon-pencil:before {
+  content: "";
+}
+
+.icon-edit:before {
+  content: "";
+}
+
+.icon-pencil-square-o:before {
+  content: "";
+}
+
+.icon-play:before {
+  content: "";
+}
+
+.icon-pause:before {
+  content: "";
+}
+
+.icon-chevron-left:before {
+  content: "";
+}
+
+.icon-chevron-right:before {
+  content: "";
+}
+
+.icon-times-circle:before {
+  content: "";
+}
+
+.icon-check-circle:before {
+  content: "";
+}
+
+.icon-question-circle:before {
+  content: "";
+}
+
+.icon-info-circle:before {
+  content: "";
+}
+
+.icon-exclamation-circle:before {
+  content: "";
+}
+
+.icon-exclamation-triangle:before {
+  content: "";
+}
+
+.icon-warning:before {
+  content: "";
+}
+
+.icon-comment:before {
+  content: "";
+}
+
+.icon-chevron-up:before {
+  content: "";
+}
+
+.icon-chevron-down:before {
+  content: "";
+}
+
+.icon-comments:before {
+  content: "";
+}
+
+.icon-external-link:before {
+  content: "";
 }
 
 .icon-twitter:before {
-  content: "";
+  content: "";
 }
 
-.icon-rss:before {
-  content: "";
+.icon-facebook:before {
+  content: "";
 }
 
-.icon-youtube:before {
-  content: "";
+.icon-facebook-f:before {
+  content: "";
+}
+
+.icon-envelope:before {
+  content: "";
 }
 
 .icon-linkedin:before {
-  content: "";
+  content: "";
 }
 
-.icon-pinterest:before {
-  content: "";
+.icon-bell:before {
+  content: "";
 }
 
-.icon-file-pdf:before {
-  content: "";
+.icon-file:before {
+  content: "";
+}
+
+.icon-file-text:before {
+  content: "";
+}
+
+.icon-youtube-play:before {
+  content: "";
+}
+
+.icon-instagram:before {
+  content: "";
+}
+
+.icon-tumblr:before {
+  content: "";
+}
+
+.icon-commenting:before {
+  content: "";
+}
+
+.icon-vimeo:before {
+  content: "";
+}
+
+.icon-user-circle:before {
+  content: "";
 }
 
 :root {
@@ -10245,7 +10340,7 @@ blockquote {
 }
 blockquote:before {
   font-family: "icomoon";
-  content: "";
+  content: "";
   position: absolute;
   left: 0;
   top: -0.3125rem;

@@ -9,6 +9,16 @@
   letter-spacing: 0.02;
 }
 
+
+.large-value{
+  font-family: $secondaryFontFamily;
+  font-size: rem-calc(64);
+  line-height: 1.2;
+  @include breakpoint(xlarge){
+    font-size: rem-calc(100);
+  }
+}
+
 .meta{
   font-weight: $global-weight-bold;
 }

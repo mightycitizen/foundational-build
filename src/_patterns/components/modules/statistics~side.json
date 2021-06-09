@@ -1,0 +1,7 @@
+{
+  "section_description": "If a description is provided, the layout switches to this side version",
+  "section_button": {
+    "url": "#",
+    "text": "Optional Primary Button"
+  }
+}

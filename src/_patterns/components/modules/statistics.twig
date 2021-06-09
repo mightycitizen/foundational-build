@@ -1,0 +1,22 @@
+{% embed 'components/sections/section.twig' with {
+    "intro_class": section_description | default ? '' : 'medium-text-center',
+    "section_heading": "Statistics Module",
+    "section_description": section_description | default,
+    "style": section_description | default ? 'side' : ''
+  }
+%}
+  {% block section_content %}
+    <div class="slick-wrap">
+      <div class="{% if section_description | default is empty %}grid-x grid-margin-x{% endif %} js-slick--mobile">
+        {% for statistic in statistics %}
+          <div {% if section_description | default is empty %}class="medium-4"{% endif %}>
+            {% include 'components/informational/statistic.twig' with {
+              text: statistic.text,
+              value: statistic.value
+            }%}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}

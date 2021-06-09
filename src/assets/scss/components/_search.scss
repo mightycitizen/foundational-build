@@ -7,7 +7,7 @@
   &-toggle{
     &.is-active{
       .icon-search:before{
-        content: $icon-cross;
+        content: $icon-remove;
       }
     }
   }

@@ -1,11 +1,18 @@
 
 {% set section_intro %}
-  {% if section_heading is not empty %}
+  {% if section_heading | default %}
       <div class="section_intro {{ intro_class }}">
-          <h2 class="section_heading">
-          {{ section_heading }}</h2>
-          {% if section_description is not empty %}
+          <h2 class="section_heading">{{ section_heading }}</h2>
+          {% if section_subheading | default %}
+            <h3 class="section_subheading">{{ section_subheading }}</h3>
+          {% endif %}
+          {% if section_description | default %}
             <p class="lead">{{ section_description }}</p>
+          {% endif %}
+          {% if section_button | default %}
+            {% include 'components/inline/_button.twig' with {
+              "button" : section_button
+            } %}
           {% endif %}
       </div>
     {% endif %}
@@ -18,12 +25,12 @@
 {% endset %}
 <section class="section {{ class }} {% if style | default %}section--{{ style }} {% endif %}">
   <div class="grid-container {{ grid_class }}">
-    {% if style | default and style == 'side' %}
+    {% if style | default and (style == 'side' or style == 'half') %}
       <div class="grid-x align-middle">
-        <div class="cell large-3">
+        <div class="cell {% if style == 'half' %}large-6{% else %}large-8{% endif %}">
           {{ section_intro }}
         </div>
-        <div class="cell large-9">
+        <div class="cell {% if style == 'half' %}large-6{% else %}large-4{% endif %}">
           {{ section_content }}
         </div>
       </div>

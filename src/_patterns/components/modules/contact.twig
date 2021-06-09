@@ -1,0 +1,59 @@
+{% embed 'components/sections/section.twig' with {
+    "section_heading": "Contact Module",
+    "section_subheading": "Department",
+    "section_description": "Lorem ipsum dolor sit amet, et cetera information urgining audiences to get in touch with you if they  have questions.",
+    "section_button": {
+      "url": "#",
+      "text": "Optional Primary Button"
+    },
+    "style": 'half'
+  }
+%}
+  {% block section_content %}
+    {% set items = [] %}
+    {% if phone | default %}
+      {% set items = items | merge (
+        [
+          {
+            "label": "Phone",
+            "icon": "phone",
+            "value": phone.number ~ (phone.ext | default ? ' ext '~ phone.ext : '')
+          }
+        ]
+    ) %}
+    {% endif %}
+    {% if emails | default %}
+      {% set email_items %}
+        <ul class="unstyled-list">
+          {% for email in emails %}
+            <li>
+              <a href="mailto:{{ email.value }}">{{ (email.text | default) ? email.text : email.value }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endset %}
+      {% set items = items | merge (
+        [
+          {
+            "label": "Email",
+            "icon": "email",
+            "value": email_items
+          }
+        ]
+      ) %}
+    {% endif %}
+    {% if location | default %}
+      {% set items = items | merge (
+        [
+          {
+            "label": "Location",
+            "value": location | nl2br
+          }
+        ]
+      ) %}
+    {% endif %}
+    {% include 'components/informational/listing.twig' with {
+      "items": items
+    } %}
+  {% endblock %}
+{% endembed %}

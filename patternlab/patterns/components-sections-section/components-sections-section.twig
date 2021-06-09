@@ -2,18 +2,27 @@
 {% set section_intro %}
   {% if section_heading | default %}
       <div class="section_intro {{ intro_class }}">
-          <h2 class="section_heading">{{ section_heading }}</h2>
-          {% if section_subheading | default %}
-            <h3 class="section_subheading">{{ section_subheading }}</h3>
+        <div class="grid-x grid-margin-x align-middle align-center">
+          {% if section_image | default %}
+            <div class="cell medium-4">
+              <img data-src="{{ section_image.url }}" alt="{{ section_image.alt }}" class="js-lazy">
+            </div>
           {% endif %}
-          {% if section_description | default %}
-            <p class="lead">{{ section_description }}</p>
-          {% endif %}
-          {% if section_button | default %}
-            {% include 'components/inline/_button.twig' with {
-              "button" : section_button
-            } %}
-          {% endif %}
+          <div class="cell medium-8">
+            <h2 class="section_heading">{{ section_heading }}</h2>
+            {% if section_subheading | default %}
+              <h3 class="section_subheading">{{ section_subheading }}</h3>
+            {% endif %}
+            {% if section_description | default %}
+              <p class="lead">{{ section_description }}</p>
+            {% endif %}
+            {% if section_button | default %}
+              {% include 'components/inline/_button.twig' with {
+                "button" : section_button
+              } %}
+            {% endif %}
+          </div>
+        </div>
       </div>
     {% endif %}
 {% endset %}

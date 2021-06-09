@@ -1,0 +1,12 @@
+{
+  "section_image": {
+    "url": "https://source.unsplash.com/GDokEYnOfnE/400x300",
+    "alt": ""
+  },
+  "section_heading": "Default CTA",
+  "section_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "section_button": {
+    "url": "#",
+    "text": "Text"
+  }
+}

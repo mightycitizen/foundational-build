@@ -10073,6 +10073,36 @@ html, body, .l-wrapper {
   transform: scaleX(-1);
 }
 
+[class*=bg-gradient-] {
+  position: relative;
+}
+[class*=bg-gradient-]:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+[class*=bg-gradient-].bg-gradient--flip:before {
+  transform: scaleY(-1);
+}
+[class*=bg-gradient-].bg-gradient--shorter:before {
+  height: 18.75rem;
+}
+[class*=bg-gradient-].bg-gradient--short:before {
+  height: 37.5rem;
+}
+[class*=bg-gradient-].bg-gradient--tall:before {
+  height: 31.25rem;
+}
+@media print, screen and (min-width: 64em) {
+  [class*=bg-gradient-].bg-gradient--tall:before {
+    height: 50rem;
+  }
+}
+
 .text-smaller {
   font-size: 0.875rem;
 }

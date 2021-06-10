@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "label": "Label",
+      "value": "Value here"
+    },
+    {
+      "label": "Label with icon",
+      "icon": "email",
+      "value": "Value here"
+    },
+    {
+      "label": "Label",
+      "value": "Value here"
+    }
+  ]
+}

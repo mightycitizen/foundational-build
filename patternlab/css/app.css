@@ -6817,31 +6817,38 @@ a.thumbnail image {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 0.1875rem;
   margin-left: 0;
   margin-right: 1.0625rem;
   font-size: 0;
   line-height: 0;
-  color: #EEA600;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
+  background-color: #0080A4;
+  width: 1.875rem;
+  height: 1.875rem;
+  text-align: center;
 }
 @media print, screen and (min-width: 64em) {
   .slick-arrow {
+    width: 3.375rem;
+    height: 3.375rem;
     margin-right: 0;
-    padding-right: 0.125rem;
   }
 }
 .slick-arrow:before {
-  font-size: 1.875rem;
   line-height: 1;
   font-family: "icomoon";
+  font-size: 0.875rem;
 }
 @media print, screen and (min-width: 64em) {
   .slick-arrow:before {
-    font-size: 1.125rem;
-    line-height: 1;
+    font-weight: normal;
+    font-size: 1.375rem;
   }
+}
+.slick-arrow.slick-disabled {
+  background-color: #ccc;
 }
 .slick-arrow.slick-prev:before {
   content: "";
@@ -6881,31 +6888,28 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .slick-slider.is-paused + .slick-nav .slick-toggle .active {
   display: none;
 }
-@media screen and (min-width: 90em) {
-  .slick-slider:not(.js-slick--center) + .slick-nav:not(:empty) {
-    margin-bottom: 3.125rem;
-  }
-  .slick-slider:not(.js-slick--center) + .slick-nav:not(:empty) .slick-dots {
-    margin-top: 3.125rem;
-    position: absolute;
-  }
-  .slick-slider:not(.js-slick--center) + .slick-nav:not(:empty) .slick-arrow {
-    position: absolute;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  .slick-slider:not(.js-slick--center) + .slick-nav:not(:empty) .slick-arrow:before {
-    font-size: 1.875rem;
-  }
-  .slick-slider:not(.js-slick--center) + .slick-nav:not(:empty) .slick-arrow.slick-prev {
-    right: 100%;
-    margin-right: 1.5625rem;
-  }
-  .slick-slider:not(.js-slick--center) + .slick-nav:not(:empty) .slick-arrow.slick-next {
-    left: 100%;
-    margin-left: 1.5625rem;
-  }
+.slick-slider.is-paused + .slick-nav .slick-toggle .inactive {
+  display: block;
+}
+.slick-slider.is-paused + .slick-nav .slick-toggle .active {
+  display: none;
+}
+.slick-slider + .slick-nav:not(:empty):not(.slick-nav--inline) .slick-arrow {
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.slick-slider + .slick-nav:not(:empty):not(.slick-nav--inline) .slick-arrow.slick-prev {
+  right: 100%;
+  transform: translateX(50%) translateY(-50%);
+}
+.slick-slider + .slick-nav:not(:empty):not(.slick-nav--inline) .slick-arrow.slick-next {
+  left: 100%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.slick-slider + .slick-nav:not(:empty):not(.slick-nav--inline) .slick-arrow:hover {
+  background-color: #005A74;
 }
 
 .js-slick--center + .slick-nav {

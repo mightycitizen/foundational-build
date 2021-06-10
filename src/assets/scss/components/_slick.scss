@@ -184,7 +184,6 @@ $toggle-spacing: 18;
 	}
 
 }
-
 .slick-arrow {
 	border-radius: 50%;
 	border: 0;
@@ -192,32 +191,39 @@ $toggle-spacing: 18;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding-right: rem-calc(3);
+	//padding-right: rem-calc(3);
 	margin-left: 0;
 	margin-right: rem-calc(17);
 	font-size: 0;
 	line-height: 0;
-	color: $secondary-color;
+	color: $white;
 	text-decoration: none;
 	cursor: pointer;
-
+	background-color: $primary-color;
+	//width: rem-calc(54);
+	@include size(30);
+	text-align: center;
 	@include breakpoint(large) {
+		@include size(54);
 		margin-right: 0;
-		padding-right: rem-calc(2);
+		//padding-right: rem-calc(2);
 	}
 
 	&:before {
-		font-size: rem-calc(30);
+		//font-size: rem-calc(30);
 		line-height: 1;
 		font-family: $icomoon-font-family;
-
+		font-size: rem-calc(14);
 		@include breakpoint(large) {
-			font-size: rem-calc(18);
-			line-height: 1;
+			font-weight: normal;
+			font-size: rem-calc(22);
+			//line-height: 1;
 		}
 	}
 
-
+	&.slick-disabled{
+		background-color: $medium-gray;
+	}
 
 	&.slick-prev {
 
@@ -248,6 +254,7 @@ $toggle-spacing: 18;
 		color: map-get($additional-palette,'secondary-darker');
 	}
 }
+
 .slick-nav{
 	display: flex;
 	flex-wrap: wrap;
@@ -284,33 +291,48 @@ $toggle-spacing: 18;
 			}
 		}
 	}
-	@include breakpoint(xxlarge){
-		.slick-slider:not(.js-slick--center) + &:not(:empty){
-			margin-bottom: rem-calc(50);
-			.slick-dots{
-				margin-top: rem-calc(50);
-				position: absolute;
+
+
+
+	.slick-slider.is-paused + &{
+		//background-color: red;
+		.slick-toggle{
+			.inactive{
+				display: block;
 			}
-			.slick-arrow{
-				position: absolute;
-				@include vertical-center;
-				&:before{
-					font-size: rem-calc(30);
-				}
-				&.slick-prev{
-					right: 100%;
-					margin-right: rem-calc($arrow-margin-xxlarge);
-				}
-				&.slick-next{
-					left: 100%;
-					margin-left: rem-calc($arrow-margin-xxlarge);
-				}
+			.active{
+				display: none;
 			}
 		}
-
 	}
-}
+	.slick-slider + &:not(:empty):not(.slick-nav--inline){
+//		margin-bottom: rem-calc(50);
+		.slick-dots{
+			//margin-top: rem-calc(50);
+			//position: absolute;
+			//bottom:
+		}
+		.slick-arrow{
+			position: absolute;
+			@include vertical-center;
+			&.slick-prev{
+				right: 100%;
+				transform: translateX(50%) translateY(-50%);
+				//margin-right: rem-calc($arrow-margin-xxlarge);
+			}
+			&.slick-next{
+				left: 100%;
+				transform: translateX(-50%) translateY(-50%);
+				//margin-left: rem-calc($arrow-margin-xxlarge);
+			}
+			&:hover{
+				background-color: map-get($accent,'default');
+			}
+		}
+	}
 
+
+}
 
 .js-slick--center{
 	$transition-duration: 0.75s;

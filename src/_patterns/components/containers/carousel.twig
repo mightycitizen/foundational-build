@@ -1,35 +1,35 @@
-<div class="grid-container">
-  <div class="slick-wrap">
-    <div class="js-slick">
-      {% for slide in slides %}
-        <div>
-          <blockquote>
-            <p>Lorem ipsum dolor sit amet</p>
-            <cite>Name, Title</cite>
-          </blockquote>
-        </div>
-      {% endfor %}
-    </div>
-    <div class="slick-nav">
-     <button class="js-slick-toggle slick-toggle">
-      <span class="show-for-sr">Toggle Pause/Play</span>
-      <span class="icon-pause active"></span>
-      <span class="icon-play inactive"></span>
-    </button>
-    </div>
 
-  </div>
-  <div class="slick-wrap">
-    <div class="js-slick--cards has-peekaboo">
+<div class="grid-container">
+  {% embed 'components/containers/_slick.twig' with {
+    pausable: true
+  } %}
+    {% block slide_content %}
+      {% for slide in slides %}
+          <div>
+            <blockquote>
+              <p>Lorem ipsum dolor sit amet</p>
+              <cite>Name, Title</cite>
+            </blockquote>
+          </div>
+        {% endfor %}
+    {% endblock %}
+  {% endembed %}
+  {% embed 'components/containers/_slick.twig' with {
+    peekaboo: true,
+    modifier: 'cards'
+  }%}
+    {% block slide_content %}
       {% for i in range (i, 5) %}
-          {% include "components/teasers/card.twig" with card %}
-      {% endfor %}
-    </div>
-    <div class="slick-nav"></div>
-  </div>
+            {% include "components/teasers/card.twig" with card %}
+        {% endfor %}
+    {% endblock %}
+  {% endembed %}
 </div>
-<div class="slick-wrap">
-  <div class="js-slick--center">
+{% embed 'components/containers/_slick.twig' with {
+    peekaboo: true,
+    modifier: 'center'
+  }%}
+  {% block slide_content %}
       {% for i in range (i, 5) %}
           {% include "components/teasers/card.twig" with {
           "card": {
@@ -50,10 +50,7 @@
             }
           }
         }
- %}
+        %}
       {% endfor %}
-  </div>
-  <div class="slick-nav"></div>
-</div>
-
-
+  {% endblock %}
+{% endembed %}

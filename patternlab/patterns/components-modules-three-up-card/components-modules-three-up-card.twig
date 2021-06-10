@@ -4,8 +4,12 @@
   }
 %}
   {% block section_content %}
-    <div class="slick-wrap">
-      <div class="grid-x grid-margin-x js-slick--mobile" data-equalizer data-equalize-on="medium">
+    {% embed 'components/containers/_slick.twig' with {
+      grid: true,
+      equalize: true,
+      modifier: 'mobile'
+    } %}
+      {% block slide_content %}
         {% for card in cards %}
           <div class="medium-4 cell">
             {% include 'components/teasers/card.twig' with {
@@ -14,7 +18,8 @@
             }%}
           </div>
         {% endfor %}
-      </div>
-    </div>
+      {% endblock %}
+    {% endembed %}
+
   {% endblock %}
 {% endembed %}

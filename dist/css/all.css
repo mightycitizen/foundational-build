@@ -4545,7 +4545,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   padding: 1.25rem 1rem;
   border: 0 solid;
   border-bottom: 0;
-  font-size: 0.75rem;
+  font-size: 1rem;
   line-height: 1;
   color: #fff;
 }
@@ -4554,7 +4554,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   border-radius: 0 0 0 0;
 }
 .accordion-title:hover, .accordion-title:focus {
-  background-color: #e6e6e6;
+  background-color: #006d8b;
 }
 .accordion-title::before {
   position: absolute;
@@ -4692,7 +4692,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 .tabs-title > a {
   display: block;
   padding: 1.25rem 1.5rem;
-  font-size: 0.75rem;
+  font-size: 1.125rem;
   line-height: 1;
   color: #0080A4;
 }
@@ -6291,7 +6291,7 @@ a.thumbnail image {
 }
 
 .accordion-heading:focus-within + .accordion-title {
-  background-color: #e6e6e6;
+  background-color: #006d8b;
 }
 .accordion-title {
   padding-right: 2.5rem;
@@ -6307,6 +6307,7 @@ a.thumbnail image {
 }
 .accordion-title:hover, .accordion-title:focus {
   color: #fff;
+  background-color: #006d8b;
 }
 .accordion-title:focus {
   background-color: transparent;
@@ -7264,7 +7265,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .tabs-title button {
   color: #0080A4;
-  font-size: 0.75rem;
+  font-size: 1.125rem;
   padding: 1.25rem 1.5rem;
 }
 .tabs-title button:hover {

@@ -22,6 +22,7 @@
     }
     &:hover, &:focus{
       color: $white;
+      background-color: $accordion-item-background-hover;
     }
     &:focus{
       background-color: transparent;

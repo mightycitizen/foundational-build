@@ -72,7 +72,7 @@ Foundation.plugin(Interchange, 'Interchange');
 Foundation.plugin(ResponsiveMenu, 'ResponsiveMenu');
 Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
 // Foundation.plugin(Reveal, 'Reveal');
-Foundation.plugin(Slider, 'Slider');
+//Foundation.plugin(Slider, 'Slider');
 Foundation.plugin(SmoothScroll, 'SmoothScroll');
 Foundation.plugin(Sticky, 'Sticky');
 Foundation.plugin(Tabs, 'Tabs');

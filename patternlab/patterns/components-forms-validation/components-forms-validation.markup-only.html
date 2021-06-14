@@ -1,5 +1,5 @@
 <form action="" data-abide novalidate>
-  <label for="checkbox_single_1"><input id="checkbox_single_1" name="" value="1" type="checkbox" > Checkbox Single</label>
+  <label for="checkbox_single_1"><input id="checkbox_single_1" name="" value="1" type="checkbox" required > Checkbox Single</label>
   <div class="form-input">
   <label for="field_id_2">Textarea *</label>
       <textarea name="textarea" id="field_id_2" required placeholder="Prompt Text"></textarea>
@@ -19,15 +19,16 @@
 
 
     <fieldset class="options">
-    <legend>Checkbox </legend>
+    <legend>Checkbox *</legend>
     <ul class="checkbox-group no-bullet">
-              <li><label for="checkbox_validation_0"><input id="checkbox_validation_0" name="checkbox" value="0" type="checkbox" > Checkbox A</label>
+              <li><label for="checkbox_validation_0"><input id="checkbox_validation_0" name="checkbox" value="0" type="checkbox" required > Checkbox A</label>
 </li>
-              <li><label for="checkbox_validation_1"><input id="checkbox_validation_1" name="checkbox" value="1" type="checkbox" > Checkbox B</label>
+              <li><label for="checkbox_validation_1"><input id="checkbox_validation_1" name="checkbox" value="1" type="checkbox" required > Checkbox B</label>
 </li>
-              <li><label for="checkbox_validation_2"><input id="checkbox_validation_2" name="checkbox" value="2" type="checkbox" > Checkbox C</label>
+              <li><label for="checkbox_validation_2"><input id="checkbox_validation_2" name="checkbox" value="2" type="checkbox" required > Checkbox C</label>
 </li>
           </ul>
+          <span class="form-error">Checkbox is required</span>
       </fieldset>
 
 

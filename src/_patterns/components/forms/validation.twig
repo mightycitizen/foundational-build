@@ -1,6 +1,7 @@
 <form action="" data-abide novalidate>
   {% include 'components/forms/_checkbox.twig' with {
          field_id: "checkbox_single",
+         required: true,
          checkbox_value: "1",
          name: "checkbox_single",
          checkbox_label: "Checkbox Single"
@@ -40,6 +41,7 @@
   {% include 'components/forms/checkbox-group.twig' with {
       "label": "Checkbox",
       "field_id": "checkbox_validation",
+      required: true,
       "field_name": "checkbox",
       "options": [
         {

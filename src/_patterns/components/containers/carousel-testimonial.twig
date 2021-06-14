@@ -6,7 +6,11 @@
     {% block slide_content %}
       {% for slide in slides %}
           <div>
-            {% include 'components/informational/testimonial.twig' %}
+            {% include 'components/informational/testimonial.twig' with {
+              quote: slide.quote,
+              attribution: slide.attribution,
+              testimonial_image: slide.testimonial_image
+            }%}
           </div>
         {% endfor %}
     {% endblock %}

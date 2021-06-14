@@ -51,6 +51,7 @@
     "litepicker": "^2.0.11",
     "lity": "git://github.com/jsor/lity.git#00347d477ecd5ac517103e2886db2ac0cf5d18b6",
     "motion-ui": "^2.0.3",
+    "nouislider": "^15.1.1",
     "sass": "^1.32.8",
     "selectize": "^0.12.6",
     "slick-carousel": "^1.8.1",

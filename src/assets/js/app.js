@@ -11,7 +11,7 @@ import Twig from 'twig'; // @twig used with @ajax
 import resultsTemplate from '../../_patterns/components/listing/_event.twig'; // used with @ajax
 import paginationTemplate from '../../_patterns/components/listing/pagination.twig'; // used with @ajax
 import loaderTemplate from '../../_patterns/components/icons-logos/loader.twig'; // used with @ajax
-
+import noUiSlider from 'nouislider';
 import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
 
 // @foundation init
@@ -710,6 +710,39 @@ const initMenuHelpers = () => {
   })
 }
 
+// @slider init
+
+
+
+function initSlider(){
+  $('.js-slider').each(function(){
+    const slider = $(this)[0];
+    const $slider = $(this);
+    noUiSlider.create(slider, {
+      start: [16, 22],
+      step: 1,
+      connect: true,
+      tooltips: true,
+      range: {
+          'min': 16,
+          'max': 22
+      },
+      pips: {
+        mode: 'count',
+        values: 2,
+        density: 100,
+          stepped: true
+      }
+    });
+
+    $slider.find('.noUi-handle-lower').attr('aria-label','Lower Range Handle');
+    $slider.find('.noUi-handle-upper').attr('aria-label','Upper Range Handle');
+
+
+  })
+
+
+}
 
 // @slick init
 const initSlick = () => {
@@ -916,6 +949,7 @@ $(document).ready(function(){
   initSmoothScroll(); // @smooth-scroll init
   initMenuHelpers(); // @menu helpers
   initAjax(); // @ajax init
-  initFormHelpers(); // @form helpers init
+  initFormHelpers(); // @form helpers init\
+  initSlider(); // @slider init
 })
 

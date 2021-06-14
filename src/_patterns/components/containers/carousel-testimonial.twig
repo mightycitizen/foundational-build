@@ -1,0 +1,14 @@
+
+<div class="grid-container">
+  {% embed 'components/containers/_slick.twig' with {
+    pausable: true
+  } %}
+    {% block slide_content %}
+      {% for slide in slides %}
+          <div>
+            {% include 'components/informational/testimonial.twig' %}
+          </div>
+        {% endfor %}
+    {% endblock %}
+  {% endembed %}
+</div>

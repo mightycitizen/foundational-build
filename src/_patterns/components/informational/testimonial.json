@@ -1,0 +1,11 @@
+{
+  "quote": "Lorem upsum",
+  "attribution": {
+    "name": "Firstname LastName",
+    "info": "Company"
+  },
+  "testimonial_image": {
+    "url": "//via.placeholder.com/200x200",
+    "alt": ""
+  }
+}

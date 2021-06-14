@@ -10429,7 +10429,7 @@ input[type=checkbox].custom:not(foo) + label:after {
   color: #fff;
   font-weight: normal;
   opacity: 0;
-  content: "";
+  content: "";
   font-family: "icomoon";
   font-size: 0.625rem;
 }

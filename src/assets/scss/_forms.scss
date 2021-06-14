@@ -1,3 +1,5 @@
+
+@import "./vendor/icomoon/variables";
 input[type="checkbox"].custom,
 input[type="radio"].custom {
   &:not(foo) {
@@ -62,8 +64,8 @@ input[type="checkbox"] {
         color: $white;
         font-weight: normal;
         opacity: 0;
-        content: "\ea10";
-        font-family: 'icomoon';
+        content: $icon-check;
+        font-family: $icomoon-font-family;
         font-size: rem-calc(10);
 
       }

@@ -1,8 +1,8 @@
 <div class="alert callout {{ alert_class | default }}" {% if closable | default %}data-closable{% endif %}>
   {{ text }}
   {% if closable | default %}
-    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-      <span aria-hidden="true">&times;</span>
+    <button class="{% if closable_text | default is empty %}close-button{% else %}button secondary{% endif %}" aria-label="Dismiss alert" type="button" data-close>
+      <span aria-hidden="true">{% if closable_text | default %}{{ closable_text }}{% else %}&times;{% endif %}</span>
     </button>
   {% endif %}
 </div>

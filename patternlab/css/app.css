@@ -6305,7 +6305,7 @@ a.thumbnail image {
   content: "";
 }
 .breadcrumbs a:hover, .breadcrumbs a:focus {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .card {

@@ -2,7 +2,8 @@
   "statistics": [
     {
       "value": 200,
-      "text": "Lorem ipsum dolor sit amet"
+      "text": "Lorem ipsum dolor sit amet",
+      "statistic_link": "test"
     },
     {
       "value": 200,

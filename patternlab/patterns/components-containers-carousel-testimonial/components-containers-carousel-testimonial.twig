@@ -1,7 +1,8 @@
 
 <div class="grid-container">
   {% embed 'components/containers/_slick.twig' with {
-    pausable: true
+    pausable: true,
+    slick_class: 'slick-slider--equalize'
   } %}
     {% block slide_content %}
       {% for slide in slides %}

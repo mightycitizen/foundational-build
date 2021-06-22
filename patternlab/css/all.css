@@ -6573,6 +6573,14 @@ a.thumbnail image {
   position: relative;
 }
 
+.slick-slider--equalize .slick-track {
+  display: flex !important;
+}
+.slick-slider--equalize .slick-slide {
+  height: inherit !important;
+  display: flex !important;
+  align-items: center;
+}
 @media print, screen and (max-width: 39.99875em) {
   .slick-slider.has-peekaboo {
     overflow: hidden;

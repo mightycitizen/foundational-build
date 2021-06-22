@@ -4622,12 +4622,12 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   outline: 0;
 }
 .tabs-title > a:hover {
-  background: #fff;
+  background: #99CEDD;
   color: #006e8d;
 }
 .tabs-title > a:focus, .tabs-title > a[aria-selected=true] {
-  background: #e6e6e6;
-  color: #0080A4;
+  background: #0080A4;
+  color: #fff;
 }
 
 .tabs-content {
@@ -6219,6 +6219,7 @@ a.thumbnail image {
   padding-right: 2.5rem;
   width: 100%;
   text-align: left;
+  cursor: pointer;
 }
 .accordion-title:before {
   font-family: "icomoon";
@@ -7521,16 +7522,17 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   }
 }
 .tabs-title button {
+  cursor: pointer;
   color: #0080A4;
   font-size: 1.125rem;
   padding: 1.25rem 1.5rem;
 }
 .tabs-title button:hover {
-  background-color: #fff;
+  background-color: #99CEDD;
 }
 .tabs-title.is-active button {
-  background-color: #e6e6e6;
-  color: #0080A4;
+  background-color: #0080A4;
+  color: #fff;
 }
 
 .loader {

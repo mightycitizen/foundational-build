@@ -2,6 +2,7 @@
 .tabs{
   &-title{
     button{
+      cursor: pointer;
       color: $tab-color;
       font-size: $tab-item-font-size;
       padding: $tab-item-padding;

@@ -11,7 +11,12 @@
             } %}
           </div>
         {% endif %}
-        <div class="cell {% if item_type == 'event' %}large-11 small-10{% endif %}">
+        {% if item.image | default %}
+          <div class="cell medium-3">
+            <img data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" class="js-lazy">
+          </div>
+        {% endif %}
+        <div class="cell {% if item_type == 'event' %}large-11 small-10{% elseif item.image | default %}medium-9{% endif %}">
           <h2><a href="{{ item.url }}">{{ item.heading }}</a></h2>
           {% if item.label | default %}<p class="label m-b-1">{{ item.label }}</p>{% endif %}
           <p class="m-b-1">{{ item.summary }}</p>

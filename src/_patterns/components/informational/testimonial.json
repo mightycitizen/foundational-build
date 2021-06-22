@@ -2,7 +2,9 @@
   "quote": "Lorem upsum",
   "attribution": {
     "name": "Firstname LastName",
-    "info": "Company"
+    "info":
+    "Company
+    Company"
   },
   "testimonial_image": {
     "url": "//via.placeholder.com/500x400",

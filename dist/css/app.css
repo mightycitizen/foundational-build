@@ -10644,6 +10644,15 @@ blockquote:before {
   color: #0080A4;
   font-size: 1.875rem;
 }
+blockquote cite {
+  position: relative;
+  padding-left: 0.75rem;
+}
+blockquote cite:before {
+  position: absolute;
+  left: -0.1875rem;
+  content: "-";
+}
 
 h2 a, h3 a, h4 a {
   text-decoration: underline;

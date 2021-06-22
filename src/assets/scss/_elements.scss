@@ -56,6 +56,17 @@ blockquote{
     color: $primary-color;
     font-size: rem-calc(30);
   }
+
+  cite{
+    position: relative;
+    padding-left: rem-calc(12);
+    &:before{
+      position: absolute;
+      left: rem-calc(-3);
+      content: '\002D';
+      //margin-right: rem-calc(5);
+    }
+  }
 }
 
 

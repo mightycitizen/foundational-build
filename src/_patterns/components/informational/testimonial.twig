@@ -8,7 +8,10 @@
     <blockquote>
       <p>{{ quote }}</p>
       {% if attribution | default %}
-        <cite>{{ attribution.name }}{% if attribution.info | default %}, {{ attribution.info }}{% endif %}</cite>
+        <cite>
+          <strong>{{ attribution.name }}</strong><br />
+          {% if attribution.info | default %}{{ attribution.info | nl2br }}{% endif %}
+        </cite>
       {% endif %}
     </blockquote>
   </div>

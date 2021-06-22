@@ -12,7 +12,13 @@
     left: 50%;
     transform: translateX(-50%);
 }
-
+@mixin stretch(){
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+}
 
 @mixin center(){
     position: absolute;

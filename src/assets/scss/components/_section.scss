@@ -6,8 +6,15 @@
 
   background-size: cover;
   background-position: center;
-
+  position: relative;
+  &_background{
+    @include stretch;
+    opacity: 0.4;
+    background-size: cover;
+    background-position: center;
+  }
   &_content{
+    position: relative;
     &, .cell{
       > *:last-child{
         margin-bottom: 0;
@@ -16,6 +23,7 @@
   }
 
   &_intro{
+    position: relative;
     margin-bottom: rem-calc(35);
     //font-size: rem-calc(20);
     @include breakpoint(medium){

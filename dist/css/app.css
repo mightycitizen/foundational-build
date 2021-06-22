@@ -7798,11 +7798,26 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   padding: 3.125rem 0 3.75rem;
   background-size: cover;
   background-position: center;
+  position: relative;
+}
+.section_background {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  opacity: 0.4;
+  background-size: cover;
+  background-position: center;
+}
+.section_content {
+  position: relative;
 }
 .section_content > *:last-child, .section_content .cell > *:last-child {
   margin-bottom: 0;
 }
 .section_intro {
+  position: relative;
   margin-bottom: 2.1875rem;
 }
 @media print, screen and (min-width: 40em) {

@@ -1,6 +1,6 @@
 {% embed 'components/sections/section.twig' with {
   class: "bg-solid-primary-lightest " ~ class,
-  intro_class: section_image | default ? '': 'text-center'
+  intro_class: (section_image | default ? '': 'text-center') ~ ' m-b-0'
 }%}
 
 {% endembed %}

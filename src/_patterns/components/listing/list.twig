@@ -4,7 +4,7 @@
     {% set item_type = item.type | default and item.type.handle ? item.type.handle : '' %}
     <div class="item">
       <div class="grid-x grid-margin-x">
-        {% if item_type == 'event' %}
+        {% if item_type == 'event' and item.image | default is empty %}
           <div class="cell large-1 small-2">
             {% include 'components/inline/date.twig' with {
               date: item.start_date
@@ -13,10 +13,15 @@
         {% endif %}
         {% if item.image | default %}
           <div class="cell medium-3">
-            <img data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" class="js-lazy">
+            <div class="wrapper">
+              <img data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" class="js-lazy">
+              {% include 'components/inline/date.twig' with {
+                date: item.start_date
+              } %}
+            </div>
           </div>
         {% endif %}
-        <div class="cell {% if item_type == 'event' %}large-11 small-10{% elseif item.image | default %}medium-9{% endif %}">
+        <div class="cell {% if item_type == 'event' and item.image | default is empty %}large-11 small-10{% elseif item.image | default %}medium-9{% endif %}">
           <h2><a href="{{ item.url }}">{{ item.heading }}</a></h2>
           {% if item.label | default %}<p class="label m-b-1">{{ item.label }}</p>{% endif %}
           <p class="m-b-1">{{ item.summary }}</p>

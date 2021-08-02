@@ -130,16 +130,16 @@
               @include center;
             }
             &:before{
-              @include triangle(40px 30px, $white, right);
+              @include triangle(110px 80px, $white, right);
               z-index: 1;
               margin-left: rem-calc(5);
             }
-            &:after{
-              width: rem-calc(80);
-              height: rem-calc(80);
-              background-color: $secondary-color;
-              border-radius: 100%;
-            }
+            // &:after{
+            //   width: rem-calc(80);
+            //   height: rem-calc(80);
+            //   background-color: $secondary-color;
+            //   //border-radius: 100%;
+            // }
           }
           height: 100%;
           width: 100%;

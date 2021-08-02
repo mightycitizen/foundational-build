@@ -12,7 +12,11 @@
     width: 100%;
     text-align: left;
     cursor: pointer;
+    font-weight: bold;
     &:before{
+      font-weight: normal;
+      font-size: rem-calc(20);
+      color: $primary-color;
       font-family: $icomoon-font-family;
       content: $icon-chevron-down !important;
     }
@@ -22,7 +26,7 @@
       }
     }
     &:hover, &:focus{
-      color: $white;
+      //color: $white;
       background-color: $accordion-item-background-hover;
     }
     &:focus{
@@ -47,6 +51,7 @@
         left: 0;
         top: 0;
         height: 100%;
+        color: $white;
         display: inline-flex;
         font-weight: bold;
         align-items: center;

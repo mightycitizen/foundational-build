@@ -34,6 +34,10 @@
   }
 
   &--horizontal{
+    .card-section{
+      @include spacer(padding,x,4);
+      @include spacer(padding,y,5);
+    }
     @include breakpoint(medium){
       .cell{
         &:not(:first-child):not([class*=medium-order-1]){

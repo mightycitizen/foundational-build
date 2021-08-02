@@ -1,19 +1,24 @@
 <header class="l-header">
   <div class="grid-container">
     <div class="grid-x grid-margin-x align-middle">
-      <div class="cell medium-2">Header</div>
-      <div class="cell medium-9">
-        {% include 'components/navigation/menu.twig' %}
-      </div>
-      <div class="cell medium-1">
+      <div class="cell medium-2">LOGO</div>
+      <div class="cell medium-2 medium-offset-8">
+
+        <div id="search-form" class="search-form">
+          {% include 'components/forms/simple-form.twig' %}
+        </div>
+
+
+        {#
         <button data-toggle="search-form search-toggle" data-toggler="is-active" id="search-toggle" class="search-toggle">
           <span class="show-for-sr">Search</span>
           <span class="icon-search"></span>
         </button>
         <div id="search-form" data-toggler=".hide" class="hide search-form">
           {% include 'components/forms/simple-form.twig' %}
-        </div>
+        </div>#}
       </div>
     </div>
+    {% include 'components/navigation/menu.twig' %}
   </div>
 </header>

@@ -79,6 +79,7 @@ $foundation-palette: (
 
 $tertiary-color: map-get($foundation-palette,'tertiary');
 $light-gray: map-get($additional-palette,'gray-lighter');
+$lightest-gray: map-get($additional-palette,'gray-lightest');
 $medium-gray: map-get($gray,'default');
 $dark-gray: map-get($additional-palette,'gray-darker');
 $black: $black;
@@ -239,12 +240,12 @@ $input-error-font-weight: $global-weight-bold;
 // 7. Accordion
 // ------------
 
-$accordion-background: $primary-color;
+$accordion-background: $lightest-gray;
 $accordion-plusminus: true;
 $accordion-plus-content: '\002B';
 $accordion-minus-content: '\2013';
-$accordion-title-font-size: rem-calc(16);
-$accordion-item-color: $white;
+$accordion-title-font-size: rem-calc(24);
+$accordion-item-color: $dark-gray;
 $accordion-item-background-hover: scale-color($accordion-background, $lightness: -15%);
 $accordion-item-padding: 1.25rem 1rem;
 $accordion-content-background: $white;
@@ -283,12 +284,12 @@ $badge-font-size: 0.6rem;
 // ---------------
 
 $breadcrumbs-margin: 0 0 $global-margin 0;
-$breadcrumbs-item-font-size: rem-calc(11);
+$breadcrumbs-item-font-size: rem-calc(14);
 $breadcrumbs-item-color: $primary-color;
 $breadcrumbs-item-color-current: $black;
 $breadcrumbs-item-color-disabled: $medium-gray;
-$breadcrumbs-item-margin: 0.75rem;
-$breadcrumbs-item-uppercase: true;
+$breadcrumbs-item-margin: 0.3rem;
+$breadcrumbs-item-uppercase: false;
 $breadcrumbs-item-separator: true;
 $breadcrumbs-item-separator-item: '/';
 $breadcrumbs-item-separator-item-rtl: '\\';
@@ -804,19 +805,19 @@ $switch-cursor-disabled: not-allowed;
 
 $table-background: $white;
 $table-color-scale: 5%;
-$table-border: 1px solid smart-scale($table-background, $table-color-scale);
+$table-border: 0px solid smart-scale($table-background, $table-color-scale);
 $table-padding: rem-calc(8 10 10);
 $table-hover-scale: 2%;
 $table-row-hover: darken($table-background, $table-hover-scale);
 $table-row-stripe-hover: darken($table-background, $table-color-scale + $table-hover-scale);
 $table-is-striped: true;
-$table-striped-background: smart-scale($table-background, $table-color-scale);
+$table-striped-background: rgba($primary-color,0.15);
 $table-stripe: even;
-$table-head-background: smart-scale($table-background, $table-color-scale / 2);
+$table-head-background: $primary-color;
 $table-head-row-hover: darken($table-head-background, $table-hover-scale);
-$table-foot-background: smart-scale($table-background, $table-color-scale);
+$table-foot-background: rgba($primary-color,0.25);
 $table-foot-row-hover: darken($table-foot-background, $table-hover-scale);
-$table-head-font-color: $body-font-color;
+$table-head-font-color: $white;
 $table-foot-font-color: $body-font-color;
 $show-header-for-stacked: false;
 $table-stack-breakpoint: medium;
@@ -891,9 +892,26 @@ $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
   small: 20px,
-  medium: 30px
+  medium: 40px
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;
+
+
+$spacer: rem-calc(8) !default;
+$spacers: (
+        half,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+) !default;

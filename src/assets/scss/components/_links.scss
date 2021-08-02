@@ -1,8 +1,8 @@
 @import '../vendor/icomoon/variables';
 .read-more{
   position: relative;
-  box-shadow: 0 3px $secondary-color;
-  padding-bottom: 2px;
+//  box-shadow: 0 3px $secondary-color;
+//  padding-bottom: 2px;
 
 
   &:after{
@@ -11,5 +11,44 @@
     margin-left: rem-calc(7);
     font-size: rem-calc(14);
     // position: absolute; // underline not underneath arrow
+  }
+}
+
+
+
+.links{
+  .cell{
+    border-bottom: $hr-border;
+    padding: rem-calc(15 0);
+  }
+  @include breakpoint(small only){
+    .grid-x{
+      &:last-child{
+        .cell:last-child{
+          padding-bottom: 0;
+          margin-bottom: 0;
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+  @include breakpoint(medium){
+
+    .cell{
+      padding: rem-calc(40 0);
+    }
+    .grid-x{
+      &:first-child{
+        .cell{
+          padding-top: 0;
+        }
+      }
+      &:last-child{
+        .cell{
+          padding-bottom: 0;
+          border-bottom: 0;
+        }
+      }
+    }
   }
 }

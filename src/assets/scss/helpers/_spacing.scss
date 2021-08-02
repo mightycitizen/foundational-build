@@ -1,53 +1,5 @@
 // === Layout ===
-$spacer: 0.315rem !default;
-$spacer-x: $spacer !default;
-$spacer-y: $spacer !default;
-$spacers: (
-        0: (
-                x: 0,
-                y: 0
-        ),
-        1: (
-                x: $spacer-x,
-                y: $spacer-y
-        ),
-        2: (
-                x: ($spacer-x * 1.5),
-                y: ($spacer-y * 1.5)
-        ),
-        3: (
-                x: ($spacer-x * 3),
-                y: ($spacer-y * 3)
-        ),
-        4: (
-                x: ($spacer-x * 4),
-                y: ($spacer-y * 4)
-        ),
-        5: (
-                x: ($spacer-x * 5),
-                y: ($spacer-y * 5)
-        ),
-        6: (
-                x: ($spacer-x * 6),
-                y: ($spacer-y * 6)
-        ),
-        7: (
-                x: ($spacer-x * 7),
-                y: ($spacer-y * 7)
-        ),
-        8: (
-                x: ($spacer-x * 8),
-                y: ($spacer-y * 8)
-        ),
-        9: (
-                x: ($spacer-x * 9),
-                y: ($spacer-y * 9)
-        ),
-        10: (
-                x: ($spacer-x * 10),
-                y: ($spacer-y * 10)
-        )
-) !default;
+
 
 // Width
 
@@ -66,59 +18,17 @@ $spacers: (
   margin-left: auto !important;
 }
 
+
 @each $prop, $abbrev in (margin: m, padding: p) {
-  @each $size, $lengths in $spacers {
-    $length-x: map-get($lengths, x);
-    $length-y: map-get($lengths, y);
-
-    .#{$abbrev}-a-#{$size} {
-      #{$prop}: $length-y $length-x !important;
-      @include breakpoint(large) {
-        #{$prop}: $length-y*2 $length-x*2 !important;
-      }
-    }
-    // a = All sides
-    .#{$abbrev}-t-#{$size} {
-      #{$prop}-top: $length-y !important;
-      @include breakpoint(large) {
-        #{$prop}-top: $length-y*2 !important;
-      }
-    }
-    .#{$abbrev}-r-#{$size} {
-      #{$prop}-right: $length-x !important;
-      @include breakpoint(large) {
-        #{$prop}-right: $length-x*2 !important;
-      }
-    }
-    .#{$abbrev}-b-#{$size} {
-      #{$prop}-bottom: $length-y !important;
-      @include breakpoint(large) {
-        #{$prop}-bottom: $length-y*2 !important;
-      }
-    }
-    .#{$abbrev}-l-#{$size} {
-      #{$prop}-left: $length-x !important;
-      @include breakpoint(large) {
-        #{$prop}-left: $length-x*2 !important;
-      }
-    }
-
-    // Axes
-    .#{$abbrev}-x-#{$size} {
-      #{$prop}-right: $length-x !important;
-      #{$prop}-left: $length-x !important;
-      @include breakpoint(large) {
-        #{$prop}-right: $length-x*2 !important;
-        #{$prop}-left: $length-x*2 !important;
-      }
-    }
-    .#{$abbrev}-y-#{$size} {
-      #{$prop}-top: $length-y !important;
-      #{$prop}-bottom: $length-y !important;
-      @include breakpoint(large) {
-        #{$prop}-top: $length-y*2 !important;
-        #{$prop}-bottom: $length-y*2 !important;
+  @each $size in $spacers {
+    @each $name, $direction in (left: l, right: r, top: t, bottom: b, x: x, y: y, all: a) {
+      .#{$abbrev}-#{$direction}-#{$size} {
+        $set-size: $size;
+        @if ($size == 'half') { $set-size: 0.5; }
+        @include spacer($prop, $name, $set-size);
       }
     }
   }
 }
+
+

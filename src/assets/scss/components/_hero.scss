@@ -3,8 +3,12 @@
   color: $white;
   padding: rem-calc(40);
   .breadcrumbs{
-    &, li, a{
+    margin-bottom: rem-calc(42);
+    &, li, a, li:after{
       color: inherit;
     }
+  }
+  h1:last-child{
+    margin-bottom: 0;
   }
 }

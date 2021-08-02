@@ -6,8 +6,9 @@
     font-family: $icomoon-font-family;
     content: $icon-chevron-down !important;
     border: none !important;
-    width: rem-calc($arrow-size) !important;
-    height: rem-calc($arrow-size) !important;
+    font-size: rem-calc($arrow-size);
+    //width: rem-calc($arrow-size) !important;
+    //height: rem-calc($arrow-size) !important;
     margin-top: rem-calc(-0.5*$arrow-size) !important;
   }
 }
@@ -28,8 +29,8 @@
 .dropdown{
   > li.is-dropdown-submenu-parent {
     > a{
-      padding-right: rem-calc(30) !important;
-      @include removeArrow(20px);
+      padding-right: rem-calc(25) !important;
+      @include removeArrow(10px);
     }
   }
 }

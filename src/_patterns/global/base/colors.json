@@ -1,39 +1,39 @@
 {
   "primary": {
-    "default": "#0080A4",
+    "default": "#2953cc",
     "variants": {
-      "lighter": "#99CEDD",
-      "lightest": "#cee8ef"
+      "darker": "#1f3e99",
+      "lighter": "#6986db",
+      "lightest": "#bdcaef"
     }
   },
   "secondary": {
-    "default": "#EEA600",
+    "default": "#ffcd00",
     "variants": {
-      "light": "#ffcb52",
-      "lightest": "#FAE5B2"
+      "darker": "#eca806",
+      "lighter": "#ffe57f",
+      "lightest": "#ffefb2"
     }
   },
   "tertiary": {
-    "default": "#73af8c",
+    "default": "#d82626",
     "variants": {
-      "lightest": "#C9E9D6"
+      "darker": "#b42727",
+      "lighter": "#e87d7d",
+      "lightest": "#f3bdbd"
     }
   },
-
-  "accent": {
-    "default": "#005A74"
-  },
-
 
   "success": "#73af8c",
   "alert": "#d5383c",
   "warning": "#EEA600",
 
   "gray": {
-    "default": "#ccc",
+    "default": "#666",
     "variants": {
-      "light": "#eee",
-      "dark": "#666"
+      "lighter": "#ccc",
+      "lightest": "#eee",
+      "darker": "#333"
     }
   },
 

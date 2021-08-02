@@ -337,7 +337,7 @@ $toggle-spacing: 18;
 				//margin-left: rem-calc($arrow-margin-xxlarge);
 			}
 			&:hover{
-				background-color: map-get($accent,'default');
+				background-color: map-get($tertiary,'default');
 			}
 		}
 	}

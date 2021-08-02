@@ -1,5 +1,14 @@
 
 @import "vendor/icomoon/variables";
+h1{
+  letter-spacing: -0.5px;
+}
+
+h5{
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 ul, ol{
   &:not([class]){
     margin-bottom: rem-calc(30);

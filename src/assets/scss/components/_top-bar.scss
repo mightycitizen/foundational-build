@@ -145,6 +145,7 @@
   @include breakpoint(large){
 
     margin-left: rem-calc(-1*get-side($dropdownmenu-padding,'left'));
+    padding-left: 0;
     padding-right: 0;
     a{
       &:hover, &:focus:not(.is-active > a){

@@ -16,6 +16,8 @@
 @import 'foundation';
 @import 'motion-ui';
 
+$unicode-quote-left: '\201c';
+
 // Global styles
 @include foundation-global-styles;
 @include foundation-forms;

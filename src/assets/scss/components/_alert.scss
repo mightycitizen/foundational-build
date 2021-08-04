@@ -1,12 +1,14 @@
 .alert{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  &--sticky{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    margin-bottom: 0;
-  }
+
+  padding: rem-calc(15 20);
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  // &--sticky{
+  //   position: fixed;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   margin-bottom: 0;
+  // }
 }

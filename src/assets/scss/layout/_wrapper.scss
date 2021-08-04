@@ -16,13 +16,13 @@ html, body, .l-wrapper{
 }
 
 .l-header{
-  padding: rem-calc(30 0);
-  background-color: map-get($additional-palette,'secondary-darkest');
+  padding: rem-calc(30 0 0);
+  //background-color: map-get($additional-palette,'secondary-darkest');
   //color: $white;
-  flex: none;
-  .search-toggle{
-    color: inherit;
-  }
+  // flex: none;
+  // .search-toggle{
+  //   color: inherit;
+  // }
 }
 
 

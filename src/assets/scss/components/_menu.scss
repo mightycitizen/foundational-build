@@ -29,7 +29,10 @@
 .dropdown{
   > li.is-dropdown-submenu-parent {
     > a{
-      padding-right: rem-calc(25) !important;
+      padding-right: rem-calc(30) !important;
+      &:after{
+        right: 10px;
+      }
       @include removeArrow(10px);
     }
   }

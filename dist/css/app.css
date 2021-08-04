@@ -916,9 +916,9 @@ td {
 }
 
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.7777777778rem;
   font-size: inherit;
-  line-height: 1.6;
+  line-height: 1.4;
   text-rendering: optimizeLegibility;
 }
 
@@ -1031,11 +1031,12 @@ h6, .h6 {
 a {
   line-height: inherit;
   color: #2953cc;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
 a:hover, a:focus {
   color: #2347af;
+  text-decoration: none;
 }
 a img {
   border: 0;
@@ -1048,16 +1049,16 @@ hr {
   margin: 1.1111111111rem auto;
   border-top: 0;
   border-right: 0;
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid #ccc;
   border-left: 0;
 }
 
 ul,
 ol,
 dl {
-  margin-bottom: 1rem;
+  margin-bottom: 1.7777777778rem;
   list-style-position: outside;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 li {
@@ -1087,12 +1088,12 @@ dl dt {
 }
 
 blockquote {
-  margin: 0 0 1rem;
-  padding: 0.5rem 1.1111111111rem 0 1.0555555556rem;
-  border-left: 1px solid #666;
+  margin: 0 0 1.7777777778rem;
+  padding: 0.0555555556rem 1.1111111111rem 0.0555555556rem 1.5rem;
+  border-left: 8px solid #2953cc;
 }
 blockquote, blockquote p {
-  line-height: 1.6;
+  line-height: 1.4;
   color: #333;
 }
 
@@ -1123,8 +1124,8 @@ kbd {
 }
 
 .lead {
-  font-size: 140.625%;
-  line-height: 1.6;
+  font-size: 1.3333333333rem;
+  line-height: 1.375;
 }
 
 .stat {
@@ -4148,7 +4149,7 @@ tfoot {
 }
 
 caption {
-  padding: 0.4444444444rem 0.5555555556rem 0.5555555556rem;
+  padding: 0.5555555556rem 0.8333333333rem 0.5555555556rem;
   font-weight: bold;
 }
 
@@ -4170,14 +4171,14 @@ thead th,
 thead td,
 tfoot th,
 tfoot td {
-  padding: 0.4444444444rem 0.5555555556rem 0.5555555556rem;
+  padding: 0.5555555556rem 0.8333333333rem 0.5555555556rem;
   font-weight: bold;
   text-align: left;
 }
 
 tbody th,
 tbody td {
-  padding: 0.4444444444rem 0.5555555556rem 0.5555555556rem;
+  padding: 0.5555555556rem 0.8333333333rem 0.5555555556rem;
 }
 
 tbody tr:nth-child(even) {
@@ -4273,9 +4274,9 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 .callout {
   position: relative;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0 0;
   padding: 1rem;
-  border: 1px solid rgba(51, 51, 51, 0.25);
+  border: 0 solid rgba(51, 51, 51, 0.25);
   border-radius: 0;
   background-color: white;
   color: #333;
@@ -6394,16 +6395,7 @@ a.thumbnail image {
 }
 
 .alert {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.alert--sticky {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  margin-bottom: 0;
+  padding: 0.8333333333rem 1.1111111111rem;
 }
 
 .a2a_svg {
@@ -6596,7 +6588,7 @@ a.thumbnail image {
 }
 
 .links .cell {
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid #ccc;
   padding: 0.8333333333rem 0;
 }
 @media print, screen and (max-width: 39.99875em) {
@@ -6640,7 +6632,10 @@ a.thumbnail image {
 }
 
 .dropdown > li.is-dropdown-submenu-parent > a {
-  padding-right: 1.3888888889rem !important;
+  padding-right: 1.6666666667rem !important;
+}
+.dropdown > li.is-dropdown-submenu-parent > a:after {
+  right: 10px;
 }
 .dropdown > li.is-dropdown-submenu-parent > a:after {
   font-family: "icomoon";
@@ -6770,7 +6765,7 @@ a.thumbnail image {
   padding: 0.1666666667rem 0.5555555556rem;
   border-radius: 0;
   height: auto;
-  line-height: 1.6;
+  line-height: 1.4;
   width: auto;
   display: inline-block;
 }
@@ -7517,7 +7512,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 @media print, screen and (max-width: 63.99875em) {
   .top-bar .top > li:not(.utility):not(.search-wrapper):not(:first-child) {
-    border-top: 1px solid #666;
+    border-top: 1px solid #ccc;
   }
   .top-bar .top > li:not(.utility) > a {
     font-size: 1rem;
@@ -7565,6 +7560,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 @media print, screen and (min-width: 64em) {
   .top-bar {
     margin-left: -1rem;
+    padding-left: 0;
     padding-right: 0;
   }
   .top-bar a:hover, .top-bar a:focus:not(.is-active > a) {
@@ -8077,16 +8073,16 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   max-width: 61.6666666667rem;
 }
 .grid--spaced:not(:last-child) {
-  margin-bottom: 1rem;
+  margin-bottom: 1.7777777778rem;
 }
 @media print, screen and (max-width: 39.99875em) {
   .grid-margin-x .cell[class*=medium-]:not([class*=small-]):not(:last-child) {
-    margin-bottom: 1rem;
+    margin-bottom: 1.7777777778rem;
   }
 }
 @media print, screen and (max-width: 63.99875em) {
   .grid-margin-x .cell[class*=large-]:not([class*=medium-]):not([class*=small-]):not(:last-child) {
-    margin-bottom: 1rem;
+    margin-bottom: 1.7777777778rem;
   }
 }
 @media print, screen and (max-width: 39.99875em) {
@@ -8114,11 +8110,7 @@ html, body, .l-wrapper {
 }
 
 .l-header {
-  padding: 1.6666666667rem 0;
-  flex: none;
-}
-.l-header .search-toggle {
-  color: inherit;
+  padding: 1.6666666667rem 0 0;
 }
 
 .l-footer {
@@ -10018,55 +10010,31 @@ h5 {
   letter-spacing: 1px;
 }
 
-ul:not([class]), ol:not([class]) {
-  margin-bottom: 1.6666666667rem;
-}
 ul:not([class]) li, ol:not([class]) li {
-  margin-bottom: 0.8333333333rem;
-}
-ul:not([class]):not(foo), ol:not([class]):not(foo) {
-  list-style-type: none;
-  counter-reset: list;
-}
-ul:not([class]):not(foo) li, ol:not([class]):not(foo) li {
-  position: relative;
-}
-ul:not([class]):not(foo) li:before, ol:not([class]):not(foo) li:before {
-  counter-increment: list;
-  content: counter(list) ".";
-  position: absolute;
-  right: 100%;
-  margin-right: 0.5555555556rem;
-  color: #2953cc;
-  display: inline-block;
-}
-
-ul:not([class]):not(foo) li:before {
-  content: "";
-  background-color: #2953cc;
-  width: 0.2777777778rem;
-  height: 0.2777777778rem;
-  top: 0.6111111111rem;
-  border-radius: 100%;
+  margin-bottom: 0.5555555556rem;
 }
 
 blockquote {
-  border-left: 0;
   position: relative;
-  padding-left: 2.2222222222rem;
+  line-height: 1.375;
+  font-size: 1.3333333333rem;
+}
+blockquote p {
+  margin-bottom: 0.8333333333rem;
 }
 blockquote:before {
-  font-family: "icomoon";
-  content: "";
+  content: "“";
   position: absolute;
-  left: 0;
-  top: -0.2777777778rem;
-  color: #2953cc;
-  font-size: 1.6666666667rem;
+  left: 1rem;
+  top: 0.1111111111rem;
+  font-size: 1.1111111111rem;
 }
 blockquote cite {
   position: relative;
   padding-left: 0.6666666667rem;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: bold;
 }
 blockquote cite:before {
   position: absolute;
@@ -10089,18 +10057,19 @@ img:not([src]) {
 table {
   line-height: 1.2;
 }
-table thead {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+table th {
+  padding-top: 0.8333333333rem;
+  padding-bottom: 0.8333333333rem;
 }
 table tbody {
   font-size: 0.8888888889rem;
 }
 
 figure {
-  margin-bottom: 1rem;
+  margin-bottom: 1.7777777778rem;
 }
 figure figcaption {
-  font-style: italic;
+  font-weight: bold;
   margin-top: 0.6666666667rem;
   line-height: 1.625;
   display: block;

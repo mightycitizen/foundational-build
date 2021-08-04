@@ -1,6 +1,9 @@
 <div class="l-wrapper">
   {% include "layout/wrapper/header.twig" %}
   <div class="l-main">
+    {% include 'components/informational/alert.twig' with {
+      text: "Alert"
+    }%}
     {% block main %}
     {% endblock %}
   </div>

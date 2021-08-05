@@ -6521,6 +6521,7 @@ a.thumbnail image {
   top: 0;
   height: 100%;
   background: linear-gradient(to bottom, rgba(41, 83, 204, 0) 0%, rgba(41, 83, 204, 0.4) 50%, #1f3e99 100%);
+  z-index: 1;
 }
 
 .hero {
@@ -8044,6 +8045,16 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   background-position: center;
   position: relative;
 }
+.section_background {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  opacity: 0.9;
+  background-size: cover;
+  background-position: center;
+}
 .section_content {
   position: relative;
 }
@@ -8052,6 +8063,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .section_intro {
   position: relative;
+  z-index: 2;
 }
 .section_intro:not(:last-child) {
   margin-bottom: 1.9444444444rem;

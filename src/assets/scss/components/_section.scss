@@ -8,12 +8,12 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  // &_background{
-  //   @include stretch;
-  //   opacity: 0.4;
-  //   background-size: cover;
-  //   background-position: center;
-  // }
+  &_background{
+    @include stretch;
+    opacity: 0.6;
+    background-size: cover;
+    background-position: center;
+  }
   &_content{
     position: relative;
     &, .cell{
@@ -25,6 +25,7 @@
 
   &_intro{
     position: relative;
+    z-index: 2;
     &:not(:last-child){
       margin-bottom: rem-calc(35);
       @include breakpoint(medium){

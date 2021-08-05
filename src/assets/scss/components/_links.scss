@@ -1,29 +1,33 @@
 @import '../vendor/icomoon/variables';
 @import './buttons';
+
+
 .read-more{
   position: relative;
+  font-family: $secondaryFontFamily;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: $global-weight-semibold;
   display: inline-block;
-  line-height: 1;
-//  box-shadow: 0 3px $secondary-color;
-//  padding-bottom: 2px;
-
+  line-height: 1.2;
+  &:not(.button){
+    padding-bottom: 2px;
+  }
 
   &:after{
-    font-weight: normal;
     font-family: $icomoon-font-family;
-    content: $icon-chevron-right;
-    margin-left: rem-calc(7);
-    font-size: 0.72em; // 13px
-    top: 50%;
-    //margin-top: rem-calc(2);
-    transform: translateY(-50%);
-    position: absolute; // underline not underneath arrow
+    content: '\00A0#{$icon-chevron-right}';
+    font-size: .72em; // 13/18
+    display: inline-block;
+    transition: 0.3s transform;
+    line-height: inherit;
   }
   &:hover, &:focus{
     text-decoration: underline;
+    // &:after{
+    //   transform: translateX(5px);
+    // }
   }
+
 }
 
 
@@ -48,6 +52,7 @@
 
     .cell{
       padding: rem-calc(40 0);
+      @include align-center;
     }
     .grid-x{
       &:first-child{

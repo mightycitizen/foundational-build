@@ -20,6 +20,11 @@
     height: 100%;
 }
 
+@mixin align-center(){
+    display: flex;
+    align-items: center;
+}
+
 @mixin center(){
     position: absolute;
     top: 50%;

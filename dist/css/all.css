@@ -6598,20 +6598,22 @@ a.thumbnail image {
 
 .read-more {
   position: relative;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   display: inline-block;
-  line-height: 1;
+  line-height: 1.2;
+}
+.read-more:not(.button) {
+  padding-bottom: 2px;
 }
 .read-more:after {
-  font-weight: normal;
   font-family: "icomoon";
-  content: "";
-  margin-left: 0.3888888889rem;
+  content: " ";
   font-size: 0.72em;
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute;
+  display: inline-block;
+  transition: 0.3s transform;
+  line-height: inherit;
 }
 .read-more:hover, .read-more:focus {
   text-decoration: underline;
@@ -6631,6 +6633,8 @@ a.thumbnail image {
 @media print, screen and (min-width: 40em) {
   .links .cell {
     padding: 2.2222222222rem 0;
+    display: flex;
+    align-items: center;
   }
   .links .grid-x:first-child .cell {
     padding-top: 0;

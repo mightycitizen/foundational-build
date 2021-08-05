@@ -6982,7 +6982,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   overflow: visible;
 }
 .js-slick--center .slick-slide {
-  margin: 0 2.2222222222rem;
+  margin: 0 4.4444444444rem;
   max-width: 100vw;
   width: 22.2222222222rem;
   transform: translateY(4.4444444444rem);
@@ -7005,7 +7005,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   z-index: 2;
   position: relative;
   width: 35rem;
-  margin: 0 -4.1666666667rem;
+  margin: 0 -35px;
   transform: translateY(0);
 }
 .js-slick--center .slick-slide.slick-current .card--special {

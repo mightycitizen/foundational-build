@@ -1044,7 +1044,7 @@ a img {
 
 hr {
   clear: both;
-  max-width: 66.6666666667rem;
+  max-width: 74.4444444444rem;
   height: 0;
   margin: 1.1111111111rem auto;
   border-top: 0;
@@ -1330,7 +1330,7 @@ h3 {
 .grid-container {
   padding-right: 0.5555555556rem;
   padding-left: 0.5555555556rem;
-  max-width: 66.6666666667rem;
+  max-width: 74.4444444444rem;
   margin-left: auto;
   margin-right: auto;
 }

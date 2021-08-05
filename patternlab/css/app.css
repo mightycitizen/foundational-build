@@ -4737,17 +4737,17 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 .tabs-title > a {
   display: block;
-  padding: 1.25rem 1.5rem;
+  padding: 0.8888888889rem 1.5rem;
   font-size: 1rem;
   line-height: 1;
-  color: #2953cc;
+  color: #333;
 }
 [data-whatinput=mouse] .tabs-title > a {
   outline: 0;
 }
 .tabs-title > a:hover {
-  background: #6986db;
-  color: #2347af;
+  background: #ccc;
+  color: #2c2c2c;
 }
 .tabs-title > a:focus, .tabs-title > a[aria-selected=true] {
   background: #2953cc;
@@ -4769,7 +4769,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 .tabs-panel {
   display: none;
-  padding: 1rem;
+  padding: 2.2222222222rem 1.7777777778rem;
 }
 .tabs-panel.is-active {
   display: block;
@@ -6600,6 +6600,8 @@ a.thumbnail image {
   position: relative;
   text-decoration: none;
   font-weight: bold;
+  display: inline-block;
+  line-height: 1;
 }
 .read-more:after {
   font-weight: normal;
@@ -6608,7 +6610,6 @@ a.thumbnail image {
   margin-left: 0.3888888889rem;
   font-size: 0.72em;
   top: 50%;
-  margin-top: 0.1111111111rem;
   transform: translateY(-50%);
   position: absolute;
 }
@@ -7714,18 +7715,37 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     max-width: none !important;
   }
 }
+.tabs {
+  border: 0;
+}
 .tabs-title button {
+  margin-right: 0.4444444444rem;
+  font-weight: bold;
   cursor: pointer;
-  color: #2953cc;
+  color: #333;
   font-size: 1rem;
-  padding: 1.25rem 1.5rem;
+  padding: 0.8888888889rem 1.5rem;
+  background-color: #eee;
 }
 .tabs-title button:hover {
-  background-color: #6986db;
+  background-color: #ccc;
+}
+@media screen and (min-width: 75em) {
+  .tabs-title button {
+    min-width: 8.8888888889rem;
+  }
 }
 .tabs-title.is-active button {
   background-color: #2953cc;
   color: #fff;
+}
+.tabs-content {
+  position: relative;
+  border: 0;
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
+}
+.tabs-panel > *:last-child {
+  margin-bottom: 0;
 }
 
 .loader {
@@ -9771,6 +9791,15 @@ html, body, .l-wrapper {
 }
 .text-small {
   font-size: 0.8888888889rem;
+}
+
+.unstyled-blockquote {
+  border: 0;
+  padding: 0;
+  padding-left: 0.5555555556rem;
+}
+.unstyled-blockquote:before {
+  left: 0;
 }
 
 .font-primary {

@@ -5,7 +5,7 @@
       "text": "View",
       "id": "view",
       "is_active": true,
-      "content": "Lorem ipsum 1"
+      "content": "<h2>Tab Content</h2><p>Lorem ipsum 1</p><p><a href='' class='read-more'>Styled Link</a></p>"
     },
     {
       "text": "Edit",

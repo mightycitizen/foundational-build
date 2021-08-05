@@ -1,13 +1,21 @@
 
 .tabs{
+  border: 0;
+
   &-title{
     button{
+      margin-right: rem-calc($spacer);
+      font-weight: $global-weight-bold;
       cursor: pointer;
       color: $tab-color;
       font-size: $tab-item-font-size;
       padding: $tab-item-padding;
+      background-color: $lightest-gray;
       &:hover{
         background-color: $tab-item-background-hover;
+      }
+      @include breakpoint(xlarge){
+        min-width: rem-calc(160);
       }
     }
     &.is-active{
@@ -15,6 +23,16 @@
         background-color: $tab-background-active;
         color: $tab-active-color;
       }
+    }
+  }
+  &-content{
+    position: relative;
+    border: 0;
+    box-shadow: $global-box-shadow;
+  }
+  &-panel{
+    > *:last-child{
+      margin-bottom: 0;
     }
   }
 }

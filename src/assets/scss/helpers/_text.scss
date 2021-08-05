@@ -6,3 +6,12 @@
     font-size: rem-calc(16);
   }
 }
+
+.unstyled-blockquote{
+  border: 0;
+  padding: 0;
+  padding-left: rem-calc(10);
+  &:before{
+    left: 0;
+  }
+}

@@ -4,6 +4,8 @@
   position: relative;
   text-decoration: none;
   font-weight: bold;
+  display: inline-block;
+  line-height: 1;
 //  box-shadow: 0 3px $secondary-color;
 //  padding-bottom: 2px;
 
@@ -15,7 +17,7 @@
     margin-left: rem-calc(7);
     font-size: 0.72em; // 13px
     top: 50%;
-    margin-top: rem-calc(2);
+    //margin-top: rem-calc(2);
     transform: translateY(-50%);
     position: absolute; // underline not underneath arrow
   }

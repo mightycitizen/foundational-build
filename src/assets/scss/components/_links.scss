@@ -1,16 +1,26 @@
 @import '../vendor/icomoon/variables';
+@import './buttons';
 .read-more{
   position: relative;
+  text-decoration: none;
+  font-weight: bold;
 //  box-shadow: 0 3px $secondary-color;
 //  padding-bottom: 2px;
 
 
   &:after{
+    font-weight: normal;
     font-family: $icomoon-font-family;
     content: $icon-chevron-right;
     margin-left: rem-calc(7);
-    font-size: rem-calc(14);
-    // position: absolute; // underline not underneath arrow
+    font-size: 0.72em; // 13px
+    top: 50%;
+    margin-top: rem-calc(2);
+    transform: translateY(-50%);
+    position: absolute; // underline not underneath arrow
+  }
+  &:hover, &:focus{
+    text-decoration: underline;
   }
 }
 

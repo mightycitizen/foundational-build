@@ -38,12 +38,13 @@
   color: $white;
   font-weight: bold;
   text-align: center;
-  padding: rem-calc(10 10);
-  line-height: 1.2;
+  padding: rem-calc(9 10 7);
+  line-height: 1.1;
   text-transform: uppercase;
-  font-size: rem-calc(20);
+  font-size: rem-calc(32);
   &_month{
-    font-size: rem-calc(13);
+    font-size: rem-calc(14);
+    letter-spacing: 1px;
   }
 }
 

@@ -29,12 +29,10 @@
       {% endif %}
     {% endif %}
     <h{{ heading_level }} class="card-title {{ card.heading.modifier | default }}">{{ card.heading.text }}</h{{ heading_level }}>
-    {% if card.summary | default %}
-
-      <p>{{ card.summary }}</p>
-    {% endif %}
-    {% if card.link | default %}
-      <a href="{{ card.link.url }}" class="button">{{ card.link.text }}</a>
+     {% if card.link | default %}
+      <span class="h4">
+        <a href="{{ card.link.url }}" class="{% if card.link.style  | default %}{{ card.link.style }}{% else %}read-more{% endif %}">{{ card.link.text }}</a>
+      </span>
     {% endif %}
   </div>
 </div>

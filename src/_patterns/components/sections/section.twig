@@ -27,10 +27,12 @@
     {% endif %}
 {% endset %}
 {% set section_content %}
-  <div class="section_content">
-    {% block section_content %}
-    {% endblock %}
-  </div>
+  {% if block('section_content') | trim is not empty%}
+    <div class="section_content">
+      {% block section_content %}
+      {% endblock %}
+    </div>
+  {% endif %}
 {% endset %}
 <section class="section {{ class }} {% if style | default %}section--{{ style }} {% endif %}" >
   {% if section_background | default %}<div class="js-lazy section_background" data-bg="{{ section_background }}"></div>{% endif %}

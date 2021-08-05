@@ -1,5 +1,6 @@
 @import "../vendor/icomoon/variables";
 .accordion{
+  background: none;
   &-heading{
     &:focus-within{
       + .accordion-title{
@@ -8,14 +9,16 @@
     }
   }
   &-title{
-    padding-right: rem-calc(40);
+    background-color: $accordion-background;
+    padding-right: #{get-side($accordion-item-padding,'right') + rem-calc(30)};
     width: 100%;
     text-align: left;
     cursor: pointer;
     font-weight: bold;
     &:before{
+      right: get-side($accordion-item-padding,'right');
       font-weight: normal;
-      font-size: rem-calc(20);
+      font-size: rem-calc(16);
       color: $primary-color;
       font-family: $icomoon-font-family;
       content: $icon-chevron-down !important;
@@ -30,13 +33,20 @@
       background-color: $accordion-item-background-hover;
     }
     &:focus{
-      background-color: transparent;
+      background-color: $accordion-background;
     }
 
   }
+  &-content{
+    > *:last-child{
+      margin-bottom: 0;
+    }
+  }
   &-item{
+    box-shadow: $global-box-shadow;
     &:not(:last-child){
-      border-bottom: 2px solid $white;
+      @include spacer(margin, bottom, 3);
+      //border-bottom: 2px solid $white;
     }
   }
   &--icons{
@@ -44,7 +54,7 @@
     .accordion-title{
       counter-increment: steps;
       position: relative;
-      padding-left: rem-calc(65);
+      @include spacer(padding, left,9);
       display: flex;
       .accordion-icon{
         position: absolute;
@@ -57,7 +67,7 @@
         align-items: center;
         justify-content: center;
         padding: rem-calc(15 12);
-        width: rem-calc(50);
+        width: rem-calc($spacer*6);
         font-size: rem-calc(18);
         background-color: map-get($additional-palette, 'primary-darker');
         &:not([class*=icon-]):before{

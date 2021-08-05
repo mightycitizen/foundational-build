@@ -364,7 +364,7 @@ $toggle-spacing: 18;
 	}
 
 	$slide-margin: 80;
-	$slide-width: 400;
+	$slide-width: 450;
 	$slide-current-diff: 230;
 	.slick-slide{
 		margin: 0 rem-calc($slide-margin);
@@ -377,12 +377,21 @@ $toggle-spacing: 18;
 		transform: translateY(#{rem-calc(80)});
 		transition: $transition-duration transform, $transition-duration width, $transition-duration margin;
 		will-change: margin;
+		.card-title{
+			//max-width: rem-calc(400);
+		}
 		.card-section{
 			will-change: background-color;
-			transition: $transition-duration background-color;
+			transition: $transition-duration padding;
 		}
 
 		&:not(.slick-current){
+			.card-section{
+				padding: rem-calc($spacer*3 $spacer*4);
+			}
+			.card-image{
+				transition: $transition-duration margin;
+			}
 			.h4{
 				display: block; // selectors to hide
 				will-change: opacity, max-height;
@@ -390,6 +399,9 @@ $toggle-spacing: 18;
 				opacity: 0;
 				max-height: 0;
 				overflow: hidden;
+			}
+			&:after{
+				transition: $transition-duration bottom;
 			}
 		}
 
@@ -403,8 +415,15 @@ $toggle-spacing: 18;
 
 			.card--special{
 				box-shadow: $global-box-shadow;
+				.card-section{
+					padding: rem-calc($spacer*5 $spacer*5);
+				}
+				.card-image{
+					margin-bottom: rem-calc(80);
+				}
 				&:after{
 					height: 70%;
+					bottom: rem-calc(80);
 				}
 			}
 			// .card-section{

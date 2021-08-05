@@ -5,6 +5,9 @@
   &-small{
     font-size: rem-calc(16);
   }
+  &-white{
+    color: $white;
+  }
 }
 
 .unstyled-blockquote{

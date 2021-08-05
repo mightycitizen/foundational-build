@@ -6475,6 +6475,7 @@ a.thumbnail image {
 .card--special {
   position: relative;
   border: 0;
+  background-color: #2953cc;
 }
 .card--special .card-section {
   position: absolute;
@@ -6512,10 +6513,14 @@ a.thumbnail image {
   }
 }
 
-.cta {
-  background-color: #212944;
-  color: #fff;
-  padding: 1.6666666667rem 0;
+.cta:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(41, 83, 204, 0) 0%, rgba(41, 83, 204, 0.4) 50%, #1f3e99 100%);
 }
 
 .hero {
@@ -6984,14 +6989,20 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .js-slick--center .slick-slide {
   margin: 0 4.4444444444rem;
   max-width: 100vw;
-  width: 22.2222222222rem;
+  width: 25rem;
   transform: translateY(4.4444444444rem);
   transition: 0.75s transform, 0.75s width, 0.75s margin;
   will-change: margin;
 }
 .js-slick--center .slick-slide .card-section {
   will-change: background-color;
-  transition: 0.75s background-color;
+  transition: 0.75s padding;
+}
+.js-slick--center .slick-slide:not(.slick-current) .card-section {
+  padding: 1.3333333333rem 1.7777777778rem;
+}
+.js-slick--center .slick-slide:not(.slick-current) .card-image {
+  transition: 0.75s margin;
 }
 .js-slick--center .slick-slide:not(.slick-current) .h4 {
   display: block;
@@ -7001,18 +7012,28 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   max-height: 0;
   overflow: hidden;
 }
+.js-slick--center .slick-slide:not(.slick-current):after {
+  transition: 0.75s bottom;
+}
 .js-slick--center .slick-slide.slick-current {
   z-index: 2;
   position: relative;
-  width: 35rem;
+  width: 37.7777777778rem;
   margin: 0 -35px;
   transform: translateY(0);
 }
 .js-slick--center .slick-slide.slick-current .card--special {
   box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
 }
+.js-slick--center .slick-slide.slick-current .card--special .card-section {
+  padding: 2.2222222222rem 2.2222222222rem;
+}
+.js-slick--center .slick-slide.slick-current .card--special .card-image {
+  margin-bottom: 4.4444444444rem;
+}
 .js-slick--center .slick-slide.slick-current .card--special:after {
   height: 70%;
+  bottom: 4.4444444444rem;
 }
 .js-slick--center .slick-slide.slick-current .card-image, .js-slick--center .slick-slide.slick-current .button {
   max-height: 55.5555555556rem;
@@ -9806,6 +9827,9 @@ html, body, .l-wrapper {
 }
 .text-small {
   font-size: 0.8888888889rem;
+}
+.text-white {
+  color: #fff;
 }
 
 .unstyled-blockquote {

@@ -6,6 +6,15 @@
          name: "checkbox_single",
          checkbox_label: "Checkbox Single"
         }%}
+
+
+  {% include 'components/forms/_text.twig' with {
+      label: "Text",
+      name: "text",
+      id: "field_id_3",
+      placeholder: "Prompt Text",
+      required: true
+    } %}
   {% include 'components/forms/_textarea.twig' with {
       label: "Textarea",
       name: "textarea",
@@ -14,7 +23,33 @@
       required: true
     } %}
 
+  {% set select_options = {
+    "required": true,
+    "label": "Select",
+    "field_id": "select_validation",
+    "field_name": "select",
+    "options": [
+      {
+        "label": "Select A",
+        "value": 0
+      },
+      {
+        "label": "Select B",
+        "value": 1
+      },
+      {
+        "label": "Select C",
+        "value": 2
+      }
+    ]
+  } %}
+  {% include 'components/forms/_select.twig' with select_options
+  %}
 
+  {% set select_options = select_options | merge({"selectize": true }) %}
+
+  {% include 'components/forms/_select.twig' with select_options
+  %}
   {% include 'components/forms/radio-group.twig' with {
     "required": true,
     "label": "Radio",

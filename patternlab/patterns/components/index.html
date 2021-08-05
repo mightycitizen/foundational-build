@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1628180328470" media="all" />
-    <link rel="stylesheet" href="../../css/all.css?1628180328470" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1628181081721" media="all" />
+    <link rel="stylesheet" href="../../css/all.css?1628181081721" media="all" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1628180328470" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1628181081721" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -881,11 +881,20 @@ Line Three        </cite>
 			<fieldset class="options">
     <legend>Checkbox </legend>
     <ul class="checkbox-group no-bullet">
-              <li><label for="checkbox_0"><input id="checkbox_0" name="checkbox" value="0" type="checkbox" > Checkbox A</label>
+              <li><span>
+  <input class="custom" id="checkbox_0" name="checkbox" value="0" type="checkbox" >
+  <label for="checkbox_0"> Checkbox A</label>
+</span>
 </li>
-              <li><label for="checkbox_1"><input id="checkbox_1" name="checkbox" value="1" type="checkbox" > Checkbox B</label>
+              <li><span>
+  <input class="custom" id="checkbox_1" name="checkbox" value="1" type="checkbox" >
+  <label for="checkbox_1"> Checkbox B</label>
+</span>
 </li>
-              <li><label for="checkbox_2"><input id="checkbox_2" name="checkbox" value="2" type="checkbox" > Checkbox C</label>
+              <li><span>
+  <input class="custom" id="checkbox_2" name="checkbox" value="2" type="checkbox" >
+  <label for="checkbox_2"> Checkbox C</label>
+</span>
 </li>
           </ul>
       </fieldset>
@@ -893,68 +902,6 @@ Line Three        </cite>
 		
 			<script type="text/json" id="pl-pattern-data-components-checkbox-group" class="pl-js-pattern-data">
 			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"components-checkbox","lineagePath":"../../patterns/components-forms-_checkbox/components-forms-_checkbox.rendered.html"}],"lineage":[{"lineagePattern":"components-checkbox","lineagePath":"../../patterns/components-forms-_checkbox/components-forms-_checkbox.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"components-validation","lineagePath":"../../patterns/components-forms-validation/components-forms-validation.rendered.html"}],"lineageR":[{"lineagePattern":"components-validation","lineagePath":"../../patterns/components-forms-validation/components-forms-validation.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"components","patternSubgroup":"forms"},"patternExtension":"twig","patternName":"Checkbox Group","patternPartial":"components-checkbox-group","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->		<div id="components-custom-forms" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/components-forms-custom-forms&#x2F;components-forms-custom-forms.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="components-custom-forms" title="Link to Pattern">
-						Custom Forms
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-components-custom-forms" data-patternpartial="components-custom-forms" title="View Pattern Info">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-					<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-					</div>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-components-custom-forms">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<span>
-  <input class="custom" type="checkbox" id="checkbox_custom"><label for="checkbox_custom">Checkbox</label>
-</span>
-
-<span>
-  <input class="custom" type="radio" name="check" id="radio_1" value="yes" checked/>
-  <label for="radio_1">Radio 1</label>
-</span>
-<span>
-  <input class="custom" type="radio" name="check" id="radio_2" value="no"/>
-  <label for="radio_2">Radio 2</label>
-</span>
-
-<label for="select_filter">Filterable Select Dropdown</label>
-<select name="select_filter" id="select_filter" class="js-selectize">
-  <option value=""></option>
-  <option value="Option 1">Option 1</option>
-  <option value="Option 2">Option 2</option>
-</select>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-components-custom-forms" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternGroup":"components","patternSubgroup":"forms"},"patternExtension":"twig","patternName":"Custom Forms","patternPartial":"components-custom-forms","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->		<div id="components-date" class="pl-c-pattern">
@@ -1145,9 +1092,18 @@ Line Three        </cite>
 			<fieldset class="options">
     <legend>Radio </legend>
     <ul class="radio-group no-bullet">
-              <li><label for="radio_0"><input id="radio_0" name="radio" value="0" type="radio" > Radio A</label></li>
-              <li><label for="radio_1"><input id="radio_1" name="radio" value="1" type="radio" > Radio B</label></li>
-              <li><label for="radio_2"><input id="radio_2" name="radio" value="2" type="radio" > Radio C</label></li>
+              <li>
+          <input class="custom" id="radio_0" name="radio" value="0" type="radio" >
+          <label for="radio_0">Radio A</label>
+        </li>
+              <li>
+          <input class="custom" id="radio_1" name="radio" value="1" type="radio" >
+          <label for="radio_1">Radio B</label>
+        </li>
+              <li>
+          <input class="custom" id="radio_2" name="radio" value="2" type="radio" >
+          <label for="radio_2">Radio C</label>
+        </li>
           </ul>
       </fieldset>
 			</div><!--end pl-js-pattern-example-->
@@ -1346,20 +1302,58 @@ Line Three        </cite>
 		
 			<div class="pl-js-pattern-example">
 			<form action="" data-abide novalidate>
-  <label for="checkbox_single_1"><input id="checkbox_single_1" name="" value="1" type="checkbox" required > Checkbox Single</label>
+  <span>
+  <input class="custom" id="checkbox_single_1" name="" value="1" type="checkbox" required >
+  <label for="checkbox_single_1"> Checkbox Single</label>
+</span>
+
+
+  <div class="form-input">
+  <label for="field_id_3">Text *</label>
+      <input type="text" name="text" id="field_id_3" placeholder="Prompt Text" required/>
+        <span class="form-error">Text is required</span>
+  </div>
   <div class="form-input">
   <label for="field_id_2">Textarea *</label>
       <textarea name="textarea" id="field_id_2" required placeholder="Prompt Text"></textarea>
         <span class="form-error">Textarea is required</span>
   </div>
 
+    <div class="form-input">
+  <label for="example-tabs">Select *</label>
+      <select id="example-tabs" required  >
+                    <option value="0">Select A</option>
+              <option value="1">Select B</option>
+              <option value="2">Select C</option>
+          </select>
+        <span class="form-error">Select is required</span>
+  </div>
 
+  
+  <div class="form-input">
+  <label for="example-tabs">Select *</label>
+      <select id="example-tabs" required  class="js-selectize">
+                    <option value="0">Select A</option>
+              <option value="1">Select B</option>
+              <option value="2">Select C</option>
+          </select>
+        <span class="form-error">Select is required</span>
+  </div>
     <fieldset class="options">
     <legend>Radio *</legend>
     <ul class="radio-group no-bullet">
-              <li><label for="radio_validation_0"><input id="radio_validation_0" name="radio" value="0" type="radio" required > Radio A</label></li>
-              <li><label for="radio_validation_1"><input id="radio_validation_1" name="radio" value="1" type="radio" required > Radio B</label></li>
-              <li><label for="radio_validation_2"><input id="radio_validation_2" name="radio" value="2" type="radio" required > Radio C</label></li>
+              <li>
+          <input class="custom" id="radio_validation_0" name="radio" value="0" type="radio" required >
+          <label for="radio_validation_0">Radio A</label>
+        </li>
+              <li>
+          <input class="custom" id="radio_validation_1" name="radio" value="1" type="radio" required >
+          <label for="radio_validation_1">Radio B</label>
+        </li>
+              <li>
+          <input class="custom" id="radio_validation_2" name="radio" value="2" type="radio" required >
+          <label for="radio_validation_2">Radio C</label>
+        </li>
           </ul>
           <span class="form-error">Radio is required</span>
       </fieldset>
@@ -1368,11 +1362,20 @@ Line Three        </cite>
     <fieldset class="options">
     <legend>Checkbox *</legend>
     <ul class="checkbox-group no-bullet">
-              <li><label for="checkbox_validation_0"><input id="checkbox_validation_0" name="checkbox" value="0" type="checkbox" required > Checkbox A</label>
+              <li><span>
+  <input class="custom" id="checkbox_validation_0" name="checkbox" value="0" type="checkbox" required >
+  <label for="checkbox_validation_0"> Checkbox A</label>
+</span>
 </li>
-              <li><label for="checkbox_validation_1"><input id="checkbox_validation_1" name="checkbox" value="1" type="checkbox" required > Checkbox B</label>
+              <li><span>
+  <input class="custom" id="checkbox_validation_1" name="checkbox" value="1" type="checkbox" required >
+  <label for="checkbox_validation_1"> Checkbox B</label>
+</span>
 </li>
-              <li><label for="checkbox_validation_2"><input id="checkbox_validation_2" name="checkbox" value="2" type="checkbox" required > Checkbox C</label>
+              <li><span>
+  <input class="custom" id="checkbox_validation_2" name="checkbox" value="2" type="checkbox" required >
+  <label for="checkbox_validation_2"> Checkbox C</label>
+</span>
 </li>
           </ul>
           <span class="form-error">Checkbox is required</span>
@@ -1385,7 +1388,7 @@ Line Three        </cite>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-components-validation" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"components-checkbox","lineagePath":"../../patterns/components-forms-_checkbox/components-forms-_checkbox.rendered.html"},{"lineagePattern":"components-textarea","lineagePath":"../../patterns/components-forms-_textarea/components-forms-_textarea.rendered.html"},{"lineagePattern":"components-radio-group","lineagePath":"../../patterns/components-forms-radio-group/components-forms-radio-group.rendered.html"},{"lineagePattern":"components-checkbox-group","lineagePath":"../../patterns/components-forms-checkbox-group/components-forms-checkbox-group.rendered.html"}],"lineage":[{"lineagePattern":"components-checkbox","lineagePath":"../../patterns/components-forms-_checkbox/components-forms-_checkbox.rendered.html"},{"lineagePattern":"components-textarea","lineagePath":"../../patterns/components-forms-_textarea/components-forms-_textarea.rendered.html"},{"lineagePattern":"components-radio-group","lineagePath":"../../patterns/components-forms-radio-group/components-forms-radio-group.rendered.html"},{"lineagePattern":"components-checkbox-group","lineagePath":"../../patterns/components-forms-checkbox-group/components-forms-checkbox-group.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"components","patternSubgroup":"forms"},"patternExtension":"twig","patternName":"Validation","patternPartial":"components-validation","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"components-checkbox","lineagePath":"../../patterns/components-forms-_checkbox/components-forms-_checkbox.rendered.html"},{"lineagePattern":"components-text","lineagePath":"../../patterns/components-forms-_text/components-forms-_text.rendered.html"},{"lineagePattern":"components-textarea","lineagePath":"../../patterns/components-forms-_textarea/components-forms-_textarea.rendered.html"},{"lineagePattern":"components-select","lineagePath":"../../patterns/components-forms-_select/components-forms-_select.rendered.html"},{"lineagePattern":"components-radio-group","lineagePath":"../../patterns/components-forms-radio-group/components-forms-radio-group.rendered.html"},{"lineagePattern":"components-checkbox-group","lineagePath":"../../patterns/components-forms-checkbox-group/components-forms-checkbox-group.rendered.html"}],"lineage":[{"lineagePattern":"components-checkbox","lineagePath":"../../patterns/components-forms-_checkbox/components-forms-_checkbox.rendered.html"},{"lineagePattern":"components-text","lineagePath":"../../patterns/components-forms-_text/components-forms-_text.rendered.html"},{"lineagePattern":"components-textarea","lineagePath":"../../patterns/components-forms-_textarea/components-forms-_textarea.rendered.html"},{"lineagePattern":"components-select","lineagePath":"../../patterns/components-forms-_select/components-forms-_select.rendered.html"},{"lineagePattern":"components-radio-group","lineagePath":"../../patterns/components-forms-radio-group/components-forms-radio-group.rendered.html"},{"lineagePattern":"components-checkbox-group","lineagePath":"../../patterns/components-forms-checkbox-group/components-forms-checkbox-group.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"components","patternSubgroup":"forms"},"patternExtension":"twig","patternName":"Validation","patternPartial":"components-validation","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->		<div id="viewall-components-icons-logos" class="pl-c-category">
@@ -7034,10 +7037,10 @@ Line Three        </cite>
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1628180328470">
+<script id="pl-js-polyfill-insert-1628181081721">
   (function() {
     if (self != top) {
-      var cb = '1628180328470';
+      var cb = '1628181081721';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -7050,7 +7053,7 @@ Line Three        </cite>
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1628180328470" nomodule>
+<script id="pl-js-insert-1628181081721" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -7073,6 +7076,6 @@ Line Three        </cite>
   <script src="/core/misc/drupal.init.js"></script>
   -->
   <!-- Concatenated by Gulp so you don't have to manually add each file. -->
-  <script src="../../js/app.js?1628180328470"></script>
+  <script src="../../js/app.js?1628181081721"></script>
 </body>
 </html>

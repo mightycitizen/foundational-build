@@ -1,6 +1,6 @@
 {% embed 'components/forms/_input.twig' %}
   {% block field %}
-    <select id="{{ id }}" {% if required %}required{% endif %} {% if disabled %}disabled{% endif %}>
+    <select id="{{ id }}" {% if required %}required{% endif %} {% if disabled %}disabled{% endif %} {% if selectize | default %}class="js-selectize"{% endif %}>
       {% if placeholder | default %}
         <option value="">{{ placeholder }}</option>
       {% endif %}

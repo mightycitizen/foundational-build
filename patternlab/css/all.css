@@ -7928,7 +7928,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   font-size: 0.7777777778rem;
 }
 
-.label {
+.label, .flag {
   font-weight: bold;
   text-transform: uppercase;
   color: #666;
@@ -7976,12 +7976,10 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 
 .flag {
-  background-color: #ccc;
-  padding: 0.1111111111rem 0.5555555556rem;
-  text-transform: uppercase;
-  font-size: 0.7222222222rem;
-  font-weight: bold;
-  border: 1px solid #666;
+  background-color: #fff;
+  padding: 0.3888888889rem 0.5rem;
+  color: #666;
+  border: 1px solid #ccc;
 }
 
 .section {
@@ -9986,7 +9984,7 @@ h5 {
   letter-spacing: 1px;
 }
 
-ul:not([class]) li, ol:not([class]) li {
+ul:not([class]) li:not(:last-child), ul.unstyled-list li:not(:last-child), ol:not([class]) li:not(:last-child), ol.unstyled-list li:not(:last-child) {
   margin-bottom: 0.5555555556rem;
 }
 

@@ -48,9 +48,9 @@
       </div>
     {% else %}
       {{ section_intro }}
-      {% if style | default and (style == 'narrow') %}
+      {% if style | default and (style == 'narrow' or style == 'narrower') %}
         <div class="grid-x grid-margin-x align-middle align-center">
-          <div class="cell medium-10">
+          <div class="cell medium-10 {% if style == 'narrower' %}large-8{% endif %}">
             {{ section_content}}
           </div>
         </div>

@@ -11,9 +11,9 @@ h5{
 
 
 ul, ol{
-  &:not([class]){
+  &:not([class]), &.unstyled-list{
     //margin-bottom: rem-calc(30);
-    li{
+    li:not(:last-child){
       margin-bottom: rem-calc(10);
     }
     // custom styled lists

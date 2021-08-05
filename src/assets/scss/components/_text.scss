@@ -2,7 +2,7 @@
   font-size: rem-calc(14);
 }
 
-.label{
+.label, .flag{
   font-weight: $global-weight-bold;
   text-transform: uppercase;
   color: $medium-gray;
@@ -50,10 +50,12 @@
 
 
 .flag{
-  background-color: $light-gray;
-  padding: rem-calc(2 10);
-  text-transform: uppercase;
-  font-size: rem-calc(13);
-  font-weight: bold;
-  border: 1px solid $medium-gray;
+  //@include .label();
+  background-color: $white;
+  padding: rem-calc(7 9);
+  //text-transform: uppercase;
+  //font-size: rem-calc(13);
+  //font-weight: bold;
+  color: $medium-gray;
+  border: 1px solid $light-gray;
 }

@@ -1,12 +1,5 @@
 {% embed 'components/sections/section.twig' with {
-    "section_heading": "Contact Module",
-    "section_subheading": "Department",
-    "section_description": "Lorem ipsum dolor sit amet, et cetera information urgining audiences to get in touch with you if they  have questions.",
-    "section_button": {
-      "url": "#",
-      "text": "Optional Primary Button"
-    },
-    "style": 'half'
+    "class": "section--tight"
   }
 %}
   {% block section_content %}
@@ -16,7 +9,6 @@
         [
           {
             "label": "Phone",
-            "icon": "phone",
             "value": phone.number ~ (phone.ext | default ? ' ext '~ phone.ext : '')
           }
         ]
@@ -26,7 +18,7 @@
       {% set email_items %}
         <ul class="unstyled-list">
           {% for email in emails %}
-            <li>
+            <li class="m-b-0">
               <a href="mailto:{{ email.value }}">{{ (email.text | default) ? email.text : email.value }}</a>
             </li>
           {% endfor %}
@@ -36,7 +28,6 @@
         [
           {
             "label": "Email",
-            "icon": "email",
             "value": email_items
           }
         ]
@@ -53,8 +44,10 @@
       ) %}
     {% endif %}
 
-    {% include 'components/informational/listing.twig' with {
-      "items": items
-    } %}
+      {% include 'components/teasers/card-contact.twig' with {
+        items: items
+      } %}
+
+
   {% endblock %}
 {% endembed %}

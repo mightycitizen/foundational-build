@@ -1,0 +1,25 @@
+<div class="card card--horizontal">
+  <div class="card-section">
+    <div class="grid-x grid-margin-x align-middle">
+      <div class="cell medium-8">
+        <h2>Contact Us</h2>
+        <h3>Department Name</h3>
+        <p class="m-b-3">Lorem ipsum dolor sit amet, et cetera information urgining audiences to get in touch with you if they  have questions.</p>
+        {% include 'components/inline/read-more.twig' with {
+          readMore: {
+            "text": "Read More",
+            "url": "#"
+          }
+        } %}
+      </div>
+      <div class="cell medium-4">
+        <div class="p-y-3 p-x-4 bg-solid-gray-lightest">
+          {% include 'components/informational/listing.twig' with {
+          "listing_class": 'm-b-0',
+          "items": items
+        } %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+{% embed 'components/sections/section.twig' with {
+    "section_heading": "Carousel Center Module Heading",
+    "section_description": "Lorem ipsum",
+    "intro_class": "text-center"
+  }
+%}
+  {% block section_content %}
+    {% include 'components/containers/carousel-cards-center.twig' %}
+  {% endblock %}
+{% endembed %}

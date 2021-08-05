@@ -6472,6 +6472,34 @@ a.thumbnail image {
 .card--click:focus-within {
   box-shadow: 0 0 6px 1px rgba(102, 102, 102, 0.5);
 }
+.card--special {
+  position: relative;
+  border: 0;
+}
+.card--special .card-section {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent;
+  left: 0;
+  color: #fff;
+  z-index: 1;
+}
+.card--special .card-section .read-more {
+  color: inherit;
+}
+.card--special:after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  content: "";
+  top: auto;
+  bottom: 0;
+  transition: 0.3s height;
+  background: linear-gradient(to bottom, rgba(41, 83, 204, 0), #2953cc);
+}
 .card--horizontal .card-section {
   padding-left: 1.7777777778rem !important;
   padding-right: 1.7777777778rem !important;
@@ -6723,6 +6751,9 @@ a.thumbnail image {
 .slick-slide {
   margin: 0 1.1111111111rem;
 }
+.slick-slide .card {
+  margin-bottom: 0;
+}
 
 .slick-toggle {
   color: #2953cc;
@@ -6833,11 +6864,11 @@ a.thumbnail image {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 0.8333333333rem;
+  margin: 0 1.1111111111rem;
   list-style-type: none;
 }
 .slick-dots li, .slick-dots li:last-child {
-  padding: 0.8333333333rem 0.5rem;
+  padding: 0.8333333333rem 0.6666666667rem;
   padding-bottom: 0.7777777778rem !important;
 }
 @media print, screen and (min-width: 64em) {
@@ -6847,16 +6878,17 @@ a.thumbnail image {
   }
 }
 .slick-dots li button {
-  width: 0.5555555556rem;
-  height: 0.5555555556rem;
+  width: 1.3333333333rem;
+  height: 1.3333333333rem;
   display: block;
   font-size: 0;
   line-height: 0;
   border-radius: 50%;
-  background: #666;
+  border: 1px solid #2953cc;
+  background: #2953cc;
 }
 .slick-dots li.slick-active button, .slick-dots li.active button {
-  background: #ffcd00;
+  background-color: transparent;
 }
 .slick-dots li:before {
   content: "";
@@ -6878,26 +6910,19 @@ a.thumbnail image {
   text-decoration: none;
   cursor: pointer;
   background-color: #2953cc;
-  width: 1.6666666667rem;
-  height: 1.6666666667rem;
+  width: 2.2222222222rem;
+  height: 2.2222222222rem;
   text-align: center;
-}
-@media print, screen and (min-width: 64em) {
-  .slick-arrow {
-    width: 3rem;
-    height: 3rem;
-    margin-right: 0;
-  }
 }
 .slick-arrow:before {
   line-height: 1;
   font-family: "icomoon";
-  font-size: 0.7777777778rem;
+  font-size: 0.5555555556rem;
 }
 @media print, screen and (min-width: 64em) {
   .slick-arrow:before {
     font-weight: normal;
-    font-size: 1.2222222222rem;
+    font-size: 0.7777777778rem;
   }
 }
 .slick-arrow.slick-disabled {
@@ -6921,6 +6946,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 
 .slick-nav {
+  margin-top: 1.7777777778rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -6951,46 +6977,24 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .slick-slider.is-paused + .slick-nav .slick-toggle .active {
   display: none;
 }
-.slick-slider + .slick-nav:not(:empty):not(.slick-nav--inline) .slick-arrow {
-  position: absolute;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.slick-slider + .slick-nav:not(:empty):not(.slick-nav--inline) .slick-arrow.slick-prev {
-  right: 100%;
-  transform: translateX(50%) translateY(-50%);
-}
-.slick-slider + .slick-nav:not(:empty):not(.slick-nav--inline) .slick-arrow.slick-next {
-  left: 100%;
-  transform: translateX(-50%) translateY(-50%);
-}
-.slick-slider + .slick-nav:not(:empty):not(.slick-nav--inline) .slick-arrow:hover {
-  background-color: #d82626;
-}
 
-.js-slick--center + .slick-nav {
-  position: absolute;
-  background-color: #ccc;
-  z-index: 100;
-  width: 11.1111111111rem;
-  top: 0;
-}
 .js-slick--center .slick-list {
   overflow: visible;
 }
 .js-slick--center .slick-slide {
-  width: 100vw;
-  max-width: 27.7777777778rem;
+  margin: 0 2.2222222222rem;
+  max-width: 100vw;
+  width: 22.2222222222rem;
   transform: translateY(4.4444444444rem);
-  transition: 0.75s transform;
+  transition: 0.75s transform, 0.75s width, 0.75s margin;
   will-change: margin;
 }
 .js-slick--center .slick-slide .card-section {
   will-change: background-color;
   transition: 0.75s background-color;
 }
-.js-slick--center .slick-slide:not(.slick-current) .card-image, .js-slick--center .slick-slide:not(.slick-current) .button {
+.js-slick--center .slick-slide:not(.slick-current) .h4 {
+  display: block;
   will-change: opacity, max-height;
   transition: 0.75s max-height, 0.75s opacity;
   opacity: 0;
@@ -6998,11 +7002,17 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   overflow: hidden;
 }
 .js-slick--center .slick-slide.slick-current {
+  z-index: 2;
+  position: relative;
+  width: 35rem;
+  margin: 0 -4.1666666667rem;
   transform: translateY(0);
 }
-.js-slick--center .slick-slide.slick-current .card-section {
-  background-color: #ffcd00;
-  color: #fff;
+.js-slick--center .slick-slide.slick-current .card--special {
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
+}
+.js-slick--center .slick-slide.slick-current .card--special:after {
+  height: 70%;
 }
 .js-slick--center .slick-slide.slick-current .card-image, .js-slick--center .slick-slide.slick-current .button {
   max-height: 55.5555555556rem;
@@ -8049,12 +8059,13 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   margin-left: 0;
 }
 .step-list li:not(:last-child) {
-  margin-bottom: 1.6666666667rem;
+  margin-bottom: 1.7777777778rem !important;
 }
 .step-list li > *:last-child {
   margin-bottom: 0;
 }
 .step-list li:before {
+  line-height: 1;
   content: counter(steps);
   position: absolute;
   width: 3.8888888889rem;

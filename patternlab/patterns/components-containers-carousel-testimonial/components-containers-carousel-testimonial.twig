@@ -1,16 +1,21 @@
 
 <div class="grid-container">
   {% embed 'components/containers/_slick.twig' with {
-    pausable: true,
     slick_class: 'slick-slider--equalize'
   } %}
     {% block slide_content %}
       {% for slide in slides %}
           <div>
-            {% include 'components/informational/testimonial.twig' with {
-              quote: slide.quote,
-              attribution: slide.attribution,
-              testimonial_image: slide.testimonial_image
+            {% include 'components/teasers/card-testimonial.twig' with {
+              card: {
+                "image": {
+                    "src": "https://source.unsplash.com/9wg5jCEPBsw/400x400",
+                    "alt": "Alt Text"
+                  },
+                quote: slide.quote,
+                attribution: slide.attribution,
+
+              }
             }%}
           </div>
         {% endfor %}

@@ -1,13 +1,12 @@
 
 <div class="grid-container">
   {% embed 'components/containers/_slick.twig' with {
-    peekaboo: true,
     modifier: 'cards'
   }%}
     {% block slide_content %}
       {% for i in range (i, 5) %}
-            {% include "components/teasers/card.twig" with card %}
-        {% endfor %}
+          {% include "components/teasers/card.twig" with card %}
+      {% endfor %}
     {% endblock %}
   {% endembed %}
 </div>

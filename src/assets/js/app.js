@@ -607,7 +607,7 @@ const slickPagination = (slick) => {
   if (slick.$dots){
     const numSlides = slick.$dots.find('>li').length;
     slick.$slider.toggleClass('has-pagers', numSlides > 1);
-    slick.$slider.toggleClass('has-pagination', numSlides > 3);
+    //slick.$slider.toggleClass('has-pagination', numSlides > 3);
   }
 }
 
@@ -859,7 +859,7 @@ const initSlick = () => {
       dotsClass: 'slick-dots',
       appendArrows: $this.next('.slick-nav'),
       appendDots: $this.next('.slick-nav'),
-      adaptiveHeight: true,
+      adaptiveHeight: false,
       waitForAnimate: false,
       responsive: [
         {

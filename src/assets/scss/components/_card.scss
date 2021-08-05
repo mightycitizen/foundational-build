@@ -32,7 +32,31 @@
       box-shadow: 0 0 6px 1px rgba($medium-gray, 0.5);
     }
   }
-
+  &--special{
+    position: relative;
+    border: 0;
+    .card-section{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: transparent;
+      left: 0;
+      color: $white;
+      z-index: 1;
+      .read-more{
+        color: inherit;
+      }
+    }
+    &:after{
+      @include stretch;
+      content: "";
+      //position: absolute;
+      top: auto;
+      bottom: 0;
+      transition: 0.3s height;
+      background: linear-gradient(to bottom, rgba($primary-color,0), $primary-color);
+    }
+  }
   &--horizontal{
     .card-section{
       @include spacer(padding,x,4);

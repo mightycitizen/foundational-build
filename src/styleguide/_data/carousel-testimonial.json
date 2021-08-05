@@ -1,7 +1,7 @@
 {
   "slides": [
     {
-      "quote": "Lorem upsum",
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at placerat lacus. Donec efficitur orci id dolor condimentum, eu vestibulum diam luctus. Integer non ex et neque eleifend.",
       "attribution": {
         "name": "Firstname LastName",
         "info": "Company\r\nLine Two\r\nLine Three"
@@ -12,7 +12,7 @@
       }
     },
     {
-      "quote": "Lorem upsum",
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at placerat lacus. Donec efficitur orci id dolor condimentum, eu vestibulum diam luctus. Integer non ex et neque eleifend.",
       "attribution": {
         "name": "Firstname LastName",
         "info": "Company"

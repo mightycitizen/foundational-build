@@ -12,7 +12,7 @@
         <blockquote class="unstyled-blockquote">
           <p class="lead">{{ card.quote }}</p>
           {% if card.attribution | default %}
-            <cite>{{ card.attribution.name }}{% if card.attribution.title %}, {{ card.attribution.title }}{% endif %}</cite>
+            <cite>{{ card.attribution.name }}{% if card.attribution.info %}, {{ card.attribution.info }}{% endif %}</cite>
           {% endif %}
         </blockquote>
       </div>

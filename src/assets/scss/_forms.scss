@@ -7,6 +7,8 @@ input[type="radio"].custom {
     position: absolute;
 
     +label {
+      margin-left: 0;
+      font-weight: normal;
       padding-left: rem-calc(28);
       position: relative;
 
@@ -19,10 +21,10 @@ input[type="radio"].custom {
       }
 
       &:before {
-        border: 2px solid $dark-gray;
+        border: 2px solid $primary-color;
         height: rem-calc(16);
         width: rem-calc(16);
-        top: rem-calc(5);
+        top: rem-calc(8);
         background-color: $white;
       }
 
@@ -55,18 +57,18 @@ input[type="checkbox"] {
   &.custom:not(foo) {
     +label {
       &:before {
-        border-radius: 3px;
+        //border-radius: 3px;
       }
 
       &:after {
-        left: rem-calc(3);
-        top: rem-calc(4.5);
+        left: rem-calc(2);
+        top: rem-calc(6);
         color: $white;
         font-weight: normal;
         opacity: 0;
         content: $icon-check;
         font-family: $icomoon-font-family;
-        font-size: rem-calc(10);
+        font-size: rem-calc(12);
 
       }
     }
@@ -93,7 +95,7 @@ input[type="radio"] {
         background-color: $primary-color;
         height: rem-calc(8);
         width: rem-calc(8);
-        top: rem-calc(9);
+        top: rem-calc(12);
         left: rem-calc(4);
       }
 
@@ -176,7 +178,12 @@ select{
   background-size: 12px 12px;
 }
 
-
+legend{
+  color: $form-label-color;
+  font-size: $form-label-font-size;
+  font-weight: $form-label-font-weight;
+  line-height: $form-label-line-height;
+}
 .input{
   &-wrapper{
     position: relative;

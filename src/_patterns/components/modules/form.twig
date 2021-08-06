@@ -1,0 +1,8 @@
+{% embed 'components/sections/section.twig' with {
+  "class": "section--tight",
+  "style": "narrower"
+} %}
+  {% block section_content %}
+    {% include 'components/forms/validation.twig' %}
+  {% endblock %}
+{% endembed %}

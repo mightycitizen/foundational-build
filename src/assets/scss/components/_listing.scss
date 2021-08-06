@@ -3,10 +3,17 @@
     *:last-child{
       margin-bottom: 0;
     }
-    &:not(:last-child){
-      border-bottom: 1px solid $medium-gray;
-      margin-bottom: rem-calc(20);
-      padding-bottom: rem-calc(20);
+
+    border-bottom: $hr-border;
+    @include spacer(margin,bottom,4);
+    @include spacer(padding,bottom,5);
+    @include breakpoint(large){
+      img{
+        max-width: rem-calc(250);
+      }
+    }
+    .media-object-section:first-child{
+      padding-left: 0;
     }
   }
 }

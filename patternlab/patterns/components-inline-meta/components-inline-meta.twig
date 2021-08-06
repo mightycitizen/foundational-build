@@ -1,9 +1,11 @@
-<span class="meta">
+<span class="text-smaller font-bold">
   {{ date }}
   {% if date | default and categories | length %}
     <span class="divider"></span>
   {% endif %}
   {% if categories | length %}
-    Categories: {% for category in categories %}<a href="{{ category.url }}">{{ category.title }}</a>{% if loop.last == false %}, {% endif %}{% endfor %}
+    <ul class="inline-list">
+      {% for category in categories %}<li><a href="{{ category.url }}">{{ category.title }}</a></li>{% endfor %}
+    </ul>
   {% endif %}
 </span>

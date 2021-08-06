@@ -4643,10 +4643,10 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   flex: 0 1 auto;
 }
 .media-object-section:first-child {
-  padding-right: 1rem;
+  padding-right: 1.7777777778rem;
 }
 .media-object-section:last-child:not(:nth-child(2)) {
-  padding-left: 1rem;
+  padding-left: 1.7777777778rem;
 }
 .media-object-section > :last-child {
   margin-bottom: 0;
@@ -4654,7 +4654,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 @media print, screen and (max-width: 39.99875em) {
   .stack-for-small .media-object-section {
     padding: 0;
-    padding-bottom: 1rem;
+    padding-bottom: 1.7777777778rem;
     flex-basis: 100%;
     max-width: 100%;
   }
@@ -7531,13 +7531,21 @@ a.thumbnail image {
   }
 }
 
+.listing .item {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1.7777777778rem !important;
+  padding-bottom: 2.2222222222rem !important;
+}
 .listing .item *:last-child {
   margin-bottom: 0;
 }
-.listing .item:not(:last-child) {
-  border-bottom: 1px solid #666;
-  margin-bottom: 1.1111111111rem;
-  padding-bottom: 1.1111111111rem;
+@media print, screen and (min-width: 64em) {
+  .listing .item img {
+    max-width: 13.8888888889rem;
+  }
+}
+.listing .item .media-object-section:first-child {
+  padding-left: 0;
 }
 
 .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a:after {

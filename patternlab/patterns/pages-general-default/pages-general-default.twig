@@ -26,7 +26,17 @@
   {% include 'components/modules/horizontal-card.twig' %}
   {% include 'components/modules/testimonial.twig' %}
   {% include 'components/modules/tabs.twig' %}
-  {% include 'components/modules/cta.twig' %}
+  {% include 'components/modules/cta.twig' with {
+
+      "section_heading": "Default CTA",
+      "section_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "section_button": {
+        "url": "#",
+        "text": "Text"
+      }
+    }
+
+  %}
   {% include 'components/modules/cta.twig' with {
       "section_background": "https://source.unsplash.com/9wg5jCEPBsw/1200x500",
       "section_heading": "Default CTA",

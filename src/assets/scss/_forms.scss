@@ -147,6 +147,15 @@ input[type="radio"] {
   &.simple{
     input.input-group-field{
       border-right: 0;
+      //padding: rem-calc()
+      &::placeholder {
+        color: $medium-gray;
+        //font-family: 'Nunito Sans';
+        font-size: rem-calc(14);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: $global-weight-bold;
+      }
     }
 
     input.input-group-field:focus, .input-wrapper:focus-within{
@@ -160,6 +169,10 @@ input[type="radio"] {
       border-left: 0;
       padding: rem-calc(0 10);
       background-color: $white;
+      color: $primary-color;
+      button{
+        color: inherit;
+      }
     }
   }
 }

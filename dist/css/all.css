@@ -9968,6 +9968,27 @@ input[type=radio].custom:not(foo) + label:before, input[type=radio].custom:not(f
 .input-group.simple input.input-group-field {
   border-right: 0;
 }
+.input-group.simple input.input-group-field::-moz-placeholder {
+  color: #666;
+  font-size: 0.7777777778rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.input-group.simple input.input-group-field:-ms-input-placeholder {
+  color: #666;
+  font-size: 0.7777777778rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.input-group.simple input.input-group-field::placeholder {
+  color: #666;
+  font-size: 0.7777777778rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
 .input-group.simple input.input-group-field:focus + .input-group-button, .input-group.simple .input-wrapper:focus-within + .input-group-button {
   border: 1px solid #2953cc;
   border-left: 0;
@@ -9977,6 +9998,10 @@ input[type=radio].custom:not(foo) + label:before, input[type=radio].custom:not(f
   border-left: 0;
   padding: 0 0.5555555556rem;
   background-color: #fff;
+  color: #2953cc;
+}
+.input-group.simple .input-group-button button {
+  color: inherit;
 }
 
 input.js-date {

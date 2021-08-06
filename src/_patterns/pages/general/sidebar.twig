@@ -50,34 +50,4 @@
       {% include "components/teasers/card.twig" %}
     {% endblock %}
   {% endembed %}
-  {% include 'components/modules/links.twig' %}
-  {% include 'components/modules/contact.twig' with {
-      "phone": {
-        "number": "(###) ### - ####",
-        "ext": "###"
-      },
-      "emails": [
-        {
-          "value": "example@domain.com",
-          "text": "Text"
-        },
-        {
-          "value": "example2@domain.com"
-        }
-      ],
-      "location": "Address here\r\nRoom\r\n"
-    }
-  %}
-  {% include 'components/modules/cta.twig' with {
-      "section_heading": "Default CTA",
-      "section_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "section_button": {
-        "url": "#",
-        "text": "Text"
-      }
-    }
-   %}
-  {% include 'components/modules/horizontal-card.twig' %}
-  {% include 'components/modules/statistics.twig' %}
-  {% include 'components/modules/three-up-card.twig' %}
 {% endblock %}

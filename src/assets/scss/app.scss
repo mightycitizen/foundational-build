@@ -76,6 +76,11 @@ $unicode-quote-left: '\201c';
 // Motion UI
 @include motion-ui-transitions;
 @include motion-ui-animations;
+@import
+  "vendor/icomoon/style",
+  "vendor/lity",
+  "vendor/selectize",
+  "vendor/slick";
 
 @import
   "components/accordion",
@@ -109,11 +114,7 @@ $unicode-quote-left: '\201c';
   "layout/grid",
   "layout/wrapper";
 
-@import
-  "vendor/icomoon/style",
-  "vendor/lity",
-  "vendor/selectize",
-  "vendor/slick";
+
 
 @import
   "helpers/spacing",

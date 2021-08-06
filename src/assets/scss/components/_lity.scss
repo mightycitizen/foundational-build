@@ -1,11 +1,28 @@
-.lity-inline{
-  .lity-content{
-    background-color: map-get($additional-palette,'primary-lightest');
+.lity{
+  background-color: rgba(map-get($additional-palette,'gray-darker'), 0.2);
+  &-content{
+    border: 0;
+    background-color: $white;
     margin: rem-calc(0 30);
-    padding: rem-calc(20);
+    @include spacer(padding,x,4);
+    @include spacer(padding,y,5);
     width: calc(100% - #{rem-calc(60)});
+    max-width: rem-calc(1076);
+    &:after{
+      box-shadow: $global-box-shadow;
+    }
   }
-  [data-sticky-container]{
-    height: auto !important;
+  &-close{
+    text-shadow: none;
+    color: $primary-color;
+    position: absolute;
+    right: 54px;
+    top: 40px;
+    font-size: rem-calc(50);
   }
+  // [data-sticky-container]{
+  //   height: auto !important;
+  // }
+
 }
+

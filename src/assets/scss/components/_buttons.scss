@@ -1,6 +1,7 @@
 .button{
   font-weight: $global-weight-bold;
   text-decoration: none;
+  box-shadow: $global-box-shadow;
   &.secondary{
     &:hover{
       background-color: map-get($additional-palette,'secondary-darker');

@@ -37,7 +37,7 @@
   {% include 'components/forms/_select.twig' with select_options
   %}
 
-  {% set select_options = select_options | merge({"selectize": true }) %}
+  {% set select_options = select_options | merge({"selectize": true, "label": "Select (Filterable)" }) %}
 
   {% include 'components/forms/_select.twig' with select_options
   %}

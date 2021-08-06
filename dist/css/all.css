@@ -4329,10 +4329,10 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   flex-direction: column;
   flex-grow: 1;
   margin-bottom: 1rem;
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
   border-radius: 0;
   background: #fff;
-  box-shadow: none;
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   color: #333;
 }
@@ -7675,48 +7675,6 @@ a.thumbnail image {
 .slick-slider:not(.has-pagers) + .slick-nav {
   display: none;
 }
-.slick-slider.has-pagination + .slick-nav .slick-dots li {
-  padding-left: 0.1666666667rem;
-  padding-right: 0.1666666667rem;
-}
-.slick-slider.has-pagination + .slick-nav .slick-dots button {
-  font-size: 0.7777777778rem;
-  color: #333;
-  background-color: transparent;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 0.1666666667rem 0.5555555556rem;
-  border-radius: 0;
-  height: auto;
-  line-height: 1.4;
-  width: auto;
-  display: inline-block;
-}
-.slick-slider.has-pagination + .slick-nav .slick-dots .slick-active button {
-  background-color: #2953cc;
-}
-.slick-slider.has-pagination + .slick-nav .slick-dots {
-  counter-reset: pages;
-}
-.slick-slider.has-pagination + .slick-nav .slick-dots li {
-  counter-increment: pages;
-}
-.slick-slider.has-pagination + .slick-nav .slick-dots li:not(.slick-active):not(:last-child) {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-.slick-slider.has-pagination + .slick-nav .slick-dots li button {
-  padding: 0;
-  background-color: transparent !important;
-  pointer-events: none;
-}
-.slick-slider.has-pagination + .slick-nav .slick-dots li:last-child button:before {
-  content: " of ";
-}
-.slick-slider.has-pagination + .slick-nav .slick-dots li:last-child.slick-active button:before {
-  content: counter(pages) " of ";
-}
 
 .slick-dots {
   display: flex;
@@ -7742,11 +7700,11 @@ a.thumbnail image {
   font-size: 0;
   line-height: 0;
   border-radius: 50%;
-  border: 1px solid #2953cc;
+  border: 2px solid #2953cc;
   background: #2953cc;
 }
 .slick-dots li.slick-active button, .slick-dots li.active button {
-  background-color: transparent;
+  background-color: #fff;
 }
 .slick-dots li:before {
   content: "";

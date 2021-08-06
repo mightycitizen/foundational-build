@@ -3,7 +3,7 @@
 {% block main %}
   {% include "components/containers/hero.twig" %}
   {% include 'components/modules/wysiwyg.twig' %}
-  {% include 'components/modules/links.twig' %}
+  {% include 'components/modules/video.twig' %}
   {% include 'components/modules/contact.twig' with {
       "phone": {
         "number": "(###) ### - ####",
@@ -21,7 +21,14 @@
       "location": "Address here\r\nRoom\r\n"
     }
   %}
+  {% include 'components/modules/accordion.twig' %}
+  {% include 'components/modules/horizontal-card.twig' %}
+  {% include 'components/modules/horizontal-card.twig' %}
+  {% include 'components/modules/testimonial.twig' %}
+  {% include 'components/modules/tabs.twig' %}
+  {% include 'components/modules/cta.twig' %}
   {% include 'components/modules/cta.twig' with {
+      "section_background": "https://source.unsplash.com/9wg5jCEPBsw/1200x500",
       "section_heading": "Default CTA",
       "section_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "section_button": {
@@ -30,7 +37,123 @@
       }
     }
    %}
-  {% include 'components/modules/horizontal-card.twig' %}
+  {% include 'components/modules/cta.twig' with {
+      "section_image": {
+        "url": "https://source.unsplash.com/9wg5jCEPBsw/632x400",
+        "alt": ""
+      },
+      "section_heading": "Default CTA",
+      "section_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "section_button": {
+        "url": "#",
+        "text": "Text"
+      }
+    }
+   %}
+  {% include 'components/modules/three-up-card.twig' with {
+    'class': 'bg-gradient-secondary-lightest'
+  } %}
+  {% include 'components/modules/three-up-card.twig' with
+      {
+      "cards": [
+        {
+          "type": {
+            "handle": "event",
+            "label": "Events"
+          },
+          "modifier": "",
+          "flag": "Test",
+          "image": {
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/406x207",
+            "alt": "Alt Text"
+          },
+          "heading": {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "url": "#"
+          },
+          "link": {
+            "url": "#",
+            "text":"Optional Link"
+          },
+          "date": {
+            "month_short": "Dec",
+            "day": 20,
+            "full": "December 20, 2020"
+          }
+        },
+          {
+          "type": {
+            "handle": "event",
+            "label": "Events"
+          },
+          "modifier": "",
+          "members_only": false,
+          "image": {
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/406x207",
+            "alt": "Alt Text"
+          },
+          "heading": {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Another line here to show multiple lines",
+            "url": "#"
+          },
+          "link": {
+            "url": "#",
+            "text":"Optional Link"
+          },
+          "date": {
+            "month_short": "Dec",
+            "day": 20,
+            "full": "December 20, 2020"
+          }
+        },
+          {
+          "type": {
+            "handle": "event",
+            "label": "Events"
+          },
+          "modifier": "",
+          "members_only": false,
+          "image": {
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/406x207",
+            "alt": "Alt Text"
+          },
+          "heading": {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "url": "#"
+          },
+          "link": {
+            "url": "#",
+            "text":"Optional Link"
+          },
+          "date": {
+            "month_short": "Dec",
+            "day": 20,
+            "full": "December 20, 2020"
+          }
+        }
+      ]
+    }
+
+   %}
+
+  {% include 'components/modules/card-carousel.twig' with {
+    "class": "bg-solid-primary-lightest"
+  } %}
+
+  {% include 'components/modules/testimonial-carousel.twig' %}
+
+  {% include 'components/modules/card-carousel-center.twig' with {
+    "class": "bg-gradient-secondary-lighter"
+  } %}
+
+  {% include 'components/modules/step-list.twig' %}
+
   {% include 'components/modules/statistics.twig' %}
-  {% include 'components/modules/three-up-card.twig' %}
+  {% include 'components/modules/statistics.twig' with {
+    class: "bg-solid-primary-lightest",
+    style: "side"
+  } %}
+  {% include 'components/modules/links.twig' with {
+    "class": "bg-gradient-secondary-lighter"
+  } %}
 {% endblock %}

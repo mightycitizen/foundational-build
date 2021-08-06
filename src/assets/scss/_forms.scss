@@ -178,6 +178,10 @@ select{
   background-size: 12px 12px;
 }
 
+// label, legend{
+//   margin-bottom: rem-calc();
+// }
+
 legend{
   color: $form-label-color;
   font-size: $form-label-font-size;
@@ -212,4 +216,12 @@ legend{
     color: $medium-gray;
     opacity: 1;
   }
+}
+
+
+.form-error{
+  background-color: map-get($additional-palette,'tertiary-lightest');
+  color: $body-font-color;
+  padding: rem-calc(8 10);
+  margin-top: 0;
 }

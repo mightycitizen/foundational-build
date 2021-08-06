@@ -614,15 +614,15 @@ textarea {
   display: block;
   box-sizing: border-box;
   width: 100%;
-  height: 2.0777777778rem;
+  height: 2.2333333333rem;
   margin: 0 0 0.8888888889rem;
   padding: 0.4444444444rem;
-  border: 1px solid #666;
+  border: 1px solid #ccc;
   border-radius: 0;
   background-color: #fff;
   box-shadow: none;
   font-family: inherit;
-  font-size: 0.8888888889rem;
+  font-size: 1rem;
   font-weight: normal;
   line-height: 1.4;
   color: #333;
@@ -634,7 +634,7 @@ textarea {
 [type=text]:focus, [type=password]:focus, [type=date]:focus, [type=datetime]:focus, [type=datetime-local]:focus, [type=month]:focus, [type=week]:focus, [type=email]:focus, [type=number]:focus, [type=search]:focus, [type=tel]:focus, [type=time]:focus, [type=url]:focus, [type=color]:focus,
 textarea:focus {
   outline: none;
-  border: 1px solid #333;
+  border: 1px solid #2953cc;
   background-color: #fff;
   box-shadow: none;
   transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
@@ -786,7 +786,7 @@ label.middle {
   height: auto;
   padding-top: 0;
   padding-bottom: 0;
-  font-size: 0.8888888889rem;
+  font-size: 1rem;
 }
 
 fieldset {
@@ -812,17 +812,17 @@ legend {
 }
 
 select {
-  height: 2.0777777778rem;
+  height: 2.2333333333rem;
   margin: 0 0 0.8888888889rem;
   padding: 0.4444444444rem;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: 1px solid #666;
+  border: 1px solid #ccc;
   border-radius: 0;
   background-color: #fff;
   font-family: inherit;
-  font-size: 0.8888888889rem;
+  font-size: 1rem;
   font-weight: normal;
   line-height: 1.4;
   color: #333;
@@ -841,7 +841,7 @@ select {
 }
 select:focus {
   outline: none;
-  border: 1px solid #333;
+  border: 1px solid #2953cc;
   background-color: #fff;
   box-shadow: none;
   transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
@@ -884,7 +884,7 @@ select:not([multiple]) {
   display: none;
   margin-top: -0.4444444444rem;
   margin-bottom: 0.8888888889rem;
-  font-size: 0.6666666667rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #d5383c;
 }
@@ -9949,11 +9949,11 @@ input[type=radio].custom:not(foo) + label:before, input[type=radio].custom:not(f
   border-right: 0;
 }
 .input-group.simple input.input-group-field:focus + .input-group-button, .input-group.simple .input-wrapper:focus-within + .input-group-button {
-  border: 1px solid #333;
+  border: 1px solid #2953cc;
   border-left: 0;
 }
 .input-group.simple .input-group-button {
-  border: 1px solid #666;
+  border: 1px solid #ccc;
   border-left: 0;
   padding: 0 0.5555555556rem;
   background-color: #fff;
@@ -10008,6 +10008,13 @@ legend {
   background-color: #ccc;
   color: #666;
   opacity: 1;
+}
+
+.form-error {
+  background-color: #f3bdbd;
+  color: #333;
+  padding: 0.4444444444rem 0.5555555556rem;
+  margin-top: 0;
 }
 
 .has-icon {

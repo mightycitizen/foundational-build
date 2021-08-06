@@ -4369,7 +4369,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   width: 300px;
   padding: 1rem;
   visibility: hidden;
-  border: 1px solid #666;
+  border: 0 solid #666;
   border-radius: 0;
   background-color: #fff;
   font-size: 1rem;
@@ -5249,14 +5249,14 @@ a.thumbnail image {
   z-index: 1;
   display: none;
   min-width: 200px;
-  border: 1px solid #666;
+  border: 0 solid #666;
   background: #fff;
 }
 .dropdown .is-dropdown-submenu a {
   padding: 0.7rem 1rem;
 }
 .is-dropdown-submenu .is-dropdown-submenu {
-  margin-top: -1px;
+  margin-top: 0;
 }
 .is-dropdown-submenu > li {
   width: 100%;
@@ -8240,13 +8240,20 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .lity-content:after {
   box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
 }
-.lity-close {
+.lity-close, .lity-close:hover, .lity-close:focus {
   text-shadow: none;
   color: #2953cc;
   position: absolute;
   right: 54px;
   top: 40px;
   font-size: 2.7777777778rem;
+}
+.lity-iframe .lity-content {
+  padding: 0 !important;
+}
+.lity-iframe .lity-close {
+  background-color: #fff;
+  line-heigth: 0.75;
 }
 
 .table-scroll {
@@ -8404,7 +8411,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 @media print, screen and (max-width: 63.99875em) {
   .top-bar .accordion-menu a:not(.button) {
-    color: #d82626;
+    color: #2953cc;
     padding: 0.5555555556rem 0.8333333333rem;
   }
 }
@@ -8537,7 +8544,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
   }
   .top-bar .top > li > ul a:not(.parent-link > a) {
-    color: #d82626;
+    color: #2953cc;
   }
   .top-bar .top > li > ul.child-opens-left::after {
     right: 0;

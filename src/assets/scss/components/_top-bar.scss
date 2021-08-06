@@ -36,7 +36,7 @@
     }
     .accordion-menu{
       a:not(.button){
-        color: map-get($tertiary,'default');
+        color: map-get($primary,'default');
         padding: rem-calc(10 15);
       }
     }
@@ -199,7 +199,7 @@
             box-shadow: $global-box-shadow;
           }
           a:not(.parent-link > a){
-            color: map-get($tertiary,'default');
+            color: map-get($primary,'default');
           }
           &.child-opens-left{
             &::after{

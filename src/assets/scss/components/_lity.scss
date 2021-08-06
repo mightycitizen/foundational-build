@@ -13,16 +13,26 @@
     }
   }
   &-close{
-    text-shadow: none;
-    color: $primary-color;
-    position: absolute;
-    right: 54px;
-    top: 40px;
-    font-size: rem-calc(50);
+    &, &:hover, &:focus{
+      text-shadow: none;
+      color: $primary-color;
+      position: absolute;
+      right: 54px;
+      top: 40px;
+      font-size: rem-calc(50);
+    }
   }
   // [data-sticky-container]{
   //   height: auto !important;
   // }
-
+  &-iframe{
+    .lity-content{
+      padding: 0 !important;
+    }
+    .lity-close{
+      background-color: $white;
+      line-heigth: 0.75;
+    }
+  }
 }
 

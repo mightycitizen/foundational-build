@@ -7249,6 +7249,17 @@ a.thumbnail image {
 .alert {
   padding: 0.8333333333rem 1.1111111111rem;
 }
+.alert_label {
+  display: inline-block;
+  margin-right: 0.4444444444rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8888888889rem;
+  letter-spacing: 1px;
+}
+.alert_label:after {
+  content: ":";
+}
 
 .a2a_svg {
   max-width: 1.3888888889rem;
@@ -9010,8 +9021,7 @@ html, body, .l-wrapper {
 
 .l-footer {
   padding: 1.6666666667rem 0;
-  background-color: #333;
-  color: #fff;
+  background-color: #2953cc;
   flex: none;
 }
 
@@ -9846,6 +9856,9 @@ html, body, .l-wrapper {
 }
 .text-white {
   color: #fff;
+}
+.text-white a:not(.button) {
+  color: inherit;
 }
 
 .unstyled-blockquote {

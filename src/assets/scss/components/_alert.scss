@@ -1,6 +1,17 @@
 .alert{
 
   padding: rem-calc(15 20);
+  &_label{
+    display: inline-block;
+    margin-right: rem-calc(8);
+    font-weight: $global-weight-bold;
+    text-transform: uppercase;
+    font-size: rem-calc(16);
+    letter-spacing: 1px;
+    &:after{
+      content: ":";
+    }
+  }
   // display: flex;
   // justify-content: space-between;
   // align-items: center;

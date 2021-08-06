@@ -2,7 +2,8 @@
   {% include "layout/wrapper/header.twig" %}
   <div class="l-main">
     {% include 'components/informational/alert.twig' with {
-      text: "Alert"
+      alert_label: "Alert",
+      text: "Important message goes here and is an optional link lorem ipsum dolor sit amet, consectetur adipiscing elit."
     }%}
     {% block main %}
     {% endblock %}

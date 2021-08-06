@@ -4,7 +4,7 @@
       "handle": "event"
     },
     "date": {
-      "month": "Mon",
+      "month_short": "Mon",
       "day": "08"
     },
     "modifier": "",

@@ -39,5 +39,13 @@
   {% set sidebar %}
     {% include "components/teasers/card.twig" %}
   {% endset %}
-  {% include 'layout/structure/content-with-sidebar.twig' %}
+  {% embed 'components/sections/section.twig' with {
+    'class': 'section--tight'
+  } %}
+    {% block section_content %}
+      {% include 'layout/structure/content-with-sidebar.twig' %}
+    {% endblock %}
+  {% endembed %}
+
+
 {% endblock %}

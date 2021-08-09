@@ -493,7 +493,7 @@ $input-padding: $spacer*2 rem-calc(12);
 $input-shadow: none;
 $input-shadow-focus: none;
 $input-cursor-disabled: not-allowed;
-$input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+$input-transition: border-color 0.25s ease-in-out;
 $input-number-spinners: true;
 $input-radius: $global-radius;
 $form-button-radius: $global-radius;

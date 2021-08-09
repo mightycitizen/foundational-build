@@ -179,6 +179,7 @@ input[type="radio"], input[type="checkbox"]{
       padding: rem-calc(0 10);
       background-color: $white;
       color: $primary-color;
+      transition: $input-transition;
       button{
         color: inherit;
       }

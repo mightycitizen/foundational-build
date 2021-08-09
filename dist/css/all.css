@@ -722,7 +722,7 @@ textarea {
   font-weight: normal;
   line-height: 1.4;
   color: #333;
-  transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+  transition: border-color 0.25s ease-in-out;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -733,7 +733,7 @@ textarea:focus {
   border: 1px solid #2953cc;
   background-color: #fff;
   box-shadow: none;
-  transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+  transition: border-color 0.25s ease-in-out;
 }
 
 textarea {
@@ -928,7 +928,7 @@ select {
   background-repeat: no-repeat;
   background-size: 9px 6px;
   padding-right: 1.3333333333rem;
-  transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+  transition: border-color 0.25s ease-in-out;
 }
 @media screen and (min-width: 0\0 ) {
   select {
@@ -940,7 +940,7 @@ select:focus {
   border: 1px solid #2953cc;
   background-color: #fff;
   box-shadow: none;
-  transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+  transition: border-color 0.25s ease-in-out;
 }
 select:disabled {
   background-color: #ccc;
@@ -10160,6 +10160,7 @@ input[type=radio].custom:not(foo):focus + label, input[type=checkbox].custom:not
   padding: 0 0.5555555556rem;
   background-color: #fff;
   color: #2953cc;
+  transition: border-color 0.25s ease-in-out;
 }
 .input-group.simple .input-group-button button {
   color: inherit;

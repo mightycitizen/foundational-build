@@ -46,10 +46,7 @@ $toggle-spacing: 18;
 		left: 0;
 		@include vertical-center;
 	}
-	// .active{
-	// 	margin-top: -1px;
-	// 	margin-bottom: 1px;
-	// }
+
 	.inactive{
 		display: none;
 	}
@@ -211,7 +208,7 @@ $toggle-spacing: 18;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	//padding-right: rem-calc(3);
+
 	margin-left: 0;
 	margin-right: rem-calc(17);
 	font-size: 0;
@@ -220,24 +217,19 @@ $toggle-spacing: 18;
 	text-decoration: none;
 	cursor: pointer;
 	background-color: $primary-color;
-	//width: rem-calc(54);
+
 	@include size(40);
 	text-align: center;
-	// @include breakpoint(large) {
-	// 	@include size(54);
-	// 	margin-right: 0;
-	// 	//padding-right: rem-calc(2);
-	// }
 
 	&:before {
-		//font-size: rem-calc(30);
+
 		line-height: 1;
 		font-family: $icomoon-font-family;
 		font-size: rem-calc(10);
 		@include breakpoint(large) {
 			font-weight: normal;
 			font-size: rem-calc(14);
-			//line-height: 1;
+
 		}
 	}
 
@@ -305,7 +297,7 @@ $toggle-spacing: 18;
 
 
 	.slick-slider.is-paused + &{
-		//background-color: red;
+
 		.slick-toggle{
 			.inactive{
 				display: block;
@@ -319,7 +311,7 @@ $toggle-spacing: 18;
 
 
 	.slick-slider.is-paused + &{
-		//background-color: red;
+
 		.slick-toggle{
 			.inactive{
 				display: block;
@@ -329,72 +321,39 @@ $toggle-spacing: 18;
 			}
 		}
 	}
-// 	.slick-slider + &:not(:empty):not(.slick-nav--inline){
-// //		margin-bottom: rem-calc(50);
-// 		.slick-dots{
-// 			//margin-top: rem-calc(50);
-// 			//position: absolute;
-// 			//bottom:
-// 		}
-// 		.slick-arrow{
-// 			position: absolute;
-// 			@include vertical-center;
-// 			&.slick-prev{
-// 				right: 100%;
-// 				transform: translateX(50%) translateY(-50%);
-// 				//margin-right: rem-calc($arrow-margin-xxlarge);
-// 			}
-// 			&.slick-next{
-// 				left: 100%;
-// 				transform: translateX(-50%) translateY(-50%);
-// 				//margin-left: rem-calc($arrow-margin-xxlarge);
-// 			}
-// 			&:hover{
-// 				background-color: map-get($tertiary,'default');
-// 			}
-// 		}
-// 	}
 
 
 }
 
 .js-slick--center{
 	$transition-duration: 0.75s;
-	// + .slick-nav{
-	// 	position: absolute;
-	// 	background-color: $light-gray;
-	// 	z-index: 100;
-	// 	width: rem-calc(200);
-	// 	top: 0;
 
-	// }
 	.slick-list{
 		overflow: visible;
+		//display: flex;
 	}
 
 	$slide-margin: 80;
+	$slide-transform: 80;
 	$slide-width: 450;
 	$slide-current-diff: 230;
+	$curr-width: $slide-width + $slide-current-diff;
+	$curr-section-offset: 80;
+	$image-ratio: 1.6;
 	.slick-slide{
-		margin: 0 rem-calc($slide-margin);
+		margin: 0 rem-calc($slide-margin) rem-calc($slide-margin-offset);
 		max-width: 100vw;
-
 		width: rem-calc($slide-width);
-		// @include breakpoint(500){
-		// 	max-width: rem-calc(500);
-		// }
-		transform: translateY(#{rem-calc(80)});
+		transform: translateY(#{rem-calc($slide-transform)});
 		transition: $transition-duration transform, $transition-duration width, $transition-duration margin;
-		will-change: margin;
-		.card-title{
-			//max-width: rem-calc(400);
-		}
+		will-change: margin, transform, width;
 		.card-section{
-			will-change: background-color;
+			will-change: padding;
 			transition: $transition-duration padding;
 		}
 
 		&:not(.slick-current){
+			margin-bottom: rem-calc($curr-width/$image-ratio - $slide-width/$image-ratio);
 			.card-section{
 				padding: rem-calc($spacer*3 $spacer*4);
 			}
@@ -418,7 +377,7 @@ $toggle-spacing: 18;
 		&.slick-current{
 			z-index: 2;
 			position: relative;
-			width: rem-calc($slide-width + $slide-current-diff);
+			width: rem-calc($curr-width);
 			margin: 0 #{$slide-margin*2 - ($slide-current-diff/2 + $slide-margin)}px;
 			transform: translateY(#{rem-calc(0)});
 
@@ -428,7 +387,7 @@ $toggle-spacing: 18;
 					padding: rem-calc($spacer*5 $spacer*5);
 				}
 				.card-image{
-					margin-bottom: rem-calc(80);
+					margin-bottom: rem-calc($curr-section-offset);
 				}
 				&:after{
 					height: 70%;

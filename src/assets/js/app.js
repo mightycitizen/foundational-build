@@ -907,6 +907,7 @@ const initSlick = () => {
       appendArrows: $this.next('.slick-nav'),
       appendDots: $this.next('.slick-nav'),
       variableWidth: true,
+      //adaptiveHeight: false,
       waitForAnimate: true,
       responsive: [
         {

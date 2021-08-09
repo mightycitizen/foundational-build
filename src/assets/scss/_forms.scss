@@ -65,9 +65,6 @@ input[type="radio"].custom {
 input[type="checkbox"] {
   &.custom:not(foo) {
     +label {
-      &:before {
-        //border-radius: 3px;
-      }
 
       &:after {
         left: rem-calc(2);
@@ -93,6 +90,7 @@ input[type="checkbox"] {
 
       }
     }
+
   }
 }
 
@@ -114,6 +112,17 @@ input[type="radio"] {
 
     }
 
+  }
+}
+
+input[type="radio"], input[type="checkbox"]{
+  &.custom:not(foo){
+    &:focus{
+      + label{
+        color: $primary-color;
+        text-decoration: underline;
+      }
+    }
   }
 }
 

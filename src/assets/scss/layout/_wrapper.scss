@@ -45,3 +45,20 @@ html, body, .l-wrapper{
     }
   }
 }
+
+
+.l-skip{
+  left: 0%;
+  display: block;
+  position: absolute;
+  transform: translateY(-100%);
+  opacity: 0;
+  z-index: -1;
+  &:focus{
+    transform: translateY(0%);
+    opacity: 1;
+    background-color: $primary-color;
+    color: $white;
+    padding: rem-calc(3 5);
+  }
+}

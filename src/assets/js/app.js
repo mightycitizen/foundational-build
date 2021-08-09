@@ -17,6 +17,18 @@ import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_pat
 // @foundation init
 $(document).foundation();
 
+// @skip-to init
+
+const initSkipTo = () => {
+  $(document).on('click', '.l-skip', function(e) {
+    e.preventDefault();
+    const targetId = $(this).attr('href');
+    const $target = $(targetId);
+    const $first = $target.find(':header:first') || null;
+    if ($first) $target.find(':header:first').attr('tabindex', '-1').focus();
+  });
+}
+
 // @foundation breakpoint event trigger
 $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
    // @lity breakpoint trigger
@@ -953,5 +965,6 @@ $(document).ready(function(){
   initAjax(); // @ajax init
   initFormHelpers(); // @form helpers init\
   initSlider(); // @slider init
+  initSkipTo(); // @skip-to init
 })
 

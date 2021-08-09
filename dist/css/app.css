@@ -9145,6 +9145,22 @@ html, body, .l-wrapper {
   text-decoration: underline;
 }
 
+.l-skip {
+  left: 0%;
+  display: block;
+  position: absolute;
+  transform: translateY(-100%);
+  opacity: 0;
+  z-index: -1;
+}
+.l-skip:focus {
+  transform: translateY(0%);
+  opacity: 1;
+  background-color: #2953cc;
+  color: #fff;
+  padding: 0.1666666667rem 0.2777777778rem;
+}
+
 .w-100 {
   width: 100% !important;
 }
@@ -10082,6 +10098,11 @@ input[type=radio].custom:not(foo) + label:after {
 }
 input[type=radio].custom:not(foo) + label:before, input[type=radio].custom:not(foo) + label:after {
   border-radius: 100%;
+}
+
+input[type=radio].custom:not(foo):focus + label, input[type=checkbox].custom:not(foo):focus + label {
+  color: #2953cc;
+  text-decoration: underline;
 }
 
 .radio-button {

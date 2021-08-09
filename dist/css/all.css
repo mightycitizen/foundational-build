@@ -11,8 +11,12 @@
   background-color: #2953cc;
 }
 
+.bg-light-primary {
+  background-color: rgba(41, 83, 204, 0.2);
+}
+
 .bg-gradient-primary:before {
-  background: linear-gradient(to bottom, #fff 0%, #2953cc 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(41, 83, 204, 0.4) 100%);
 }
 
 .color-primary-darker {
@@ -23,8 +27,12 @@
   background-color: #1f3e99;
 }
 
+.bg-light-primary-darker {
+  background-color: rgba(31, 62, 153, 0.2);
+}
+
 .bg-gradient-primary-darker:before {
-  background: linear-gradient(to bottom, #fff 0%, #1f3e99 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(31, 62, 153, 0.4) 100%);
 }
 
 .color-primary {
@@ -39,8 +47,12 @@
   background-color: #2953cc;
 }
 
+.bg-light-primary {
+  background-color: rgba(41, 83, 204, 0.2);
+}
+
 .bg-gradient-primary:before {
-  background: linear-gradient(to bottom, #fff 0%, #2953cc 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(41, 83, 204, 0.4) 100%);
 }
 
 .color-primary-lighter {
@@ -51,8 +63,12 @@
   background-color: #6986db;
 }
 
+.bg-light-primary-lighter {
+  background-color: rgba(105, 134, 219, 0.2);
+}
+
 .bg-gradient-primary-lighter:before {
-  background: linear-gradient(to bottom, #fff 0%, #6986db 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(105, 134, 219, 0.4) 100%);
 }
 
 .color-primary {
@@ -67,8 +83,12 @@
   background-color: #2953cc;
 }
 
+.bg-light-primary {
+  background-color: rgba(41, 83, 204, 0.2);
+}
+
 .bg-gradient-primary:before {
-  background: linear-gradient(to bottom, #fff 0%, #2953cc 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(41, 83, 204, 0.4) 100%);
 }
 
 .color-primary-lightest {
@@ -79,8 +99,12 @@
   background-color: #bdcaef;
 }
 
+.bg-light-primary-lightest {
+  background-color: rgba(189, 202, 239, 0.2);
+}
+
 .bg-gradient-primary-lightest:before {
-  background: linear-gradient(to bottom, #fff 0%, #bdcaef 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(189, 202, 239, 0.4) 100%);
 }
 
 .color-secondary {
@@ -95,8 +119,12 @@
   background-color: #ffcd00;
 }
 
+.bg-light-secondary {
+  background-color: rgba(255, 205, 0, 0.2);
+}
+
 .bg-gradient-secondary:before {
-  background: linear-gradient(to bottom, #fff 0%, #ffcd00 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(255, 205, 0, 0.4) 100%);
 }
 
 .color-secondary-darker {
@@ -107,8 +135,12 @@
   background-color: #eca806;
 }
 
+.bg-light-secondary-darker {
+  background-color: rgba(236, 168, 6, 0.2);
+}
+
 .bg-gradient-secondary-darker:before {
-  background: linear-gradient(to bottom, #fff 0%, #eca806 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(236, 168, 6, 0.4) 100%);
 }
 
 .color-secondary {
@@ -123,8 +155,12 @@
   background-color: #ffcd00;
 }
 
+.bg-light-secondary {
+  background-color: rgba(255, 205, 0, 0.2);
+}
+
 .bg-gradient-secondary:before {
-  background: linear-gradient(to bottom, #fff 0%, #ffcd00 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(255, 205, 0, 0.4) 100%);
 }
 
 .color-secondary-lighter {
@@ -135,8 +171,12 @@
   background-color: #ffe57f;
 }
 
+.bg-light-secondary-lighter {
+  background-color: rgba(255, 229, 127, 0.2);
+}
+
 .bg-gradient-secondary-lighter:before {
-  background: linear-gradient(to bottom, #fff 0%, #ffe57f 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(255, 229, 127, 0.4) 100%);
 }
 
 .color-secondary {
@@ -151,8 +191,12 @@
   background-color: #ffcd00;
 }
 
+.bg-light-secondary {
+  background-color: rgba(255, 205, 0, 0.2);
+}
+
 .bg-gradient-secondary:before {
-  background: linear-gradient(to bottom, #fff 0%, #ffcd00 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(255, 205, 0, 0.4) 100%);
 }
 
 .color-secondary-lightest {
@@ -163,8 +207,12 @@
   background-color: #ffefb2;
 }
 
+.bg-light-secondary-lightest {
+  background-color: rgba(255, 239, 178, 0.2);
+}
+
 .bg-gradient-secondary-lightest:before {
-  background: linear-gradient(to bottom, #fff 0%, #ffefb2 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(255, 239, 178, 0.4) 100%);
 }
 
 .color-tertiary {
@@ -179,8 +227,12 @@
   background-color: #d82626;
 }
 
+.bg-light-tertiary {
+  background-color: rgba(216, 38, 38, 0.2);
+}
+
 .bg-gradient-tertiary:before {
-  background: linear-gradient(to bottom, #fff 0%, #d82626 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(216, 38, 38, 0.4) 100%);
 }
 
 .color-tertiary-darker {
@@ -191,8 +243,12 @@
   background-color: #b42727;
 }
 
+.bg-light-tertiary-darker {
+  background-color: rgba(180, 39, 39, 0.2);
+}
+
 .bg-gradient-tertiary-darker:before {
-  background: linear-gradient(to bottom, #fff 0%, #b42727 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(180, 39, 39, 0.4) 100%);
 }
 
 .color-tertiary {
@@ -207,8 +263,12 @@
   background-color: #d82626;
 }
 
+.bg-light-tertiary {
+  background-color: rgba(216, 38, 38, 0.2);
+}
+
 .bg-gradient-tertiary:before {
-  background: linear-gradient(to bottom, #fff 0%, #d82626 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(216, 38, 38, 0.4) 100%);
 }
 
 .color-tertiary-lighter {
@@ -219,8 +279,12 @@
   background-color: #e87d7d;
 }
 
+.bg-light-tertiary-lighter {
+  background-color: rgba(232, 125, 125, 0.2);
+}
+
 .bg-gradient-tertiary-lighter:before {
-  background: linear-gradient(to bottom, #fff 0%, #e87d7d 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(232, 125, 125, 0.4) 100%);
 }
 
 .color-tertiary {
@@ -235,8 +299,12 @@
   background-color: #d82626;
 }
 
+.bg-light-tertiary {
+  background-color: rgba(216, 38, 38, 0.2);
+}
+
 .bg-gradient-tertiary:before {
-  background: linear-gradient(to bottom, #fff 0%, #d82626 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(216, 38, 38, 0.4) 100%);
 }
 
 .color-tertiary-lightest {
@@ -247,8 +315,12 @@
   background-color: #f3bdbd;
 }
 
+.bg-light-tertiary-lightest {
+  background-color: rgba(243, 189, 189, 0.2);
+}
+
 .bg-gradient-tertiary-lightest:before {
-  background: linear-gradient(to bottom, #fff 0%, #f3bdbd 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(243, 189, 189, 0.4) 100%);
 }
 
 .color-gray {
@@ -263,8 +335,12 @@
   background-color: #666;
 }
 
+.bg-light-gray {
+  background-color: rgba(102, 102, 102, 0.2);
+}
+
 .bg-gradient-gray:before {
-  background: linear-gradient(to bottom, #fff 0%, #666 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(102, 102, 102, 0.4) 100%);
 }
 
 .color-gray-lighter {
@@ -275,8 +351,12 @@
   background-color: #ccc;
 }
 
+.bg-light-gray-lighter {
+  background-color: rgba(204, 204, 204, 0.2);
+}
+
 .bg-gradient-gray-lighter:before {
-  background: linear-gradient(to bottom, #fff 0%, #cccccc 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(204, 204, 204, 0.4) 100%);
 }
 
 .color-gray {
@@ -291,8 +371,12 @@
   background-color: #666;
 }
 
+.bg-light-gray {
+  background-color: rgba(102, 102, 102, 0.2);
+}
+
 .bg-gradient-gray:before {
-  background: linear-gradient(to bottom, #fff 0%, #666 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(102, 102, 102, 0.4) 100%);
 }
 
 .color-gray-lightest {
@@ -303,8 +387,12 @@
   background-color: #eee;
 }
 
+.bg-light-gray-lightest {
+  background-color: rgba(238, 238, 238, 0.2);
+}
+
 .bg-gradient-gray-lightest:before {
-  background: linear-gradient(to bottom, #fff 0%, #eeeeee 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(238, 238, 238, 0.4) 100%);
 }
 
 .color-gray {
@@ -319,8 +407,12 @@
   background-color: #666;
 }
 
+.bg-light-gray {
+  background-color: rgba(102, 102, 102, 0.2);
+}
+
 .bg-gradient-gray:before {
-  background: linear-gradient(to bottom, #fff 0%, #666 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(102, 102, 102, 0.4) 100%);
 }
 
 .color-gray-darker {
@@ -331,8 +423,12 @@
   background-color: #333;
 }
 
+.bg-light-gray-darker {
+  background-color: rgba(51, 51, 51, 0.2);
+}
+
 .bg-gradient-gray-darker:before {
-  background: linear-gradient(to bottom, #fff 0%, #333333 100%);
+  background: linear-gradient(to bottom, #fff 0%, rgba(51, 51, 51, 0.4) 100%);
 }
 
 /**
@@ -7618,8 +7714,12 @@ a.thumbnail image {
   color: #2953cc;
 }
 
+.slick-list {
+  margin-bottom: -0.8333333333rem;
+}
+
 .slick-slide {
-  margin: 0 1.1111111111rem;
+  margin: 0 1.1111111111rem 0.8333333333rem;
 }
 .slick-slide .card {
   margin-bottom: 0;

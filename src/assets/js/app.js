@@ -823,6 +823,7 @@ const initSlick = () => {
     $this.slick({
       slidesToScroll: 1,
       rows: 0,
+      lazyLoad: 'ondemand',
       prevArrow: '<button class="slick-prev">Previous</button>',
       nextArrow: '<button class="slick-next">Next</button>',
       dots: true,

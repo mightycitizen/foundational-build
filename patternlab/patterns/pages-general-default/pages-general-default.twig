@@ -61,7 +61,7 @@
     }
    %}
   {% include 'components/modules/three-up-card.twig' with {
-    'class': 'bg-gradient-secondary-lightest'
+    'class': 'bg-gradient-secondary'
   } %}
   {% include 'components/modules/three-up-card.twig' with
       {
@@ -147,7 +147,7 @@
    %}
 
   {% include 'components/modules/card-carousel.twig' with {
-    "class": "bg-solid-primary-lightest"
+    "class": "bg-light-primary"
   } %}
 
   {% include 'components/modules/testimonial-carousel.twig' %}
@@ -158,12 +158,13 @@
 
   {% include 'components/modules/step-list.twig' %}
 
-  {% include 'components/modules/statistics.twig' %}
   {% include 'components/modules/statistics.twig' with {
-    class: "bg-solid-primary-lightest",
+    class: "bg-light-primary"
+   } %}
+  {% include 'components/modules/statistics.twig' with {
     style: "side"
   } %}
   {% include 'components/modules/links.twig' with {
-    "class": "bg-gradient-secondary-lighter"
+    "class": "bg-gradient-secondary"
   } %}
 {% endblock %}

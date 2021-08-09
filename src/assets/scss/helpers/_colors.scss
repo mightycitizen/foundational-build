@@ -33,9 +33,14 @@ $additional-palette: ();
       background-color: $default-color;
     }
 
+
+    .bg-light-#{$color}{
+      background-color: rgba($default-color,0.2);
+    }
+
     .bg-gradient-#{$color}{
       &:before{
-        background: linear-gradient(to bottom, $white 0%, $default-color 100%);
+        background: linear-gradient(to bottom, $white 0%, rgba($default-color,0.4) 100%);
       }
     }
     @if $output{
@@ -47,9 +52,13 @@ $additional-palette: ();
         background-color: $output;
       }
 
+      .bg-light-#{$color}-#{$key}{
+        background-color: rgba($output,0.2);
+      }
+
       .bg-gradient-#{$color}-#{$key}{
         &:before{
-          background: linear-gradient(to bottom, $white 0%, rgba($output,1) 100%);
+          background: linear-gradient(to bottom, $white 0%, rgba($output,0.4) 100%);
         }
       }
     }

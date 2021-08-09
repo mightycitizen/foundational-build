@@ -1,15 +1,17 @@
 <div class="alert bg-solid-secondary text-center {{ alert_class | default }}" {% if closable | default %}data-closable{% endif %}>
-  {% if alert_label | default %}
-    <span class="alert_label">{{ alert_label }}</span>
-  {% endif %}
-  {% if alert_link | default %}
-    <a href="{{ alert_link }}">{{ text }}</a>
-  {% else %}
-    {{ text }}
-  {% endif %}
-  {% if closable | default %}
-    <button class="{% if closable_text | default is empty %}close-button{% else %}button secondary{% endif %}" aria-label="Dismiss alert" type="button" data-close>
-      <span aria-hidden="true">{% if closable_text | default %}{{ closable_text }}{% else %}&times;{% endif %}</span>
-    </button>
-  {% endif %}
+  <div class="grid-container">
+    {% if alert_label | default %}
+      <span class="alert_label">{{ alert_label }}</span>
+    {% endif %}
+    {% if alert_link | default %}
+      <a href="{{ alert_link }}">{{ text }}</a>
+    {% else %}
+      {{ text }}
+    {% endif %}
+    {% if closable | default %}
+      <button class="{% if closable_text | default is empty %}close-button{% else %}button secondary{% endif %}" aria-label="Dismiss alert" type="button" data-close>
+        <span aria-hidden="true">{% if closable_text | default %}{{ closable_text }}{% else %}&times;{% endif %}</span>
+      </button>
+    {% endif %}
+  </div>
 </div>

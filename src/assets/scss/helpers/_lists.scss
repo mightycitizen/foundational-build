@@ -9,6 +9,11 @@
       margin-right: rem-calc(15);
     }
   }
+  &--top{
+    li{
+      vertical-align: top;
+    }
+  }
   &--stacked{
     @include breakpoint(small only){
       li{

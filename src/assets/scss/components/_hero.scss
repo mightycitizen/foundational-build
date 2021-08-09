@@ -1,7 +1,7 @@
 .hero{
   background-color: $primary-color;
   color: $white;
-  padding: rem-calc(40);
+  padding: rem-calc(40 0);
   .breadcrumbs{
     margin-bottom: rem-calc(42);
     &, li, a, li:after{

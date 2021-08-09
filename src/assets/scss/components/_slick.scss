@@ -242,7 +242,10 @@ $toggle-spacing: 18;
 	}
 
 	&.slick-disabled{
-		background-color: $medium-gray;
+		background-color: $input-background-disabled;
+		&:before{
+			color: $medium-gray;
+		}
 	}
 
 	&.slick-prev {

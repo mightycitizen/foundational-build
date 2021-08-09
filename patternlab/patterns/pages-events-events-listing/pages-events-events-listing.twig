@@ -5,7 +5,10 @@
 }%}
 {% block main %}
   {% include "components/containers/hero.twig" %}
-  {% embed 'layout/structure/content-narrower.twig' %}
+  {% embed 'components/sections/section.twig' with {
+    class: 'section--tight',
+    style: 'narrow'
+  } %}
     {% block section_content %}
       {% include 'components/listing/list.twig' with
       {

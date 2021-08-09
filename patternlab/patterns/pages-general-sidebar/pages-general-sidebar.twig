@@ -2,22 +2,10 @@
 
 {% block main %}
   {% include "components/containers/hero.twig" %}
-  {% embed 'layout/structure/content-with-sidebar.twig' %}
-    {% block content %}
-      {% include 'global/elements/text/headings.twig' %}
+  {% set content %}
       <h2>Heading 2</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis justo ac leo vestibulum cursus sit amet sit amet eros. Curabitur ante ex, consectetur quis felis at, aliquam sodales urna. Vivamus at hendrerit lacus, aliquet imperdiet quam. Nulla finibus hendrerit volutpat. Curabitur tempus leo ac ligula luctus, nec consequat velit pellentesque. Sed ornare leo finibus gravida vulputate. Cras varius sem sit amet tortor volutpat feugiat. Vivamus maximus hendrerit turpis non volutpat. Donec venenatis, enim eu accumsan venenatis, mauris lectus suscipit quam, sit amet feugiat mi lorem et augue.</p>
       <p>Vivamus maximus, sem nec mattis pretium, dolor dui egestas lectus, id viverra lorem diam ac sapien. Quisque id maximus eros. Vestibulum ut lorem ac ipsum luctus tincidunt. In facilisis venenatis lacus ac ultrices. Sed id enim sit amet lacus tempus porttitor quis ut ante. Mauris ac enim convallis, ornare nulla ut, mattis lectus. Quisque vitae maximus dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In est sem, imperdiet nec lacus quis, eleifend posuere purus. Mauris vestibulum, magna ac tempor lacinia, lacus turpis ultricies libero, bibendum congue quam est et metus. Curabitur vel sem vitae orci ornare tristique. Vestibulum in pulvinar risus. Sed tristique tempor lectus, vitae semper mauris accumsan sit amet. Phasellus varius eros ac nibh vulputate, ut mollis velit eleifend.</p>
-      <h2>Heading 2</h2>
-      <h3>Heading 3</h3>
-      <p>Cras ipsum justo, sollicitudin sit amet egestas sit amet, hendrerit ac leo.</p>
-      <a href="" class="button">Button</a>
-      <h3>Heading 3</h3>
-      <p>Morbi tellus velit, rutrum non turpis rutrum, condimentum pharetra felis. Praesent consequat convallis luctus</p>
-      <a href="" class="button">Button</a>
-      <h3>Heading 3</h3>
-      <p>Praesent consequat convallis luctus. In volutpat tortor et purus commodo euismod. In vitae elit vel nibh imperdiet bibendum. Donec eget dui metus.</p>
-      <a href="" class="button">Button</a>
       <h2>Heading 2</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis justo ac leo vestibulum cursus sit amet sit amet eros. Curabitur ante ex, consectetur quis felis at, aliquam sodales urna. Vivamus at hendrerit lacus, aliquet imperdiet quam. Nulla finibus hendrerit volutpat. Curabitur tempus leo ac ligula luctus, nec consequat velit pellentesque. Sed ornare leo finibus gravida vulputate. Cras varius sem sit amet tortor volutpat feugiat. Vivamus maximus hendrerit turpis non volutpat. Donec venenatis, enim eu accumsan venenatis, mauris lectus suscipit quam, sit amet feugiat mi lorem et augue.</p>
       <h3>Heading 3</h3>
@@ -37,17 +25,19 @@
       {% include 'global/elements/lists/unordered-list.twig' %}
       {% include 'global/elements/lists/ordered-list.twig' %}
       {% include 'global/elements/text/blockquote.twig' %}
-      {% include 'components/inline/read-more.twig' with {
-        "readMore": {
-          "url": "#",
-          "text": "Read More"
+      <p>
+        {% include 'components/inline/read-more.twig' with {
+          "readMore": {
+            "url": "#",
+            "text": "Read More"
+          }
         }
-      }
-      %}
+        %}
+      </p>
       <p>Etiam condimentum varius arcu vel aliquet. Nulla sed dolor non dui pulvinar euismod. Aliquam sit amet est ac augue ornare hendrerit in eget massa. Vivamus eget accumsan nisi. Morbi non aliquet massa. Fusce laoreet tincidunt enim. Curabitur quam enim, tempus feugiat fringilla non, fermentum vel nulla. Vestibulum placerat felis augue. Mauris eget nisi id lorem iaculis dapibus.</p>
-    {% endblock %}
-    {% block sidebar %}
-      {% include "components/teasers/card.twig" %}
-    {% endblock %}
-  {% endembed %}
+  {% endset %}
+  {% set sidebar %}
+    {% include "components/teasers/card.twig" %}
+  {% endset %}
+  {% include 'layout/structure/content-with-sidebar.twig' %}
 {% endblock %}

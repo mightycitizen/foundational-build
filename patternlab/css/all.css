@@ -7925,7 +7925,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   transition: 0.75s padding;
 }
 .js-slick--center .slick-slide:not(.slick-current) {
-  margin-bottom: 9.7222222222rem;
+  margin-bottom: 7.9861111111rem;
 }
 .js-slick--center .slick-slide:not(.slick-current) .card-section {
   padding: 1.3333333333rem 1.7777777778rem;
@@ -7947,8 +7947,8 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .js-slick--center .slick-slide.slick-current {
   z-index: 2;
   position: relative;
-  width: 40.5555555556rem;
-  margin: 0 -60px;
+  width: 37.7777777778rem;
+  margin: 0 -35px;
   transform: translateY(0);
 }
 .js-slick--center .slick-slide.slick-current .card--special {

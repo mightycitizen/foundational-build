@@ -2,6 +2,7 @@
 @import '../vendor/icomoon/variables';
 $arrow-margin-xxlarge: 25px;
 $peekaboo-space: 30px;
+$slide-margin-mobile: 10px;
 $slide-margin: map-get($grid-container-padding,'medium');
 
 $slide-margin-offset: 15; // to prevent shadow overflow issues
@@ -9,10 +10,17 @@ $slide-margin-offset: 15; // to prevent shadow overflow issues
 .slick-list{
 	margin-top: rem-calc(-1*$slide-margin-offset);
 	margin-bottom: rem-calc(-1*$slide-margin-offset);
+	@include breakpoint(small only){
+			margin-left: rem-calc(-1*$slide-margin-mobile);
+			margin-right: rem-calc(-1*$slide-margin-mobile);
+	}
 }
 
 .slick-slide{
-	margin: rem-calc($slide-margin-offset) rem-calc(0.5*$slide-margin);
+	margin: rem-calc($slide-margin-offset) rem-calc($slide-margin-mobile);
+	@include breakpoint(large){
+		margin: rem-calc($slide-margin-offset) rem-calc(0.5*$slide-margin);
+	}
 	.card{
 		margin-bottom: 0;
 	}
@@ -86,74 +94,48 @@ $toggle-spacing: 18;
 		}
 	}
 
-	// &.has-pagination {
+	@include breakpoint(small only) {
+		+ .slick-nav{
+			// position: relative;
 
-	// 	+ .slick-nav{
-	// 		// position: relative;
 
+				.slick-dots{
 
-	// 			.slick-dots{
-	// 				// margin-top: rem-calc(5);
-	// 				li{
-	// 					padding-left: rem-calc(3);
-	// 					padding-right: rem-calc(3);
-	// 				}
-	// 				button{
-	// 					font-size: $pagination-font-size;
-	// 					color: $pagination-item-color;
-	// 					background-color: $white;
-	// 					font-weight: bold;
-	// 					cursor: pointer;
-	// 					padding: $pagination-item-padding;
-	// 					border-radius: 0;
-	// 					height: auto;
-	// 					line-height: $paragraph-lineheight;
-	// 					width: auto;
-	// 					display: inline-block;
-	// 				}
-	// 				.slick-active{
-	// 					button{
-	// 						background-color: $pagination-item-background-current;
-	// 					}
-	// 				}
-	// 			}
+					counter-reset: pages;
+//					margin-left: 0;
+					li{
+						counter-increment: pages;
+						padding: 0 !important;
+						&:not(.slick-active){
+							display: none;
+						}
+						&.slick-active{
+							//padding-top: rem-calc(3);
+							button{
+								border-radius: 0;
+								width: auto;
+								height: auto;
+								background-color: transparent;
+								font-size: 0;
+								border: 0;
+								color: transparent;
+								line-height: 1;
+								&:after{
+									font-size: rem-calc(16);
+									content: attr(aria-label);
+									color: $black;
+								}
+							}
+						}
+					}
 
-	// 			.slick-dots{
-	// 				counter-reset: pages;
-	// 				li{
-	// 					counter-increment: pages;
-	// 					&:not(.slick-active):not(:last-child){
-	// 						position: absolute;
-	// 						opacity: 0;
-	// 						z-index: -1;
-	// 					}
-	// 					button{
-	// 						padding: rem-calc(0);
-	// 						background-color: transparent !important;
-	// 						pointer-events: none;
-	// 					}
-	// 					&:last-child{
-	// 						button{
-	// 							&:before{
-	// 								content: " of "
-	// 							}
-	// 						}
-	// 						&.slick-active{
-	// 							button{
-	// 								&:before{
-	// 									content: counter(pages) " of ";
-	// 								}
-	// 							}
-	// 						}
-
-	// 					}
-	// 				}
-	// 			}
+				}
 
 
 
-	// 	}
-	// }
+		}
+	}
+
 }
 
 
@@ -330,12 +312,6 @@ $toggle-spacing: 18;
 
 .js-slick--center{
 	$transition-duration: 0.75s;
-
-	.slick-list{
-		overflow: visible;
-		//display: flex;
-	}
-
 	$slide-margin: 80;
 	$slide-transform: 80;
 	$slide-width: 450;
@@ -343,69 +319,81 @@ $toggle-spacing: 18;
 	$curr-width: $slide-width + $slide-current-diff;
 	$curr-section-offset: 80;
 	$image-ratio: 1.6;
+
+
 	.slick-slide{
-		margin: rem-calc($slide-margin-offset) rem-calc($slide-margin);
-		max-width: 100vw;
-		width: rem-calc($slide-width);
-		transform: translateY(#{rem-calc($slide-transform)});
-		transition: $transition-duration transform, $transition-duration width, $transition-duration margin;
-		will-change: margin, transform, width;
-		.card-section{
-			will-change: padding;
-			transition: $transition-duration padding;
+		margin: rem-calc($slide-margin-offset) rem-calc($slide-margin-mobile);
+	}
+	@include breakpoint(medium){
+		.slick-list{
+			overflow: visible;
+			//display: flex;
 		}
-
-		&:not(.slick-current){
-			margin-bottom: rem-calc($curr-width/$image-ratio - $slide-width/$image-ratio - $slide-margin-offset);
+		.slick-slide{
+			margin: rem-calc($slide-margin-offset) rem-calc($slide-margin);
+			//max-width: 100vw;
+			width: rem-calc($slide-width);
+			transform: translateY(#{rem-calc($slide-transform)});
+			transition: $transition-duration transform, $transition-duration width, $transition-duration margin;
+			will-change: margin, transform, width;
 			.card-section{
-				padding: rem-calc($spacer*3 $spacer*4);
+				will-change: padding;
+				transition: $transition-duration padding;
 			}
-			.card-image{
-				transition: $transition-duration margin;
-			}
-			.h4{
-				display: block; // selectors to hide
-				will-change: opacity, max-height;
-				transition: $transition-duration max-height, $transition-duration opacity;
-				opacity: 0;
-				max-height: 0;
-				overflow: hidden;
-			}
-			&:after{
-				transition: $transition-duration bottom;
-			}
-		}
 
-
-		&.slick-current{
-			z-index: 2;
-			position: relative;
-			width: rem-calc($curr-width);
-			margin: 0 #{$slide-margin*2 - ($slide-current-diff/2 + $slide-margin)}px;
-			transform: translateY(#{rem-calc(0)});
-
-			.card--special{
-				box-shadow: $global-box-shadow;
+			&:not(.slick-current){
+				margin-bottom: rem-calc($curr-width/$image-ratio - $slide-width/$image-ratio - $slide-margin-offset);
 				.card-section{
-					padding: rem-calc($spacer*5 $spacer*5);
+					padding: rem-calc($spacer*3 $spacer*4);
 				}
 				.card-image{
-					margin-bottom: rem-calc($curr-section-offset);
+					transition: $transition-duration margin;
+				}
+				.h4{
+					display: block; // selectors to hide
+					will-change: opacity, max-height;
+					transition: $transition-duration max-height, $transition-duration opacity;
+					opacity: 0;
+					max-height: 0;
+					overflow: hidden;
 				}
 				&:after{
-					height: 70%;
-					bottom: rem-calc(80);
+					transition: $transition-duration bottom;
 				}
 			}
-			// .card-section{
-			// 	background-color: $secondary-color;
-			// 	color: $white;
-			// }
-			.card-image, .button{  // selectors to hide
-				max-height: rem-calc(1000);
-				opacity: 1;
-			}
-		}
 
+
+			&.slick-current{
+				z-index: 2;
+				position: relative;
+				width: rem-calc($curr-width);
+				margin: 0 #{$slide-margin*2 - ($slide-current-diff/2 + $slide-margin)}px;
+				transform: translateY(#{rem-calc(0)});
+
+				.card--special{
+					box-shadow: $global-box-shadow;
+					.card-section{
+						padding: rem-calc($spacer*5 $spacer*5);
+					}
+					.card-image{
+						margin-bottom: rem-calc($curr-section-offset);
+					}
+					&:after{
+						height: 70%;
+						bottom: rem-calc(80);
+					}
+				}
+				// .card-section{
+				// 	background-color: $secondary-color;
+				// 	color: $white;
+				// }
+				.card-image, .button{  // selectors to hide
+					max-height: rem-calc(1000);
+					opacity: 1;
+				}
+			}
+
+		}
 	}
+
 }

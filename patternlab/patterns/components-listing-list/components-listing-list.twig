@@ -5,7 +5,7 @@
     <div class="item">
 
 
-      <div class="media-object">
+      <div class="media-object {% if item.image | default %}align-middle{% endif %}">
 
           {% if (item_type == 'event' and item.image | default is empty ) or item.image | default %}
             <div class="media-object-section">

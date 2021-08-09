@@ -7721,9 +7721,20 @@ a.thumbnail image {
   margin-top: -0.8333333333rem;
   margin-bottom: -0.8333333333rem;
 }
+@media print, screen and (max-width: 39.99875em) {
+  .slick-list {
+    margin-left: -0.5555555556rem;
+    margin-right: -0.5555555556rem;
+  }
+}
 
 .slick-slide {
-  margin: 0.8333333333rem 1.1111111111rem;
+  margin: 0.8333333333rem 0.5555555556rem;
+}
+@media print, screen and (min-width: 64em) {
+  .slick-slide {
+    margin: 0.8333333333rem 1.1111111111rem;
+  }
 }
 .slick-slide .card {
   margin-bottom: 0;
@@ -7790,6 +7801,33 @@ a.thumbnail image {
 }
 .slick-slider:not(.has-pagers) + .slick-nav {
   display: none;
+}
+@media print, screen and (max-width: 39.99875em) {
+  .slick-slider + .slick-nav .slick-dots {
+    counter-reset: pages;
+  }
+  .slick-slider + .slick-nav .slick-dots li {
+    counter-increment: pages;
+    padding: 0 !important;
+  }
+  .slick-slider + .slick-nav .slick-dots li:not(.slick-active) {
+    display: none;
+  }
+  .slick-slider + .slick-nav .slick-dots li.slick-active button {
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    font-size: 0;
+    border: 0;
+    color: transparent;
+    line-height: 1;
+  }
+  .slick-slider + .slick-nav .slick-dots li.slick-active button:after {
+    font-size: 0.8888888889rem;
+    content: attr(aria-label);
+    color: #333;
+  }
 }
 
 .slick-dots {
@@ -7915,64 +7953,68 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   display: none;
 }
 
-.js-slick--center .slick-list {
-  overflow: visible;
-}
 .js-slick--center .slick-slide {
-  margin: 0.8333333333rem 4.4444444444rem;
-  max-width: 100vw;
-  width: 25rem;
-  transform: translateY(4.4444444444rem);
-  transition: 0.75s transform, 0.75s width, 0.75s margin;
-  will-change: margin, transform, width;
+  margin: 0.8333333333rem 0.5555555556rem;
 }
-.js-slick--center .slick-slide .card-section {
-  will-change: padding;
-  transition: 0.75s padding;
-}
-.js-slick--center .slick-slide:not(.slick-current) {
-  margin-bottom: 7.1527777778rem;
-}
-.js-slick--center .slick-slide:not(.slick-current) .card-section {
-  padding: 1.3333333333rem 1.7777777778rem;
-}
-.js-slick--center .slick-slide:not(.slick-current) .card-image {
-  transition: 0.75s margin;
-}
-.js-slick--center .slick-slide:not(.slick-current) .h4 {
-  display: block;
-  will-change: opacity, max-height;
-  transition: 0.75s max-height, 0.75s opacity;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-}
-.js-slick--center .slick-slide:not(.slick-current):after {
-  transition: 0.75s bottom;
-}
-.js-slick--center .slick-slide.slick-current {
-  z-index: 2;
-  position: relative;
-  width: 37.7777777778rem;
-  margin: 0 -35px;
-  transform: translateY(0);
-}
-.js-slick--center .slick-slide.slick-current .card--special {
-  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
-}
-.js-slick--center .slick-slide.slick-current .card--special .card-section {
-  padding: 2.2222222222rem 2.2222222222rem;
-}
-.js-slick--center .slick-slide.slick-current .card--special .card-image {
-  margin-bottom: 4.4444444444rem;
-}
-.js-slick--center .slick-slide.slick-current .card--special:after {
-  height: 70%;
-  bottom: 4.4444444444rem;
-}
-.js-slick--center .slick-slide.slick-current .card-image, .js-slick--center .slick-slide.slick-current .button {
-  max-height: 55.5555555556rem;
-  opacity: 1;
+@media print, screen and (min-width: 40em) {
+  .js-slick--center .slick-list {
+    overflow: visible;
+  }
+  .js-slick--center .slick-slide {
+    margin: 0.8333333333rem 4.4444444444rem;
+    width: 25rem;
+    transform: translateY(4.4444444444rem);
+    transition: 0.75s transform, 0.75s width, 0.75s margin;
+    will-change: margin, transform, width;
+  }
+  .js-slick--center .slick-slide .card-section {
+    will-change: padding;
+    transition: 0.75s padding;
+  }
+  .js-slick--center .slick-slide:not(.slick-current) {
+    margin-bottom: 7.1527777778rem;
+  }
+  .js-slick--center .slick-slide:not(.slick-current) .card-section {
+    padding: 1.3333333333rem 1.7777777778rem;
+  }
+  .js-slick--center .slick-slide:not(.slick-current) .card-image {
+    transition: 0.75s margin;
+  }
+  .js-slick--center .slick-slide:not(.slick-current) .h4 {
+    display: block;
+    will-change: opacity, max-height;
+    transition: 0.75s max-height, 0.75s opacity;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+  .js-slick--center .slick-slide:not(.slick-current):after {
+    transition: 0.75s bottom;
+  }
+  .js-slick--center .slick-slide.slick-current {
+    z-index: 2;
+    position: relative;
+    width: 37.7777777778rem;
+    margin: 0 -35px;
+    transform: translateY(0);
+  }
+  .js-slick--center .slick-slide.slick-current .card--special {
+    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
+  }
+  .js-slick--center .slick-slide.slick-current .card--special .card-section {
+    padding: 2.2222222222rem 2.2222222222rem;
+  }
+  .js-slick--center .slick-slide.slick-current .card--special .card-image {
+    margin-bottom: 4.4444444444rem;
+  }
+  .js-slick--center .slick-slide.slick-current .card--special:after {
+    height: 70%;
+    bottom: 4.4444444444rem;
+  }
+  .js-slick--center .slick-slide.slick-current .card-image, .js-slick--center .slick-slide.slick-current .button {
+    max-height: 55.5555555556rem;
+    opacity: 1;
+  }
 }
 
 /*! nouislider - 14.6.3 - 11/19/2020 */
@@ -9041,8 +9083,10 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   position: relative;
   z-index: 2;
 }
-.section_intro:not(:last-child) {
-  margin-bottom: 1.9444444444rem;
+@media print, screen and (max-width: 39.99875em) {
+  .section_intro {
+    margin-bottom: 1.9444444444rem;
+  }
 }
 @media print, screen and (min-width: 40em) {
   .section_intro:not(:last-child) {

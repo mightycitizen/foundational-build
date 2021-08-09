@@ -26,8 +26,10 @@
   &_intro{
     position: relative;
     z-index: 2;
-    &:not(:last-child){
+    @include breakpoint(small only){
       margin-bottom: rem-calc(35);
+    }
+    &:not(:last-child){
       @include breakpoint(medium){
         margin-bottom: rem-calc(40);
       }

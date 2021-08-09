@@ -923,10 +923,17 @@ const initSlick = () => {
       waitForAnimate: true,
       responsive: [
         {
-        breakpoint: '500',
-        settings: {
-          adaptiveHeight: true
-        }
+
+          breakpoint: mediumBreakpoint,
+          settings: {
+            centerMode: false,
+            centerPadding: 0,
+            variableWidth: false,
+            slidesToScroll: 1,
+            slidesToShow: 1
+
+          }
+
         }
       ]
     });

@@ -1,5 +1,5 @@
 {% embed 'components/sections/section.twig' with {
-    "intro_class": style | default == 'side' ? '' : 'medium-text-center',
+    "intro_class": 'text-center ' ~ (style | default == 'side' ? 'medium-text-left' : ''),
     "section_heading": "Statistics Module",
     "section_description": section_description | default
   }

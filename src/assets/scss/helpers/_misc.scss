@@ -55,3 +55,9 @@
     left: 0;
   }
 }
+
+.overflow{
+  &-hidden{
+    overflow: hidden;
+  }
+}

@@ -9987,6 +9987,10 @@ html, body, .l-wrapper {
   left: 0;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .text-smaller {
   font-size: 0.7777777778rem;
 }

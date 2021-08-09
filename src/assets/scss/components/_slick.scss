@@ -7,11 +7,12 @@ $slide-margin: map-get($grid-container-padding,'medium');
 $slide-margin-offset: 15; // to prevent shadow overflow issues
 
 .slick-list{
+	margin-top: rem-calc(-1*$slide-margin-offset);
 	margin-bottom: rem-calc(-1*$slide-margin-offset);
 }
 
 .slick-slide{
-	margin: 0 rem-calc(0.5*$slide-margin) rem-calc($slide-margin-offset);
+	margin: rem-calc($slide-margin-offset) rem-calc(0.5*$slide-margin);
 	.card{
 		margin-bottom: 0;
 	}
@@ -184,6 +185,7 @@ $toggle-spacing: 18;
 			border-radius: 50%;
 			border: 2px solid $primary-color;
 			background: $primary-color;
+			cursor: pointer;
 		}
 
 		&.slick-active,
@@ -191,6 +193,7 @@ $toggle-spacing: 18;
 
 			button {
 				background-color: $white;
+				cursor: default;
 			}
 		}
 
@@ -341,7 +344,7 @@ $toggle-spacing: 18;
 	$curr-section-offset: 80;
 	$image-ratio: 1.6;
 	.slick-slide{
-		margin: 0 rem-calc($slide-margin) rem-calc($slide-margin-offset);
+		margin: rem-calc($slide-margin-offset) rem-calc($slide-margin);
 		max-width: 100vw;
 		width: rem-calc($slide-width);
 		transform: translateY(#{rem-calc($slide-transform)});
@@ -353,7 +356,7 @@ $toggle-spacing: 18;
 		}
 
 		&:not(.slick-current){
-			margin-bottom: rem-calc($curr-width/$image-ratio - $slide-width/$image-ratio);
+			margin-bottom: rem-calc($curr-width/$image-ratio - $slide-width/$image-ratio - $slide-margin-offset);
 			.card-section{
 				padding: rem-calc($spacer*3 $spacer*4);
 			}

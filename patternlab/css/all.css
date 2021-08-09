@@ -7342,10 +7342,10 @@ a.thumbnail image {
   font-size: 1.3333333333rem;
 }
 
-.alert {
+.alert-bar {
   padding: 0.8333333333rem 0;
 }
-.alert_label {
+.alert-bar_label {
   display: inline-block;
   margin-right: 0.4444444444rem;
   font-weight: bold;
@@ -7353,8 +7353,11 @@ a.thumbnail image {
   font-size: 0.8888888889rem;
   letter-spacing: 1px;
 }
-.alert_label:after {
+.alert-bar_label:after {
   content: ":";
+}
+.alert-bar a {
+  color: inherit;
 }
 
 .a2a_svg {
@@ -7715,11 +7718,12 @@ a.thumbnail image {
 }
 
 .slick-list {
+  margin-top: -0.8333333333rem;
   margin-bottom: -0.8333333333rem;
 }
 
 .slick-slide {
-  margin: 0 1.1111111111rem 0.8333333333rem;
+  margin: 0.8333333333rem 1.1111111111rem;
 }
 .slick-slide .card {
   margin-bottom: 0;
@@ -7814,9 +7818,11 @@ a.thumbnail image {
   border-radius: 50%;
   border: 2px solid #2953cc;
   background: #2953cc;
+  cursor: pointer;
 }
 .slick-dots li.slick-active button, .slick-dots li.active button {
   background-color: #fff;
+  cursor: default;
 }
 .slick-dots li:before {
   content: "";
@@ -7913,7 +7919,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   overflow: visible;
 }
 .js-slick--center .slick-slide {
-  margin: 0 4.4444444444rem 0.8333333333rem;
+  margin: 0.8333333333rem 4.4444444444rem;
   max-width: 100vw;
   width: 25rem;
   transform: translateY(4.4444444444rem);
@@ -7925,7 +7931,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   transition: 0.75s padding;
 }
 .js-slick--center .slick-slide:not(.slick-current) {
-  margin-bottom: 7.9861111111rem;
+  margin-bottom: 7.1527777778rem;
 }
 .js-slick--center .slick-slide:not(.slick-current) .card-section {
   padding: 1.3333333333rem 1.7777777778rem;

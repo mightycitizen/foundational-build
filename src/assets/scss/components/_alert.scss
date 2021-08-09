@@ -1,4 +1,4 @@
-.alert{
+.alert-bar{
 
   padding: rem-calc(15 0);
   &_label{
@@ -11,6 +11,9 @@
     &:after{
       content: ":";
     }
+  }
+  a{
+    color: inherit;
   }
   // display: flex;
   // justify-content: space-between;

@@ -1,3 +1,4 @@
+{% if intro_class | default is empty %}{% set intro_class = 'text-center' %}{% endif %}
 
 {% set section_intro %}
   {% if section_heading | default %}

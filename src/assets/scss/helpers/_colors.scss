@@ -7,6 +7,8 @@
 }
 
 $additional-palette: ();
+$light-opacity: 0.1;
+$gradient-opacity: 0.4;
 
 @mixin generateVariants($map, $color){
   $variants: map-get($map, 'variants');
@@ -35,12 +37,12 @@ $additional-palette: ();
 
 
     .bg-light-#{$color}{
-      background-color: rgba($default-color,0.2);
+      background-color: rgba($default-color,$light-opacity);
     }
 
     .bg-gradient-#{$color}{
       &:before{
-        background: linear-gradient(to bottom, $white 0%, rgba($default-color,0.4) 100%);
+        background: linear-gradient(to bottom, $white 0%, rgba($default-color,$gradient-opacity) 100%);
       }
     }
     @if $output{
@@ -53,12 +55,12 @@ $additional-palette: ();
       }
 
       .bg-light-#{$color}-#{$key}{
-        background-color: rgba($output,0.2);
+        background-color: rgba($output,$light-opacity);
       }
 
       .bg-gradient-#{$color}-#{$key}{
         &:before{
-          background: linear-gradient(to bottom, $white 0%, rgba($output,0.4) 100%);
+          background: linear-gradient(to bottom, $white 0%, rgba($output,$gradient-opacity) 100%);
         }
       }
     }

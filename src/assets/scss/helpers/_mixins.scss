@@ -69,7 +69,7 @@
 }
 
 
-@mixin spacer($prop,$direction, $size, $important ) {
+@mixin spacer($prop,$direction, $size ) {
     //#{$prop}: $size !important;
     @if (index((left, right, top, bottom),$direction)) {
       #{$prop}-#{$direction}: rem-calc($size*$spacer);

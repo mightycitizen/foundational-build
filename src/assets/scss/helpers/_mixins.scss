@@ -69,31 +69,31 @@
 }
 
 
-@mixin spacer($prop,$direction, $size) {
+@mixin spacer($prop,$direction, $size, $important ) {
     //#{$prop}: $size !important;
     @if (index((left, right, top, bottom),$direction)) {
-      #{$prop}-#{$direction}: rem-calc($size*$spacer) !important;
+      #{$prop}-#{$direction}: rem-calc($size*$spacer);
       // @include breakpoint(large) {
       //   #{$prop}-#{$direction}: rem-calc($size*$spacer) !important;
       // }
     }@else if (index((y,x),$direction)) {
       @if ($direction == x){
-        #{$prop}-left: rem-calc($size*$spacer) !important;
-        #{$prop}-right: rem-calc($size*$spacer) !important;
+        #{$prop}-left: rem-calc($size*$spacer);
+        #{$prop}-right: rem-calc($size*$spacer);
         // @include breakpoint(large) {
         //   #{$prop}-left: rem-calc($size*$spacer) !important;
         //   #{$prop}-right: rem-calc($size*$spacer) !important;
         // }
       }@else{
-        #{$prop}-top: rem-calc($size*$spacer) !important;
-        #{$prop}-bottom: rem-calc($size*$spacer) !important;
+        #{$prop}-top: rem-calc($size*$spacer);
+        #{$prop}-bottom: rem-calc($size*$spacer);
         // @include breakpoint(large) {
         //   #{$prop}-top: rem-calc($size*$spacer) !important;
         //   #{$prop}-bottom: rem-calc($size*$spacer) !important;
         // }
       }
     }@else{
-      #{$prop}: rem-calc($size*$spacer) !important;
+      #{$prop}: rem-calc($size*$spacer);
       // @include breakpoint(large) {
       //   #{$prop}: rem-calc($size*$spacer) !important;
       // }

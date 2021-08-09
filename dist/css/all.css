@@ -9047,6 +9047,9 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   padding-top: 2.2222222222rem !important;
   padding-bottom: 2.6666666667rem !important;
 }
+.section--tight.section--collapse + .section--tight.section--collapse {
+  padding-top: 0 !important;
+}
 
 .step-list {
   counter-set: steps;

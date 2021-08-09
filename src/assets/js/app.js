@@ -823,7 +823,7 @@ const initSlick = () => {
     $this.slick({
       slidesToScroll: 1,
       rows: 0,
-      lazyLoad: 'ondemand',
+      lazyLoad: 'progressive',
       prevArrow: '<button class="slick-prev">Previous</button>',
       nextArrow: '<button class="slick-next">Next</button>',
       dots: true,
@@ -836,53 +836,53 @@ const initSlick = () => {
 
   })
 
-  const $slickCards = $('.js-slick--cards');
+  // const $slickCards = $('.js-slick--cards');
 
-  $slickCards.each(function(){
-    const $this = $(this);
+  // $slickCards.each(function(){
+  //   const $this = $(this);
 
-    $this.on('init', function (event, slick, breakpoint){
-      slickPagination(slick);
-    })
+  //   $this.on('init', function (event, slick, breakpoint){
+  //     slickPagination(slick);
+  //   })
 
-    $this.on('breakpoint', function (event, slick, breakpoint){
-      slickPagination(slick);
-    })
+  //   $this.on('breakpoint', function (event, slick, breakpoint){
+  //     slickPagination(slick);
+  //   })
 
-    $this.slick({
-      slidesToScroll: 3,
-      slidesToShow: 3,
-      rows: 0,
-      prevArrow: '<button class="slick-prev">Previous</button>',
-      nextArrow: '<button class="slick-next">Next</button>',
-      dots: true,
-      infinite: false,
-      dotsClass: 'slick-dots',
-      appendArrows: $this.next('.slick-nav'),
-      appendDots: $this.next('.slick-nav'),
-      adaptiveHeight: false,
-      waitForAnimate: false,
-      responsive: [
-        {
-        breakpoint: largeBreakpoint,
-        settings: {
-          slidesToScroll: 2,
-          slidesToShow: 2
-        }
-      },
-        {
-        breakpoint: mediumBreakpoint,
-        settings: {
-          slidesToScroll: 1,
-          slidesToShow: 1
+  //   $this.slick({
+  //     slidesToScroll: 3,
+  //     slidesToShow: 3,
+  //     rows: 0,
+  //     prevArrow: '<button class="slick-prev">Previous</button>',
+  //     nextArrow: '<button class="slick-next">Next</button>',
+  //     dots: true,
+  //     infinite: false,
+  //     dotsClass: 'slick-dots',
+  //     appendArrows: $this.next('.slick-nav'),
+  //     appendDots: $this.next('.slick-nav'),
+  //     adaptiveHeight: false,
+  //     waitForAnimate: false,
+  //     responsive: [
+  //       {
+  //       breakpoint: largeBreakpoint,
+  //       settings: {
+  //         slidesToScroll: 2,
+  //         slidesToShow: 2
+  //       }
+  //     },
+  //       {
+  //       breakpoint: mediumBreakpoint,
+  //       settings: {
+  //         slidesToScroll: 1,
+  //         slidesToShow: 1
 
-        }
+  //       }
 
-      }
-      ]
-    });
+  //     }
+  //     ]
+  //   });
 
-  });
+  // });
 
   const $slickCenter = $('.js-slick--center');
   $slickCenter.each(function(){

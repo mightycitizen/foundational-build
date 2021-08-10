@@ -935,6 +935,7 @@ const initSlick = () => {
             centerMode: false,
             centerPadding: 0,
             variableWidth: false,
+            infinite: true,
             slidesToScroll: 1,
             slidesToShow: 1
 

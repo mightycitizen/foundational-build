@@ -19,7 +19,7 @@ $hamburger-color: $primary-color;
     $menu-toggle-padding: 10;
     display: block;
     width: rem-calc(30);
-    height: rem-calc(20);
+    height: rem-calc(19.5);
 
     cursor: pointer;
 
@@ -66,20 +66,20 @@ $hamburger-color: $primary-color;
       }
     }
   }
-  &.is-active{
+  &.is-active, body.has-menu &{
     //display: none;
     .hamburger{
       &-text{
         margin-top: rem-calc(25);
         &:after{
-          color: $secondary-color;
+          color: $primary-color;
         }
       }
       &-icon{
         margin-top: rem-calc(-19);
-        &-bar, &:before, &:after{
-          background-color: $secondary-color;;
-        }
+        // &-bar, &:before, &:after{
+        //   background-color: $secondary-color;;
+        // }
         &-bar{
           opacity: 0;
         }

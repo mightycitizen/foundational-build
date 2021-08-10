@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1628617553720" media="all" />
-    <link rel="stylesheet" href="../../css/all.css?1628617553720" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1628624810877" media="all" />
+    <link rel="stylesheet" href="../../css/all.css?1628624810877" media="all" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -21,14 +21,14 @@
 <header class="l-header">
   <div class="grid-container">
     <div class="grid-x grid-margin-x align-middle">
-      <div class="cell medium-2">
+      <div class="cell small-2">
         <a href="/" class="logo">
   LOGO HERE
 </a>
       </div>
-      <div class="cell medium-2 medium-offset-8">
+      <div class="cell medium-2 medium-offset-8 show-for-large">
 
-        <div id="search-form" class="search-form">
+        <div class="search-form">
           <form action="">
   <div class="input-group simple">
     <label for="keywords" class="show-for-sr">Keywords</label>
@@ -45,8 +45,8 @@
 
 
               </div>
-    </div>
-    <div  data-responsive-toggle="responsive-menu" data-hide-for="large" class="top-bar_toggle" >
+      <div class="cell small-10 large-12">
+        <div  data-responsive-toggle="responsive-menu" data-hide-for="large" class="top-bar_toggle" >
   <button class="hamburger" type="button" id="hamburger" data-toggle="responsive-menu" data-toggler=".is-active" aria-label="Toggle navigation">
   <span class="hamburger-icon">
     <span class="hamburger-icon-bar"></span>
@@ -400,11 +400,28 @@
                           </li>
                   </ul>
               </li>
-      
+            <li class="hide-for-large">
+        <form action="">
+  <div class="input-group simple">
+    <label for="keywords" class="show-for-sr">Keywords</label>
+    <input class="input-group-field" placeholder="Search" type="search" id="keywords">
+    <div class="input-group-button">
+      <button type="submit"  value="Submit">
+        <span class="show-for-sr">Search</span>
+        <span class="icon-search"></span>
+      </button>
+    </div>
+  </div>
+</form>
+      </li>
+
     </ul>
 
   </div>
 </div>
+      </div>
+    </div>
+
   </div>
 </header>
   <div class="l-main" id="main">
@@ -778,10 +795,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1628617553720">
+<script id="pl-js-polyfill-insert-1628624810877">
   (function() {
     if (self != top) {
-      var cb = '1628617553720';
+      var cb = '1628624810877';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -794,7 +811,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1628617553720" nomodule>
+<script id="pl-js-insert-1628624810877" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -817,6 +834,6 @@
   <script src="/core/misc/drupal.init.js"></script>
   -->
   <!-- Concatenated by Gulp so you don't have to manually add each file. -->
-  <script src="../../js/app.js?1628617553720"></script>
+  <script src="../../js/app.js?1628624810877"></script>
 </body>
 </html>

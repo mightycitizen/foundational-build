@@ -3,14 +3,14 @@
 <header class="l-header">
   <div class="grid-container">
     <div class="grid-x grid-margin-x align-middle">
-      <div class="cell medium-2">
+      <div class="cell small-2">
         <a href="/" class="logo">
   LOGO HERE
 </a>
       </div>
-      <div class="cell medium-2 medium-offset-8">
+      <div class="cell medium-2 medium-offset-8 show-for-large">
 
-        <div id="search-form" class="search-form">
+        <div class="search-form">
           <form action="">
   <div class="input-group simple">
     <label for="keywords" class="show-for-sr">Keywords</label>
@@ -27,8 +27,8 @@
 
 
               </div>
-    </div>
-    <div  data-responsive-toggle="responsive-menu" data-hide-for="large" class="top-bar_toggle" >
+      <div class="cell small-10 large-12">
+        <div  data-responsive-toggle="responsive-menu" data-hide-for="large" class="top-bar_toggle" >
   <button class="hamburger" type="button" id="hamburger" data-toggle="responsive-menu" data-toggler=".is-active" aria-label="Toggle navigation">
   <span class="hamburger-icon">
     <span class="hamburger-icon-bar"></span>
@@ -382,11 +382,28 @@
                           </li>
                   </ul>
               </li>
-      
+            <li class="hide-for-large">
+        <form action="">
+  <div class="input-group simple">
+    <label for="keywords" class="show-for-sr">Keywords</label>
+    <input class="input-group-field" placeholder="Search" type="search" id="keywords">
+    <div class="input-group-button">
+      <button type="submit"  value="Submit">
+        <span class="show-for-sr">Search</span>
+        <span class="icon-search"></span>
+      </button>
+    </div>
+  </div>
+</form>
+      </li>
+
     </ul>
 
   </div>
 </div>
+      </div>
+    </div>
+
   </div>
 </header>
   <div class="l-main" id="main">

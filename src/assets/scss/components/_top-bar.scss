@@ -16,6 +16,7 @@
   }
 
   @include breakpoint(medium down){
+    animation: 0.5s open;
     position: fixed;
     top: 0;
     left: 0;
@@ -64,6 +65,14 @@
     &_toggle{
       display: flex;
       justify-content: flex-end;
+      .hamburger{
+        display: flex;
+        align-items: center;      ;
+        justify-content: flex-end;
+        &-text{
+          display: none;
+        }
+      }
     }
 
     .top{
@@ -307,3 +316,24 @@
   }
 }
 /* purgecss end ignore */
+
+@keyframes open{
+  0%{
+    transform: translateX(100%);
+    //opacity: 0;
+  }
+  100%{
+    transform: translateX(0);
+    //opacity: 1;
+  }
+}
+// @keyframes close{
+//   0%{
+//     transform: translateX(0);
+//     //opacity: 0;
+//   }
+//   100%{
+//     transform: translateX(100%);
+//     //opacity: 1;
+//   }
+// }

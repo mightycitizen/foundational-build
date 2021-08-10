@@ -34,13 +34,21 @@ html, body, .l-wrapper{
   background-color: $primary-color;
   //color: $white;
   flex: none;
+  .social-media{
+    @include breakpoint(small only){
+      @include spacer(margin,y,4);
+    }
+  }
   .menu{
     display: flex;
     font-weight: $global-weight-bold;
     justify-content: space-between;
     margin-left: rem-calc(-1*get-side($menu-items-padding,left));
     margin-right: rem-calc(-1*get-side($menu-items-padding,right));
-    @include spacer(margin,bottom,3);
+
+    @include breakpoint(medium){
+      @include spacer(margin,bottom,3);
+    }
     a{
       &:hover, &:focus{
         text-decoration: underline;

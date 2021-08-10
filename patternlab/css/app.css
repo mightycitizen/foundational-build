@@ -9522,15 +9522,31 @@ html, body, .l-wrapper {
   background-color: #2953cc;
   flex: none;
 }
+@media print, screen and (max-width: 39.99875em) {
+  .l-footer .social-media {
+    margin-top: 1.1111111111rem;
+    margin-bottom: 1.1111111111rem;
+  }
+}
+@media print, screen and (max-width: 39.99875em) and (min-width: 40em) {
+  .l-footer .social-media {
+    margin-top: 1.7777777778rem;
+    margin-bottom: 1.7777777778rem;
+  }
+}
 .l-footer .menu {
   display: flex;
   font-weight: bold;
   justify-content: space-between;
   margin-left: -1rem;
   margin-right: -1rem;
-  margin-bottom: 0.8333333333rem;
 }
 @media print, screen and (min-width: 40em) {
+  .l-footer .menu {
+    margin-bottom: 0.8333333333rem;
+  }
+}
+@media print, screen and (min-width: 40em) and (min-width: 40em) {
   .l-footer .menu {
     margin-bottom: 1.3333333333rem;
   }

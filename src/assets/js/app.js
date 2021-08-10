@@ -886,6 +886,7 @@ const initSlick = () => {
         {
         breakpoint: largeBreakpoint,
         settings: {
+          adaptiveHeight: true,
           slidesToScroll: 2,
           slidesToShow: 2
         }
@@ -893,6 +894,7 @@ const initSlick = () => {
         {
         breakpoint: mediumBreakpoint,
         settings: {
+          adaptiveHeight: true,
           slidesToScroll: 1,
           slidesToShow: 1
 

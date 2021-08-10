@@ -67,9 +67,12 @@
         align-items: center;
         justify-content: center;
         padding: rem-calc(15 12);
-        width: rem-calc($spacer*6);
+        width: rem-calc($spacer-mobile*6);
         font-size: rem-calc(18);
         background-color: map-get($additional-palette, 'primary-darker');
+        @include breakpoint(medium){
+          width: rem-calc($spacer*6);
+        }
         &:not([class*=icon-]):before{
           content: counter(steps);
           font-size: rem-calc(24);

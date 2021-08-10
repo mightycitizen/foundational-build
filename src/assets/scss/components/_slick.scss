@@ -162,7 +162,10 @@ $toggle-spacing: 18;
 		}
 
 		button{
-			@include size(rem-calc($spacer*3));
+			@include size(rem-calc($spacer-mobile*3));
+			@include breakpoint(medium){
+				@include size(rem-calc($spacer*3));
+			}
 			display: block;
 			font-size: 0;
 			line-height: 0;

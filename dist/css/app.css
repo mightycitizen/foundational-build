@@ -9503,14 +9503,13 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   color: #2953cc;
 }
 
-.grid--narrow {
-  max-width: 61.6666666667rem;
-}
-.grid--spaced:not(:last-child) {
-  margin-bottom: 1.7777777778rem;
-}
 @media print, screen and (max-width: 39.99875em) {
   .grid-margin-x .cell[class*=medium-]:not([class*=small-]):not(:last-child) {
+    margin-bottom: 1.1111111111rem;
+  }
+}
+@media print, screen and (min-width: 64em) {
+  .grid-margin-x .cell[class*=large-12]:not(:last-child) {
     margin-bottom: 1.7777777778rem;
   }
 }

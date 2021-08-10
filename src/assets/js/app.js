@@ -817,12 +817,7 @@ const initSlick = () => {
 
     $this.on('init', function (event, slick, breakpoint){
       slickPagination(slick);
-      //console.log($slick);
-      //console.log($slick.attr('data-equalizer'));
-      if ($slick.hasClass('slick-slider--equalize')){
-        $slick.trigger('resizeme.zf.trigger');
-      }
-
+      $this.trigger('resizeme.zf.trigger');
     })
 
     $this.on('breakpoint', function (event, slick, breakpoint){
@@ -863,6 +858,7 @@ const initSlick = () => {
 
     $this.on('init', function (event, slick, breakpoint){
       slickPagination(slick);
+      $this.trigger('resizeme.zf.trigger');
     })
 
     $this.on('breakpoint', function (event, slick, breakpoint){
@@ -876,7 +872,7 @@ const initSlick = () => {
       prevArrow: '<button class="slick-prev">Previous</button>',
       nextArrow: '<button class="slick-next">Next</button>',
       dots: true,
-      infinite: false,
+      infinite: true,
       dotsClass: 'slick-dots',
       appendArrows: $this.next('.slick-nav'),
       appendDots: $this.next('.slick-nav'),

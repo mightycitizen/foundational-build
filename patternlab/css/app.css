@@ -9094,6 +9094,22 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .tabs-panel > *:last-child {
   margin-bottom: 0;
 }
+@media print, screen and (max-width: 39.99875em) {
+  .tabs {
+    display: flex;
+  }
+  .tabs-title button {
+    font-size: 0.8888888889rem;
+    padding-left: 0.5555555556rem;
+    padding-right: 0.5555555556rem;
+  }
+}
+@media print, screen and (max-width: 39.99875em) and (min-width: 40em) {
+  .tabs-title button {
+    padding-left: 0.8888888889rem;
+    padding-right: 0.8888888889rem;
+  }
+}
 
 .loader {
   display: inline-block;

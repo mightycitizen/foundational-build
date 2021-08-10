@@ -15,7 +15,7 @@ import { Abide } from 'foundation-sites/js/foundation.abide';
 import { Accordion } from './overrides/foundation.accordion.js';
 import { AccordionMenu } from 'foundation-sites/js/foundation.accordionMenu';
 // import { Drilldown } from 'foundation-sites/js/foundation.drilldown';
-import { Dropdown } from 'foundation-sites/js/foundation.dropdown';
+//import { Dropdown } from 'foundation-sites/js/foundation.dropdown';
 import { DropdownMenu } from 'foundation-sites/js/foundation.dropdownMenu';
 import { Equalizer } from 'foundation-sites/js/foundation.equalizer';
 import { Interchange } from 'foundation-sites/js/foundation.interchange';
@@ -31,7 +31,7 @@ import { Sticky } from 'foundation-sites/js/foundation.sticky';
 import { Tabs } from './overrides/foundation.tabs.js';
 import { Toggler } from 'foundation-sites/js/foundation.toggler';
 // import { Tooltip } from 'foundation-sites/js/foundation.tooltip';
-// import { ResponsiveAccordionTabs } from 'foundation-sites/js/foundation.responsiveAccordionTabs';
+import { ResponsiveAccordionTabs } from 'foundation-sites/js/foundation.responsiveAccordionTabs';
 
 Foundation.addToJquery($);
 
@@ -62,7 +62,7 @@ Foundation.plugin(Abide, 'Abide');
 Foundation.plugin(Accordion, 'Accordion');
 Foundation.plugin(AccordionMenu, 'AccordionMenu');
 // Foundation.plugin(Drilldown, 'Drilldown');
-Foundation.plugin(Dropdown, 'Dropdown');
+//Foundation.plugin(Dropdown, 'Dropdown');
 Foundation.plugin(DropdownMenu, 'DropdownMenu');
 Foundation.plugin(Equalizer, 'Equalizer');
 Foundation.plugin(Interchange, 'Interchange');
@@ -78,6 +78,6 @@ Foundation.plugin(Sticky, 'Sticky');
 Foundation.plugin(Tabs, 'Tabs');
 Foundation.plugin(Toggler, 'Toggler');
 // Foundation.plugin(Tooltip, 'Tooltip');
-// Foundation.plugin(ResponsiveAccordionTabs, 'ResponsiveAccordionTabs');
+Foundation.plugin(ResponsiveAccordionTabs, 'ResponsiveAccordionTabs');
 
 export { Foundation };

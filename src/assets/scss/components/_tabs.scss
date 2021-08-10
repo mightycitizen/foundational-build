@@ -38,4 +38,13 @@
       margin-bottom: 0;
     }
   }
+  @include breakpoint(small only){
+    display: flex;
+    &-title{
+      button{
+        font-size: rem-calc(16);
+        @include spacer(padding,x,2);
+      }
+    }
+  }
 }

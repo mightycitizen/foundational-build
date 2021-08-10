@@ -10,15 +10,18 @@
   letter-spacing: 1px;
 }
 
-
+$large-value-size: 100;
 .large-value{
   font-family: $secondaryFontFamily;
-  font-size: rem-calc(64);
+  //font-size: rem-calc(64);
   line-height: 1.2;
   font-weight: $global-weight-bold;
-  @include breakpoint(xlarge){
-    font-size: rem-calc(100);
-  }
+  font-size: rem-calc($large-value-size);
+  @include font-scale-mobile($large-value-size);
+}
+
+.lead{
+  @include font-scale-mobile($lead-font-size, 20);
 }
 
 .meta{

@@ -9240,13 +9240,19 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 
 .large-value {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-size: 3.5555555556rem;
   line-height: 1.2;
   font-weight: bold;
+  font-size: 5.5555555556rem;
 }
-@media screen and (min-width: 75em) {
+@media print, screen and (max-width: 39.99875em) {
   .large-value {
-    font-size: 5.5555555556rem;
+    font-size: 4.1666666667rem;
+  }
+}
+
+@media print, screen and (max-width: 39.99875em) {
+  .lead {
+    font-size: 1.1111111111rem;
   }
 }
 
@@ -11504,6 +11510,11 @@ blockquote {
   position: relative;
   line-height: 1.375;
   font-size: 1.3333333333rem;
+}
+@media print, screen and (max-width: 39.99875em) {
+  blockquote {
+    font-size: 1.1111111111rem;
+  }
 }
 blockquote p {
   margin-bottom: 0.8333333333rem;

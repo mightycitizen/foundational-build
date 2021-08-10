@@ -60,6 +60,7 @@ blockquote{
   //padding-left: rem-calc(27);
   line-height: $lead-lineheight;
   font-size: $lead-font-size;
+  @include font-scale-mobile($lead-font-size, 20);
   p{
     margin-bottom: rem-calc(15);
   }

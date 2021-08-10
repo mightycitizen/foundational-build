@@ -30,9 +30,17 @@
     {% endif %}
     <h{{ heading_level }} class="card-title {{ card.heading.modifier | default }}">{{ card.heading.text }}</h{{ heading_level }}>
      {% if card.link | default %}
-      <span class="h4">
-        <a href="{{ card.link.url }}" class="{% if card.link.style  | default %}{{ card.link.style }}{% else %}read-more{% endif %}">{{ card.link.text }}</a>
-      </span>
+
+        {% include 'components/inline/read-more.twig' with {
+          readMore: {
+            class: h4,
+            text: card.link.text,
+            url: card.link.url
+          }
+        } %}
+        {% if card.clickCard | default %}
+          <a href="{{ card.link.url }}" class="card_click">{{ card.link.text }}</a>
+        {% endif %}
     {% endif %}
   </div>
 </div>

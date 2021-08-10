@@ -23,7 +23,8 @@
   }
   &--click{
     position: relative;
-    a{
+    .card_click{
+      opacity: 0;
       &:before{
         content: "";
         position: absolute;
@@ -33,8 +34,11 @@
         height: 100%;
       }
     }
-    &:focus-within{
-      box-shadow: 0 0 6px 1px rgba($medium-gray, 0.5);
+    &:focus-within, &:hover, &:focus{
+      .read-more{
+        text-decoration: underline;
+      }
+      //box-shadow: 0 0 6px 1px rgba($medium-gray, 0.5);
     }
   }
   &--special{

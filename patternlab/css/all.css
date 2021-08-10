@@ -7442,6 +7442,11 @@ a.thumbnail image {
   font-size: 1rem;
   background-color: #1f3e99;
 }
+@media print, screen and (max-width: 39.99875em) {
+  .accordion--icons .accordion-title .accordion-icon {
+    font-size: 0.75rem;
+  }
+}
 @media print, screen and (min-width: 40em) {
   .accordion--icons .accordion-title .accordion-icon {
     width: 2.6666666667rem;
@@ -7450,6 +7455,11 @@ a.thumbnail image {
 .accordion--icons .accordion-title .accordion-icon:not([class*=icon-]):before {
   content: counter(steps);
   font-size: 1.3333333333rem;
+}
+@media print, screen and (max-width: 39.99875em) {
+  .accordion--icons .accordion-title .accordion-icon:not([class*=icon-]):before {
+    font-size: 1rem;
+  }
 }
 
 .alert-bar {
@@ -9252,6 +9262,12 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .video-wrapper[data-video-trigger=click] {
   cursor: pointer;
+}
+.video-wrapper[data-video-trigger=click]:hover .video-image-wrapper {
+  background-color: #2953cc;
+}
+.video-wrapper[data-video-trigger=click]:hover .video-image-wrapper img {
+  opacity: 0.8;
 }
 .video-wrapper[data-video-trigger=scroll], .video-wrapper[data-video-trigger=click] {
   position: relative;
@@ -11602,9 +11618,13 @@ legend {
 .text-white .icon--circle:hover, .text-white .icon--circle:focus {
   background-color: #ffcd00;
 }
+.icon--circle [class*=icon-] {
+  position: absolute;
+}
 .icon--circle .icon-facebook {
   font-size: 1.3em;
-  margin-bottom: -0.4444444444rem;
+  position: absolute;
+  margin-bottom: -0.4583333333rem;
   margin-right: -0.1111111111rem;
 }
 

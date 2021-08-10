@@ -107,8 +107,9 @@
       cursor: pointer;
       &:hover{
         .video-image-wrapper{
-          &:after{
-            background-color: map-get($additional-palette,'secondary-dark');
+          background-color: $primary-color;
+          img{
+            opacity: 0.8;
           }
         }
       }

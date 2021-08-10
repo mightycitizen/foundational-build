@@ -51,9 +51,15 @@
         background-color: $secondary-color;
       }
     }
+
+    [class*=icon-]{
+      position: absolute;
+    }
     .icon-facebook{
       font-size: 1.3em;
-      margin-bottom: rem-calc(-8%);
+      position: absolute;
+      //margin-top: rem-calc(-8%);
+      margin-bottom: rem-calc(-8.25%);
       margin-right: rem-calc(-2%);
     }
   }

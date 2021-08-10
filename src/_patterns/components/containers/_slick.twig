@@ -3,13 +3,7 @@
     {% block slide_content %}
     {% endblock %}
   </div>
-  <div class="slick-nav">
-    {% if pausable | default %}
-     <button class="js-slick-toggle slick-toggle">
-      <span class="show-for-sr">Toggle Pause/Play</span>
-      <span class="icon-pause active"></span>
-      <span class="icon-play inactive"></span>
-    </button>
-    {% endif %}
-  </div>
+  {% include 'components/containers/_carousel-nav.twig' with {
+    inline: true
+  } %}
 </div>

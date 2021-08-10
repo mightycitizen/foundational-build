@@ -1,10 +1,12 @@
 
 
   {% embed 'components/containers/_slick.twig' with {
-    modifier: 'cards'
+    modifier: 'cards',
+    grid: true,
+    equalize: true
   }%}
     {% block slide_content %}
-      {% for i in range (i, 5) %}
+      {% for card in cards %}
           {% include "components/teasers/card.twig" with card %}
       {% endfor %}
     {% endblock %}

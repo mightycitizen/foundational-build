@@ -31,11 +31,11 @@
   display: inline-block;
   position: relative;
   margin-bottom: 5px;
-  width: 180px;
-  height: 180px;
+  width: 90px;
+  height: 90px;
   border-radius: 3px;
   vertical-align: top;
-  border: 3px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid #ececec;
 }
 
 .pl-swatch__hex {
@@ -43,10 +43,22 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 15px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #FFF;
-  font-size: small;
+  padding: 7px;
+  background-color: rgba(255,255,255, 0.7);
+  color: #000;
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+
+@media screen and (min-width: 400px){
+  .pl-swatch {
+    width: 180px;
+    height: 180px;
+  }
 }
 
 /* Increases size of pattern category and pattern name */

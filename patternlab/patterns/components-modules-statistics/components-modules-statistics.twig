@@ -1,14 +1,14 @@
 {% embed 'components/sections/section.twig' with {
-    "intro_class": 'text-center ' ~ (style | default == 'side' ? 'medium-text-left' : ''),
+    "intro_class": 'text-center ' ~ (style | default == 'side' ? 'large-text-left' : ''),
     "section_heading": "Statistics Module",
     "section_description": section_description | default
   }
 %}
   {% block section_content %}
     <div class="slick-wrap">
-      <div class="{% if style | default != 'side' %}grid-x grid-margin-x{% endif %} js-slick--mobile">
+      <div class="grid-x grid-margin-x js-slick--mobile">
         {% for statistic in statistics %}
-          <div {% if style | default != 'side' %}class="cell medium-4"{% endif %}>
+          <div class="cell medium-4 {% if style | default == 'side' %}large-12{% endif %}">
             {% include 'components/informational/statistic.twig' with {
               text: statistic.text,
               value: statistic.value,

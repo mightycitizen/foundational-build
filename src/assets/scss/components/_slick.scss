@@ -153,12 +153,12 @@ $toggle-spacing: 18;
 		&:last-child {
 			@include spacer(padding,x,1.5);
 			//padding: rem-calc(15 $spacer*3/2);
-			padding-bottom: rem-calc(14) !important;
+			//padding-bottom: rem-calc(14) !important;
 
-			@include breakpoint(large) {
-				padding-top: rem-calc(11);
-				padding-bottom: rem-calc(11) !important;
-			}
+			// @include breakpoint(large) {
+			// 	padding-top: rem-calc(11);
+			// 	padding-bottom: rem-calc(11) !important;
+			// }
 		}
 
 		button{

@@ -620,6 +620,8 @@ const slickPagination = (slick) => {
     const numSlides = slick.$dots.find('>li').length;
     slick.$slider.toggleClass('has-pagers', numSlides > 1);
     //slick.$slider.toggleClass('has-pagination', numSlides > 3);
+  }else{
+    slick.$slider.removeClass('has-pagers');
   }
 }
 
@@ -815,6 +817,12 @@ const initSlick = () => {
 
     $this.on('init', function (event, slick, breakpoint){
       slickPagination(slick);
+      //console.log($slick);
+      //console.log($slick.attr('data-equalizer'));
+      if ($slick.hasClass('slick-slider--equalize')){
+        $slick.trigger('resizeme.zf.trigger');
+      }
+
     })
 
     $this.on('breakpoint', function (event, slick, breakpoint){

@@ -91,10 +91,10 @@
       }
     }
    %}
-  {% include 'components/modules/three-up-card.twig' with {
+  {% include 'components/modules/card-carousel.twig' with {
     'class': 'bg-gradient-secondary'
-  } %}
-  {% include 'components/modules/three-up-card.twig' with
+  } %} {# three up #}
+  {% include 'components/modules/card-carousel.twig' with
       {
       "cards": [
         {
@@ -178,7 +178,102 @@
    %}
 
   {% include 'components/modules/card-carousel.twig' with {
-    "class": "bg-light-primary"
+    "class": "bg-light-primary",
+    "cards":
+    [
+      {
+        "card": {
+          "modifier": "",
+          "image": {
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/400x200",
+            "alt": "Alt Text"
+          },
+          "heading": {
+            "text": "Phasellus auctor, turpis",
+            "level": "3",
+            "url": "#"
+          },
+          "link": {
+            "url": "#",
+            "text":"Optional Link"
+          }
+        }
+      },
+      {
+        "card": {
+          "modifier": "",
+          "image": {
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/400x200",
+            "alt": "Alt Text"
+          },
+          "heading": {
+            "text": "Phasellus auctor, turpis",
+            "level": "3",
+            "url": "#"
+          },
+          "link": {
+            "url": "#",
+            "text":"Optional Link"
+          }
+        }
+      },
+      {
+        "card": {
+          "modifier": "",
+          "image": {
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/400x200",
+            "alt": "Alt Text"
+          },
+          "heading": {
+            "text": "Phasellus auctor, turpis",
+            "level": "3",
+            "url": "#"
+          },
+          "link": {
+            "url": "#",
+            "text":"Optional Link"
+          }
+        }
+      },
+      {
+        "card": {
+          "modifier": "",
+          "image": {
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/400x200",
+            "alt": "Alt Text"
+          },
+          "heading": {
+            "text": "Phasellus auctor, turpis",
+            "level": "3",
+            "url": "#"
+          },
+          "link": {
+            "url": "#",
+            "text":"Optional Link"
+          }
+        }
+      },
+      {
+        "card": {
+          "modifier": "",
+          "image": {
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/400x200",
+            "alt": "Alt Text"
+          },
+          "heading": {
+            "text": "Phasellus auctor, turpis",
+            "level": "3",
+            "url": "#"
+          },
+          "link": {
+            "url": "#",
+            "text":"Optional Link"
+          }
+        }
+      }
+
+    ]
+
   } %}
 
   {% include 'components/modules/testimonial-carousel.twig' %}

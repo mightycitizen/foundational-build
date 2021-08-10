@@ -4370,9 +4370,9 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 .callout {
   position: relative;
-  margin: 0 0 0 0;
+  margin: 0 0 1rem 0;
   padding: 1rem;
-  border: 0 solid rgba(51, 51, 51, 0.25);
+  border: 1px solid rgba(51, 51, 51, 0.25);
   border-radius: 0;
   background-color: white;
   color: #333;
@@ -4439,7 +4439,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 .card-divider {
   display: flex;
   flex: 0 1 auto;
-  padding: 1.7777777778rem 1.7777777778rem 2.2222222222rem;
+  padding: 1rem;
   background: #ccc;
 }
 .card-divider > :last-child {
@@ -4448,7 +4448,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 .card-section {
   flex: 1 0 auto;
-  padding: 1.7777777778rem 1.7777777778rem 2.2222222222rem;
+  padding: 1rem;
 }
 .card-section > :last-child {
   margin-bottom: 0;
@@ -4465,7 +4465,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   width: 300px;
   padding: 1rem;
   visibility: hidden;
-  border: 0 solid #666;
+  border: 1px solid #666;
   border-radius: 0;
   background-color: #fff;
   font-size: 1rem;
@@ -4684,7 +4684,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 .accordion-title {
   position: relative;
   display: block;
-  padding: 0.8888888889rem 1.7777777778rem 1.0555555556rem;
+  padding: 1.25rem 1rem;
   border: 0 solid #ccc;
   border-bottom: 0;
   font-size: 1.3333333333rem;
@@ -4711,7 +4711,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 .accordion-content {
   display: none;
-  padding: 0.8888888889rem 1.7777777778rem 1.7777777778rem;
+  padding: 1rem;
   border: 0 solid #ccc;
   border-bottom: 0;
   background-color: #fff;
@@ -7285,7 +7285,7 @@ a.thumbnail image {
   padding-left: 1.1111111111rem;
   padding-right: 1.1111111111rem;
   padding-bottom: 0.8333333333rem;
-  padding-right: 3.4444444444rem;
+  padding-right: 2.6666666667rem;
   width: 100%;
   text-align: left;
   cursor: pointer;
@@ -7313,7 +7313,7 @@ a.thumbnail image {
   }
 }
 .accordion-title:before {
-  right: 1.7777777778rem;
+  right: 1rem;
   font-weight: normal;
   font-size: 0.8888888889rem;
   color: #2953cc;
@@ -7966,18 +7966,11 @@ a.thumbnail image {
 .slick-dots li, .slick-dots li:last-child {
   padding-left: 0.4166666667rem;
   padding-right: 0.4166666667rem;
-  padding-bottom: 0.7777777778rem !important;
 }
 @media print, screen and (min-width: 40em) {
   .slick-dots li, .slick-dots li:last-child {
     padding-left: 0.6666666667rem;
     padding-right: 0.6666666667rem;
-  }
-}
-@media print, screen and (min-width: 64em) {
-  .slick-dots li, .slick-dots li:last-child {
-    padding-top: 0.6111111111rem;
-    padding-bottom: 0.6111111111rem !important;
   }
 }
 .slick-dots li button {
@@ -9240,13 +9233,13 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 
 .large-value {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-size: 3.5555555556rem;
   line-height: 1.2;
   font-weight: bold;
+  font-size: 5.5555555556rem;
 }
-@media screen and (min-width: 75em) {
+@media print, screen and (max-width: 39.99875em) {
   .large-value {
-    font-size: 5.5555555556rem;
+    font-size: 4.1666666667rem;
   }
 }
 
@@ -9282,6 +9275,12 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   padding: 0.3888888889rem 0.5rem;
   color: #666;
   border: 1px solid #ccc;
+}
+
+@media print, screen and (max-width: 39.99875em) {
+  .lead {
+    font-size: 1.1111111111rem;
+  }
 }
 
 .section {
@@ -9321,12 +9320,22 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   position: relative;
   z-index: 2;
 }
-@media print, screen and (max-width: 39.99875em) {
+@media print, screen and (max-width: 63.99875em) {
   .section_intro {
-    margin-bottom: 1.9444444444rem;
+    margin-bottom: 1.1111111111rem;
   }
 }
-@media print, screen and (min-width: 40em) {
+@media print, screen and (max-width: 63.99875em) and (min-width: 40em) {
+  .section_intro {
+    margin-bottom: 1.7777777778rem;
+  }
+}
+@media print, screen and (min-width: 64em) {
+  .section_intro:not(:last-child) {
+    margin-bottom: 1.3888888889rem;
+  }
+}
+@media print, screen and (min-width: 64em) and (min-width: 40em) {
   .section_intro:not(:last-child) {
     margin-bottom: 2.2222222222rem;
   }
@@ -9350,6 +9359,9 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .section--tight.section--collapse + .section--tight.section--collapse {
   padding-top: 0 !important;
+}
+.section:not([class*=bg-]) + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]), .section.bg-gradient--flip + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]) {
+  padding-top: 0;
 }
 
 .step-list {
@@ -11504,6 +11516,11 @@ blockquote {
   position: relative;
   line-height: 1.375;
   font-size: 1.3333333333rem;
+}
+@media print, screen and (max-width: 39.99875em) {
+  blockquote {
+    font-size: 1.1111111111rem;
+  }
 }
 blockquote p {
   margin-bottom: 0.8333333333rem;

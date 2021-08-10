@@ -39,8 +39,8 @@
   {% if section_background | default %}<div class="js-lazy section_background" data-bg="{{ section_background }}"></div>{% endif %}
   <div class="grid-container {{ grid_class }}">
     {% if style | default and (style == 'side') %}
-      <div class="grid-x align-middle">
-        <div class="cell large-8">
+      <div class="grid-x align-middle align-center">
+        <div class="cell medium-8">
           {{ section_intro }}
         </div>
         <div class="cell large-4">

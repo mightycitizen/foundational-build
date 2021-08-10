@@ -11,6 +11,11 @@
     top: 0;
     right: 0;
   }
+  &-section{
+    @include spacer(padding,top,4);
+    @include spacer(padding,x,4);
+    @include spacer(padding,bottom,5);
+  }
   &-image{
     img{
       width: 100%;

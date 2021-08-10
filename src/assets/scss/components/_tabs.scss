@@ -4,12 +4,13 @@
 
   &-title{
     button{
-      margin-right: rem-calc($spacer);
+      @include spacer(margin,right,1);
       font-weight: $global-weight-bold;
       cursor: pointer;
       color: $tab-color;
       font-size: $tab-item-font-size;
-      padding: $tab-item-padding;
+      @include spacer(padding,y,2);
+      @include spacer(padding,x,5);
       background-color: $lightest-gray;
       &:hover{
         background-color: $tab-item-background-hover;
@@ -31,6 +32,8 @@
     box-shadow: $global-box-shadow;
   }
   &-panel{
+    @include spacer(padding,y,5);
+    @include spacer(padding,x,4);
     > *:last-child{
       margin-bottom: 0;
     }

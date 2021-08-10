@@ -143,14 +143,16 @@ $toggle-spacing: 18;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: rem-calc(0 $spacer*2.5);
+	margin: 0;
+	@include spacer(margin,x,2.5);
 	list-style-type: none;
 
 	li {
 
 		&,
 		&:last-child {
-			padding: rem-calc(15 $spacer*3/2);
+			@include spacer(padding,x,1.5);
+			//padding: rem-calc(15 $spacer*3/2);
 			padding-bottom: rem-calc(14) !important;
 
 			@include breakpoint(large) {
@@ -256,7 +258,7 @@ $toggle-spacing: 18;
 }
 
 .slick-nav{
-	margin-top: rem-calc($spacer*4);
+	@include spacer(margin,top,4);
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -344,7 +346,8 @@ $toggle-spacing: 18;
 			&:not(.slick-current){
 				margin-bottom: rem-calc($curr-width/$image-ratio - $slide-width/$image-ratio - $slide-margin-offset);
 				.card-section{
-					padding: rem-calc($spacer*3 $spacer*4);
+					@include spacer(padding,y,3);
+					@include spacer(padding,x,4);
 				}
 				.card-image{
 					transition: $transition-duration margin;
@@ -373,7 +376,7 @@ $toggle-spacing: 18;
 				.card--special{
 					box-shadow: $global-box-shadow;
 					.card-section{
-						padding: rem-calc($spacer*5 $spacer*5);
+						@include spacer(padding,all,5);
 					}
 					.card-image{
 						margin-bottom: rem-calc($curr-section-offset);

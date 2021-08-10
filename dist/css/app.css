@@ -8090,6 +8090,13 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   display: none;
 }
 
+@media print, screen and (max-width: 63.99875em) {
+  .js-slick--cards {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .js-slick--center .slick-slide {
   margin: 0.8333333333rem 0.5555555556rem;
 }

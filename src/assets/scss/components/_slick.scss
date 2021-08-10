@@ -11,8 +11,9 @@ $slide-margin-offset: 15; // to prevent shadow overflow issues
 	margin-top: rem-calc(-1*$slide-margin-offset);
 	margin-bottom: rem-calc(-1*$slide-margin-offset);
 	@include breakpoint(small only){
-			margin-left: rem-calc(-1*$slide-margin-mobile);
-			margin-right: rem-calc(-1*$slide-margin-mobile);
+		margin-left: rem-calc(-1*$slide-margin-mobile);
+		margin-right: rem-calc(-1*$slide-margin-mobile);
+
 	}
 }
 
@@ -313,6 +314,13 @@ $toggle-spacing: 18;
 	}
 
 
+}
+
+.js-slick--cards{
+	@include breakpoint(medium down){
+		margin-left: 0;
+		margin-right: 0
+	}
 }
 
 .js-slick--center{

@@ -1058,35 +1058,35 @@ h6 small, .h6 small {
 }
 
 h1, .h1 {
-  font-size: 1.3333333333rem;
+  font-size: 2rem;
   line-height: 1.2;
   margin-top: 0;
   margin-bottom: 0.8888888889rem;
 }
 
 h2, .h2 {
-  font-size: 1.1111111111rem;
+  font-size: 1.3333333333rem;
   line-height: 1.2;
   margin-top: 0;
   margin-bottom: 0.8888888889rem;
 }
 
 h3, .h3 {
-  font-size: 1.0555555556rem;
+  font-size: 1.2222222222rem;
   line-height: 1.2;
   margin-top: 0;
   margin-bottom: 0.8888888889rem;
 }
 
 h4, .h4 {
-  font-size: 1rem;
+  font-size: 1.1111111111rem;
   line-height: 1.2;
   margin-top: 0;
   margin-bottom: 0.8888888889rem;
 }
 
 h5, .h5 {
-  font-size: 0.9444444444rem;
+  font-size: 1rem;
   line-height: 1.2;
   margin-top: 0;
   margin-bottom: 0.8888888889rem;
@@ -7525,10 +7525,22 @@ a.thumbnail image {
 .hero {
   background-color: #2953cc;
   color: #fff;
-  padding: 2.2222222222rem 0;
+  padding-top: 1.6666666667rem;
+  padding-bottom: 1.6666666667rem;
+}
+@media print, screen and (min-width: 40em) {
+  .hero {
+    padding-top: 2.2222222222rem;
+    padding-bottom: 2.2222222222rem;
+  }
 }
 .hero .breadcrumbs {
-  margin-bottom: 2.3333333333rem;
+  margin-bottom: 1.6666666667rem;
+}
+@media print, screen and (min-width: 40em) {
+  .hero .breadcrumbs {
+    margin-bottom: 2.2222222222rem;
+  }
 }
 .hero .breadcrumbs, .hero .breadcrumbs li, .hero .breadcrumbs a, .hero .breadcrumbs li:after {
   color: inherit;

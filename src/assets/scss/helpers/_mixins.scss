@@ -100,3 +100,9 @@
     }
 
   }
+
+  @mixin font-scale-mobile($size){
+    @include breakpoint(small only){
+      font-size: rem-calc($font-scale-mobile*$size);
+    }
+  }

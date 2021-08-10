@@ -7281,11 +7281,36 @@ a.thumbnail image {
 }
 .accordion-title {
   background-color: #eee;
+  padding-top: 0.5555555556rem;
+  padding-left: 1.1111111111rem;
+  padding-right: 1.1111111111rem;
+  padding-bottom: 0.8333333333rem;
   padding-right: 3.4444444444rem;
   width: 100%;
   text-align: left;
   cursor: pointer;
   font-weight: bold;
+}
+@media print, screen and (min-width: 40em) {
+  .accordion-title {
+    padding-top: 0.8888888889rem;
+  }
+}
+@media print, screen and (min-width: 40em) {
+  .accordion-title {
+    padding-left: 1.7777777778rem;
+    padding-right: 1.7777777778rem;
+  }
+}
+@media print, screen and (min-width: 40em) {
+  .accordion-title {
+    padding-bottom: 1.3333333333rem;
+  }
+}
+@media print, screen and (max-width: 39.99875em) {
+  .accordion-title {
+    font-size: 1rem;
+  }
 }
 .accordion-title:before {
   right: 1.7777777778rem;
@@ -7303,6 +7328,28 @@ a.thumbnail image {
 }
 .accordion-title:focus {
   background-color: #eee;
+}
+.accordion-content {
+  padding-top: 0.5555555556rem;
+  padding-left: 1.1111111111rem;
+  padding-right: 1.1111111111rem;
+  padding-bottom: 1.1111111111rem;
+}
+@media print, screen and (min-width: 40em) {
+  .accordion-content {
+    padding-top: 0.8888888889rem;
+  }
+}
+@media print, screen and (min-width: 40em) {
+  .accordion-content {
+    padding-left: 1.7777777778rem;
+    padding-right: 1.7777777778rem;
+  }
+}
+@media print, screen and (min-width: 40em) {
+  .accordion-content {
+    padding-bottom: 1.7777777778rem;
+  }
 }
 .accordion-content > *:last-child {
   margin-bottom: 0;

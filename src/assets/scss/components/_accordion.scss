@@ -10,11 +10,19 @@
   }
   &-title{
     background-color: $accordion-background;
+    @include spacer(padding,top,2);
+    @include spacer(padding,x,4);
+    @include spacer(padding,bottom,3);
+
     padding-right: #{get-side($accordion-item-padding,'right') + rem-calc(30)};
     width: 100%;
     text-align: left;
     cursor: pointer;
     font-weight: bold;
+
+
+    @include font-scale-mobile($accordion-title-font-size);
+
     &:before{
       right: get-side($accordion-item-padding,'right');
       font-weight: normal;
@@ -38,6 +46,12 @@
 
   }
   &-content{
+    //$accordion-content-padding: rem-calc(16 32 32);
+
+    @include spacer(padding,top,2);
+    @include spacer(padding,x,4);
+    @include spacer(padding,bottom,4);
+
     > *:last-child{
       margin-bottom: 0;
     }

@@ -117,7 +117,7 @@ input[type="radio"] {
 
 input[type="radio"], input[type="checkbox"]{
   &.custom:not(foo){
-    &:focus{
+    &:focus:not(:checked){
       + label{
         color: $primary-color;
         text-decoration: underline;

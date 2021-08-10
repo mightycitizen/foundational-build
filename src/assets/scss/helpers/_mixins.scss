@@ -103,18 +103,10 @@
 
   @mixin font-scale-mobile($size,$min: 0){
     @include breakpoint(small only){
-<<<<<<< HEAD
       $font-size-mobile: $size*$font-scale-mobile;
       @if ($min > $font-size-mobile){
         $font-size-mobile: $min;
       }
       font-size: rem-calc($font-size-mobile);
-=======
-      $mobile-font-size: $font-scale-mobile*$size;
-      @if ($min > $mobile-font-size) {
-        $mobile-font-size: $min;
-      }
-      font-size: rem-calc($mobile-font-size);
->>>>>>> 72b59a93a98ede5cd9e7fb91cd84547d5baa5e03
     }
   }

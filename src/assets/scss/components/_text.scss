@@ -13,22 +13,10 @@
 $large-value-size: 100;
 .large-value{
   font-family: $secondaryFontFamily;
-<<<<<<< HEAD
   line-height: 1.2;
   font-weight: $global-weight-bold;
   font-size: rem-calc(100);
   @include font-scale-mobile(100);
-=======
-  //font-size: rem-calc(64);
-  line-height: 1.2;
-  font-weight: $global-weight-bold;
-  font-size: rem-calc($large-value-size);
-  @include font-scale-mobile($large-value-size);
-}
-
-.lead{
-  @include font-scale-mobile($lead-font-size, 20);
->>>>>>> 72b59a93a98ede5cd9e7fb91cd84547d5baa5e03
 }
 
 .meta{

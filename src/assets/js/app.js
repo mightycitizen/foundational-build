@@ -880,13 +880,13 @@ const initSlick = () => {
       dotsClass: 'slick-dots',
       appendArrows: $this.next('.slick-nav'),
       appendDots: $this.next('.slick-nav'),
-      adaptiveHeight: false,
+      adaptiveHeight: true,
       waitForAnimate: false,
       responsive: [
         {
         breakpoint: largeBreakpoint,
         settings: {
-          adaptiveHeight: true,
+          //adaptiveHeight: true,
           slidesToScroll: 2,
           slidesToShow: 2
         }
@@ -894,7 +894,7 @@ const initSlick = () => {
         {
         breakpoint: mediumBreakpoint,
         settings: {
-          adaptiveHeight: true,
+          //adaptiveHeight: true,
           slidesToScroll: 1,
           slidesToShow: 1
 

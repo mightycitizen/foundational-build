@@ -9240,6 +9240,15 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 @media print, screen and (max-width: 39.99875em) {
   .large-value {
     font-size: 4.1666666667rem;
+<<<<<<< HEAD
+=======
+  }
+}
+
+@media print, screen and (max-width: 39.99875em) {
+  .lead {
+    font-size: 1.1111111111rem;
+>>>>>>> 72b59a93a98ede5cd9e7fb91cd84547d5baa5e03
   }
 }
 

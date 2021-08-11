@@ -9459,6 +9459,9 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     padding-bottom: 5.7777777778rem;
   }
 }
+.section[class*=bg-]:before {
+  z-index: 1;
+}
 .section_background {
   position: absolute;
   left: 0;
@@ -9471,6 +9474,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .section_content {
   position: relative;
+  z-index: 2;
 }
 .section_content > *:last-child, .section_content .cell > *:last-child {
   margin-bottom: 0;

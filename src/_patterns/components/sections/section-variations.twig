@@ -34,4 +34,19 @@
     <div class="pl-placeholder">Section Content goes here</div>
   {% endblock %}
 {% endembed %}
+
+{% embed 'components/sections/section.twig' with {
+  class: "bg-gradient-primary",
+  section_background: "https://source.unsplash.com/9wg5jCEPBsw/1200x500",
+  section_heading: "Section with Background Image",
+  section_description: "Section content widths can be narrower, narrow, or regular.",
+  style: "narrower"
+}%}
+
+  {% block section_content %}
+    <div class="pl-placeholder">Section Content goes here</div>
+  {% endblock %}
+{% endembed %}
+
+
 <div></div><!-- to prevent :last-child styling in style guide -->

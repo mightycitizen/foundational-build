@@ -8,6 +8,9 @@
   background-size: cover;
   background-position: center;
   position: relative;
+  &[class*=bg-]:before{
+    z-index: 1;
+  }
   &_background{
     @include stretch;
     opacity: 0.6;
@@ -16,6 +19,7 @@
   }
   &_content{
     position: relative;
+    z-index: 2;
     &, .cell{
       > *:last-child{
         margin-bottom: 0;

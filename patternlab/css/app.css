@@ -7821,13 +7821,32 @@ a.thumbnail image {
     padding-bottom: 2.2222222222rem;
   }
 }
-@media print, screen and (min-width: 64em) {
-  .listing .item img {
-    max-width: 13.8888888889rem;
-  }
-}
 .listing .item .media-object-section:first-child {
   padding-left: 0;
+}
+@media print, screen and (min-width: 40em) {
+  .listing .item .media-object-section:first-child {
+    max-width: 40%;
+  }
+  .listing .item .media-object-section:first-child img {
+    width: 13.8888888889rem;
+    max-width: 100%;
+  }
+}
+@media print, screen and (max-width: 39.99875em) {
+  .listing .item .media-object:not(.media-object--stack) .media-object-section:first-child {
+    padding-right: 1.1111111111rem;
+  }
+  .listing .item .media-object--stack {
+    display: block;
+  }
+  .listing .item .media-object--stack img {
+    max-width: 100%;
+  }
+  .listing .item .media-object--stack .media-object-section:first-child {
+    padding-right: 0;
+    margin-bottom: 1.1111111111rem;
+  }
 }
 
 .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a:after {

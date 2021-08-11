@@ -7,13 +7,35 @@
     border-bottom: $hr-border;
     @include spacer(margin,bottom,4);
     @include spacer(padding,bottom,5);
-    @include breakpoint(large){
-      img{
-        max-width: rem-calc(250);
-      }
-    }
     .media-object-section:first-child{
+      @include breakpoint(medium){
+        max-width: 40%;
+        img{
+          width: rem-calc(250);
+          max-width: 100%;
+        }
+      }
       padding-left: 0;
+    }
+
+    @include breakpoint(small only){
+      .media-object{
+        &:not(.media-object--stack){
+          .media-object-section:first-child{
+            padding-right: $spacer-mobile*4;
+          }
+        }
+        &--stack{
+          display: block;
+          img{
+            max-width: 100%;
+          }
+          .media-object-section:first-child{
+            padding-right: 0;
+            margin-bottom: $spacer-mobile*4;
+          }
+        }
+      }
     }
   }
 }

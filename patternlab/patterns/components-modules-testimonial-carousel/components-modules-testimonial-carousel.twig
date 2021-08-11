@@ -1,0 +1,11 @@
+{% embed 'components/sections/section.twig' with {
+    "section_heading": "Testimonial Carousel Module Heading",
+    "section_description": "Lorem ipsum",
+    "intro_class": "text-center",
+    "style": "narrow"
+  }
+%}
+  {% block section_content %}
+    {% include 'components/containers/carousel-testimonial.twig' %}
+  {% endblock %}
+{% endembed %}

@@ -1,0 +1,25 @@
+{% embed 'components/sections/section.twig' with {
+    "intro_class": 'text-center ' ~ (style | default == 'side' ? 'large-text-left' : ''),
+    "section_heading": "Statistics Module",
+    "section_description": section_description | default
+  }
+%}
+  {% block section_content %}
+    <div class="slick-wrap">
+      <div class="grid-x grid-margin-x js-slick--mobile">
+        {% for statistic in statistics %}
+          <div class="cell medium-4 {% if style | default == 'side' %}large-12{% endif %}">
+            {% include 'components/informational/statistic.twig' with {
+              text: statistic.text,
+              value: statistic.value,
+              statistic_link: statistic.statistic_link
+            }%}
+          </div>
+        {% endfor %}
+      </div>
+      {% include 'components/containers/carousel-nav.twig' with {
+          inline: true
+        } %}
+    </div>
+  {% endblock %}
+{% endembed %}

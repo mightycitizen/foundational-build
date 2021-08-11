@@ -1,0 +1,30 @@
+<a href="#main" class="l-skip">Skip to main</a>
+<header class="l-header">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x align-middle">
+      <div class="cell small-2">
+        {% include 'components/logo/logo.twig' %}
+      </div>
+      <div class="cell medium-2 medium-offset-8 show-for-large">
+
+        <div class="search-form">
+          {% include 'components/forms/simple-form.twig' %}
+        </div>
+
+
+        {#
+        <button data-toggle="search-form search-toggle" data-toggler="is-active" id="search-toggle" class="search-toggle">
+          <span class="show-for-sr">Search</span>
+          <span class="icon-search"></span>
+        </button>
+        <div id="search-form" data-toggler=".hide" class="hide search-form">
+          {% include 'components/forms/simple-form.twig' %}
+        </div>#}
+      </div>
+      <div class="cell small-10 large-12">
+        {% include 'components/navigation/menu.twig' %}
+      </div>
+    </div>
+
+  </div>
+</header>

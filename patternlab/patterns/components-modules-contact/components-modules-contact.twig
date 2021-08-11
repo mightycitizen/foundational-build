@@ -1,0 +1,54 @@
+{% embed 'components/sections/section.twig' with {
+    "class": "section--tight",
+    "style": "narrow"
+  }
+%}
+  {% block section_content %}
+    {% set items = [] %}
+    {% if phone | default %}
+      {% set items = items | merge (
+        [
+          {
+            "label": "Phone",
+            "value": phone.number ~ (phone.ext | default ? ' ext '~ phone.ext : '')
+          }
+        ]
+    ) %}
+    {% endif %}
+    {% if emails | default %}
+      {% set email_items %}
+        <ul class="unstyled-list">
+          {% for email in emails %}
+            <li class="m-b-0">
+              <a href="mailto:{{ email.value }}">{{ (email.text | default) ? email.text : email.value }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endset %}
+      {% set items = items | merge (
+        [
+          {
+            "label": "Email",
+            "value": email_items
+          }
+        ]
+      ) %}
+    {% endif %}
+    {% if location | default %}
+      {% set items = items | merge (
+        [
+          {
+            "label": "Location",
+            "value": location | nl2br
+          }
+        ]
+      ) %}
+    {% endif %}
+
+      {% include 'components/teasers/card-contact.twig' with {
+        items: items
+      } %}
+
+
+  {% endblock %}
+{% endembed %}

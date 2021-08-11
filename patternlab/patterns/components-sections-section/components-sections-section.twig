@@ -18,7 +18,7 @@
               <p class="lead">{{ section_description }}</p>
             {% endif %}
             {% if section_button | default %}
-              {% include 'components/inline/_button.twig' with {
+              {% include 'components/links/button.twig' with {
                 "button" : section_button
               } %}
             {% endif %}

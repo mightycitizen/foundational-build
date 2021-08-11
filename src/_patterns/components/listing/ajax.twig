@@ -69,7 +69,7 @@
       <div class="cell medium-8">
         <p data-ajaxify-num-results="events">There were <strong class="value"></strong> results for your search/filters</p>
         <div data-ajaxify id="events">
-          {% include 'components/icons-logos/loader.twig' %}
+          {% include 'components/utils/loader.twig' %}
         </div>
         <div data-ajaxify-no-results="events" class="hide">
           <p>There were no results for your search/filters</p>
@@ -82,7 +82,7 @@
 <section class="section">
   <div class="grid-container">
     <h2>Partial include</h2>
-    {% include 'components/listing/_event.twig' with {
+    {% include 'components/listing/event.twig' with {
       "events": [
         {
           "title": "Event 1"

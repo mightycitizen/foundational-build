@@ -10,14 +10,14 @@
           {% if (item_type == 'event' and item.image | default is empty ) or item.image | default %}
             <div class="media-object-section">
               {% if item_type == 'event' and item.image | default is empty %}
-                {% include 'components/inline/date.twig' with {
+                {% include 'components/inline-text/date.twig' with {
                   date: item.start_date
                 } %}
               {% elseif item.image | default %}
                 <div class="wrapper">
                   <img data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" class="js-lazy">
                   {% if item_type == 'event' %}
-                    {% include 'components/inline/date.twig' with {
+                    {% include 'components/inline-text/date.twig' with {
                       date: item.start_date
                     } %}
                   {% endif %}
@@ -30,7 +30,7 @@
             {% if item_type | default != 'event' and item.date.full | default %}<p class="label m-b-2">{{ item.date.full }}</p>{% endif %}
             <p class="m-b-2">{{ item.summary }}</p>
             {% if item.categories | length %}
-              {% include 'components/inline/meta.twig' with {
+              {% include 'components/inline-text/meta.twig' with {
                   categories: item.categories
 
               } %}

@@ -1,12 +1,12 @@
 <form action="" data-abide novalidate>
-  {% include 'components/forms/_text.twig' with {
+  {% include 'components/forms/text.twig' with {
       label: "Text",
       name: "text",
       id: "field_id_3",
       placeholder: "Prompt Text",
       required: true
     } %}
-  {% include 'components/forms/_textarea.twig' with {
+  {% include 'components/forms/textarea.twig' with {
       label: "Textarea",
       name: "textarea",
       id: "field_id_2",
@@ -34,12 +34,12 @@
       }
     ]
   } %}
-  {% include 'components/forms/_select.twig' with select_options
+  {% include 'components/forms/select.twig' with select_options
   %}
 
   {% set select_options = select_options | merge({"selectize": true, "label": "Select (Filterable)" }) %}
 
-  {% include 'components/forms/_select.twig' with select_options
+  {% include 'components/forms/select.twig' with select_options
   %}
   {% include 'components/forms/radio-group.twig' with {
     "required": true,

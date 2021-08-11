@@ -4,25 +4,25 @@
     {
       "text": "View",
       "id": "view",
-      "is_active": true,
+      "active": true,
       "content": "<h2>Tab Content</h2><p>Lorem ipsum 1</p><p><a href='' class='read-more'>Styled Link</a></p>"
     },
     {
       "text": "Edit",
       "id": "edit",
-      "is_active": false,
+      "active": false,
       "content": "Lorem ipsum 2"
     },
     {
       "text": "Delete",
       "id": "delete",
-      "is_active": false,
+      "active": false,
       "content": "Lorem ipsum 3"
     },
     {
       "text": "Revisions",
       "id": "revisions",
-      "is_active": false,
+      "active": false,
       "content": "Lorem ipsum 4"
     }
   ]

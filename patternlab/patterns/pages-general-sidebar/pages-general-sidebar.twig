@@ -1,4 +1,4 @@
-{% extends 'pages/_wrapper.twig' %}
+{% extends 'pages/wrapper.twig' %}
 
 {% block main %}
   {% include "components/containers/hero.twig" %}
@@ -26,8 +26,8 @@
       {% include 'global/elements/lists/ordered-list.twig' %}
       {% include 'global/elements/text/blockquote.twig' %}
       <p>
-        {% include 'components/inline/read-more.twig' with {
-          "readMore": {
+        {% include 'components/links/read-more.twig' with {
+          "read_more": {
             "url": "#",
             "text": "Read More"
           }

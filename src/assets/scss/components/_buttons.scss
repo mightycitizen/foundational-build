@@ -7,4 +7,7 @@
       background-color: map-get($additional-palette,'secondary-darker');
     }
   }
+  + .button{
+    margin-left: $spacer;
+  }
 }

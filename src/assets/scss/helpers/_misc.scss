@@ -47,17 +47,16 @@
   }
 }
 
-.wrapper{
-  position: relative;
-  > .date{
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}
 
 .overflow{
   &-hidden{
     overflow: hidden;
+  }
+}
+
+
+.display{
+  &-inlineBlock{
+    display: inline-block;
   }
 }

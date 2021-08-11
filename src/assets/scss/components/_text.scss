@@ -31,7 +31,9 @@ $large-value-size: 100;
   }
 }
 
+
 .date{
+
   background-color: $primary-color;
   color: $white;
   font-weight: bold;
@@ -43,6 +45,16 @@ $large-value-size: 100;
   &_month{
     font-size: rem-calc(14);
     letter-spacing: 1px;
+  }
+}
+
+
+.wrapper{
+  position: relative;
+  > .date{
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 

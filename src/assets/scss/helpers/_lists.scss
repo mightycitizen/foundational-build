@@ -6,7 +6,7 @@
     margin-left: 0;
     vertical-align: middle;
     &:not(:last-child){
-      margin-right: rem-calc(15);
+      margin-right: rem-calc($spacer*2);
     }
   }
   &--top{
@@ -20,7 +20,7 @@
         display: block;
         &:not(:last-child){
           margin-right: 0 !important;
-          margin-bottom: rem-calc(15);
+          margin-bottom: rem-calc($spacer-mobile*2);
         }
       }
     }
@@ -32,7 +32,7 @@
           content: "|";
           position: absolute;
           opacity: 0.5;
-          margin-left: rem-calc(7.5);
+          margin-left: rem-calc($spacer);
         }
       }
     }
@@ -40,14 +40,14 @@
   &--tight{
     li{
       &:not(:last-child){
-        margin-right: rem-calc(5);
+        margin-right: rem-calc($spacer/2);
       }
     }
   }
   &--wide{
     li{
       &:not(:last-child){
-        margin-right: rem-calc(20);
+        margin-right: rem-calc($spacer*3);
       }
     }
   }

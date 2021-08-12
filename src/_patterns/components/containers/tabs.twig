@@ -11,7 +11,7 @@
 
     {% for tab in tabs %}
       <div tabindex="0" id="{{ tab.id }}" class="tabs-panel {{tab.active ? 'is-active'}}">
-        {{ tab.content }}
+        {{ tab.content | raw }}
       </div>
     {% endfor %}
 

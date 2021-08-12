@@ -6,6 +6,6 @@
     {{ item.heading }}
   </button>
   <div class="accordion-content" data-tab-content id="accordion-{{ item.accordion_instance }}" aria-hidden="true" aria-labelledby="accordion-{{ item.accordion_instance }}">
-    {{ item.content }}
+    {{ item.content | raw }}
   </div>
 </li>

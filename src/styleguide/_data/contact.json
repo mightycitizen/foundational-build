@@ -1,16 +1,16 @@
 {
-  "phone": {
-    "number": "(###) ### - ####",
-    "ext": "###"
-  },
-  "emails": [
+  "contact_items": [
     {
-      "value": "example@domain.com",
-      "text": "Text"
+      "label": "Phone",
+      "value": "(###) ### - ####"
     },
     {
-      "value": "example2@domain.com"
+      "label": "Email",
+      "value": "example@domain.com"
+    },
+    {
+      "label": "Location",
+      "value": "Address here\r\nRoom\r\n"
     }
-  ],
-  "location": "Address here\r\nRoom\r\n"
+  ]
 }

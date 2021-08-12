@@ -1,7 +1,7 @@
 {% embed 'components/sections/section.twig' with {
     "intro_class": 'text-center ' ~ (style | default == 'side' ? 'large-text-left' : ''),
-    "section_heading": "Statistics Module",
-    "section_description": section_description | default
+    "section_heading": section_heading | default ? section_heading : "Statistics Module Heading",
+    "section_description": section_description | default ? section_description : "Lorem ipsum dolor sit amet",
   }
 %}
   {% block section_content %}

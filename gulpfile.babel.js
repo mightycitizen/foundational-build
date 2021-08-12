@@ -3,12 +3,13 @@
 
 // Include gulp helpers.
 const { series, src, dest, parallel, watch } = require('gulp');
+//import browser       from 'browser-sync';
+import fs            from 'fs';
+import yaml          from 'js-yaml';
 
-
-
-
-
-
+let ddevYmlFile = fs.readFileSync(__dirname + '/../.ddev/config.yaml', 'utf8');
+const siteName = yaml.load(ddevYmlFile).name;
+let method;
 
 // Include Pattern Lab and config.
 const config = require('./patternlab-config.json');
@@ -22,7 +23,7 @@ const { compileSass, compileJS } = require('./gulp-tasks/compile.js');
 const { lintJS, lintSass } = require('./gulp-tasks/lint.js');
 const { compressAssets } = require('./gulp-tasks/compress.js');
 const { cleanCSS, cleanJS, cleanWebDist, cleanWebComponents, cleanWebLayout } = require('./gulp-tasks/clean.js');
-const { copyCSS, copyJS, copyFonts, copyImages, copyComponent, copyLayouts } = require('./gulp-tasks/copy.js');
+
 const { concatCSS } = require('./gulp-tasks/concat.js');
 const { moveFonts, movePatternCSS } = require('./gulp-tasks/move.js');
 const server = require('browser-sync').create();
@@ -52,6 +53,7 @@ exports.clean = parallel(cleanCSS, cleanJS);
  */
 function serve(done) {
   // See https://browsersync.io/docs/options for more options.
+  method = 'patternlab';
   server.init({
     // We want to serve both the patternlab directory, so it gets
     // loaded by default AND three directories up which is the
@@ -99,7 +101,7 @@ function buildPatternlab(done) {
 
 function buildVariables(){
 
-    return src('src/patterns/global/base/**/*.json')
+    return src('src/_patterns/global/base/**/*.json')
         .pipe(jsonToSass({
             sass: 'src/assets/scss/_variables.scss',
             prefix: 'theme',
@@ -115,15 +117,15 @@ function buildVariables(){
  */
 function watchFiles() {
   // Watch all my sass files and compile sass if a file changes.
-  watch(['./src/patterns/global/base/**/*.json'],
-    series(buildVariables, parallel(lintSass, compileSass), concatCSS, (done) => {
+  watch(['./src/_patterns/global/base/**/*.json'],
+    series(buildVariables, compileSass, concatCSS, (done) => {
       server.reload('*.css');
       done();
     })
   )
   watch(
-    ['./src/patterns/**/**/*.scss','./src/assets/**/*.scss'],
-    series(parallel(lintSass, compileSass), concatCSS, (done) => {
+    ['./src/assets/**/*.scss'],
+    series(compileSass, concatCSS, (done) => {
       server.reload('*.css');
       done();
     })
@@ -131,18 +133,42 @@ function watchFiles() {
 
   // Watch all my JS files and compile if a file changes.
   watch(
-    ['./src/patterns/**/**/*.js', './src/assets/js/**/*.js'],
-    series(parallel(lintJS, compileJS), (done) => {
+    ['./src/assets/js/**/*.js'],
+    series(compileJS, (done) => {
       server.reload('*.js');
       done();
     })
   );
 
   // Reload the browser after patternlab updates.
-  patternlab.events.on('patternlab-build-end', () => {
-    server.reload('*.html');
-  });
+  if (method === 'patternlab'){
+    patternlab.events.on('patternlab-build-end', () => {
+      server.reload('*.html');
+    });
+  }else{
+    watch(['./src/_patterns/components/**/*.twig'], (done) =>  {server.reload('*.html'); done()});
+    watch(['./src/_patterns/layout/**/*.twig'], (done) =>  {server.reload('*.html'); done()});
+    watch([
+      '../templates/**/*',
+    ], (done) => {
+      server.reload();
+      done();
+    })
+  }
 }
+
+
+// Start a server with BrowserSync to preview the site in
+function browserSync(done) {
+  server.init({
+    notify: false,
+    // server: PATHS.dist, port: PORT,
+    proxy: 'https://'+siteName+'.ddev.site:8443'
+  });
+  done();
+
+}
+
 
 
 
@@ -166,21 +192,23 @@ exports.watch = series(
 // Build task for Pattern Lab.
 exports.styleguide = buildPatternlab;
 
-exports.copyComponent = copyComponent;
+//exports.copyComponent = copyComponent;
 
-exports.deploy = parallel(
-  series(cleanWebComponents,cleanWebLayout,copyComponent, copyLayouts),
-  series(cleanWebDist, parallel(copyCSS, copyJS, copyFonts, copyImages))
-);
+// exports.deploy = parallel(
+//   series(cleanWebComponents,cleanWebLayout,copyComponent, copyLayouts),
+//   series(cleanWebDist, parallel(copyCSS, copyJS, copyFonts, copyImages))
+// );
 
+exports.ddev = series(
+  browserSync,
+  watchFiles
+);;
 
 // Default Task
 exports.default = series(
   parallel(cleanCSS, cleanJS),
   parallel(
-    lintSass,
     compileSass,
-    lintJS,
     compileJS,
     compressAssets,
     moveFonts,

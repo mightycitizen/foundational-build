@@ -1,4 +1,7 @@
 {
+  "contact_heading": "Contact Us",
+  "contact_subheading": "Department Name",
+  "contact_description": "Lorem ipsum",
   "contact_items": [
     {
       "label": "Phone",

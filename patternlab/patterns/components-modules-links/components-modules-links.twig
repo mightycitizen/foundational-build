@@ -1,7 +1,7 @@
 {% embed 'components/sections/section.twig' with {
     "intro_class": "text-center",
-    "section_heading": "Curriculum &amp; Instruction",
-    "section_description": "Description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+    "section_heading": section_heading | default ? section_heading : "Links List Module Heading",
+    "section_description": section_description | default ? section_description : "Lorem ipsum dolor sit amet",
   }
 %}
 

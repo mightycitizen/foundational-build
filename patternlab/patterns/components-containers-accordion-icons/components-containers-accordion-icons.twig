@@ -1,9 +1,9 @@
 
 
-<ul class="accordion {% if modifier %}accordion--{{ modifier }}{% endif %}"  data-accordion data-allow-all-closed="true">
+<ul class="accordion {% if modifier | default  %}accordion--{{ modifier | default }}{% endif %}"  data-accordion data-allow-all-closed="true">
 
   {% for item in items %}
-    {% if modifier == 'icons' and item.icon is empty %}
+    {% if modifier | default == 'icons' and item.icon | default is empty %}
       {% set item = item | merge( { icon: true } ) %}
     {% endif %}
     {%

@@ -1,5 +1,5 @@
 {% set heading_level = card.heading.level | default ? card.heading.level : 3 %}
-<div class="card {{ card.modifier | default ? 'card--' ~ card.modifier : '' }} {% if card.clickCard %}card--click{% endif %}" >
+<div class="card {{ card.modifier | default ? 'card--' ~ card.modifier : '' }} {% if card.clickCard | default %}card--click{% endif %}" >
   {% if card.header | default %}
   <div class="card-divider">
     {{ card.header }}
@@ -33,7 +33,7 @@
 
         {% include 'components/links/read-more.twig' with {
           read_more: {
-            class: h4,
+            class: 'h4',
             text: card.link.text,
             url: card.link.url
           }

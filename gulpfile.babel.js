@@ -7,6 +7,9 @@ const { series, src, dest, parallel, watch } = require('gulp');
 
 
 
+
+
+
 // Include Pattern Lab and config.
 const config = require('./patternlab-config.json');
 const patternlab = require('@pattern-lab/core')(config);
@@ -18,12 +21,13 @@ const patternlab = require('@pattern-lab/core')(config);
 const { compileSass, compileJS } = require('./gulp-tasks/compile.js');
 const { lintJS, lintSass } = require('./gulp-tasks/lint.js');
 const { compressAssets } = require('./gulp-tasks/compress.js');
-const { cleanCSS, cleanJS } = require('./gulp-tasks/clean.js');
+const { cleanCSS, cleanJS, cleanWebDist, cleanWebComponents, cleanWebLayout } = require('./gulp-tasks/clean.js');
+const { copyCSS, copyJS, copyFonts, copyImages, copyComponent, copyLayouts } = require('./gulp-tasks/copy.js');
 const { concatCSS } = require('./gulp-tasks/concat.js');
 const { moveFonts, movePatternCSS } = require('./gulp-tasks/move.js');
 const server = require('browser-sync').create();
 //const webpack = require('webpack-stream');
-const jsonCss = require('gulp-json-css');
+const jsonToSass = require('gulp-json-data-to-sass');
 
 
 // Compile Our Sass and JS
@@ -74,9 +78,7 @@ function watchPatternlab(done) {
     })
     .then(() => {
       done();
-    }).catch(err => {
-      console.log(err);
-    });;
+    });
 }
 
 /**
@@ -97,11 +99,13 @@ function buildPatternlab(done) {
 
 function buildVariables(){
 
-    return src('src/_patterns/global/base/**/*.json')
-        .pipe(jsonCss({
-            keepObjects: true
-        }))
-        .pipe(dest('src/assets/scss/variables/'));
+    return src('src/patterns/global/base/**/*.json')
+        .pipe(jsonToSass({
+            sass: 'src/assets/scss/_variables.scss',
+            prefix: 'theme',
+            suffix: '',
+            separator: '-'
+        }));
 
 }
 
@@ -111,15 +115,15 @@ function buildVariables(){
  */
 function watchFiles() {
   // Watch all my sass files and compile sass if a file changes.
-  watch(['./src/_patterns/global/base/**/*.json'],
-    series(buildVariables, compileSass, concatCSS, (done) => {
+  watch(['./src/patterns/global/base/**/*.json'],
+    series(buildVariables, parallel(lintSass, compileSass), concatCSS, (done) => {
       server.reload('*.css');
       done();
     })
   )
   watch(
-    ['./src/_patterns/**/**/*.scss','./src/assets/**/*.scss'],
-    series(compileSass, concatCSS, (done) => {
+    ['./src/patterns/**/**/*.scss','./src/assets/**/*.scss'],
+    series(parallel(lintSass, compileSass), concatCSS, (done) => {
       server.reload('*.css');
       done();
     })
@@ -127,7 +131,7 @@ function watchFiles() {
 
   // Watch all my JS files and compile if a file changes.
   watch(
-    ['./src/_patterns/**/**/*.js', './src/assets/js/**/*.js'],
+    ['./src/patterns/**/**/*.js', './src/assets/js/**/*.js'],
     series(parallel(lintJS, compileJS), (done) => {
       server.reload('*.js');
       done();
@@ -139,6 +143,8 @@ function watchFiles() {
     server.reload('*.html');
   });
 }
+
+
 
 // Watch task that runs a browsersync server.
 exports.watch = series(
@@ -159,6 +165,14 @@ exports.watch = series(
 
 // Build task for Pattern Lab.
 exports.styleguide = buildPatternlab;
+
+exports.copyComponent = copyComponent;
+
+exports.deploy = parallel(
+  series(cleanWebComponents,cleanWebLayout,copyComponent, copyLayouts),
+  series(cleanWebDist, parallel(copyCSS, copyJS, copyFonts, copyImages))
+);
+
 
 // Default Task
 exports.default = series(

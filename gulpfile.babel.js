@@ -7,13 +7,11 @@ const { series, src, dest, parallel, watch } = require('gulp');
 import fs            from 'fs';
 import yaml          from 'js-yaml';
 
-let ddevYmlFile = fs.readFileSync(__dirname + '/../.ddev/config.yaml', 'utf8');
-const siteName = yaml.load(ddevYmlFile).name;
-let method;
 
 // Include Pattern Lab and config.
 const config = require('./patternlab-config.json');
 const patternlab = require('@pattern-lab/core')(config);
+let method;
 
 // Include Our tasks.
 //
@@ -160,6 +158,10 @@ function watchFiles() {
 
 // Start a server with BrowserSync to preview the site in
 function browserSync(done) {
+  let ddevYmlFile = fs.readFileSync(__dirname + '/../.ddev/config.yaml', 'utf8');
+  const siteName = yaml.load(ddevYmlFile).name;
+
+
   server.init({
     notify: false,
     // server: PATHS.dist, port: PORT,

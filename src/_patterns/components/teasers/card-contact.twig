@@ -1,10 +1,12 @@
 <div class="card card--horizontal">
   <div class="card-section">
     <div class="grid-x grid-margin-x align-middle">
-      <div class="cell medium-7">
-        <h2>Contact Us</h2>
-        <h3>Department Name</h3>
-        <p class="m-b-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      <div class="cell large-7">
+        <h2>{{ contact_heading }}</h2>
+        <h3>{{ contact_subheading }}</h3>
+        {% if contact_description is not empty %}
+          <p class="m-b-3">{{ contact_description }}</p>
+        {% endif %}
         {% include 'components/links/read-more.twig' with {
           read_more: {
             "text": "Read More",
@@ -12,7 +14,7 @@
           }
         } %}
       </div>
-      <div class="cell medium-5">
+      <div class="cell large-5">
         <div class="p-y-3 p-x-4 bg-solid-gray-lightest">
           {% include 'components/informational/listing.twig' with {
           "listing_class": 'm-b-0',

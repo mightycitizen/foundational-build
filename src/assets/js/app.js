@@ -112,6 +112,21 @@ $.fn.isInViewport = function() {
   return viewportTop + offsetFactor*$(window).outerHeight() > elementTop && viewportTop < elementBottom;
 };
 
+
+// @select-url init
+
+const initSelectUrl = () => {
+  $(document).on('change', '.js-selectUrl', e => {
+    //alert('test2');
+    var url = e.target.value; // get selected value
+    if (url) { // require a URL
+        window.location = url; // redirect
+    }
+    return false;
+  })
+}
+
+
 const randomId = () => {
   return Math.random().toString(36).substr(2, 9);
 }
@@ -980,5 +995,6 @@ $(document).ready(function(){
   initFormHelpers(); // @form helpers init\
   initSlider(); // @slider init
   initSkipTo(); // @skip-to init
+  initSelectUrl(); // @select-url init
 })
 

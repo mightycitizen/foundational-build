@@ -9846,6 +9846,14 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .section:not([class*=bg-]) + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]), .section.bg-gradient--flip + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]) {
   padding-top: 0;
 }
+.section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]) {
+  padding-top: 1.6666666667rem;
+}
+@media print, screen and (min-width: 40em) {
+  .section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]) {
+    padding-top: 2.6666666667rem;
+  }
+}
 
 .step-list {
   counter-set: steps;

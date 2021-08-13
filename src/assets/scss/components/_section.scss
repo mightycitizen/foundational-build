@@ -57,5 +57,10 @@
     .section:not([class*=bg-]) + &, .section.bg-gradient--flip + &{
       padding-top: 0;
     }
+
+    .section:not([class*=bg-]).section--tight + &{
+      @include spacer(padding,top,6);
+    }
+
   }
 }

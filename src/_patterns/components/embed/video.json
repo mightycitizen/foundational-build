@@ -1,3 +1,8 @@
 {
-  "trigger": "click"
+  "trigger": "click",
+  "youtube": "gJ6APKIjFQY",
+  "image": {
+    "url": "//via.placeholder.com/1777x1000",
+    "alt": ""
+  }
 }

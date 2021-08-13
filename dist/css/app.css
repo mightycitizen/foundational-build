@@ -8092,6 +8092,11 @@ a.thumbnail image {
   margin-left: 0.4444444444rem;
 }
 
+span.button a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 .read-more {
   position: relative;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;

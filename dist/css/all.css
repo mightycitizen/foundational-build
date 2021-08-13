@@ -7823,24 +7823,6 @@ a.thumbnail image {
   }
 }
 
-.alert-bar {
-  padding: 0.8333333333rem 0;
-}
-.alert-bar_label {
-  display: inline-block;
-  margin-right: 0.4444444444rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.8888888889rem;
-  letter-spacing: 1px;
-}
-.alert-bar_label:after {
-  content: ":";
-}
-.alert-bar a {
-  color: inherit;
-}
-
 .a2a_svg {
   max-width: 1.3888888889rem;
   max-height: 1.3888888889rem;

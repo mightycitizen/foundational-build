@@ -27,7 +27,7 @@
             <h2><a href="{{ item.url }}">{{ item.heading }}</a></h2>
             {% if item_type | default != 'events' and item.date.full | default %}<p class="label m-b-2">{{ item.date.full }}</p>{% endif %}
             <p class="m-b-2">{{ item.summary }}</p>
-            {% if item.categories | length %}
+            {% if item.categories | default | length %}
               {% include 'components/inline-text/meta.twig' with {
                   categories: item.categories,
                   date: null

@@ -398,10 +398,10 @@ const initFormHelpers = () => {
   }
 
   $('form:not([data-abide]):not([data-freeform])').on('submit', function(){
-    disableSubmit($(this).find('[type="submit"]'));
+    disableSubmit($(this).find('[type="submit"]:not(.fui-btn)'));
   })
   $('[data-abide]').on('formvalid.zf.abide', function(){
-    disableSubmit($(this).find('[type="submit"]'));
+    disableSubmit($(this).find('[type="submit"]:not(.fui-btn)'));
   });
 }
 

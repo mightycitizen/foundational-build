@@ -1,7 +1,7 @@
 .inline-list{
   list-style-type: none;
   margin-left: 0;
-  li{
+  > li{
     display: inline-block;
     margin-left: 0;
     vertical-align: middle;
@@ -10,13 +10,13 @@
     }
   }
   &--top{
-    li{
+    > li{
       vertical-align: top;
     }
   }
   &--stacked{
     @include breakpoint(small only){
-      li{
+      > li{
         display: block;
         &:not(:last-child){
           margin-right: 0 !important;
@@ -26,7 +26,7 @@
     }
   }
   &--divided{
-    li{
+    > li{
       &:not(:last-child){
         &:after{
           content: "|";
@@ -38,14 +38,14 @@
     }
   }
   &--tight{
-    li{
+    > li{
       &:not(:last-child){
         margin-right: rem-calc($spacer/2);
       }
     }
   }
   &--wide{
-    li{
+    > li{
       &:not(:last-child){
         margin-right: rem-calc($spacer*3);
       }

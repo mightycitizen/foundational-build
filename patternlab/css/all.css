@@ -11654,36 +11654,36 @@ html, body, .l-wrapper {
   list-style-type: none;
   margin-left: 0;
 }
-.inline-list li {
+.inline-list > li {
   display: inline-block;
   margin-left: 0;
   vertical-align: middle;
 }
-.inline-list li:not(:last-child) {
+.inline-list > li:not(:last-child) {
   margin-right: 0.8888888889rem;
 }
-.inline-list--top li {
+.inline-list--top > li {
   vertical-align: top;
 }
 @media print, screen and (max-width: 39.99875em) {
-  .inline-list--stacked li {
+  .inline-list--stacked > li {
     display: block;
   }
-  .inline-list--stacked li:not(:last-child) {
+  .inline-list--stacked > li:not(:last-child) {
     margin-right: 0 !important;
     margin-bottom: 0.5555555556rem;
   }
 }
-.inline-list--divided li:not(:last-child):after {
+.inline-list--divided > li:not(:last-child):after {
   content: "|";
   position: absolute;
   opacity: 0.5;
   margin-left: 0.4444444444rem;
 }
-.inline-list--tight li:not(:last-child) {
+.inline-list--tight > li:not(:last-child) {
   margin-right: 0.2222222222rem;
 }
-.inline-list--wide li:not(:last-child) {
+.inline-list--wide > li:not(:last-child) {
   margin-right: 1.3333333333rem;
 }
 

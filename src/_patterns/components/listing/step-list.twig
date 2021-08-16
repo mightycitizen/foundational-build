@@ -3,12 +3,12 @@
     <li>
       <h2>{{ step.heading }}</h2>
       <p class="m-b-3">{{ step.description }}</p>
-      {% if link | default is not empty %}
+      {% if step.link | default is not empty %}
         {% include 'components/links/read-more.twig' with {
           read_more: {
-            text: link.text,
-            url: link.url,
-            target: link.target
+            text: step.link.text,
+            url: step.link.url,
+            target: step.link.target
           }
         }%}
       {% endif %}

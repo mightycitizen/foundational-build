@@ -1,26 +1,26 @@
 {
-  "links": {
+  "pagination_links": {
     "previous": "#",
     "pages": [
       {
         "url": "",
-        "pageIndex": 1,
+        "index": 1,
         "current": true
       },
       {
         "url": "",
-        "pageIndex": 2
+        "index": 2
       },
       {
         "url": "",
-        "pageIndex": 3
+        "index": 3
       },
       {
         "ellipses": true
       },
       {
         "url": "",
-        "pageIndex": 10
+        "index": 10
       }
 
     ],

@@ -3,7 +3,17 @@
 {% block main %}
   {% include "components/containers/hero.twig" %}
   {% include 'components/modules/wysiwyg.twig' %}
-  {% include 'components/modules/video.twig' %}
+  {% include 'components/modules/video.twig'
+    with {
+      "trigger": "click",
+      "youtube": "gJ6APKIjFQY",
+      "image": {
+        "url": "//via.placeholder.com/1777x1000",
+        "alt": ""
+      }
+    }
+
+  %}
   {% include 'components/modules/contact.twig' with {
       "phone": {
         "number": "(###) ### - ####",

@@ -17,6 +17,11 @@ $slide-margin-offset: 15; // to prevent shadow overflow issues
 	}
 }
 
+.slick-track{
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .slick-slide{
 	margin: rem-calc($slide-margin-offset) rem-calc($slide-margin-mobile);
 	@include breakpoint(large){

@@ -1,7 +1,7 @@
 {% embed 'components/sections/section.twig' with {
     "intro_class": "text-center",
     "section_heading": section_heading | default ? section_heading : "Links List Module Heading",
-    "section_description": section_description | default ? section_description : "Lorem ipsum dolor sit amet",
+    "section_description":  section_description | default,
   }
 %}
 
@@ -17,15 +17,17 @@
           {% endif %}
               <div class="cell medium-4">
 
-                {% include 'components/links/read-more.twig' with {
-                      "read_more": {
-                        "class": "h3",
-                        "url": link.url,
-                        "target": link.target,
-                        "text": link.text
+                {% if link | default is not empty %}
+                  {% include 'components/links/read-more.twig' with {
+                        "read_more": {
+                          "class": "h3",
+                          "url": link.url,
+                          "target": link.target,
+                          "text": link.text
+                        }
                       }
-                    }
-                %}
+                  %}
+                {% endif %}
 
               </div>
           {% if loop.last %}

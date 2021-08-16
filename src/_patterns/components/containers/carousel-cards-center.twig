@@ -3,27 +3,14 @@
     modifier: 'center'
   }%}
   {% block slide_content %}
-      {% for i in range (i, 5) %}
-          {% include "components/teasers/card.twig" with {
-          "card": {
-            lazyload_class: 'data-lazy',
-            "modifier": "special",
-            "image": {
-              "src": "https://source.unsplash.com/9wg5jCEPBsw/640x400",
-              "alt": "Alt Text"
-            },
-            "heading": {
-              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-              "level": "3",
-              "url": "#"
-            },
-            "summary": "This copy is optional, if nothing is entered nothing will display. Facit nulla in vulputate vulputate aliquam. Commodo esse habent tation nam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed orci lacus.",
-            "link": {
-              "url": "#",
-              "text":"Optional Link"
-            }
+      {% for card in cards %}
+        {% set card = card | merge({
+          lazyload_class: 'data-lazy',
+          modifier: "special"
+        }) %}
+        {% include "components/teasers/card.twig" with {
+            card: card
           }
-        }
         %}
       {% endfor %}
   {% endblock %}

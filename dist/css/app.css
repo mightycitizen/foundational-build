@@ -8080,15 +8080,24 @@ a.thumbnail image {
   transform: rotate(-45deg);
 }
 
-.button {
+.fui-btn {
+  background-color: #2953cc;
+  padding: 0.9444444444rem 1.8611111111rem;
+  color: #fff;
+  font-family: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+.button, .fui-btn {
   font-weight: bold;
   text-decoration: none;
   box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
 }
-.button.secondary:hover {
+.button.secondary:hover, .fui-btn.secondary:hover {
   background-color: #eca806;
 }
-.button + .button {
+.button + .button, .fui-btn + .button {
   margin-left: 0.4444444444rem;
 }
 
@@ -8273,6 +8282,11 @@ span.button a {
     margin-left: -0.5555555556rem;
     margin-right: -0.5555555556rem;
   }
+}
+
+.slick-track {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .slick-slide {

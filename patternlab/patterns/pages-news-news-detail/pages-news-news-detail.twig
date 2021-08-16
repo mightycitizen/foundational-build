@@ -9,7 +9,7 @@
     heading: 'News Detail'
   }%}
   {% embed 'components/sections/section.twig' with {
-    class: 'section--tight'
+    class: 'section--tight section--collapse'
   } %}
     {% block section_content %}
       {% include 'components/inline-text/meta.twig' with {
@@ -17,11 +17,13 @@
         categories: [
           {
             url: "#",
-            title: "News"
+            title: "News Category"
           }
         ]
       }%}
     {% endblock %}
   {% endembed %}
-  {% include 'components/modules/wysiwyg.twig' %}
+  {% include 'components/modules/wysiwyg.twig' with {
+    class: 'section--collapse'
+  }%}
 {% endblock %}

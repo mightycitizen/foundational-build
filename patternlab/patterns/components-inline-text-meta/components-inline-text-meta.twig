@@ -1,11 +1,15 @@
-<span class="text-smaller font-bold">
-  {{ date }}
-  {% if date | default and categories | length %}
-    <span class="divider"></span>
+<ul class="inline-list inline-list--divided">
+  {% if date | default %}
+    <li>
+      <span class="label">{{ date }}</span>
+    </li>
   {% endif %}
+
   {% if categories | length %}
-    <ul class="inline-list display-inlineBlock">
-      {% for category in categories %}<li><a href="{{ category.url }}">{{ category.title }}</a></li>{% endfor %}
-    </ul>
+    <li>
+      <ul class="text-smaller font-bold inline-list display-inlineBlock">
+        {% for category in categories %}<li><a href="{{ category.url }}">{{ category.title }}</a></li>{% endfor %}
+      </ul>
+    </li>
   {% endif %}
-</span>
+</ul>

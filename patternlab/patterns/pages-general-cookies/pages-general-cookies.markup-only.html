@@ -11,7 +11,7 @@
       <div class="cell medium-2 medium-offset-8 show-for-large">
 
         <div class="search-form">
-          <form action="">
+          <form action="/search">
   <div class="input-group simple">
     <label for="keywords" class="show-for-sr">Keywords</label>
     <input class="input-group-field" placeholder="Search" type="search" id="keywords">
@@ -383,7 +383,7 @@
                   </ul>
               </li>
             <li class="hide-for-large">
-        <form action="">
+        <form action="/search">
   <div class="input-group simple">
     <label for="keywords" class="show-for-sr">Keywords</label>
     <input class="input-group-field" placeholder="Search" type="search" id="keywords">
@@ -464,11 +464,11 @@
       <div class="loader"><div></div><div></div><div></div><div></div></div>
     </div>
     <div class="video-image-wrapper">
-      <img src="//via.placeholder.com/1777x1000" alt="" class="video-image">
+      <img data-src="" alt="" class="video-image js-lazy">
     </div>
     <div class="video-container">
       <div class="youtube-wrapper">
-        <div class="youtube-player" data-youtube-id="gJ6APKIjFQY"></div>
+        <div class="youtube-player" data-youtube-id=""></div>
       </div>
     </div>
   </div>
@@ -687,18 +687,9 @@ Room
           <div class="card card--horizontal  " >
   <div class="card-section">
     <div class="grid-x grid-margin-x align-middle">
-      <div class="cell medium-5 large-5 ">
-                  <div class="card-image">
-            <img class="js-lazy" data-src="https://source.unsplash.com/9wg5jCEPBsw/376x236" alt="Alt Text">
-          </div>
-              </div>
-      <div class="cell medium-7 large-7 ">
-       <h3 class="card-title ">Horizontal Card</h3>
-        
-          <p class="m-b-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                          <span class="h4">
-            <a href="#" class="read-more">Optional Link</a>
-          </span>
+            <div class="cell medium-7 large-7 ">
+       <h3 class="card-title ">Title</h3>
+                                    <span class="h4"><a href="" class="read-more"></a></span>
               </div>
     </div>
   </div>
@@ -720,18 +711,9 @@ Room
           <div class="card card--horizontal  " >
   <div class="card-section">
     <div class="grid-x grid-margin-x align-middle">
-      <div class="cell medium-5 large-5 ">
-                  <div class="card-image">
-            <img class="js-lazy" data-src="https://source.unsplash.com/9wg5jCEPBsw/376x236" alt="Alt Text">
-          </div>
-              </div>
-      <div class="cell medium-7 large-7 ">
-       <h3 class="card-title ">Horizontal Card</h3>
-        
-          <p class="m-b-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                          <span class="h4">
-            <a href="#" class="read-more">Optional Link</a>
-          </span>
+            <div class="cell medium-7 large-7 ">
+       <h3 class="card-title ">Title</h3>
+                                    <span class="h4"><a href="" class="read-more"></a></span>
               </div>
     </div>
   </div>
@@ -753,12 +735,12 @@ Room
           <div class="card card--horizontal  " >
   <div class="card-section">
     <div class="grid-x grid-margin-x align-middle">
-      <div class="cell medium-5 large-4 ">
-                  <div class="card-image">
+              <div class="cell medium-5 large-4 ">
+          <div class="card-image">
             <img  data-src="https://source.unsplash.com/9wg5jCEPBsw/400x400" class="js-lazy" alt="Alt Text">
           </div>
-              </div>
-      <div class="cell medium-7 large-8 ">
+        </div>
+            <div class="cell medium-7 large-8 ">
         <blockquote class="unstyled-blockquote">
           <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at placerat lacus. Donec efficitur orci id dolor condimentum, eu vestibulum diam luctus. Integer non ex et neque eleifend.</p>
                       <cite>First Name Lastname, Title</cite>
@@ -1102,12 +1084,7 @@ Room
             <div class="card card--horizontal  " >
   <div class="card-section">
     <div class="grid-x grid-margin-x align-middle">
-      <div class="cell medium-5 large-4 ">
-                  <div class="card-image">
-            <img data-lazy="https://source.unsplash.com/9wg5jCEPBsw/400x400"  alt="Alt Text">
-          </div>
-              </div>
-      <div class="cell medium-7 large-8 ">
+            <div class="cell  ">
         <blockquote class="unstyled-blockquote">
           <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at placerat lacus. Donec efficitur orci id dolor condimentum, eu vestibulum diam luctus. Integer non ex et neque eleifend.</p>
                       <cite>Firstname LastName, Company
@@ -1123,12 +1100,7 @@ Line Three</cite>
             <div class="card card--horizontal  " >
   <div class="card-section">
     <div class="grid-x grid-margin-x align-middle">
-      <div class="cell medium-5 large-4 ">
-                  <div class="card-image">
-            <img data-lazy="https://source.unsplash.com/9wg5jCEPBsw/400x400"  alt="Alt Text">
-          </div>
-              </div>
-      <div class="cell medium-7 large-8 ">
+            <div class="cell  ">
         <blockquote class="unstyled-blockquote">
           <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at placerat lacus. Donec efficitur orci id dolor condimentum, eu vestibulum diam luctus. Integer non ex et neque eleifend.</p>
                       <cite>Firstname LastName, Company</cite>
@@ -1166,59 +1138,30 @@ Line Three</cite>
                     <div class="section_content">
           <div class="slick-wrap">
   <div class="js-slick--center  " >
-                    <div class="card card--special " >
+                          <div class="card card--special " >
         <div class="card-image">
-      <img src="https://source.unsplash.com/9wg5jCEPBsw/640x400" alt="Alt Text">
-                </div>
+      <img src="https://source.unsplash.com/9wg5jCEPBsw/406x207" alt="Alt Text">
+                    <span class=" flag"><i class="fas fa-key"></i>Flag Text</span>
+          </div>
     <div class="card-section" >
         <h3 class="card-title ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
      
         <span class="h4"><a href="#" class="read-more">Optional Link</a></span>
               </div>
 </div>
-                <div class="card card--special " >
+                      <div class="card card--special " >
         <div class="card-image">
-      <img src="https://source.unsplash.com/9wg5jCEPBsw/640x400" alt="Alt Text">
+      <img src="https://source.unsplash.com/9wg5jCEPBsw/406x207" alt="Alt Text">
                 </div>
     <div class="card-section" >
-        <h3 class="card-title ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+        <h3 class="card-title ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Another line here to show multiple lines</h3>
      
         <span class="h4"><a href="#" class="read-more">Optional Link</a></span>
               </div>
 </div>
-                <div class="card card--special " >
+                      <div class="card card--special " >
         <div class="card-image">
-      <img src="https://source.unsplash.com/9wg5jCEPBsw/640x400" alt="Alt Text">
-                </div>
-    <div class="card-section" >
-        <h3 class="card-title ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-     
-        <span class="h4"><a href="#" class="read-more">Optional Link</a></span>
-              </div>
-</div>
-                <div class="card card--special " >
-        <div class="card-image">
-      <img src="https://source.unsplash.com/9wg5jCEPBsw/640x400" alt="Alt Text">
-                </div>
-    <div class="card-section" >
-        <h3 class="card-title ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-     
-        <span class="h4"><a href="#" class="read-more">Optional Link</a></span>
-              </div>
-</div>
-                <div class="card card--special " >
-        <div class="card-image">
-      <img src="https://source.unsplash.com/9wg5jCEPBsw/640x400" alt="Alt Text">
-                </div>
-    <div class="card-section" >
-        <h3 class="card-title ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-     
-        <span class="h4"><a href="#" class="read-more">Optional Link</a></span>
-              </div>
-</div>
-                <div class="card card--special " >
-        <div class="card-image">
-      <img src="https://source.unsplash.com/9wg5jCEPBsw/640x400" alt="Alt Text">
+      <img src="https://source.unsplash.com/9wg5jCEPBsw/406x207" alt="Alt Text">
                 </div>
     <div class="card-section" >
         <h3 class="card-title ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
@@ -1253,19 +1196,19 @@ Line Three</cite>
           <ol class="step-list">
       <li>
       <h2>Heading</h2>
-      <p class="m-b-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-      <span class=""><a href="#" class="read-more">Read More about Lorem Ipsum</a></span>
-    </li>
+      <p class="m-b-3"></p>
+              <span class=""><a href="" class="read-more"></a></span>
+          </li>
       <li>
       <h2>Heading</h2>
-      <p class="m-b-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-      <span class=""><a href="#" class="read-more">Read More about Lorem Ipsum</a></span>
-    </li>
+      <p class="m-b-3"></p>
+              <span class=""><a href="" class="read-more"></a></span>
+          </li>
       <li>
       <h2>Heading</h2>
-      <p class="m-b-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-      <span class=""><a href="#" class="read-more">Read More about Lorem Ipsum</a></span>
-    </li>
+      <p class="m-b-3"></p>
+              <span class=""><a href="" class="read-more"></a></span>
+          </li>
   
 </ol>
 
@@ -1395,52 +1338,18 @@ Line Three</cite>
                                           <div class="grid-x">
                         <div class="cell medium-4">
 
-                <span class="h3"><a href="#" class="read-more">Accountability</a></span>
-
+                                  <span class="h3"><a href="" class="read-more"></a></span>
+                
               </div>
                                           <div class="cell medium-4">
 
-                <span class="h3"><a href="#" class="read-more">Assessment</a></span>
-
+                                  <span class="h3"><a href="" class="read-more"></a></span>
+                
               </div>
                                           <div class="cell medium-4">
 
-                <span class="h3"><a href="#" class="read-more">Classroom Resources</a></span>
-
-              </div>
-                                                      </div>
-                        <div class="grid-x">
-                        <div class="cell medium-4">
-
-                <span class="h3"><a href="#" class="read-more">Courses Affected by Recent Law</a></span>
-
-              </div>
-                                          <div class="cell medium-4">
-
-                <span class="h3"><a href="#" class="read-more">Graduation Requirements</a></span>
-
-              </div>
-                                          <div class="cell medium-4">
-
-                <span class="h3"><a href="#" class="read-more">Link that is long and can wrap to two lines</a></span>
-
-              </div>
-                                                      </div>
-                        <div class="grid-x">
-                        <div class="cell medium-4">
-
-                <span class="h3"><a href="#" class="read-more">Special Education</a></span>
-
-              </div>
-                                          <div class="cell medium-4">
-
-                <span class="h3"><a href="#" class="read-more">TEKS</a></span>
-
-              </div>
-                                          <div class="cell medium-4">
-
-                <span class="h3"><a href="#" class="read-more">TEKS Resource System (formerly CSCOPE)</a></span>
-
+                                  <span class="h3"><a href="" class="read-more"></a></span>
+                
               </div>
                       </div>
                         </div>

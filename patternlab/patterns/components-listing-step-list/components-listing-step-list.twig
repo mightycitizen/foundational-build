@@ -1,9 +1,17 @@
 <ol class="step-list">
   {% for step in steps %}
     <li>
-      <h2>Heading</h2>
-      <p class="m-b-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-      {% include 'components/links/read-more.twig' %}
+      <h2>{{ step.heading }}</h2>
+      <p class="m-b-3">{{ step.description }}</p>
+      {% if link | default is not empty %}
+        {% include 'components/links/read-more.twig' with {
+          read_more: {
+            text: link.text,
+            url: link.url,
+            target: link.target
+          }
+        }%}
+      {% endif %}
     </li>
   {% endfor %}
 

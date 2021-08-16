@@ -1,13 +1,13 @@
 <div class="card card--horizontal {{ card.modifier }} {% if card.clickCard | default %}card--click{% endif %}" >
   <div class="card-section">
     <div class="grid-x grid-margin-x align-middle">
-      <div class="cell medium-5 large-5 {% if card.image.alignment | default and card.image.alignment == 'right' %}medium-order-2{% endif %}">
-        {% if card.image | default %}
+      {% if card.image | default %}
+        <div class="cell medium-5 large-5 {% if card.image.alignment | default and card.image.alignment == 'right' %}medium-order-2{% endif %}">
           <div class="card-image">
             <img class="js-lazy" data-src="{{ card.image.src }}" alt="{{ card.image.alt }}">
           </div>
-        {% endif %}
-      </div>
+        </div>
+      {% endif %}
       <div class="cell medium-7 large-7 {% if card.image.alignment  | default and card.image.alignment == 'right' %}medium-order-1{% endif %}">
        <h{{ card.heading.level }} class="card-title {{ card.heading.modifier  | default }}">{{ card.heading.text }}</h{{ card.heading.level }}>
         {% if card.summary | default %}
@@ -15,9 +15,10 @@
           <p class="m-b-3">{{ card.summary }}</p>
         {% endif %}
         {% if card.link | default %}
-          <span class="h4">
-            <a href="{{ card.link.url }}" class="{% if card.link.style  | default %}{{ card.link.style }}{% else %}read-more{% endif %}">{{ card.link.text }}</a>
-          </span>
+          {% set link = card.link | merge({ class: 'h4' })%}
+          {% include 'components/links/read-more.twig' with {
+            read_more: link
+          }%}
         {% endif %}
       </div>
     </div>

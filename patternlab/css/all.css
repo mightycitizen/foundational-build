@@ -7823,24 +7823,6 @@ a.thumbnail image {
   }
 }
 
-.alert-bar {
-  padding: 0.8333333333rem 0;
-}
-.alert-bar_label {
-  display: inline-block;
-  margin-right: 0.4444444444rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.8888888889rem;
-  letter-spacing: 1px;
-}
-.alert-bar_label:after {
-  content: ":";
-}
-.alert-bar a {
-  color: inherit;
-}
-
 .a2a_svg {
   max-width: 1.3888888889rem;
   max-height: 1.3888888889rem;
@@ -8098,16 +8080,30 @@ a.thumbnail image {
   transform: rotate(-45deg);
 }
 
-.button {
+.fui-btn {
+  background-color: #2953cc;
+  padding: 0.9444444444rem 1.8611111111rem;
+  color: #fff;
+  font-family: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+.button, .fui-btn {
   font-weight: bold;
   text-decoration: none;
   box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
 }
-.button.secondary:hover {
+.button.secondary:hover, .fui-btn.secondary:hover {
   background-color: #eca806;
 }
-.button + .button {
+.button + .button, .fui-btn + .button {
   margin-left: 0.4444444444rem;
+}
+
+span.button a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .read-more {
@@ -8286,6 +8282,11 @@ a.thumbnail image {
     margin-left: -0.5555555556rem;
     margin-right: -0.5555555556rem;
   }
+}
+
+.slick-track {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .slick-slide {
@@ -9863,6 +9864,14 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .section:not([class*=bg-]) + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]), .section.bg-gradient--flip + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]) {
   padding-top: 0;
+}
+.section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]) {
+  padding-top: 1.6666666667rem;
+}
+@media print, screen and (min-width: 40em) {
+  .section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]) {
+    padding-top: 2.6666666667rem;
+  }
 }
 
 .step-list {

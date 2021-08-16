@@ -1,2 +1,28 @@
 .alert-bar{
+
+  padding: rem-calc(15 0);
+  &_label{
+    display: inline-block;
+    margin-right: rem-calc(8);
+    font-weight: $global-weight-bold;
+    text-transform: uppercase;
+    font-size: rem-calc(16);
+    letter-spacing: 1px;
+    &:after{
+      content: ":";
+    }
+  }
+  a{
+    color: inherit;
+  }
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  // &--sticky{
+  //   position: fixed;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   margin-bottom: 0;
+  // }
 }

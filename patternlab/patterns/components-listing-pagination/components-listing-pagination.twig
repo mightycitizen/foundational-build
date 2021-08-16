@@ -9,9 +9,9 @@
           {% if link.ellipses | default %}
             &hellip;
           {% elseif link.current | default %}
-            <strong><span class="show-for-sr">Page</span> {{ link.pageIndex }}</strong>
+            <strong><span class="show-for-sr">Page</span> {{ link.index }}</strong>
           {% else %}
-            <a href="{{ link.url }}" aria-label="Page {{ link.pageIndex }}"><span class="show-for-sr">Page</span> {{ link.pageIndex }}</a>
+            <a href="{{ link.url }}" aria-label="Page {{ link.index }}"><span class="show-for-sr">Page</span> {{ link.index }}</a>
           {% endif %}
         </li>
       {% endfor %}

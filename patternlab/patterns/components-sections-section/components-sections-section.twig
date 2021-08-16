@@ -36,7 +36,7 @@
   {% endif %}
 {% endset %}
 <section class="section {{ class | default }} {% if style | default %}section--{{ style }} {% endif %} {% if collapse | default %}section--collapse{% endif %}" >
-  {% if section_background | default %}<div class="js-lazy section_background" data-bg="{{ section_background }}"></div>{% endif %}
+  {% if section_background | default %}<div class="js-lazy section_background" data-bg="{{ section_background.url }}"></div>{% endif %}
   <div class="grid-container {{ grid_class | default }}">
     {% if style | default and (style == 'side') %}
       <div class="grid-x align-middle align-center">

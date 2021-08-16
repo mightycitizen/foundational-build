@@ -36,7 +36,7 @@
             class: 'h4',
             text: card.link.text,
             url: card.link.url,
-            target: card.link.target
+            target: card.link.target | default
           }
         } %}
         {% if card.clickCard | default %}

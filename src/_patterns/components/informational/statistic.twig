@@ -3,8 +3,8 @@
     value: value
   } %}
   <p class="lead m-b-0">
-    {% if statistic_link | default %}
-      <a href="{{ statistic_link }}">{{ text }}</a>
+    {% if link | default %}
+      <a href="{{ link.url }}" {% if link.target %}target="{{ link.target }}"{% endif %}>{{ text }}</a>
     {% else %}
       {{ text }}
     {% endif %}

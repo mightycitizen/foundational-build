@@ -1,5 +1,5 @@
 {
   "value": 20,
   "text": "Text here with a link lorem ipsum",
-  "statistic_link": "http://google.com"
+  "link": "http://google.com"
 }

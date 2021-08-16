@@ -7,12 +7,11 @@
         {% if contact_description is not empty %}
           <p class="m-b-3">{{ contact_description }}</p>
         {% endif %}
-        {% include 'components/links/read-more.twig' with {
-          read_more: {
-            "text": "Read More",
-            "url": "#"
-          }
-        } %}
+        {% if link | default %}
+          {% include 'components/links/read-more.twig' with {
+            read_more: link
+          } %}
+        {% endif %}
       </div>
       <div class="cell large-5">
         <div class="p-y-3 p-x-4 bg-solid-gray-lightest">

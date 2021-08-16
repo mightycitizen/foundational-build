@@ -7813,12 +7813,12 @@ a.thumbnail image {
     width: 2.6666666667rem;
   }
 }
-.accordion--icons .accordion-title .accordion-icon:not([class*=icon-]):before {
+.accordion--icons .accordion-title .accordion-icon:not([class*=fa-]):not([class*=icon-]):before {
   content: counter(steps);
   font-size: 1.3333333333rem;
 }
 @media print, screen and (max-width: 39.99875em) {
-  .accordion--icons .accordion-title .accordion-icon:not([class*=icon-]):before {
+  .accordion--icons .accordion-title .accordion-icon:not([class*=fa-]):not([class*=icon-]):before {
     font-size: 1rem;
   }
 }

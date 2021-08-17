@@ -52,7 +52,13 @@ $error-message-class: '.fui-error-message';
     color: $helptext-color;
     font-size: $helptext-font-size;
     font-style: $helptext-font-style;
-    @include spacer(margin,bottom,2);
+
+    .fui-instructions-above-input &{
+      @include spacer(margin,bottom,2);
+    }
+    .fui-instructions-below-input &{
+      @include spacer(margin,top,1);
+    }
     *:last-child{
       margin-bottom: 0;
     }

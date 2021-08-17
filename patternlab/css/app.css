@@ -7694,7 +7694,7 @@ a.thumbnail image {
   padding-top: 0.625rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  padding-bottom: 0.9375rem;
+  padding-bottom: 0.625rem;
   padding-right: 2.6666666667rem;
   width: 100%;
   text-align: left;
@@ -7714,7 +7714,7 @@ a.thumbnail image {
 }
 @media print, screen and (min-width: 40em) {
   .accordion-title {
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
   }
 }
 @media print, screen and (max-width: 39.99875em) {
@@ -11841,11 +11841,21 @@ html, body, .l-wrapper {
   color: #333;
   font-size: 0.7777777778rem;
   font-style: normal;
+}
+.fui-instructions-above-input .fui-instructions {
   margin-bottom: 0.625rem;
 }
 @media print, screen and (min-width: 40em) {
-  .fui-instructions {
+  .fui-instructions-above-input .fui-instructions {
     margin-bottom: 1rem;
+  }
+}
+.fui-instructions-below-input .fui-instructions {
+  margin-top: 0.3125rem;
+}
+@media print, screen and (min-width: 40em) {
+  .fui-instructions-below-input .fui-instructions {
+    margin-top: 0.5rem;
   }
 }
 .fui-instructions *:last-child {

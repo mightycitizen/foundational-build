@@ -256,7 +256,7 @@ $abide-labels: true;
 $input-background-invalid: get-color(alert);
 $form-label-color-invalid: get-color(alert);
 $input-error-color: get-color(alert);
-$input-error-font-size: rem-calc(18);
+$input-error-font-size: rem-calc(16);
 $input-error-font-weight: $global-weight-bold;
 
 // 7. Accordion
@@ -464,9 +464,9 @@ $fieldset-padding: rem-calc(20);
 $fieldset-margin: rem-calc(18 0);
 $legend-padding: rem-calc(0 3);
 $form-spacing: rem-calc(16);
-$helptext-color: $black;
-$helptext-font-size: rem-calc(13);
-$helptext-font-style: italic;
+$helptext-color: $dark-gray;
+$helptext-font-size: rem-calc(14);
+$helptext-font-style: normal;
 $input-prefix-color: $black;
 $input-prefix-background: $light-gray;
 $input-prefix-border: 1px solid $medium-gray;

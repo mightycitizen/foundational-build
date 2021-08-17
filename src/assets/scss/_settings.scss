@@ -65,9 +65,9 @@
 // 1. Global
 // ---------
 
-$global-font-size: 112.5%; // 18/16
-$global-width: rem-calc(1340);
-$global-lineheight: 1.4;
+// MC Standard Build Custom Vars
+
+$cms: 'Craft';
 
 $font-scale-mobile: 0.75;
 
@@ -87,6 +87,13 @@ $spacers: (
         9,
         10
 ) !default;
+
+/* ---- */
+
+$global-font-size: 112.5%; // 18/16
+$global-width: rem-calc(1340);
+$global-lineheight: 1.4;
+
 
 
 $foundation-palette: (

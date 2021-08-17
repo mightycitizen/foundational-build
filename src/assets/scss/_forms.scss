@@ -5,57 +5,66 @@
   width: rem-calc(300);
 }
 
-.fui-alert{
-  @include spacer(padding,all,2);
-  @include spacer(margin,bottom,3);
-  font-weight: bold;
+$field-wrapper-class: '.fui-field-container';
+$input-error-class: '.fui-error';
+$error-message-class: '.fui-error-message';
 
-  &-success{
-    background-color: rgba($success-color,0.5);
-  }
-}
+@if ($cms == 'Craft') {
 
+  /* FORMIE STYLING */
+  .fui-alert{
+    @include spacer(padding,all,2);
+    @include spacer(margin,bottom,3);
+    font-weight: bold;
 
-/* FORMIE STYLING */
-
-.fui-row{
-  .fui-field{
-    &:not(:first-child){
-      @include spacer(margin,left,2);
-    }
-    &:not(:last-child){
-      @include spacer(margin,right,2);
+    &-success{
+      background-color: rgba($success-color,0.5);
     }
   }
-}
 
-.fui-error{
-  border-color: $input-error-color;
-}
+  .fui-row{
+    .fui-field{
+      &:not(:first-child){
+        @include spacer(margin,left,2);
+      }
+      &:not(:last-child){
+        @include spacer(margin,right,2);
+      }
+    }
+  }
 
-.fui-error-message{
-  color: $input-error-color;
-  font-size: $input-error-font-size;
-  font-weight: $input-error-font-weight;
-  @include spacer(margin,top,0.5);
-}
+  .fui-error{
+    border-color: $input-error-color;
+  }
 
-.fui-instructions{
-  color: $helptext-color;
-  font-size: $helptext-font-size;
-  font-style: $helptext-font-style;
-  @include spacer(margin,bottom,2);
-  *:last-child{
-    margin-bottom: 0;
+  .fui-error-message{
+    color: $input-error-color;
+    font-size: $input-error-font-size;
+    font-weight: $input-error-font-weight;
+    @include spacer(margin,top,0.5);
+  }
+
+  .fui-instructions{
+    color: $helptext-color;
+    font-size: $helptext-font-size;
+    font-style: $helptext-font-style;
+    @include spacer(margin,bottom,2);
+    *:last-child{
+      margin-bottom: 0;
+    }
   }
 }
 
-.form-input, .fui-field-container{
+
+
+.form-input, #{$field-wrapper-class}{
   @include spacer(margin,bottom,3);
   select, [type=text], [type=password], [type=date], [type=datetime], [type=datetime-local], [type=month], [type=week], [type=email], [type=number], [type=search], [type=tel], [type=time], [type=url], [type=color], textarea{
     margin-bottom: 0;
   }
 }
+
+// CUSTOM FORM STYLES //
 
 input[type="checkbox"],
 input[type="radio"]{
@@ -109,8 +118,6 @@ input[type="radio"]{
     }
   }
 }
-
-
 
 input[type="checkbox"] {
   &.custom, &.fui-input{
@@ -205,8 +212,7 @@ input[type="radio"], input[type="checkbox"]{
       }
     }
   }
-}
-
+}s
 
 .input-group{
   &.simple{
@@ -311,14 +317,14 @@ legend{
 }
 
 
-.is-invalid-input, .fui-error{
+.is-invalid-input, #{$input-error-class}{
   &:not(:focus){
     color: $body-font-color;
     background-color: $white;
   }
 }
 
-.form-error, .fui-error-message{
+.form-error, #{$error-message-class}{
   background-color: map-get($additional-palette,'tertiary-lightest');
   color: $body-font-color;
   padding: rem-calc(8 10);

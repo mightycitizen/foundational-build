@@ -11977,35 +11977,35 @@ input[type=radio].custom:not(foo):focus:not(:checked) + label, input[type=radio]
   color: #fff;
 }
 
-s .input-group.simple input.input-group-field {
+.input-group.simple input.input-group-field {
   border-right: 0;
 }
-s .input-group.simple input.input-group-field::-moz-placeholder {
+.input-group.simple input.input-group-field::-moz-placeholder {
   color: #666;
   font-size: 0.7777777778rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
 }
-s .input-group.simple input.input-group-field:-ms-input-placeholder {
+.input-group.simple input.input-group-field:-ms-input-placeholder {
   color: #666;
   font-size: 0.7777777778rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
 }
-s .input-group.simple input.input-group-field::placeholder {
+.input-group.simple input.input-group-field::placeholder {
   color: #666;
   font-size: 0.7777777778rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
 }
-s .input-group.simple input.input-group-field:focus + .input-group-button, s .input-group.simple .input-wrapper:focus-within + .input-group-button {
+.input-group.simple input.input-group-field:focus + .input-group-button, .input-group.simple .input-wrapper:focus-within + .input-group-button {
   border: 1px solid #2953cc;
   border-left: 0;
 }
-s .input-group.simple .input-group-button {
+.input-group.simple .input-group-button {
   border: 1px solid #ccc;
   border-left: 0;
   padding: 0 0.5555555556rem;
@@ -12013,7 +12013,7 @@ s .input-group.simple .input-group-button {
   color: #2953cc;
   transition: border-color 0.25s ease-in-out;
 }
-s .input-group.simple .input-group-button button {
+.input-group.simple .input-group-button button {
   color: inherit;
 }
 

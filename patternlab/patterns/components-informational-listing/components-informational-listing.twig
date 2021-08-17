@@ -1,0 +1,12 @@
+  <ul class="unstyled-list {{ listing_class }}">
+
+    {% for item in items %}
+
+      <li>
+        <span class="label {% if item.icon | default %}has-icon{% endif %}">{% if item.icon | default %}<i class="icon icon-{{ item.icon }}"></i>{% endif %}{{ item.label }}</span><br />
+        {{ item.value }}
+      </li>
+
+    {% endfor %}
+
+  </ul>

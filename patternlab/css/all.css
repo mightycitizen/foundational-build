@@ -11785,7 +11785,7 @@ html, body, .l-wrapper {
     margin-bottom: 1.3333333333rem;
   }
 }
-.form-input [type=text], .form-input [type=password], .form-input [type=date], .form-input [type=datetime], .form-input [type=datetime-local], .form-input [type=month], .form-input [type=week], .form-input [type=email], .form-input [type=number], .form-input [type=search], .form-input [type=tel], .form-input [type=time], .form-input [type=url], .form-input [type=color], .form-input textarea {
+.form-input select, .form-input [type=text], .form-input [type=password], .form-input [type=date], .form-input [type=datetime], .form-input [type=datetime-local], .form-input [type=month], .form-input [type=week], .form-input [type=email], .form-input [type=number], .form-input [type=search], .form-input [type=tel], .form-input [type=time], .form-input [type=url], .form-input [type=color], .form-input textarea {
   margin-bottom: 0;
 }
 
@@ -11982,6 +11982,24 @@ legend {
   color: #333;
   padding: 0.4444444444rem 0.5555555556rem;
   margin-top: 0;
+}
+
+.form-group .form-input, .form-group .button[type=submit] {
+  margin-bottom: 0;
+  width: 100%;
+}
+.form-group .button[type=submit] {
+  height: 3.1777777778rem;
+}
+@media print, screen and (max-width: 39.99875em) {
+  .form-group .button[type=submit] {
+    margin-top: 0.5555555556rem;
+  }
+}
+@media print, screen and (max-width: 39.99875em) and (min-width: 40em) {
+  .form-group .button[type=submit] {
+    margin-top: 0.8888888889rem;
+  }
 }
 
 .has-icon {

@@ -1,0 +1,47 @@
+{% set heading_level = card.heading.level | default ? card.heading.level : 3 %}
+<div class="card {{ card.modifier | default ? 'card--' ~ card.modifier : '' }} {% if card.clickCard | default %}card--click{% endif %}" >
+  {% if card.header | default %}
+  <div class="card-divider">
+    {{ card.header }}
+  </div>
+  {% endif %}
+  {% if card.image | default %}
+    <div class="card-image">
+      <img src="{{ card.image.src }}" alt="{{ card.image.alt }}">
+      {% if card.type.handle | default == 'event' and card.date | default %}
+        {% include 'components/inline-text/date.twig' with {
+          date: card.date
+        } %}
+      {% endif %}
+      {% if card.flag | default %}
+        {% include 'components/inline-text/flag.twig' with {
+          flag_text: card.flag
+        }%}
+      {% endif %}
+    </div>
+  {% endif %}
+  <div class="card-section" {% if equalize | default %}data-equalizer-watch{% endif %}>
+    {% if card.image | default is empty %}
+        {% if card.flag | default %}
+          {% include 'components/inline-text/flag.twig' with {
+            flag_class: "card_flag"
+          }%}
+      {% endif %}
+    {% endif %}
+    <h{{ heading_level }} class="card-title {{ card.heading.modifier | default }}">{{ card.heading.text }}</h{{ heading_level }}>
+     {% if card.link | default %}
+
+        {% include 'components/links/read-more.twig' with {
+          read_more: {
+            class: 'h4',
+            text: card.link.text,
+            url: card.link.url,
+            target: card.link.target | default
+          }
+        } %}
+        {% if card.clickCard | default %}
+          <a href="{{ card.link.url }}" class="card_click">{{ card.link.text }}</a>
+        {% endif %}
+    {% endif %}
+  </div>
+</div>

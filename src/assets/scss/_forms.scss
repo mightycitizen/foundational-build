@@ -16,7 +16,9 @@ $error-message-class: '.fui-error-message';
     @include spacer(padding,all,2);
     @include spacer(margin,bottom,3);
     font-weight: bold;
-
+    &-error{
+      background-color: rgba($alert-color,0.5);
+    }
     &-success{
       background-color: rgba($success-color,0.5);
     }
@@ -34,7 +36,9 @@ $error-message-class: '.fui-error-message';
   }
 
   .fui-error{
-    border-color: $input-error-color;
+    &, &:focus{
+      border-color: $input-error-color;
+    }
   }
 
   .fui-error-message{

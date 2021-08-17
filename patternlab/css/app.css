@@ -11797,6 +11797,9 @@ html, body, .l-wrapper {
     margin-bottom: 1.5rem;
   }
 }
+.fui-alert-error {
+  background-color: rgba(213, 56, 60, 0.5);
+}
 .fui-alert-success {
   background-color: rgba(115, 175, 140, 0.5);
 }
@@ -11818,7 +11821,7 @@ html, body, .l-wrapper {
   }
 }
 
-.fui-error {
+.fui-error, .fui-error:focus {
   border-color: #d5383c;
 }
 

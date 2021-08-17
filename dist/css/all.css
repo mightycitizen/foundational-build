@@ -9286,6 +9286,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 @media print, screen and (min-width: 64em) {
   .top-bar {
     margin-left: -1rem;
+    margin-right: -1rem;
     padding-left: 0;
     padding-right: 0;
   }

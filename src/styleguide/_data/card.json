@@ -1,14 +1,12 @@
 {
   "card": {
-    "modifier": "",
     "image": {
       "src": "https://source.unsplash.com/9wg5jCEPBsw/400x200",
       "alt": "Alt Text"
     },
+    "summary": "Lorem ipsum",
     "heading": {
-      "text": "Phasellus auctor, turpis",
-      "level": "3",
-      "url": "#"
+      "text": "Phasellus auctor, turpis"
     },
     "link": {
       "url": "#",

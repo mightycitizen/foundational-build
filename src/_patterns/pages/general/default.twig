@@ -15,6 +15,7 @@
 
   %}
   {% include 'components/modules/contact.twig' with {
+      link: read_more,
       "phone": {
         "number": "(###) ### - ####",
         "ext": "###"
@@ -63,8 +64,20 @@
 
 
 
-  {% include 'components/modules/horizontal-card.twig' %}
-  {% include 'components/modules/horizontal-card.twig' %}
+  {% include 'components/modules/horizontal-card.twig' with {
+    heading: "Heading",
+    summary: summary,
+    link: read_more
+  } %}
+  {% include 'components/modules/horizontal-card.twig' with {
+    heading: "Another Horizontal Card",
+    image: {
+      src: "https://source.unsplash.com/9wg5jCEPBsw/376x236",
+      alt: "Alt Text"
+    },
+    summary: summary,
+    link: read_more
+  } %}
   {% include 'components/modules/testimonial.twig' %}
   {% include 'components/modules/tabs.twig' %}
   {% include 'components/modules/cta.twig' with {

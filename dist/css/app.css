@@ -8136,16 +8136,16 @@ span.button a {
 .read-more:not(.button) {
   padding-bottom: 2px;
 }
+.read-more:hover, .read-more:focus {
+  text-decoration: underline;
+}
 .read-more:after {
   font-family: "icomoon";
   content: " ";
   font-size: 0.72em;
-  display: inline-block;
-  transition: 0.3s transform;
+  margin-top: 0.3em;
+  position: absolute;
   line-height: inherit;
-}
-.read-more:hover, .read-more:focus {
-  text-decoration: underline;
 }
 
 .links .cell {

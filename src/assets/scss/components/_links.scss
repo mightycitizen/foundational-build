@@ -13,19 +13,23 @@
     padding-bottom: 2px;
   }
 
-  &:after{
-    font-family: $icomoon-font-family;
-    content: '\00A0#{$icon-chevron-right}';
-    font-size: .72em; // 13/18
-    display: inline-block;
-    transition: 0.3s transform;
-    line-height: inherit;
-  }
+
   &:hover, &:focus{
     text-decoration: underline;
     // &:after{
     //   transform: translateX(5px);
     // }
+  }
+  &:after{
+    font-family: $icomoon-font-family;
+    content: '\00A0#{$icon-chevron-right}';
+    font-size: .72em; // 13/18
+    //display: inline-block;
+    margin-top: 0.3em;
+    position: absolute;
+    //transform: translateY(33.3%);
+    //transition: 0.3s transform;
+    line-height: inherit;
   }
 
 }

@@ -1,0 +1,12 @@
+<div class="statistic text-center p-x-3">
+  {% include 'components/inline-text/large-value.twig' with {
+    value: value
+  } %}
+  <p class="lead m-b-0">
+    {% if link | default %}
+      <a href="{{ link.url }}" {% if link.target %}target="{{ link.target }}"{% endif %}>{{ text }}</a>
+    {% else %}
+      {{ text }}
+    {% endif %}
+  </p>
+</div>

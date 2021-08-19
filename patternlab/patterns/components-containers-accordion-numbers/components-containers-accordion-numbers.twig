@@ -1,0 +1,13 @@
+
+
+<ul class="accordion {% if modifier | default  %}accordion--{{ modifier | default }}{% endif %}"  data-accordion data-allow-all-closed="true">
+
+  {% for item in items %}
+    {% if modifier | default == 'icons' and item.icon | default is empty %}
+      {% set item = item | merge( { icon: true } ) %}
+    {% endif %}
+    {%
+      include 'components/containers/accordion-item.twig' with {item: item} only
+    %}
+  {% endfor %}
+</ul>

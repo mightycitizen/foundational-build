@@ -1,0 +1,23 @@
+{% embed 'components/sections/section.twig' with {
+  "collapse": true,
+  "class": "section--tight",
+  "style": "narrow"
+} %}
+  {% block section_content %}
+    {% include 'components/teasers/card-horizontal.twig' with {
+
+        "card": {
+          "modifier": "",
+          "image": image | default,
+          "summary": summary | default,
+          "heading": {
+            "text": heading,
+            "level": "3"
+          },
+          "link": link | default
+        }
+
+
+    } %}
+  {% endblock %}
+{% endembed %}

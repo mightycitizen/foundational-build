@@ -407,8 +407,11 @@ const initFormHelpers = () => {
 
 // @ajax init
 const initAjax = () => {
-  const events = new Ajax('/js/data/events.json', $('[data-ajaxify]'), 'events', false, 1);
-  events.init();
+  const $events = $('[data-ajaxify]');
+  if ($events.length) {
+    const events = new Ajax('/js/data/events.json', $('[data-ajaxify]'), 'events', false, 1);
+    events.init();
+  }
 }
 
 // @selectize init

@@ -4916,7 +4916,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 .pagination li {
   margin-right: 0.0555555556rem;
   border-radius: 0;
-  font-size: 0.7777777778rem;
+  font-size: 1rem;
   display: none;
 }
 .pagination li:last-child, .pagination li:first-child {
@@ -4936,7 +4936,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 .pagination a:hover,
 .pagination button:hover {
-  background: #ccc;
+  background: #fff;
 }
 .pagination .current {
   padding: 0.1666666667rem 0.5555555556rem;
@@ -11783,6 +11783,10 @@ html, body, .l-wrapper {
 }
 
 /* FORMIE STYLING */
+.fui-required {
+  color: #d5383c;
+}
+
 .fui-alert {
   padding: 0.625rem;
   margin-bottom: 0.9375rem;

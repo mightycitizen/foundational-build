@@ -3,16 +3,19 @@ import $ from 'jquery';
 import './lib/foundation-explicit-pieces'; // @foundation pick and choose Foundation plugins
 import 'slick-carousel'; // @slick carousel/slider
 import 'lity'; // @lity modal
+import plugins from '../../_patterns/global/base/plugins.json'; // determines what plugins to include
 import tippy from 'tippy.js'; // @tippy tooltip
 import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
 import Litepicker from 'litepicker'; // @litepicker date picker
-import selectize from 'selectize'; // @selectize custom select dropdowns
+
 import Twig from 'twig'; // @twig used with @ajax
 import resultsTemplate from '../../_patterns/components/listing/event.twig'; // used with @ajax
 import paginationTemplate from '../../_patterns/components/listing/pagination.twig'; // used with @ajax
 import loaderTemplate from '../../_patterns/components/utils/loader.twig'; // used with @ajax
 import noUiSlider from 'nouislider';
 import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
+
+import './plugins/selectize';
 
 // @foundation init
 $(document).foundation();
@@ -412,11 +415,6 @@ const initAjax = () => {
     const events = new Ajax('/js/data/events.json', $('[data-ajaxify]'), 'events', false, 1);
     events.init();
   }
-}
-
-// @selectize init
-const initSelectize = () => {
-  $('.js-selectize').selectize();
 }
 
 // @smooth-scroll init
@@ -988,8 +986,8 @@ $(document).ready(function(){
   initSlick(); // @slick init call
   initLityAccessibility(); // @lity init accessibility call
   initFoundationAccessibility();  // @foundation init accessibility call
-  initDatepicker(); // @litepicker init call
-  initSelectize(); // @selectize init call
+  if (plugins.litepicker) initDatepicker(); // @litepicker init call
+
   initTableScroll(); // #table-scroll init call
   initVideo(); // @video init call
   initSmoothScroll(); // @smooth-scroll init

@@ -11783,6 +11783,10 @@ html, body, .l-wrapper {
 }
 
 /* FORMIE STYLING */
+.fui-required {
+  color: #d5383c;
+}
+
 .fui-alert {
   padding: 0.625rem;
   margin-bottom: 0.9375rem;

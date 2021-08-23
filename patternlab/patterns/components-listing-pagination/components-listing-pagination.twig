@@ -5,7 +5,7 @@
     {% endif %}
     {% if pagination_links.pages | length %}
       {% for link in pagination_links.pages %}
-        <li>
+        <li {% if link.current | default %}class="current"{% endif %}>
           {% if link.ellipses | default %}
             &hellip;
           {% elseif link.current | default %}

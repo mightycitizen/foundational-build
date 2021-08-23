@@ -12,6 +12,11 @@ $error-message-class: '.fui-error-message';
 @if ($cms == 'Craft') {
 
   /* FORMIE STYLING */
+
+  .fui-required{
+    color: $alert-color;
+  }
+
   .fui-alert{
     @include spacer(padding,all,2);
     @include spacer(margin,bottom,3);

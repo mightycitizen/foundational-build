@@ -6,7 +6,7 @@
         <div class="grid-x grid-margin-x align-middle align-center">
           {% if section_image | default %}
             <div class="cell medium-6">
-              <img data-src="{{ section_image.url }}" alt="{{ section_image.alt }}" class="js-lazy">
+              <img data-src="{{ section_image.src }}" alt="{{ section_image.alt }}" class="js-lazy">
             </div>
           {% endif %}
           <div class="cell {% if section_image | default %}medium-6{% elseif style | default is empty %}medium-8{% endif %}">
@@ -36,7 +36,7 @@
   {% endif %}
 {% endset %}
 <section class="section {{ class | default }} {% if style | default %}section--{{ style }} {% endif %} {% if collapse | default %}section--collapse{% endif %}" >
-  {% if section_background | default %}<div class="js-lazy section_background" data-bg="{{ section_background.url }}"></div>{% endif %}
+  {% if section_background | default %}<div class="js-lazy section_background" data-bg="{{ section_background.src }}"></div>{% endif %}
   <div class="grid-container {{ grid_class | default }}">
     {% if style | default and (style == 'side') %}
       <div class="grid-x align-middle align-center">

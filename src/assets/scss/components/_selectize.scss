@@ -1,19 +1,22 @@
-.selectize{
-  &-input{
-    font-size: $input-font-size;
-    padding: $input-padding;
-    border-radius: $input-radius;
-    box-shadow: $input-shadow;
-    > input{
-      font-size: inherit;
-    }
-  }
-  &-dropdown{
-    font-size: $input-font-size;
-    .option{
+@import 'variables/plugins';
+@if ($selectize){
+  .selectize{
+    &-input{
+      font-size: $input-font-size;
       padding: $input-padding;
-      &.active{
-        background-color: map-get($additional-palette,'secondary-lightest');
+      border-radius: $input-radius;
+      box-shadow: $input-shadow;
+      > input{
+        font-size: inherit;
+      }
+    }
+    &-dropdown{
+      font-size: $input-font-size;
+      .option{
+        padding: $input-padding;
+        &.active{
+          background-color: map-get($additional-palette,'secondary-lightest');
+        }
       }
     }
   }

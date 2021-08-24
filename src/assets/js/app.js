@@ -1,19 +1,18 @@
 import "babel-polyfill"; // ie 11 polyfill - can exclude if not in scope
 import $ from 'jquery';
 import './lib/foundation-explicit-pieces'; // @foundation pick and choose Foundation plugins
-import 'slick-carousel'; // @slick carousel/slider
-import 'lity'; // @lity modal
-//import plugins from '../../_patterns/global/base/plugins.json'; // determines what plugins to include
-import tippy from 'tippy.js'; // @tippy tooltip
+
 import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
 import Litepicker from 'litepicker'; // @litepicker date picker
+import loaderTemplate from '../../_patterns/components/utils/loader.twig'; // used with @forms
 
-import Twig from 'twig'; // @twig used with @ajax
-import resultsTemplate from '../../_patterns/components/listing/event.twig'; // used with @ajax
-import paginationTemplate from '../../_patterns/components/listing/pagination.twig'; // used with @ajax
-import loaderTemplate from '../../_patterns/components/utils/loader.twig'; // used with @ajax
-import noUiSlider from 'nouislider';
-import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
+import './plugins/slider';
+import './plugins/tippy';
+import './plugins/ajaxify';
+import './plugins/selectize';
+import './plugins/slick';
+
+//import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
 
 // @foundation init
 $(document).foundation();
@@ -28,17 +27,6 @@ const initSkipTo = () => {
     const $first = $target.find(':header:first') || null;
     if ($first) $target.find(':header:first').attr('tabindex', '-1').focus();
   });
-}
-
-// @foundation breakpoint event trigger
-$(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
-   // @lity breakpoint trigger
-  lityCheck();
-});
-
- // @lity breakpoint trigger
-const lityCheck = () => {
-  $('.lity-mobile').toggleClass('lity-hide',Foundation.MediaQuery.only('small'));
 }
 
 function buildPagination(
@@ -128,255 +116,9 @@ const initSelectUrl = () => {
 }
 
 
-const randomId = () => {
-  return Math.random().toString(36).substr(2, 9);
-}
-
-class Ajax {
-  constructor(endpoint, $results, key, filterRefresh, numPerPage){
-    this.options = {
-      endpoint,
-      key,
-      filterRefresh,
-      numPerPage
-    }
-
-    this.$results = $results;
-
-    this.id = $results.attr('id');
-    this.$filters = $('[data-ajaxify-form=' + this.id + ']')
-    this.$noResults = $('[data-ajaxify-no-results=' + this.id + ']');
-    this.$numResults = $('[data-ajaxify-num-results=' + this.id + ']');
-    this.$toggles = $('[data-ajaxify-toggles=' + this.id + ']');
-    this.$pagination = $('[data-ajaxify-pagination=' + this.id + ']');
-    this.currentPage = 1;
-  }
-  init(){
-    this.bindEvents();
-    this.loadData();
-  }
-  updatePagination(){
-    const self = this;
-    const template = Twig.twig({ data: paginationTemplate });
-    let links = {}
-    let pageBase;
-    let paginationObject;
-    if (self.options.filterRefresh){
-      // @craft pagination
-      const paginationData = self.meta.pagination;
-      links = paginationData.links;
-      pageBase = links.next || links.previous;
-      paginationObject = buildPagination(paginationData.total,paginationData.current_page, self.options.numPerPage)
-      // need @drupal pagination
-    }else{
-      paginationObject = buildPagination(self.total,self.currentPage, self.options.numPerPage);
-      if (paginationObject.currentPage !== 1) links.previous = paginationObject.currentPage - 1;
-      if (paginationObject.currentPage < paginationObject.totalPages) links.next = paginationObject.currentPage + 1;
-
-    }
-
-    if (paginationObject.totalPages > 1){
-
-      links.pages = [];
-      paginationObject.pages.map(page => {
-        let url = page;
-
-        if (self.options.filterRefresh && pageBase) url = pageBase.replace(/page=(\d)+/,'page=' + page);
-
-        links.pages.push({
-          url,
-          pageIndex: page,
-          current: paginationObject.currentPage === page
-        });
-      })
-      self.$pagination.html(template.render({ links }));
-    }
-  }
-  clearPagination(){
-    this.$pagination.html('');
-  }
-  updateResults(){
-    const self = this;
-    self.clearPagination();
-
-    setTimeout(() => {
-      window.enableSubmit(self.$filters.find('button[type="submit"][disabled]'));
-    }, (50));
-    let data = self.data;
-    if (self.dataFiltered) data = self.dataFiltered;
-    if (!self.options.endpointRefresh && self.options.numPerPage){
-      data = data.slice((self.currentPage - 1) * self.options.numPerPage, self.currentPage * self.options.numPerPage);
-    }
-    const template = Twig.twig({ data: resultsTemplate });
-    self.$results.html(template.render({ [self.options.key]: data }));
-    this.$noResults.toggleClass('hide', data.length > 0);
-    this.$numResults.find('.value').text(self.total);
-    this.$numResults.toggleClass('hide', data.length === 0);
-    if (self.options.numPerPage) self.updatePagination();
-  }
-  filterResults(){
-    const self = this;
-    let dataFiltered = self.data;
-    if (self.options.filterRefresh){
-      self.loadData();
-    }else{
-      self.$filters.find('input[data-filter]:checked').each(function(){
-        const value = $(this).attr('value');
-        const name = $(this).attr('name');
-        if (value !== ''){
-          dataFiltered = dataFiltered.filter(item => {
-            let currValue = item[name];
-            if (!currValue) return false;
-            //console.log(currValue);
-            if (Array.isArray(currValue)){
-
-              return currValue.length > 0 && currValue.some(arrayItem => {
-                const checkVal = arrayItem.id || arrayItem;
-                return checkVal.toString() === value })
-            }else{
-              const checkVal = currValue.id || currValue;
-              return checkVal.toString() === value
-            }
-          });
-        }
-      });
-      self.$filters.find('[data-filter-checkbox]').each(function(){
-        const name = $(this).data('filter-checkbox');
-        let values = [];
-
-        $(this).find('input[type="checkbox"]:checked').each(function(){
-          values.push($(this).val());
-        });
-
-        if (values.length > 0){
-
-          dataFiltered = dataFiltered.filter(item => {
-            let currValue = item[name];
-            if (!currValue) return false;
-            if (Array.isArray(currValue)){
-              if (currValue.length === 0) return false;
-              let intersection = currValue.filter(arrayItem => values.some(value => arrayItem.id.toString() === value));
-              return intersection.length > 0
-            }else{
-              return values.includes(currValue.id.toString())
-            }
-          });
-        }
-      });
-      self.$filters.find('[data-filter-keywords]').each(function(){
-        const value = $(this).val();
-        const fields = $(this).data('filter-keywords').split(',');
-        if (value !== ''){
-          dataFiltered = dataFiltered.filter(item => {
-            return fields.some(field => {
-              return item[field].toLowerCase().includes(value.toLowerCase())
-            })
-          });
-        }
-      });
-      self.dataFiltered = dataFiltered;
-      self.total = dataFiltered.length;
-      self.updateResults();
-    }
-
-  }
-  loadData(url){
-    const self = this;
-    if (!url){
-      url = self.options.endpoint
-      if (self.options.numPerPage){
-        url = url + '?limit=' + self.options.numPerPage
-      }
-    }
-
-    let ajaxOptions = {
-      url,
-      method: 'GET'
-    };
-
-
-    if (self.options.filterRefresh){
-      ajaxOptions.data = self.$filters.serialize();
-    }
-
-    $.ajax( ajaxOptions).done(function( response ) {
-      if (self.options.numPerPage && response.meta) self.meta = response.meta;
-      response = response.data || response;
-      self.total = response.length;
-      // @craft pagination
-      if (self.meta && self.meta.pagination) self.total = self.meta.pagination.total;
-      self.data = response;
-      self.updateResults();
-      self.$results.addClass('is-loaded');
-    });
-  }
-  getLabel(field){
-    const id = field.attr('id');
-    const $label = $('label[for='+ id +']');
-    if (!$label) return false;
-    return $label.text();
-  }
-  clearToggles(){
-    this.$toggles.html('');
-  }
-  updateToggles(elem, checked){
-
-    const label = this.getLabel(elem);
-    const type = elem.attr('type');
-    const name = elem.attr('name');
-    const value = elem.attr('value');
-    const id = elem.attr('id');
-    if (type === 'radio') this.$toggles.find('[data-ajaxify-radio="' + name + '"]').remove();
-    if (label && value !== '' && checked) this.$toggles.append('<button class="button" type="button" data-ajaxify-' + type + '="' + name + '" data-ajaxify-toggle="'+ id +'">'+label+'<span class="icon-cross"></span></button>');
-    if (!checked && type === 'checkbox') this.$toggles.find('[data-ajaxify-toggle="' + id + '"]').remove();
-  }
-
-  bindEvents(){
-    const self = this;
-
-    this.$pagination.on('click', 'a', function(e){
-      e.preventDefault();
-      const page = $(e.target).data('ajax-page');
-      if (self.options.filterRefresh){
-        self.loadData(page);
-      }else{
-        self.currentPage = page;
-        self.updateResults();
-      }
-    })
-    $(document).on('click', '[data-ajaxify-toggle]', function(e){
-      const { currentTarget } = e;
-      const fieldId = $(this).data('ajax-toggle');
-      if (fieldId){
-        $('#'+fieldId).prop('checked', false).trigger('change');
-      }
-      $(currentTarget).remove();
-    })
-    self.$filters.on('reset', function(e){
-      delete self.dataFiltered;
-      self.total = self.data.length;
-      self.clearToggles();
-      self.$filters.find('.is-active').removeClass('is-active'); // don't love this for removing the input-clear Xes
-      setTimeout(() => {
-        self.$filters.trigger('submit');
-      }, (50));
-
-    })
-    self.$filters.find('[data-filter-keywords]').on('change', function(){
-      self.filterResults();
-      //self.updateResults();
-    });
-    self.$filters.on('submit', function(e){
-      e.preventDefault();
-      self.filterResults();
-    })
-    self.$filters.find('[data-filter], [data-filter-checkbox] input[type="checkbox"]').on('change', function(e){
-      const { checked } = e.target;
-      self.updateToggles($(this), checked);
-      if (self.$filters.find('[type="submit"]:visible').length === 0) self.$filters.trigger('submit');
-    })
-  }
-}
+// const randomId = () => {
+//   return Math.random().toString(36).substr(2, 9);
+// }
 
 // @form helpers init
 const initFormHelpers = () => {
@@ -406,14 +148,6 @@ const initFormHelpers = () => {
   });
 }
 
-// @ajax init
-const initAjax = () => {
-  const $events = $('[data-ajaxify]');
-  if ($events.length) {
-    const events = new Ajax('/js/data/events.json', $('[data-ajaxify]'), 'events', false, 1);
-    events.init();
-  }
-}
 
 // @smooth-scroll init
 const initSmoothScroll = () => {
@@ -597,8 +331,6 @@ const initDatepicker = () => {
     });
   })
 }
-
-
 // @foundation accessibility init
 const initFoundationAccessibility = () => {
   // accordion accessibility
@@ -607,99 +339,6 @@ const initFoundationAccessibility = () => {
   })
 }
 
-// @lity accessibility init
-const initLityAccessibility = () => {
-  const dataAttr = 'trigger';
-  $(document).on('click', '[data-lity]', function(event) {
-    const $trigger = $(this);
-    let triggerId = $trigger.attr('id');
-    if (!triggerId){
-      triggerId = 'lity-' + randomId();
-      $trigger.attr('id', triggerId);
-
-    }
-    $('.lity').attr('data-' + dataAttr,triggerId);
-  });
-
-  $(document).on('lity:close', function(event, instance) {
-    const $lity = instance.element();
-    const $trigger = $('#'+$lity.data(dataAttr));
-    $trigger.focus();
-  });
-}
-
-// @slick pagination helper function
-const slickPagination = (slick) => {
-  if (slick.$dots){
-    const numSlides = slick.$dots.find('>li').length;
-    slick.$slider.toggleClass('has-pagers', numSlides > 1);
-    //slick.$slider.toggleClass('has-pagination', numSlides > 3);
-  }else{
-    slick.$slider.removeClass('has-pagers');
-  }
-}
-
-const initTippy = () => {
-  var tippies = document.querySelectorAll("[data-tippy-content]");
-  tippy(tippies, {
-    hideOnClick: false,
-    animation: "shift-away",
-    arrow: true,
-    //trigger: "click",
-    interactive: true,
-    offset: [0,-5],
-    maxWidth: 600,
-    placement: "bottom",
-    onShow: function(tippyElem){
-      var tempDom = $('<div>').append($.parseHTML(tippyElem.reference.dataset.tippyContent))[0];
-      tippyElem.setContent(tempDom);
-    },
-    onShown: function (tippyElem) {
-      tippyElem.reference.classList.add("tippy-active");
-    },
-    onHidden: function (tippyElem) {
-      tippyElem.reference.classList.remove("tippy-active");
-    },
-    onMount: function (tippyElem) {
-      var elem = tippyElem;
-
-
-      if (!elem.reference.classList.contains("tippy-initialized")) {
-        $(elem.popper)
-          .find(".tippy-tooltip")
-          .prepend(
-            "<button class='tippy-close'><span class='show-for-sr'>Close tooltip</span></button>"
-          );
-        $(elem.popper)
-          .find(".tippy-close")
-          .on("click", function (event) {
-            elem.hide();
-            return false;
-          });
-
-        elem.reference.addEventListener(
-          "touchstart",
-          function (event) {
-            //console.log(elem);
-            if (elem.state.isVisible) {
-              elem.setProps({
-                trigger: "manual",
-              });
-              elem.hide();
-            } else {
-              elem.setProps({
-                trigger: "focus mouseenter",
-              });
-              elem.show();
-            }
-          },
-          false
-        );
-      }
-      elem.reference.classList.add("tippy-initialized");
-    },
-  });
-}
 
 
 // @lazy init
@@ -738,230 +377,8 @@ const initMenuHelpers = () => {
   })
 }
 
-// @slider init
 
 
-
-function initSlider(){
-  $('.js-slider').each(function(){
-    const slider = $(this)[0];
-    const $slider = $(this);
-    noUiSlider.create(slider, {
-      start: [16, 22],
-      step: 1,
-      connect: true,
-      tooltips: true,
-      range: {
-          'min': 16,
-          'max': 22
-      },
-      pips: {
-        mode: 'count',
-        values: 2,
-        density: 100,
-          stepped: true
-      }
-    });
-
-    $slider.find('.noUi-handle-lower').attr('aria-label','Lower Range Handle');
-    $slider.find('.noUi-handle-upper').attr('aria-label','Upper Range Handle');
-
-
-  })
-
-
-}
-
-// @slick init
-const initSlick = () => {
-
-  // @slick mobile init
-  const initSlickMobile = () => {
-    const $slickMobile = $('.js-slick--mobile');
-
-    $slickMobile.each(function(){
-      const $this = $(this);
-
-      $this.on('init', function (event, slick, breakpoint){
-        slickPagination(slick);
-      })
-
-      $this.on('breakpoint', function (event, slick, breakpoint){
-        slickPagination(slick);
-      })
-
-      $this.slick({
-        slidesToScroll: 1,
-        rows: 0,
-        prevArrow: '<button class="slick-prev">Previous</button>',
-        nextArrow: '<button class="slick-next">Next</button>',
-        dots: true,
-        mobileFirst: true,
-        dotsClass: 'slick-dots',
-        appendArrows: $this.next('.slick-nav'),
-        appendDots: $this.next('.slick-nav'),
-        adaptiveHeight: true,
-        waitForAnimate: false,
-        responsive: [
-          {
-            breakpoint: mediumBreakpoint,
-            settings: 'unslick'
-          }
-        ]
-      });
-
-    })
-
-  }
-  initSlickMobile();
-  // @foundation breakpoint event trigger
-  $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
-
-    // @slick mobile reinit
-    if (newSize === 'small') initSlickMobile();
-
-  });
-
-
-
-  const $slick = $('.js-slick');
-
-  $slick.each(function(){
-    const $this = $(this);
-
-    $this.on('init', function (event, slick, breakpoint){
-      slickPagination(slick);
-      $this.trigger('resizeme.zf.trigger');
-    })
-
-    $this.on('breakpoint', function (event, slick, breakpoint){
-      slickPagination(slick);
-    })
-
-
-    // pause/play
-    $this.next('.slick-nav').find('.js-slick-toggle').on('click', function(){
-      //console.log($this.get(0).slick.paused);
-      if ($this.get(0).slick.paused){
-        $this.slick('slickPlay').removeClass('is-paused');
-      }else{
-        $this.slick('slickPause').addClass('is-paused');
-      }
-    })
-
-    $this.slick({
-      slidesToScroll: 1,
-      rows: 0,
-      lazyLoad: 'progressive',
-      prevArrow: '<button class="slick-prev">Previous</button>',
-      nextArrow: '<button class="slick-next">Next</button>',
-      dots: true,
-      dotsClass: 'slick-dots',
-      appendArrows: $this.next('.slick-nav'),
-      appendDots: $this.next('.slick-nav'),
-      adaptiveHeight: true,
-      waitForAnimate: false
-    });
-
-  })
-
-  const $slickCards = $('.js-slick--cards');
-
-  $slickCards.each(function(){
-    const $this = $(this);
-
-    $this.on('init', function (event, slick, breakpoint){
-      slickPagination(slick);
-      $this.trigger('resizeme.zf.trigger');
-    })
-
-    $this.on('breakpoint', function (event, slick, breakpoint){
-      slickPagination(slick);
-    })
-
-    $this.slick({
-      slidesToScroll: 3,
-      slidesToShow: 3,
-      rows: 0,
-      prevArrow: '<button class="slick-prev">Previous</button>',
-      nextArrow: '<button class="slick-next">Next</button>',
-      dots: true,
-      infinite: true,
-      dotsClass: 'slick-dots',
-      appendArrows: $this.next('.slick-nav'),
-      appendDots: $this.next('.slick-nav'),
-      adaptiveHeight: true,
-      waitForAnimate: false,
-      responsive: [
-        {
-        breakpoint: largeBreakpoint,
-        settings: {
-          //adaptiveHeight: true,
-          slidesToScroll: 2,
-          slidesToShow: 2
-        }
-      },
-        {
-        breakpoint: mediumBreakpoint,
-        settings: {
-          //adaptiveHeight: true,
-          slidesToScroll: 1,
-          slidesToShow: 1
-
-        }
-
-      }
-      ]
-    });
-
-  });
-
-  const $slickCenter = $('.js-slick--center');
-  $slickCenter.each(function(){
-    const $this = $(this);
-
-    $this.on('init', function (event, slick, breakpoint){
-      slickPagination(slick);
-    })
-
-    $this.on('breakpoint', function (event, slick, breakpoint){
-      slickPagination(slick);
-    })
-
-    $this.slick({
-      centerMode: true,
-      centerPadding: '50px',
-      prevArrow: '<button class="slick-prev">Previous</button>',
-      nextArrow: '<button class="slick-next">Next</button>',
-      dots: true,
-      infinite: false,
-      dotsClass: 'slick-dots',
-      appendArrows: $this.next('.slick-nav'),
-      appendDots: $this.next('.slick-nav'),
-      variableWidth: true,
-      //adaptiveHeight: false,
-      waitForAnimate: true,
-      responsive: [
-        {
-
-          breakpoint: mediumBreakpoint,
-          settings: {
-            centerMode: false,
-            centerPadding: 0,
-            variableWidth: false,
-            infinite: true,
-            slidesToScroll: 1,
-            slidesToShow: 1
-
-          }
-
-        }
-      ]
-    });
-
-  });
-
-}
 
 $(document).ready(function(){
 
@@ -977,22 +394,21 @@ $(document).ready(function(){
   //Foundation.MediaQuery.is('medium down');
   //Foundation.MediaQuery.upTo('medium');
 
-  lityCheck(); // @lity breakpoint trigger
 
-  initTippy(); // @tippy init call
+
+
   initLazy(); // @lazy init call
-  initSlick(); // @slick init call
-  initLityAccessibility(); // @lity init accessibility call
+
   initFoundationAccessibility();  // @foundation init accessibility call
-  if (plugins.litepicker) initDatepicker(); // @litepicker init call
+  initDatepicker(); // @litepicker init call
 
   initTableScroll(); // #table-scroll init call
   initVideo(); // @video init call
   initSmoothScroll(); // @smooth-scroll init
   initMenuHelpers(); // @menu helpers
-  initAjax(); // @ajax init
+
   initFormHelpers(); // @form helpers init\
-  initSlider(); // @slider init
+
   initSkipTo(); // @skip-to init
   initSelectUrl(); // @select-url init
 })

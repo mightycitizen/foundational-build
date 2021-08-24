@@ -1,3 +1,9 @@
 {
-  "selectize": false
+  "selectize": true,
+  "lity": true,
+  "ajaxify": false,
+  "slick": true,
+  "tippy": false,
+  "video": true,
+  "slider": false
 }

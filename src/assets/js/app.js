@@ -3,7 +3,6 @@ import $ from 'jquery';
 import './lib/foundation-explicit-pieces'; // @foundation pick and choose Foundation plugins
 
 import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
-import Litepicker from 'litepicker'; // @litepicker date picker
 import loaderTemplate from '../../_patterns/components/utils/loader.twig'; // used with @forms
 
 import './plugins/slider';
@@ -11,15 +10,14 @@ import './plugins/tippy';
 import './plugins/ajaxify';
 import './plugins/selectize';
 import './plugins/lity';
+import './plugins/datepicker';
+import './plugins/video';
 import './plugins/slick';
 
 //import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
 
-// @foundation init
-$(document).foundation();
 
 // @skip-to init
-
 const initSkipTo = () => {
   $(document).on('click', '.l-skip', function(e) {
     e.preventDefault();
@@ -30,81 +28,7 @@ const initSkipTo = () => {
   });
 }
 
-function buildPagination(
-  totalItems,
-  currentPage = 1,
-  pageSize = 10,
-  maxPages = 10
-) {
-  // calculate total pages
-  let totalPages = Math.ceil(totalItems / pageSize);
-
-  // ensure current page isn't out of range
-  if (currentPage < 1) {
-      currentPage = 1;
-  } else if (currentPage > totalPages) {
-      currentPage = totalPages;
-  }
-
-  let startPage, endPage;
-  if (totalPages <= maxPages) {
-      // total pages less than max so show all pages
-      startPage = 1;
-      endPage = totalPages;
-  } else {
-      // total pages more than max so calculate start and end pages
-      let maxPagesBeforeCurrentPage = Math.floor(maxPages / 2);
-      let maxPagesAfterCurrentPage = Math.ceil(maxPages / 2) - 1;
-      if (currentPage <= maxPagesBeforeCurrentPage) {
-          // current page near the start
-          startPage = 1;
-          endPage = maxPages;
-      } else if (currentPage + maxPagesAfterCurrentPage >= totalPages) {
-          // current page near the end
-          startPage = totalPages - maxPages + 1;
-          endPage = totalPages;
-      } else {
-          // current page somewhere in the middle
-          startPage = currentPage - maxPagesBeforeCurrentPage;
-          endPage = currentPage + maxPagesAfterCurrentPage;
-      }
-  }
-
-  // calculate start and end item indexes
-  let startIndex = (currentPage - 1) * pageSize;
-  let endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
-
-  // create an array of pages to ng-repeat in the pager control
-  let pages = Array.from(Array((endPage + 1) - startPage).keys()).map(i => startPage + i);
-
-  // return object with all pager properties required by the view
-  return {
-      totalItems: totalItems,
-      currentPage: currentPage,
-      pageSize: pageSize,
-      totalPages: totalPages,
-      startPage: startPage,
-      endPage: endPage,
-      startIndex: startIndex,
-      endIndex: endIndex,
-      pages: pages
-  };
-}
-
-
-$.fn.isInViewport = function() {
-  var elementTop = $(this).offset().top;
-  var elementBottom = $(this).offset().top + $(this).outerHeight();
-  var viewportTop = $(window).scrollTop();
-  let offsetFactor = 1;
-  const dataOffset = $(this).data('offset');
-  if (dataOffset) offsetFactor = eval(dataOffset);
-  return viewportTop + offsetFactor*$(window).outerHeight() > elementTop && viewportTop < elementBottom;
-};
-
-
 // @select-url init
-
 const initSelectUrl = () => {
   $(document).on('change', '.js-selectUrl', e => {
     //alert('test2');
@@ -115,11 +39,6 @@ const initSelectUrl = () => {
     return false;
   })
 }
-
-
-// const randomId = () => {
-//   return Math.random().toString(36).substr(2, 9);
-// }
 
 // @form helpers init
 const initFormHelpers = () => {
@@ -148,7 +67,6 @@ const initFormHelpers = () => {
     disableSubmit($(this).find('[type="submit"]:not(.fui-btn)'));
   });
 }
-
 
 // @smooth-scroll init
 const initSmoothScroll = () => {
@@ -179,134 +97,7 @@ const initSmoothScroll = () => {
   });
 }
 
-
-// @video init
-const initVideo = () => {
-  const
-    initializedClass = 'is-initialized',
-    playingClass = 'is-playing';
-
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/iframe_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  // 3. This function creates an <iframe> (and YouTube player)
-  //    after the API code downloads.
-
-  window.onYouTubeIframeAPIReady = function(){
-
-    $('.video-wrapper').each(function(){
-          var holder = $(this),
-              vid = holder.find('.youtube-player'),
-              player,
-              playing = false,
-              trigger = holder.data('video-trigger'),
-              firstPlay = true;
-
-          vid.attr('tabindex', -1);
-          const youtubeId = vid.data('youtube-id');
-          player = new YT.Player(vid[0], {
-              playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 0 , 'showInfo': 0, 'mute': 1,'rel': 0},
-              videoId: youtubeId,
-              events: {
-                  'onReady': onPlayerReady,
-                  'onStateChange': onPlayerStateChange
-              }
-          });
-
-          function onPlayerReady() {
-            player.playVideo();
-            setVideoSize();
-            holder.bind('play', function(){
-              if (!playing) {
-                  player.playVideo();
-              }
-            })
-
-            holder.bind('pause', function(){
-              if (playing) {
-                player.pauseVideo();
-              }
-            })
-
-          }
-
-          function onPlayerStateChange(event) {
-            if (firstPlay){
-              if (trigger !== 'background'){
-                setTimeout(() => {
-                  player.pauseVideo();
-                }, 50);
-              }
-              holder.addClass(initializedClass);
-            }
-
-            if ( event.data == 1 ) {
-              playing = true;
-              holder.addClass(playingClass);
-            }else{
-              playing = false;
-              holder.removeClass(playingClass)
-            }
-
-            firstPlay = false;
-
-          }
-          function setVideoSize(){
-            var w = holder.width(),
-                h = holder.height();
-
-            if (w/h > 1){
-                player.setSize(w, 200 + w/16*9);
-                vid.css({'left': '0px'});
-            } else {
-                player.setSize(h/9*16, h + 200);
-                vid.css({'left': ( -(h/9*16) / 2 ) + holder.width() / 2 });
-                vid.css({'top': -(h - holder.height()) / 2 });
-            }
-          }
-
-          player.clickHandler = (e) => {
-              e.preventDefault();
-              if (!playing) {
-                  player.playVideo();
-              } else {
-                  player.pauseVideo();
-              }
-          }
-        $(window).on('resize', Foundation.util.throttle(
-          function(){
-            setVideoSize();
-          }, 50));
-
-
-    });
-  }
-
-  $('[data-video-trigger="click"]').on('click', function(){
-    if ($(this).hasClass(playingClass)){
-      $(this).trigger('pause').removeClass(playingClass);
-    }else{
-      $(this).trigger('play');
-    }
-  });
-
-  $(window).on('scroll', Foundation.util.throttle(
-    function(){
-      $('[data-video-trigger="scroll"]').each(function(){
-        if ($(this).find('.youtube-player').isInViewport()){
-          $(this).trigger('play');
-        }else{
-          $(this).trigger('pause');
-        }
-
-      });
-    }, 50));
-}
-
-
-// #table-scroll init
+// @table-scroll init
 const initTableScroll = () => {
   $('table').each(function(){
     $(this).wrap('<div class="table-scroll-wrapper"></div>');
@@ -323,15 +114,6 @@ const initTableScroll = () => {
 
 }
 
-
-// @litepicker init
-const initDatepicker = () => {
-  $('.js-date').each(function(){
-    new Litepicker({
-      element: $(this)[0]
-    });
-  })
-}
 // @foundation accessibility init
 const initFoundationAccessibility = () => {
   // accordion accessibility
@@ -340,8 +122,6 @@ const initFoundationAccessibility = () => {
   })
 }
 
-
-
 // @lazy init
 const initLazy = () => {
   window.lazyLoad = new LazyLoad({
@@ -349,7 +129,6 @@ const initLazy = () => {
     // ... more custom settings?
   });
 }
-
 
 // @menu helpers
 const initMenuHelpers = () => {
@@ -378,9 +157,6 @@ const initMenuHelpers = () => {
   })
 }
 
-
-
-
 $(document).ready(function(){
 
   // ↑ True for "medium" or larger (by default)
@@ -395,22 +171,17 @@ $(document).ready(function(){
   //Foundation.MediaQuery.is('medium down');
   //Foundation.MediaQuery.upTo('medium');
 
-
-
-
   initLazy(); // @lazy init call
-
   initFoundationAccessibility();  // @foundation init accessibility call
-  initDatepicker(); // @litepicker init call
+  initTableScroll(); // @table-scroll init call
 
-  initTableScroll(); // #table-scroll init call
-  initVideo(); // @video init call
   initSmoothScroll(); // @smooth-scroll init
   initMenuHelpers(); // @menu helpers
-
   initFormHelpers(); // @form helpers init\
 
   initSkipTo(); // @skip-to init
   initSelectUrl(); // @select-url init
 })
 
+// @foundation init
+$(document).foundation();

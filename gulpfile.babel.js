@@ -3,6 +3,8 @@
 
 // Include gulp helpers.
 const { series, src, dest, parallel, watch } = require('gulp');
+
+
 //import browser       from 'browser-sync';
 import fs            from 'fs';
 import yaml          from 'js-yaml';
@@ -26,7 +28,8 @@ const { concatCSS } = require('./gulp-tasks/concat.js');
 const { moveFonts, movePatternCSS, movePatternJS } = require('./gulp-tasks/move.js');
 const server = require('browser-sync').create();
 //const webpack = require('webpack-stream');
-const jsonToSass = require('gulp-json-data-to-sass');
+//const jsonToSass = require('gulp-json-data-to-sass');
+const jsonCss = require('gulp-json-css');
 
 
 // Compile Our Sass and JS
@@ -99,13 +102,12 @@ function buildPatternlab(done) {
 
 function buildVariables(){
 
-    return src('src/_patterns/global/base/**/*.json')
-        .pipe(jsonToSass({
-            sass: 'src/assets/scss/_variables.scss',
-            prefix: 'theme',
-            suffix: '',
-            separator: '-'
-        }));
+
+  return src('src/_patterns/global/base/**/*.json')
+    .pipe(jsonCss({
+        keepObjects: true
+    }))
+    .pipe(dest('src/assets/scss/variables/'));
 
 }
 

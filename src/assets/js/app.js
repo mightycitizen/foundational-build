@@ -3,7 +3,7 @@ import $ from 'jquery';
 import './lib/foundation-explicit-pieces'; // @foundation pick and choose Foundation plugins
 import 'slick-carousel'; // @slick carousel/slider
 import 'lity'; // @lity modal
-import plugins from '../../_patterns/global/base/plugins.json'; // determines what plugins to include
+//import plugins from '../../_patterns/global/base/plugins.json'; // determines what plugins to include
 import tippy from 'tippy.js'; // @tippy tooltip
 import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
 import Litepicker from 'litepicker'; // @litepicker date picker
@@ -14,8 +14,6 @@ import paginationTemplate from '../../_patterns/components/listing/pagination.tw
 import loaderTemplate from '../../_patterns/components/utils/loader.twig'; // used with @ajax
 import noUiSlider from 'nouislider';
 import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
-
-import './plugins/selectize';
 
 // @foundation init
 $(document).foundation();

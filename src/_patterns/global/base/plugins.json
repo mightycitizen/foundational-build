@@ -1,6 +1,3 @@
 {
-  "selectize": false,
-  "ajaxify": false,
-  "litepicker": true,
-  "slider": true
+  "selectize": false
 }

@@ -76,10 +76,16 @@ $unicode-quote-left: '\201c';
 // Motion UI
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+@if ($selectize) {
+  @import 'vendor/selectize';
+  @import 'components/selectize';
+}
+
 @import
   "vendor/icomoon/style",
   "vendor/lity",
-  "vendor/selectize",
+  //"vendor/selectize",
   "vendor/slick";
 
 @import
@@ -101,7 +107,7 @@ $unicode-quote-left: '\201c';
   "components/table-scroll",
   "components/tooltip",
   "components/top-bar",
-  "components/selectize",
+  //"components/selectize",
   //@extend"components/search",
   "components/sticky",
   "components/tabs",

@@ -12,16 +12,20 @@ const babel = require('gulp-babel');
 const rename = require('gulp-rename');
 sass.compiler = require('sass');
 
+const ModuleReplacement = require('./webpack.module-replacement.config');
+
 import webpackStream from 'webpack-stream';
 import webpack2      from 'webpack';
 import yargs         from 'yargs';
-
-
+import pluginSettings from '../src/_patterns/global/base/plugins.json';
 //const PRODUCTION = true;
 const PRODUCTION = !!(yargs.argv.production);
 
 let webpackConfig = {
   mode: (PRODUCTION ? 'production' : 'development'),
+  plugins: [
+    ...ModuleReplacement(pluginSettings)
+  ],
   module: {
     rules: [
       {
@@ -77,7 +81,7 @@ module.exports = {
 
   // Compile JavaScript.
   compileJS: function() {
-    return src(['./src/assets/js/**/*.js'], {
+    return src(['./src/assets/js/*.js'], {
       base: './'
     })
 

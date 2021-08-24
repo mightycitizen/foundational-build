@@ -1,4 +1,5 @@
 import 'lity'; // @lity modal
+import $ from 'jquery';
 // @foundation breakpoint event trigger
 $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
    // @lity breakpoint trigger

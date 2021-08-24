@@ -10,6 +10,7 @@ import './plugins/slider';
 import './plugins/tippy';
 import './plugins/ajaxify';
 import './plugins/selectize';
+import './plugins/lity';
 import './plugins/slick';
 
 //import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints

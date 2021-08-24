@@ -1,0 +1,10 @@
+{
+  "image": {
+    "src": "https://source.unsplash.com/9wg5jCEPBsw/400x200",
+    "alt": "Alt Text"
+  },
+  "link": {
+    "text": "Read More about Lorem Ipsum",
+    "url": "#"
+  }
+}

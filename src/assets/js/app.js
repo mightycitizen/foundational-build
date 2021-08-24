@@ -706,7 +706,7 @@ const initTippy = () => {
 
 // @lazy init
 const initLazy = () => {
-  new LazyLoad({
+  window.lazyLoad = new LazyLoad({
     elements_selector: ".js-lazy"
     // ... more custom settings?
   });

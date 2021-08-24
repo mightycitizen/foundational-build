@@ -39,7 +39,7 @@ module.exports = {
   // Concat all JS into a master bundle.
   concatJS: function() {
     return (
-      src(['./dist/js/*.js', '!./dist/js/all.js'])
+      src(['./dist/js/*.js', '!./dist/js/all.js','!./dist/js/pattern-scaffolding.js'])
         // If you need to reorder any of the JS files here's an example:
         // .pipe(order([
         //   'dist/js/header.js',

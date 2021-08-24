@@ -15,5 +15,9 @@
       "label": "Location",
       "value": "Address here\r\nRoom\r\n"
     }
-  ]
+  ],
+  "link": {
+    "text": "Read More about Lorem Ipsum",
+    "url": "#"
+  }
 }

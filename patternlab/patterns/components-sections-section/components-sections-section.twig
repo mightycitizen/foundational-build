@@ -1,0 +1,62 @@
+{% if intro_class | default is empty %}{% set intro_class = 'text-center' %}{% endif %}
+
+{% set section_intro %}
+  {% if section_heading | default %}
+      <div class="section_intro {{ intro_class }}">
+        <div class="grid-x grid-margin-x align-middle align-center">
+          {% if section_image | default %}
+            <div class="cell medium-6">
+              <img data-src="{{ section_image.src }}" alt="{{ section_image.alt }}" class="js-lazy">
+            </div>
+          {% endif %}
+          <div class="cell {% if section_image | default %}medium-6{% elseif style | default is empty %}medium-8{% endif %}">
+            <h2 class="section_heading">{{ section_heading }}</h2>
+            {% if section_subheading | default %}
+              <h3 class="section_subheading">{{ section_subheading }}</h3>
+            {% endif %}
+            {% if section_description | default %}
+              <p class="lead">{{ section_description }}</p>
+            {% endif %}
+            {% if section_button | default %}
+              {% include 'components/links/button.twig' with {
+                "button" : section_button
+              } %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+{% endset %}
+{% set section_content %}
+  {% if block('section_content') | trim is not empty%}
+    <div class="section_content">
+      {% block section_content %}
+      {% endblock %}
+    </div>
+  {% endif %}
+{% endset %}
+<section class="section {{ class | default }} {% if style | default %}section--{{ style }} {% endif %} {% if collapse | default %}section--collapse{% endif %}" >
+  {% if section_background | default %}<div class="js-lazy section_background" data-bg="{{ section_background.src }}"></div>{% endif %}
+  <div class="grid-container {{ grid_class | default }}">
+    {% if style | default and (style == 'side') %}
+      <div class="grid-x align-middle align-center">
+        <div class="cell medium-8">
+          {{ section_intro }}
+        </div>
+        <div class="cell large-4">
+          {{ section_content }}
+        </div>
+      </div>
+    {% else %}
+      {{ section_intro }}
+      {% if style | default and (style == 'narrow' or style == 'narrower') %}
+        {% set content %}
+          {{ section_content }}
+        {% endset %}
+        {% include 'layout/structure/content-' ~ style ~ '.twig' %}
+      {% else %}
+        {{ section_content }}
+      {% endif %}
+    {% endif %}
+  </div>
+</section>

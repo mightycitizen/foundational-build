@@ -1,0 +1,35 @@
+<footer class="l-footer text-white text-center">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+
+      <div class="cell medium-3 medium-order-2 medium-text-left">
+
+        {% include 'components/logo/logo.twig' %}
+
+      </div>
+      <div class="small-12 cell medium-order-1">
+        <ul class="menu medium-horizontal vertical">
+        {% for item in menu %}
+          <li>
+            <a href="{{ item.url }}">{{ item.text }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      </div>
+      <div class="cell medium-9 medium-text-right medium-order-3">
+        {% include 'components/utils/social-media.twig' %}
+      </div>
+    </div>
+
+    <ul class="inline-list inline-list--divided">
+      <li>
+        <a href="">Terms of Use</a>
+      </li>
+      <li>
+        <a href="">Privacy Policy</a>
+      </li>
+    </ul>
+    <p>Copyright &copy; 2021 Mighty Citizen</p>
+
+  </div>
+</footer>

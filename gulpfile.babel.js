@@ -23,14 +23,14 @@ const { compressAssets } = require('./gulp-tasks/compress.js');
 const { cleanCSS, cleanJS, cleanWebDist, cleanWebComponents, cleanWebLayout } = require('./gulp-tasks/clean.js');
 
 const { concatCSS } = require('./gulp-tasks/concat.js');
-const { moveFonts, movePatternCSS } = require('./gulp-tasks/move.js');
+const { moveFonts, movePatternCSS, movePatternJS } = require('./gulp-tasks/move.js');
 const server = require('browser-sync').create();
 //const webpack = require('webpack-stream');
 const jsonToSass = require('gulp-json-data-to-sass');
 
 
 // Compile Our Sass and JS
-exports.compile = parallel(compileSass, compileJS, moveFonts, movePatternCSS);
+exports.compile = parallel(compileSass, compileJS, moveFonts, movePatternCSS, movePatternJS);
 
 // Lint Sass and JavaScript
 exports.lint = parallel(lintSass, lintJS);
@@ -185,7 +185,8 @@ exports.watch = series(
     compileJS,
     compressAssets,
     moveFonts,
-    movePatternCSS
+    movePatternCSS,
+    movePatternJS
   ),
   concatCSS,
   series(watchPatternlab, serve, watchFiles)
@@ -214,7 +215,8 @@ exports.default = series(
     compileJS,
     compressAssets,
     moveFonts,
-    movePatternCSS
+    movePatternCSS,
+    movePatternJS
   ),
   concatCSS,
   buildPatternlab

@@ -1,14 +1,1 @@
-<span class="{{ read_more.class | default }}"><a href="{{ read_more.url }}" class="read-more">
-  {#
-  {% set text_array = read_more.text | split(' ') %}
-  {% if text_array | length > 1 %}
-    {% set last_word = text_array | last %}
-    {% set other_words = text_array | slice(0, -1) %}
-    {{ other_words | join(' ') }}
-    <span class="read-more_last">{{ last_word }}</span>
-  {% else %}
-    <span class="read-more_last">{{ read_more.text}}</span>
-  {% endif %}
-  #}
-  {{ read_more.text }}
-</a></span>
+<span class="{{ read_more.class | default }}"><a href="{{ read_more.url }}" class="read-more">{{ read_more.text }}</a></span>

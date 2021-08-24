@@ -5149,10 +5149,10 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   flex: 0 1 auto;
 }
 .media-object-section:first-child {
-  padding-right: 2rem;
+  padding-right: 1.5rem;
 }
 .media-object-section:last-child:not(:nth-child(2)) {
-  padding-left: 2rem;
+  padding-left: 1.5rem;
 }
 .media-object-section > :last-child {
   margin-bottom: 0;
@@ -5160,7 +5160,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 @media print, screen and (max-width: 39.99875em) {
   .stack-for-small .media-object-section {
     padding: 0;
-    padding-bottom: 2rem;
+    padding-bottom: 1.5rem;
     flex-basis: 100%;
     max-width: 100%;
   }
@@ -7781,12 +7781,12 @@ a.thumbnail image {
 .accordion--icons .accordion-title {
   counter-increment: steps;
   position: relative;
-  padding-left: 2.8125rem;
+  padding-left: 1.875rem;
   display: flex;
 }
 @media print, screen and (min-width: 40em) {
   .accordion--icons .accordion-title {
-    padding-left: 4.5rem;
+    padding-left: 3rem;
   }
 }
 .accordion--icons .accordion-title .accordion-icon {
@@ -7794,33 +7794,33 @@ a.thumbnail image {
   left: 0;
   top: 0;
   height: 100%;
-  color: #fff;
+  color: #2953cc;
   display: inline-flex;
   font-weight: bold;
   align-items: center;
-  justify-content: center;
-  padding: 0.8333333333rem 0.6666666667rem;
-  width: 1.875rem;
-  font-size: 1rem;
-  background-color: #1f3e99;
-}
-@media print, screen and (max-width: 39.99875em) {
-  .accordion--icons .accordion-title .accordion-icon {
-    font-size: 0.75rem;
-  }
+  justify-content: flex-end;
+  width: 1.5625rem;
 }
 @media print, screen and (min-width: 40em) {
   .accordion--icons .accordion-title .accordion-icon {
-    width: 3rem;
+    width: 2rem;
   }
 }
-.accordion--icons .accordion-title .accordion-icon:not([class*=fa-]):not([class*=icon-]):before {
+.accordion--icons .accordion-title:not(.accordion-title--icon) .accordion-icon:before {
   content: counter(steps);
   font-size: 1.3333333333rem;
 }
 @media print, screen and (max-width: 39.99875em) {
-  .accordion--icons .accordion-title .accordion-icon:not([class*=fa-]):not([class*=icon-]):before {
+  .accordion--icons .accordion-title:not(.accordion-title--icon) .accordion-icon:before {
     font-size: 1rem;
+  }
+}
+.accordion--icons .accordion-title--icon .accordion-icon {
+  font-size: 1rem;
+}
+@media print, screen and (max-width: 39.99875em) {
+  .accordion--icons .accordion-title--icon .accordion-icon {
+    font-size: 0.75rem;
   }
 }
 
@@ -8198,16 +8198,10 @@ span.button a {
 @media print, screen and (min-width: 40em) {
   .listing .item .media-object-section:first-child {
     max-width: 40%;
-    padding-right: 24px;
   }
   .listing .item .media-object-section:first-child img {
     width: 13.8888888889rem;
     max-width: 100%;
-  }
-}
-@media print, screen and (min-width: 64em) {
-  .listing .item .media-object-section:first-child {
-    padding-right: 40px;
   }
 }
 @media print, screen and (max-width: 39.99875em) {
@@ -9317,11 +9311,11 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .video-wrapper[data-video-trigger=scroll] .video-image-wrapper:before, .video-wrapper[data-video-trigger=click] .video-image-wrapper:before {
   height: 0;
   width: 0;
-  border-left: 80px solid #fff;
-  border-bottom: 55px solid transparent;
-  border-top: 55px solid transparent;
+  border-left: 60px solid #fff;
+  border-bottom: 40px solid transparent;
+  border-top: 40px solid transparent;
   z-index: 1;
-  margin-left: 0.2777777778rem;
+  margin-left: -0.2777777778rem;
 }
 .video-wrapper[data-video-trigger=scroll] .video-container, .video-wrapper[data-video-trigger=click] .video-container {
   overflow: hidden;

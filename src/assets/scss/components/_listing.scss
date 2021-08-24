@@ -10,14 +10,14 @@
     .media-object-section:first-child{
       @include breakpoint(medium){
         max-width: 40%;
-        padding-right: map-get($grid-margin-gutters,medium);
+        //padding-right: map-get($grid-margin-gutters,medium);
         img{
           width: rem-calc(250);
           max-width: 100%;
         }
       }
       @include breakpoint(large){
-        padding-right: map-get($grid-margin-gutters,large);
+        //padding-right: map-get($grid-margin-gutters,large);
       }
       padding-left: 0;
     }

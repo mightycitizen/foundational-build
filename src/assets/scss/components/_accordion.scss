@@ -68,32 +68,43 @@
     .accordion-title{
       counter-increment: steps;
       position: relative;
-      @include spacer(padding, left,9);
+      @include spacer(padding, left,6);
       display: flex;
       .accordion-icon{
         position: absolute;
         left: 0;
         top: 0;
         height: 100%;
-        color: $white;
+        color: $primary-color;
         display: inline-flex;
         font-weight: bold;
         align-items: center;
-        justify-content: center;
-        padding: rem-calc(15 12);
-        width: rem-calc($spacer-mobile*6);
-        font-size: rem-calc(18);
-        @include font-scale-mobile(18);
-        background-color: map-get($additional-palette, 'primary-darker');
+        justify-content: flex-end;
+        width: rem-calc($spacer-mobile*5);
+        //background-color: map-get($additional-palette, 'primary-darker');
         @include breakpoint(medium){
-          width: rem-calc($spacer*6);
+          width: rem-calc($spacer*4);
         }
-        &:not([class*=fa-]):not([class*=icon-]):before{
-          content: counter(steps);
-          font-size: rem-calc(24);
-          @include font-scale-mobile(24);
+
+      }
+      &:not(.accordion-title--icon){
+        .accordion-icon{
+          &:before{
+            content: counter(steps);
+            font-size: rem-calc(24);
+            @include font-scale-mobile(24);
+          }
+        }
+      }
+      &--icon{
+        .accordion-icon{
+          font-size: rem-calc(18);
+          @include font-scale-mobile(18);
+
+
         }
       }
     }
+
   }
 }

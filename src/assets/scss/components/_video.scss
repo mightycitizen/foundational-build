@@ -135,9 +135,9 @@
                 @include center;
               }
               &:before{
-                @include triangle(110px 80px, $white, right);
+                @include triangle(80px 60px, $white, right);
                 z-index: 1;
-                margin-left: rem-calc(5);
+                margin-left: rem-calc(-5);
               }
               // &:after{
               //   width: rem-calc(80);

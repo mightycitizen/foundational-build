@@ -10,20 +10,24 @@
     style: 'narrow'
   } %}
     {% block section_content %}
-      <div class="m-b-4">
-        {% include 'components/forms/select.twig' with {
-          "label": "Filter by Category",
-          "id": "category",
-          "placeholder": "Select a category",
-          "name": 'category',
-          "options": [
-            {
-              value: 1,
-              label: 'Category 1'
-            }
-          ]
-        }
-        %}
+      <div class="grid-x grid-margin-x">
+        <div class="m-b-4 cell medium-4">
+          {% include 'components/forms/select.twig' with {
+            label: "Filter by Category",
+            input_class: 'w-100',
+            id: "category",
+            placeholder: "Select a category",
+            name: 'category',
+            options: [
+              {
+                value: 1,
+                label: 'Category 1'
+              }
+            ]
+          }
+          %}
+        </div>
+
       </div>
 
 

@@ -1,4 +1,4 @@
-<div class="form-input">
+<div class="form-input {{ input_class | default }}">
   <label for="{{ id }}">{{ label }} {% if required | default %}*{% endif %}</label>
   {% block field %}
   {% endblock %}

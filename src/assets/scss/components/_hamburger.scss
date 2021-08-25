@@ -1,14 +1,12 @@
 $hamburger-color: $primary-color;
 .hamburger{
-
   background: transparent;
   position: relative;
   z-index: 3;
   text-transform: uppercase;
   color: $white;
   border: 0;
-  //padding: rem-calc(43 30 18);
-  font-size: rem-calc(11);
+  font-size: rem-calc(10);
   font-weight: bold;
   text-align: center;
   &:focus{
@@ -20,9 +18,7 @@ $hamburger-color: $primary-color;
     display: block;
     width: rem-calc(30);
     height: rem-calc(19.5);
-
     cursor: pointer;
-
     &:before, &:after, &-bar{
       content: "";
       left: 0;
@@ -46,9 +42,11 @@ $hamburger-color: $primary-color;
     }
   }
   &-text{
+    letter-spacing: 0.7px;
     margin-top: rem-calc(6);
     display: block;
     position: relative;
+    color: $black;
     &:after{
       content: "Close";
       color: transparent;
@@ -71,6 +69,7 @@ $hamburger-color: $primary-color;
     .hamburger{
       &-text{
         margin-top: rem-calc(25);
+        color: transparent;
         &:after{
           color: $primary-color;
         }
@@ -80,6 +79,7 @@ $hamburger-color: $primary-color;
         // &-bar, &:before, &:after{
         //   background-color: $secondary-color;;
         // }
+
         &-bar{
           opacity: 0;
         }

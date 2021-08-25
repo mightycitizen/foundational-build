@@ -69,9 +69,10 @@
         display: flex;
         align-items: center;      ;
         justify-content: flex-end;
-        &-text{
-          display: none;
-        }
+        flex-direction: column;
+        // &-text{
+        //   display: none;
+        // }
       }
     }
 

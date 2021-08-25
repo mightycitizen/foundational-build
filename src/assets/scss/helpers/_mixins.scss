@@ -110,3 +110,68 @@
       font-size: rem-calc($font-size-mobile);
     }
   }
+
+  .has-icon{
+    display: inline-flex;
+    .icon{
+      vertical-align: middle;
+      margin-right: rem-calc(7);
+      flex: none;
+    }
+    &:not(.align-middle){
+      align-items: flex-start;
+      justify-content: flex-start;
+      .icon{
+        margin-top: rem-calc(2);
+      }
+    }
+  }
+
+  @mixin icon-circle(){
+    background-color: $primary-color !important;
+    width: rem-calc(30) !important;
+    height: rem-calc(30) !important;
+    color: $white;
+    border-radius: 100% !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    &:hover, &:focus{
+      color: $white;
+      background-color: $secondary-color;
+    }
+
+    svg{
+      g, path{
+        fill: $white;
+      }
+    }
+
+
+    .text-white & {
+      background-color: $white !important;
+      svg{
+        g, path{
+          fill: $primary-color;
+        }
+      }
+      [class*=icon-]{
+        color: $primary-color;
+      }
+      &:hover, &:focus{
+        background-color: $secondary-color;
+      }
+    }
+
+    [class*=icon-]{
+      position: absolute;
+    }
+    .icon-facebook{
+      font-size: 1.3em;
+      position: absolute;
+      //margin-top: rem-calc(-8%);
+      margin-bottom: rem-calc(-8.25%);
+      margin-right: rem-calc(-2%);
+    }
+  }

@@ -7,7 +7,7 @@
       {% set item = item | merge( { icon: true } ) %}
     {% endif %}
     {%
-      include 'components/containers/accordion-item.twig' with {item: item} only
+      include '@mc_theme/components/containers/accordion-item.twig' with {item: item} only
     %}
   {% endfor %}
 </ul>

@@ -53,7 +53,7 @@
         {% set content %}
           {{ section_content }}
         {% endset %}
-        {% include 'layout/structure/content-' ~ style ~ '.twig' %}
+        {% include '@mc_theme/layout/structure/content-' ~ style ~ '.twig' %}
       {% else %}
         {{ section_content }}
       {% endif %}

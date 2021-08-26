@@ -5122,7 +5122,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   border-radius: 0 0 0 0;
 }
 .accordion-title:hover, .accordion-title:focus {
-  background-color: #cacaca;
+  background-color: #bebebe;
 }
 .accordion-title::before {
   position: absolute;
@@ -7703,7 +7703,7 @@ a.thumbnail image {
   background: none;
 }
 .accordion-heading:focus-within + .accordion-title {
-  background-color: #cacaca;
+  background-color: #bebebe;
 }
 .accordion-title {
   background-color: #eee;
@@ -7750,10 +7750,43 @@ a.thumbnail image {
   transform: rotate(180deg);
 }
 .accordion-title:hover, .accordion-title:focus {
-  background-color: #cacaca;
+  background-color: #bebebe;
 }
 .accordion-title:focus {
   background-color: #eee;
+}
+.accordion-title--notch {
+  position: relative;
+  display: flex;
+  padding-left: 2.1875rem;
+}
+@media print, screen and (min-width: 40em) {
+  .accordion-title--notch {
+    padding-left: 3.5rem;
+  }
+}
+.accordion-title--notch .accordion-notch {
+  font-size: 1.3333333333rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  color: #2953cc;
+  display: inline-flex;
+  font-weight: bold;
+  align-items: center;
+  justify-content: flex-end;
+  width: 1.5625rem;
+}
+@media print, screen and (max-width: 39.99875em) {
+  .accordion-title--notch .accordion-notch {
+    font-size: 1rem;
+  }
+}
+@media print, screen and (min-width: 40em) {
+  .accordion-title--notch .accordion-notch {
+    width: 2.5rem;
+  }
 }
 .accordion-content {
   padding-top: 0.625rem;
@@ -7791,52 +7824,33 @@ a.thumbnail image {
     margin-bottom: 1.5rem;
   }
 }
-.accordion--icons {
+.accordion--steps {
   counter-set: steps;
 }
-.accordion--icons .accordion-title {
+.accordion--steps .accordion-title {
   counter-increment: steps;
-  position: relative;
   padding-left: 1.875rem;
-  display: flex;
 }
 @media print, screen and (min-width: 40em) {
-  .accordion--icons .accordion-title {
+  .accordion--steps .accordion-title {
     padding-left: 3rem;
   }
 }
-.accordion--icons .accordion-title .accordion-icon {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  color: #2953cc;
-  display: inline-flex;
-  font-weight: bold;
-  align-items: center;
-  justify-content: flex-end;
-  width: 1.5625rem;
+.accordion--steps .accordion-title .accordion-notch {
+  width: 2rem;
 }
 @media print, screen and (min-width: 40em) {
-  .accordion--icons .accordion-title .accordion-icon {
+  .accordion--steps .accordion-title .accordion-notch {
     width: 2rem;
   }
 }
-.accordion--icons .accordion-title:not(.accordion-title--icon) .accordion-icon:before {
+.accordion--steps .accordion-title .accordion-notch:before {
   content: counter(steps);
   font-size: 1.3333333333rem;
 }
 @media print, screen and (max-width: 39.99875em) {
-  .accordion--icons .accordion-title:not(.accordion-title--icon) .accordion-icon:before {
+  .accordion--steps .accordion-title .accordion-notch:before {
     font-size: 1rem;
-  }
-}
-.accordion--icons .accordion-title--icon .accordion-icon {
-  font-size: 1rem;
-}
-@media print, screen and (max-width: 39.99875em) {
-  .accordion--icons .accordion-title--icon .accordion-icon {
-    font-size: 0.75rem;
   }
 }
 

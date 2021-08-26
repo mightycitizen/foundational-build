@@ -43,6 +43,31 @@
     &:focus{
       background-color: $accordion-background;
     }
+    &--notch{
+      position: relative;
+      display: flex;
+      @include spacer(padding, left,7);
+      .accordion-notch{
+        @include font-scale-mobile(24, 0, true);
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        color: $primary-color;
+        display: inline-flex;
+        font-weight: bold;
+        align-items: center;
+        justify-content: flex-end;
+        width: rem-calc($spacer-mobile*5);
+        //background-color: map-get($additional-palette, 'primary-darker');
+        @include breakpoint(medium){
+          width: rem-calc($spacer*5);
+        }
+
+      }
+
+    }
+
 
   }
   &-content{
@@ -63,48 +88,27 @@
       //border-bottom: 2px solid $white;
     }
   }
-  &--icons{
+  &--steps{
     counter-set: steps;
     .accordion-title{
       counter-increment: steps;
-      position: relative;
       @include spacer(padding, left,6);
-      display: flex;
-      .accordion-icon{
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        color: $primary-color;
-        display: inline-flex;
-        font-weight: bold;
-        align-items: center;
-        justify-content: flex-end;
-        width: rem-calc($spacer-mobile*5);
-        //background-color: map-get($additional-palette, 'primary-darker');
+      .accordion-notch{
+        width: rem-calc($spacer*4);
         @include breakpoint(medium){
           width: rem-calc($spacer*4);
         }
-
-      }
-      &:not(.accordion-title--icon){
-        .accordion-icon{
-          &:before{
-            content: counter(steps);
-            font-size: rem-calc(24);
-            @include font-scale-mobile(24);
-          }
+        &:before{
+          content: counter(steps);
+          font-size: rem-calc(24);
+          @include font-scale-mobile(24);
         }
       }
-      &--icon{
-        .accordion-icon{
-          font-size: rem-calc(18);
-          @include font-scale-mobile(18);
 
-
-        }
-      }
     }
 
   }
+
+
+
 }

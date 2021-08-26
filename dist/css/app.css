@@ -7699,10 +7699,10 @@ a.thumbnail image {
 }
 .accordion-title {
   background-color: #eee;
-  padding-top: 0.5555555556rem;
-  padding-left: 1.1111111111rem;
-  padding-right: 1.1111111111rem;
-  padding-bottom: 0.5555555556rem;
+  padding-top: 0.8888888889rem;
+  padding-left: 1.3333333333rem;
+  padding-right: 1.3333333333rem;
+  padding-bottom: 0.8888888889rem;
   padding-right: 2.6666666667rem;
   width: 100%;
   text-align: left;
@@ -7727,7 +7727,7 @@ a.thumbnail image {
 }
 @media print, screen and (max-width: 39.99875em) {
   .accordion-title {
-    font-size: 1rem;
+    font-size: 1.1111111111rem;
   }
 }
 .accordion-title:before {
@@ -7781,10 +7781,10 @@ a.thumbnail image {
   }
 }
 .accordion-content {
-  padding-top: 0.5555555556rem;
-  padding-left: 1.1111111111rem;
-  padding-right: 1.1111111111rem;
-  padding-bottom: 1.1111111111rem;
+  padding-top: 0.8888888889rem;
+  padding-left: 1.3333333333rem;
+  padding-right: 1.3333333333rem;
+  padding-bottom: 1.3333333333rem;
 }
 @media print, screen and (min-width: 40em) {
   .accordion-content {
@@ -7821,7 +7821,7 @@ a.thumbnail image {
 }
 .accordion--steps .accordion-title {
   counter-increment: steps;
-  padding-left: 1.6666666667rem;
+  padding-left: 1.7777777778rem;
 }
 @media print, screen and (min-width: 40em) {
   .accordion--steps .accordion-title {
@@ -7829,7 +7829,7 @@ a.thumbnail image {
   }
 }
 .accordion--steps .accordion-title .accordion-notch {
-  width: 1.7777777778rem;
+  width: 1.3333333333rem;
 }
 @media print, screen and (min-width: 40em) {
   .accordion--steps .accordion-title .accordion-notch {
@@ -7961,14 +7961,14 @@ a.thumbnail image {
   right: 0;
 }
 .card-section {
-  padding-top: 1.1111111111rem;
-  padding-left: 1.1111111111rem;
-  padding-right: 1.1111111111rem;
-  padding-bottom: 1.3888888889rem;
+  padding-top: 1.7777777778rem;
+  padding-left: 1.3333333333rem;
+  padding-right: 1.3333333333rem;
+  padding-bottom: 1.7777777778rem;
 }
 @media print, screen and (min-width: 40em) {
   .card-section {
-    padding-top: 1.7777777778rem;
+    padding-top: 2.2222222222rem;
   }
 }
 @media print, screen and (min-width: 40em) {
@@ -8030,24 +8030,6 @@ a.thumbnail image {
   bottom: 0;
   transition: 0.3s height;
   background: linear-gradient(to bottom, rgba(41, 83, 204, 0), #2953cc);
-}
-.card--horizontal .card-section {
-  padding-left: 1.1111111111rem;
-  padding-right: 1.1111111111rem;
-  padding-top: 1.3888888889rem;
-  padding-bottom: 1.3888888889rem;
-}
-@media print, screen and (min-width: 40em) {
-  .card--horizontal .card-section {
-    padding-left: 1.7777777778rem;
-    padding-right: 1.7777777778rem;
-  }
-}
-@media print, screen and (min-width: 40em) {
-  .card--horizontal .card-section {
-    padding-top: 2.2222222222rem;
-    padding-bottom: 2.2222222222rem;
-  }
 }
 
 .cta:before {
@@ -8293,9 +8275,6 @@ span.button a {
   }
 }
 @media print, screen and (max-width: 39.99875em) {
-  .listing .item .grid-x.grid-margin-x .cell:not(:last-child) {
-    margin-bottom: 1.3333333333rem;
-  }
   .listing .item .media-object:not(.media-object--stack) .media-object-section:first-child {
     padding-right: 20px;
   }
@@ -9422,11 +9401,20 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .video-wrapper[data-video-trigger=scroll] .video-image-wrapper:before, .video-wrapper[data-video-trigger=click] .video-image-wrapper:before {
   height: 0;
   width: 0;
-  border-left: 60px solid #fff;
-  border-bottom: 40px solid transparent;
-  border-top: 40px solid transparent;
+  border-left: 28px solid #fff;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid transparent;
   z-index: 1;
   margin-left: -0.2777777778rem;
+}
+@media print, screen and (min-width: 40em) {
+  .video-wrapper[data-video-trigger=scroll] .video-image-wrapper:before, .video-wrapper[data-video-trigger=click] .video-image-wrapper:before {
+    height: 0;
+    width: 0;
+    border-left: 60px solid #fff;
+    border-bottom: 40px solid transparent;
+    border-top: 40px solid transparent;
+  }
 }
 .video-wrapper[data-video-trigger=scroll] .video-container, .video-wrapper[data-video-trigger=click] .video-container {
   overflow: hidden;
@@ -9656,7 +9644,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 
 @media print, screen and (max-width: 39.99875em) {
   .grid-margin-x .cell[class*=medium-]:not([class*=small-]):not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 24px;
   }
 }
 @media print, screen and (min-width: 64em) {
@@ -9666,17 +9654,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 @media print, screen and (max-width: 63.99875em) {
   .grid-margin-x .cell[class*=large-]:not([class*=medium-]):not([class*=small-]):not(:last-child) {
-    margin-bottom: 1.7777777778rem;
-  }
-}
-@media print, screen and (max-width: 39.99875em) {
-  .grid-margin-x.wide-mobile-spacing .cell[class*=medium-]:not(:last-child) {
-    margin-bottom: 2.2222222222rem;
-  }
-}
-@media print, screen and (max-width: 39.99875em) {
-  .grid-margin-x.tight-mobile-spacing .cell[class*=medium-]:not(:last-child) {
-    margin-bottom: 0.8333333333rem;
+    margin-bottom: 24px;
   }
 }
 

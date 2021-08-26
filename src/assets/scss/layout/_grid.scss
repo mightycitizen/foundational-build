@@ -2,10 +2,11 @@
 
   &-margin-x{
     .cell{
+      $mobile-margin-spacer: 3*$spacer;
       &[class*=medium-]:not([class*=small-]){
         @include breakpoint(small only){
           &:not(:last-child){
-            margin-bottom: $spacer-mobile*2;
+            margin-bottom: $mobile-margin-spacer;
           }
         }
       }
@@ -19,32 +20,32 @@
       &[class*=large-]:not([class*=medium-]):not([class*=small-]){
         @include breakpoint(medium down){
           &:not(:last-child){
-            margin-bottom: $paragraph-margin-bottom;
+            margin-bottom: $mobile-margin-spacer;
           }
         }
       }
     }
-    &.wide-mobile-spacing{
-      .cell{
-        &[class*=medium-]{
-          @include breakpoint(small only){
-            &:not(:last-child){
-              margin-bottom: rem-calc(40);
-            }
-          }
-        }
-      }
-    }
-    &.tight-mobile-spacing{
-      .cell{
-        &[class*=medium-]{
-          @include breakpoint(small only){
-            &:not(:last-child){
-              margin-bottom: rem-calc(15);
-            }
-          }
-        }
-      }
-    }
+    // &.wide-mobile-spacing{
+    //   .cell{
+    //     &[class*=medium-]{
+    //       @include breakpoint(small only){
+    //         &:not(:last-child){
+    //           margin-bottom: rem-calc(40);
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+    // &.tight-mobile-spacing{
+    //   .cell{
+    //     &[class*=medium-]{
+    //       @include breakpoint(small only){
+    //         &:not(:last-child){
+    //           margin-bottom: rem-calc(15);
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
   }
 }

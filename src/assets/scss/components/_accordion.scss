@@ -10,9 +10,9 @@
   }
   &-title{
     background-color: $accordion-background;
-    @include spacer(padding,top,2);
-    @include spacer(padding,x,4);
-    @include spacer(padding,bottom,2);
+    @include spacer(padding,top,2,2);
+    @include spacer(padding,x,4,3);
+    @include spacer(padding,bottom,2,2);
 
     padding-right: #{get-side($accordion-item-padding,'right') + rem-calc(30)};
     width: 100%;
@@ -21,7 +21,7 @@
     font-weight: bold;
 
 
-    @include font-scale-mobile($accordion-title-font-size);
+    @include font-scale-mobile($accordion-title-font-size,20);
 
     &:before{
       right: get-side($accordion-item-padding,'right');
@@ -73,9 +73,9 @@
   &-content{
     //$accordion-content-padding: rem-calc(16 32 32);
 
-    @include spacer(padding,top,2);
-    @include spacer(padding,x,4);
-    @include spacer(padding,bottom,4);
+    @include spacer(padding,top,2,2);
+    @include spacer(padding,x,4,3);
+    @include spacer(padding,bottom,4,3);
 
     > *:last-child{
       margin-bottom: 0;
@@ -92,9 +92,9 @@
     counter-set: steps;
     .accordion-title{
       counter-increment: steps;
-      @include spacer(padding, left,6);
+      @include spacer(padding, left,6,4);
       .accordion-notch{
-        width: rem-calc($spacer*4);
+        width: rem-calc($spacer*3);
         @include breakpoint(medium){
           width: rem-calc($spacer*4);
         }

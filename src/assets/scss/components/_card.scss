@@ -12,9 +12,9 @@
     right: 0;
   }
   &-section{
-    @include spacer(padding,top,4);
-    @include spacer(padding,x,4);
-    @include spacer(padding,bottom,5);
+    @include spacer(padding,top,5,4);
+    @include spacer(padding,x,4,3);
+    @include spacer(padding,bottom,5,4);
   }
   &-image{
     img{
@@ -67,17 +67,17 @@
       background: linear-gradient(to bottom, rgba($primary-color,0), $primary-color);
     }
   }
-  &--horizontal{
-    .card-section{
-      @include spacer(padding,x,4);
-      @include spacer(padding,y,5);
-    }
-    // @include breakpoint(medium){
-    //   .cell{
-    //     &:not(:first-child):not([class*=medium-order-1]){
-    //       margin-left: rem-calc(10);
-    //     }
-    //   }
-    // }
-  }
+  // &--horizontal{
+  //   .card-section{
+  //     @include spacer(padding,x,4);
+  //     @include spacer(padding,y,5);
+  //   }
+  //   // @include breakpoint(medium){
+  //   //   .cell{
+  //   //     &:not(:first-child):not([class*=medium-order-1]){
+  //   //       margin-left: rem-calc(10);
+  //   //     }
+  //   //   }
+  //   // }
+  // }
 }

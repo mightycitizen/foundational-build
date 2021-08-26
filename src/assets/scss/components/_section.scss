@@ -2,8 +2,8 @@
   // $section-padding: 50;
   // $section-padding-medium: 95;
   // $section-padding-large: 115;
-  @include spacer(padding,top,12);
-  @include spacer(padding,bottom,13);
+  @include spacer(padding,top,12,4);
+  @include spacer(padding,bottom,13,5);
 
   background-size: cover;
   background-position: center;
@@ -45,8 +45,8 @@
   }
 
   &--tight{
-    @include spacer(padding,top,5);
-    @include spacer(padding,bottom,6);
+    @include spacer(padding,top,5,2);
+    @include spacer(padding,bottom,6,3);
     &.section--collapse{
       + .section--tight.section--collapse{
         padding-top: 0 !important;

@@ -9158,12 +9158,12 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   font-weight: bold;
   cursor: pointer;
   color: #333;
-  font-size: 1rem;
-  padding-top: 0.5555555556rem;
-  padding-bottom: 0.5555555556rem;
-  padding-left: 1.3888888889rem;
-  padding-right: 1.3888888889rem;
+  padding-top: 0.4444444444rem;
+  padding-bottom: 0.4444444444rem;
+  padding-left: 0.4444444444rem;
+  padding-right: 0.4444444444rem;
   background-color: #eee;
+  font-size: 1rem;
 }
 @media print, screen and (min-width: 40em) {
   .tabs-title button {
@@ -9180,6 +9180,11 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   .tabs-title button {
     padding-left: 2.2222222222rem;
     padding-right: 2.2222222222rem;
+  }
+}
+@media print, screen and (max-width: 39.99875em) {
+  .tabs-title button {
+    font-size: 1rem;
   }
 }
 .tabs-title button:hover {
@@ -9200,8 +9205,8 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
 }
 .tabs-panel {
-  padding-top: 1.3888888889rem;
-  padding-bottom: 1.3888888889rem;
+  padding-top: 1.7777777778rem;
+  padding-bottom: 1.7777777778rem;
   padding-left: 1.1111111111rem;
   padding-right: 1.1111111111rem;
 }
@@ -9223,17 +9228,6 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 @media print, screen and (max-width: 63.99875em) {
   .tabs {
     display: flex;
-  }
-  .tabs-title button {
-    font-size: 0.8888888889rem;
-    padding-left: 0.5555555556rem;
-    padding-right: 0.5555555556rem;
-  }
-}
-@media print, screen and (max-width: 63.99875em) and (min-width: 40em) {
-  .tabs-title button {
-    padding-left: 0.8888888889rem;
-    padding-right: 0.8888888889rem;
   }
 }
 
@@ -9522,8 +9516,8 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 
 .section {
-  padding-top: 3.3333333333rem;
-  padding-bottom: 3.6111111111rem;
+  padding-top: 1.7777777778rem;
+  padding-bottom: 2.2222222222rem;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -9586,8 +9580,8 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   margin-bottom: 0;
 }
 .section--tight {
-  padding-top: 1.3888888889rem;
-  padding-bottom: 1.6666666667rem;
+  padding-top: 0.8888888889rem;
+  padding-bottom: 1.3333333333rem;
 }
 @media print, screen and (min-width: 40em) {
   .section--tight {

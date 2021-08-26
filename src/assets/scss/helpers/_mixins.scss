@@ -137,6 +137,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    padding: rem-calc(3) !important;
     &:hover, &:focus{
       color: $white;
       background-color: $secondary-color;
@@ -166,6 +167,13 @@
 
     [class*=icon-]{
       position: absolute;
+    }
+    &.a2a_s_facebook{
+      svg{
+        margin-bottom: rem-calc(-8.25%);
+        margin-left: rem-calc(-4%);
+        width: 130%;
+      }
     }
     .icon-facebook{
       font-size: 1.3em;

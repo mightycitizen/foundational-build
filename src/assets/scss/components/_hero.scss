@@ -10,7 +10,9 @@
       color: inherit;
     }
   }
-  h1:last-child{
-    margin-bottom: 0;
+  &_content{
+    *:last-child{
+      margin-bottom: 0;
+    }
   }
 }

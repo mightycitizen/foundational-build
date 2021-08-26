@@ -7859,8 +7859,6 @@ a.thumbnail image {
 }
 
 .a2a_svg {
-  max-width: 1.3888888889rem;
-  max-height: 1.3888888889rem;
   margin-right: 0.8333333333rem;
   background-color: #2953cc !important;
   width: 1.6666666667rem !important;
@@ -7871,6 +7869,7 @@ a.thumbnail image {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  padding: 0.1666666667rem !important;
 }
 .a2a_svg:hover, .a2a_svg:focus {
   color: #fff;
@@ -7894,6 +7893,11 @@ a.thumbnail image {
 .a2a_svg [class*=icon-] {
   position: absolute;
 }
+.a2a_svg.a2a_s_facebook svg {
+  margin-bottom: -0.4583333333rem;
+  margin-left: -0.2222222222rem;
+  width: 130%;
+}
 .a2a_svg .icon-facebook {
   font-size: 1.3em;
   position: absolute;
@@ -7904,9 +7908,10 @@ a.thumbnail image {
   margin-bottom: 1.9444444444rem;
 }
 .a2a_kit_label {
+  font-size: 0.7777777778rem;
   display: block;
   font-weight: bold;
-  margin-bottom: 0.8333333333rem;
+  margin-bottom: 0;
 }
 
 .breadcrumbs {
@@ -8066,7 +8071,7 @@ a.thumbnail image {
 .hero .breadcrumbs, .hero .breadcrumbs li, .hero .breadcrumbs a, .hero .breadcrumbs li:after {
   color: inherit;
 }
-.hero h1:last-child {
+.hero_content *:last-child {
   margin-bottom: 0;
 }
 
@@ -11790,6 +11795,7 @@ legend {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  padding: 0.1666666667rem !important;
 }
 .icon--circle:hover, .icon--circle:focus {
   color: #fff;
@@ -11812,6 +11818,11 @@ legend {
 }
 .icon--circle [class*=icon-] {
   position: absolute;
+}
+.icon--circle.a2a_s_facebook svg {
+  margin-bottom: -0.4583333333rem;
+  margin-left: -0.2222222222rem;
+  width: 130%;
 }
 .icon--circle .icon-facebook {
   font-size: 1.3em;

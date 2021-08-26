@@ -1,0 +1,18 @@
+<ol class="step-list">
+  {% for step in steps %}
+    <li>
+      <h2>{{ step.heading }}</h2>
+      <p class="m-b-3">{{ step.description }}</p>
+      {% if step.link | default is not empty %}
+        {% include patternlab_namespace | default ~ 'components/links/read-more.twig' with {
+          read_more: {
+            text: step.link.text,
+            url: step.link.url,
+            target: step.link.target
+          }
+        }%}
+      {% endif %}
+    </li>
+  {% endfor %}
+
+</ol>

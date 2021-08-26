@@ -1,0 +1,9 @@
+{% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
+    "class": "section--tight " ~ class | default,
+    "style": "narrower"
+  }
+%}
+  {% block section_content %}
+    {{ wysiwyg }}
+  {% endblock %}
+{% endembed %}

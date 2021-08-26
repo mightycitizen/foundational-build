@@ -1,0 +1,8 @@
+{% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
+  "class": "section--tight",
+  "style": "narrower"
+} %}
+  {% block section_content %}
+    {% include patternlab_namespace | default ~ 'components/forms/validation.twig' %}
+  {% endblock %}
+{% endembed %}

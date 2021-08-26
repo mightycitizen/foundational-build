@@ -149,6 +149,7 @@ function watchFiles() {
     watch(['./src/_patterns/components/**/*.twig'], (done) =>  {server.reload('*.html'); done()});
     watch(['./src/_patterns/layout/**/*.twig'], (done) =>  {server.reload('*.html'); done()});
     watch([
+      '../web/themes/custom/mc_theme/templates/**/*',
       '../templates/**/*',
     ], (done) => {
       server.reload();
@@ -161,13 +162,14 @@ function watchFiles() {
 // Start a server with BrowserSync to preview the site in
 function browserSync(done) {
   let ddevYmlFile = fs.readFileSync(__dirname + '/../.ddev/config.yaml', 'utf8');
-  const siteName = yaml.load(ddevYmlFile).name;
-
-
+  const ddevConfig = yaml.load(ddevYmlFile);
+  const siteName = ddevConfig.name;
+  let proxyUrl = 'https://'+siteName+'.ddev.site';
+  if (ddevConfig.router_https_port !== '443') proxyUrl += ':' + ddevConfig.router_https_port;
   server.init({
     notify: false,
     // server: PATHS.dist, port: PORT,
-    proxy: 'https://'+siteName+'.ddev.site:8443'
+    proxy: proxyUrl
   });
   done();
 

@@ -2,7 +2,7 @@
     <legend>{{ label }} {% if required %}*{% endif %}</legend>
     <ul class="checkbox-group no-bullet">
       {% for option in options %}
-        <li>{% include 'components/forms/checkbox.twig' with {
+        <li>{% include patternlab_namespace ~ 'components/forms/checkbox.twig' with {
          field_id: field_id,
          checkbox_value: option.value,
          name: field_name,

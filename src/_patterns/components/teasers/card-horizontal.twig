@@ -16,7 +16,7 @@
         {% endif %}
         {% if card.link | default %}
           {% set link = card.link | merge({ class: 'h4' })%}
-          {% include 'components/links/read-more.twig' with {
+          {% include patternlab_namespace ~ 'components/links/read-more.twig' with {
             read_more: link
           }%}
         {% endif %}

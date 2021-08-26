@@ -1,9 +1,9 @@
-{% embed '@mc_theme/components/sections/section.twig' with {
+{% embed patternlab_namespace ~ 'components/sections/section.twig' with {
     "class": "section--tight",
     "style": 'narrow'
   }
 %}
   {% block section_content %}
-    {% include '@mc_theme/components/containers/accordion.twig' %}
+    {% include patternlab_namespace ~  'components/containers/accordion.twig' %}
   {% endblock %}
 {% endembed %}

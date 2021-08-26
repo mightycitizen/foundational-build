@@ -1,12 +1,12 @@
 
 
-  {% embed 'components/containers/slick.twig' with {
+  {% embed patternlab_namespace ~ 'components/containers/slick.twig' with {
     slick_class: 'slick-slider--equalize'
   } %}
     {% block slide_content %}
       {% for slide in slides %}
           <div>
-            {% include 'components/teasers/card-testimonial.twig' with {
+            {% include patternlab_namespace ~ 'components/teasers/card-testimonial.twig' with {
               card: {
                 image: slide.image,
                 lazyload_class: 'data-lazy',

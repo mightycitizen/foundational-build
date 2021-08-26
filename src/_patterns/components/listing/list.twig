@@ -9,7 +9,7 @@
             <div class="wrapper">
               <img data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" class="js-lazy">
               {% if item_type == 'events' %}
-                {% include 'components/inline-text/date.twig' with {
+                {% include patternlab_namespace ~ 'components/inline-text/date.twig' with {
                   date: item.start_date
                 } %}
               {% endif %}
@@ -20,7 +20,7 @@
           <div class="media-object">
             {% if item.image | default is empty and item_type == 'events' %}
               <div class="media-object-section">
-                {% include 'components/inline-text/date.twig' with {
+                {% include patternlab_namespace ~ 'components/inline-text/date.twig' with {
                   date: item.start_date
                 } %}
 
@@ -33,7 +33,7 @@
                 <p class="m-b-2">{{ item.summary }}</p>
               {% endif %}
               {% if item.categories | default | length %}
-                {% include 'components/inline-text/meta.twig' with {
+                {% include patternlab_namespace ~ 'components/inline-text/meta.twig' with {
                     categories: item.categories,
                     date: null
 

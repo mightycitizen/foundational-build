@@ -1,10 +1,10 @@
-{% embed 'components/sections/section.twig' with {
+{% embed patternlab_namespace ~ 'components/sections/section.twig' with {
     "class": "section--tight",
     "style": "narrow"
   }
 %}
   {% block section_content %}
-    {% include 'components/containers/tabs.twig' %}
+    {% include patternlab_namespace ~ 'components/containers/tabs.twig' %}
 
   {% endblock %}
 {% endembed %}

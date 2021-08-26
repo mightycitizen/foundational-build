@@ -1,5 +1,5 @@
 <div  data-responsive-toggle="responsive-menu" data-hide-for="large" class="top-bar_toggle" >
-  {% include "components/utils/hamburger.twig" with {
+  {% include patternlab_namespace ~ "components/utils/hamburger.twig" with {
     toggle: "responsive-menu"
   } %}
 </div>
@@ -39,7 +39,7 @@
         </li>
       {% endfor %}
       <li class="hide-for-large">
-        {% include 'components/forms/simple-form.twig' %}
+        {% include patternlab_namespace ~ 'components/forms/simple-form.twig' %}
       </li>
 
     </ul>

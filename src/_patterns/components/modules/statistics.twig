@@ -1,4 +1,4 @@
-{% embed 'components/sections/section.twig' with {
+{% embed patternlab_namespace ~ 'components/sections/section.twig' with {
     "intro_class": 'text-center ' ~ (style | default == 'side' ? 'large-text-left' : ''),
     "section_heading": section_heading | default ? section_heading : "Statistics Module Heading",
     "section_description":  section_description | default,
@@ -9,7 +9,7 @@
       <div class="grid-x grid-margin-x js-slick--mobile">
         {% for statistic in statistics %}
           <div class="cell medium-4 {% if style | default == 'side' %}large-12{% endif %}">
-            {% include 'components/informational/statistic.twig' with {
+            {% include patternlab_namespace ~ 'components/informational/statistic.twig' with {
               text: statistic.text,
               value: statistic.value,
               link: statistic.link
@@ -17,7 +17,7 @@
           </div>
         {% endfor %}
       </div>
-      {% include 'components/containers/carousel-nav.twig' with {
+      {% include patternlab_namespace ~ 'components/containers/carousel-nav.twig' with {
           inline: true
         } %}
     </div>

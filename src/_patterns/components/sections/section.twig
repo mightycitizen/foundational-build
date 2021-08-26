@@ -18,7 +18,7 @@
               <p class="lead">{{ section_description }}</p>
             {% endif %}
             {% if section_button | default %}
-              {% include 'components/links/button.twig' with {
+              {% include patternlab_namespace ~ 'components/links/button.twig' with {
                 "button" : section_button
               } %}
             {% endif %}
@@ -53,7 +53,7 @@
         {% set content %}
           {{ section_content }}
         {% endset %}
-        {% include '@mc_theme/layout/structure/content-' ~ style ~ '.twig' %}
+        {% include patternlab_namespace ~  'layout/structure/content-' ~ style ~ '.twig' %}
       {% else %}
         {{ section_content }}
       {% endif %}

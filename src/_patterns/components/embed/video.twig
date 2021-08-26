@@ -1,6 +1,6 @@
 <div class="video-wrapper" data-video-trigger="{{ trigger }}">
     <div class="video-loader">
-      {% include 'components/utils/loader.twig' %}
+      {% include patternlab_namespace ~ 'components/utils/loader.twig' %}
     </div>
     <div class="video-image-wrapper">
       <img data-src="{{ image.src }}" alt="{{ image.alt }}" class="video-image js-lazy">

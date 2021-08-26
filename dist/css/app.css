@@ -4933,15 +4933,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   margin-right: 0.0555555556rem;
   border-radius: 0;
   font-size: 1rem;
-  display: none;
-}
-.pagination li:last-child, .pagination li:first-child {
   display: inline-block;
-}
-@media print, screen and (min-width: 40em) {
-  .pagination li {
-    display: inline-block;
-  }
 }
 .pagination a,
 .pagination button {
@@ -8203,6 +8195,9 @@ a.thumbnail image {
     padding-bottom: 0.6666666667rem;
   }
 }
+p + .button, p + p > .button:only-child, p + .fui-btn, p + p > .fui-btn:only-child {
+  margin-top: -0.4444444444rem;
+}
 
 span.button a {
   color: inherit;
@@ -8260,20 +8255,20 @@ span.button a {
 
 .listing .item {
   border-bottom: 1px solid #ccc;
-  margin-bottom: 1.1111111111rem;
-  padding-bottom: 1.3888888889rem;
+  padding-bottom: 1.7777777778rem;
+  padding-top: 1.7777777778rem;
 }
 .listing .item *:last-child {
   margin-bottom: 0;
 }
 @media print, screen and (min-width: 40em) {
   .listing .item {
-    margin-bottom: 1.7777777778rem;
+    padding-bottom: 2.2222222222rem;
   }
 }
 @media print, screen and (min-width: 40em) {
   .listing .item {
-    padding-bottom: 2.2222222222rem;
+    padding-top: 2.2222222222rem;
   }
 }
 .listing .item .media-object-section:first-child {
@@ -8289,7 +8284,7 @@ span.button a {
   }
 }
 @media print, screen and (max-width: 39.99875em) {
-  .listing .item .item .grid-x.grid-margin-x .cell:not(:last-child) {
+  .listing .item .grid-x.grid-margin-x .cell:not(:last-child) {
     margin-bottom: 1.3333333333rem;
   }
   .listing .item .media-object:not(.media-object--stack) .media-object-section:first-child {
@@ -8322,6 +8317,14 @@ span.button a {
   margin-top: -0.2777777778rem !important;
 }
 
+.pagination {
+  margin-top: 1.3333333333rem;
+}
+@media print, screen and (min-width: 40em) {
+  .pagination {
+    margin-top: 2.2222222222rem;
+  }
+}
 .pagination li {
   vertical-align: middle;
 }
@@ -8729,7 +8732,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 
 .lity {
-  background-color: rgba(51, 51, 51, 0.2);
+  background-color: rgba(51, 51, 51, 0.8);
 }
 .lity-content {
   border: 0;
@@ -8757,13 +8760,27 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .lity-content:after {
   box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
 }
+.lity-content > div > *:last-child {
+  margin-bottom: 0;
+}
 .lity-close, .lity-close:hover, .lity-close:focus {
   text-shadow: none;
   color: #2953cc;
   position: absolute;
-  right: 54px;
-  top: 40px;
+  top: 0;
+  right: 2.5rem;
+  margin-top: 1.3888888889rem;
   font-size: 2.7777777778rem;
+}
+@media print, screen and (min-width: 40em) {
+  .lity-close, .lity-close:hover, .lity-close:focus {
+    margin-top: 2.2222222222rem;
+  }
+}
+@media print, screen and (min-width: 64em) {
+  .lity-close, .lity-close:hover, .lity-close:focus {
+    right: 3rem;
+  }
 }
 .lity-iframe .lity-content {
   padding: 0 !important;
@@ -9677,13 +9694,13 @@ html, body, .l-wrapper {
 }
 
 .l-footer {
-  padding: 1.6666666667rem 0 0.5555555556rem;
+  padding: 1.6666666667rem 0;
   background-color: #2953cc;
   flex: none;
 }
 @media print, screen and (min-width: 64em) {
   .l-footer {
-    padding: 1.6666666667rem 0;
+    padding: 1.7777777778rem 0;
   }
 }
 @media print, screen and (max-width: 39.99875em) {
@@ -9717,6 +9734,9 @@ html, body, .l-wrapper {
 }
 .l-footer .menu a:hover, .l-footer .menu a:focus {
   text-decoration: underline;
+}
+.l-footer .grid-container > *:last-child {
+  margin-bottom: 0;
 }
 
 .l-skip {

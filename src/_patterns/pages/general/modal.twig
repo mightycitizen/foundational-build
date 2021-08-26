@@ -2,7 +2,9 @@
 
 {% block main %}
   {% include "components/containers/hero.twig" %}
-  {% embed 'components/sections/section.twig' %}
+  {% embed 'components/sections/section.twig' with {
+    class: 'section--tight'
+  }%}
     {% block section_content %}
       {% include "components/containers/modal.twig" %}
     {% endblock %}

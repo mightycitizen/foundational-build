@@ -27,6 +27,9 @@
     padding-top: rem-calc($button-vertical-padding-mobile);
     padding-bottom: rem-calc($button-vertical-padding-mobile);
   }
+  p + &, p + p > &:only-child{
+    margin-top: rem-calc(-1*$spacer);
+  }
 }
 
 

@@ -5,8 +5,9 @@
     }
 
     border-bottom: $hr-border;
-    @include spacer(margin,bottom,4);
-    @include spacer(padding,bottom,5);
+    @include spacer(padding,bottom,5,4);
+    @include spacer(padding,top,5,4);
+
     .media-object-section:first-child{
       @include breakpoint(medium){
         max-width: 40%;
@@ -23,16 +24,16 @@
     }
 
     @include breakpoint(small only){
-      .item{
-        .grid-x.grid-margin-x{
-          .cell{
-            &:not(:last-child){
-              margin-bottom: rem-calc(3*$spacer);
-            }
-          }
 
+      .grid-x.grid-margin-x{
+        .cell{
+          &:not(:last-child){
+            margin-bottom: rem-calc(3*$spacer);
+          }
         }
+
       }
+
 
       .media-object{
         &:not(.media-object--stack){

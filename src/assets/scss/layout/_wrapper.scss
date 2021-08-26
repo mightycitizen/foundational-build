@@ -30,9 +30,9 @@ html, body, .l-wrapper{
 
 
 .l-footer{
-  padding: rem-calc(30 0 10);
+  padding: rem-calc(30 0);
   @include breakpoint(large){
-    padding: rem-calc(30 0);
+    padding: rem-calc(32 0);
   }
   background-color: $primary-color;
   //color: $white;
@@ -56,6 +56,11 @@ html, body, .l-wrapper{
       &:hover, &:focus{
         text-decoration: underline;
       }
+    }
+  }
+  .grid-container{
+    > *:last-child{
+      margin-bottom: 0;
     }
   }
 }

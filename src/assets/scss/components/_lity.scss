@@ -1,7 +1,7 @@
 @import 'variables/plugins';
 @if ($lity){
   .lity{
-    background-color: rgba(map-get($additional-palette,'gray-darker'), 0.2);
+    background-color: rgba(map-get($additional-palette,'gray-darker'), 0.8);
     &-content{
       border: 0;
       background-color: $white;
@@ -13,15 +13,24 @@
       &:after{
         box-shadow: $global-box-shadow;
       }
+      > div > *:last-child{
+        margin-bottom: 0;
+      }
     }
     &-close{
       &, &:hover, &:focus{
         text-shadow: none;
         color: $primary-color;
         position: absolute;
-        right: 54px;
-        top: 40px;
+        //right: rem-calc(54);
+        top: 0;
+        right: rem-calc(45);
+        @include spacer(margin,top,5);
         font-size: rem-calc(50);
+        @include breakpoint(large){
+          right: rem-calc(54);
+          //top: rem-calc(40);
+        }
       }
     }
     // [data-sticky-container]{

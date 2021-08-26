@@ -1,5 +1,6 @@
 @import "../vendor/icomoon/variables";
 .pagination{
+  @include spacer(margin,top,5,3);
   li{
     vertical-align: middle;
   }

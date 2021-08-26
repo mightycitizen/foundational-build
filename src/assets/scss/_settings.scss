@@ -71,8 +71,8 @@ $cms: 'Craft';
 
 $font-scale-mobile: 0.75;
 
-$spacer-mobile: rem-calc(5) !default;
-$spacer: rem-calc(8) !default;
+$spacer-mobile: 5px !default;
+$spacer: 8px !default;
 $spacers: (
         half,
         0,
@@ -496,7 +496,7 @@ $input-background-focus: $white;
 $input-background-disabled: $light-gray;
 $input-border: 1px solid $light-gray;
 $input-border-focus: 1px solid $primary-color;
-$input-padding: $spacer*2 rem-calc(12);
+$input-padding: rem-calc($spacer*2) rem-calc(12);
 $input-shadow: none;
 $input-shadow-focus: none;
 $input-cursor-disabled: not-allowed;
@@ -520,7 +520,7 @@ $label-radius: $global-radius;
 // ----------------
 
 $mediaobject-margin-bottom: $global-margin;
-$mediaobject-section-padding: $spacer*3;
+$mediaobject-section-padding: rem-calc($spacer*3);
 $mediaobject-image-width-stacked: 100%;
 
 // 23. Menu

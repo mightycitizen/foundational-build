@@ -15,4 +15,9 @@
       margin-bottom: 0;
     }
   }
+  @include breakpoint(medium){
+    .a2a_kit{
+      float: right;
+    }
+  }
 }

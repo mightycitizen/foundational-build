@@ -30,7 +30,10 @@ html, body, .l-wrapper{
 
 
 .l-footer{
-  padding: rem-calc(30 0);
+  padding: rem-calc(30 0 10);
+  @include breakpoint(large){
+    padding: rem-calc(30 0);
+  }
   background-color: $primary-color;
   //color: $white;
   flex: none;

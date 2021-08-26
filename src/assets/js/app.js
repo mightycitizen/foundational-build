@@ -100,16 +100,19 @@ const initSmoothScroll = () => {
 // @table-scroll init
 const initTableScroll = () => {
   $('table').each(function(){
-    $(this).wrap('<div class="table-scroll-wrapper"></div>');
-    $(this).wrap('<div class="table-scroll"></div>');
-  })
-  $('.table-scroll').scroll(function() {
-    const $wrapper = $(this).parent();
-    if($(this).scrollLeft() + $(this).innerWidth() >= $(this)[0].scrollWidth) {
-      $wrapper.addClass('is-end')
-    }else{
-      $wrapper.removeClass('is-end')
+    if (!$(this).closest('.table-scroll').length){
+      $(this).wrap('<div class="table-scroll-wrapper"></div>');
+      $(this).wrap('<div class="table-scroll"></div>');
     }
+  })
+  $('.table-scroll').on('scroll', function() {
+    const $wrapper = $(this).parent();
+    $wrapper.toggleClass('is-end',$(this).scrollLeft() + $(this).innerWidth() >= $(this)[0].scrollWidth);
+    // if() {
+    //   $wrapper.addClass('is-end')
+    // }else{
+    //   $wrapper.removeClass('is-end')
+    // }
   });
 
 }

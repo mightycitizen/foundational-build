@@ -60,3 +60,19 @@
     display: inline-block;
   }
 }
+
+
+.media-object{
+  @include breakpoint(small only){
+    &--stack{
+      display: block;
+      img{
+        max-width: 100%;
+      }
+      .media-object-section:first-child{
+        padding-right: 0;
+        margin-bottom: $spacer-mobile*4;
+      }
+    }
+  }
+}

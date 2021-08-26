@@ -5,7 +5,7 @@
       &[class*=medium-]:not([class*=small-]){
         @include breakpoint(small only){
           &:not(:last-child){
-            margin-bottom: $spacer-mobile*4;
+            margin-bottom: $spacer-mobile*2;
           }
         }
       }

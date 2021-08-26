@@ -5,8 +5,10 @@
     display: inline-block;
     margin-left: 0;
     vertical-align: middle;
+
     &:not(:last-child){
-      margin-right: rem-calc($spacer*2);
+      @include spacer(margin,right,2);
+      //margin-right: rem-calc($spacer*2);
     }
   }
   &--top{
@@ -28,6 +30,7 @@
   &--divided{
     > li{
       &:not(:last-child){
+        margin-right: rem-calc($spacer*2);
         &:after{
           content: "|";
           position: absolute;

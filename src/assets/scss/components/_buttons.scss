@@ -21,6 +21,12 @@
   + .button{
     margin-left: $spacer;
   }
+
+  $button-vertical-padding-mobile: 12;
+  @include breakpoint(small only){
+    padding-top: rem-calc($button-vertical-padding-mobile);
+    padding-bottom: rem-calc($button-vertical-padding-mobile);
+  }
 }
 
 

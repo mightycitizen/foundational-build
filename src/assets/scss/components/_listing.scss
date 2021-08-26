@@ -23,22 +23,24 @@
     }
 
     @include breakpoint(small only){
+      .item{
+        .grid-x.grid-margin-x{
+          .cell{
+            &:not(:last-child){
+              margin-bottom: rem-calc(3*$spacer);
+            }
+          }
+
+        }
+      }
+
       .media-object{
         &:not(.media-object--stack){
           .media-object-section:first-child{
             padding-right: map-get($grid-margin-gutters,small);
           }
         }
-        &--stack{
-          display: block;
-          img{
-            max-width: 100%;
-          }
-          .media-object-section:first-child{
-            padding-right: 0;
-            margin-bottom: $spacer-mobile*4;
-          }
-        }
+
       }
     }
   }

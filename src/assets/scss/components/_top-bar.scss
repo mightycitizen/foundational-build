@@ -2,6 +2,7 @@
 /* purgecss start ignore */
 
 @import '../vendor/icomoon/variables';
+$grandchildren-background: map-get($additional-palette,'secondary-lightest');
 .top-bar{
   font-family: $secondaryFontFamily;
   font-weight: $global-weight-semibold;
@@ -158,6 +159,7 @@
     padding-bottom: rem-calc(5);
     a{
       &:hover, &:focus:not(.is-active > a){
+//        color: $primary-color;
         text-decoration: underline;
       }
     }
@@ -177,8 +179,11 @@
       > li { // top
         > a{
           color: inherit;
+          &:after{
+            color: $primary-color;
+          }
           &:hover, &:focus{
-            color: inherit;
+            color: $primary-color;
             //text-decoration: underline;
           }
         }
@@ -186,6 +191,9 @@
           > a{
             color: $white;
             background-color: $primary-color;
+            &:after{
+              color: inherit;
+            }
           }
         }
         $dropdown-width: 400;
@@ -262,7 +270,7 @@
               // }
               > a{
 
-                background-color: map-get($additional-palette,'primary-lightest');
+                background-color: $grandchildren-background;
                 &:after{
                   transform: translateX(0px);
                   opacity: 1;
@@ -290,7 +298,7 @@
             }
             > ul{ // grandchildren
               box-shadow: none;
-              background-color: map-get($additional-palette,'primary-lightest');
+              background-color: $grandchildren-background;
               min-height: 100%;
               width: rem-calc($dropdown-width);
               padding: rem-calc(25 15);

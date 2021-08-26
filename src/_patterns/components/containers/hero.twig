@@ -1,8 +1,10 @@
 <div class="hero text-white">
   <div class="grid-container">
-    <div class="grid-x">
+    <div class="grid-x grid-margin-x">
       <div class="cell medium-8">
-        {% include patternlab_namespace | default ~ 'components/navigation/breadcrumbs.twig' with breadcrumbs %}
+        <div class="show-for-large">
+          {% include patternlab_namespace | default ~ 'components/navigation/breadcrumbs.twig' with breadcrumbs %}
+        </div>
         <div class="hero_content">
           <h1>{{ heading }}</h1>
           {% if subheading | default %}
@@ -11,7 +13,9 @@
         </div>
       </div>
       <div class="cell medium-4">
-        {% include patternlab_namespace | default ~ 'components/utils/add2any.twig' %}
+        {% include patternlab_namespace | default ~ 'components/utils/add2any.twig' with {
+          class: 'm-b-0'
+        } %}
       </div>
     </div>
   </div>

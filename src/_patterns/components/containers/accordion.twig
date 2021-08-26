@@ -7,7 +7,7 @@
       {% set item = item | merge( { icon: true } ) %}
     {% endif %}
     {%
-      include patternlab_namespace ~  'components/containers/accordion-item.twig' with {item: item} only
+      include patternlab_namespace | default ~  'components/containers/accordion-item.twig' with {item: item} only
     %}
   {% endfor %}
 </ul>

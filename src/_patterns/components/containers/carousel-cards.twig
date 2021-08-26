@@ -1,6 +1,6 @@
 
 
-  {% embed patternlab_namespace ~ 'components/containers/slick.twig' with {
+  {% embed patternlab_namespace | default ~ 'components/containers/slick.twig' with {
     modifier: 'cards',
     grid: true,
     equalize: true
@@ -8,7 +8,7 @@
     {% block slide_content %}
       {% for card in cards %}
           {% set card = card | merge({lazyload_class: 'data-lazy'}) %}
-          {% include patternlab_namespace ~ "components/teasers/card.twig" with card %}
+          {% include patternlab_namespace | default ~ "components/teasers/card.twig" with card %}
       {% endfor %}
     {% endblock %}
   {% endembed %}

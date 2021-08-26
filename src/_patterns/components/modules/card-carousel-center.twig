@@ -1,4 +1,4 @@
-{% embed patternlab_namespace ~ 'components/sections/section.twig' with {
+{% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
     "class": class | default~ ' overflow-hidden',
     "section_heading": section_heading | default ? section_heading : "Carousel Center Module Heading",
     "section_description": section_description | default,
@@ -6,6 +6,6 @@
   }
 %}
   {% block section_content %}
-    {% include patternlab_namespace ~ 'components/containers/carousel-cards-center.twig' %}
+    {% include patternlab_namespace | default ~ 'components/containers/carousel-cards-center.twig' %}
   {% endblock %}
 {% endembed %}

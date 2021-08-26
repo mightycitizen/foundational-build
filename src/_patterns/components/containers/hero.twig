@@ -2,14 +2,14 @@
   <div class="grid-container">
     <div class="grid-x">
       <div class="cell medium-8">
-        {% include patternlab_namespace ~ 'components/navigation/breadcrumbs.twig' with breadcrumbs %}
+        {% include patternlab_namespace | default ~ 'components/navigation/breadcrumbs.twig' with breadcrumbs %}
         <h1>{{ heading }}</h1>
-        {% if subheading %}
+        {% if subheading | default %}
           <p class="lead">{{ subheading }}</p>
         {% endif %}
       </div>
       <div class="cell medium-4">
-        {% include patternlab_namespace ~ 'components/utils/add2any.twig' %}
+        {% include patternlab_namespace | default ~ 'components/utils/add2any.twig' %}
       </div>
     </div>
   </div>

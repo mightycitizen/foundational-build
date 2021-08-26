@@ -1,7 +1,7 @@
 <div class="grid-x grid-margin-x form-group align-bottom">
   {% block form_content %}
     <div class="cell large-5 medium-4">
-      {% include patternlab_namespace ~ 'components/forms/text.twig' with {
+      {% include patternlab_namespace | default ~ 'components/forms/text.twig' with {
         label: "Text",
         name: "text",
         id: "field_group_1",
@@ -10,7 +10,7 @@
       } %}
     </div>
     <div class="cell large-5 medium-4">
-      {% include patternlab_namespace ~ 'components/forms/text.twig' with {
+      {% include patternlab_namespace | default ~ 'components/forms/text.twig' with {
         label: "Text",
         name: "text",
         id: "field_group_2",

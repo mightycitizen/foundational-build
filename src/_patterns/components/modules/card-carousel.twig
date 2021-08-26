@@ -1,4 +1,4 @@
-{% embed patternlab_namespace ~ 'components/sections/section.twig' with {
+{% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
     "section_heading": section_heading | default ? section_heading : "Card Carousel Module Heading",
     "section_description":  section_description | default,
     "intro_class": "text-center"
@@ -6,6 +6,6 @@
 %}
 
   {% block section_content %}
-    {% include patternlab_namespace ~ 'components/containers/carousel-cards.twig' %}
+    {% include patternlab_namespace | default ~ 'components/containers/carousel-cards.twig' %}
   {% endblock %}
 {% endembed %}

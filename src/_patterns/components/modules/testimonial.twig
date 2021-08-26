@@ -1,10 +1,10 @@
-{% embed patternlab_namespace ~ 'components/sections/section.twig' with {
+{% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
     "class": "section--tight",
     "style": "narrow"
   }
 %}
   {% block section_content %}
-    {% include patternlab_namespace ~ 'components/teasers/card-testimonial.twig' with {
+    {% include patternlab_namespace | default ~ 'components/teasers/card-testimonial.twig' with {
         "card": testimonial
       }
     %}

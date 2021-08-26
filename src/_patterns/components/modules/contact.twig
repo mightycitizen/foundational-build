@@ -1,4 +1,4 @@
-{% embed patternlab_namespace ~ 'components/sections/section.twig' with {
+{% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
     "class": "section--tight",
     "style": "narrow",
     "section_heading": null,
@@ -7,7 +7,7 @@
 %}
   {% block section_content %}
 
-      {% include patternlab_namespace ~ 'components/teasers/card-contact.twig' with {
+      {% include patternlab_namespace | default ~ 'components/teasers/card-contact.twig' with {
         items: contact_items,
         link: link
       } %}

@@ -1,13 +1,15 @@
 .step-list{
   counter-set: steps;
   list-style-type: none;
+  margin-left: 0;
   li{
     counter-increment: steps;
     position: relative;
-    padding-left: rem-calc(70);
+    //padding-left: rem-calc(70);
     margin-left: 0;
+    @include spacer(padding,left,8,4);
     &:not(:last-child){
-      @include spacer(margin,bottom,4);
+      @include spacer(margin,bottom,4,5);
     }
     > *:last-child{
       margin-bottom: 0;
@@ -16,14 +18,19 @@
       line-height: 1;
       content: counter(steps);
       position: absolute;
-      width: rem-calc(70);
-      padding-right: rem-calc(20);
+      width: rem-calc($spacer*8);
+      //padding-right: rem-calc(20);
+      @include font-scale-mobile(48,0,true);
+      @include spacer(padding,right,2,3);
       text-align: right;
       left: 0;
       top: rem-calc(-7);
-      font-size: rem-calc(48);
+      //font-size: rem-calc(48);
       font-weight: bold;
       color: $primary-color;
+      @include breakpoint(small only){
+        width: rem-calc($spacer*3);
+      }
     }
   }
 }

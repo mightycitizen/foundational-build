@@ -15,8 +15,10 @@ $large-value-size: 100;
   font-family: $secondaryFontFamily;
   line-height: 1.2;
   font-weight: $global-weight-bold;
-  font-size: rem-calc(100);
-  @include font-scale-mobile(100);
+  font-size: rem-calc(64);
+  @include breakpoint(large){
+    font-size: rem-calc(100);
+  }
 }
 
 .meta{

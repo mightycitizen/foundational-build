@@ -6,11 +6,11 @@
     z-index: 1;
   }
   &--horizontal{
-    &:before{
-      background: linear-gradient(to right,rgba($primary-color,0) 0%, rgba($primary-color,0.4) 50%, map-get($additional-palette,'primary-darker') 100%);
+    @include breakpoint(medium){
+      &:before{
+        background: linear-gradient(to right,rgba($primary-color,0) 0%, rgba($primary-color,0.4) 50%, map-get($additional-palette,'primary-darker') 100%);
+      }
     }
   }
-  // background-color: #212944;
-  // color: $white;
-  // padding: rem-calc(30 0);
+
 }

@@ -31,7 +31,8 @@
     position: relative;
     z-index: 2;
     @include breakpoint(medium down){
-      @include spacer(margin,bottom,4);
+      margin-bottom: $spacer*3;
+      //@include spacer(margin,bottom,4);
     }
     &:not(:last-child){
       @include breakpoint(large){

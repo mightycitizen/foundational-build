@@ -8049,8 +8049,10 @@ a.thumbnail image {
   background: linear-gradient(to bottom, rgba(41, 83, 204, 0) 0%, rgba(41, 83, 204, 0.4) 50%, #1f3e99 100%);
   z-index: 1;
 }
-.cta--horizontal:before {
-  background: linear-gradient(to right, rgba(41, 83, 204, 0) 0%, rgba(41, 83, 204, 0.4) 50%, #1f3e99 100%);
+@media print, screen and (min-width: 40em) {
+  .cta--horizontal:before {
+    background: linear-gradient(to right, rgba(41, 83, 204, 0) 0%, rgba(41, 83, 204, 0.4) 50%, #1f3e99 100%);
+  }
 }
 
 .hero {
@@ -8552,13 +8554,8 @@ span.button a {
 .slick-arrow:before {
   line-height: 1;
   font-family: "icomoon";
-  font-size: 0.5555555556rem;
-}
-@media print, screen and (min-width: 64em) {
-  .slick-arrow:before {
-    font-weight: normal;
-    font-size: 0.7777777778rem;
-  }
+  font-size: 0.8888888889rem;
+  font-weight: normal;
 }
 .slick-arrow.slick-disabled {
   background-color: #ccc;
@@ -8580,7 +8577,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   color: #ccc;
 }
 .slick-arrow:hover {
-  color: #eca806;
+  background-color: #1f3e99;
 }
 
 .slick-nav {
@@ -9458,11 +9455,11 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   line-height: 1.2;
   font-weight: bold;
-  font-size: 5.5555555556rem;
+  font-size: 3.5555555556rem;
 }
-@media print, screen and (max-width: 39.99875em) {
+@media print, screen and (min-width: 64em) {
   .large-value {
-    font-size: 4.1666666667rem;
+    font-size: 5.5555555556rem;
   }
 }
 
@@ -9558,12 +9555,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 @media print, screen and (max-width: 63.99875em) {
   .section_intro {
-    margin-bottom: 1.1111111111rem;
-  }
-}
-@media print, screen and (max-width: 63.99875em) and (min-width: 40em) {
-  .section_intro {
-    margin-bottom: 1.7777777778rem;
+    margin-bottom: 24px;
   }
 }
 @media print, screen and (min-width: 64em) {
@@ -9611,15 +9603,21 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .step-list {
   counter-set: steps;
   list-style-type: none;
+  margin-left: 0;
 }
 .step-list li {
   counter-increment: steps;
   position: relative;
-  padding-left: 3.8888888889rem;
   margin-left: 0;
+  padding-left: 1.7777777778rem;
+}
+@media print, screen and (min-width: 40em) {
+  .step-list li {
+    padding-left: 3.5555555556rem;
+  }
 }
 .step-list li:not(:last-child) {
-  margin-bottom: 1.1111111111rem;
+  margin-bottom: 2.2222222222rem;
 }
 @media print, screen and (min-width: 40em) {
   .step-list li:not(:last-child) {
@@ -9633,14 +9631,29 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   line-height: 1;
   content: counter(steps);
   position: absolute;
-  width: 3.8888888889rem;
-  padding-right: 1.1111111111rem;
+  width: 3.5555555556rem;
+  font-size: 2.6666666667rem;
+  padding-right: 1.3333333333rem;
   text-align: right;
   left: 0;
   top: -0.3888888889rem;
-  font-size: 2.6666666667rem;
   font-weight: bold;
   color: #2953cc;
+}
+@media print, screen and (max-width: 39.99875em) {
+  .step-list li:before {
+    font-size: 2rem;
+  }
+}
+@media print, screen and (min-width: 40em) {
+  .step-list li:before {
+    padding-right: 0.8888888889rem;
+  }
+}
+@media print, screen and (max-width: 39.99875em) {
+  .step-list li:before {
+    width: 1.3333333333rem;
+  }
 }
 
 @media print, screen and (max-width: 39.99875em) {

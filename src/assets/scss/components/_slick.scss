@@ -223,12 +223,8 @@
 
 			line-height: 1;
 			font-family: $icomoon-font-family;
-			font-size: rem-calc(10);
-			@include breakpoint(large) {
-				font-weight: normal;
-				font-size: rem-calc(14);
-
-			}
+			font-size: rem-calc(16);
+			font-weight: normal;
 		}
 
 		&.slick-disabled{
@@ -239,7 +235,6 @@
 		}
 
 		&.slick-prev {
-
 			&:before {
 				content: $icon-chevron-left;
 			}
@@ -264,7 +259,7 @@
 			}
 		}
 		&:hover{
-			color: map-get($additional-palette,'secondary-darker');
+			background-color: map-get($additional-palette,'primary-darker');
 		}
 	}
 

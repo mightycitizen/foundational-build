@@ -5655,7 +5655,7 @@ a.thumbnail image {
   outline: 0;
 }
 .dropdown.menu > li > a {
-  padding: 0.7rem 1rem;
+  padding: 1.1111111111rem 0.8888888889rem;
 }
 .dropdown.menu > li.is-active > a {
   background: transparent;
@@ -5775,7 +5775,7 @@ a.thumbnail image {
   background: #fff;
 }
 .dropdown .is-dropdown-submenu a {
-  padding: 0.7rem 1rem;
+  padding: 1.1111111111rem 0.8888888889rem;
 }
 .is-dropdown-submenu .is-dropdown-submenu {
   margin-top: 0;
@@ -8291,10 +8291,10 @@ span.button a {
 }
 
 .dropdown > li.is-dropdown-submenu-parent > a {
-  padding-right: 1.6666666667rem !important;
+  padding-right: 1.9444444444rem !important;
 }
 .dropdown > li.is-dropdown-submenu-parent > a:after {
-  right: 10px;
+  right: 0.8333333333rem;
 }
 .dropdown > li.is-dropdown-submenu-parent > a:after {
   font-family: "icomoon";
@@ -8919,6 +8919,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   .top-bar .top > li > ul {
     padding-bottom: 0.8333333333rem;
     margin-top: -0.5555555556rem;
+    font-weight: normal;
   }
   .top-bar .top > li > ul > li.is-active > a:after {
     position: absolute;
@@ -8956,10 +8957,11 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 @media print, screen and (min-width: 64em) {
   .top-bar {
-    margin-left: -1rem;
-    margin-right: -1rem;
+    margin-left: -0.8888888889rem;
+    margin-right: -0.8888888889rem;
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: 0.2777777778rem;
   }
   .top-bar a:hover, .top-bar a:focus:not(.is-active > a) {
     text-decoration: underline;
@@ -8972,7 +8974,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     justify-content: space-between;
   }
   .top-bar .top .parent-link {
-    font-size: 1.2222222222rem;
+    font-weight: bold;
   }
   .top-bar .top > li > a {
     color: inherit;
@@ -8988,6 +8990,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     box-shadow: none;
     width: 16.6666666667rem;
     padding: 0.8333333333rem 0;
+    font-weight: normal;
   }
   .top-bar .top > li > ul:after {
     content: "";
@@ -9008,7 +9011,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     left: auto;
   }
   .top-bar .top > li > ul > li > a {
-    padding: 0.7777777778rem 1rem;
+    padding: 0.5555555556rem 1rem;
   }
   .top-bar .top > li > ul > li.is-dropdown-submenu-parent > a {
     position: relative;

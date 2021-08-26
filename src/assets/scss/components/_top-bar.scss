@@ -91,12 +91,9 @@
         > ul{ // children
           padding-bottom: rem-calc(15);
           margin-top: rem-calc(-10);
+          font-weight: normal;
+
           > li{
-
-            > a{
-
-            }
-
             &.is-active{
               //position: unset;
               > a{
@@ -158,6 +155,7 @@
     margin-right: rem-calc(-1*get-side($dropdownmenu-padding,'right'));
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: rem-calc(5);
     a{
       &:hover, &:focus:not(.is-active > a){
         text-decoration: underline;
@@ -172,7 +170,8 @@
       justify-content: space-between;
       //flex-wrap: nowrap;
       .parent-link{
-        font-size: rem-calc(22);
+        font-weight: $global-weight-bold;
+        //font-size: rem-calc(22);
 
       }
       > li { // top
@@ -193,6 +192,7 @@
           box-shadow: none;
           width: rem-calc(300);
           padding: rem-calc(15 0);
+          font-weight: normal;
 
           // .parent-link{
           //   font-size: rem-calc(22);
@@ -223,7 +223,7 @@
 
 
             > a{
-              padding: rem-calc(14 18);
+              padding: rem-calc(10 18);
 
             }
 

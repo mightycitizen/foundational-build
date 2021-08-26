@@ -188,9 +188,11 @@
             background-color: $primary-color;
           }
         }
+        $dropdown-width: 400;
         > ul{ // children
           box-shadow: none;
-          width: rem-calc(300);
+          z-index: 3;
+          width: rem-calc($dropdown-width);
           padding: rem-calc(15 0);
           font-weight: normal;
 
@@ -290,7 +292,7 @@
               box-shadow: none;
               background-color: map-get($additional-palette,'primary-lightest');
               min-height: 100%;
-              width: rem-calc(300);
+              width: rem-calc($dropdown-width);
               padding: rem-calc(25 15);
               a{
                 padding: rem-calc(10);

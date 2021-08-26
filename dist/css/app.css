@@ -9002,7 +9002,8 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   }
   .top-bar .top > li > ul {
     box-shadow: none;
-    width: 16.6666666667rem;
+    z-index: 3;
+    width: 22.2222222222rem;
     padding: 0.8333333333rem 0;
     font-weight: normal;
   }
@@ -9071,7 +9072,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     box-shadow: none;
     background-color: #bdcaef;
     min-height: 100%;
-    width: 16.6666666667rem;
+    width: 22.2222222222rem;
     padding: 1.3888888889rem 0.8333333333rem;
   }
   .top-bar .top > li > ul > li > ul a {

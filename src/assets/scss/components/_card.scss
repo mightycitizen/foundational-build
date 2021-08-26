@@ -67,6 +67,15 @@
       background: linear-gradient(to bottom, rgba($primary-color,0), $primary-color);
     }
   }
+  &--thumb{
+    img{
+      @include breakpoint(small only){
+        margin: auto;
+        display: block;
+        width: rem-calc(176);
+      }
+    }
+  }
   // &--horizontal{
   //   .card-section{
   //     @include spacer(padding,x,4);

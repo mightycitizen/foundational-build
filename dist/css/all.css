@@ -8031,6 +8031,13 @@ a.thumbnail image {
   transition: 0.3s height;
   background: linear-gradient(to bottom, rgba(41, 83, 204, 0), #2953cc);
 }
+@media print, screen and (max-width: 39.99875em) {
+  .card--thumb img {
+    margin: auto;
+    display: block;
+    width: 9.7777777778rem;
+  }
+}
 
 .cta:before {
   content: "";

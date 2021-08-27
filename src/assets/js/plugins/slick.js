@@ -13,6 +13,18 @@ const slickPagination = (slick) => {
   }
 }
 
+const slickEvents = ($slick) => {
+  $slick.on('init', function (event, slick, breakpoint){
+    slickPagination(slick);
+    $slick.trigger('resizeme.zf.trigger');
+  })
+
+  $slick.on('breakpoint', function (event, slick, breakpoint){
+    slickPagination(slick);
+    $slick.trigger('resizeme.zf.trigger');
+  })
+}
+
 const defaultOptions = {
   slidesToScroll: 1,
   rows: 0,
@@ -35,13 +47,8 @@ const initSlick = () => {
     $slickMobile.each(function(){
       const $this = $(this);
 
-      $this.on('init', function (event, slick, breakpoint){
-        slickPagination(slick);
-      })
+      slickEvents($this);
 
-      $this.on('breakpoint', function (event, slick, breakpoint){
-        slickPagination(slick);
-      })
       const slickOptions = $.extend({}, defaultOptions, {
         mobileFirst: true,
         appendArrows: $this.next('.slick-nav'),
@@ -73,14 +80,7 @@ const initSlick = () => {
   $slick.each(function(){
     const $this = $(this);
 
-    $this.on('init', function (event, slick, breakpoint){
-      slickPagination(slick);
-      $this.trigger('resizeme.zf.trigger');
-    })
-
-    $this.on('breakpoint', function (event, slick, breakpoint){
-      slickPagination(slick);
-    })
+    slickEvents($this);
 
     // pause/play
     $this.next('.slick-nav').find('.js-slick-toggle').on('click', function(){
@@ -103,14 +103,7 @@ const initSlick = () => {
   $slickCards.each(function(){
     const $this = $(this);
 
-    $this.on('init', function (event, slick, breakpoint){
-      slickPagination(slick);
-      $this.trigger('resizeme.zf.trigger');
-    })
-
-    $this.on('breakpoint', function (event, slick, breakpoint){
-      slickPagination(slick);
-    })
+    slickEvents($this);
 
     const slickOptions = $.extend({}, defaultOptions, {
       slidesToScroll: 3,
@@ -148,13 +141,7 @@ const initSlick = () => {
   $slickCenter.each(function(){
     const $this = $(this);
 
-    $this.on('init', function (event, slick, breakpoint){
-      slickPagination(slick);
-    })
-
-    $this.on('breakpoint', function (event, slick, breakpoint){
-      slickPagination(slick);
-    })
+    slickEvents($this);
 
     const slickOptions = $.extend({}, defaultOptions, {
       centerMode: true,

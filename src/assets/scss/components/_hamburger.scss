@@ -65,13 +65,15 @@ $hamburger-color: $primary-color;
     }
   }
   &.is-active, body.has-menu &{
-    //display: none;
-    .hamburger{
+    z-index: 11;
+    position: fixed;
+    .hamburger{ // namespace only
+
       &-text{
         margin-top: rem-calc(25);
-        color: transparent;
+        //color: transparent;
         &:after{
-          color: $primary-color;
+          color: transparent;
         }
       }
       &-icon{

@@ -8146,12 +8146,15 @@ a.thumbnail image {
 .hamburger:not(.is-active) .hamburger-icon-bar {
   transition: 0.3s opacity;
 }
+.hamburger.is-active, body.has-menu .hamburger {
+  z-index: 11;
+  position: fixed;
+}
 .hamburger.is-active .hamburger-text, body.has-menu .hamburger .hamburger-text {
   margin-top: 1.3888888889rem;
-  color: transparent;
 }
 .hamburger.is-active .hamburger-text:after, body.has-menu .hamburger .hamburger-text:after {
-  color: #2953cc;
+  color: transparent;
 }
 .hamburger.is-active .hamburger-icon, body.has-menu .hamburger .hamburger-icon {
   margin-top: -1.0555555556rem;
@@ -8293,11 +8296,15 @@ span.button a {
   font-family: "icomoon";
   content: "" !important;
   border: none !important;
-  font-size: 1.1111111111rem;
-  margin-top: -0.5555555556rem !important;
+  font-size: 1rem;
+  margin-top: -0.5rem !important;
+}
+.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a:after {
+  font-size: 0.7777777778rem;
+  color: #2953cc;
 }
 .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)[aria-expanded=true] > a:after {
-  transform: scaleY(-1);
+  transform: scaleY(-1) translateY(-18px);
 }
 
 .dropdown > li.is-dropdown-submenu-parent > a {
@@ -8855,11 +8862,12 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .top-bar_close {
   position: absolute;
   top: 0.8333333333rem;
-  right: 1.2777777778rem;
-  font-size: 2.7777777778rem;
+  right: 0.8888888889rem;
+  font-size: 2.2222222222rem;
   color: #2953cc;
   cursor: pointer;
   font-weight: normal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 @media print, screen and (max-width: 63.99875em) {
   .top-bar {
@@ -8888,8 +8896,16 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 @media print, screen and (max-width: 63.99875em) {
   .top-bar .accordion-menu a:not(.button) {
-    color: #2953cc;
-    padding: 0.5555555556rem 0.8333333333rem;
+    padding: 0.6666666667rem 1.3333333333rem;
+  }
+}
+@media print, screen and (max-width: 63.99875em) {
+  .top-bar .parent-link {
+    font-weight: bold;
+  }
+  .top-bar .parent-link > a:not(.button) {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 @media print, screen and (max-width: 63.99875em) {
@@ -8898,28 +8914,13 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   }
 }
 @media print, screen and (max-width: 63.99875em) {
-  .top-bar .utility {
-    margin-bottom: 0.5555555556rem;
-  }
-  .top-bar .utility a:not(.button) {
-    color: #2953cc;
-  }
-}
-@media print, screen and (max-width: 63.99875em) {
   .top-bar .search-wrapper {
     margin-bottom: 0.8333333333rem;
   }
 }
 @media print, screen and (max-width: 63.99875em) {
-  .top-bar .button {
-    padding: 0.8333333333rem 1.6666666667rem;
-    display: inline-block;
-    margin-bottom: 1.1111111111rem;
-  }
-}
-@media print, screen and (max-width: 63.99875em) {
   .top-bar .input-group {
-    padding: 0.5555555556rem 0;
+    padding: 0 0.5555555556rem;
   }
 }
 @media print, screen and (max-width: 63.99875em) {
@@ -8940,7 +8941,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   }
   .top-bar .top > li:not(.utility) > a {
     font-size: 1rem;
-    color: #2953cc;
+    color: #333;
     padding: 1rem 0;
   }
   .top-bar .top > li > ul {
@@ -8961,25 +8962,11 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   .top-bar .top > li > ul > li > ul a {
     font-size: 0.8888888889rem;
   }
-}
-@media print, screen and (max-width: 63.99875em) {
-  .top-bar li.is-accordion-submenu-parent > a {
-    position: relative;
+  .top-bar .top ul {
+    margin-top: 0.4444444444rem;
   }
-  .top-bar li.is-accordion-submenu-parent > a:after {
-    font-family: "Nunito Sans";
-    font-weight: bold;
-    font-size: 1.3333333333rem;
-    right: 0.1111111111rem;
-    top: 50%;
-    width: 0.7222222222rem;
-    text-align: center;
-    transform: translateY(-50%);
-    position: absolute;
-    content: "+";
-  }
-  .top-bar li.is-accordion-submenu-parent[aria-expanded=true] > a:after {
-    content: "–";
+  .top-bar .top ul a {
+    text-decoration: underline;
   }
 }
 @media print, screen and (min-width: 64em) {

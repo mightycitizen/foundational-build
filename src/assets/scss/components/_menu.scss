@@ -13,14 +13,18 @@
   }
 }
 .accordion-menu {
+  $arrow-size: 18px;
   .is-accordion-submenu-parent:not(.has-submenu-toggle) {
     > a{
-      @include removeArrow(20px);
-
+      @include removeArrow($arrow-size);
+      &:after{
+        font-size: rem-calc(14);
+        color: $primary-color;
+      }
     }
     &[aria-expanded="true"]{
       > a:after{
-        transform: scaleY(-1);
+        transform: scaleY(-1) translateY(-1*$arrow-size);
       }
     }
   }

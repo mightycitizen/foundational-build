@@ -8093,6 +8093,7 @@ a.thumbnail image {
   text-transform: uppercase;
   color: #fff;
   border: 0;
+  cursor: pointer;
   font-size: 0.5555555556rem;
   font-weight: bold;
   text-align: center;
@@ -11739,6 +11740,9 @@ input[type=radio].custom:not(foo):focus:not(:checked) + label, input[type=radio]
   letter-spacing: 1px;
   font-weight: bold;
 }
+.input-group.simple input.input-group-field {
+  height: 2.7777777778rem;
+}
 .input-group.simple input.input-group-field:focus + .input-group-button, .input-group.simple .input-wrapper:focus-within + .input-group-button {
   border: 1px solid #2953cc;
   border-left: 0;
@@ -11746,7 +11750,7 @@ input[type=radio].custom:not(foo):focus:not(:checked) + label, input[type=radio]
 .input-group.simple .input-group-button {
   border: 1px solid #ccc;
   border-left: 0;
-  padding: 0 0.5555555556rem;
+  padding: 0 0.8888888889rem;
   background-color: #fff;
   color: #2953cc;
   transition: border-color 0.25s ease-in-out;

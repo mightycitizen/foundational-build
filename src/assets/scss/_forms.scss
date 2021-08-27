@@ -244,7 +244,9 @@ input[type="radio"], input[type="checkbox"]{
         font-weight: $global-weight-bold;
       }
     }
-
+    input.input-group-field{
+      height: rem-calc(50);
+    }
     input.input-group-field:focus, .input-wrapper:focus-within{
       + .input-group-button{
         border: $input-border-focus;
@@ -254,7 +256,7 @@ input[type="radio"], input[type="checkbox"]{
     .input-group-button{
       border: $input-border;
       border-left: 0;
-      padding: rem-calc(0 10);
+      padding: rem-calc(0 2*$spacer);
       background-color: $white;
       color: $primary-color;
       transition: $input-transition;

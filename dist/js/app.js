@@ -4339,7 +4339,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jque
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./src/assets/js/plugins/empty.js?");
+eval("// fallback for plugin that is set to false in the plugins configuration file\n\n//# sourceURL=webpack:///./src/assets/js/plugins/empty.js?");
 
 /***/ }),
 

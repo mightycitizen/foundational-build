@@ -13,6 +13,17 @@ const slickPagination = (slick) => {
   }
 }
 
+const defaultOptions = {
+  slidesToScroll: 1,
+  rows: 0,
+  lazyLoad: 'progressive',
+  prevArrow: '<button class="slick-prev arrow arrow--prev">Previous</button>',
+  nextArrow: '<button class="slick-next arrow arrow--next">Next</button>',
+  dots: true,
+  dotsClass: 'slick-dots',
+  adaptiveHeight: true,
+  waitForAnimate: false
+}
 
 // @slick init
 const initSlick = () => {
@@ -31,19 +42,10 @@ const initSlick = () => {
       $this.on('breakpoint', function (event, slick, breakpoint){
         slickPagination(slick);
       })
-
-      $this.slick({
-        slidesToScroll: 1,
-        rows: 0,
-        prevArrow: '<button class="slick-prev arrow arrow--prev">Previous</button>',
-        nextArrow: '<button class="slick-next arrow arrow--next">Next</button>',
-        dots: true,
+      const slickOptions = $.extend({}, defaultOptions, {
         mobileFirst: true,
-        dotsClass: 'slick-dots',
         appendArrows: $this.next('.slick-nav'),
         appendDots: $this.next('.slick-nav'),
-        adaptiveHeight: true,
-        waitForAnimate: false,
         responsive: [
           {
             breakpoint: mediumBreakpoint,
@@ -51,7 +53,7 @@ const initSlick = () => {
           }
         ]
       });
-
+      $this.slick(slickOptions);
     })
 
   }
@@ -80,30 +82,19 @@ const initSlick = () => {
       slickPagination(slick);
     })
 
-
     // pause/play
     $this.next('.slick-nav').find('.js-slick-toggle').on('click', function(){
-      //console.log($this.get(0).slick.paused);
       if ($this.get(0).slick.paused){
         $this.slick('slickPlay').removeClass('is-paused');
       }else{
         $this.slick('slickPause').addClass('is-paused');
       }
     })
-
-    $this.slick({
-      slidesToScroll: 1,
-      rows: 0,
-      lazyLoad: 'progressive',
-      prevArrow: '<button class="slick-prev arrow arrow--prev">Previous</button>',
-      nextArrow: '<button class="slick-next arrow arrow--next">Next</button>',
-      dots: true,
-      dotsClass: 'slick-dots',
+    const slickOptions = $.extend({}, defaultOptions, {
       appendArrows: $this.next('.slick-nav'),
       appendDots: $this.next('.slick-nav'),
-      adaptiveHeight: true,
-      waitForAnimate: false
     });
+    $this.slick(slickOptions);
 
   })
 
@@ -121,19 +112,12 @@ const initSlick = () => {
       slickPagination(slick);
     })
 
-    $this.slick({
+    const slickOptions = $.extend({}, defaultOptions, {
       slidesToScroll: 3,
       slidesToShow: 3,
-      rows: 0,
-      prevArrow: '<button class="slick-prev arrow arrow--prev">Previous</button>',
-      nextArrow: '<button class="slick-next arrow arrow--next">Next</button>',
-      dots: true,
       infinite: true,
-      dotsClass: 'slick-dots',
       appendArrows: $this.next('.slick-nav'),
       appendDots: $this.next('.slick-nav'),
-      adaptiveHeight: true,
-      waitForAnimate: false,
       responsive: [
         {
         breakpoint: largeBreakpoint,
@@ -156,6 +140,8 @@ const initSlick = () => {
       ]
     });
 
+    $this.slick(slickOptions);
+
   });
 
   const $slickCenter = $('.js-slick--center');
@@ -170,18 +156,12 @@ const initSlick = () => {
       slickPagination(slick);
     })
 
-    $this.slick({
+    const slickOptions = $.extend({}, defaultOptions, {
       centerMode: true,
       centerPadding: '50px',
-      prevArrow: '<button class="slick-prev arrow arrow--prev">Previous</button>',
-      nextArrow: '<button class="slick-next arrow arrow--next">Next</button>',
-      dots: true,
-      infinite: false,
-      dotsClass: 'slick-dots',
       appendArrows: $this.next('.slick-nav'),
       appendDots: $this.next('.slick-nav'),
       variableWidth: true,
-      //adaptiveHeight: false,
       waitForAnimate: true,
       responsive: [
         {
@@ -200,6 +180,8 @@ const initSlick = () => {
         }
       ]
     });
+
+    $this.slick(slickOptions);
 
   });
 

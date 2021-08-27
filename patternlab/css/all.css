@@ -8040,15 +8040,7 @@ a.thumbnail image {
 }
 @media print, screen and (min-width: 64em) {
   .card--horizontal .card-section {
-    padding-left: 1.7777777778rem;
-    padding-right: 1.7777777778rem;
-    padding-top: 1.7777777778rem;
-  }
-}
-@media print, screen and (min-width: 64em) and (min-width: 40em) {
-  .card--horizontal .card-section {
-    padding-left: 1.7777777778rem;
-    padding-right: 1.7777777778rem;
+    padding-top: 1.3888888889rem;
   }
 }
 @media print, screen and (min-width: 64em) and (min-width: 40em) {

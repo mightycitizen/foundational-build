@@ -80,7 +80,7 @@
     @include breakpoint(large){
       .card-section{
         //@include spacer(padding,x,4,4);
-        @include spacer(padding,top,5,4);
+        @include spacer(padding,top,5);
       }
     }
     // @include breakpoint(medium){

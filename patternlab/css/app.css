@@ -4940,7 +4940,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   display: block;
   padding: 0.1666666667rem 0.5555555556rem;
   border-radius: 0;
-  color: #333;
+  color: #2953cc;
 }
 .pagination a:hover,
 .pagination button:hover {
@@ -4948,8 +4948,8 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 .pagination .current {
   padding: 0.1666666667rem 0.5555555556rem;
-  background: #2953cc;
-  color: #fff;
+  background: transparent;
+  color: #333;
   cursor: default;
 }
 .pagination .disabled {
@@ -8333,26 +8333,6 @@ span.button a {
 .pagination li {
   vertical-align: middle;
 }
-.pagination .pagination-arrow {
-  font-size: 1.3888888889rem;
-  font-weight: normal;
-  padding: 0;
-}
-.pagination-previous a, .pagination-next a {
-  color: #2953cc;
-}
-.pagination-previous a:hover, .pagination-next a:hover {
-  background-color: transparent;
-  color: #2953cc;
-}
-.pagination-previous.disabled:before, .pagination-previous a:before {
-  font-family: "icomoon";
-  content: "";
-}
-.pagination-next.disabled:after, .pagination-next a:after {
-  font-family: "icomoon";
-  content: "";
-}
 .pagination-page {
   font-size: 0.8888888889rem;
 }
@@ -8540,42 +8520,11 @@ span.button a {
   display: none;
 }
 
-.slick-arrow {
-  border-radius: 50%;
-  border: 0;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 0;
-  margin-right: 0.9444444444rem;
-  font-size: 0;
-  line-height: 0;
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-  background-color: #2953cc;
-  width: 2.2222222222rem;
-  height: 2.2222222222rem;
-  text-align: center;
-}
-.slick-arrow:before {
-  line-height: 1;
-  font-family: "icomoon";
-  font-size: 0.8888888889rem;
-  font-weight: normal;
-}
 .slick-arrow.slick-disabled {
   background-color: #ccc;
 }
 .slick-arrow.slick-disabled:before {
   color: #666;
-}
-.slick-arrow.slick-prev:before {
-  content: "";
-}
-.slick-arrow.slick-next:before {
-  content: "";
 }
 .slick-arrow.slick-disabled, .slick-arrow.slick-disabled:focus {
   color: #ccc;
@@ -8583,9 +8532,6 @@ span.button a {
 }
 html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .slick-arrow.slick-disabled:focus {
   color: #ccc;
-}
-.slick-arrow:hover {
-  background-color: #1f3e99;
 }
 
 .slick-nav {
@@ -11895,6 +11841,50 @@ legend {
   position: absolute;
   margin-bottom: -0.4583333333rem;
   margin-right: -0.1111111111rem;
+}
+
+.arrow:not(foo) {
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  font-size: 0;
+  line-height: 0;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #2953cc;
+  width: 2.2222222222rem;
+  height: 2.2222222222rem;
+  text-align: center;
+}
+.arrow:not(foo):hover {
+  background-color: #1f3e99;
+}
+.arrow:not(foo):before {
+  margin: 0;
+  line-height: 1;
+  font-family: "icomoon";
+  font-size: 0.8888888889rem;
+  font-weight: normal;
+}
+.arrow:not(foo):after {
+  display: none;
+}
+.arrow--prev:not(foo) {
+  margin-right: 0.9444444444rem;
+}
+.arrow--prev:not(foo):before {
+  content: "";
+}
+.arrow--next:not(foo) {
+  margin-left: 0.9444444444rem;
+}
+.arrow--next:not(foo):before {
+  content: "";
 }
 
 h1 {

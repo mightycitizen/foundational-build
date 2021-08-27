@@ -200,54 +200,11 @@
 
 	}
 	.slick-arrow {
-		border-radius: 50%;
-		border: 0;
-		background: transparent;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		margin-left: 0;
-		margin-right: rem-calc(17);
-		font-size: 0;
-		line-height: 0;
-		color: $white;
-		text-decoration: none;
-		cursor: pointer;
-		background-color: $primary-color;
-
-		@include size(40);
-		text-align: center;
-
-		&:before {
-
-			line-height: 1;
-			font-family: $icomoon-font-family;
-			font-size: rem-calc(16);
-			font-weight: normal;
-		}
-
-		&.slick-disabled{
+		&.slick-disabled {
 			background-color: $input-background-disabled;
 			&:before{
 				color: $medium-gray;
 			}
-		}
-
-		&.slick-prev {
-			&:before {
-				content: $icon-chevron-left;
-			}
-		}
-
-		&.slick-next {
-			&:before {
-				content: $icon-chevron-right;
-			}
-		}
-
-		&.slick-disabled {
-
 			&,
 			&:focus {
 				color: $light-gray;
@@ -257,9 +214,6 @@
 					color: $light-gray;
 				}
 			}
-		}
-		&:hover{
-			background-color: map-get($additional-palette,'primary-darker');
 		}
 	}
 

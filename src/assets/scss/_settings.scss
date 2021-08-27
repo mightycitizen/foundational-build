@@ -591,13 +591,13 @@ $menu-icons-back-compat: true;
 
 $pagination-font-size: rem-calc(18);
 $pagination-margin-bottom: $global-margin;
-$pagination-item-color: $black;
+$pagination-item-color: $primary-color;
 $pagination-item-padding: rem-calc(3 10);
 $pagination-item-spacing: rem-calc(1);
 $pagination-radius: $global-radius;
 $pagination-item-background-hover: $white;
-$pagination-item-background-current: $primary-color;
-$pagination-item-color-current: $white;
+$pagination-item-background-current: transparent;
+$pagination-item-color-current: $black;
 $pagination-item-color-disabled: $medium-gray;
 $pagination-ellipsis-color: $black;
 $pagination-mobile-items: true;

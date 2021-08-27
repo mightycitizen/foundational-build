@@ -129,7 +129,7 @@
           "modifier": "",
           "flag": "Test",
           "image": {
-            "src": "https://source.unsplash.com/9wg5jCEPBsw/406x207",
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/400x270",
             "alt": "Alt Text"
           },
           "heading": {
@@ -154,7 +154,7 @@
           "modifier": "",
           "members_only": false,
           "image": {
-            "src": "https://source.unsplash.com/9wg5jCEPBsw/406x207",
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/400x270",
             "alt": "Alt Text"
           },
           "heading": {
@@ -179,7 +179,7 @@
           "modifier": "",
           "members_only": false,
           "image": {
-            "src": "https://source.unsplash.com/9wg5jCEPBsw/406x207",
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/400x270",
             "alt": "Alt Text"
           },
           "heading": {
@@ -303,7 +303,60 @@
   {% include 'components/modules/testimonial-carousel.twig' %}
 
   {% include 'components/modules/card-carousel-center.twig' with {
-    "class": "bg-gradient-secondary"
+    "class": "bg-gradient-secondary",
+    "cards": [
+      {
+
+        "flag": "Flag Text",
+        "image": {
+          "src": "https://source.unsplash.com/9wg5jCEPBsw/400x270",
+          "alt": "Alt Text"
+        },
+        "heading": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "url": "#"
+        },
+        "link": {
+          "url": "#",
+          "text":"Optional Link"
+        }
+      },
+        {
+
+        "members_only": false,
+        "image": {
+          "src": "https://source.unsplash.com/9wg5jCEPBsw/400x270",
+          "alt": "Alt Text"
+        },
+        "heading": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Another line here to show multiple lines",
+          "url": "#"
+        },
+        "link": {
+          "url": "#",
+          "text":"Optional Link"
+        }
+      },
+        {
+
+        "members_only": false,
+        "image": {
+          "src": "https://source.unsplash.com/9wg5jCEPBsw/400x270",
+          "alt": "Alt Text"
+        },
+        "heading": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "url": "#"
+        },
+        "link": {
+          "url": "#",
+          "text":"Optional Link"
+        }
+      }
+    ]
+
+
+
   } %}
 
   {% include 'components/modules/step-list.twig' %}

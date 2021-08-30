@@ -11,7 +11,8 @@ import './plugins/ajaxify';
 import './plugins/selectize';
 import './plugins/lity';
 import './plugins/datepicker';
-import './plugins/video';
+import './plugins/youtube';
+import './plugins/vimeo';
 import './plugins/slick';
 
 //import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints

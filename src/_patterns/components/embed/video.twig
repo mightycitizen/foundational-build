@@ -1,13 +1,13 @@
-<div class="video-wrapper" data-video-trigger="{{ trigger }}">
-    <div class="video-loader">
-      {% include patternlab_namespace | default ~ 'components/utils/loader.twig' %}
-    </div>
-    <div class="video-image-wrapper">
-      <img data-src="{{ image.src }}" alt="{{ image.alt }}" class="video-image js-lazy">
-    </div>
-    <div class="video-container">
-      <div class="youtube-wrapper">
-        <div class="youtube-player" data-youtube-id="{{ youtube }}"></div>
-      </div>
+<div class="video_wrapper" data-video-trigger="{{ trigger }}" data-video-type="{{ type }}">
+  <div class="video_loader">
+    {% include patternlab_namespace | default ~ 'components/utils/loader.twig' %}
+  </div>
+  <div class="video_image_wrapper">
+    <img data-src="{{ image.src }}" alt="{{ image.alt }}" class="video_image js-lazy">
+  </div>
+  <div class="video_container">
+    <div class="video_player_wrapper">
+      <div class="video_player" data-video-id="{{ video_id }}" ></div>
     </div>
   </div>
+</div>

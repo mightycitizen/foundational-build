@@ -1,6 +1,7 @@
 {
   "trigger": "click",
-  "youtube": "gJ6APKIjFQY",
+  "type": "youtube",
+  "video_id": "gJ6APKIjFQY",
   "image": {
     "src": "//via.placeholder.com/1777x1000",
     "alt": ""

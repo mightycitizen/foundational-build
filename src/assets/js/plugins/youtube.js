@@ -1,15 +1,5 @@
 import $ from 'jquery';
-
-
-$.fn.isInViewport = function() {
-  var elementTop = $(this).offset().top;
-  var elementBottom = $(this).offset().top + $(this).outerHeight();
-  var viewportTop = $(window).scrollTop();
-  let offsetFactor = 1;
-  const dataOffset = $(this).data('offset');
-  if (dataOffset) offsetFactor = eval(dataOffset);
-  return viewportTop + offsetFactor*$(window).outerHeight() > elementTop && viewportTop < elementBottom;
-};
+import '../utils/in-viewport.js';
 
 
 // @video init
@@ -28,16 +18,16 @@ const initVideo = () => {
 
   window.onYouTubeIframeAPIReady = function(){
 
-    $('.video-wrapper').each(function(){
+    $('.video_wrapper[data-video-type="youtube"]').each(function(){
           var holder = $(this),
-              vid = holder.find('.youtube-player'),
+              vid = holder.find('.video_player'),
               player,
               playing = false,
               trigger = holder.data('video-trigger'),
               firstPlay = true;
 
           vid.attr('tabindex', -1);
-          const youtubeId = vid.data('youtube-id');
+          const youtubeId = vid.data('video-id');
           player = new YT.Player(vid[0], {
               playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 0 , 'showInfo': 0, 'mute': 1,'rel': 0},
               videoId: youtubeId,
@@ -116,7 +106,7 @@ const initVideo = () => {
     });
   }
 
-  $('[data-video-trigger="click"]').on('click', function(){
+  $(document).on('click', '[data-video-trigger="click"][data-video-type="youtube"]', function(){
     if ($(this).hasClass(playingClass)){
       $(this).trigger('pause').removeClass(playingClass);
     }else{
@@ -126,8 +116,8 @@ const initVideo = () => {
 
   $(window).on('scroll', Foundation.util.throttle(
     function(){
-      $('[data-video-trigger="scroll"]').each(function(){
-        if ($(this).find('.youtube-player').isInViewport()){
+      $('[data-video-trigger="scroll"][data-video-type="youtube"]').each(function(){
+        if ($(this).find('.video_player').isInViewport()){
           $(this).trigger('play');
         }else{
           $(this).trigger('pause');

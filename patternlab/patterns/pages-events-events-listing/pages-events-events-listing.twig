@@ -14,7 +14,9 @@
     style: 'narrow'
   } %}
     {% block section_content %}
-      {% include 'components/listing/filter.twig' %}
+      {% include 'components/listing/filter.twig' with {
+        ajax: true
+      }%}
       {% include 'components/listing/list.twig' with
       {
           "list": [

@@ -42,6 +42,9 @@ const initSelectUrl = () => {
 
 // @form helpers init
 const initFormHelpers = () => {
+  $('form.js-ajax').find('select, input').on('change', function(){
+    $(this).closest('form').trigger('submit');
+  })
   $('[data-clear]').each(function(){
     const $field = $('#'+$(this).data('clear'));
     $field.on('change', function(){

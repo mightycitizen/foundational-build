@@ -1,0 +1,1 @@
+redirectMatch 301 ^/templates$ /patterns/pages-templates/pages-templates.rendered.html

@@ -8788,6 +8788,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 @media print, screen and (max-width: 63.99875em) {
   .top-bar {
+    pointer-events: none;
     opacity: 0;
     position: fixed;
     top: 0;
@@ -8803,6 +8804,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   .has-menu .top-bar {
     animation: 0.5s open;
     opacity: 1;
+    pointer-events: all;
   }
 }
 @media only screen and (max-width: 63.99875em) and (orientation: portrait) {
@@ -9030,6 +9032,17 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     transform: translateX(0);
   }
 }
+@media print, screen and (max-width: 39.99875em) {
+  .no-js .top-bar {
+    display: none;
+  }
+}
+@media print, screen and (min-width: 40em) {
+  .no-js .title-bar {
+    display: none;
+  }
+}
+
 .selectize-input {
   font-size: 1rem;
   padding: 0.8888888889rem 0.6666666667rem;

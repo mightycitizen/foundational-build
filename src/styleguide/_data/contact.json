@@ -9,6 +9,7 @@
     },
     {
       "label": "Email",
+      "url": "mailto:example@domain.com",
       "value": "example@domain.com"
     },
     {

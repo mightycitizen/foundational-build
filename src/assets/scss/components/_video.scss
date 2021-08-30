@@ -139,7 +139,7 @@
                 z-index: 1;
                 margin-left: rem-calc(-5);
                 @include breakpoint(medium){
-                  @include triangle(80px 60px, $white, right);
+                  @include triangle(85px 60px, $white, right);
                 }
               }
               // &:after{

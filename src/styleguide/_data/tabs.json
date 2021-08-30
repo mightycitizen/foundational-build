@@ -2,26 +2,26 @@
   "id": "example-tabs",
   "tabs": [
     {
-      "text": "View",
-      "id": "view",
+      "text": "Tab 1",
+      "id": "tab-1",
       "active": true,
       "content": "<h2>Tab Content</h2><p>Lorem ipsum 1</p><p><a href='' class='read-more'>Styled Link</a></p>"
     },
     {
-      "text": "Edit",
-      "id": "edit",
+      "text": "Tab 2",
+      "id": "tab-2",
       "active": false,
       "content": "Lorem ipsum 2"
     },
     {
-      "text": "Delete",
-      "id": "delete",
+      "text": "Tab 3",
+      "id": "tab-3",
       "active": false,
       "content": "Lorem ipsum 3"
     },
     {
-      "text": "Revisions",
-      "id": "revisions",
+      "text": "Tab 4",
+      "id": "tab-4",
       "active": false,
       "content": "Lorem ipsum 4"
     }

@@ -7725,18 +7725,29 @@ a.thumbnail image {
     padding-bottom: 0.8888888889rem;
   }
 }
+@media print, screen and (min-width: 40em) {
+  .accordion-title {
+    padding-right: 3.5555555556rem;
+  }
+}
 @media print, screen and (max-width: 39.99875em) {
   .accordion-title {
     font-size: 1.1111111111rem;
   }
 }
 .accordion-title:before {
-  right: 1rem;
+  right: 0;
+  margin-right: 1.3333333333rem;
   font-weight: normal;
   font-size: 0.8888888889rem;
   color: #2953cc;
   font-family: "icomoon";
   content: "" !important;
+}
+@media print, screen and (min-width: 40em) {
+  .accordion-title:before {
+    margin-right: 1.7777777778rem;
+  }
 }
 .is-active > .accordion-title:before {
   transform: rotate(180deg);
@@ -7750,11 +7761,11 @@ a.thumbnail image {
 .accordion-title--notch {
   position: relative;
   display: flex;
-  padding-left: 1.9444444444rem;
+  padding-left: 2.2222222222rem;
 }
 @media print, screen and (min-width: 40em) {
   .accordion-title--notch {
-    padding-left: 3.1111111111rem;
+    padding-left: 3.5555555556rem;
   }
 }
 .accordion-title--notch .accordion-notch {
@@ -7768,7 +7779,7 @@ a.thumbnail image {
   font-weight: bold;
   align-items: center;
   justify-content: flex-end;
-  width: 1.3888888889rem;
+  width: 1.7777777778rem;
 }
 @media print, screen and (max-width: 39.99875em) {
   .accordion-title--notch .accordion-notch {
@@ -7777,7 +7788,7 @@ a.thumbnail image {
 }
 @media print, screen and (min-width: 40em) {
   .accordion-title--notch .accordion-notch {
-    width: 2.2222222222rem;
+    width: 2.6666666667rem;
   }
 }
 .accordion-content {
@@ -7825,7 +7836,7 @@ a.thumbnail image {
 }
 @media print, screen and (min-width: 40em) {
   .accordion--steps .accordion-title {
-    padding-left: 2.6666666667rem;
+    padding-left: 3.1111111111rem;
   }
 }
 .accordion--steps .accordion-title .accordion-notch {
@@ -7833,7 +7844,7 @@ a.thumbnail image {
 }
 @media print, screen and (min-width: 40em) {
   .accordion--steps .accordion-title .accordion-notch {
-    width: 1.7777777778rem;
+    width: 2.2222222222rem;
   }
 }
 .accordion--steps .accordion-title .accordion-notch:before {
@@ -9113,8 +9124,8 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 @media print, screen and (min-width: 40em) {
   .tabs-title button {
-    padding-top: 0.8888888889rem;
-    padding-bottom: 0.8888888889rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 @media print, screen and (min-width: 40em) {
@@ -9354,8 +9365,8 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     height: 0;
     width: 0;
     border-left: 60px solid #fff;
-    border-bottom: 40px solid transparent;
-    border-top: 40px solid transparent;
+    border-bottom: 42.5px solid transparent;
+    border-top: 42.5px solid transparent;
   }
 }
 .video-wrapper[data-video-trigger=scroll] .video-container, .video-wrapper[data-video-trigger=click] .video-container {

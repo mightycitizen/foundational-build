@@ -10,7 +10,7 @@
 {% endblock %}
 {% block main %}
   {% embed 'components/sections/section.twig' with {
-    class: 'section--tight section--collapse'
+    section_class: 'section--tight section--collapse'
   } %}
     {% block section_content %}
       {% include 'components/inline-text/meta.twig' with {
@@ -25,6 +25,6 @@
     {% endblock %}
   {% endembed %}
   {% include 'components/modules/wysiwyg.twig' with {
-    class: 'section--collapse'
+    section_class: 'section--collapse'
   }%}
 {% endblock %}

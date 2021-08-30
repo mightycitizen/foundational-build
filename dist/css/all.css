@@ -8244,6 +8244,9 @@ span.button a {
     padding-top: 2.2222222222rem;
   }
 }
+.listing .item .media-object-section:first-child {
+  padding-left: 0;
+}
 .listing .item .media-object-section:first-child:not(:last-child) {
   padding-left: 0;
 }

@@ -30,12 +30,12 @@
   &_intro{
     position: relative;
     z-index: 2;
-    @include breakpoint(medium down){
+    @include breakpoint(small only){
       margin-bottom: $spacer*3;
       //@include spacer(margin,bottom,4);
     }
     &:not(:last-child){
-      @include breakpoint(large){
+      @include breakpoint(medium){
         @include spacer(margin,bottom,5);
       }
     }

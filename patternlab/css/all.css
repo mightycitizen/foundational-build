@@ -8619,7 +8619,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     transition: 0.75s padding;
   }
   .js-slick--center .slick-slide:not(.slick-current) {
-    margin-bottom: 7.1527777778rem;
+    margin-bottom: 7.7916666667rem;
   }
   .js-slick--center .slick-slide:not(.slick-current) .card-section {
     padding-top: 0.8333333333rem;

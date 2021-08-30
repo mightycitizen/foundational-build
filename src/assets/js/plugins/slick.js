@@ -148,8 +148,10 @@ const initSlick = () => {
       centerPadding: '50px',
       appendArrows: $this.next('.slick-nav'),
       appendDots: $this.next('.slick-nav'),
+      adaptiveHeight: false,
       variableWidth: true,
       waitForAnimate: true,
+      infinite: false,
       responsive: [
         {
 
@@ -160,6 +162,7 @@ const initSlick = () => {
             variableWidth: false,
             infinite: true,
             slidesToScroll: 1,
+            adaptiveHeight: true,
             slidesToShow: 1
 
           }

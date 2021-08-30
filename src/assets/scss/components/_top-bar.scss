@@ -18,7 +18,11 @@ $grandchildren-background: map-get($additional-palette,'secondary-lightest');
   }
 
   @include breakpoint(medium down){
-    animation: 0.5s open;
+    .has-menu & {
+      animation: 0.5s open;
+      opacity: 1;
+    }
+    opacity: 0;
     position: fixed;
     top: 0;
     left: 0;

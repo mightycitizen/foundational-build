@@ -8790,7 +8790,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 @media print, screen and (max-width: 63.99875em) {
   .top-bar {
-    animation: 0.5s open;
+    opacity: 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -8801,6 +8801,10 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     background-color: #fff;
     padding: 0;
     display: block;
+  }
+  .has-menu .top-bar {
+    animation: 0.5s open;
+    opacity: 1;
   }
 }
 @media only screen and (max-width: 63.99875em) and (orientation: portrait) {

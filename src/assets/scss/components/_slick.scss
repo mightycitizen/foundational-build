@@ -311,7 +311,7 @@
 				}
 
 				&:not(.slick-current){
-					margin-bottom: rem-calc($curr-width/$image-ratio - $slide-width/$image-ratio - $slide-margin-offset);
+					margin-bottom: rem-calc($curr-width/$image-ratio - $slide-width/$image-ratio + $slide-margin-offset);
 					.card-section{
 						@include spacer(padding,y,3);
 						@include spacer(padding,x,4);
@@ -337,7 +337,7 @@
 					z-index: 2;
 					position: relative;
 					width: rem-calc($curr-width);
-					margin: 0 #{$slide-margin*2 - ($slide-current-diff/2 + $slide-margin)}px;
+					margin: rem-calc($slide-margin-offset) #{$slide-margin*2 - ($slide-current-diff/2 + $slide-margin)}px;
 					transform: translateY(#{rem-calc(0)});
 
 					.card--special{

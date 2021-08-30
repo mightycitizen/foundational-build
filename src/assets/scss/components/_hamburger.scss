@@ -44,7 +44,7 @@ $hamburger-color: $primary-color;
   }
   &-text{
     letter-spacing: 0.7px;
-    margin-top: rem-calc(6);
+    margin-top: rem-calc($spacer);
     display: block;
     position: relative;
     color: $black;

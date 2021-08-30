@@ -3,11 +3,12 @@
   label: 'News',
   handle: 'news'
 }%}
-
-{% block main %}
-  {% include "components/containers/hero.twig" with {
+{% block top %}
+  {% include "components/containers/hero.twig"  with {
     heading: 'News Detail'
-  }%}
+  } %}
+{% endblock %}
+{% block main %}
   {% embed 'components/sections/section.twig' with {
     class: 'section--tight section--collapse'
   } %}

@@ -1,7 +1,9 @@
 {% extends 'pages/wrapper.twig' %}
 
-{% block main %}
+{% block top %}
   {% include "components/containers/hero.twig" %}
+{% endblock %}
+{% block main %}
   {% embed 'components/sections/section.twig' with {
     class: 'section--tight'
   }%}

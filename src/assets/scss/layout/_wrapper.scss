@@ -16,7 +16,7 @@ html, body, .l-wrapper{
 }
 
 .l-header{
-  padding: rem-calc(16 0);
+  padding: rem-calc(24 0);
   @include breakpoint(large){
     padding: rem-calc(40 0 0);
   }

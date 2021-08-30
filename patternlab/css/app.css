@@ -8153,7 +8153,7 @@ a.thumbnail image {
 }
 .hamburger-text {
   letter-spacing: 0.7px;
-  margin-top: 0.3333333333rem;
+  margin-top: 0.4444444444rem;
   display: block;
   position: relative;
   color: #333;
@@ -8619,7 +8619,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     transition: 0.75s padding;
   }
   .js-slick--center .slick-slide:not(.slick-current) {
-    margin-bottom: 7.7916666667rem;
+    margin-bottom: 9.4583333333rem;
   }
   .js-slick--center .slick-slide:not(.slick-current) .card-section {
     padding-top: 0.8333333333rem;
@@ -8665,7 +8665,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     z-index: 2;
     position: relative;
     width: 37.7777777778rem;
-    margin: 0 -35px;
+    margin: 0.8333333333rem -35px;
     transform: translateY(0);
   }
   .js-slick--center .slick-slide.slick-current .card--special {
@@ -9576,7 +9576,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 @media print, screen and (min-width: 40em) {
   .step-list li:not(:last-child) {
-    margin-bottom: 1.7777777778rem;
+    margin-bottom: 2.2222222222rem;
   }
 }
 .step-list li > *:last-child {
@@ -9641,7 +9641,7 @@ html, body, .l-wrapper {
 }
 
 .l-header {
-  padding: 0.8888888889rem 0;
+  padding: 1.3333333333rem 0;
 }
 @media print, screen and (min-width: 64em) {
   .l-header {

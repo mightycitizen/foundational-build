@@ -1,7 +1,8 @@
 {% extends 'pages/wrapper.twig' %}
-
-{% block main %}
+{% block top %}
   {% include "components/containers/hero.twig" %}
+{% endblock %}
+{% block main %}
   {% include 'components/modules/wysiwyg.twig' %}
   {% include 'components/modules/video.twig'
     with {
@@ -362,7 +363,8 @@
     class: "bg-light-primary"
    } %}
   {% include 'components/modules/statistics.twig' with {
-    style: "side"
+    style: "side",
+    section_button: read_more
   } %}
   {% include 'components/modules/links.twig' with {
     "class": "bg-gradient-secondary"

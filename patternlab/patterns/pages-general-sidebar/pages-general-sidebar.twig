@@ -42,7 +42,7 @@
     {% include "components/teasers/card.twig" %}
   {% endset %}
   {% embed 'components/sections/section.twig' with {
-    'class': 'section--tight'
+    section_class: 'section--tight'
   } %}
     {% block section_content %}
       {% include 'layout/structure/content-with-sidebar.twig' %}

@@ -1,5 +1,5 @@
 {% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
-    "class": class | default~ ' overflow-hidden',
+    section_class: section_class | default~ ' overflow-hidden',
     "section_heading": section_heading | default ? section_heading : "Carousel Center Module Heading",
     "section_description": section_description | default,
     "intro_class": "text-center"

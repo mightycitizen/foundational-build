@@ -16,21 +16,7 @@
 
   %}
   {% include 'components/modules/contact.twig' with {
-      link: read_more,
-      "phone": {
-        "number": "(###) ### - ####",
-        "ext": "###"
-      },
-      "emails": [
-        {
-          "value": "example@domain.com",
-          "text": "Text"
-        },
-        {
-          "value": "example2@domain.com"
-        }
-      ],
-      "location": "Address here\r\nRoom\r\n"
+      link: read_more
     }
   %}
 
@@ -121,7 +107,7 @@
     }
    %}
   {% include 'components/modules/card-carousel.twig' with {
-    'class': 'bg-gradient-secondary'
+    section_class: 'bg-gradient-secondary'
   } %} {# three up #}
   {% include 'components/modules/card-carousel.twig' with
       {
@@ -207,7 +193,7 @@
    %}
 
   {% include 'components/modules/card-carousel.twig' with {
-    "class": "bg-light-primary",
+    section_class: "bg-light-primary",
     "cards":
     [
       {
@@ -308,7 +294,7 @@
   {% include 'components/modules/testimonial-carousel.twig' %}
 
   {% include 'components/modules/card-carousel-center.twig' with {
-    "class": "bg-gradient-secondary",
+    section_class: "bg-gradient-secondary",
     "cards": [
       {
 
@@ -364,13 +350,13 @@
   {% include 'components/modules/step-list.twig' %}
 
   {% include 'components/modules/statistics.twig' with {
-    class: "bg-light-primary"
+    section_class: "bg-light-primary"
    } %}
   {% include 'components/modules/statistics.twig' with {
     style: "side",
     section_button: read_more
   } %}
   {% include 'components/modules/links.twig' with {
-    "class": "bg-gradient-secondary"
+    section_class: "bg-gradient-secondary"
   } %}
 {% endblock %}

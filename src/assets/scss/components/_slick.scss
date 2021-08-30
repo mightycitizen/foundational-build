@@ -287,7 +287,7 @@
 		$slide-current-diff: 230;
 		$curr-width: $slide-width + $slide-current-diff;
 		$curr-section-offset: 80;
-		$image-ratio: 400 / 270; // need to update this to match the image size
+		$image-ratio: 630/400; // need to update this to match the image size
 
 
 		.slick-slide{

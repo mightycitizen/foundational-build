@@ -1,0 +1,5 @@
+
+.callout{
+  @include spacer(padding,y,3,3);
+  @include spacer(padding,x,4,3);
+}

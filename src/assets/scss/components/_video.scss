@@ -26,6 +26,7 @@
           &-wrapper{
             width: 100%;
             position: relative;
+            background-color: $dark-gray;
           }
           display: block;
           width: 100%;
@@ -113,7 +114,7 @@
           .video-image-wrapper{
             background-color: $primary-color;
             img{
-              opacity: 0.8;
+              opacity: 0.9;
             }
           }
         }
@@ -121,7 +122,9 @@
 
       &[data-video-trigger="scroll"], &[data-video-trigger="click"]{
         position: relative;
-
+        img{
+          opacity: 0.5;
+        }
 
         .video{
 

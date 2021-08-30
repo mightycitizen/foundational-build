@@ -40,7 +40,7 @@ $unicode-quote-left: '\201c';
 // Basic components
 //@include foundation-badge;
 @include foundation-breadcrumbs;
-@include foundation-callout;
+//@include foundation-callout;
 @include foundation-card;
 @include foundation-dropdown;
 @include foundation-pagination;
@@ -111,6 +111,7 @@ $unicode-quote-left: '\201c';
   "components/video",
   "components/text",
   "components/section",
+  "components/callout",
   "components/step-list";
 
 @import

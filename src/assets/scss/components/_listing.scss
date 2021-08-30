@@ -8,7 +8,7 @@
     @include spacer(padding,bottom,5,4);
     @include spacer(padding,top,5,4);
 
-    .media-object-section:first-child{
+    .media-object-section:first-child:not(:last-child){
       @include breakpoint(medium){
         max-width: 40%;
         //padding-right: map-get($grid-margin-gutters,medium);
@@ -28,7 +28,7 @@
       .media-object{
         &:not(.media-object--stack){
           .media-object-section:first-child{
-            padding-right: map-get($grid-margin-gutters,small);
+            padding-right: $spacer*2;
           }
         }
 

@@ -7,6 +7,9 @@
         @include breakpoint(small only){
           &:not(:last-child){
             margin-bottom: $mobile-margin-spacer;
+            &.l-content{
+              margin-bottom: 5*$spacer;
+            }
           }
         }
       }

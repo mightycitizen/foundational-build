@@ -8122,8 +8122,6 @@ a.thumbnail image {
 }
 .hamburger.is-active .hamburger-text, body.has-menu .hamburger .hamburger-text {
   margin-top: 1.3888888889rem;
-}
-.hamburger.is-active .hamburger-text:after, body.has-menu .hamburger .hamburger-text:after {
   color: transparent;
 }
 .hamburger.is-active .hamburger-icon, body.has-menu .hamburger .hamburger-icon {

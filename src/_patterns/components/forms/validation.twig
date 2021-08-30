@@ -40,6 +40,7 @@
   {% set select_options = select_options | merge({"selectize": true, "label": "Select (Filterable)" }) %}
 
   {% include patternlab_namespace | default ~ 'components/forms/select.twig' with select_options
+  only
   %}
   {% include patternlab_namespace | default ~ 'components/forms/radio-group.twig' with {
     "required": true,

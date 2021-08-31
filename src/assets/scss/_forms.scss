@@ -344,7 +344,12 @@ legend{
 }
 
 
-
+// buttons
+button{
+  &[type="submit"]:not(.is-loading){
+    cursor: pointer;
+  }
+}
 
 .button[disabled]{
   &, &:hover, &:focus{
@@ -354,7 +359,7 @@ legend{
   }
 }
 
-
+// errors
 .is-invalid-input, #{$input-error-class}{
   &:not(:focus){
     color: $body-font-color;
@@ -369,7 +374,7 @@ legend{
   margin-top: 0;
 }
 
-
+// form group
 .form-group{
   .form-input, .button[type="submit"]{
     margin-bottom: 0;

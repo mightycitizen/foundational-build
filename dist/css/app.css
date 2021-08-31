@@ -11786,6 +11786,10 @@ legend {
   pointer-events: all;
 }
 
+button[type=submit]:not(.is-loading) {
+  cursor: pointer;
+}
+
 .button[disabled], .button[disabled]:hover, .button[disabled]:focus {
   background-color: #ccc;
   color: #666;

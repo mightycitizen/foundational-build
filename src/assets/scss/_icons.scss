@@ -1,16 +1,17 @@
 
 .icon{
+  font-size: rem-calc($spacer*4);
   &--tiny{
-    font-size: rem-calc(10);
+    font-size: rem-calc($spacer*2);
   }
   &--small{
-    font-size: rem-calc(14);
+    font-size: rem-calc($spacer*3);
   }
   &--medium{
-    font-size: rem-calc(20);
+    font-size: rem-calc($spacer*5);
   }
   &--large{
-    font-size: rem-calc(26);
+    font-size: rem-calc($spacer*6);
   }
   &--circle{
    @include icon-circle();

@@ -11863,17 +11863,20 @@ button[type=submit]:not(.is-loading) {
   }
 }
 
+.icon {
+  font-size: 1.7777777778rem;
+}
 .icon--tiny {
-  font-size: 0.5555555556rem;
+  font-size: 0.8888888889rem;
 }
 .icon--small {
-  font-size: 0.7777777778rem;
+  font-size: 1.3333333333rem;
 }
 .icon--medium {
-  font-size: 1.1111111111rem;
+  font-size: 2.2222222222rem;
 }
 .icon--large {
-  font-size: 1.4444444444rem;
+  font-size: 2.6666666667rem;
 }
 .icon--circle {
   background-color: #2953cc !important;

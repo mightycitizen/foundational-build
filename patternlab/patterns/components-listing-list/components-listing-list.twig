@@ -6,7 +6,7 @@
       <div class="grid-x grid-margin-x align-middle">
         {% if item.image | default %}
           <div class="cell medium-5 large-4">
-            <div class="wrapper">
+            <div class="wrapper image-size--landscapeCroppedMedium">
               <img data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" class="js-lazy">
               {% if item_type == 'events' %}
                 {% include patternlab_namespace | default ~ 'components/inline-text/date.twig' with {

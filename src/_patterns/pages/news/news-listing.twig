@@ -13,6 +13,7 @@
     section_class: 'section--tight',
     style: 'narrow'
   } %}
+    {% set listing_image_transform = image_sizes.landscapeCroppedMedium %}
     {% block section_content %}
 
       {% include 'components/listing/filter.twig' with {
@@ -24,7 +25,7 @@
             {
               "type": type,
               "image": {
-                "src": "https://source.unsplash.com/9wg5jCEPBsw/400x280",
+                "src":image_placeholder ~ horizontal_card_transform.width ~ "x"~ horizontal_card_transform.height,
                 "alt": "Alt Text"
               },
               "heading": "Item Title",

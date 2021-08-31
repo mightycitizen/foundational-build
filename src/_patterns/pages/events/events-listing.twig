@@ -8,6 +8,7 @@
     heading: 'Events Listing'
   } %}
 {% endblock %}
+{% set listing_image_transform = image_sizes.landscapeCroppedMedium %}
 {% block main %}
   {% embed 'components/sections/section.twig' with {
     section_class: 'section--tight',
@@ -22,7 +23,7 @@
           "list": [
             {
              "image": {
-                "src": "https://source.unsplash.com/9wg5jCEPBsw/400x280",
+                "src":image_placeholder ~ listing_image_transform.width ~ "x"~ listing_image_transform.height,
                 "alt": "Alt Text"
               },
               "type": type,

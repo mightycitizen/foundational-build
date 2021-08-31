@@ -1,3 +1,5 @@
+@import '../variables/image-sizes.scss';
+
 .no-shadow{
   box-shadow: none;
 }
@@ -76,3 +78,12 @@
     }
   }
 }
+
+
+@each $size, $values in $image_sizes {
+  .image-size--#{$size}{
+    aspect-ratio: #{map-get($values, 'width') / map-get($values, 'height')};
+  }
+}
+
+

@@ -11457,6 +11457,26 @@ html, body, .l-wrapper {
   }
 }
 
+.image-size--landscapeCropped {
+  aspect-ratio: 1.8;
+}
+
+.image-size--landscapeCroppedMedium {
+  aspect-ratio: 1.575;
+}
+
+.image-size--landscapeCroppedSmall {
+  aspect-ratio: 1.8695652174;
+}
+
+.image-size--square {
+  aspect-ratio: 1;
+}
+
+.image-size--wideCroppedXlarge {
+  aspect-ratio: 3.1304347826;
+}
+
 .text-smaller {
   font-size: 0.7777777778rem;
 }

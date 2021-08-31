@@ -11714,6 +11714,10 @@ input[type=radio].custom:not(foo):focus:not(:checked) + label, input[type=radio]
   color: #fff;
 }
 
+.form-required {
+  color: #d5383c;
+}
+
 .input-group.simple .loader {
   position: absolute;
   width: 1.1111111111rem;

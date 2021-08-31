@@ -230,6 +230,10 @@ input[type="radio"], input[type="checkbox"]{
   }
 }
 
+.form-required{
+  color: $alert-color;
+}
+
 .input-group{
   &.simple{
     .loader{

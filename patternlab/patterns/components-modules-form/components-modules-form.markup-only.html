@@ -8,18 +8,18 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
     <form action="" data-abide novalidate>
   <div class="form-input ">
-  <label for="field_id_3">Text *</label>
+  <label for="field_id_3">Text <span class="form-required">*</span></label>
       <input  type="text" value="" name="text" id="field_id_3" placeholder="Prompt Text" required/>
         <span class="form-error">Text is required</span>
   </div>
   <div class="form-input ">
-  <label for="field_id_2">Textarea *</label>
+  <label for="field_id_2">Textarea <span class="form-required">*</span></label>
       <textarea name="textarea" id="field_id_2" required placeholder="Prompt Text"></textarea>
         <span class="form-error">Textarea is required</span>
   </div>
 
     <div class="form-input ">
-  <label for="example-tabs">Select *</label>
+  <label for="example-tabs">Select <span class="form-required">*</span></label>
       <select id="example-tabs" required  class=" " name="">
                     <option selected value="0">Select A</option>
               <option  value="1">Select B</option>
@@ -30,7 +30,7 @@
 
   
   <div class="form-input ">
-  <label for="">Select (Filterable) *</label>
+  <label for="">Select (Filterable) <span class="form-required">*</span></label>
       <select id="" required  class=" js-selectize" name="">
                     <option selected value="0">Select A</option>
               <option  value="1">Select B</option>
@@ -39,7 +39,7 @@
         <span class="form-error">Select (Filterable) is required</span>
   </div>
     <fieldset class="options">
-    <legend>Radio *</legend>
+    <legend>Radio <span class="form-required">*</span></legend>
     <ul class="radio-group no-bullet">
               <li>
           <input class="custom" id="radio_validation_0" name="radio" value="0" type="radio" required >
@@ -59,7 +59,7 @@
 
 
     <fieldset class="options">
-    <legend>Checkbox *</legend>
+    <legend>Checkbox <span class="form-required">*</span></legend>
     <ul class="checkbox-group no-bullet">
               <li><span>
   <input class="custom" id="checkbox_validation_0" name="checkbox" value="0" type="checkbox" required >

@@ -1,5 +1,5 @@
   <fieldset class="options">
-    <legend>{{ label }} {% if required %}*{% endif %}</legend>
+    <legend>{{ label }} {% if required | default %}<span class="form-required">*</span>{% endif %}</legend>
     <ul class="radio-group no-bullet">
       {% for option in options %}
         <li>

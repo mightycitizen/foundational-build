@@ -1,5 +1,7 @@
 @import 'variables/plugins';
 @if ($selectize){
+  $selectize-arrow-y: 6.5;
+  $selectize-arrow-x: 4.5;
   .selectize{
     &-input{
       font-size: $input-font-size;
@@ -11,7 +13,7 @@
       }
       &:after{
         border-top-color: $black !important;
-        border-width: 7px 4.5px 0 !important;
+        border-width: rem-calc($selectize-arrow-y $selectize-arrow-x 0) !important;
       }
       &.dropdown-active{
         > input{
@@ -20,7 +22,7 @@
         }
         &:after{
           border-bottom-color: $black !important;
-          border-width: 0 4.5px 7px !important;
+          border-width: rem-calc(0 $selectize-arrow-x $selectize-arrow-y) !important;
         }
       }
     }

@@ -1,6 +1,8 @@
 
 .icon{
-  font-size: rem-calc($spacer*4);
+  &:not([class*="icon--"]) {
+    font-size: rem-calc($spacer*4);
+  }
   &--tiny{
     font-size: rem-calc($spacer*2);
   }

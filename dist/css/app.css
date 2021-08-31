@@ -11863,7 +11863,7 @@ button[type=submit]:not(.is-loading) {
   }
 }
 
-.icon {
+.icon:not([class*=icon--]) {
   font-size: 1.7777777778rem;
 }
 .icon--tiny {

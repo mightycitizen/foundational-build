@@ -110,11 +110,11 @@
       }
     }
    %}
-  {% include 'components/modules/card-carousel.twig' with {
+  {% include 'components/modules/three-up-cards.twig' with {
     section_class: 'bg-gradient-secondary'
   } %} {# three up #}
   {% set card_image_transform = image_sizes.landscapeCroppedSmall %}
-  {% include 'components/modules/card-carousel.twig' with
+  {% include 'components/modules/three-up-cards.twig' with
       {
       "cards": [
         {

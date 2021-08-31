@@ -57,7 +57,7 @@ const initFormHelpers = () => {
   });
 
   const disableSubmit = (elem) => {
-    elem.prop('disabled', true).append(loaderTemplate);
+    elem.prop('disabled', true).append(loaderTemplate).addClass('is-loading');
   }
 
   window.enableSubmit = (elem) => {

@@ -232,6 +232,18 @@ input[type="radio"], input[type="checkbox"]{
 
 .input-group{
   &.simple{
+    .loader{
+      div{
+        border-top-color: $primary-color;
+        border-width: 4px;
+      }
+      position: absolute;
+      width: rem-calc(20);
+      height: rem-calc(20);
+      top: 50%;
+      right: rem-calc(15);
+      transform: translateY(-50%);
+    }
     input.input-group-field{
       border-right: 0;
       //padding: rem-calc()
@@ -254,6 +266,7 @@ input[type="radio"], input[type="checkbox"]{
       }
     }
     .input-group-button{
+      position: relative;
       border: $input-border;
       border-left: 0;
       padding: rem-calc(0 2*$spacer);
@@ -262,7 +275,11 @@ input[type="radio"], input[type="checkbox"]{
       transition: $input-transition;
       button{
         color: inherit;
+        &.is-loading{
+          color: transparent;
+         }
       }
+
     }
   }
 }

@@ -11683,6 +11683,18 @@ input[type=radio].custom:not(foo):focus:not(:checked) + label, input[type=radio]
   color: #fff;
 }
 
+.input-group.simple .loader {
+  position: absolute;
+  width: 1.1111111111rem;
+  height: 1.1111111111rem;
+  top: 50%;
+  right: 0.8333333333rem;
+  transform: translateY(-50%);
+}
+.input-group.simple .loader div {
+  border-top-color: #2953cc;
+  border-width: 4px;
+}
 .input-group.simple input.input-group-field {
   border-right: 0;
 }
@@ -11715,6 +11727,7 @@ input[type=radio].custom:not(foo):focus:not(:checked) + label, input[type=radio]
   border-left: 0;
 }
 .input-group.simple .input-group-button {
+  position: relative;
   border: 1px solid #ccc;
   border-left: 0;
   padding: 0 0.8888888889rem;
@@ -11724,6 +11737,9 @@ input[type=radio].custom:not(foo):focus:not(:checked) + label, input[type=radio]
 }
 .input-group.simple .input-group-button button {
   color: inherit;
+}
+.input-group.simple .input-group-button button.is-loading {
+  color: transparent;
 }
 
 input.js-date {

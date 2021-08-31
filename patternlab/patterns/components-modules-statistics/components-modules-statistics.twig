@@ -6,21 +6,18 @@
   }
 %}
   {% block section_content %}
-    <div class="slick-wrap">
-      <div class="grid-x grid-margin-x js-slick--mobile">
-        {% for statistic in statistics %}
-          <div class="cell medium-4 {% if style | default == 'side' %}large-12{% endif %}">
-            {% include patternlab_namespace | default ~ 'components/informational/statistic.twig' with {
-              text: statistic.text,
-              value: statistic.value,
-              link: statistic.link
-            }%}
-          </div>
-        {% endfor %}
-      </div>
-      {% include patternlab_namespace | default ~ 'components/containers/carousel-nav.twig' with {
-          inline: true
-        } %}
+
+    <div class="grid-x grid-margin-x">
+      {% for statistic in statistics %}
+        <div class="cell medium-4 {% if style | default == 'side' %}large-12{% endif %}">
+          {% include patternlab_namespace | default ~ 'components/informational/statistic.twig' with {
+            text: statistic.text,
+            value: statistic.value,
+            link: statistic.link
+          }%}
+        </div>
+      {% endfor %}
     </div>
+
   {% endblock %}
 {% endembed %}

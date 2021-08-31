@@ -1,5 +1,5 @@
 {% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
-    section_class: "section--tight section--wysiwyg " ~ class | default,
+    section_class: "section--tight section--wysiwyg " ~ section_class | default,
     style: "narrower"
   }
 %}

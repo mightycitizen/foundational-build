@@ -9413,6 +9413,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 
 .date {
+  display: block;
   background-color: #2953cc;
   color: #fff;
   font-weight: bold;

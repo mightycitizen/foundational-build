@@ -14,7 +14,10 @@
   } %}
     {% block section_content %}
       {% include 'components/inline-text/meta.twig' with {
-        date: 'August 12, 2021',
+        date: {
+          unformatted: "2021-08-12",
+          full: 'August 12, 2021',
+        },
         categories: [
           {
             url: "#",
@@ -25,6 +28,6 @@
     {% endblock %}
   {% endembed %}
   {% include 'components/modules/wysiwyg.twig' with {
-    section_class: 'section--tight section--collapse'
+    section_class: 'section--collapse'
   }%}
 {% endblock %}

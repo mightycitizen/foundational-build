@@ -1,5 +1,8 @@
 {
-  "date": "October 20, 2020",
+  "date": {
+    "unformatted": "2021-08-12",
+    "full": "August 12, 2021",
+  },
   "categories": [
     {
       "title": "Category A",

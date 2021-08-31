@@ -29,7 +29,7 @@ const initVideo = () => {
           vid.attr('tabindex', -1);
           const youtubeId = vid.data('video-id');
           player = new YT.Player(vid[0], {
-              playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 1 , 'showInfo': 0, 'mute': 1,'rel': 0},
+              playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 1 , 'showInfo': 0, 'mute': trigger !== 'click','rel': 0},
               videoId: youtubeId,
               events: {
                   'onReady': onPlayerReady,
@@ -63,14 +63,19 @@ const initVideo = () => {
               }
               holder.addClass(initializedClass);
             }
-
-            if ( event.data == 1 ) {
-              playing = true;
-              holder.addClass(playingClass);
-            }else{
-              playing = false;
-              holder.removeClass(playingClass)
-            }
+            //console.log(event.target.getPlayerState());
+            setTimeout(() => {
+              switch (event.target.getPlayerState()){
+                case 2:
+                  playing = false;
+                  holder.removeClass(playingClass)
+                  break;
+                default:
+                  playing = true;
+                  holder.addClass(playingClass);
+                  break;
+              }
+            }, 1000);
 
             firstPlay = false;
 

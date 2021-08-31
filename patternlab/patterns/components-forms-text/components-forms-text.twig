@@ -1,0 +1,5 @@
+{% embed patternlab_namespace | default ~ 'components/forms/input.twig' %}
+  {% block field %}
+    <input {% if disabled | default %}disabled{% endif %} type="text" value="{{ value }}" name="{{ name }}" id="{{ id }}" placeholder="{{ placeholder }}" {% if required | default %}required{% endif %}/>
+  {% endblock %}
+{% endembed %}

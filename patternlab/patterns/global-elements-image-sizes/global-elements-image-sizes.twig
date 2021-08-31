@@ -1,0 +1,48 @@
+{% set image_sizes = [
+  {
+    name: 'Landscape Cropped',
+    width: 900,
+    height: 500,
+    type: 'crop'
+  },
+  {
+    name: 'Landscape Cropped (Medium)',
+    width: 630,
+    height: 400,
+    type: 'crop'
+  },
+  {
+    name: 'Landscape Cropped (Small)',
+    width: 430,
+    height: 230,
+    type: 'crop'
+  },
+  {
+    name: 'Square',
+    width: 400,
+    height: 400,
+    type: 'crop'
+  },
+  {
+    name: 'Wide Cropped XL',
+    width: 1440,
+    height: 460,
+    type: 'crop'
+  }
+] %}
+<style>
+  .image-size{
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+{% for size in image_sizes %}
+  <div class="image-size" style="width: {{ size.width }}px; height: {{ size.height }}px;">
+    {{ size.name }}: {{ size.width }} x {{ size.height }}
+  </div>
+{% endfor %}

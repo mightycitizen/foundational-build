@@ -1,0 +1,10 @@
+
+
+<ul class="accordion {% if modifier | default  %}accordion--{{ modifier | default }}{% endif %}"  data-accordion data-allow-all-closed="true">
+
+  {% for item in items %}
+    {%
+      include patternlab_namespace | default ~  'components/containers/accordion-item.twig' with {item: item, modifier: modifier} only
+    %}
+  {% endfor %}
+</ul>

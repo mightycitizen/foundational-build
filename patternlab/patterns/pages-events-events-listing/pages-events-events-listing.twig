@@ -1,0 +1,98 @@
+{% extends 'pages/wrapper.twig' %}
+{% set type = {
+  label: 'Event',
+  handle: 'events'
+}%}
+{% block top %}
+  {% include "components/containers/hero.twig"  with {
+    heading: 'Events Listing'
+  } %}
+{% endblock %}
+{% block main %}
+  {% embed 'components/sections/section.twig' with {
+    section_class: 'section--tight',
+    style: 'narrow'
+  } %}
+    {% block section_content %}
+      {% include 'components/listing/filter.twig' with {
+        ajax: true
+      }%}
+      {% include 'components/listing/list.twig' with
+      {
+          "list": [
+            {
+             "image": {
+                "src": "https://source.unsplash.com/9wg5jCEPBsw/400x280",
+                "alt": "Alt Text"
+              },
+              "type": type,
+              "heading": "Item Title",
+              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
+              "start_date": {
+                month_short: "Dec",
+                day: 20,
+                full: "December 20, 2020",
+              },
+              "categories": [
+                {
+                  "url": "#",
+                  "title": "Category"
+                }
+              ]
+            },
+            {
+              "type": type,
+              "heading": "Item Title",
+              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
+              "start_date": {
+                month_short: "Dec",
+                day: 20,
+                full: "December 20, 2020",
+              },
+              "categories": [
+                {
+                  "url": "#",
+                  "title": "Category"
+                }
+              ]
+            },
+            {
+              "type": type,
+              "heading": "Item Title",
+              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
+              "start_date": {
+                month_short: "Dec",
+                day: 20,
+                full: "December 20, 2020",
+              },
+              "categories": [
+                {
+                  "url": "#",
+                  "title": "Category"
+                }
+              ]
+            },
+            {
+              "type": type,
+              "heading": "Item Title",
+              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
+              "start_date": {
+                month_short: "Dec",
+                day: 20,
+                full: "December 20, 2020",
+              },
+              "categories": [
+                {
+                  "url": "#",
+                  "title": "Category"
+                }
+              ]
+            }
+          ]
+        }
+
+       %}
+      {% include 'components/listing/pagination.twig' %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

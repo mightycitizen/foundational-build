@@ -1,0 +1,34 @@
+{
+  "image_sizes": [
+    {
+      "name":"Landscape Cropped",
+      "width":900,
+      "height":500,
+      "type":"crop"
+    },
+    {
+      "name":"Landscape Cropped (Medium)",
+      "width":630,
+      "height":400,
+      "type":"crop"
+    },
+    {
+      "name":"Landscape Cropped (Small)",
+      "width":430,
+      "height":230,
+      "type":"crop"
+    },
+    {
+      "name":"Square",
+      "width":400,
+      "height":400,
+      "type":"crop"
+    },
+    {
+      "name":"Wide Cropped XL",
+      "width":1440,
+      "height":460,
+      "type":"crop"
+    }
+  ]
+}

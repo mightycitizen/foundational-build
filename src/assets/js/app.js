@@ -67,6 +67,11 @@ const initFormHelpers = () => {
   $('form:not([data-abide]):not([data-freeform])').on('submit', function(){
     disableSubmit($(this).find('[type="submit"]:not(.fui-btn)'));
   })
+  $('[data-abide]').on('forminvalid.zf.abide', function(){
+    $('html, body').animate({
+      scrollTop: $(this).find('.is-invalid-input').first().parent().offset().top
+    }, 500);
+  });
   $('[data-abide]').on('formvalid.zf.abide', function(){
     disableSubmit($(this).find('[type="submit"]:not(.fui-btn)'));
   });

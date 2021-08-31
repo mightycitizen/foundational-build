@@ -4,12 +4,13 @@
 {% endblock %}
 {% block main %}
   {% include 'components/modules/wysiwyg.twig' %}
+  {% set video_image_transform = image_sizes.landscapeCropped %}
   {% include 'components/modules/video.twig'
     with {
       "trigger": "click",
       "youtube": "gJ6APKIjFQY",
       "image": {
-        "src": "//via.placeholder.com/900x500",
+        "src": "https://source.unsplash.com/9wg5jCEPBsw/" ~ video_image_transform.width ~ "x"~ video_image_transform.height,
         "alt": ""
       }
     }
@@ -49,11 +50,11 @@
 
 
 
-
+  {% set horizontal_card_transform = image_sizes.landscapeCroppedMedium %}
   {% include 'components/modules/horizontal-card.twig' with {
     heading: "Heading",
     image: {
-      src: "https://source.unsplash.com/9wg5jCEPBsw/630x400",
+      src: "https://source.unsplash.com/9wg5jCEPBsw/" ~ horizontal_card_transform.width ~ "x"~ horizontal_card_transform.height,
       alt: "Alt Text"
     },
     summary: summary,
@@ -62,7 +63,7 @@
   {% include 'components/modules/horizontal-card.twig' with {
     heading: "Another Horizontal Card",
     image: {
-      src: "https://source.unsplash.com/9wg5jCEPBsw/630x400",
+      src: "https://source.unsplash.com/9wg5jCEPBsw/" ~ horizontal_card_transform.width ~ "x"~ horizontal_card_transform.height,
       alt: "Alt Text"
     },
     summary: summary,
@@ -81,9 +82,11 @@
     }
 
   %}
+
+  {% set cta_background_transform = image_sizes.wideCroppedXlarge %}
   {% include 'components/modules/cta.twig' with {
       "section_background": {
-        "src": "https://source.unsplash.com/9wg5jCEPBsw/1440x360"
+        "src": "https://source.unsplash.com/9wg5jCEPBsw/" ~ cta_background_transform.width ~ "x"~ cta_background_transform.height,
       },
       "section_heading": "Default CTA",
       "section_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas urna in mauris dictum porta. Integer quis diam finibus, mattis dui quis, rhoncus orci. Nunc consequat, urna eget feugiat cursus, erat dolor vehicula nibh, et eleifend quam lorem at purus.",
@@ -93,9 +96,10 @@
       }
     }
    %}
+  {% set cta_image_transform = image_sizes.landscapeCroppedMedium %}
   {% include 'components/modules/cta.twig' with {
       "section_image": {
-        "src": "https://source.unsplash.com/9wg5jCEPBsw/630x400",
+        "src": "https://source.unsplash.com/9wg5jCEPBsw/" ~ cta_image_transform.width ~ "x"~ cta_image_transform.height,
         "alt": ""
       },
       "section_heading": "Default CTA",
@@ -109,6 +113,7 @@
   {% include 'components/modules/card-carousel.twig' with {
     section_class: 'bg-gradient-secondary'
   } %} {# three up #}
+  {% set card_image_transform = image_sizes.landscapeCroppedSmall %}
   {% include 'components/modules/card-carousel.twig' with
       {
       "cards": [
@@ -120,7 +125,7 @@
 
           "flag": "Test",
           "image": {
-            "src": "https://source.unsplash.com/9wg5jCEPBsw/430x230",
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/" ~ card_image_transform.width ~ "x"~ card_image_transform.height,
             "alt": "Alt Text"
           },
           "heading": {
@@ -145,7 +150,7 @@
 
           "members_only": false,
           "image": {
-            "src": "https://source.unsplash.com/9wg5jCEPBsw/430x230",
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/" ~ card_image_transform.width ~ "x"~ card_image_transform.height,
             "alt": "Alt Text"
           },
           "heading": {
@@ -170,7 +175,7 @@
 
           "members_only": false,
           "image": {
-            "src": "https://source.unsplash.com/9wg5jCEPBsw/430x230",
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/" ~ card_image_transform.width ~ "x"~ card_image_transform.height,
             "alt": "Alt Text"
           },
           "heading": {
@@ -200,7 +205,7 @@
         "card": {
 
           "image": {
-            "src": "https://source.unsplash.com/9wg5jCEPBsw/430x230",
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/" ~ card_image_transform.width ~ "x"~ card_image_transform.height,
             "alt": "Alt Text"
           },
           "heading": {
@@ -218,7 +223,7 @@
         "card": {
 
           "image": {
-            "src": "https://source.unsplash.com/9wg5jCEPBsw/430x230",
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/" ~ card_image_transform.width ~ "x"~ card_image_transform.height,
             "alt": "Alt Text"
           },
           "heading": {
@@ -236,7 +241,7 @@
         "card": {
 
           "image": {
-            "src": "https://source.unsplash.com/9wg5jCEPBsw/430x230",
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/" ~ card_image_transform.width ~ "x"~ card_image_transform.height,
             "alt": "Alt Text"
           },
           "heading": {
@@ -254,7 +259,7 @@
         "card": {
 
           "image": {
-            "src": "https://source.unsplash.com/9wg5jCEPBsw/430x230",
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/" ~ card_image_transform.width ~ "x"~ card_image_transform.height,
             "alt": "Alt Text"
           },
           "heading": {
@@ -272,7 +277,7 @@
         "card": {
 
           "image": {
-            "src": "https://source.unsplash.com/9wg5jCEPBsw/430x230",
+            "src": "https://source.unsplash.com/9wg5jCEPBsw/" ~ card_image_transform.width ~ "x"~ card_image_transform.height,
             "alt": "Alt Text"
           },
           "heading": {
@@ -292,14 +297,14 @@
   } %}
 
   {% include 'components/modules/testimonial-carousel.twig' %}
-
+  {% set card_carousel_transform = image_sizes.landscapeCroppedMedium %}
   {% include 'components/modules/card-carousel-center.twig' with {
     section_class: "bg-gradient-secondary",
     "cards": [
       {
 
         "image": {
-          "src": "https://source.unsplash.com/9wg5jCEPBsw/630x400",
+          "src": "https://source.unsplash.com/9wg5jCEPBsw/" ~ card_carousel_transform.width ~ "x"~ card_carousel_transform.height,
           "alt": "Alt Text"
         },
         "heading": {
@@ -314,7 +319,7 @@
         {
 
         "image": {
-          "src": "https://source.unsplash.com/9wg5jCEPBsw/630x400",
+          "src": "https://source.unsplash.com/9wg5jCEPBsw/" ~ card_carousel_transform.width ~ "x"~ card_carousel_transform.height,
           "alt": "Alt Text"
         },
         "heading": {
@@ -329,7 +334,7 @@
         {
 
         "image": {
-          "src": "https://source.unsplash.com/9wg5jCEPBsw/630x400",
+          "src": "https://source.unsplash.com/9wg5jCEPBsw/" ~ card_carousel_transform.width ~ "x"~ card_carousel_transform.height,
           "alt": "Alt Text"
         },
         "heading": {

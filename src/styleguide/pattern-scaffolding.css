@@ -127,3 +127,13 @@
     font-weight: bold;
     content: 'Patternlab demo purposes only';
   }
+
+  .pl-image{
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

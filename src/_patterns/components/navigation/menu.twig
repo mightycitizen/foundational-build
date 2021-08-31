@@ -41,7 +41,9 @@
         </li>
       {% endfor %}
       <li class="hide-for-large search-wrapper">
-        {% include patternlab_namespace | default ~ 'components/forms/simple-form.twig' %}
+        {% include patternlab_namespace | default ~ 'components/forms/simple-form.twig' with {
+          input_id: 'keywords_mobile'
+        }%}
       </li>
 
     </ul>

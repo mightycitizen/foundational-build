@@ -9051,14 +9051,12 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .selectize-input > input {
   font-size: inherit;
+  margin-top: -0.1111111111rem !important;
+  margin-bottom: -0.1111111111rem !important;
 }
 .selectize-input:after {
   border-top-color: #333 !important;
   border-width: 0.3611111111rem 0.25rem 0 !important;
-}
-.selectize-input.dropdown-active > input {
-  margin-top: -0.1111111111rem !important;
-  margin-bottom: -0.1111111111rem !important;
 }
 .selectize-input.dropdown-active:after {
   border-bottom-color: #333 !important;

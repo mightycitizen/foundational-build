@@ -9052,6 +9052,14 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .selectize-input > input {
   font-size: inherit;
 }
+.selectize-input:after {
+  border-top-color: #333 !important;
+  border-width: 7px 4.5px 0 !important;
+}
+.selectize-input.dropdown-active:after {
+  border-bottom-color: #333 !important;
+  border-width: 0 4.5px 7px !important;
+}
 .selectize-dropdown {
   font-size: 1rem;
 }
@@ -11758,6 +11766,11 @@ input.js-date::-webkit-calendar-picker-indicator {
 
 textarea {
   min-height: 5.5555555556rem;
+}
+
+select {
+  background-size: 9px;
+  background-position: right -0.5555555556rem center;
 }
 
 legend {

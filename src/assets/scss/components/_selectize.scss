@@ -9,6 +9,16 @@
       > input{
         font-size: inherit;
       }
+      &:after{
+        border-top-color: $black !important;
+        border-width: 7px 4.5px 0 !important;
+      }
+      &.dropdown-active{
+        &:after{
+          border-bottom-color: $black !important;
+          border-width: 0 4.5px 7px !important;
+        }
+      }
     }
     &-dropdown{
       font-size: $input-font-size;

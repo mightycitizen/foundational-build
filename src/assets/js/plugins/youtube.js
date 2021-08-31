@@ -29,7 +29,7 @@ const initVideo = () => {
           vid.attr('tabindex', -1);
           const youtubeId = vid.data('video-id');
           player = new YT.Player(vid[0], {
-              playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 0 , 'showInfo': 0, 'mute': 1,'rel': 0},
+              playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 1 , 'showInfo': 0, 'mute': 1,'rel': 0},
               videoId: youtubeId,
               events: {
                   'onReady': onPlayerReady,
@@ -80,10 +80,10 @@ const initVideo = () => {
                 h = holder.height();
 
             if (w/h > 1){
-                player.setSize(w, 200 + w/16*9);
+                player.setSize(w, w/16*9); // 200 + w
                 vid.css({'left': '0px'});
             } else {
-                player.setSize(h/9*16, h + 200);
+                player.setSize(h/9*16, h); // 200 + h
                 vid.css({'left': ( -(h/9*16) / 2 ) + holder.width() / 2 });
                 vid.css({'top': -(h - holder.height()) / 2 });
             }

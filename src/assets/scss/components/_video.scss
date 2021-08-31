@@ -20,7 +20,7 @@
         }
         &_player{
           opacity: 0;
-          pointer-events: none;
+          //pointer-events: none;
         }
         &_image{
           &_wrapper{
@@ -54,6 +54,8 @@
           transition: 1s opacity;
         }
         .video_image_wrapper{
+          pointer-events: none;
+          z-index: -1 !important;
           opacity: 0;
           transition: 0.5s opacity;
         }
@@ -177,7 +179,7 @@
                 height: 100%;
               }
               width: 100%;
-              margin-top: -100px;
+              //margin-top: -100px;
               position: absolute;
               top: 0;
               left: 0;

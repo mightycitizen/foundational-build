@@ -68,7 +68,7 @@
     }
   }
   &--thumb{
-    img{
+    .card-image{
       @include breakpoint(small only){
         margin: auto;
         display: block;

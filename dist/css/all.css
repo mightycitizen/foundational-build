@@ -7991,7 +7991,7 @@ a.thumbnail image {
   background: linear-gradient(to bottom, rgba(41, 83, 204, 0), #2953cc);
 }
 @media print, screen and (max-width: 39.99875em) {
-  .card--thumb img {
+  .card--thumb .card-image {
     margin: auto;
     display: block;
     width: 9.7777777778rem;
@@ -9224,7 +9224,6 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .video_wrapper .video_player {
   opacity: 0;
-  pointer-events: none;
 }
 .video_wrapper .video_image {
   display: block;
@@ -9249,6 +9248,8 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   transition: 1s opacity;
 }
 .video_wrapper.is-playing .video_image_wrapper {
+  pointer-events: none;
+  z-index: -1 !important;
   opacity: 0;
   transition: 0.5s opacity;
 }
@@ -9363,7 +9364,6 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .video_wrapper[data-video-trigger=scroll] .video_container .video_player, .video_wrapper[data-video-trigger=click] .video_container .video_player {
   width: 100%;
-  margin-top: -100px;
   position: absolute;
   top: 0;
   left: 0;

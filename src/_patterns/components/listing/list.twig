@@ -5,7 +5,7 @@
     <div class="item">
       <div class="grid-x grid-margin-x align-middle">
         {% if item.image | default %}
-          <div class="cell medium-5 large-3">
+          <div class="cell medium-5 large-4">
             <div class="wrapper">
               <img data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" class="js-lazy">
               {% if item_type == 'events' %}
@@ -16,7 +16,7 @@
             </div>
           </div>
         {% endif %}
-        <div class="cell {% if item.image | default %}medium-7 large-9{% endif %}">
+        <div class="cell {% if item.image | default %}medium-7 large-8{% endif %}">
           <div class="media-object">
             {% if item.image | default is empty and item_type == 'events' %}
               <div class="media-object-section">

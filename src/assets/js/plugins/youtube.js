@@ -70,7 +70,7 @@ const initVideo = () => {
                   playing = false;
                   holder.removeClass(playingClass)
                   break;
-                default:
+                case 1:
                   playing = true;
                   holder.addClass(playingClass);
                   break;

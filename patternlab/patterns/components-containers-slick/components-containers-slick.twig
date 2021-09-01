@@ -1,9 +1,0 @@
-<div class="slick-wrap">
-  <div class="js-slick{{ (modifier | default) ? '--'~modifier : ''}} {{ slick_class | default }} {% if grid | default %}grid-x grid-margin-x{% endif %}" {% if equalize | default %}data-equalizer data-equalize-on="medium"{% endif %}>
-    {% block slide_content %}
-    {% endblock %}
-  </div>
-  {% include patternlab_namespace | default ~ 'components/containers/carousel-nav.twig' with {
-    inline: true
-  } %}
-</div>

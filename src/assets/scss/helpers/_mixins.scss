@@ -169,7 +169,7 @@
         color: $primary-color;
       }
       &:hover, &:focus{
-        background-color: $secondary-color;
+        background-color: map-get($additional-palette,'primary-lightest') !important;
       }
     }
 

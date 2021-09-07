@@ -7857,6 +7857,7 @@ a.thumbnail image {
   justify-content: center;
   text-decoration: none;
   padding: 0.1666666667rem !important;
+  opacity: 1 !important;
 }
 .a2a_svg:hover, .a2a_svg:focus {
   color: #fff;
@@ -7875,7 +7876,7 @@ a.thumbnail image {
   color: #2953cc;
 }
 .text-white .a2a_svg:hover, .text-white .a2a_svg:focus {
-  background-color: #ffcd00;
+  background-color: #bdcaef !important;
 }
 .a2a_svg [class*=icon-] {
   position: absolute;
@@ -9502,17 +9503,17 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   position: relative;
   z-index: 2;
 }
-@media print, screen and (max-width: 39.99875em) {
+@media print, screen and (max-width: 63.99875em) {
   .section_intro {
     margin-bottom: 24px;
   }
 }
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: 64em) {
   .section_intro:not(:last-child) {
     margin-bottom: 1.3888888889rem;
   }
 }
-@media print, screen and (min-width: 40em) and (min-width: 40em) {
+@media print, screen and (min-width: 64em) and (min-width: 40em) {
   .section_intro:not(:last-child) {
     margin-bottom: 2.2222222222rem;
   }
@@ -11923,7 +11924,7 @@ button[type=submit]:not(.is-loading) {
   color: #2953cc;
 }
 .text-white .icon--circle:hover, .text-white .icon--circle:focus {
-  background-color: #ffcd00;
+  background-color: #bdcaef !important;
 }
 .icon--circle [class*=icon-] {
   position: absolute;

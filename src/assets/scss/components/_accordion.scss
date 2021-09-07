@@ -9,6 +9,7 @@
     }
   }
   &-title{
+    line-height: 1.2;
     background-color: $accordion-background;
     @include spacer(padding,top,2,2);
     @include spacer(padding,x,4,3);

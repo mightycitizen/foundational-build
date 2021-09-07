@@ -1,0 +1,10 @@
+{% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
+  section_class: "section--tight section--form",
+  style: "narrower"
+} %}
+  {% block section_content %}
+    <h2>Heading Level 2</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+    {% include patternlab_namespace | default ~ 'components/forms/validation.twig' %}
+  {% endblock %}
+{% endembed %}

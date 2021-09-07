@@ -7646,6 +7646,7 @@ a.thumbnail image {
   background-color: #bebebe;
 }
 .accordion-title {
+  line-height: 1.2;
   background-color: #eee;
   padding-top: 0.8888888889rem;
   padding-left: 1.3333333333rem;
@@ -7832,6 +7833,18 @@ a.thumbnail image {
   }
 }
 
+.a2a_menu {
+  overflow: visible !important;
+  margin-top: 0.5555555556rem !important;
+}
+.a2a_menu:before {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 0.5555555556rem;
+  width: 100%;
+  bottom: 100%;
+}
 .a2a_svg {
   margin-right: 0.8333333333rem;
   background-color: #2953cc !important;

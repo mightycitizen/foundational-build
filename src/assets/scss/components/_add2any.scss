@@ -1,5 +1,17 @@
 
 .a2a{
+  &_menu{
+    &:before{
+      position: absolute;
+      content: '';
+      display: block;
+      height: rem-calc(10);
+      width: 100%;
+      bottom: 100%;
+    }
+    overflow: visible !important;
+    margin-top: rem-calc(10) !important;
+  }
   &_svg{
     //max-width: rem-calc(25);
     //max-height: rem-calc(25);

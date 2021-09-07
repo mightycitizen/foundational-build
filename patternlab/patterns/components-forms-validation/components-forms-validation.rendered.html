@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="no-js ">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1631028179508" media="all" />
+    <link rel="stylesheet" href="../../css/all.css?1631028179508" media="all" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2f872f69e9.js" crossorigin="anonymous"></script>
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    
+    <!-- End Pattern Lab -->
+
+  </head>
+  <body class=""><form action="" data-abide novalidate>
+  <div class="form-input ">
+  <label for="field_id_3">Text <span class="form-required">*</span></label>
+      <input  type="text" value="" name="text" id="field_id_3" placeholder="Prompt Text" required/>
+        <span class="form-error">Text is required</span>
+  </div>
+  <div class="form-input ">
+  <label for="field_id_2">Textarea <span class="form-required">*</span></label>
+      <textarea name="textarea" id="field_id_2" required placeholder="Prompt Text"></textarea>
+        <span class="form-error">Textarea is required</span>
+  </div>
+
+    <div class="form-input ">
+  <label for="example-tabs">Select <span class="form-required">*</span></label>
+      <select id="example-tabs" required  class=" " name="">
+                    <option selected value="0">Select A</option>
+              <option  value="1">Select B</option>
+              <option  value="2">Select C</option>
+          </select>
+        <span class="form-error">Select is required</span>
+  </div>
+
+  
+  <div class="form-input ">
+  <label for="">Select (Filterable) <span class="form-required">*</span></label>
+      <select id="" required  class=" js-selectize" name="">
+                    <option selected value="0">Select A</option>
+              <option  value="1">Select B</option>
+              <option  value="2">Select C</option>
+          </select>
+        <span class="form-error">Select (Filterable) is required</span>
+  </div>
+    <fieldset class="options">
+    <legend>Radio <span class="form-required">*</span></legend>
+    <ul class="radio-group no-bullet">
+              <li>
+          <input class="custom" id="radio_validation_0" name="radio" value="0" type="radio" required >
+          <label for="radio_validation_0">Radio A</label>
+        </li>
+              <li>
+          <input class="custom" id="radio_validation_1" name="radio" value="1" type="radio" required >
+          <label for="radio_validation_1">Radio B</label>
+        </li>
+              <li>
+          <input class="custom" id="radio_validation_2" name="radio" value="2" type="radio" required >
+          <label for="radio_validation_2">Radio C</label>
+        </li>
+          </ul>
+          <span class="form-error">Radio is required</span>
+      </fieldset>
+
+
+    <fieldset class="options">
+    <legend>Checkbox <span class="form-required">*</span></legend>
+    <ul class="checkbox-group no-bullet">
+              <li><span>
+  <input class="custom" id="checkbox_validation_0" name="checkbox" value="0" type="checkbox" required >
+  <label for="checkbox_validation_0"> Checkbox A</label>
+</span>
+</li>
+              <li><span>
+  <input class="custom" id="checkbox_validation_1" name="checkbox" value="1" type="checkbox" required >
+  <label for="checkbox_validation_1"> Checkbox B</label>
+</span>
+</li>
+              <li><span>
+  <input class="custom" id="checkbox_validation_2" name="checkbox" value="2" type="checkbox" required >
+  <label for="checkbox_validation_2"> Checkbox C</label>
+</span>
+</li>
+          </ul>
+          <span class="form-error">Checkbox is required</span>
+      </fieldset>
+
+
+  <button type="submit" class="button">Submit</button>
+  <button type="submit" class="button" disabled>Disabled button</button>
+</form><!--DO NOT REMOVE-->
+<script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
+  {"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternGroup":"components","patternSubgroup":"forms"},"patternExtension":"twig","patternName":"Validation","patternPartial":"components-validation","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+</script>
+
+<script>
+  window.patternData = {"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternGroup":"components","patternSubgroup":"forms"},"patternExtension":"twig","patternName":"Validation","patternPartial":"components-validation","patternState":"","patternEngineName":"twig-php","extraOutput":{}};
+</script>
+
+<script>
+  /*!
+   * scriptLoader - v0.1
+   *
+   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+   * Licensed under the MIT license
+   *
+   */
+
+  var scriptLoader = {
+
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1631028179508">
+  (function() {
+    if (self != top) {
+      var cb = '1631028179508';
+      var js = [];
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+
+<script type="module">
+  // always load Pattern-specific JS so UI like accordions, etc can continue to work even when viewed as a standalone HTML page
+  import('../../styleguide/js/patternlab-pattern.modern.js');
+</script>
+
+<script id="pl-js-insert-1631028179508" nomodule>
+  /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+  !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
+
+  // always load Pattern-specific JS so UI like accordions, etc can continue to work even when viewed as a standalone HTML page
+  loadJS('../../styleguide/js/patternlab-pattern.js');
+</script>
+
+  <!-- Fake drupalSettings if you need it. -->
+  <!--
+  <script type="application/json" data-drupal-selector="drupal-settings-json">
+  </script>
+  -->
+  <!-- Drupal-provided JS so we can mock Drupal JS Behaviors. -->
+  <!--
+  <script src="/core/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/core/assets/vendor/jquery-once/jquery.once.min.js"></script>
+  <script src="/core/assets/vendor/domready/ready.min.js"></script>
+  <script src="/core/misc/drupalSettingsLoader.js"></script>
+  <script src="/core/misc/drupal.js"></script>
+  <script src="/core/misc/drupal.init.js"></script>
+  -->
+  <!-- Concatenated by Gulp so you don't have to manually add each file. -->
+  <script src="../../js/pattern-scaffolding.js?1631028179508"></script>
+  <script src="../../js/app.js?1631028179508"></script>
+</body>
+</html>

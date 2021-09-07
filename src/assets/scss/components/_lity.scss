@@ -2,6 +2,9 @@
 @if ($lity){
   .lity{
     background-color: rgba(map-get($additional-palette,'gray-darker'), 0.8);
+    &-active{
+      overflow: auto;
+    }
     &-content{
       border: 0;
       background-color: $white;

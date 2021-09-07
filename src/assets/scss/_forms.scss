@@ -262,6 +262,8 @@ input[type="radio"], input[type="checkbox"]{
     }
     input.input-group-field{
       height: rem-calc(50);
+      padding-top: rem-calc(11);
+      padding-bottom: rem-calc(12);
     }
     input.input-group-field:focus, .input-wrapper:focus-within{
       + .input-group-button{

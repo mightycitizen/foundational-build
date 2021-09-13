@@ -11773,6 +11773,7 @@ input[type=radio].custom:not(foo):focus:not(:checked) + label, input[type=radio]
 }
 .input-group.simple input.input-group-field {
   height: 2.7777777778rem;
+  line-height: 2.7777777778rem;
   padding-top: 0.6111111111rem;
   padding-bottom: 0.6666666667rem;
 }

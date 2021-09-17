@@ -63,19 +63,44 @@ const initVideo = () => {
               }
               holder.addClass(initializedClass);
             }
+            //console.log('now', event.target.getPlayerState());
+            switch (event.target.getPlayerState()){
+              case 2:
+                setTimeout(() => {
+                  //console.log('later', event.target.getPlayerState());
+                  switch (event.target.getPlayerState()){
+                    case 2:
+                      playing = false;
+                      holder.removeClass(playingClass);
+                      break;
+                    case 1:
+                      playing = true;
+                      holder.addClass(playingClass);
+                      break;
+                  }
+                }, 500);
+                break;
+              case 1:
+
+                playing = true;
+                holder.addClass(playingClass);
+                break;
+            }
             //console.log(event.target.getPlayerState());
-            setTimeout(() => {
-              switch (event.target.getPlayerState()){
-                case 2:
-                  playing = false;
-                  holder.removeClass(playingClass)
-                  break;
-                case 1:
-                  playing = true;
-                  holder.addClass(playingClass);
-                  break;
-              }
-            }, 1000);
+            // holder.addClass('is-changing');
+            // setTimeout(() => {
+            //   switch (event.target.getPlayerState()){
+            //     case 2:
+            //       playing = false;
+            //       holder.removeClass(playingClass)
+            //       break;
+            //     case 1:
+            //       playing = true;
+            //       holder.addClass(playingClass);
+            //       break;
+            //   }
+            //   holder.removeClass('is-changing');
+            // }, 500);
 
             firstPlay = false;
 

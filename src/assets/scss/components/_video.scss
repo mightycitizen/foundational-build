@@ -51,7 +51,7 @@
       &.is-playing{
         .video_player{
           opacity: 1;
-          transition: 1s opacity;
+          transition: 0.5s opacity;
         }
         .video_image_wrapper{
           pointer-events: none;

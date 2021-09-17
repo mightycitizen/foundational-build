@@ -9260,7 +9260,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .video_wrapper.is-playing .video_player {
   opacity: 1;
-  transition: 1s opacity;
+  transition: 0.5s opacity;
 }
 .video_wrapper.is-playing .video_image_wrapper {
   pointer-events: none;

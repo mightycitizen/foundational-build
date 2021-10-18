@@ -1,6 +1,12 @@
 {
-  "social": {
-    "youtube": "#",
-    "facebook": "#"
-  }
+  "social": [
+    {
+      "handle": "youtube",
+      "url": "#"
+    },
+    {
+      "handle": "facebook",
+      "url": "#"
+    }
+  ]
 }

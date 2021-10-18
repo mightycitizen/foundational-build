@@ -9,9 +9,7 @@
           </div>
           <div class="media-object-section">
             <address>
-              5555 Webberville Rd<br>
-              Unit B<br />
-              Austin, TX 78702
+             {{ address | default | nl2br }}
             </address>
           </div>
         </div>
@@ -39,7 +37,7 @@
         <a href="">Privacy Policy</a>
       </li>
     </ul>
-    <p>Copyright &copy; 2021 Mighty Citizen</p>
+    <p>Copyright &copy; {{ now | date('Y') }} {{ site_name | default }}</p>
 
   </div>
 </footer>

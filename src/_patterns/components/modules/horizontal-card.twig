@@ -1,20 +1,20 @@
 {% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
-  "collapse": true,
+  collapse: true,
   section_class: "section--tight",
-  "style": "narrow"
+  style: "narrow"
 } %}
   {% block section_content %}
     {% include patternlab_namespace | default ~ 'components/teasers/card-horizontal.twig' with {
 
-        "card": {
-          "modifier": "",
-          "image": image | default,
-          "summary": summary | default,
-          "heading": {
-            "text": heading,
-            "level": "3"
+        card: {
+          modifier: "",
+          image: image | default,
+          summary: summary | default,
+          heading: {
+            text: heading,
+            level: "3"
           },
-          "link": link | default
+          link: link | default
         }
 
 

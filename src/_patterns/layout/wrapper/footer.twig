@@ -30,12 +30,12 @@
     </div>
 
     <ul class="inline-list inline-list--divided m-b-2">
-      <li>
-        <a href="">Terms of Use</a>
-      </li>
-      <li>
-        <a href="">Privacy Policy</a>
-      </li>
+      {% for item in footer_links %}
+        <li>
+          {% set link = item.cta %}
+          <a href="{{ link.url }}" {% if link.targetString %}target="{{ link.targetString }}"{% endif %}>{{ link.text }}</a>
+        </li>
+      {% endfor %}
     </ul>
     <p>Copyright &copy; {{ now | date('Y') }} {{ site_name | default }}</p>
 

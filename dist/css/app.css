@@ -9482,6 +9482,9 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     padding-bottom: 5.7777777778rem;
   }
 }
+.section .section:first-child {
+  padding-top: 0;
+}
 .section[class*=bg-]:before {
   z-index: 1;
 }

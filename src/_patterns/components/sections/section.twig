@@ -39,7 +39,7 @@
 {% endset %}
 <section class="section {{ section_class | default }} {% if style | default %}section--{{ style }} {% endif %} {% if collapse | default %}section--collapse{% endif %}" >
   {% if section_background | default %}<div class="js-lazy section_background" data-bg="{{ section_background.src }}"></div>{% endif %}
-  <div class="grid-container {{ grid_class | default }}">
+  <div class="{% if exclude_container | default is empty %}grid-container{% endif %} {{ grid_class | default }}">
     {% if style | default and (style == 'side') %}
       <div class="grid-x align-middle align-center">
         <div class="cell medium-8">
@@ -51,7 +51,7 @@
       </div>
     {% else %}
       {{ section_intro }}
-      {% if style | default and (style == 'narrow' or style == 'narrower') %}
+      {% if (style | default and (style == 'narrow' or style == 'narrower')) and exclude_container | default is empty %}
         {% set content %}
           {{ section_content }}
         {% endset %}

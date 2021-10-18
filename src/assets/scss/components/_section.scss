@@ -8,6 +8,11 @@
   background-size: cover;
   background-position: center;
   position: relative;
+  .section{
+    &:first-child{
+      padding-top: 0;
+    }
+  }
   &[class*=bg-]:before{
     z-index: 1;
   }

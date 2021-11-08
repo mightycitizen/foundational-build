@@ -193,6 +193,8 @@ $(document).ready(function(){
 
   initSkipTo(); // @skip-to init
   initSelectUrl(); // @select-url init
+
+//  initFoundationHelpers(); // @foundation helpers init
 })
 
 // @foundation init

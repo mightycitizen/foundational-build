@@ -177,6 +177,108 @@ const initSlick = () => {
 
 }
 
+const initSlickTabs = () => {
+
+
+    const
+    win = $(window),
+    slickOptions = {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      rows: 0,
+      variableWidth: true,
+      infinite: false,
+      swipe: true,
+      accessibility:false,
+      prevArrow: '<button class="slick-prev">Previous</button>',
+      nextArrow: '<button class="slick-next">Next</button>'
+    };
+    $('.tabs').each(function(){
+      const tabs = $(this);
+      var timer;
+      var lastSlideIndex;
+      tabs.on('init', function(event, slick){
+        //removeSlickAria(slick);
+        lastSlideIndex = returnLastSlideIndex(tabs);
+      })
+      const tabsInst = tabs.slick(slickOptions);
+      calcSlidesWidth(tabsInst, lastSlideIndex);
+
+      tabs.on('afterChange', function(event, slick) {
+        toggleNextArrow(slick, slick.currentSlide >= lastSlideIndex);
+        const currentSlide = slick.$slides[slick.currentSlide];
+        currentSlide.find('button').click();
+        // if (slick.currentSlide > lastSlideIndex + 1) {
+        //   setTimeout(function() {
+        //     slick.goTo(lastSlideIndex + 1);
+        //   });
+        // }
+      });
+
+      win.on('resize orientationchange', function() {
+        clearTimeout(timer);
+        timer = setTimeout(function() {
+          lastSlideIndex = returnLastSlideIndex(tabs);
+          calcSlidesWidth(tabsInst, lastSlideIndex);
+        }, 100);
+      });
+    }).on('change.zf.tabs', function(e, elem){
+      const tabs = $(this);
+      //const tabsInst = tabs.slick('getSlick');
+      tabs.slick('slickGoTo', $(elem).index());
+      console.log($(elem).index());
+      // console.log(tabsInst);
+      // console.log(elem);
+      // console.log(elem.index());
+      //console.log(elem2);
+      //calcSlidesWidth(tabsInst, returnLastSlideIndex(tabs));
+    })
+
+
+
+    function calcSlidesWidth(s, lastSlideIndex) {
+      var tw = 0;
+      const slickInst = s[0].slick;
+      slickInst.$slides.each(function(i, slide) {
+        tw += $(slide).outerWidth(true);
+
+      });
+
+      if (slickInst.currentSlide >= lastSlideIndex) return;
+
+      toggleNextArrow(slickInst, tw < slickInst.$list.outerWidth(true));
+    }
+
+    function returnLastSlideIndex(tabs) {
+
+
+      var totalWidth = 0, index, flag = true;
+      // console.log(tabs.find($('.slick-slide')))
+      tabs.find('.slick-slide').each(function(i, it) {
+
+
+        if (!flag) return;
+        totalWidth += $(it).outerWidth(true);
+
+        if (totalWidth > tabs.outerWidth(true) && flag) {
+          index = $(it).next().index();
+          flag = false;
+        }
+      });
+
+      return index;
+    }
+    function toggleNextArrow(slick, state) {
+
+      state ? slick.$nextArrow.hide() : slick.$nextArrow.show();
+    }
+
+  // //
+
+
+}
+
 $(document).ready(function(){
   initSlick(); // @slick init call
+  initSlickTabs();
 });

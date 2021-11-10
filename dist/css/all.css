@@ -9125,10 +9125,10 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   font-weight: bold;
   cursor: pointer;
   color: #333;
-  padding-top: 1.3333333333rem;
-  padding-bottom: 1.3333333333rem;
-  padding-left: 3.5555555556rem;
-  padding-right: 3.5555555556rem;
+  padding-top: 0.4444444444rem;
+  padding-bottom: 0.4444444444rem;
+  padding-left: 0.4444444444rem;
+  padding-right: 0.4444444444rem;
   background-color: #eee;
   font-size: 1rem;
 }

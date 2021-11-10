@@ -153,7 +153,7 @@ const initFoundationHelpers = () => {
     if (position){
       $(tabNav).animate({
         scrollLeft: position
-      },300);
+      },200);
     }
     // console.log(tab);
     // console.log(pane);

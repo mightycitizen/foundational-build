@@ -5,6 +5,7 @@
   overflow-x: scroll;
   max-width: 100%;
   -webkit-overflow-scrolling: touch;
+  display: flex;
   &::-webkit-scrollbar{
     display: none;
   }
@@ -46,7 +47,7 @@
       margin-bottom: 0;
     }
   }
-  @include breakpoint(medium down){
-    display: flex;
-  }
+  // @include breakpoint(medium down){
+
+  // }
 }

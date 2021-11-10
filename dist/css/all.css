@@ -9115,6 +9115,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   overflow-x: scroll;
   max-width: 100%;
   -webkit-overflow-scrolling: touch;
+  display: flex;
 }
 .tabs::-webkit-scrollbar {
   display: none;
@@ -9191,11 +9192,6 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .tabs-panel > *:last-child {
   margin-bottom: 0;
-}
-@media print, screen and (max-width: 63.99875em) {
-  .tabs {
-    display: flex;
-  }
 }
 
 .loader {

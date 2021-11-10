@@ -13,6 +13,7 @@ import './plugins/lity';
 import './plugins/datepicker';
 import './plugins/youtube';
 import './plugins/vimeo';
+//import './plugins/tabs';
 import './plugins/slick';
 
 //import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
@@ -126,6 +127,41 @@ const initTableScroll = () => {
 
 }
 
+// @foundation helpers init
+const initFoundationHelpers = () => {
+  $(document).on('change.zf.tabs', function(e, tab, pane, $target){
+    const tabNav = $(tab).parent();
+    //console.log(tabNav);
+    const tabStartPosition = $(tab).position().left;
+    const tabNavWidth = tabNav.outerWidth();
+    const tabWidth = $(tab).outerWidth();
+    const tabEndPosition = tabStartPosition + tabWidth;
+    const offset = 30;
+    let position;
+    const currPosition = tabNav.scrollLeft();
+    // console.log(currPosition);
+    // console.log('left',tabStartPosition);
+    // console.log('right',tabEndPosition);
+    if (tabStartPosition < offset){
+      position = currPosition + tabStartPosition - offset;
+    }
+    else if (tabEndPosition > tabNavWidth - offset){
+      position = currPosition + (tabEndPosition - tabNavWidth + offset);
+      //console.log(position);
+    }
+
+    if (position){
+      $(tabNav).animate({
+        scrollLeft: position
+      },300);
+    }
+    // console.log(tab);
+    // console.log(pane);
+    // console.log($target);
+    //alert('test');
+  });
+}
+
 // @foundation accessibility init
 const initFoundationAccessibility = () => {
   // accordion accessibility
@@ -194,7 +230,7 @@ $(document).ready(function(){
   initSkipTo(); // @skip-to init
   initSelectUrl(); // @select-url init
 
-//  initFoundationHelpers(); // @foundation helpers init
+  initFoundationHelpers(); // @foundation helpers init
 })
 
 // @foundation init

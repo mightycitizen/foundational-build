@@ -74,7 +74,7 @@ $hamburger-color: $primary-color;
         margin-top: rem-calc(25);
         color: transparent;
         &:after{
-          //color: transparent;
+          color: $black;
         }
       }
       &-icon{

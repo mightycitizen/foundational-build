@@ -3,8 +3,11 @@
   //color: $white;
   @include spacer(padding,y,5);
   //padding: rem-calc(40 0);
+  .label{
+    color: inherit;
+  }
   .breadcrumbs{
-    @include spacer(margin,bottom,5);
+    @include spacer(margin,bottom,5, 0);
     //margin-bottom: rem-calc(42);
     &, li, a, li:after{
       color: inherit;

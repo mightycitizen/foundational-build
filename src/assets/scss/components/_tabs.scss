@@ -1,9 +1,16 @@
 
 .tabs{
   border: 0;
-
+  overflow-y: hidden;
+  overflow-x: scroll;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar{
+    display: none;
+  }
   &-title{
     button{
+      white-space: nowrap;
       @include spacer(margin,right,1);
       font-weight: $global-weight-bold;
       cursor: pointer;

@@ -12,6 +12,17 @@
         content: $icon-chevron-right;
       }
     }
+    @include breakpoint(small only){
+      //margin-bottom: 0;
+      &:nth-last-child(2){
+        &:after{
+          display: none;
+        }
+      }
+      &:last-child{
+        display: none;
+      }
+    }
   }
   a{
     text-decoration: underline;
@@ -19,4 +30,5 @@
       text-decoration: none;
     }
   }
+
 }

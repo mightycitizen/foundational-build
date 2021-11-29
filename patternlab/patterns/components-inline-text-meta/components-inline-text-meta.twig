@@ -2,6 +2,13 @@
   {% if date | default %}
     <li class="label">
       <time datetime="{{ date.unformatted }}">{{ date.full }}</time>
+      {% if endDate | default %}
+        &mdash;
+        <time datetime="{{ endDate.unformatted }}">
+          {{ endDate.full }}
+        </time>
+
+      {% endif %}
     </li>
   {% endif %}
 

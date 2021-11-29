@@ -7913,6 +7913,14 @@ a.thumbnail image {
   font-family: "icomoon";
   content: "";
 }
+@media print, screen and (max-width: 39.99875em) {
+  .breadcrumbs li:nth-last-child(2):after {
+    display: none;
+  }
+  .breadcrumbs li:last-child {
+    display: none;
+  }
+}
 .breadcrumbs a {
   text-decoration: underline;
 }
@@ -8049,8 +8057,11 @@ a.thumbnail image {
     padding-bottom: 2.2222222222rem;
   }
 }
+.hero .label {
+  color: inherit;
+}
 .hero .breadcrumbs {
-  margin-bottom: 1.3888888889rem;
+  margin-bottom: 0;
 }
 @media print, screen and (min-width: 40em) {
   .hero .breadcrumbs {
@@ -8137,6 +8148,9 @@ a.thumbnail image {
 .hamburger.is-active .hamburger-text, body.has-menu .hamburger .hamburger-text {
   margin-top: 1.3888888889rem;
   color: transparent;
+}
+.hamburger.is-active .hamburger-text:after, body.has-menu .hamburger .hamburger-text:after {
+  color: #333;
 }
 .hamburger.is-active .hamburger-icon, body.has-menu .hamburger .hamburger-icon {
   margin-top: -1.0555555556rem;
@@ -9097,8 +9111,17 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .tabs {
   border: 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+}
+.tabs::-webkit-scrollbar {
+  display: none;
 }
 .tabs-title button {
+  white-space: nowrap;
   margin-right: 0.2777777778rem;
   font-weight: bold;
   cursor: pointer;
@@ -9169,11 +9192,6 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .tabs-panel > *:last-child {
   margin-bottom: 0;
-}
-@media print, screen and (max-width: 63.99875em) {
-  .tabs {
-    display: flex;
-  }
 }
 
 .loader {
@@ -9481,6 +9499,9 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   .section {
     padding-bottom: 5.7777777778rem;
   }
+}
+.section .section:first-child {
+  padding-top: 0;
 }
 .section[class*=bg-]:before {
   z-index: 1;

@@ -1,13 +1,18 @@
-<div class="video_wrapper" data-video-trigger="{{ trigger }}" data-video-type="{{ video_type }}">
-  <div class="video_loader">
-    {% include patternlab_namespace | default ~ 'components/utils/loader.twig' %}
-  </div>
-  <div class="video_image_wrapper image-size--landscapeCropped">
-    <img data-src="{{ image.src }}" alt="{{ image.alt }}" class="video_image js-lazy">
-  </div>
-  <div class="video_container">
-    <div class="video_player_wrapper">
-      <div class="video_player" data-video-id="{{ video_id }}" ></div>
+<figure>
+  <div class="video_wrapper" data-video-trigger="{{ trigger }}" data-video-type="{{ video_type }}">
+    <div class="video_loader">
+      {% include patternlab_namespace | default ~ 'components/utils/loader.twig' %}
+    </div>
+    <div class="video_image_wrapper image-size--landscapeCropped">
+      <img data-src="{{ image.src }}" alt="{{ image.alt }}" class="video_image js-lazy">
+    </div>
+    <div class="video_container">
+      <div class="video_player_wrapper">
+        <div class="video_player" data-video-id="{{ video_id }}" ></div>
+      </div>
     </div>
   </div>
-</div>
+  {% if caption %}
+    <figcaption class="video_caption">{{ caption }}</figcaption>
+  {% endif %}
+</figure>

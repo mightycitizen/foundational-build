@@ -18,6 +18,7 @@ import './plugins/slick';
 
 //import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
 
+window.jQuery = $;
 
 // @skip-to init
 const initSkipTo = () => {
@@ -58,7 +59,7 @@ const initFormHelpers = () => {
   });
 
   const disableSubmit = (elem) => {
-    elem.prop('disabled', true).append(loaderTemplate).addClass('is-loading');
+    if (!elem.is(':disabled')) elem.prop('disabled', true).append(loaderTemplate).addClass('is-loading');
   }
 
   window.enableSubmit = (elem) => {

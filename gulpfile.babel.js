@@ -75,13 +75,13 @@ function serve(done) {
  */
 function watchPatternlab(done) {
   patternlab
-    .build({
-      cleanPublic: config.cleanPublic,
-      watch: true
-    })
-    .then(() => {
-      done();
-    });
+  .build({
+    cleanPublic: config.cleanPublic,
+    watch: true
+  })
+  .then(() => {
+    done()
+  });
 }
 
 /**

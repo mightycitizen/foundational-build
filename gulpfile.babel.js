@@ -116,6 +116,11 @@ function buildVariables(){
  * @returns {undefined}
  */
 function watchFiles() {
+  watch(
+    ['./src/assets/images/**/*{.png,.jpg,.svg}',],
+    compressAssets
+  );
+
   // Watch all my sass files and compile sass if a file changes.
   watch(['./src/_patterns/global/base/**/*.json'],
     series(buildVariables, compileSass, concatCSS, (done) => {

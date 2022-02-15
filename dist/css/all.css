@@ -9109,6 +9109,10 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     max-width: none !important;
   }
 }
+.sticky {
+  z-index: 3;
+}
+
 .tabs {
   border: 0;
   overflow-y: hidden;

@@ -7,5 +7,6 @@
   "youtube": true,
   "vimeo": true,
   "slider": false,
+  "sticky-anchor": true,
   "datepicker": true
 }

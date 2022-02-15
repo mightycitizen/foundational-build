@@ -13,7 +13,7 @@ import './plugins/lity';
 import './plugins/datepicker';
 import './plugins/youtube';
 import './plugins/vimeo';
-//import './plugins/tabs';
+import './plugins/sticky-anchor';
 import './plugins/slick';
 
 //import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
@@ -86,7 +86,7 @@ const initSmoothScroll = () => {
   function(event) {
     // On-page links
     event.preventDefault();
-
+    $('html').addClass('is-scrolling');
     if (
       location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
       location.hostname == this.hostname
@@ -101,7 +101,9 @@ const initSmoothScroll = () => {
 
         $('html, body').animate({
           scrollTop: target.offset().top
-        }, 500);
+        }, 500, null, function(){
+          $('html').removeClass('is-scrolling');
+        });
 
       }
     }
@@ -162,6 +164,7 @@ const initFoundationHelpers = () => {
     //alert('test');
   });
 }
+
 
 // @foundation accessibility init
 const initFoundationAccessibility = () => {
@@ -230,6 +233,7 @@ $(document).ready(function(){
 
   initSkipTo(); // @skip-to init
   initSelectUrl(); // @select-url init
+
 
   initFoundationHelpers(); // @foundation helpers init
 })

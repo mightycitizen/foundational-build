@@ -5,6 +5,12 @@
   &-small{
     font-size: rem-calc(16);
   }
+  &-inherit{
+    color: inherit;
+  }
+  &-black{
+    color: $black;
+  }
   &-white{
     color: $white;
     a{

@@ -1,0 +1,56 @@
+{% extends 'wrappers/default.twig' %}
+{% block top %}
+  {% include "components/containers/hero.twig"  with {
+    heading: 'Templates',
+    subheading: null
+  } %}
+{% endblock %}
+{% block main %}
+  {% embed 'components/sections/section.twig' with {
+    section_class: 'section--tight section--collapse'
+  } %}
+    {% set templates = [
+      {
+       url: '/patterns/pages-general-default/pages-general-default.rendered.html',
+       title: 'General',
+      },
+      {
+       url: '/patterns/pages-general-sidebar/pages-general-sidebar.rendered.html',
+       title: 'Sidebar',
+      },
+
+      {
+       url: '/patterns/pages-general-form/pages-general-form.rendered.html',
+       title: 'Form',
+      },
+      {
+       url: '/patterns/pages-general-modal/pages-general-modal.rendered.html',
+       title: 'Modal',
+      },
+      {
+       url: '/patterns/pages-news-news-listing/pages-news-news-listing.rendered.html',
+       title: 'News Listing',
+      },
+      {
+        url: '/patterns/pages-news-news-detail/pages-news-news-detail.rendered.html',
+        title: 'News Detail',
+      },
+
+      {
+       url: '/patterns/pages-events-events-listing/pages-events-events-listing.rendered.html',
+       title: 'Event Listing',
+      },
+
+
+    ] %}
+    {% block section_content %}
+      <ul>
+        {% for template in templates %}
+          <li>
+            <a href="{{ template.url }}">{{ template.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

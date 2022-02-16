@@ -1,7 +1,7 @@
 <form action="{{ action | default('/search') }}">
   <div class="input-group simple">
     <label for="{{ input_id | default('keywords') }}" class="show-for-sr">Keywords</label>
-    <input class="input-group-field" placeholder="Search" type="search" id="{{ input_id | default('keywords') }}">
+    <input class="input-group-field" placeholder="Search" type="search" id="{{ input_id | default('keywords') }}" name="{{ name | default('q') }}">
     <div class="input-group-button">
       <button type="submit"  value="Submit">
         <span class="show-for-sr">{{ button_text | default('Search') }}</span>

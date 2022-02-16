@@ -30,7 +30,7 @@
     </div>
 
     <ul class="inline-list inline-list--divided m-b-2">
-      {% for item in footer_links %}
+      {% for item in footer_links | default %}
         <li>
           {% set link = item.cta %}
           <a href="{{ link.url }}" {% if link.targetString %}target="{{ link.targetString }}"{% endif %}>{{ link.text }}</a>

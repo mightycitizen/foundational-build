@@ -9109,6 +9109,10 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     max-width: none !important;
   }
 }
+.sticky {
+  z-index: 3;
+}
+
 .tabs {
   border: 0;
   overflow-y: hidden;
@@ -11520,6 +11524,12 @@ html, body, .l-wrapper {
 .text-small {
   font-size: 0.8888888889rem;
 }
+.text-inherit {
+  color: inherit;
+}
+.text-black {
+  color: #333;
+}
 .text-white {
   color: #fff;
 }
@@ -11553,6 +11563,10 @@ html, body, .l-wrapper {
 }
 
 /* FORMIE STYLING */
+.fui-row {
+  display: flex;
+}
+
 .fui-required {
   color: #d5383c;
 }

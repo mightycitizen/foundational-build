@@ -1,0 +1,9 @@
+<div class="slick-nav {{ slick_nav_class | default }} {% if inline | default%}slick-nav--inline{% endif %}">
+  {% if pause | default %}
+    <button class="js-slick-toggle slick-toggle">
+      <span class="show-for-sr">Toggle Pause/Play</span>
+      <span class="icon-pause active"></span>
+      <span class="icon-play inactive"></span>
+    </button>
+  {% endif %}
+</div>

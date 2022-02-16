@@ -216,6 +216,7 @@ exports.ddev = series(
   watchFiles
 );;
 
+exports.moveFonts = moveFonts;
 // Default Task
 exports.default = series(
   parallel(cleanCSS, cleanJS),

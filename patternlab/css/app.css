@@ -9276,6 +9276,84 @@ span.button a {
   }
 }
 
+.slick_controls {
+  display: flex;
+  position: relative;
+}
+.slick_controls .slick-arrow {
+  margin: 0;
+  width: auto;
+  height: auto;
+  background-color: #eca806;
+  color: #333;
+  border-radius: 0;
+  padding: 0.1111111111rem 0.4444444444rem;
+  position: relative;
+  transition: 0.3s width, 0.3s padding, 0.1s opacity 0.2s;
+}
+.slick_controls .slick-arrow:not(foo):after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, white 100%);
+}
+.slick_controls .slick-arrow.slick-next:after {
+  left: auto;
+  right: 100%;
+}
+.slick_controls .slick-arrow.slick-prev:after {
+  left: 100%;
+  transform: scaleX(-1);
+}
+.slick_controls.is-start .slick-prev, .slick_controls.is-end .slick-next {
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  padding: 0;
+}
+.slick-slider.is-paused ~ .slick_controls .slick-toggle .inactive {
+  display: block;
+}
+.slick-slider.is-paused ~ .slick_controls .slick-toggle .active {
+  display: none;
+}
+
+.slick_tabs {
+  list-style-type: none;
+  margin: 0;
+  display: inline-flex;
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: hidden;
+  overflow-x: scroll;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.slick_tabs::-webkit-scrollbar {
+  display: none;
+}
+.slick_tabs li {
+  margin: 0;
+}
+.slick_tabs li button {
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 1.1111111111rem 0.8333333333rem;
+  font-weight: bold;
+  background-color: #fff;
+}
+.slick_tabs li.is-active button {
+  position: relative;
+  z-index: 2;
+  background-color: #ffcd00;
+}
+.slick_tabs li:not(:last-child) {
+  border-right: 1px solid #666;
+}
+
 .slick_progress {
   z-index: 2;
   position: absolute;

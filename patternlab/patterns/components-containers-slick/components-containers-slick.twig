@@ -4,7 +4,7 @@
       inline: true
     } %}
   {% endif %}
-  <div class="js-slick{{ (modifier | default) ? '--'~modifier : ''}} {{ slick_class | default }} {% if grid | default %}grid-x grid-margin-x{% endif %}" {% if equalize | default %}data-equalizer data-equalize-on="medium"{% endif %}>
+  <div id="{{ id | default }}" class="js-slick{{ (modifier | default) ? '--'~modifier : ''}} {{ slick_class | default }} {% if grid | default %}grid-x grid-margin-x{% endif %}" {% if equalize | default %}data-equalizer data-equalize-on="medium"{% endif %}>
     {% block slide_content %}
     {% endblock %}
   </div>

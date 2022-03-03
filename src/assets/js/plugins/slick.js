@@ -12,6 +12,21 @@ const slickPagination = (slick) => {
     slick.$slider.removeClass('has-pagers');
   }
 }
+const slickPause = ($slick) => {
+  //const $slider = $(slick.$slider);
+  const $toggleElem = $('[data-slick-pause="' + $slick.attr('id') + '"]');
+  // pause/play
+  $toggleElem.on('click', function(){
+    const slick = $slick.get(0).slick;
+    if (slick.paused){
+      $slick.slick('slickPlay').removeClass('is-paused');
+    }else{
+      $slick.slick('slickPause').addClass('is-paused');
+    }
+    slickProgress(slick);
+  })
+
+}
 
 const slickBackground = (slick, next) => {
   const $slider = $(slick.$slider);
@@ -195,7 +210,7 @@ const initSlick = () => {
       const $this = $(this);
 
       slickEvents($this);
-
+      slickPause($this);
       const slickOptions = $.extend({}, defaultOptions, {
         mobileFirst: true,
         appendArrows: $this.next('.slick-nav'),
@@ -228,7 +243,7 @@ const initSlick = () => {
     const $this = $(this);
 
     slickEvents($this);
-
+    slickPause($this);
     // pause/play
     $this.next('.slick-nav').find('.js-slick-toggle').on('click', function(){
       if ($this.get(0).slick.paused){
@@ -240,6 +255,29 @@ const initSlick = () => {
     const slickOptions = $.extend({}, defaultOptions, {
       appendArrows: $this.next('.slick-nav'),
       appendDots: $this.next('.slick-nav'),
+    });
+    $this.slick(slickOptions);
+
+  })
+
+
+  const $slickFull = $('.js-slick--full');
+
+  $slickFull.each(function(){
+    const $this = $(this);
+    const slickId = $this.attr('id');
+    slickEvents($this);
+    slickPause($this);
+    const slickOptions = $.extend({}, defaultOptions, {
+      //arrows: false,
+      prevArrow: $('.slick-prev[data-slick="' + slickId + '"]'),
+      nextArrow: $('.slick-next[data-slick="' + slickId + '"]'),
+      dots: false,
+      focusOnSelect: true,
+      infinite: true,
+      autoplay: true,
+      pauseOnHover: false,
+      autoplaySpeed: 5000
     });
     $this.slick(slickOptions);
 

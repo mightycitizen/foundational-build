@@ -1,0 +1,39 @@
+{% set slider_id = 'slider-full' %}
+  {% set slides = [
+    {
+      title: 'Slide 1',
+      tab: 'Tab 1',
+      description: 'test'
+    },
+    {
+      title: 'Slide 1',
+      tab: 'Tab 1',
+      description: 'test'
+    },
+    {
+      title: 'Slide 1',
+      tab: 'Tab 1',
+      description: 'test'
+    }
+  ] %}
+  {% embed patternlab_namespace | default ~ 'components/containers/slick.twig' with {
+    modifier: 'full',
+    id: slider_id,
+    grid: true,
+    pause: true,
+    equalize: true,
+    slick_tabs: true
+  }%}
+    {% block slide_content %}
+      {% for slide in slides %}
+        <div>
+          <h2>{{ slide.title }}</h2>
+          <p>{{ slide.description }}</p>
+        </div>
+      {% endfor %}
+    {% endblock %}
+  {% endembed %}
+
+<div class="slick_progress" data-slick="{{ slider_id | default }}">
+  <div class="slick_progress_line"></div>
+</div>

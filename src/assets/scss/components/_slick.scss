@@ -18,6 +18,102 @@
 
 		}
 	}
+	.slick_controls{
+		display:flex;
+		position: relative;
+		.slick-arrow{
+			margin: 0;
+			width: auto;
+			height: auto;
+			background-color: map-get($additional-palette,'secondary-darker');
+			color: $black;
+			border-radius: 0;
+			padding: rem-calc(2 8);
+			position: relative;
+
+			transition: 0.3s width, 0.3s padding, 0.1s opacity 0.2s;
+			&:not(foo):after{
+				content: "";
+				display: block;
+				@include stretch();
+				background: linear-gradient(to right, rgba($white,0) 0%, rgba($white,1) 100%);
+			}
+			&.slick-next{
+				&:after{
+					left: auto;
+					right: 100%;
+				}
+			}
+			&.slick-prev{
+				&:after{
+					left: 100%;
+					transform: scaleX(-1);
+				}
+			}
+			// &.slick-disabled{
+			// 	display: none;
+
+			// }
+
+		}
+		&.is-start .slick-prev, &.is-end .slick-next{
+				opacity: 0;
+				pointer-events: none;
+				width: 0;
+				padding: 0;
+		}
+		// {
+		// 	.slick-next{
+		// 		opacity: 0;
+
+		// 	}
+		// }
+		.slick-slider.is-paused ~ &{
+			.slick-toggle{
+				.inactive{
+					display: block;
+				}
+				.active{
+					display: none;
+				}
+			}
+
+		}
+	}
+	.slick_tabs{
+		list-style-type: none;
+		margin: 0;
+		display: inline-flex;
+		box-shadow: $global-box-shadow;
+		overflow-y: hidden;
+		overflow-x: scroll;
+		max-width: 100%;
+		-webkit-overflow-scrolling: touch;
+		&::-webkit-scrollbar{
+			display: none;
+		}
+		li{
+			//display: inline-flex;
+			margin: 0;
+			button{
+				cursor: pointer;
+				white-space: nowrap;
+				padding: rem-calc(20 15);
+				font-weight: $global-weight-bold;
+				background-color: $white;
+			}
+			&.is-active{
+				button{
+					position: relative;
+					z-index: 2;
+					background-color: $secondary-color;
+				}
+			}
+			&:not(:last-child){
+				border-right: 1px solid $medium-gray;
+			}
+		}
+	}
 	.slick_progress{
 		z-index: 2;
 		position: absolute;

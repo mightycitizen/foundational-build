@@ -10525,6 +10525,8 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   top: 0;
   height: 100%;
   opacity: 0.6;
+  -o-object-fit: cover;
+  object-fit: cover;
   background-size: cover;
   background-position: center;
 }

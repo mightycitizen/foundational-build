@@ -160,13 +160,14 @@
 
     .text-white & {
       background-color: $white !important;
+      mix-blend-mode: lighten;
       svg{
         g, path{
-          fill: $primary-color;
+          fill: black;
         }
       }
       [class*=icon-]{
-        color: $primary-color;
+        color: black;
       }
       &:hover, &:focus{
         background-color: map-get($additional-palette,'primary-lightest') !important;

@@ -13,15 +13,151 @@ const slickPagination = (slick) => {
   }
 }
 
+const slickBackground = (slick, next) => {
+  const $slider = $(slick.$slider);
+  const background = $(slick.$slides[next]).data('slick-background');
+  const currBackgroundElem = $('[data-slick-background="' + $slider.attr('id') + '"]');
+
+
+  if (currBackgroundElem){
+    currBackgroundElem.addClass('is-hidden');
+    if (background){
+      $slider.addClass('has-background');
+
+      let nextBackgroundElem = currBackgroundElem.siblings('[data-slick-background-index="' + next + '"]');
+      if (nextBackgroundElem.length === 0){
+        nextBackgroundElem = currBackgroundElem.last().clone();
+        currBackgroundElem.last().after(nextBackgroundElem);
+        nextBackgroundElem.attr('src', background).attr('data-slick-background-index',next);
+      }
+
+      setTimeout(() => {
+        nextBackgroundElem.removeClass('is-hidden');
+      }, 50);
+    }else{
+      $slider.removeClass('has-background');
+    }
+
+  }
+  //console.log(event);
+  // if (event){
+  //   const slickId = event.$slider.attr('id');
+  //   var el = $('.slick_background[data-slick="' + slickId + '"]');
+  // }else{
+  //   var el = $('.slick_background');
+  // }
+  // if (el.length){
+  //   var elem = el.find('.slick_background_image');
+  //   elem.css({
+  //     backgroundImage: 'url(' + elem.attr('data-bg') + ')'
+  //   });
+  // }
+}
+
+
+const slickProgress = (slick, reset, init) => {
+
+  const slickId = slick.$slider.attr('id');
+  var el = $('.slick_progress[data-slick="' + slickId + '"]');
+  //const delay = init ? -0.5*slick.options.speed : slick.options.speed;
+  if (el.length){
+    var elem = el.find('.slick_progress_line');
+    elem.css({
+      width: 0,
+      transition: 'none'
+    });
+    if ((!reset && !slick.paused) || init){
+      setTimeout(function(){
+        //console.log(delay);
+        elem.css({
+          transition: 'width ' + (slick.options.autoplaySpeed) + 'ms linear'
+        });
+        setTimeout(function(){
+          elem.css({
+            width: '100%'
+          });
+        }, 5)
+      }, 5)
+
+    }
+
+  }
+
+
+}
+
+const slickGo = (slick, next) => {
+  //console.log(next);
+  const $slick = $(slick.$slider);
+  const slickId = $slick.attr('id');
+  const $slickGo = $('[data-slick-go="' + slickId + '"][data-slick-go-index="' + next + '"]');
+  if ($slickGo.length){
+    $slickGo.parent().addClass('is-active').siblings().removeClass('is-active');
+  }
+}
+
+const slickTabs = (slick, cur) => {
+  //console.log(cur);
+  const $slick = $(slick.$slider);
+  const slickId = $slick.attr('id');
+  const $slickTabs = $('[data-slick="' + slickId + '"][data-slick-tabs]');
+  if ($slickTabs.length > 0){
+    const $slickTab = $slickTabs.find('.is-active');
+    $slickTabs.parent().toggleClass('is-start',cur === 0);
+    $slickTabs.parent().toggleClass('is-end',cur === slick.slideCount - 1);
+    if ($slickTab.length > 0){
+      const tabStartPosition = $slickTab.position().left;
+      const tabNavWidth = $slickTabs.outerWidth();
+      const tabWidth = $slickTab.outerWidth();
+      const tabEndPosition = tabStartPosition + tabWidth;
+      const offset = 80;
+      let position;
+      const currPosition = $slickTabs.scrollLeft();
+      // // console.log(currPosition);
+      // // console.log('left',tabStartPosition);
+      // // console.log('right',tabEndPosition);
+      if (tabStartPosition < offset){
+        position = currPosition + tabStartPosition - offset;
+      }
+      else if (tabEndPosition > tabNavWidth - offset){
+        position = currPosition + (tabEndPosition - tabNavWidth + offset);
+        //console.log(position);
+      }
+
+      if (position){
+        $slickTabs.animate({
+          scrollLeft: position
+        },200);
+      }
+    }
+  }
+
+
+}
+
+
 const slickEvents = ($slick) => {
   $slick.on('init', function (event, slick, breakpoint){
     slickPagination(slick);
+    slickGo(slick, 0);
+    slickProgress(slick, false, true);
+    slickBackground(slick, 0);
     $slick.trigger('resizeme.zf.trigger');
   })
 
   $slick.on('breakpoint', function (event, slick, breakpoint){
     slickPagination(slick);
     $slick.trigger('resizeme.zf.trigger');
+  })
+  $slick.on('afterChange', function(event, slick, cur, next){
+    slickProgress(slick);
+    slickTabs(slick, cur);
+    //slickBackground(slick);
+  })
+  $slick.on('beforeChange', function(event, slick, cur, next){
+    slickGo(slick, next);
+    slickBackground(slick, next);
+    slickProgress(slick, true);
   })
 }
 
@@ -35,6 +171,17 @@ const defaultOptions = {
   dotsClass: 'slick-dots',
   adaptiveHeight: true,
   waitForAnimate: false
+}
+
+const initSlickGo = () => {
+  $('[data-slick-go]').on('click', function(e){
+    e.preventDefault();
+    const $this = $(this);
+    const $slick = $('#' + $this.data('slick-go'));
+    if ($slick){
+      $slick.slick('slickGoTo', $this.data('slick-go-index'));
+    }
+  })
 }
 
 // @slick init
@@ -280,5 +427,5 @@ const initSlick = () => {
 
 $(document).ready(function(){
   initSlick(); // @slick init call
-  //initSlickTabs();
+  initSlickGo();
 });

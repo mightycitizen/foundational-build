@@ -18,6 +18,19 @@
 
 		}
 	}
+	.slick_progress{
+		z-index: 2;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: rem-calc(6);
+		background-color: rgba($secondary-color,0.4);
+		&_line{
+			height: 100%;
+			background-color: $secondary-color;
+		}
+	}
 
 	.slick-track{
 		margin-left: auto;

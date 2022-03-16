@@ -12574,6 +12574,9 @@ html, body, .l-wrapper {
   overflow: hidden;
 }
 
+.display-flex {
+  display: flex;
+}
 .display-inlineBlock {
   display: inline-block;
 }

@@ -58,6 +58,9 @@
 
 
 .display{
+  &-flex{
+    display: flex;
+  }
   &-inlineBlock{
     display: inline-block;
   }

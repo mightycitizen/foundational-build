@@ -69,7 +69,7 @@
 }
 
 
-@mixin spacer($prop,$direction,$size,$mobile-override: false){
+@mixin spacer($prop,$direction,$size,$mobile-override: false, $important: null){
     //#{$prop}: $size !important;
     $mobile-spacer: $size*$spacer-mobile;
     @if ($mobile-override){
@@ -77,30 +77,30 @@
     }
     $desktop-spacer: $size*$spacer;
     @if (index((left, right, top, bottom),$direction)) {
-      #{$prop}-#{$direction}: rem-calc($mobile-spacer);
+      #{$prop}-#{$direction}: rem-calc($mobile-spacer)   $important;
       @include breakpoint(medium) {
-        #{$prop}-#{$direction}: rem-calc($desktop-spacer);
+        #{$prop}-#{$direction}: rem-calc($desktop-spacer)   $important;
       }
     }@else if (index((y,x),$direction)) {
       @if ($direction == x){
-        #{$prop}-left: rem-calc($mobile-spacer);
-        #{$prop}-right: rem-calc($mobile-spacer);
+        #{$prop}-left: rem-calc($mobile-spacer)   $important;
+        #{$prop}-right: rem-calc($mobile-spacer)   $important;
         @include breakpoint(medium) {
-          #{$prop}-left: rem-calc($desktop-spacer);
-          #{$prop}-right: rem-calc($desktop-spacer);
+          #{$prop}-left: rem-calc($desktop-spacer)   $important;
+          #{$prop}-right: rem-calc($desktop-spacer)   $important;
         }
       }@else{
-        #{$prop}-top: rem-calc($mobile-spacer);
-        #{$prop}-bottom: rem-calc($mobile-spacer);
+        #{$prop}-top: rem-calc($mobile-spacer)   $important;
+        #{$prop}-bottom: rem-calc($mobile-spacer)   $important;
         @include breakpoint(medium) {
-          #{$prop}-top: rem-calc($desktop-spacer);
-          #{$prop}-bottom: rem-calc($desktop-spacer);
+          #{$prop}-top: rem-calc($desktop-spacer)   $important;
+          #{$prop}-bottom: rem-calc($desktop-spacer)   $important;
         }
       }
     }@else{
-      #{$prop}: rem-calc($mobile-spacer);
+      #{$prop}: rem-calc($mobile-spacer)   $important;
       @include breakpoint(large) {
-        #{$prop}: rem-calc($desktop-spacer);
+        #{$prop}: rem-calc($desktop-spacer)   $important;
       }
     }
 

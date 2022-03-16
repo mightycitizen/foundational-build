@@ -9809,6 +9809,41 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   margin-bottom: 0;
 }
 
+.countdown {
+  justify-content: center;
+  margin: 0 -0.4444444444rem;
+}
+.countdown_item {
+  flex: 1;
+  text-align: center;
+  margin: 0 0.4444444444rem;
+  position: relative;
+}
+.countdown_item_number {
+  min-height: 3.5555555556rem;
+  font-size: 1.7777777778rem;
+  background-color: #fff;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.4444444444rem;
+  border-radius: 0;
+  display: block;
+  color: #333;
+  margin-bottom: 0.3333333333rem;
+}
+.countdown_item_label {
+  width: 100%;
+  display: block;
+  font-size: 0.7777777778rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+@media print, screen and (min-width: 40em) {
+  .countdown_item_label {
+    position: absolute;
+  }
+}
+
 /* purgecss start ignore */
 /* purgecss start ignore */
 .top-bar {

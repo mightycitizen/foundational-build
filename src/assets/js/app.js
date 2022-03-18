@@ -55,10 +55,11 @@ class Countdown {
         const formatString = (string) => {
           return string.toString().padStart(2, '0');
         }
-        if (days >= 0) self.$holder.find(self.options.daysSelector).text(formatString(days));
-        if (hours >= 0) self.$holder.find(self.options.hoursSelector).text(formatString(hours));
-        if (minutes >= 0) self.$holder.find(self.options.minutesSelector).text(formatString(minutes));
-        if (seconds >= 0) self.$holder.find(self.options.secondsSelector).text(formatString(seconds));
+        self.$holder.find(self.options.daysSelector).text(formatString(days >= 0 ? days : 0));
+        self.$holder.find(self.options.hoursSelector).text(formatString(hours >= 0 ? hours : 0));
+        self.$holder.find(self.options.minutesSelector).text(formatString(minutes >= 0 ? minutes : 0));
+        self.$holder.find(self.options.secondsSelector).text(formatString(seconds >= 0 ? seconds : 0));
+
 
         // If the count down is over, write some text
         if (distance <= 0) {

@@ -1,5 +1,5 @@
 <div class="form-input {{ input_class | default }}">
-  <label for="{{ id }}">{{ label }} {% if required | default %}<span class="form-required">*</span>{% endif %}</label>
+  <label for="{{ field_id }}">{{ label }} {% if required | default %}<span class="form-required">*</span>{% endif %}</label>
   {% block field %}
   {% endblock %}
   {% if required | default %}

@@ -4,4 +4,4 @@
     text: link.customText
   }) %}
 {% endif %}
-<a href="{{ link.url }}" {% if link.targetString | default %}target="{{ link.targetString }}"{% endif %} class="{{ modifier | default }} {{ link.modifier | default }}">{{ link.text }}</a>
+<a href="{{ link.url }}" {% if link.target | default %}target="{{ link.target }}"{% endif %} class="{{ modifier | default }} {{ link.modifier | default }}">{{ link.text }}</a>

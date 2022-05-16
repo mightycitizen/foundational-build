@@ -1,5 +1,5 @@
 <div class="slick-wrap">
-  {% if slick_nav_position == 'top' %}
+  {% if slick_nav_position  | default  == 'top'%}
     {% include patternlab_namespace | default ~ 'components/containers/carousel-nav.twig' with {
       inline: true
     } %}

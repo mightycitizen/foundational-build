@@ -1,0 +1,16 @@
+{
+  "card": {
+
+    "image": {
+      "src": "https://source.unsplash.com/9wg5jCEPBsw/400x200",
+      "alt": "Alt Text"
+    },
+    "heading": {
+      "text": "Phasellus auctor, turpis",
+      "level": "3",
+      "url": "#"
+    },
+    "summary": "Lorem ipsum dolor sit amet",
+    "link": false
+  }
+}

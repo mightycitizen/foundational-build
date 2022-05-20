@@ -30,7 +30,13 @@
           }%}
       {% endif %}
     {% endif %}
-    <h{{ heading_level }} class="card-title {{ card.heading.modifier | default }}">{{ card.heading.text }}</h{{ heading_level }}>
+    <h{{ heading_level }} class="card-title {{ card.heading.modifier | default }}">
+      {% if card.heading.url %}
+        <a href="{{ card.heading.url }}">{{ card.heading.text }}</a>
+      {% else %}
+        {{ card.heading.text }}
+      {% endif %}
+    </h{{ heading_level }}>
     {% if card.summary | default %}
       <p>
         {{ card.summary }}

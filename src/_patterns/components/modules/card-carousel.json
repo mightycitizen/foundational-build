@@ -13,10 +13,7 @@
           "level": "3",
           "url": "#"
         },
-        "link": {
-          "url": "#",
-          "text":"Optional Link"
-        }
+        "summary": "Lorem ipsum dolor sit amet"
       }
     },
     {
@@ -31,10 +28,7 @@
           "level": "3",
           "url": "#"
         },
-        "link": {
-          "url": "#",
-          "text":"Optional Link"
-        }
+        "summary": "Lorem ipsum dolor sit amet"
       }
     },
     {
@@ -49,10 +43,7 @@
           "level": "3",
           "url": "#"
         },
-        "link": {
-          "url": "#",
-          "text":"Optional Link"
-        }
+        "summary": "Lorem ipsum dolor sit amet"
       }
     },
     {
@@ -67,10 +58,7 @@
           "level": "3",
           "url": "#"
         },
-        "link": {
-          "url": "#",
-          "text":"Optional Link"
-        }
+        "summary": "Lorem ipsum dolor sit amet"
       }
     },
     {
@@ -85,10 +73,7 @@
           "level": "3",
           "url": "#"
         },
-        "link": {
-          "url": "#",
-          "text":"Optional Link"
-        }
+        "summary": "Lorem ipsum dolor sit amet"
       }
     }
 

@@ -8,9 +8,11 @@
     "heading": {
       "text": "Phasellus auctor, turpis",
       "level": "3",
-      "url": "#"
     },
     "summary": "Lorem ipsum dolor sit amet",
-    "link": false
+    "link": {
+      "url": "#",
+      "text":"Optional Link"
+    }
   }
 }

@@ -6,11 +6,8 @@
     },
     "summary": "Lorem ipsum",
     "heading": {
-      "text": "Phasellus auctor, turpis"
-    },
-    "link": {
       "url": "#",
-      "text":"Optional Link"
+      "text": "Phasellus auctor, turpis"
     }
   }
 }

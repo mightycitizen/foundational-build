@@ -15,10 +15,7 @@
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "url": "#"
       },
-      "link": {
-        "url": "#",
-        "text":"Optional Link"
-      },
+      "summary": "Lorem ipsum dolor sit amet",
       "date": {
         "unformatted": "2020-12-20",
         "month_short": "Dec",
@@ -41,10 +38,7 @@
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Another line here to show multiple lines",
         "url": "#"
       },
-      "link": {
-        "url": "#",
-        "text":"Optional Link"
-      },
+      "summary": "Lorem ipsum dolor sit amet",
       "date": {
         "unformatted": "2020-12-20",
         "month_short": "Dec",
@@ -67,10 +61,7 @@
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "url": "#"
       },
-      "link": {
-        "url": "#",
-        "text":"Optional Link"
-      },
+      "summary": "Lorem ipsum dolor sit amet",
       "date": {
         "unformatted": "2020-12-20",
         "month_short": "Dec",

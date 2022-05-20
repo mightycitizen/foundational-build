@@ -1,6 +1,7 @@
 {
   "cacheBust": true,
   "cleanPublic": true,
+  "debug": "quiet",
   "defaultPattern": "viewall-global-all",
   "defaultShowPatternInfo": false,
   "ishControlsHide": {
@@ -34,7 +35,7 @@
       2600
     ]
   },
-  "logLevel": "info",
+  "logLevel": "0",
   "outputFileSuffixes": {
     "rendered": ".rendered",
     "rawTemplate": "",

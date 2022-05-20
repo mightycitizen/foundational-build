@@ -1,6 +1,6 @@
 {% embed patternlab_namespace | default ~ 'components/forms/input.twig' %}
   {% block field %}
-    <select {% if autocomplete | default %}autocomplete="{{ autocomplete }}"{% endif %} id="{{ id }}" {% if required | default %}required{% endif %} {% if disabled | default %}disabled{% endif %} class="{{ input_class | default }} {% if selectize | default %}js-selectize{% endif %}" name="{{ name }}">
+    <select {% if autocomplete | default %}autocomplete="{{ autocomplete }}"{% endif %} id="{{ field_id | default }}" {% if required | default %}required{% endif %} {% if disabled | default %}disabled{% endif %} class="{{ input_class | default }} {% if selectize | default %}js-selectize{% endif %}" name="{{ name }}">
       {% if placeholder | default %}
         <option value="">{{ placeholder }}</option>
       {% endif %}

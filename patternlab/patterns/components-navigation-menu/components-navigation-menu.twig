@@ -14,7 +14,7 @@
   </div>
   #}
   <div class="top-bar-left">
-    <ul class="vertical large-horizontal menu top" data-responsive-menu="accordion large-dropdown" {% if click | default %}data-click-open="true" data-disable-hover="true"{% endif %}>
+    <ul role="menubar" class="vertical large-horizontal menu top" data-responsive-menu="accordion large-dropdown" {% if click | default %}data-click-open="true" data-disable-hover="true"{% endif %}>
       {% for link in menu %}
         <li {% if loop.last %}class="last"{% endif %}>
           <a {% if link.new_window | default %}target="_blank" rel="noopener"{% endif %} role="menuitem" href="{{ link.url }}">{{ link.parent_text | default ? link.parent_text : link.text }}</a>

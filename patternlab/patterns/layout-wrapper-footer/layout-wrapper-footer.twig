@@ -33,7 +33,13 @@
       {% for item in footer_links | default %}
         <li>
           {% set link = item.cta %}
-          <a href="{{ link.url }}" {% if link.targetString %}target="{{ link.targetString }}"{% endif %}>{{ link.text }}</a>
+          {% include 'components/links/link.twig' with {
+            link: {
+              url: link.url,
+              text: link.text,
+              target: link.getTarget()
+            }
+          } %}
         </li>
       {% endfor %}
     </ul>

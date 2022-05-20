@@ -5,27 +5,22 @@
     <div class="item">
       <div class="grid-x grid-margin-x align-middle">
         {% if item.image | default %}
-          <div class="cell medium-5 large-4">
+          <div class="cell medium-5 large-3 medium-order-2">
             <div class="wrapper image-size--landscapeCroppedMedium">
               <img data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" class="js-lazy">
-              {% if item_type == 'events' %}
-                {% include patternlab_namespace | default ~ 'components/inline-text/date.twig' with {
-                  date: item.start_date
-                } %}
-              {% endif %}
             </div>
           </div>
         {% endif %}
-        <div class="cell {% if item.image | default %}medium-7 large-8{% endif %}">
+        <div class="cell {% if item.image | default %}medium-7 large-9 medium-order-1{% endif %}">
           <div class="media-object">
-            {% if item.image | default is empty and item_type == 'events' %}
-              <div class="media-object-section">
-                {% include patternlab_namespace | default ~ 'components/inline-text/date.twig' with {
-                  date: item.start_date
-                } %}
 
-              </div>
-            {% endif %}
+            <div class="media-object-section">
+              {% include patternlab_namespace | default ~ 'components/inline-text/date.twig' with {
+                date: item.start_date
+              } %}
+
+            </div>
+
             <div class="media-object-section">
               <h2><a href="{{ item.url }}">{{ item.heading }}</a></h2>
               {% if item_type | default != 'events' and item.date.full | default %}

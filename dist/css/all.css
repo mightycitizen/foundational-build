@@ -9805,7 +9805,6 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .table-scroll table {
   width: 100%;
-  table-layout: fixed;
   margin-bottom: 0;
 }
 

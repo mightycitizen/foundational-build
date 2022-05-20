@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1647460885768" media="all" />
-    <link rel="stylesheet" href="../../css/all.css?1647460885768" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1653076677505" media="all" />
+    <link rel="stylesheet" href="../../css/all.css?1653076677505" media="all" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2f872f69e9.js" crossorigin="anonymous"></script>
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1647460885768" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1653076677505" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -78,7 +78,7 @@
     <div class="grid-x grid-margin-x align-middle">
       <div class="cell small-2 large-9">
         <a href="/templates" class="logo">
-  <img   class="logo_image" src="" alt=""/>
+  <img   class="logo_image" src="/dist/images/logo.png" alt=""/>
 </a>
       </div>
       <div class="cell large-3 show-for-large">
@@ -112,7 +112,7 @@
 
 <div class="top-bar" id="responsive-menu">
     <div class="top-bar-left">
-    <ul class="vertical large-horizontal menu top" data-responsive-menu="accordion large-dropdown" >
+    <ul role="menubar" class="vertical large-horizontal menu top" data-responsive-menu="accordion large-dropdown" >
               <li >
           <a  role="menuitem" href="#">Menu Item</a>
                     <ul class="vertical menu">
@@ -486,7 +486,7 @@
       <div class="cell large-8 medium-6 medium-order-1">
         
 
-  <nav role="navigation" aria-labe="You are here:">
+  <nav role="navigation" aria-label="You are here:">
     <ul class="breadcrumbs">
               <li>
                       <a href="#">Home</a>
@@ -1587,7 +1587,7 @@ Line Three</cite>
         <div class="media-object media-object--stack">
           <div class="media-object-section">
             <a href="/templates" class="logo">
-  <img   class="logo_image" src="" alt=""/>
+  <img   class="logo_image" src="/dist/images/logo.png" alt=""/>
 </a>
           </div>
           <div class="media-object-section">
@@ -1700,7 +1700,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
     <div class="grid-x grid-margin-x align-middle">
       <div class="cell small-2 large-9">
         <a href="/templates" class="logo">
-  <img   class="logo_image" src="" alt=""/>
+  <img   class="logo_image" src="/dist/images/logo.png" alt=""/>
 </a>
       </div>
       <div class="cell large-3 show-for-large">
@@ -1734,7 +1734,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
 
 <div class="top-bar" id="responsive-menu">
     <div class="top-bar-left">
-    <ul class="vertical large-horizontal menu top" data-responsive-menu="accordion large-dropdown" >
+    <ul role="menubar" class="vertical large-horizontal menu top" data-responsive-menu="accordion large-dropdown" >
               <li >
           <a  role="menuitem" href="#">Menu Item</a>
                     <ul class="vertical menu">
@@ -2108,7 +2108,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
       <div class="cell large-8 medium-6 medium-order-1">
         
 
-  <nav role="navigation" aria-labe="You are here:">
+  <nav role="navigation" aria-label="You are here:">
     <ul class="breadcrumbs">
               <li>
                       <a href="#">Home</a>
@@ -2164,7 +2164,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
                       <div class="section_content">
           <h2>Heading Level 2</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-    <form action="" data-abide novalidate>
+    <form action="/" data-abide novalidate>
   <div class="form-input ">
   <label for="field_id_3">Text <span class="form-required">*</span></label>
       <input  type="text" value="" name="text" id="field_id_3" placeholder="Prompt Text" required/>
@@ -2177,8 +2177,8 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
   </div>
 
     <div class="form-input ">
-  <label for="example-tabs">Select <span class="form-required">*</span></label>
-      <select  id="example-tabs" required  class=" " name="">
+  <label for="select_validation">Select <span class="form-required">*</span></label>
+      <select  id="select_validation" required  class=" " name="">
                     <option  value="0">Select A</option>
               <option  value="1">Select B</option>
               <option  value="2">Select C</option>
@@ -2188,8 +2188,8 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
 
   
   <div class="form-input ">
-  <label for="">Select (Filterable) <span class="form-required">*</span></label>
-      <select  id="" required  class=" js-selectize" name="">
+  <label for="selectize">Select (Filterable) <span class="form-required">*</span></label>
+      <select  id="selectize" required  class=" js-selectize" name="">
                     <option  value="0">Select A</option>
               <option  value="1">Select B</option>
               <option  value="2">Select C</option>
@@ -2263,7 +2263,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
         <div class="media-object media-object--stack">
           <div class="media-object-section">
             <a href="/templates" class="logo">
-  <img   class="logo_image" src="" alt=""/>
+  <img   class="logo_image" src="/dist/images/logo.png" alt=""/>
 </a>
           </div>
           <div class="media-object-section">
@@ -2376,7 +2376,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
     <div class="grid-x grid-margin-x align-middle">
       <div class="cell small-2 large-9">
         <a href="/templates" class="logo">
-  <img   class="logo_image" src="" alt=""/>
+  <img   class="logo_image" src="/dist/images/logo.png" alt=""/>
 </a>
       </div>
       <div class="cell large-3 show-for-large">
@@ -2410,7 +2410,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
 
 <div class="top-bar" id="responsive-menu">
     <div class="top-bar-left">
-    <ul class="vertical large-horizontal menu top" data-responsive-menu="accordion large-dropdown" >
+    <ul role="menubar" class="vertical large-horizontal menu top" data-responsive-menu="accordion large-dropdown" >
               <li >
           <a  role="menuitem" href="#">Menu Item</a>
                     <ul class="vertical menu">
@@ -2784,7 +2784,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
       <div class="cell large-8 medium-6 medium-order-1">
         
 
-  <nav role="navigation" aria-labe="You are here:">
+  <nav role="navigation" aria-label="You are here:">
     <ul class="breadcrumbs">
               <li>
                       <a href="#">Home</a>
@@ -2863,7 +2863,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
         <div class="media-object media-object--stack">
           <div class="media-object-section">
             <a href="/templates" class="logo">
-  <img   class="logo_image" src="" alt=""/>
+  <img   class="logo_image" src="/dist/images/logo.png" alt=""/>
 </a>
           </div>
           <div class="media-object-section">
@@ -3508,7 +3508,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
     <div class="grid-x grid-margin-x align-middle">
       <div class="cell small-2 large-9">
         <a href="/templates" class="logo">
-  <img   class="logo_image" src="" alt=""/>
+  <img   class="logo_image" src="/dist/images/logo.png" alt=""/>
 </a>
       </div>
       <div class="cell large-3 show-for-large">
@@ -3542,7 +3542,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
 
 <div class="top-bar" id="responsive-menu">
     <div class="top-bar-left">
-    <ul class="vertical large-horizontal menu top" data-responsive-menu="accordion large-dropdown" >
+    <ul role="menubar" class="vertical large-horizontal menu top" data-responsive-menu="accordion large-dropdown" >
               <li >
           <a  role="menuitem" href="#">Menu Item</a>
                     <ul class="vertical menu">
@@ -3916,7 +3916,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
       <div class="cell large-8 medium-6 medium-order-1">
         
 
-  <nav role="navigation" aria-labe="You are here:">
+  <nav role="navigation" aria-label="You are here:">
     <ul class="breadcrumbs">
               <li>
                       <a href="#">Home</a>
@@ -3998,15 +3998,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
       <th>Table Heading 5</th>
     </tr>
   </thead>
-  <tfoot>
-    <tr>
-      <th>Table Footer 1</th>
-      <th>Table Footer 2</th>
-      <th>Table Footer 3</th>
-      <th>Table Footer 4</th>
-      <th>Table Footer 5</th>
-    </tr>
-  </tfoot>
+
   <tbody>
   <tr>
     <td>Table Cell 1</td>
@@ -4037,6 +4029,15 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
     <td>Table Cell 5</td>
   </tr>
   </tbody>
+    <tfoot>
+    <tr>
+      <th>Table Footer 1</th>
+      <th>Table Footer 2</th>
+      <th>Table Footer 3</th>
+      <th>Table Footer 4</th>
+      <th>Table Footer 5</th>
+    </tr>
+  </tfoot>
 </table>
       <p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>      <ul>
   <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
@@ -4101,7 +4102,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
         <div class="media-object media-object--stack">
           <div class="media-object-section">
             <a href="/templates" class="logo">
-  <img   class="logo_image" src="" alt=""/>
+  <img   class="logo_image" src="/dist/images/logo.png" alt=""/>
 </a>
           </div>
           <div class="media-object-section">
@@ -4217,10 +4218,10 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1647460885768">
+<script id="pl-js-polyfill-insert-1653076677505">
   (function() {
     if (self != top) {
-      var cb = '1647460885768';
+      var cb = '1653076677505';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -4233,7 +4234,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1647460885768" nomodule>
+<script id="pl-js-insert-1653076677505" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -4256,7 +4257,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
   <script src="/core/misc/drupal.init.js"></script>
   -->
   <!-- Concatenated by Gulp so you don't have to manually add each file. -->
-  <script src="../../js/pattern-scaffolding.js?1647460885768"></script>
-  <script src="../../js/app.js?1647460885768"></script>
+  <script src="../../js/pattern-scaffolding.js?1653076677505"></script>
+  <script src="../../js/app.js?1653076677505"></script>
 </body>
 </html>

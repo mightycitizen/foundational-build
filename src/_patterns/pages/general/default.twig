@@ -3,6 +3,7 @@
   {% include "components/containers/hero.twig" %}
 {% endblock %}
 {% block main %}
+  {% include 'components/navigation/anchor.twig' %}
   {% include 'components/modules/wysiwyg.twig' %}
   {% set video_image_transform = image_sizes.landscapeCropped %}
   {% include 'components/modules/video.twig'
@@ -21,7 +22,7 @@
     }
   %}
 
-  {% include 'components/modules/accordion.twig' with { accordion_id: 'accordion', items: items} only %}
+  {% include 'components/modules/accordion.twig' with { id: 'section-1', accordion_id: 'accordion', items: items} only %}
 
   {% include 'components/modules/accordion.twig' with {accordion_id: 'accordion_steps', items: items, modifier: "steps"} only %}
   {% include 'components/modules/accordion.twig' with {

@@ -40,11 +40,11 @@ $gradient-opacity: 0.4;
       background-color: rgba($default-color,$light-opacity);
     }
 
-    .bg-gradient-#{$color}{
-      &:before{
-        background: linear-gradient(to bottom, $white 0%, rgba($default-color,$gradient-opacity) 100%);
-      }
-    }
+    // .bg-gradient-#{$color}{
+    //   &:before{
+    //     background: linear-gradient(to bottom, $white 0%, rgba($default-color,$gradient-opacity) 100%);
+    //   }
+    // }
     @if $output{
       $additional-palette: map-set($additional-palette, '#{$color}-#{$key}', $output) !global;
       .color-#{$color}-#{$key}{
@@ -58,11 +58,11 @@ $gradient-opacity: 0.4;
         background-color: rgba($output,$light-opacity);
       }
 
-      .bg-gradient-#{$color}-#{$key}{
-        &:before{
-          background: linear-gradient(to bottom, $white 0%, rgba($output,$gradient-opacity) 100%);
-        }
-      }
+      // .bg-gradient-#{$color}-#{$key}{
+      //   &:before{
+      //     background: linear-gradient(to bottom, $white 0%, rgba($output,$gradient-opacity) 100%);
+      //   }
+      // }
     }
 
     // .bg-gradient-#{$color}-#{$key}-flip{
@@ -77,11 +77,19 @@ $gradient-opacity: 0.4;
 }
 
 
-@include generateVariants($primary, 'primary');
-@include generateVariants($secondary, 'secondary');
-@include generateVariants($tertiary, 'tertiary');
-//@include generateVariants($tertiary, 'accent');
-@include generateVariants($gray, 'gray');
+
+$palettes: ('primary': $primary, 'secondary': $secondary, 'tertiary':$tertiary,'gray':$gray);
+
+@each $palette, $map in $palettes {
+  @include generateVariants($map, $palette);
+}
+
+
+// @include generateVariants($primary, 'primary');
+// @include generateVariants($secondary, 'secondary');
+// @include generateVariants($tertiary, 'tertiary');
+// //@include generateVariants($tertiary, 'accent');
+// @include generateVariants($gray, 'gray');
 
 
 

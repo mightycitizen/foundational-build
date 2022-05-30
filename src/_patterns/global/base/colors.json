@@ -1,6 +1,7 @@
 {
   "primary": {
     "default": "#2953cc",
+    "gradient": true,
     "variants": {
       "darker": "#1f3e99",
       "lighter": "#6986db",
@@ -9,6 +10,7 @@
   },
   "secondary": {
     "default": "#ffcd00",
+    "gradient": true,
     "variants": {
       "darker": "#eca806",
       "lighter": "#ffe57f",
@@ -17,6 +19,7 @@
   },
   "tertiary": {
     "default": "#d82626",
+    "gradient": true,
     "variants": {
       "darker": "#b42727",
       "lighter": "#e87d7d",

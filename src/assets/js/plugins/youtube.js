@@ -29,7 +29,7 @@ const initVideo = () => {
           vid.attr('tabindex', -1);
           const youtubeId = vid.data('video-id');
           player = new YT.Player(vid[0], {
-              playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 1 , 'showInfo': 0, 'mute': trigger !== 'click','rel': 0},
+              playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 1 , 'showInfo': 0, 'mute': 1,'rel': 0},
               videoId: youtubeId,
               events: {
                   'onReady': onPlayerReady,
@@ -67,7 +67,6 @@ const initVideo = () => {
             switch (event.target.getPlayerState()){
               case 2:
                 setTimeout(() => {
-                  //console.log('later', event.target.getPlayerState());
                   switch (event.target.getPlayerState()){
                     case 2:
                       playing = false;
@@ -75,15 +74,15 @@ const initVideo = () => {
                       break;
                     case 1:
                       playing = true;
-                      holder.addClass(playingClass);
+                      if (!firstPlay) holder.addClass(playingClass);
                       break;
                   }
                 }, 500);
                 break;
               case 1:
-
+                if (!firstPlay) player.unMute();
                 playing = true;
-                holder.addClass(playingClass);
+                if (!firstPlay) holder.addClass(playingClass);
                 break;
             }
             //console.log(event.target.getPlayerState());
@@ -119,14 +118,14 @@ const initVideo = () => {
             }
           }
 
-          player.clickHandler = (e) => {
-              e.preventDefault();
-              if (!playing) {
-                  player.playVideo();
-              } else {
-                  player.pauseVideo();
-              }
-          }
+          // player.clickHandler = (e) => {
+          //     e.preventDefault();
+          //     if (!playing) {
+          //         player.playVideo();
+          //     } else {
+          //         player.pauseVideo();
+          //     }
+          // }
         $(window).on('resize', Foundation.util.throttle(
           function(){
             setVideoSize();
@@ -157,6 +156,22 @@ const initVideo = () => {
     }, 50));
 }
 
-$(document).ready(function(){
-  initVideo(); // @video init call
+$(window).on('scroll', Foundation.util.throttle(
+  function(){
+    checkVideo();
+  }, 50));
+
+const checkVideo = () => {
+  if ($('body').hasClass('youtube-loaded')) return false;
+  const $video = $('[data-video-trigger]');
+  if ($video.isInViewport()){
+    initVideo();
+    $('body').addClass('youtube-loaded');
+  }
+
+}
+
+$(window).on('load', function(){
+  checkVideo();
+
 });

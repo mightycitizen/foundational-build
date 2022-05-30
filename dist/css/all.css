@@ -13212,6 +13212,22 @@ figure figcaption {
     margin-top: 0.4444444444rem;
   }
 }
+figure.img--center {
+  margin: 0.8888888889rem auto;
+  display: block;
+}
+figure.img--left, figure .img--right {
+  max-width: 40%;
+  margin-bottom: 0.8888888889rem;
+}
+figure.img--left {
+  float: left;
+  margin-right: 0.8888888889rem;
+}
+figure.img--right {
+  float: right;
+  margin-left: 0.8888888889rem;
+}
 
 address {
   font-style: normal;

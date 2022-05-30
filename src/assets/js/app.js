@@ -137,6 +137,24 @@ const initFormHelpers = () => {
   });
 }
 
+const initScrollHide = () => {
+  $(window).on('scroll', Foundation.util.throttle(function(e){
+
+    $('[data-scroll-hide],[data-scroll-show]').each(function(){
+      let scrollClass = 'is-inactive';
+      let attribute = 'data-scroll-hide';
+      if ($(this).attr('data-scroll-show')){
+        attribute = 'data-scroll-show';
+        scrollClass =  'is-active';
+      }
+      let scrollTrigger = $(window).scrollTop() + $(window).height()/2 > $(this).offset().top;
+      if ($(this).attr(attribute) > 0) scrollTrigger = $(window).scrollTop() > $(this).attr(attribute);
+      $(this).toggleClass(scrollClass,scrollTrigger);
+    });
+  }, 300));
+
+}
+
 // @smooth-scroll init
 const initSmoothScroll = () => {
   // In-page smooth scroll, exclude from modal windows
@@ -294,6 +312,7 @@ $(document).ready(function(){
   initFoundationAccessibility();  // @foundation init accessibility call
   initTableScroll(); // @table-scroll init call
 
+  initScrollHide(); // @scroll-hide init call
   initSmoothScroll(); // @smooth-scroll init
   initMenuHelpers(); // @menu helpers
   initFormHelpers(); // @form helpers init\

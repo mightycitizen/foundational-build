@@ -8818,6 +8818,59 @@ a.thumbnail image {
   margin-bottom: 0;
 }
 
+.backToTop {
+  position: fixed;
+  bottom: 1.6666666667rem;
+  right: 1.6666666667rem;
+  z-index: 10;
+  background-color: rgba(51, 51, 51, 0.3);
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  text-align: center;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #333;
+  width: 2.7777777778rem;
+  height: 2.7777777778rem;
+  padding-bottom: 0.1666666667rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s opacity, 0.3s transform;
+  transform: translateY(100px);
+}
+.backToTop_icon {
+  display: block;
+  font-size: 1.1111111111rem;
+}
+@media print, screen and (min-width: 64em) {
+  .backToTop_icon {
+    margin-bottom: 0.0555555556rem;
+  }
+}
+.backToTop_text {
+  font-size: 0.5555555556rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.56px;
+}
+.backToTop:hover, .backToTop:focus {
+  background-color: #333;
+  color: #333;
+  text-decoration: none;
+}
+.backToTop.is-active {
+  pointer-events: all;
+  transform: translateY(0);
+  opacity: 1;
+}
+
 .breadcrumbs {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 600;

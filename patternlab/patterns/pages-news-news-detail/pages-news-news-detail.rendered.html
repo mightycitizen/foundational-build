@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1653939490016" media="all" />
-    <link rel="stylesheet" href="../../css/all.css?1653939490016" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1653940651747" media="all" />
+    <link rel="stylesheet" href="../../css/all.css?1653940651747" media="all" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
   </head>
   <body class=""><div class="l-wrapper">
   <a href="#main" class="l-skip">Skip to main</a>
-<header class="l-header">
+<header class="l-header" id="header">
   <div class="grid-container">
     <div class="grid-x grid-margin-x align-middle">
       <div class="cell small-2 large-9">
@@ -426,7 +426,8 @@
               Important message goes here and is an optional link lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </div>
 </div>
-      <div class="hero text-white">
+    <div class="l-top" id="top">
+        <div class="hero text-white">
   <div class="grid-container">
     <div class="grid-x grid-margin-x">
       <div class="cell large-8 medium-6 medium-order-1">
@@ -450,17 +451,21 @@
       <div class="cell medium-12 medium-order-3">
         <div class="hero_content">
           <div class="grid-x grid-margin-x align-middle">
-                          <div class="cell medium-4">
-                <img src="//via.placeholder.com/900x500" alt="">
-              </div>
-                        <div class="cell medium-8">
+                        <div class="cell ">
                             <h1>News Detail</h1>
                                                 <ul class="inline-list inline-list--divided font-bold text-small m-b-3">
                                       </ul>
-                                                            <p class="lead">Optional subtitle</p>
-                                                            
-    <a href=""  class=" button secondary">Button</a>
-                                        </div>
+                                                                                        <ul class="inline-list inline-list--divided text-smaller font-bold ">
+      <li class="label">
+      <time datetime="2022-06-01">June 1</time>
+          </li>
+  
+      <li>
+      <ul class="inline-list inline-list--top">
+        <li><a href="category-1">Category 1</a></li><li><a href="category-2">Category 2</a></li>      </ul>
+    </li>
+  </ul>
+                          </div>
           </div>
 
         </div>
@@ -478,27 +483,9 @@
   </div>
 
 </div>
+    </div>
     <div class="l-body">
         
-<section id="example-tabs" class="section section--tight section--collapse  " >
-      <div class="grid-container ">
-            
-                    <div class="section_content">
-            <ul class="inline-list inline-list--divided text-smaller font-bold ">
-      <li class="label">
-      <time datetime="2021-08-12">August 12, 2021</time>
-          </li>
-  
-      <li>
-      <ul class="inline-list inline-list--top">
-        <li><a href="#">News Category</a></li>      </ul>
-    </li>
-  </ul>
-        </div>
-  
-            </div>
-</section>
-  
 <section id="example-tabs" class="section section--tight section--wysiwyg section--collapse section--narrower  " >
       <div class="grid-container ">
             
@@ -584,18 +571,18 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
 2022 </p>
 
   </div>
-  <a href="#top" class="backToTop" data-scroll-show="200" title="Back to top">
+  <a href="#header" class="backToTop" data-scroll-show="200" title="Back to top">
   <i class="backToTop_icon icon-chevron-up"></i>
   <span class="backToTop_text"><span class="show-for-sr">Back to </span>top</span>
 </a>
 </footer>
   </div><!--DO NOT REMOVE-->
 <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
-  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"wrappers-default","lineagePath":"../../patterns/wrappers-default/wrappers-default.rendered.html"},{"lineagePattern":"components-hero","lineagePath":"../../patterns/components-containers-hero/components-containers-hero.rendered.html"},{"lineagePattern":"components-section","lineagePath":"../../patterns/components-sections-section/components-sections-section.rendered.html"},{"lineagePattern":"components-meta","lineagePath":"../../patterns/components-inline-text-meta/components-inline-text-meta.rendered.html"},{"lineagePattern":"components-wysiwyg","lineagePath":"../../patterns/components-modules-wysiwyg/components-modules-wysiwyg.rendered.html"}],"lineage":[{"lineagePattern":"wrappers-default","lineagePath":"../../patterns/wrappers-default/wrappers-default.rendered.html"},{"lineagePattern":"components-hero","lineagePath":"../../patterns/components-containers-hero/components-containers-hero.rendered.html"},{"lineagePattern":"components-section","lineagePath":"../../patterns/components-sections-section/components-sections-section.rendered.html"},{"lineagePattern":"components-meta","lineagePath":"../../patterns/components-inline-text-meta/components-inline-text-meta.rendered.html"},{"lineagePattern":"components-wysiwyg","lineagePath":"../../patterns/components-modules-wysiwyg/components-modules-wysiwyg.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"pages","patternSubgroup":"news"},"patternExtension":"twig","patternName":"News Detail","patternPartial":"pages-news-detail","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"wrappers-default","lineagePath":"../../patterns/wrappers-default/wrappers-default.rendered.html"},{"lineagePattern":"components-hero","lineagePath":"../../patterns/components-containers-hero/components-containers-hero.rendered.html"},{"lineagePattern":"components-wysiwyg","lineagePath":"../../patterns/components-modules-wysiwyg/components-modules-wysiwyg.rendered.html"}],"lineage":[{"lineagePattern":"wrappers-default","lineagePath":"../../patterns/wrappers-default/wrappers-default.rendered.html"},{"lineagePattern":"components-hero","lineagePath":"../../patterns/components-containers-hero/components-containers-hero.rendered.html"},{"lineagePattern":"components-wysiwyg","lineagePath":"../../patterns/components-modules-wysiwyg/components-modules-wysiwyg.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"pages","patternSubgroup":"news"},"patternExtension":"twig","patternName":"News Detail","patternPartial":"pages-news-detail","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
 </script>
 
 <script>
-  window.patternData = {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"wrappers-default","lineagePath":"../../patterns/wrappers-default/wrappers-default.rendered.html"},{"lineagePattern":"components-hero","lineagePath":"../../patterns/components-containers-hero/components-containers-hero.rendered.html"},{"lineagePattern":"components-section","lineagePath":"../../patterns/components-sections-section/components-sections-section.rendered.html"},{"lineagePattern":"components-meta","lineagePath":"../../patterns/components-inline-text-meta/components-inline-text-meta.rendered.html"},{"lineagePattern":"components-wysiwyg","lineagePath":"../../patterns/components-modules-wysiwyg/components-modules-wysiwyg.rendered.html"}],"lineage":[{"lineagePattern":"wrappers-default","lineagePath":"../../patterns/wrappers-default/wrappers-default.rendered.html"},{"lineagePattern":"components-hero","lineagePath":"../../patterns/components-containers-hero/components-containers-hero.rendered.html"},{"lineagePattern":"components-section","lineagePath":"../../patterns/components-sections-section/components-sections-section.rendered.html"},{"lineagePattern":"components-meta","lineagePath":"../../patterns/components-inline-text-meta/components-inline-text-meta.rendered.html"},{"lineagePattern":"components-wysiwyg","lineagePath":"../../patterns/components-modules-wysiwyg/components-modules-wysiwyg.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"pages","patternSubgroup":"news"},"patternExtension":"twig","patternName":"News Detail","patternPartial":"pages-news-detail","patternState":"","patternEngineName":"twig-php","extraOutput":{}};
+  window.patternData = {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"wrappers-default","lineagePath":"../../patterns/wrappers-default/wrappers-default.rendered.html"},{"lineagePattern":"components-hero","lineagePath":"../../patterns/components-containers-hero/components-containers-hero.rendered.html"},{"lineagePattern":"components-wysiwyg","lineagePath":"../../patterns/components-modules-wysiwyg/components-modules-wysiwyg.rendered.html"}],"lineage":[{"lineagePattern":"wrappers-default","lineagePath":"../../patterns/wrappers-default/wrappers-default.rendered.html"},{"lineagePattern":"components-hero","lineagePath":"../../patterns/components-containers-hero/components-containers-hero.rendered.html"},{"lineagePattern":"components-wysiwyg","lineagePath":"../../patterns/components-modules-wysiwyg/components-modules-wysiwyg.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"pages","patternSubgroup":"news"},"patternExtension":"twig","patternName":"News Detail","patternPartial":"pages-news-detail","patternState":"","patternEngineName":"twig-php","extraOutput":{}};
 </script>
 
 <script>
@@ -631,10 +618,10 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1653939490016">
+<script id="pl-js-polyfill-insert-1653940651747">
   (function() {
     if (self != top) {
-      var cb = '1653939490016';
+      var cb = '1653940651747';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -647,7 +634,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1653939490016" nomodule>
+<script id="pl-js-insert-1653940651747" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -670,7 +657,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
   <script src="/core/misc/drupal.init.js"></script>
   -->
   <!-- Concatenated by Gulp so you don't have to manually add each file. -->
-  <script src="../../js/pattern-scaffolding.js?1653939490016"></script>
-  <script src="../../js/app.js?1653939490016"></script>
+  <script src="../../js/pattern-scaffolding.js?1653940651747"></script>
+  <script src="../../js/app.js?1653940651747"></script>
 </body>
 </html>

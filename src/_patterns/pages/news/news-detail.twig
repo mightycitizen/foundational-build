@@ -5,28 +5,24 @@
 }%}
 {% block top %}
   {% include "components/containers/hero.twig"  with {
-    heading: 'News Detail'
+    heading: 'News Detail',
+    subheading: null,
+    date: {
+      unformatted: '2022-06-01',
+      full: 'June 1',
+    },
+    categories: [{
+      title: 'Category 1',
+      url: 'category-1'
+    }, {
+      title: 'Category 2',
+      url: 'category-2'
+    }],
+    button: {},
+    image: featured_image | default
   } %}
 {% endblock %}
 {% block main %}
-  {% embed 'components/sections/section.twig' with {
-    section_class: 'section--tight section--collapse'
-  } %}
-    {% block section_content %}
-      {% include 'components/inline-text/meta.twig' with {
-        date: {
-          unformatted: "2021-08-12",
-          full: 'August 12, 2021',
-        },
-        categories: [
-          {
-            url: "#",
-            title: "News Category"
-          }
-        ]
-      }%}
-    {% endblock %}
-  {% endembed %}
   {% include 'components/modules/wysiwyg.twig' with {
     section_class: 'section--collapse'
   }%}

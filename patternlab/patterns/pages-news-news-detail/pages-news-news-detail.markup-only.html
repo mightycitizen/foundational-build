@@ -1,6 +1,6 @@
 <div class="l-wrapper">
   <a href="#main" class="l-skip">Skip to main</a>
-<header class="l-header">
+<header class="l-header" id="header">
   <div class="grid-container">
     <div class="grid-x grid-margin-x align-middle">
       <div class="cell small-2 large-9">
@@ -407,7 +407,8 @@
               Important message goes here and is an optional link lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </div>
 </div>
-      <div class="hero text-white">
+    <div class="l-top" id="top">
+        <div class="hero text-white">
   <div class="grid-container">
     <div class="grid-x grid-margin-x">
       <div class="cell large-8 medium-6 medium-order-1">
@@ -431,17 +432,21 @@
       <div class="cell medium-12 medium-order-3">
         <div class="hero_content">
           <div class="grid-x grid-margin-x align-middle">
-                          <div class="cell medium-4">
-                <img src="//via.placeholder.com/900x500" alt="">
-              </div>
-                        <div class="cell medium-8">
+                        <div class="cell ">
                             <h1>News Detail</h1>
                                                 <ul class="inline-list inline-list--divided font-bold text-small m-b-3">
                                       </ul>
-                                                            <p class="lead">Optional subtitle</p>
-                                                            
-    <a href=""  class=" button secondary">Button</a>
-                                        </div>
+                                                                                        <ul class="inline-list inline-list--divided text-smaller font-bold ">
+      <li class="label">
+      <time datetime="2022-06-01">June 1</time>
+          </li>
+  
+      <li>
+      <ul class="inline-list inline-list--top">
+        <li><a href="category-1">Category 1</a></li><li><a href="category-2">Category 2</a></li>      </ul>
+    </li>
+  </ul>
+                          </div>
           </div>
 
         </div>
@@ -459,27 +464,9 @@
   </div>
 
 </div>
+    </div>
     <div class="l-body">
         
-<section id="example-tabs" class="section section--tight section--collapse  " >
-      <div class="grid-container ">
-            
-                    <div class="section_content">
-            <ul class="inline-list inline-list--divided text-smaller font-bold ">
-      <li class="label">
-      <time datetime="2021-08-12">August 12, 2021</time>
-          </li>
-  
-      <li>
-      <ul class="inline-list inline-list--top">
-        <li><a href="#">News Category</a></li>      </ul>
-    </li>
-  </ul>
-        </div>
-  
-            </div>
-</section>
-  
 <section id="example-tabs" class="section section--tight section--wysiwyg section--collapse section--narrower  " >
       <div class="grid-container ">
             
@@ -565,7 +552,7 @@ Deprecated: DateTime::__construct(): Passing null to parameter #1 ($datetime) of
 2022 </p>
 
   </div>
-  <a href="#top" class="backToTop" data-scroll-show="200" title="Back to top">
+  <a href="#header" class="backToTop" data-scroll-show="200" title="Back to top">
   <i class="backToTop_icon icon-chevron-up"></i>
   <span class="backToTop_text"><span class="show-for-sr">Back to </span>top</span>
 </a>

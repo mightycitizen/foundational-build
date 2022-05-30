@@ -13037,6 +13037,7 @@ button[type=submit]:not(.is-loading) {
   background-color: #ccc;
   color: #666;
   opacity: 1;
+  cursor: not-allowed;
 }
 
 .is-invalid-input:not(:focus), .fui-error:not(:focus) {

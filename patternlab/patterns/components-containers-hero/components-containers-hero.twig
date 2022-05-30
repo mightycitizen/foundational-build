@@ -14,7 +14,7 @@
               </div>
             {% endif %}
             <div class="cell {% if image | default %}medium-8{% endif %}">
-              {% if date | default %}
+              {% if date | default and endDate | default %}
                 {% include patternlab_namespace | default ~ 'components/inline-text/meta.twig' with {
                   date: date,
                   endDate: endDate
@@ -35,16 +35,17 @@
               {% if subheading | default %}
                 <p class="lead">{{ subheading }}</p>
               {% endif %}
-              {% if button | default %}
-                {% set button = button | merge({
+              {% if hero_button | default %}
+                {% set hero_button = hero_button | merge({
                   modifier: 'secondary'
                 }) %}
                 {% include patternlab_namespace | default ~ 'components/links/button.twig' with {
-                  button: button
+                  button: hero_button
                 } %}
               {% endif %}
               {% if categories | default %}
                 {% include patternlab_namespace | default ~ 'components/inline-text/meta.twig' with {
+                  date: endDate | default is empty ? date : false,
                   categories: categories
                 } only%}
               {% endif %}

@@ -217,6 +217,18 @@ const initTableScroll = () => {
 
 // @foundation helpers init
 const initFoundationHelpers = () => {
+  $('[data-dropdown-trigger]').on('click', 'a', function(e){
+    e.preventDefault();
+    const text = $(e.target).text();
+    const $dropdown = $(this).closest('[data-dropdown-trigger]');
+    const dropdownId = $dropdown.attr('id');
+    const $toggle = $('[data-toggle="'+dropdownId+'"]');
+    $toggle.text(text);
+    $dropdown.foundation('close');
+    // console.log(dropdownId);
+    // console.log(text);
+    // console.log($toggle);
+  })
   $(document).on('change.zf.tabs', function(e, tab, pane, $target){
     const tabNav = $(tab).parent();
     //console.log(tabNav);
@@ -248,6 +260,33 @@ const initFoundationHelpers = () => {
     // console.log($target);
     //alert('test');
   });
+}
+
+// @anchor update
+
+const initAnchorUpdate = () => {
+  if ($('.anchormenu.sticky').length){
+    $(window).on('scroll', Foundation.util.throttle(function(){
+      let activeAnchor;
+      $('.anchormenu a').each(function(){
+        const $anchor = $(this);
+        const $section = $($anchor.attr('href'));
+        if ($section && !$('html').hasClass('is-scrolling')){
+          if ($section.isInViewport()){
+            //activeSection = $section;
+            activeAnchor = $anchor;
+          }else{
+            $section.removeClass('is-active');
+          }
+        }
+      });
+      if (activeAnchor){
+        activeAnchor.parent().addClass('is-active').siblings().removeClass('is-active');
+        const $anchorMenu = activeAnchor.closest('.anchormenu');
+        $anchorMenu.find('.dropdown_toggle').text(activeAnchor.text());
+      }
+    },50));
+  }
 }
 
 
@@ -309,6 +348,7 @@ $(document).ready(function(){
   //Foundation.MediaQuery.upTo('medium');
 
   initLazy(); // @lazy init call
+  initAnchorUpdate(); // @anchor update init
   initFoundationAccessibility();  // @foundation init accessibility call
   initTableScroll(); // @table-scroll init call
 

@@ -8836,6 +8836,10 @@ a.thumbnail image {
 .dropdown-pane .menu a {
   padding: 0.4444444444rem 0;
 }
+.dropdown-pane .menu .is-active a {
+  background: none;
+  text-decoration: underline;
+}
 
 .card {
   position: relative;

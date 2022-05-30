@@ -24,7 +24,7 @@
 
   {% include 'components/modules/accordion.twig' with { id: 'section-1', accordion_id: 'accordion', items: items} only %}
 
-  {% include 'components/modules/accordion.twig' with {accordion_id: 'accordion_steps', items: items, modifier: "steps"} only %}
+  {% include 'components/modules/accordion.twig' with {id: 'section-2', accordion_id: 'accordion_steps', items: items, modifier: "steps"} only %}
   {% include 'components/modules/accordion.twig' with {
     accordion_id: 'accordion_icons',
   items:

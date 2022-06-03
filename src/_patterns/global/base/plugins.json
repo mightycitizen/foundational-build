@@ -3,7 +3,7 @@
   "lity": true,
   "ajaxify": false,
   "slick": true,
-  "tippy": false,
+  "tippy": true,
   "youtube": true,
   "vimeo": true,
   "slider": false,

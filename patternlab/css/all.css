@@ -9805,6 +9805,56 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   margin-bottom: 0;
 }
 
+/* ------------------ Tooltip ------------------ */
+.tippy-box,
+.tippy-tooltip {
+  background: #2953cc;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  max-width: 10.25rem !important;
+  padding: 0.6rem 0.65rem;
+  text-align: left;
+}
+.tippy-box h2,
+.tippy-box h3,
+.tippy-box h4,
+.tippy-tooltip h2,
+.tippy-tooltip h3,
+.tippy-tooltip h4 {
+  font-size: 0.8888888889rem;
+}
+
+.tippy-close {
+  display: none;
+}
+
+.tippy-content {
+  padding: 0;
+}
+
+.tippy-tooltip[data-placement^=left] > .tippy-arrow {
+  border-right-color: #2953cc;
+}
+
+.tippy-arrow {
+  border-right-color: #2953cc;
+  color: #2953cc;
+  height: 0;
+  width: 0;
+}
+.tippy-arrow:before {
+  display: inline-block;
+}
+
+[data-tippy-content] {
+  margin-left: 0.1666666667rem;
+  display: inline-block;
+  vertical-align: middle;
+  color: #2953cc;
+}
+
 .countdown {
   justify-content: center;
   margin: 0 -0.4444444444rem;

@@ -43,7 +43,7 @@
         </li>
       {% endfor %}
     </ul>
-    <p>Copyright &copy; {{ now | date('Y') }} {{ site_name | default }}</p>
+    <p>Copyright &copy; {{ now | default(2022) }} {{ site_name | default }}</p>
 
   </div>
   {% include 'components/utils/back-to-top.twig' %}

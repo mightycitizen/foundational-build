@@ -8740,10 +8740,7 @@ a.thumbnail image {
   width: 2.7777777778rem;
   height: 2.7777777778rem;
   padding-bottom: 0.1666666667rem;
-  opacity: 0;
   pointer-events: none;
-  transition: 0.25s opacity, 0.3s transform;
-  transform: translateY(100px);
 }
 .backToTop_icon {
   display: block;
@@ -8771,8 +8768,6 @@ a.thumbnail image {
 }
 .backToTop.is-active {
   pointer-events: all;
-  transform: translateY(0);
-  opacity: 1;
 }
 
 .breadcrumbs {
@@ -12726,6 +12721,22 @@ html, body, .l-wrapper {
 }
 .unstyled-blockquote:before {
   left: 0;
+}
+
+[data-scroll-show] {
+  opacity: 0;
+  transition: 0.25s opacity, 0.3s transform;
+  transform: translateY(100px);
+}
+[data-scroll-show][data-scroll-from=left] {
+  transform: translateX(-100px);
+}
+[data-scroll-show][data-scroll-from=right] {
+  transform: translateX(100px);
+}
+[data-scroll-show].is-active {
+  transform: translateX(0) translateY(0);
+  opacity: 1;
 }
 
 .font-primary {

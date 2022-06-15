@@ -1,5 +1,5 @@
 {% set heading_level = card.heading.level | default ? card.heading.level : 3 %}
-<div class="card {{ card.class | default }} {{ card.modifier | default ? 'card--' ~ card.modifier : '' }} {% if card.clickCard | default %}card--click{% endif %}" >
+<div class="card {{ card.class | default }} {{ card.modifier | default ? 'card--' ~ card.modifier : '' }} {% if card.clickCard | default %}card--click{% endif %}" data-scroll-show>
   {% if card.header | default %}
   <div class="card-divider">
     {{ card.header }}

@@ -5,13 +5,13 @@
       <div class="section_intro {{ intro_class }}">
         <div class="grid-x grid-margin-x align-middle align-center">
           {% if section_image | default %}
-            <div class="cell medium-5 large-6">
+            <div class="cell medium-5 large-6"  data-scroll-show data-scroll-from="left">
               <div class="image-size--landscapeCroppedMedium">
                 <img data-src="{{ section_image.src }}" alt="{{ section_image.alt }}" class="js-lazy">
               </div>
             </div>
           {% endif %}
-          <div class="cell {% if section_image | default %}medium-7 large-6{% elseif style | default is empty %}medium-8{% endif %}">
+          <div class="cell {% if section_image | default %}medium-7 large-6{% elseif style | default is empty %}medium-8{% endif %}"  data-scroll-show  {% if section_image | default %}data-scroll-from="right"{% endif %}>
             <h2 class="section_heading">{{ section_heading }}</h2>
             {% if section_subheading | default %}
               <h3 class="section_subheading">{{ section_subheading }}</h3>
@@ -31,7 +31,7 @@
 {% endset %}
 {% set section_content %}
   {% if block('section_content') | trim is not empty%}
-    <div class="section_content">
+    <div class="section_content" data-scroll-show>
       {% block section_content %}
       {% endblock %}
     </div>
@@ -43,15 +43,16 @@
   <div class="{% if exclude_container | default is empty %}grid-container{% endif %} {{ grid_class | default }}">
     {% if style | default and (style == 'side') %}
       <div class="grid-x align-middle align-center">
-        <div class="cell medium-8">
+        <div class="cell medium-8" data-scroll-show data-scroll-from="left">
           {{ section_intro }}
         </div>
-        <div class="cell large-4">
+        <div class="cell large-4"  data-scroll-show data-scroll-from="right">
           {{ section_content }}
         </div>
       </div>
     {% else %}
       {{ section_intro }}
+
       {% if (style | default and (style == 'narrow' or style == 'narrower')) and exclude_container | default is empty %}
         {% set content %}
           {{ section_content }}
@@ -60,6 +61,9 @@
       {% else %}
         {{ section_content }}
       {% endif %}
+
+
     {% endif %}
+
   </div>
 </section>

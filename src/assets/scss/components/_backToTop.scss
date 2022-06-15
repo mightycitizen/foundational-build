@@ -40,15 +40,15 @@
     color: $black;
     text-decoration: none;
   }
-  opacity: 0;
   pointer-events: none;
   //display: block;
-  transition: 0.25s opacity, 0.3s transform;
-  transform: translateY(100px);
+  // opacity: 0;
+  // transition: 0.25s opacity, 0.3s transform;
+  // transform: translateY(100px);
   &.is-active{
     pointer-events: all;
-    transform: translateY(0);
-    opacity: 1;
+    // transform: translateY(0);
+    // opacity: 1;
   }
   // &:before{
   //   margin-top: rem-calc(-6);

@@ -1,4 +1,5 @@
 {
+  "scroll-show": true,
   "selectize": true,
   "lity": true,
   "ajaxify": false,

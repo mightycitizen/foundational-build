@@ -12,9 +12,7 @@
         <div class="cell medium-4 {% if style | default == 'side' %}large-12{% endif %}">
           {% include patternlab_namespace | default ~ 'components/informational/statistic.twig' with {
             text: statistic.text,
-            value: statistic.value,
-            link: statistic.link
-          }%}
+            value: statistic.value
         </div>
       {% endfor %}
     </div>

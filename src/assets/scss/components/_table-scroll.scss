@@ -2,7 +2,7 @@
 .table-scroll {
 	width: 100%;
 	margin-bottom: rem-calc(15);
-  @include breakpoint(small only){
+  @include media-breakpoint-only(sm){
 		padding-bottom: rem-calc(5);
 		overflow-x: scroll;
 		overflow-y: hidden;
@@ -21,7 +21,7 @@
 			&:after{
 				width: rem-calc(35);
 				height: 160%;
-				background: radial-gradient(at right, rgba($medium-gray,0.4) 0%,  rgba($medium-gray,0) 50%);
+				background: radial-gradient(at right, rgba($gray-600,0.4) 0%,  rgba($gray-600,0) 50%);
 				right: 0;
 				top: -30%;
 				opacity: 1;
@@ -42,7 +42,7 @@
 
 			top: 0;
 			height: calc(100% - #{rem-calc(20)});
-			background-color: $light-gray;
+			background-color: $gray-300;
 			z-index: 1;
 			width: rem-calc(1);
 
@@ -55,7 +55,7 @@
 		}
 
   }
-	@include breakpoint(large) {
+	@include media-breakpoint-up(large) {
 		margin-bottom: rem-calc(40);
 	}
 
@@ -64,7 +64,7 @@
 		//table-layout: fixed;
 		margin-bottom: 0;
 
-		// @include breakpoint(small only) {
+		// @include media-breakpoint-only(sm) {
 		// 	width: 100%;
 		// }
 	}

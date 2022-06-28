@@ -38,13 +38,13 @@
       .read-more{
         text-decoration: underline;
       }
-      //box-shadow: 0 0 6px 1px rgba($medium-gray, 0.5);
+      //box-shadow: 0 0 6px 1px rgba($gray-600, 0.5);
     }
   }
   &--special{
     position: relative;
     border: 0;
-    background-color: $primary-color;
+    background-color: $primary;
     .card-section{
       position: absolute;
       bottom: 0;
@@ -64,12 +64,12 @@
       top: auto;
       bottom: 0;
       transition: 0.3s height;
-      background: linear-gradient(to bottom, rgba($primary-color,0), $primary-color);
+      background: linear-gradient(to bottom, rgba($primary,0), $primary);
     }
   }
   &--thumb{
     .card-image{
-      @include breakpoint(small only){
+      @include media-breakpoint-only(sm){
         margin: auto;
         display: block;
         width: rem-calc(176);
@@ -77,13 +77,13 @@
     }
   }
   &--horizontal{
-    @include breakpoint(large){
+    @include media-breakpoint-up(large){
       .card-section{
         //@include spacer(padding,x,4,4);
         @include spacer(padding,top,5);
       }
     }
-    // @include breakpoint(medium){
+    // @include media-breakpoint-up(medium){
     //   .cell{
     //     &:not(:first-child):not([class*=medium-order-1]){
     //       margin-left: rem-calc(10);

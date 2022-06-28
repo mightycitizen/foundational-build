@@ -5,9 +5,9 @@
   .selectize{
     &-input{
       font-size: $input-font-size;
-      padding: $input-padding;
-      border-radius: $input-radius;
-      box-shadow: $input-shadow;
+      padding: $input-padding-x $input-padding-y;
+      border-radius: $input-border-radius;
+      box-shadow: $input-box-shadow;
       > input{
         font-size: inherit;
         margin-top: rem-calc(-2) !important;
@@ -27,7 +27,7 @@
     &-dropdown{
       font-size: $input-font-size;
       .option{
-        padding: $input-padding;
+        padding: $input-padding-x $input-padding-y;
         &.active{
           background-color: map-get($additional-palette,'secondary-lightest');
         }

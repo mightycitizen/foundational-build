@@ -4,13 +4,13 @@
   &-heading{
     &:focus-within{
       + .accordion-title{
-        background-color: $accordion-item-background-hover;
+        background-color: $accordion-bg;
       }
     }
   }
   &-title{
     line-height: 1.2;
-    background-color: $accordion-background;
+    background-color: $accordion-bg;
     @include spacer(padding,top,2,2);
     @include spacer(padding,x,4,3);
     @include spacer(padding,bottom,2,2);
@@ -22,14 +22,14 @@
     font-weight: bold;
 
 
-    @include font-scale-mobile($accordion-title-font-size,20);
+    @include font-scale-mobile(20px,20);
 
     &:before{
       right: 0;
       @include spacer(margin,right,4,3);
       font-weight: normal;
       font-size: rem-calc(16);
-      color: $primary-color;
+      color: $primary;
       font-family: $icomoon-font-family;
       content: $icon-chevron-down !important;
     }
@@ -40,10 +40,10 @@
     }
     &:hover, &:focus{
       //color: $white;
-      background-color: $accordion-item-background-hover;
+      background-color: $accordion-bg;
     }
     &:focus{
-      background-color: $accordion-background;
+     background-color: $accordion-bg;
     }
     &--notch{
       position: relative;
@@ -55,14 +55,14 @@
         left: 0;
         top: 0;
         height: 100%;
-        color: $primary-color;
+        color: $primary;
         display: inline-flex;
         font-weight: bold;
         align-items: center;
         justify-content: flex-end;
         width: rem-calc($spacer*4);
         //background-color: map-get($additional-palette, 'primary-darker');
-        @include breakpoint(medium){
+        @include media-breakpoint-up(md){
           width: rem-calc($spacer*6);
         }
 
@@ -84,7 +84,7 @@
     }
   }
   &-item{
-    box-shadow: $global-box-shadow;
+    box-shadow: $box-shadow;
     &:not(:last-child){
       @include spacer(margin, bottom, 3);
       //border-bottom: 2px solid $white;
@@ -97,7 +97,7 @@
       @include spacer(padding, left,7,4);
       .accordion-notch{
         width: rem-calc($spacer*3);
-        @include breakpoint(medium){
+        @include media-breakpoint-up(md){
           width: rem-calc($spacer*5);
         }
         &:before{

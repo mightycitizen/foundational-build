@@ -2,8 +2,8 @@
   &_toggle{
     background-color: $white;
     padding: rem-calc($spacer*2 $spacer);
-    border-radius: $global-radius;
-    border: $input-border;
+    border-radius: $border-radius;
+    //border: $input-border;
     text-align: left;
     width: 100%;
     @include dropdown();
@@ -14,11 +14,11 @@
     position: relative;
   }
   &-pane{
-    color: $body-font-color;
+    color: $body-color;
     padding: rem-calc($spacer $spacer*2);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    border: $input-border;
+    //border: $input-border;
     border-top: 0;
     min-width: 100%;
     //transform: translateY(-2px);

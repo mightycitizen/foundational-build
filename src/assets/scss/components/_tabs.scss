@@ -13,32 +13,32 @@
     button{
       white-space: nowrap;
       @include spacer(margin,right,1);
-      font-weight: $global-weight-bold;
+      font-weight: $font-weight-bold;
       cursor: pointer;
-      color: $tab-color;
-      //font-size: $tab-item-font-size;
+      color: $nav-link-color;
+      //font-size: $nav-link-font-size;
       @include spacer(padding,y,2.25,1);
       @include spacer(padding,x,5,1);
-      background-color: $lightest-gray;
-      @include font-scale-mobile($tab-item-font-size,18,true);
+      background-color: $gray-100;
+      @include font-scale-mobile(20px,18,true);
       &:hover{
-        background-color: $tab-item-background-hover;
+        background-color: $nav-link-hover-color;
       }
-      @include breakpoint(xlarge){
+      @include media-breakpoint-up(xlarge){
         min-width: rem-calc(160);
       }
     }
     &.is-active{
       button{
-        background-color: $tab-background-active;
-        color: $tab-active-color;
+        background-color: $nav-tabs-link-active-bg;
+        color: $nav-tabs-link-active-color;
       }
     }
   }
   &-content{
     position: relative;
     border: 0;
-    box-shadow: $global-box-shadow;
+    box-shadow: $box-shadow;
   }
   &-panel{
     @include spacer(padding,y,5,4);
@@ -47,7 +47,7 @@
       margin-bottom: 0;
     }
   }
-  // @include breakpoint(medium down){
+  // @include media-breakpoint-down(medium){
 
   // }
 }

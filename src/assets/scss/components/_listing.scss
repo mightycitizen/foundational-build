@@ -4,14 +4,14 @@
       margin-bottom: 0;
     }
 
-    border-bottom: $hr-border;
+    border-bottom: $hr-border-width;
     @include spacer(padding,bottom,5,4);
     @include spacer(padding,top,5,4);
 
     .media-object-section:first-child{
       padding-left: 0;
       &:not(:last-child){
-        @include breakpoint(medium){
+        @include media-breakpoint-up(medium){
           max-width: 40%;
           //padding-right: map-get($grid-margin-gutters,medium);
           img{
@@ -19,14 +19,14 @@
             max-width: 100%;
           }
         }
-        @include breakpoint(large){
+        @include media-breakpoint-up(large){
           //padding-right: map-get($grid-margin-gutters,large);
         }
         padding-left: 0;
       }
     }
 
-    @include breakpoint(small only){
+    @include media-breakpoint-only(sm){
 
       .media-object{
         &:not(.media-object--stack){

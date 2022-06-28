@@ -17,7 +17,7 @@ html, body, .l-wrapper{
 
 .l-header{
   padding: rem-calc(24 0);
-  @include breakpoint(large){
+  @include media-breakpoint-up(large){
     padding: rem-calc(40 0 0);
   }
   //background-color: map-get($additional-palette,'secondary-darkest');
@@ -31,25 +31,25 @@ html, body, .l-wrapper{
 
 .l-footer{
   padding: rem-calc(30 0);
-  @include breakpoint(large){
+  @include media-breakpoint-up(large){
     padding: rem-calc(32 0);
   }
-  background-color: $primary-color;
+  background-color: $primary;
   //color: $white;
   flex: none;
   .social-media{
-    @include breakpoint(small only){
+    @include media-breakpoint-only(sm){
       @include spacer(margin,y,4);
     }
   }
   .menu{
     display: flex;
-    font-weight: $global-weight-bold;
+    font-weight: $font-weight-bold;
     justify-content: space-between;
-    margin-left: rem-calc(-1*get-side($menu-items-padding,left));
-    margin-right: rem-calc(-1*get-side($menu-items-padding,right));
+    // margin-left: rem-calc(-1*get-side($menu-items-padding,left));
+    // margin-right: rem-calc(-1*get-side($menu-items-padding,right));
 
-    @include breakpoint(medium){
+    @include media-breakpoint-up(medium){
       @include spacer(margin,bottom,3);
     }
     a{
@@ -76,7 +76,7 @@ html, body, .l-wrapper{
   &:focus{
     transform: translateY(0%);
     opacity: 1;
-    background-color: $primary-color;
+    background-color: $primary;
     color: $white;
     padding: rem-calc(3 5);
   }

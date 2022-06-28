@@ -28,7 +28,7 @@ ul, ol{
     //       position: absolute;
     //       right: 100%;
     //       margin-right: rem-calc(10);
-    //       color: $primary-color;
+    //       color: $primary;
     //       display: inline-block;
     //     }
     //   }
@@ -41,7 +41,7 @@ ul, ol{
 //       li{
 //         &:before{
 //           content: '';
-//           background-color: $primary-color;
+//           background-color: $primary;
 //           width: rem-calc(5);
 //           height: rem-calc(5);
 //           top: rem-calc(11);
@@ -55,10 +55,10 @@ ul, ol{
 
 
 blockquote{
-  //border-left: 8px solid $primary-color;
+  //border-left: 8px solid $primary;
   position: relative;
   //padding-left: rem-calc(27);
-  line-height: $lead-lineheight;
+  //line-height: $lead-lineheight;
   @include font-scale-mobile($lead-font-size, 20, true);
   p{
     margin-bottom: rem-calc(15);
@@ -69,7 +69,7 @@ blockquote{
     position: absolute;
     left: rem-calc(18);
     top: rem-calc(2);
-    //color: $primary-color;
+    //color: $primary;
     font-size: rem-calc(20);
   }
 
@@ -118,7 +118,7 @@ table{
   tbody{
     font-size: rem-calc(16);
   }
-  @include breakpoint(small only){
+  @include media-breakpoint-only(sm){
     td, th{
       padding-top: rem-calc(10);
       padding-bottom: rem-calc(7);
@@ -131,12 +131,12 @@ figure{
   margin-bottom: $paragraph-margin-bottom;
   figcaption{
     //font-size: rem-calc(16);
-    font-weight: $global-weight-bold;
+    font-weight: $font-weight-bold;
     margin-top: rem-calc(12);
     line-height: 1.625;
     display: block;
     font-size: rem-calc(16);
-    @include breakpoint(large){
+    @include media-breakpoint-up(large){
       margin-top: rem-calc(8);
 
     }

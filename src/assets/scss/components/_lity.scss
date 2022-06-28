@@ -14,7 +14,7 @@
       width: calc(100% - #{rem-calc(60)});
       max-width: rem-calc(1076);
       &:after{
-        box-shadow: $global-box-shadow;
+        box-shadow: $box-shadow;
       }
       > div > *:last-child{
         margin-bottom: 0;
@@ -23,14 +23,14 @@
     &-close{
       &, &:hover, &:focus{
         text-shadow: none;
-        color: $primary-color;
+        color: $primary;
         position: absolute;
         //right: rem-calc(54);
         top: 0;
         right: rem-calc(45);
         @include spacer(margin,top,5);
         font-size: rem-calc(50);
-        @include breakpoint(large){
+        @include media-breakpoint-up(large){
           right: rem-calc(54);
           //top: rem-calc(40);
         }

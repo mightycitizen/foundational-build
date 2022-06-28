@@ -18,7 +18,7 @@ $error-message-class: '.fui-error-message';
     display: flex;
   }
   .fui-required{
-    color: $alert-color;
+    color: $danger;
   }
 
   .fui-alert{
@@ -26,10 +26,10 @@ $error-message-class: '.fui-error-message';
     @include spacer(margin,bottom,3);
     font-weight: bold;
     &-error{
-      background-color: rgba($alert-color,0.5);
+      background-color: rgba($danger,0.5);
     }
     &-success{
-      background-color: rgba($success-color,0.5);
+      background-color: rgba($success,0.5);
     }
   }
 
@@ -46,21 +46,21 @@ $error-message-class: '.fui-error-message';
 
   .fui-error{
     &, &:focus{
-      border-color: $input-error-color;
+      border-color: $danger;
     }
   }
 
   .fui-error-message{
-    color: $input-error-color;
-    font-size: $input-error-font-size;
-    font-weight: $input-error-font-weight;
+    color: $danger;
+    // font-size: $input-error-font-size;
+    // font-weight: $input-error-font-weight;
     @include spacer(margin,top,0.5);
   }
 
   .fui-instructions{
-    color: $helptext-color;
-    font-size: $helptext-font-size;
-    font-style: $helptext-font-style;
+    // color: $helptext-color;
+    // font-size: $helptext-font-size;
+    // font-style: $helptext-font-style;
 
     .fui-instructions-above-input &{
       @include spacer(margin,bottom,2);
@@ -107,7 +107,7 @@ input[type="radio"]{
         }
 
         &:before {
-          border: 2px solid $primary-color;
+          border: 2px solid $primary;
           height: rem-calc(16);
           width: rem-calc(16);
           top: rem-calc(8);
@@ -120,7 +120,7 @@ input[type="radio"]{
           text-decoration: underline;
 
           &:before {
-            border-color: $primary-color;
+            border-color: $primary;
           }
         }
       }
@@ -160,8 +160,8 @@ input[type="checkbox"] {
         +label {
 
           &:before {
-            background-color: $primary-color;
-            border-color: $primary-color;
+            background-color: $primary;
+            border-color: $primary;
           }
 
 
@@ -178,7 +178,7 @@ input[type="radio"] {
       +label {
         &:after {
           opacity: 0;
-          background-color: $primary-color;
+          background-color: $primary;
           height: rem-calc(8);
           width: rem-calc(8);
           top: rem-calc(12);
@@ -200,7 +200,7 @@ input[type="radio"], input[type="checkbox"]{
     &:not(foo){
       &:focus:not(:checked){
         + label{
-          color: $primary-color;
+          color: $primary;
           text-decoration: underline;
         }
       }
@@ -225,7 +225,7 @@ input[type="radio"], input[type="checkbox"]{
       &:checked {
 
         +label {
-          background-color: $secondary-color !important;
+          background-color: $secondary !important;
           color: $white;
         }
       }
@@ -234,14 +234,14 @@ input[type="radio"], input[type="checkbox"]{
 }
 
 .form-required{
-  color: $alert-color;
+  color: $danger;
 }
 
 .input-group{
   &.simple{
     .loader{
       div{
-        border-top-color: $primary-color;
+        border-top-color: $primary;
         border-width: 4px;
       }
       position: absolute;
@@ -255,12 +255,12 @@ input[type="radio"], input[type="checkbox"]{
       border-right: 0;
       //padding: rem-calc()
       &::placeholder {
-        color: $medium-gray;
+        color: $gray-600;
         //font-family: 'Nunito Sans';
         font-size: rem-calc(14);
         text-transform: uppercase;
         letter-spacing: 1px;
-        font-weight: $global-weight-bold;
+        font-weight: $font-weight-bold;
       }
     }
     input.input-group-field{
@@ -271,17 +271,17 @@ input[type="radio"], input[type="checkbox"]{
     }
     input.input-group-field:focus, .input-wrapper:focus-within{
       + .input-group-button{
-        border: $input-border-focus;
+        //border: $input-border-focus;
         border-left: 0;
       }
     }
     .input-group-button{
       position: relative;
-      border: $input-border;
+      //border: $input-border;
       border-left: 0;
       padding: rem-calc(0 2*$spacer);
       background-color: $white;
-      color: $primary-color;
+      color: $primary;
       transition: $input-transition;
       button{
         color: inherit;
@@ -333,7 +333,7 @@ legend{
   color: $form-label-color;
   font-size: $form-label-font-size;
   font-weight: $form-label-font-weight;
-  line-height: $form-label-line-height;
+ // line-height: $form-label-line-height;
 }
 .input{
   &-wrapper{
@@ -364,8 +364,8 @@ button{
 
 .button[disabled]{
   &, &:hover, &:focus{
-    background-color: $light-gray;
-    color: $medium-gray;
+    background-color: $gray-300;
+    color: $gray-600;
     opacity: 1;
     cursor: not-allowed;
   }
@@ -374,14 +374,14 @@ button{
 // errors
 .is-invalid-input, #{$input-error-class}{
   &:not(:focus){
-    color: $body-font-color;
+    color: $body-color;
     background-color: $white;
   }
 }
 
 .form-error, #{$error-message-class}{
   background-color: map-get($additional-palette,'tertiary-lightest');
-  color: $body-font-color;
+  color: $body-color;
   padding: rem-calc(8 10);
   margin-top: 0;
 }
@@ -393,8 +393,8 @@ button{
     width: 100%;
   }
   .button[type="submit"]{
-    height: ($input-font-size * unitless-calc($input-line-height)) + (get-side($input-padding, 'top') + get-side($input-padding, 'bottom'));
-    @include breakpoint(small only){
+    height: ($input-font-size * ($input-line-height)) + $input-padding-y*2;
+    @include media-breakpoint-only(sm){
       @include spacer(margin,top,2);
     }
   }

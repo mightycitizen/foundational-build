@@ -11,10 +11,10 @@
   // }
   &-previous, &-next{
     // a{
-    //   color: $primary-color;
+    //   color: $primary;
     //   &:hover{
     //     background-color: transparent;
-    //     color: $primary-color;
+    //     color: $primary;
     //   }
     // }
   }
@@ -32,7 +32,7 @@
   // }
   &-page{
     // font-family: 'Nunito Sans';
-    // font-weight: $global-weight-bold;
+    // font-weight: $font-weight-bold;
     font-size: rem-calc(16);
     strong{
       @include size(32);
@@ -40,12 +40,12 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background-color: $primary-color;
+      background-color: $primary;
       color: $white;
       border-radius: 100%;
     }
     a{
-      color: $primary-color;
+      color: $primary;
     }
   }
 }

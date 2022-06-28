@@ -83,38 +83,38 @@
 
 @mixin spacer($prop,$direction,$size,$mobile-override: false, $important: null){
     //#{$prop}: $size !important;
-    $mobile-spacer: $size*$spacer-mobile;
-    @if ($mobile-override){
-      $mobile-spacer: $mobile-override * $spacer;
-    }
-    $desktop-spacer: $size*$spacer;
-    @if (index((left, right, top, bottom),$direction)) {
-      #{$prop}-#{$direction}: rem-calc($mobile-spacer)   $important;
-      @include breakpoint(medium) {
-        #{$prop}-#{$direction}: rem-calc($desktop-spacer)   $important;
-      }
-    }@else if (index((y,x),$direction)) {
-      @if ($direction == x){
-        #{$prop}-left: rem-calc($mobile-spacer)   $important;
-        #{$prop}-right: rem-calc($mobile-spacer)   $important;
-        @include breakpoint(medium) {
-          #{$prop}-left: rem-calc($desktop-spacer)   $important;
-          #{$prop}-right: rem-calc($desktop-spacer)   $important;
-        }
-      }@else{
-        #{$prop}-top: rem-calc($mobile-spacer)   $important;
-        #{$prop}-bottom: rem-calc($mobile-spacer)   $important;
-        @include breakpoint(medium) {
-          #{$prop}-top: rem-calc($desktop-spacer)   $important;
-          #{$prop}-bottom: rem-calc($desktop-spacer)   $important;
-        }
-      }
-    }@else{
-      #{$prop}: rem-calc($mobile-spacer)   $important;
-      @include breakpoint(large) {
-        #{$prop}: rem-calc($desktop-spacer)   $important;
-      }
-    }
+    // $mobile-spacer: $size*$spacer-mobile;
+    // @if ($mobile-override){
+    //   $mobile-spacer: $mobile-override * $spacer;
+    // }
+    // $desktop-spacer: $size*$spacer;
+    // @if (index((left, right, top, bottom),$direction)) {
+    //   #{$prop}-#{$direction}: rem-calc($mobile-spacer)   $important;
+    //   @include media-breakpoint-up(md) {
+    //     #{$prop}-#{$direction}: rem-calc($desktop-spacer)   $important;
+    //   }
+    // }@else if (index((y,x),$direction)) {
+    //   @if ($direction == x){
+    //     #{$prop}-left: rem-calc($mobile-spacer)   $important;
+    //     #{$prop}-right: rem-calc($mobile-spacer)   $important;
+    //     @include media-breakpoint-up(md) {
+    //       #{$prop}-left: rem-calc($desktop-spacer)   $important;
+    //       #{$prop}-right: rem-calc($desktop-spacer)   $important;
+    //     }
+    //   }@else{
+    //     #{$prop}-top: rem-calc($mobile-spacer)   $important;
+    //     #{$prop}-bottom: rem-calc($mobile-spacer)   $important;
+    //     @include media-breakpoint-up(md) {
+    //       #{$prop}-top: rem-calc($desktop-spacer)   $important;
+    //       #{$prop}-bottom: rem-calc($desktop-spacer)   $important;
+    //     }
+    //   }
+    // }@else{
+    //   #{$prop}: rem-calc($mobile-spacer)   $important;
+    //   @include media-breakpoint-up(lg) {
+    //     #{$prop}: rem-calc($desktop-spacer)   $important;
+    //   }
+    // }
 
   }
 
@@ -122,7 +122,7 @@
     @if ($output-desktop) {
       font-size: rem-calc($font-size);
     }
-    @include breakpoint(small only){
+    @include media-breakpoint-only(sm){
       $font-size-mobile: $font-size*$font-scale-mobile;
       @if ($min > $font-size-mobile){
         $font-size-mobile: $min;
@@ -148,7 +148,7 @@
   }
 
   @mixin icon-circle(){
-    background-color: $primary-color !important;
+    background-color: $primary !important;
     width: rem-calc(30) !important;
     height: rem-calc(30) !important;
     color: $white;
@@ -160,7 +160,7 @@
     padding: rem-calc(3) !important;
     &:hover, &:focus{
       color: $white;
-      background-color: $secondary-color;
+      background-color: $secondary;
     }
 
     svg{

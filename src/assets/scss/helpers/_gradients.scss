@@ -22,7 +22,7 @@ $light-opacity: 0.5;
           //background: linear-gradient(to bottom, $default-color 0%, rgba(map-get($additional-palette,'#{$palette}-bright'),0) 60%);
         }
         // &:not(.bg-gradient--faded):not(.bg-gradient--down){
-        //   @include breakpoint(medium){
+        //   @include media-breakpoint-up(medium){
         //     &:before{
         //       mask-image: linear-gradient(to right, black 0%, rgba(0,0,0,0) 100%);
         //     }
@@ -32,10 +32,10 @@ $light-opacity: 0.5;
         // &.bg-gradient--radial{
         //   &:before{
         //     background: linear-gradient(to bottom, $default-color 0%, rgba($default-color,0) 800px);
-        //     @include breakpoint(medium){
+        //     @include media-breakpoint-up(medium){
         //       background: radial-gradient(ellipse at top left, $default-color 0, rgba($default-color,0) 80vw);
         //     }
-        //     // @include breakpoint(medium){
+        //     // @include media-breakpoint-up(medium){
         //     //   background: linear-gradient(to right, $default-color 0%, map-get($additional-palette,'#{$palette}-darker') 100%);
         //     // }
 
@@ -56,7 +56,7 @@ $light-opacity: 0.5;
     &:before{
       transform: scaleY(-1);
     }
-    @include breakpoint(medium){
+    @include media-breakpoint-up(medium){
       &:not(.bg-gradient--down){
         &:before{
           transform: scaleX(-1);
@@ -99,7 +99,7 @@ $light-opacity: 0.5;
     top: 0;
     left: 0;
   }
-  // @include breakpoint(small only){
+  // @include media-breakpoint-only(sm){
   //   &.has-backgroundImage{
   //     background-color: transparent;
   //   }
@@ -122,7 +122,7 @@ $light-opacity: 0.5;
   // &.bg-gradient--tall{
   //   &:before{
   //     height: rem-calc(500);
-  //     @include breakpoint(medium){
+  //     @include media-breakpoint-up(medium){
   //       height: rem-calc(800);
   //     }
   //   }

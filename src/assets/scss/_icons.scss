@@ -6,7 +6,7 @@
   &--tiny{
     font-size: rem-calc($spacer*2);
   }
-  &--small{
+  &--sm{
     font-size: rem-calc($spacer*3);
   }
   &--medium{
@@ -34,7 +34,7 @@
     color: $white;
     text-decoration: none;
     cursor: pointer;
-    background-color: $primary-color;
+    background-color: $primary;
     @include size(40);
     text-align: center;
     &:hover{

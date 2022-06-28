@@ -19,7 +19,7 @@
       @include removeArrow($arrow-size);
       &:after{
         font-size: rem-calc(14);
-        color: $primary-color;
+        color: $primary;
       }
     }
     &[aria-expanded="true"]{

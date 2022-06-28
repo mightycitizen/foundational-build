@@ -1,7 +1,7 @@
 @import '../vendor/icomoon/variables';
 .breadcrumbs{
   font-family: $secondaryFontFamily;
-  font-weight: $global-weight-semibold;
+  font-weight: $font-weight-semibold;
   li{
     &:not(:last-child){
       &:after{
@@ -12,7 +12,7 @@
         content: $icon-chevron-right;
       }
     }
-    @include breakpoint(small only){
+    @include media-breakpoint-only(sm){
       //margin-bottom: 0;
       &:nth-last-child(2){
         &:after{

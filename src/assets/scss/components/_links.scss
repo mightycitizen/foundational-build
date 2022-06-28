@@ -6,7 +6,7 @@
   position: relative;
   font-family: $secondaryFontFamily;
   text-decoration: none;
-  font-weight: $global-weight-semibold;
+  font-weight: $font-weight-semibold;
   display: inline-block;
   line-height: 1.2;
   &:not(.button){
@@ -38,10 +38,10 @@
 
 .links{
   .cell{
-    border-bottom: $hr-border;
+    border-bottom: $hr-border-width;
     padding: rem-calc(15 0);
   }
-  @include breakpoint(small only){
+  @include media-breakpoint-only(sm){
     .grid-x{
       &:last-child{
         .cell:last-child{
@@ -52,7 +52,7 @@
       }
     }
   }
-  @include breakpoint(medium){
+  @include media-breakpoint-up(medium){
 
     .cell{
       padding: rem-calc(40 0);

@@ -1,5 +1,5 @@
 .hero{
-  background-color: $primary-color;
+  background-color: $primary;
   //color: $white;
   @include spacer(padding,y,5);
   //padding: rem-calc(40 0);
@@ -18,7 +18,7 @@
       margin-bottom: 0;
     }
   }
-  @include breakpoint(medium){
+  @include media-breakpoint-up(medium){
     .a2a_kit{
       float: right;
     }

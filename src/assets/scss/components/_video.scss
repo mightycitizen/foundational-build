@@ -27,7 +27,7 @@
             width: 100%;
             position: relative;
 //            aspect-ratio: 9/5;
-            background-color: $dark-gray;
+            background-color: $gray-900;
           }
           display: block;
           width: 100%;
@@ -115,7 +115,7 @@
         cursor: pointer;
         &:hover{
           .video_image_wrapper{
-            background-color: $primary-color;
+            background-color: $primary;
             img{
               opacity: 0.9;
             }
@@ -144,14 +144,14 @@
                 @include triangle(40px 28px, $white, right);
                 z-index: 1;
                 margin-left: rem-calc(-5);
-                @include breakpoint(medium){
+                @include media-breakpoint-up(medium){
                   @include triangle(85px 60px, $white, right);
                 }
               }
               // &:after{
               //   width: rem-calc(80);
               //   height: rem-calc(80);
-              //   background-color: $secondary-color;
+              //   background-color: $secondary;
               //   //border-radius: 100%;
               // }
             }

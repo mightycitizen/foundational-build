@@ -5,14 +5,14 @@
 	$arrow-margin-xxlarge: 25px;
 	$peekaboo-space: 30px;
 	$slide-margin-mobile: 10px;
-	$slide-margin: map-get($grid-container-padding,'medium');
+	$slide-margin: $container-padding-x;
 
 	$slide-margin-offset: 15; // to prevent shadow overflow issues
 
 	.slick-list{
 		margin-top: rem-calc(-1*$slide-margin-offset);
 		margin-bottom: rem-calc(-1*$slide-margin-offset);
-		@include breakpoint(small only){
+		@include media-breakpoint-only(sm){
 			margin-left: rem-calc(-1*$slide-margin-mobile);
 			margin-right: rem-calc(-1*$slide-margin-mobile);
 
@@ -84,7 +84,7 @@
 		list-style-type: none;
 		margin: 0;
 		display: inline-flex;
-		box-shadow: $global-box-shadow;
+		box-shadow: $box-shadow;
 		overflow-y: hidden;
 		overflow-x: scroll;
 		max-width: 100%;
@@ -99,18 +99,18 @@
 				cursor: pointer;
 				white-space: nowrap;
 				padding: rem-calc(20 15);
-				font-weight: $global-weight-bold;
+				font-weight: $font-weight-bold;
 				background-color: $white;
 			}
 			&.is-active{
 				button{
 					position: relative;
 					z-index: 2;
-					background-color: $secondary-color;
+					background-color: $secondary;
 				}
 			}
 			&:not(:last-child){
-				border-right: 1px solid $medium-gray;
+				border-right: 1px solid $gray-600;
 			}
 		}
 	}
@@ -121,10 +121,10 @@
 		left: 0;
 		width: 100%;
 		height: rem-calc(6);
-		background-color: rgba($secondary-color,0.4);
+		background-color: rgba($secondary,0.4);
 		&_line{
 			height: 100%;
-			background-color: $secondary-color;
+			background-color: $secondary;
 		}
 	}
 
@@ -135,7 +135,7 @@
 
 	.slick-slide{
 		margin: rem-calc($slide-margin-offset) rem-calc($slide-margin-mobile);
-		@include breakpoint(large){
+		@include media-breakpoint-up(large){
 			margin: rem-calc($slide-margin-offset) rem-calc(0.5*$slide-margin);
 		}
 		.card{
@@ -145,7 +145,7 @@
 
 	$toggle-spacing: 18;
 	.slick-toggle{
-		color: $primary-color;
+		color: $primary;
 		cursor: pointer;
 		order: 3;
 		position: relative;
@@ -153,7 +153,7 @@
 		height: rem-calc(23);
 		display: inline-block;
 		width: rem-calc(18);
-		@include breakpoint(large){
+		@include media-breakpoint-up(large){
 			font-size: rem-calc(30);
 			height: rem-calc(35);
 			width: rem-calc(25);
@@ -196,10 +196,10 @@
 			}
 		}
 		&.has-peekaboo{
-			@include breakpoint(small only){
+			@include media-breakpoint-only(sm){
 				overflow: hidden;
 				padding-right: rem-calc($peekaboo-space);
-				margin-right: -0.5*map-get($grid-container-padding,'small');
+				margin-right: -0.5*$container-padding-x;
 				.slick-list{
 					overflow: visible !important;
 				}
@@ -211,7 +211,7 @@
 			}
 		}
 
-		@include breakpoint(small only) {
+		@include media-breakpoint-only(sm) {
 			+ .slick-nav{
 				// position: relative;
 
@@ -272,7 +272,7 @@
 				//padding: rem-calc(15 $spacer*3/2);
 				//padding-bottom: rem-calc(14) !important;
 
-				// @include breakpoint(large) {
+				// @include media-breakpoint-up(large) {
 				// 	padding-top: rem-calc(11);
 				// 	padding-bottom: rem-calc(11) !important;
 				// }
@@ -280,15 +280,15 @@
 
 			button{
 				@include size(rem-calc($spacer-mobile*3));
-				@include breakpoint(medium){
+				@include media-breakpoint-up(medium){
 					@include size(rem-calc($spacer*3));
 				}
 				display: block;
 				font-size: 0;
 				line-height: 0;
 				border-radius: 50%;
-				border: 2px solid $primary-color;
-				background: $primary-color;
+				border: 2px solid $primary;
+				background: $primary;
 				cursor: pointer;
 			}
 
@@ -310,17 +310,17 @@
 	}
 	.slick-arrow {
 		&.slick-disabled {
-			background-color: $input-background-disabled;
+			background-color: $btn-link-disabled-color;
 			&:before{
-				color: $medium-gray;
+				color: $gray-600;
 			}
 			&,
 			&:focus {
-				color: $light-gray;
+				color: $gray-300;
 				pointer-events: none;
 
 				html:not(.touch-device) & {
-					color: $light-gray;
+					color: $gray-300;
 				}
 			}
 		}
@@ -382,7 +382,7 @@
 	}
 
 	.js-slick--cards{
-		@include breakpoint(medium down){
+		@include media-breakpoint-down(medium){
 			margin-left: 0;
 			margin-right: 0
 		}
@@ -402,7 +402,7 @@
 		.slick-slide{
 			margin: rem-calc($slide-margin-offset) rem-calc($slide-margin-mobile);
 		}
-		@include breakpoint(medium){
+		@include media-breakpoint-up(medium){
 			.slick-list{
 				overflow: visible;
 				//display: flex;
@@ -450,7 +450,7 @@
 					transform: translateY(#{rem-calc(0)});
 
 					.card--special{
-						box-shadow: $global-box-shadow;
+						box-shadow: $box-shadow;
 						.card-section{
 							@include spacer(padding,all,5);
 						}
@@ -463,7 +463,7 @@
 						}
 					}
 					// .card-section{
-					// 	background-color: $secondary-color;
+					// 	background-color: $secondary;
 					// 	color: $white;
 					// }
 					.card-image, .button{  // selectors to hide

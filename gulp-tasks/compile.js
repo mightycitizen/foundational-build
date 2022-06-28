@@ -63,7 +63,7 @@ module.exports = {
   compileSass: function() {
     return src(['./src/assets/scss/**/*.scss','./src/patterns/**/**/*.scss'])
       .pipe(sass({
-        includePaths: ['./node_modules/foundation-sites/scss', './node_modules/motion-ui/src']
+        includePaths: ['./node_modules/bootstrap/scss']
         }).on('error', handleError))
       .pipe(
         prefix({

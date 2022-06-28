@@ -5,19 +5,19 @@
 $grandchildren-background: map-get($additional-palette,'secondary-lightest');
 .top-bar{
   font-family: $secondaryFontFamily;
-  font-weight: $global-weight-semibold;
+  font-weight: $font-weight-semibold;
   &_close{
     position: absolute;
     top: rem-calc(15);
     right: rem-calc(16);
     font-size: rem-calc(40);
-    color: $primary-color;
+    color: $primary;
     cursor: pointer;
     font-weight: normal;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
-  @include breakpoint(medium down){
+  @include media-breakpoint-down(medium){
     .has-menu & {
       animation: 0.5s open;
       opacity: 1;
@@ -48,13 +48,13 @@ $grandchildren-background: map-get($additional-palette,'secondary-lightest');
     .accordion-menu{
 
       a:not(.button){
-       // color: map-get($primary,'default');
+       // color: $primary;
         padding: rem-calc(12 24);
       }
     }
 
     .parent-link{
-      font-weight: $global-weight-bold;
+      font-weight: $font-weight-bold;
       > a:not(.button){
         padding-left: 0;
         padding-right: 0;
@@ -66,7 +66,7 @@ $grandchildren-background: map-get($additional-palette,'secondary-lightest');
     // .utility{
     //   margin-bottom: rem-calc(10);
     //   a:not(.button){
-    //     color: $primary-color;
+    //     color: $primary;
     //   }
     // }
     .search-wrapper{
@@ -98,7 +98,7 @@ $grandchildren-background: map-get($additional-palette,'secondary-lightest');
     .top{
       > li {
         &:not(.utility):not(.search-wrapper):not(:first-child){
-          border-top: $hr-border;
+          border-top: $hr-border-width;
         }
         &:not(.utility){
           // top level
@@ -177,16 +177,16 @@ $grandchildren-background: map-get($additional-palette,'secondary-lightest');
     // }
   }
 
-  @include breakpoint(large){
+  @include media-breakpoint-up(large){
 
-    margin-left: rem-calc(-1*get-side($dropdownmenu-padding,'left'));
-    margin-right: rem-calc(-1*get-side($dropdownmenu-padding,'right'));
+    // margin-left: rem-calc(-1*get-side($dropdownmenu-padding,'left'));
+    // margin-right: rem-calc(-1*get-side($dropdownmenu-padding,'right'));
     padding-left: 0;
     padding-right: 0;
     padding-bottom: rem-calc(5);
     a{
       &:hover, &:focus:not(.is-active > a){
-//        color: $primary-color;
+//        color: $primary;
         text-decoration: underline;
       }
     }
@@ -199,7 +199,7 @@ $grandchildren-background: map-get($additional-palette,'secondary-lightest');
       justify-content: space-between;
       //flex-wrap: nowrap;
       .parent-link{
-        font-weight: $global-weight-bold;
+        font-weight: $font-weight-bold;
 
         //font-size: rem-calc(22);
 
@@ -208,17 +208,17 @@ $grandchildren-background: map-get($additional-palette,'secondary-lightest');
         > a{
           color: inherit;
           &:after{
-            color: $primary-color;
+            color: $primary;
           }
           &:hover, &:focus{
-            color: $primary-color;
+            color: $primary;
             //text-decoration: underline;
           }
         }
         &.is-active{
           > a{
             color: $white;
-            background-color: $primary-color;
+            background-color: $primary;
             &:after{
               color: inherit;
             }
@@ -245,10 +245,10 @@ $grandchildren-background: map-get($additional-palette,'secondary-lightest');
             //ov
             z-index: 0;
             width: 100%;
-            box-shadow: $global-box-shadow;
+            box-shadow: $box-shadow;
           }
           a:not(.parent-link > a){
-            color: map-get($primary,'default');
+            color: $primary;
           }
           &.child-opens-left{
             &::after{
@@ -349,7 +349,7 @@ $grandchildren-background: map-get($additional-palette,'secondary-lightest');
     .search-wrapper{
       //padding-left: rem-calc(5);
       justify-self: flex-end;
-      @include breakpoint(large){
+      @include media-breakpoint-up(large){
         padding: rem-calc(10 0);
       }
     }
@@ -382,13 +382,13 @@ $grandchildren-background: map-get($additional-palette,'secondary-lightest');
 // preventing FUOC
 
 .no-js {
-  @include breakpoint(small only) {
+  @include media-breakpoint-only(sm) {
     .top-bar {
       display: none;
     }
   }
 
-  @include breakpoint(medium) {
+  @include media-breakpoint-up(medium) {
     .title-bar {
       display: none;
     }

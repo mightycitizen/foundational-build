@@ -5,7 +5,7 @@
 }
 
 .shadow{
-  box-shadow: $global-box-shadow;
+  box-shadow: $box-shadow;
 }
 
 .flip{
@@ -42,7 +42,7 @@
   &.bg-gradient--tall{
     &:before{
       height: rem-calc(500);
-      @include breakpoint(large){
+      @include media-breakpoint-up(large){
         height: rem-calc(800);
       }
     }
@@ -68,7 +68,7 @@
 
 
 .media-object{
-  @include breakpoint(small only){
+  @include media-breakpoint-only(sm){
     &--stack{
       display: block;
       img{

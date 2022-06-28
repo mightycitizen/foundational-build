@@ -36,12 +36,12 @@
   &_intro{
     position: relative;
     z-index: 2;
-    @include breakpoint(medium down){
+    @include media-breakpoint-down(medium){
       margin-bottom: $spacer*3;
       //@include spacer(margin,bottom,4);
     }
     &:not(:last-child){
-      @include breakpoint(large){
+      @include media-breakpoint-up(large){
         @include spacer(margin,bottom,5);
       }
     }
@@ -54,7 +54,7 @@
   &--tight{
     @include spacer(padding,top,5,2);
     @include spacer(padding,bottom,6,3);
-    @include breakpoint(medium down){
+    @include media-breakpoint-down(medium){
       &:first-child{
         padding-top: $spacer*4;
       }

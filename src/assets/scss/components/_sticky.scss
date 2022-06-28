@@ -1,5 +1,5 @@
 
-@include breakpoint(small only){
+@include media-breakpoint-only(sm){
 	.sticky[data-sticky-on="medium"]{
 		top: auto !important;
 		max-width: none !important;

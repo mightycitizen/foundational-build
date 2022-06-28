@@ -1,18 +1,18 @@
 
 .fui-btn{
-  background-color: $button-background;
-  padding: $button-padding;
-  color: $button-color;
-  font-family: $button-font-family;
+  background-color: $primary;
+  padding: $btn-padding-y $btn-padding-x;
+  color: $btn-link-color;
+  font-family: $font-family-base;
   //font-weight: $button-font-weight;
   border: 0;
   cursor: pointer;
 }
 
 .button, .fui-btn{
-  font-weight: $global-weight-bold;
+  font-weight: $font-weight-bold;
   text-decoration: none;
-  box-shadow: $global-box-shadow;
+  box-shadow: $box-shadow;
   &.secondary{
     &:hover{
       background-color: map-get($additional-palette,'secondary-darker');
@@ -23,7 +23,7 @@
   }
 
   $button-vertical-padding-mobile: 12;
-  @include breakpoint(small only){
+  @include media-breakpoint-only(sm){
     padding-top: rem-calc($button-vertical-padding-mobile);
     padding-bottom: rem-calc($button-vertical-padding-mobile);
   }

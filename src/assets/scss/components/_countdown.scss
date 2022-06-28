@@ -15,9 +15,9 @@
       font-size: rem-calc(32);
       background-color: $white;
       text-align: center;
-      font-weight: $global-weight-bold;
+      font-weight: $font-weight-bold;
       padding: rem-calc(8);
-      border-radius: $global-radius;
+      border-radius: $border-radius;
       display: block;
       color: $black;
       margin-bottom: rem-calc(6);
@@ -27,8 +27,8 @@
       display: block;
       font-size: rem-calc(14);
       text-transform: uppercase;
-      font-weight: $global-weight-bold;
-      @include breakpoint(medium){
+      font-weight: $font-weight-bold;
+      @include media-breakpoint-up(medium){
         position: absolute;
       }
     }

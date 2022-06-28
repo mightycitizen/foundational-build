@@ -3,9 +3,9 @@
 }
 
 .label, .flag{
-  font-weight: $global-weight-bold;
+  font-weight: $font-weight-bold;
   text-transform: uppercase;
-  color: $medium-gray;
+  color: $gray-600;
   font-size: rem-calc(14);
   letter-spacing: 1px;
 }
@@ -14,15 +14,15 @@ $large-value-size: 100;
 .large-value{
   font-family: $secondaryFontFamily;
   line-height: 1.2;
-  font-weight: $global-weight-bold;
+  font-weight: $font-weight-bold;
   font-size: rem-calc(64);
-  @include breakpoint(large){
+  @include media-breakpoint-up(large){
     font-size: rem-calc(100);
   }
 }
 
 .meta{
-  font-weight: $global-weight-bold;
+  font-weight: $font-weight-bold;
 }
 
 .divider{
@@ -36,7 +36,7 @@ $large-value-size: 100;
 
 .date{
   display: block;
-  background-color: $primary-color;
+  background-color: $primary;
   color: $white;
   font-weight: bold;
   text-align: center;
@@ -68,8 +68,8 @@ $large-value-size: 100;
   //text-transform: uppercase;
   //font-size: rem-calc(13);
   //font-weight: bold;
-  color: $medium-gray;
-  border: 1px solid $light-gray;
+  color: $gray-600;
+  border: 1px solid $gray-300;
 }
 
 

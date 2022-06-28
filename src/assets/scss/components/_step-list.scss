@@ -27,8 +27,8 @@
       top: rem-calc(-7);
       //font-size: rem-calc(48);
       font-weight: bold;
-      color: $primary-color;
-      @include breakpoint(small only){
+      color: $primary;
+      @include media-breakpoint-only(sm){
         width: rem-calc($spacer*3);
       }
     }

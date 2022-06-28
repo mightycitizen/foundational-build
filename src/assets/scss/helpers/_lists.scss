@@ -17,7 +17,7 @@
     }
   }
   &--stacked{
-    @include breakpoint(small only){
+    @include media-breakpoint-only(sm){
       > li{
         display: block;
         &:not(:last-child){

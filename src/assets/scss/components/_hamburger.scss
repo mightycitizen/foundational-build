@@ -1,4 +1,4 @@
-$hamburger-color: $primary-color;
+$hamburger-color: $primary;
 .hamburger{
   background: transparent;
   position: relative;
@@ -80,7 +80,7 @@ $hamburger-color: $primary-color;
       &-icon{
         margin-top: rem-calc(-19);
         // &-bar, &:before, &:after{
-        //   background-color: $secondary-color;;
+        //   background-color: $secondary;;
         // }
 
         &-bar{

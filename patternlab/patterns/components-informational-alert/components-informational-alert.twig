@@ -1,5 +1,5 @@
 <div class="alert-bar bg-solid-secondary text-center {{ alert_class | default }}" {% if closable | default %}data-closable{% endif %}>
-  <div class="grid-container">
+  <div class="container">
     {% if alert_label | default %}
       <span class="alert-bar_label">{{ alert_label }}</span>
     {% endif %}

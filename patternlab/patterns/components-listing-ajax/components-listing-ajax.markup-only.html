@@ -1,12 +1,12 @@
 <section class="section">
-  <div class="grid-container">
+  <div class="container">
     <h2>Ajax</h2>
-    <div class="grid-x grid-margin-x" data-sticky-container id="event-content">
-      <div class="cell medium-4" >
+    <div class="row grid-margin-x" data-sticky-container id="event-content">
+      <div class="col col-md-4" >
         <a href="#filters" data-lity class="hide-for-medium button">Filters</a>
         <div id="filters" class="lity-mobile">
           <form data-ajaxify-form="events" data-sticky data-sticky-on="medium" data-anchor="event-content">
-            <div data-ajaxify-toggles="events" class="button-group tiny"></div>
+            <div data-ajaxify-toggles="events" class="btn-group tiny"></div>
             <div>
               <label for="keywords">Keywords</label>
               <div class="input-group simple">
@@ -87,14 +87,14 @@ Warning: Undefined array key "i" in /Users/kristine/Sites/patternlab-craft/patte
                 </span>
             </div>
             <hr>
-            <div class="button-group small">
-              <button type="reset" class="button alert">Reset</button>
-              <button type="submit" class="button hide-for-medium success">Submit</button>
+            <div class="btn-group small">
+              <button type="reset" class="btn alert">Reset</button>
+              <button type="submit" class="btn hide-for-medium success">Submit</button>
             </div>
           </form>
         </div>
       </div>
-      <div class="cell medium-8">
+      <div class="col col-md-8">
         <p data-ajaxify-num-results="events">There were <strong class="value"></strong> results for your search/filters</p>
         <div data-ajaxify id="events">
           <div class="loader"><div></div><div></div><div></div><div></div></div>
@@ -108,7 +108,7 @@ Warning: Undefined array key "i" in /Users/kristine/Sites/patternlab-craft/patte
   </div>
 </section>
 <section class="section">
-  <div class="grid-container">
+  <div class="container">
     <h2>Partial include</h2>
     <div>
       <div class="card">

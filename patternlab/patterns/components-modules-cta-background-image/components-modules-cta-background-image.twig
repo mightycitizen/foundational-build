@@ -6,5 +6,5 @@
 
 {% include patternlab_namespace | default ~ 'components/sections/section.twig' with {
   section_class: "cta bg-solid-primary text-white " ~ class | default ~ (section_image | default ? ' cta--horizontal': ''),
-  intro_class: (section_image | default ? 'medium-text-left': '') ~ ' text-center m-b-0'
+  intro_class: (section_image | default ? 'medium-text-left': '') ~ ' text-center mb-0'
 }%}

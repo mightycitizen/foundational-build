@@ -7,7 +7,7 @@
     link: link
   } %}
 {% else %}
-  <button class="button{{ button.modifier | default ? ' ' ~ button.modifier }}">
+  <button class="btn{{ button.modifier | default ? ' ' ~ button.modifier }}">
     {{ button.text | default }}
     {% if button.icon | default %}
       <i class="icon icon--small icon-{{ button.icon }}"></i>

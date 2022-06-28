@@ -1,18 +1,18 @@
 <div class="card card--horizontal {{ card.modifier }} {% if card.clickCard | default %}card--click{% endif %}" data-scroll-show>
   <div class="card-section">
-    <div class="grid-x grid-margin-x align-middle">
+    <div class="row grid-margin-x align-middle">
       {% if card.image | default %}
-        <div class="cell medium-5 large-5 {% if card.image.alignment | default and card.image.alignment == 'right' %}medium-order-2{% endif %}">
+        <div class="col col-md-5 col-lg-5 {% if card.image.alignment | default and card.image.alignment == 'right' %}medium-order-2{% endif %}">
           <div class="card-image image-size--landscapeCroppedMedium">
             <img class="js-lazy" data-src="{{ card.image.src }}" alt="{{ card.image.alt }}">
           </div>
         </div>
       {% endif %}
-      <div class="cell {% if card.image | default %}medium-7 large-7 {% if card.image.alignment  | default and card.image.alignment == 'right' %}medium-order-1{% endif %}{% endif %}">
+      <div class="col {% if card.image | default %}col-md-7 col-lg-7 {% if card.image.alignment  | default and card.image.alignment == 'right' %}medium-order-1{% endif %}{% endif %}">
        <h{{ card.heading.level }} class="card-title {{ card.heading.modifier  | default }}">{{ card.heading.text }}</h{{ card.heading.level }}>
         {% if card.summary | default %}
 
-          <p class="m-b-3">{{ card.summary }}</p>
+          <p class="mb-3">{{ card.summary }}</p>
         {% endif %}
         {% if card.link | default %}
           {% set link = card.link | merge({ class: 'h4' })%}

@@ -3,7 +3,7 @@
     {% embed 'components/forms/form-group.twig' %}
       {% block form_content %}
         {% if keyword_filter | default %}
-          <div class="cell medium-5">
+          <div class="col col-md-5">
             {% include patternlab_namespace | default ~ 'components/forms/text.twig' with {
               "value": queryParam | default,
               "label": label | default("Keywords"),
@@ -14,7 +14,7 @@
             %}
           </div>
         {% endif %}
-        <div class="cell medium-5 large-4 small-10">
+        <div class="col col-md-5 col-lg-4 col-sm-0">
           {% include patternlab_namespace | default ~ 'components/forms/select.twig' with {
             label: category_label | default("Filter by Category"),
             input_class: 'w-100 ' ~ input_class | default,
@@ -33,8 +33,8 @@
           %}
         </div>
         {% if ajax | default == false %}
-          <div class="cell medium-2">
-            <button class="button" type="submit">Search</button>
+          <div class="col col-md-2">
+            <button class="btn" type="submit">Search</button>
           </div>
         {% endif %}
       {% endblock %}

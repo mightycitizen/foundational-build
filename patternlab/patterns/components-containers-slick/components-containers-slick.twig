@@ -1,0 +1,38 @@
+<div class="slick-wrap">
+  {% if slick_nav_position  | default  == 'top'%}
+    {% include patternlab_namespace | default ~ 'components/containers/carousel-nav.twig' with {
+      inline: true
+    } %}
+  {% endif %}
+  <div {% if id | default %}id="{{ id }}"{% endif %} class="js-slick{{ (modifier | default) ? '--'~modifier : ''}} {{ slick_class | default }} {% if grid | default %}grid-x grid-margin-x{% endif %}" {% if equalize | default %}data-equalizer data-equalize-on="medium"{% endif %}>
+    {% block slide_content %}
+    {% endblock %}
+  </div>
+  {% if slick_nav_position | default != 'top' %}
+    {% include patternlab_namespace | default ~ 'components/containers/carousel-nav.twig' with {
+      inline: true
+    } %}
+  {% endif %}
+
+  {% if slick_tabs | default %}
+    <div class="slick_controls  is-start">
+      {% if pause | default %}
+          <button class="js-slick-toggle slick-toggle" data-slick-pause="{{ id | default }}">
+            <span class="show-for-sr">Toggle Pause/Play</span>
+            <span class="icon-pause active"></span>
+            <span class="icon-play inactive"></span>
+          </button>
+        {% endif %}
+
+      <button data-slick="{{ id | default }}" class="slick-prev arrow arrow--prev">Previous</button>
+      <ul class="slick_tabs" data-slick="{{ id | default }}" data-slick-tabs>
+      {% for slide in slides %}
+        <li>
+          <button data-slick-go="{{ id | default }}" data-slick-go-index="{{ loop.index0 }}">{{ slide.tab }}</button>
+        </li>
+      {% endfor %}
+      </ul>
+      <button data-slick="{{ id | default }}" class="slick-next arrow arrow--next">Next</button>
+    </div>
+  {% endif %}
+</div>

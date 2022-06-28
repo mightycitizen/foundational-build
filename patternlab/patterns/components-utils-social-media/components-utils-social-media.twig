@@ -1,0 +1,10 @@
+<ul class="inline-list inline-list--top m-b-0 social-media">
+  {% for item in social | default %}
+      <li>
+        <a href="{{ item.url }}" target="_blank" class="icon icon--circle">
+          <span class="show-for-sr">{{ item.handle }}</span>
+          <span class="icon-{{ item.handle }}"></span>
+        </a>
+      </li>
+  {% endfor %}
+  </ul>

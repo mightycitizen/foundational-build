@@ -1,0 +1,16 @@
+
+{% if button.type | default != 'button' %}
+  {% set link = button | merge ({
+      modifier: 'button ' ~ button.modifier | default,
+  }) %}
+  {% include patternlab_namespace | default ~ 'components/links/link.twig' with {
+    link: link
+  } %}
+{% else %}
+  <button class="button{{ button.modifier | default ? ' ' ~ button.modifier }}">
+    {{ button.text | default }}
+    {% if button.icon | default %}
+      <i class="icon icon--small icon-{{ button.icon }}"></i>
+    {% endif %}
+  </button>
+{% endif %}

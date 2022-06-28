@@ -1,0 +1,12 @@
+{% set notch = item.icon | default or modifier | default == 'steps' %}
+<li class="accordion-item  {# if item.accordion_instance == "1" %}is-active{% endif #}" data-accordion-item>
+  <button tabindex="0" class="accordion-title {% if notch %}accordion-title--notch{% endif %}" aria-controls="accordion-{{ accordion_id | default }}-{{ loop.index }}" id="accordion-toggle-{{ accordion_id | default }}-{{ loop.index }}">
+    {% if notch %}
+      <span class="accordion-notch {{ item.icon | default }}"></span>
+    {% endif %}
+    {{ item.heading }}
+  </button>
+  <div class="accordion-content" data-tab-content id="accordion-{{ accordion_id | default }}-{{ loop.index }}" aria-hidden="true" aria-labelledby="accordion-{{ accordion_id | default }}-{{ loop.index }}">
+    {{ item.content | raw }}
+  </div>
+</li>

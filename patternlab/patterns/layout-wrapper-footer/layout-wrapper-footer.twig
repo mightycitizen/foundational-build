@@ -1,0 +1,50 @@
+<footer class="l-footer text-white text-center">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+
+      <div class="cell medium-5 medium-order-2 medium-text-left">
+        <div class="media-object media-object--stack">
+          <div class="media-object-section">
+            {% include patternlab_namespace | default ~ 'components/logo/logo.twig' %}
+          </div>
+          <div class="media-object-section">
+            <address>
+             {{ address | default | nl2br }}
+            </address>
+          </div>
+        </div>
+
+      </div>
+      <div class="small-12 cell medium-order-1">
+        <ul class="menu medium-horizontal vertical">
+        {% for item in menu %}
+          <li>
+            <a href="{{ item.url }}">{{ item.text }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      </div>
+      <div class="cell medium-7 medium-text-right medium-order-3">
+        {% include patternlab_namespace | default ~ 'components/utils/social-media.twig' %}
+      </div>
+    </div>
+
+    <ul class="inline-list inline-list--divided m-b-2">
+      {% for item in footer_links | default %}
+        <li>
+          {% set link = item.cta %}
+          {% include 'components/links/link.twig' with {
+            link: {
+              url: link.url,
+              text: link.text,
+              target: link.getTarget()
+            }
+          } %}
+        </li>
+      {% endfor %}
+    </ul>
+    <p>Copyright &copy; {{ copyright_year | default(2022) }} {{ site_name | default }}</p>
+
+  </div>
+  {% include 'components/utils/back-to-top.twig' %}
+</footer>

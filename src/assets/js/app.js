@@ -1,6 +1,19 @@
-import "babel-polyfill"; // ie 11 polyfill - can exclude if not in scope
+//import "babel-polyfill"; // ie 11 polyfill - can exclude if not in scope
 import $ from 'jquery';
-import './lib/foundation-explicit-pieces'; // @foundation pick and choose Foundation plugins
+//import './lib/foundation-explicit-pieces'; // @foundation pick and choose Foundation plugins
+
+// import 'bootstrap/js/dist/alert';
+// import 'bootstrap/js/dist/button';
+// import 'bootstrap/js/dist/carousel';
+import 'bootstrap/js/dist/collapse';
+import 'bootstrap/js/dist/dropdown';
+//import 'bootstrap/js/dist/modal';
+// import 'bootstrap/js/dist/popover';
+// import 'bootstrap/js/dist/scrollspy';
+import 'bootstrap/js/dist/tab';
+// import 'bootstrap/js/dist/toast';
+// import 'bootstrap/js/dist/tooltip';
+
 
 import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
 import loaderTemplate from '../../_patterns/components/utils/loader.twig'; // used with @forms
@@ -230,51 +243,51 @@ const initTableScroll = () => {
 }
 
 // @foundation helpers init
-const initFoundationHelpers = () => {
-  $('[data-dropdown-trigger]').on('click', 'a', function(e){
-    e.preventDefault();
-    const text = $(e.target).text();
-    const $dropdown = $(this).closest('[data-dropdown-trigger]');
-    const dropdownId = $dropdown.attr('id');
-    const $toggle = $('[data-toggle="'+dropdownId+'"]');
-    $toggle.text(text);
-    $dropdown.foundation('close');
-    // console.log(dropdownId);
-    // console.log(text);
-    // console.log($toggle);
-  })
-  $(document).on('change.zf.tabs', function(e, tab, pane, $target){
-    const tabNav = $(tab).parent();
-    //console.log(tabNav);
-    const tabStartPosition = $(tab).position().left;
-    const tabNavWidth = tabNav.outerWidth();
-    const tabWidth = $(tab).outerWidth();
-    const tabEndPosition = tabStartPosition + tabWidth;
-    const offset = 30;
-    let position;
-    const currPosition = tabNav.scrollLeft();
-    // console.log(currPosition);
-    // console.log('left',tabStartPosition);
-    // console.log('right',tabEndPosition);
-    if (tabStartPosition < offset){
-      position = currPosition + tabStartPosition - offset;
-    }
-    else if (tabEndPosition > tabNavWidth - offset){
-      position = currPosition + (tabEndPosition - tabNavWidth + offset);
-      //console.log(position);
-    }
+// const initFoundationHelpers = () => {
+//   $('[data-dropdown-trigger]').on('click', 'a', function(e){
+//     e.preventDefault();
+//     const text = $(e.target).text();
+//     const $dropdown = $(this).closest('[data-dropdown-trigger]');
+//     const dropdownId = $dropdown.attr('id');
+//     const $toggle = $('[data-toggle="'+dropdownId+'"]');
+//     $toggle.text(text);
+//     $dropdown.foundation('close');
+//     // console.log(dropdownId);
+//     // console.log(text);
+//     // console.log($toggle);
+//   })
+//   $(document).on('change.zf.tabs', function(e, tab, pane, $target){
+//     const tabNav = $(tab).parent();
+//     //console.log(tabNav);
+//     const tabStartPosition = $(tab).position().left;
+//     const tabNavWidth = tabNav.outerWidth();
+//     const tabWidth = $(tab).outerWidth();
+//     const tabEndPosition = tabStartPosition + tabWidth;
+//     const offset = 30;
+//     let position;
+//     const currPosition = tabNav.scrollLeft();
+//     // console.log(currPosition);
+//     // console.log('left',tabStartPosition);
+//     // console.log('right',tabEndPosition);
+//     if (tabStartPosition < offset){
+//       position = currPosition + tabStartPosition - offset;
+//     }
+//     else if (tabEndPosition > tabNavWidth - offset){
+//       position = currPosition + (tabEndPosition - tabNavWidth + offset);
+//       //console.log(position);
+//     }
 
-    if (position){
-      $(tabNav).animate({
-        scrollLeft: position
-      },200);
-    }
-    // console.log(tab);
-    // console.log(pane);
-    // console.log($target);
-    //alert('test');
-  });
-}
+//     if (position){
+//       $(tabNav).animate({
+//         scrollLeft: position
+//       },200);
+//     }
+//     // console.log(tab);
+//     // console.log(pane);
+//     // console.log($target);
+//     //alert('test');
+//   });
+// }
 
 // @anchor update
 
@@ -305,12 +318,12 @@ const initAnchorUpdate = () => {
 
 
 // @foundation accessibility init
-const initFoundationAccessibility = () => {
-  // accordion accessibility
-  $(document).on('click', '.accordion-trigger', function(event){
-    $(this).parents('.accordion-item').find('.accordion-title').trigger('click');
-  })
-}
+// const initFoundationAccessibility = () => {
+//   // accordion accessibility
+//   $(document).on('click', '.accordion-trigger', function(event){
+//     $(this).parents('.accordion-item').find('.accordion-title').trigger('click');
+//   })
+// }
 
 // @lazy init
 const initLazy = () => {
@@ -363,7 +376,7 @@ $(document).ready(function(){
 
   initLazy(); // @lazy init call
   initAnchorUpdate(); // @anchor update init
-  initFoundationAccessibility();  // @foundation init accessibility call
+  //initFoundationAccessibility();  // @foundation init accessibility call
   initTableScroll(); // @table-scroll init call
 
   initScrollHide(); // @scroll-hide init call
@@ -375,8 +388,8 @@ $(document).ready(function(){
   initSelectUrl(); // @select-url init
 
   initCountdown();
-  initFoundationHelpers(); // @foundation helpers init
+  //initFoundationHelpers(); // @foundation helpers init
 })
 
 // @foundation init
-$(document).foundation();
+//$(document).foundation();

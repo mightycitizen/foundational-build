@@ -82,39 +82,39 @@
 
 
 @mixin spacer($prop,$direction,$size,$mobile-override: false, $important: null){
-    //#{$prop}: $size !important;
-    // $mobile-spacer: $size*$spacer-mobile;
-    // @if ($mobile-override){
-    //   $mobile-spacer: $mobile-override * $spacer;
-    // }
-    // $desktop-spacer: $size*$spacer;
-    // @if (index((left, right, top, bottom),$direction)) {
-    //   #{$prop}-#{$direction}: rem-calc($mobile-spacer)   $important;
-    //   @include media-breakpoint-up(md) {
-    //     #{$prop}-#{$direction}: rem-calc($desktop-spacer)   $important;
-    //   }
-    // }@else if (index((y,x),$direction)) {
-    //   @if ($direction == x){
-    //     #{$prop}-left: rem-calc($mobile-spacer)   $important;
-    //     #{$prop}-right: rem-calc($mobile-spacer)   $important;
-    //     @include media-breakpoint-up(md) {
-    //       #{$prop}-left: rem-calc($desktop-spacer)   $important;
-    //       #{$prop}-right: rem-calc($desktop-spacer)   $important;
-    //     }
-    //   }@else{
-    //     #{$prop}-top: rem-calc($mobile-spacer)   $important;
-    //     #{$prop}-bottom: rem-calc($mobile-spacer)   $important;
-    //     @include media-breakpoint-up(md) {
-    //       #{$prop}-top: rem-calc($desktop-spacer)   $important;
-    //       #{$prop}-bottom: rem-calc($desktop-spacer)   $important;
-    //     }
-    //   }
-    // }@else{
-    //   #{$prop}: rem-calc($mobile-spacer)   $important;
-    //   @include media-breakpoint-up(lg) {
-    //     #{$prop}: rem-calc($desktop-spacer)   $important;
-    //   }
-    // }
+    #{$prop}: $size !important;
+    $mobile-spacer: $size*$spacer-mobile;
+    @if ($mobile-override){
+      $mobile-spacer: $mobile-override * $spacer;
+    }
+    $desktop-spacer: $size*$spacer;
+    @if (index((left, right, top, bottom),$direction)) {
+      #{$prop}-#{$direction}: rem-calc($mobile-spacer)   $important;
+      @include media-breakpoint-up(md) {
+        #{$prop}-#{$direction}: rem-calc($desktop-spacer)   $important;
+      }
+    }@else if (index((y,x),$direction)) {
+      @if ($direction == x){
+        #{$prop}-left: rem-calc($mobile-spacer)   $important;
+        #{$prop}-right: rem-calc($mobile-spacer)   $important;
+        @include media-breakpoint-up(md) {
+          #{$prop}-left: rem-calc($desktop-spacer)   $important;
+          #{$prop}-right: rem-calc($desktop-spacer)   $important;
+        }
+      }@else{
+        #{$prop}-top: rem-calc($mobile-spacer)   $important;
+        #{$prop}-bottom: rem-calc($mobile-spacer)   $important;
+        @include media-breakpoint-up(md) {
+          #{$prop}-top: rem-calc($desktop-spacer)   $important;
+          #{$prop}-bottom: rem-calc($desktop-spacer)   $important;
+        }
+      }
+    }@else{
+      #{$prop}: rem-calc($mobile-spacer)   $important;
+      @include media-breakpoint-up(lg) {
+        #{$prop}: rem-calc($desktop-spacer)   $important;
+      }
+    }
 
   }
 

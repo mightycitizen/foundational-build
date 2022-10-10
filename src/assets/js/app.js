@@ -16,7 +16,7 @@ import './plugins/vimeo';
 import './plugins/sticky-anchor';
 import './plugins/slick';
 import './plugins/countdown';
-
+// IMPORT PLUGINS
 //import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
 
 window.jQuery = $;

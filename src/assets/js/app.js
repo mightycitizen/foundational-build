@@ -21,6 +21,10 @@ import './plugins/countdown';
 
 window.jQuery = $;
 
+// CLASS DEFINITIONS
+
+// INITIALIZATION FUNCTIONS
+
 // @skip-to init
 const initSkipTo = () => {
   $(document).on('click', '.l-skip', function(e) {
@@ -308,9 +312,11 @@ $(document).ready(function(){
 
   initSkipTo(); // @skip-to init
   initSelectUrl(); // @select-url init
-
+  // RUN INITS
 
   initFoundationHelpers(); // @foundation helpers init
+
+
 })
 
 // @foundation init

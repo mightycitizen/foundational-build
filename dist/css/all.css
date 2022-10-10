@@ -12660,17 +12660,44 @@ html, body, .l-wrapper {
   -webkit-mask-image: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0) 100%);
   mask-image: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0) 100%);
 }
+.bg-gradient-primary-darker:before {
+  background: linear-gradient(to bottom, #fff 0%, #1f3e99 100%);
+}
+.bg-gradient-primary-lighter:before {
+  background: linear-gradient(to bottom, #fff 0%, #6986db 100%);
+}
+.bg-gradient-primary-lightest:before {
+  background: linear-gradient(to bottom, #fff 0%, #bdcaef 100%);
+}
 
 .bg-gradient-secondary:before {
   background-color: rgba(255, 205, 0, 0.5);
   -webkit-mask-image: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0) 100%);
   mask-image: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0) 100%);
 }
+.bg-gradient-secondary-darker:before {
+  background: linear-gradient(to bottom, #fff 0%, #eca806 100%);
+}
+.bg-gradient-secondary-lighter:before {
+  background: linear-gradient(to bottom, #fff 0%, #ffe57f 100%);
+}
+.bg-gradient-secondary-lightest:before {
+  background: linear-gradient(to bottom, #fff 0%, #ffefb2 100%);
+}
 
 .bg-gradient-tertiary:before {
   background-color: rgba(216, 38, 38, 0.5);
   -webkit-mask-image: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0) 100%);
   mask-image: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0) 100%);
+}
+.bg-gradient-tertiary-darker:before {
+  background: linear-gradient(to bottom, #fff 0%, #b42727 100%);
+}
+.bg-gradient-tertiary-lighter:before {
+  background: linear-gradient(to bottom, #fff 0%, #e87d7d 100%);
+}
+.bg-gradient-tertiary-lightest:before {
+  background: linear-gradient(to bottom, #fff 0%, #f3bdbd 100%);
 }
 
 .bg-gradient--flip:before {
@@ -12684,15 +12711,6 @@ html, body, .l-wrapper {
 
 [class*=bg-gradient-] {
   position: relative;
-}
-[class*=bg-gradient-]:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  top: 0;
-  left: 0;
 }
 
 .text-smaller {

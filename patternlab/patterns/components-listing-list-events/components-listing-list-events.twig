@@ -14,12 +14,14 @@
         <div class="cell {% if item.image | default %}medium-7 large-9 medium-order-1{% endif %}">
           <div class="media-object">
 
-            <div class="media-object-section">
-              {% include patternlab_namespace | default ~ 'components/inline-text/date.twig' with {
-                date: item.start_date
-              } %}
+            {% if item.start_date | default is not empty %}
+              <div class="media-object-section">
+                {% include patternlab_namespace | default ~ 'components/inline-text/date.twig' with {
+                  date: item.start_date
+                } %}
 
-            </div>
+              </div>
+            {% endif %}
 
             <div class="media-object-section">
               <h2><a href="{{ item.url }}">{{ item.heading }}</a></h2>

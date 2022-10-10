@@ -1,5 +1,6 @@
 import $ from 'jquery';
 $.fn.isInViewport = function(offsetFactor = 1) {
+  if (!$(this).offset()) return false;
   var elementTop = $(this).offset().top;
   var elementBottom = $(this).offset().top + $(this).outerHeight();
   var viewportTop = $(window).scrollTop();

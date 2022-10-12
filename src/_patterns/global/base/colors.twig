@@ -82,4 +82,7 @@
       }%}
     {% endif %}
   {% endfor %}
+  {% if loop.last == false %}
+    <hr style="max-width: none;">
+  {% endif %}
 {% endfor %}

@@ -28,14 +28,24 @@
 }
 
 .pl-swatch {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
   position: relative;
   margin-bottom: 5px;
   width: 90px;
   height: 90px;
   border-radius: 3px;
+  text-transform: uppercase;
   vertical-align: top;
   border: 1px solid #ececec;
+  color: #fff;
+
+}
+
+.pl-swatch--light{
+  color: #000;
 }
 
 .pl-swatch__hex {

@@ -70,6 +70,7 @@
 
         {% for key, value in color.colors.variants %}
           {% include 'global/base/_swatch.twig' with {
+              hex: value,
               type: key
             }%}
         {% endfor %}

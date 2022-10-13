@@ -105,7 +105,7 @@ const initVideo = () => {
 
   $(document).on('click', '[data-video-type="vimeo"][data-video-trigger="click"]', function () {
 
-    alert('test');
+    //alert('test');
     if ($(this).hasClass(playingClass)) {
       $(this).trigger('pause').removeClass(playingClass);
     } else {

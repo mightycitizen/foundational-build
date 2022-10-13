@@ -1,6 +1,6 @@
 {
   "trigger": "click",
-  "type": "vimeo",
+  "video_type": "vimeo",
   "video_id": "559422073",
   "image": {
     "url": "//via.placeholder.com/1777x1000",

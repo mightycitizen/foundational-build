@@ -163,7 +163,7 @@ $(window).on('scroll', Foundation.util.throttle(
 
 const checkVideo = () => {
   if ($('body').hasClass('youtube-loaded')) return false;
-  const $video = $('[data-video-trigger]');
+  const $video = $('[data-video-trigger][data-video-type="youtube"]');
   if ($video.isInViewport()){
     initVideo();
     $('body').addClass('youtube-loaded');

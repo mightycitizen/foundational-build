@@ -2,7 +2,8 @@ import $ from 'jquery';
 import Player from '@vimeo/player';
 
 import '../utils/in-viewport.js';
-import { iframe } from 'lity';
+//import { iframe } from 'lity';
+
 
 
 // @video init
@@ -104,6 +105,7 @@ const initVideo = () => {
 
   $(document).on('click', '[data-video-type="vimeo"][data-video-trigger="click"]', function () {
 
+    alert('test');
     if ($(this).hasClass(playingClass)) {
       $(this).trigger('pause').removeClass(playingClass);
     } else {
@@ -124,6 +126,17 @@ const initVideo = () => {
     }, 50));
 }
 
-$(document).ready(function () {
-  initVideo(); // @video init call
+const checkVideo = () => {
+  if ($('body').hasClass('vimeo-loaded')) return false;
+  const $video = $('[data-video-trigger][data-video-type="vimeo"]');
+  if ($video.isInViewport()){
+    initVideo();
+    $('body').addClass('vimeo-loaded');
+  }
+
+}
+
+$(window).on('load', function(){
+  checkVideo();
+
 });

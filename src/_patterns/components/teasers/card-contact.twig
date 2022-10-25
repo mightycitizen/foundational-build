@@ -5,7 +5,7 @@
         <h2>{{ contact_heading }}</h2>
         <h3>{{ contact_subheading }}</h3>
         {% if contact_description is not empty %}
-          <p class="m-b-3">{{ contact_description }}</p>
+          <p class="mb-3">{{ contact_description }}</p>
         {% endif %}
         {% if link | default %}
           {% include patternlab_namespace | default ~ 'components/links/read-more.twig' with {
@@ -16,7 +16,7 @@
       <div class="cell large-5">
         <div class="callout bg-solid-gray-lightest text-small">
           {% include patternlab_namespace | default ~ 'components/informational/listing.twig' with {
-          "listing_class": 'm-b-0',
+          "listing_class": 'mb-0',
           "items": items
         } %}
         </div>

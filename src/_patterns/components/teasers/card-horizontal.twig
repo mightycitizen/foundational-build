@@ -12,7 +12,7 @@
        <h{{ card.heading.level }} class="card-title {{ card.heading.modifier  | default }}">{{ card.heading.text }}</h{{ card.heading.level }}>
         {% if card.summary | default %}
 
-          <p class="m-b-3">{{ card.summary }}</p>
+          <p class="mb-3">{{ card.summary }}</p>
         {% endif %}
         {% if card.link | default %}
           {% set link = card.link | merge({ class: 'h4' })%}

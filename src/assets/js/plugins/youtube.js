@@ -5,7 +5,7 @@ import '../utils/in-viewport.js';
 // @video init
 const initVideo = () => {
   const
-    initializedClass = 'is-initialized',
+    loadingClass = 'is-loading',
     playingClass = 'is-playing';
 
   var tag = document.createElement('script');
@@ -41,6 +41,7 @@ const initVideo = () => {
             player.playVideo();
             setVideoSize();
             holder.bind('play', function(){
+              holder.addClass(loadingClass);
               if (!playing) {
                   player.playVideo();
               }
@@ -51,7 +52,7 @@ const initVideo = () => {
                 player.pauseVideo();
               }
             })
-
+            holder.removeClass(loadingClass);
           }
 
           function onPlayerStateChange(event) {
@@ -61,7 +62,7 @@ const initVideo = () => {
                   player.pauseVideo();
                 }, 50);
               }
-              holder.addClass(initializedClass);
+
             }
             //console.log('now', event.target.getPlayerState());
             switch (event.target.getPlayerState()){
@@ -75,6 +76,7 @@ const initVideo = () => {
                     case 1:
                       playing = true;
                       if (!firstPlay) holder.addClass(playingClass);
+                      holder.removeClass(loadingClass);
                       break;
                   }
                 }, 500);
@@ -82,6 +84,7 @@ const initVideo = () => {
               case 1:
                 if (!firstPlay) player.unMute();
                 playing = true;
+                holder.removeClass(loadingClass);
                 if (!firstPlay) holder.addClass(playingClass);
                 break;
             }
@@ -163,7 +166,7 @@ $(window).on('scroll', Foundation.util.throttle(
 
 const checkVideo = () => {
   if ($('body').hasClass('youtube-loaded')) return false;
-  const $video = $('[data-video-trigger][data-video-type="youtube"]');
+  const $video = $('[data-video-trigger]');
   if ($video.isInViewport()){
     initVideo();
     $('body').addClass('youtube-loaded');

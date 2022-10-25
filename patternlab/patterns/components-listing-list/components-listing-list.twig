@@ -28,11 +28,11 @@
               {% if item_type | default != 'events' and item.date.full | default %}
                 {% include patternlab_namespace | default ~ 'components/inline-text/meta.twig' with {
                   date: item.date,
-                  meta_class: 'm-b-2'
+                  meta_class: 'mb-2'
                 } %}
               {% endif %}
               {% if item.summary | default %}
-                <p class="m-b-2">{{ item.summary }}</p>
+                <p class="mb-2">{{ item.summary }}</p>
               {% endif %}
               {% if item.categories | default | length %}
                 {% include patternlab_namespace | default ~ 'components/inline-text/meta.twig' with {

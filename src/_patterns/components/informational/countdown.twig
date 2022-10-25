@@ -1,4 +1,4 @@
-<div class="countdown display-flex" data-countdown="{{ date | default('1678991854') }}">
+<div class="countdown d-flex" data-countdown="{{ date | default('1678991854') }}">
   {% include patternlab_namespace | default ~ '/components/informational/countdown-item.twig' with {
     property: 'days',
   } %}

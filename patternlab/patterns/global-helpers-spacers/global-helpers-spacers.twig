@@ -26,11 +26,11 @@
   },
   {
     label: "Left",
-    selector: "l"
+    selector: "s"
   },
   {
     label: "Right",
-    selector: "r"
+    selector: "e"
   },
   {
     label: "Horizontal",
@@ -42,7 +42,7 @@
   },
   {
     label: "All",
-    selector: "a"
+    selector: ""
   }
 ] %}
 {% for type in types %}
@@ -50,7 +50,7 @@
   {% for direction in directions %}
     <h4>{{ type.label }} {{ direction.label }}</h4>
     {% for i in range (i, 10) %}
-      <div class="spacer {{ type.selector }}-{{ direction.selector }}-{{ i }}">{{ type.label }} {{ direction.label }} {{ i }}</div>
+      <div class="spacer {{ type.selector }}{{ direction.selector }}-{{ i }}">{{ type.label }} {{ direction.label }} {{ i }}</div>
     {% endfor %}
   {% endfor %}
 

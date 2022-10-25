@@ -1,25 +1,25 @@
 .text{
-  &-smaller{
-    font-size: rem-calc(14);
-  }
-  &-small{
-    font-size: rem-calc(16);
-  }
+  // &-smaller{
+  //   font-size: rem-calc(14);
+  // }
+  // &-small{
+  //   font-size: rem-calc(16);
+  // }
   &-inherit{
     color: inherit;
   }
-  &-black{
-    color: $black;
-  }
-  &-white{
-    color: $white;
-    a{
-      &:not(.button){
-        color: inherit;
-      }
+  // &-black{
+  //   color: $black;
+  // }
+  // &-white{
+  //   color: $white;
+  //   a{
+  //     &:not(.button){
+  //       color: inherit;
+  //     }
 
-    }
-  }
+  //   }
+  // }
 }
 
 

@@ -1,12 +1,12 @@
 @import '../variables/image-sizes.scss';
 
-.no-shadow{
-  box-shadow: none;
-}
+// .no-shadow{
+//   box-shadow: none;
+// }
 
-.shadow{
-  box-shadow: $global-box-shadow;
-}
+// .shadow{
+//   box-shadow: $global-box-shadow;
+// }
 
 .flip{
   transform: scaleX(-1);

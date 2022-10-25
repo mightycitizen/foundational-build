@@ -7,8 +7,9 @@
 }
 
 $additional-palette: ();
-$light-opacity: 0.1;
-$gradient-opacity: 0.4;
+$utilities-text-colors: ();
+// $light-opacity: 0.1;
+// $gradient-opacity: 0.4;
 
 @mixin generateVariants($map, $color){
   $variants: map-get($map, 'variants');
@@ -19,26 +20,27 @@ $gradient-opacity: 0.4;
     @if (is-percentage($value)){
       $output: scale-color($default-color,$lightness: $output);
     }
+    $utilities-text-colors: map-merge($utilities-text-colors, (#{$color}: $output));
 
-    .color-#{$color}{
-      color: $default-color;
-    }
+    // .color-#{$color}{
+    //   color: $default-color;
+    // }
 
-    .fill-#{$color}{
-      path, polygon{
-        fill: $default-color;
-      }
-    }
-
-
-    .bg-solid-#{$color}{
-      background-color: $default-color;
-    }
+    // .fill-#{$color}{
+    //   path, polygon{
+    //     fill: $default-color;
+    //   }
+    // }
 
 
-    .bg-light-#{$color}{
-      background-color: rgba($default-color,$light-opacity);
-    }
+    // .bg-solid-#{$color}{
+    //   background-color: $default-color;
+    // }
+
+
+    // .bg-light-#{$color}{
+    //   background-color: rgba($default-color,$light-opacity);
+    // }
 
     // .bg-gradient-#{$color}{
     //   &:before{
@@ -47,16 +49,17 @@ $gradient-opacity: 0.4;
     // }
     @if $output{
       $additional-palette: map-set($additional-palette, '#{$color}-#{$key}', $output) !global;
-      .color-#{$color}-#{$key}{
-        color: $output;
-      }
-      .bg-solid-#{$color}-#{$key}{
-        background-color: $output;
-      }
+      $utilities-text-colors: map-merge($utilities-text-colors, (#{$color}-#{$key}: $output));
+      // .color-#{$color}-#{$key}{
+      //   color: $output;
+      // }
+      // .bg-solid-#{$color}-#{$key}{
+      //   background-color: $output;
+      // }
 
-      .bg-light-#{$color}-#{$key}{
-        background-color: rgba($output,$light-opacity);
-      }
+      // .bg-light-#{$color}-#{$key}{
+      //   background-color: rgba($output,$light-opacity);
+      // }
 
       // .bg-gradient-#{$color}-#{$key}{
       //   &:before{

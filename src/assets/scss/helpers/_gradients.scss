@@ -29,13 +29,13 @@ $light-opacity: 0.5;
             }
           }
         }
-        // &:not(.bg-gradient--faded):not(.bg-gradient--down){
-        //   @include breakpoint(medium){
-        //     &:before{
-        //       mask-image: linear-gradient(to right, black 0%, rgba(0,0,0,0) 100%);
-        //     }
-        //   }
-        // }
+        &:not(.bg-gradient--down){
+          @include breakpoint(medium){
+            &:before{
+              mask-image: linear-gradient(to right, black 0%, rgba(0,0,0,0) 100%);
+            }
+          }
+        }
 
         // &.bg-gradient--radial{
         //   &:before{

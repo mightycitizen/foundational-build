@@ -15158,6 +15158,12 @@ html, body, .l-wrapper {
 .bg-gradient-primary-lightest:before {
   background: linear-gradient(to bottom, #fff 0%, #bdcaef 100%);
 }
+@media print, screen and (min-width: 40em) {
+  .bg-gradient-primary:not(.bg-gradient--down):before {
+    -webkit-mask-image: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 100%);
+  }
+}
 
 .bg-gradient-secondary:before {
   background-color: rgba(255, 205, 0, 0.5);
@@ -15173,6 +15179,12 @@ html, body, .l-wrapper {
 .bg-gradient-secondary-lightest:before {
   background: linear-gradient(to bottom, #fff 0%, #ffefb2 100%);
 }
+@media print, screen and (min-width: 40em) {
+  .bg-gradient-secondary:not(.bg-gradient--down):before {
+    -webkit-mask-image: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 100%);
+  }
+}
 
 .bg-gradient-tertiary:before {
   background-color: rgba(216, 38, 38, 0.5);
@@ -15187,6 +15199,12 @@ html, body, .l-wrapper {
 }
 .bg-gradient-tertiary-lightest:before {
   background: linear-gradient(to bottom, #fff 0%, #f3bdbd 100%);
+}
+@media print, screen and (min-width: 40em) {
+  .bg-gradient-tertiary:not(.bg-gradient--down):before {
+    -webkit-mask-image: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 100%);
+  }
 }
 
 .bg-gradient--flip:before {

@@ -170,6 +170,10 @@ const initTableScroll = () => {
 
 // @foundation helpers init
 const initFoundationHelpers = () => {
+  $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
+    $('body').removeClass('has-menu');
+  });
+
   $('[data-dropdown-trigger]').on('click', 'a', function(e){
     e.preventDefault();
     const text = $(e.target).text();
@@ -287,6 +291,10 @@ const initMenuHelpers = () => {
 }
 
 $(document).ready(function(){
+  // $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
+  //   // newSize is the name of the now-current breakpoint, oldSize is the previous breakpoint
+  // });
+
 
   // ↑ True for "medium" or larger (by default)
   //Foundation.MediaQuery.is('medium up');

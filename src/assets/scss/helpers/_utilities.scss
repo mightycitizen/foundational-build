@@ -1,5 +1,18 @@
 // === Layout ===
 
+$utilities-text-colors: ();
+$additional-palette: ();
+//$spacer-mobile: 5px !default;
+//$spacer: 1rem !default;
+$spacer-mobile: $spacer *.625;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+) !default;
 //$enable-important-utilities: true !default;
 $enable-negative-margins: true !default;
 $negative-spacers: if($enable-negative-margins, ($spacers), null) !default;
@@ -35,7 +48,24 @@ $negative-spacers: if($enable-negative-margins, ($spacers), null) !default;
 // }
 
 
+
+
+@function map-set($map, $key, $value) {
+  $new: ($key: $value);
+  @return map-merge($map, $new);
+}
+
+
+
+$palettes: ('primary': $primary, 'secondary': $secondary, 'tertiary':$tertiary,'gray':$gray);
+
+@each $palette, $map in $palettes {
+  @include generateVariants($map, $palette);
+}
+
 // Utilities
+
+
 
 @debug $utilities-text-colors;
 
@@ -106,7 +136,7 @@ $utilities: map-merge(
       property: box-shadow,
       class: shadow,
       values: (
-        null: $global-box-shadow,
+        null: $box-shadow,
         none: none,
       )
     ),
@@ -405,10 +435,10 @@ $utilities: map-merge(
       values: (
         //lighter: $font-weight-lighter,
         //light: $font-weight-light,
-        normal: $global-weight-normal,
+        normal: $font-weight-normal,
         //medium: $font-weight-medium,
-        semibold: $global-weight-semibold,
-        bold: $global-weight-bold,
+        semibold: $font-weight-semibold,
+        bold: $font-weight-bold,
         //bolder: $font-weight-bolder
       )
     ),
@@ -418,7 +448,7 @@ $utilities: map-merge(
       values: (
         1: 1,
 //        sm: $line-height-sm,
-        base: $global-lineheight,
+        base: $line-height,
 //        lg: $line-height-lg,
       )
     ),
@@ -460,9 +490,6 @@ $utilities: map-merge(
     "background-color": (
       property: background-color,
       class: bg-solid,
-      local-vars: (
-        "bg-opacity": 1
-      ),
       values: map-merge(
         $utilities-text-colors,
         (

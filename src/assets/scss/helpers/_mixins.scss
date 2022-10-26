@@ -274,3 +274,28 @@
     }
   }
 }
+
+@mixin generateVariants($map, $color){
+  $variants: map-get($map, 'variants');
+  @each $key, $value in $variants {
+
+    $default-color: map-get($map, 'default');
+    $output: $value;
+    @if (is-percentage($value)){
+      $output: scale-color($default-color,$lightness: $output);
+    }
+    @debug $output;
+    @debug $color;
+    $utilities-text-colors: map-merge($utilities-text-colors, (#{$color}: $output));
+
+    @if $output{
+      $additional-palette: map-set($additional-palette, '#{$color}-#{$key}', $output) !global;
+      $utilities-text-colors: map-merge($utilities-text-colors, (#{$color}-#{$key}: $output));
+
+    }
+
+
+
+
+  }
+}

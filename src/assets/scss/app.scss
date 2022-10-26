@@ -1,20 +1,47 @@
 @charset 'utf-8';
+@use "sass:map";
 // this file is created by the json to sass gulp task,
 // see .json files in src/_patterns/global/base/*.json
-@import
-  "helpers/mixins",
-  'helpers/functions';
 
 @import
   'variables/breakpoints',
+  'variables/headings',
+  'variables/styles',
   'variables/fonts',
   'variables/colors';
 
-@import 'helpers/colors';
+$font-sizes: ();
+//$header-styles: ();
+$header-styles: $headingStyles;
+@each $key, $value in $headingStyles {
+  // if last in map
+  @each $sizeKey, $sizeValue in $value {
+    @if index(map-keys($headingStyles), $key) == length(map-keys($headingStyles)) {
+      $font-sizes: map.set($font-sizes, str-slice($sizeKey,2,3), map-get($sizeValue,'font-size'));
+    }
+    //$header-styles: map.set($value, 'h'$sizeKey, ('font-size': $value));
+  }
+}
+
+//@debug $font-sizes;
+
+@import
+  'helpers/mixins',
+  'helpers/functions';
+
+// $light-opacity: 0.1;
+// $gradient-opacity: 0.4;
+
+
+@debug $utilities-text-colors;
+
+
 
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
+
+@import "helpers/utilities";
 
 $unicode-quote-left: '\201c';
 
@@ -125,7 +152,6 @@ $unicode-quote-left: '\201c';
 
 
 @import
-  "helpers/spacing",
   "helpers/lists",
   "helpers/misc",
   "helpers/gradients",

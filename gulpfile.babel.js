@@ -62,8 +62,7 @@ function serve(done) {
     // Drupal core JS files to resolve correctly.
     // i.e. /core/misc/drupal.js
     server: ['./patternlab/', '../../../'],
-    notify: false,
-    open: false
+    notify: false
   });
   done();
 }

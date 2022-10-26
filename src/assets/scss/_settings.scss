@@ -71,17 +71,7 @@ $cms: 'Craft';
 
 $font-scale-mobile: 0.75;
 
-$spacer-mobile: 5px !default;
-$spacer: 8px !default;
-//$spacer: 1rem !default;
-$spacers: (
-  0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
-) !default;
+
 
 /* ---- */
 
@@ -138,11 +128,11 @@ $print-hrefs: true;
 
 $breakpoints: (
   small: 0,
-  medium: $mediumBreakpoint,
-  large: $largeBreakpoint,
-  xlarge: $xlargeBreakpoint,
-  xxlarge: $xxlargeBreakpoint,
-);
+  medium: 640,
+  large: 1024,
+  xlarge: 1200,
+  xxlarge: 1440,
+) !default;
 $breakpoints-hidpi: (
   hidpi-1: 1,
   hidpi-1-5: 1.5,
@@ -177,12 +167,6 @@ $header-color: inherit;
 $header-lineheight: 1.2;
 $header-margin-bottom: rem-calc(16);
 
-$h1-font-size: 48;
-$h2-font-size: 32;
-$h3-font-size: 24;
-$h4-font-size: 18;
-$h5-font-size: 16;
-$h6-font-size: 16;
 
 $header-styles: (
   small: (
@@ -194,23 +178,15 @@ $header-styles: (
     'h6': ('font-size': 16),
   ),
   medium: (
-    'h1': ('font-size': $h1-font-size),
-    'h2': ('font-size': $h2-font-size),
-    'h3': ('font-size': $h3-font-size),
-    'h4': ('font-size': $h4-font-size),
-    'h5': ('font-size': $h5-font-size),
-    'h6': ('font-size': $h6-font-size),
+    'h1': ('font-size': 48),
+    'h2': ('font-size': 32),
+    'h3': ('font-size': 24),
+    'h4': ('font-size': 18),
+    'h5': ('font-size': 16),
+    'h6': ('font-size': 16),
   ),
-);
-
-$font-sizes: (
-  1: $h1-font-size,
-  2: $h2-font-size,
-  3: $h3-font-size,
-  4: $h4-font-size,
-  5: $h5-font-size,
-  6: $h6-font-size
 ) !default;
+
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
@@ -288,7 +264,7 @@ $accordion-plus-content: '\002B';
 $accordion-minus-content: '\2013';
 $accordion-title-font-size: rem-calc(24);
 $accordion-item-color: $dark-gray;
-$accordion-item-background-hover: scale-color($accordion-background, $lightness: -20%);
+$accordion-item-background-hover: $black; //scale-color($accordion-background, $lightness: -20%);
 //$accordion-item-padding: rem-calc(16 32 19);
 $accordion-content-background: $white;
 $accordion-content-border: 0 solid $light-gray;

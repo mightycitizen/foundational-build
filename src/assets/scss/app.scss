@@ -10,32 +10,20 @@
   'variables/fonts',
   'variables/colors';
 
-$font-sizes: ();
-$utilities-colors: ();
-$utilities-light-colors: ();
-$additional-palette: ();
-//$header-styles: ();
-$header-styles: $headingStyles;
-@each $key, $value in $headingStyles {
-  // if last in map
-  @each $sizeKey, $sizeValue in $value {
-    @if index(map-keys($headingStyles), $key) == length(map-keys($headingStyles)) {
-      $font-sizes: map.set($font-sizes, str-slice($sizeKey,2,3), map-get($sizeValue,'font-size'));
-    }
-    //$header-styles: map.set($value, 'h'$sizeKey, ('font-size': $value));
-  }
-}
+
 
 @import
   'helpers/mixins',
   'helpers/functions';
 
+@import "helpers/preprocess";
 
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
 
 @import "helpers/utilities";
+
 
 //@debug $utilities-text-colors;
 //@debug $additional-palette;

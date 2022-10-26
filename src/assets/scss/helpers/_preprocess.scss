@@ -1,0 +1,69 @@
+$font-sizes: ();
+$utilities-colors: ();
+$utilities-light-colors: ();
+$additional-palette: ();
+//$header-styles: ();
+$header-styles: $headingStyles;
+@each $key, $value in $headingStyles {
+  // if last in map
+  @each $sizeKey, $sizeValue in $value {
+    @if index(map-keys($headingStyles), $key) == length(map-keys($headingStyles)) {
+      $font-sizes: map.set($font-sizes, str-slice($sizeKey,2,3), map-get($sizeValue,'font-size'));
+    }
+    //$header-styles: map.set($value, 'h'$sizeKey, ('font-size': $value));
+  }
+}
+// === Layout ===
+
+
+//$spacer-mobile: 5px !default;
+//$spacer: 1rem !default;
+
+// Width
+
+// .w-100 {
+//   width: 100% !important;
+// }
+
+// .h-100 {
+//   height: 100% !important;
+// }
+
+// Margin and Padding
+
+// .m-x-auto {
+//   margin-right: auto !important;
+//   margin-left: auto !important;
+// }
+
+
+// @each $prop, $abbrev in (margin: m, padding: p) {
+//   @each $size in $spacers {
+//     @each $name, $direction in (left: l, right: r, top: t, bottom: b, x: x, y: y, all: a) {
+//       .#{$abbrev}-#{$direction}-#{$size} {
+//         $set-size: $size;
+//         @if ($size == 'half') { $set-size: 0.5; }
+//         @include spacer($prop, $name, $set-size);
+//       }
+//     }
+//   }
+// }
+
+
+
+
+@function map-set($map, $key, $value) {
+  $new: ($key: $value);
+  @return map-merge($map, $new);
+}
+
+
+
+$palettes: ('primary': $primary, 'secondary': $secondary, 'tertiary':$tertiary,'gray':$gray);
+
+@each $palette, $map in $palettes {
+  @include generateVariants($map, $palette);
+}
+
+// Utilities
+

@@ -11,6 +11,9 @@
   'variables/colors';
 
 $font-sizes: ();
+$utilities-colors: ();
+$utilities-light-colors: ();
+$additional-palette: ();
 //$header-styles: ();
 $header-styles: $headingStyles;
 @each $key, $value in $headingStyles {
@@ -23,18 +26,9 @@ $header-styles: $headingStyles;
   }
 }
 
-//@debug $font-sizes;
-
 @import
   'helpers/mixins',
   'helpers/functions';
-
-// $light-opacity: 0.1;
-// $gradient-opacity: 0.4;
-
-
-@debug $utilities-text-colors;
-
 
 
 @import 'settings';
@@ -43,6 +37,8 @@ $header-styles: $headingStyles;
 
 @import "helpers/utilities";
 
+//@debug $utilities-text-colors;
+//@debug $additional-palette;
 $unicode-quote-left: '\201c';
 
 // Global styles

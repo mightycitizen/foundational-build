@@ -1,7 +1,6 @@
 // === Layout ===
 
-$utilities-text-colors: ();
-$additional-palette: ();
+
 //$spacer-mobile: 5px !default;
 //$spacer: 1rem !default;
 $spacer-mobile: $spacer *.625;
@@ -67,8 +66,9 @@ $palettes: ('primary': $primary, 'secondary': $secondary, 'tertiary':$tertiary,'
 
 
 
-@debug $utilities-text-colors;
+//@debug $utilities-text-colors;
 
+//@debug $utilities-colors;
 $utilities: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $utilities: map-merge(
@@ -476,7 +476,7 @@ $utilities: map-merge(
       property: color,
       class: text,
       values: map-merge(
-        $utilities-text-colors,
+        $utilities-colors,
         (
           //"muted": $text-muted,
           "black": $black, // deprecated
@@ -491,7 +491,17 @@ $utilities: map-merge(
       property: background-color,
       class: bg-solid,
       values: map-merge(
-        $utilities-text-colors,
+        $utilities-colors,
+        (
+          "transparent": transparent
+        )
+      )
+    ),
+    "background-color-light": (
+      property: background-color,
+      class: bg-light,
+      values: map-merge(
+        $utilities-light-colors,
         (
           "transparent": transparent
         )

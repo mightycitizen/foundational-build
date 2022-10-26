@@ -4,5 +4,6 @@
   "font-weight-normal": "400",
   "font-weight-semibold": "600",
   "font-weight-bold": "800",
-  "line-height": 1.2
+  "line-height": 1.2,
+  "bg-light-opacity": 0.4
 }

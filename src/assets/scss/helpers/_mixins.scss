@@ -281,16 +281,18 @@
 
     $default-color: map-get($map, 'default');
     $output: $value;
-    @if (is-percentage($value)){
-      $output: scale-color($default-color,$lightness: $output);
-    }
-    @debug $output;
-    @debug $color;
-    $utilities-text-colors: map-merge($utilities-text-colors, (#{$color}: $output));
+    // @if (is-percentage($value)){
+    //   $output: scale-color($default-color,$lightness: $output);
+    // }
+    // @debug $output;
+    //@debug $utilities-colors;
+    $utilities-colors: map-set($utilities-colors, #{$color}, $default-color) !global;
+    $utilities-light-colors: map-set($utilities-light-colors, #{$color}, rgba($default-color, $bg-light-opacity)) !global;
 
+    //@debug $utilities-colors;
     @if $output{
       $additional-palette: map-set($additional-palette, '#{$color}-#{$key}', $output) !global;
-      $utilities-text-colors: map-merge($utilities-text-colors, (#{$color}-#{$key}: $output));
+      $utilities-colors: map-set($utilities-colors, #{$color}-#{$key}, $output) !global;
 
     }
 
@@ -298,4 +300,5 @@
 
 
   }
+
 }

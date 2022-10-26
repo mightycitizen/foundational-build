@@ -1070,6 +1070,70 @@
   word-break: break-word;
 }
 
+.text-primary {
+  color: #2953cc;
+}
+
+.text-primary-darker {
+  color: #1f3e99;
+}
+
+.text-primary-lighter {
+  color: #6986db;
+}
+
+.text-primary-lightest {
+  color: #bdcaef;
+}
+
+.text-secondary {
+  color: #ffcd00;
+}
+
+.text-secondary-darker {
+  color: #eca806;
+}
+
+.text-secondary-lighter {
+  color: #ffe57f;
+}
+
+.text-secondary-lightest {
+  color: #ffefb2;
+}
+
+.text-tertiary {
+  color: #d82626;
+}
+
+.text-tertiary-darker {
+  color: #b42727;
+}
+
+.text-tertiary-lighter {
+  color: #e87d7d;
+}
+
+.text-tertiary-lightest {
+  color: #f3bdbd;
+}
+
+.text-gray {
+  color: #666;
+}
+
+.text-gray-lighter {
+  color: #ccc;
+}
+
+.text-gray-lightest {
+  color: #eee;
+}
+
+.text-gray-darker {
+  color: #333;
+}
+
 .text-black {
   color: #333;
 }
@@ -1082,7 +1146,91 @@
   color: inherit;
 }
 
+.bg-solid-primary {
+  background-color: #2953cc;
+}
+
+.bg-solid-primary-darker {
+  background-color: #1f3e99;
+}
+
+.bg-solid-primary-lighter {
+  background-color: #6986db;
+}
+
+.bg-solid-primary-lightest {
+  background-color: #bdcaef;
+}
+
+.bg-solid-secondary {
+  background-color: #ffcd00;
+}
+
+.bg-solid-secondary-darker {
+  background-color: #eca806;
+}
+
+.bg-solid-secondary-lighter {
+  background-color: #ffe57f;
+}
+
+.bg-solid-secondary-lightest {
+  background-color: #ffefb2;
+}
+
+.bg-solid-tertiary {
+  background-color: #d82626;
+}
+
+.bg-solid-tertiary-darker {
+  background-color: #b42727;
+}
+
+.bg-solid-tertiary-lighter {
+  background-color: #e87d7d;
+}
+
+.bg-solid-tertiary-lightest {
+  background-color: #f3bdbd;
+}
+
+.bg-solid-gray {
+  background-color: #666;
+}
+
+.bg-solid-gray-lighter {
+  background-color: #ccc;
+}
+
+.bg-solid-gray-lightest {
+  background-color: #eee;
+}
+
+.bg-solid-gray-darker {
+  background-color: #333;
+}
+
 .bg-solid-transparent {
+  background-color: transparent;
+}
+
+.bg-light-primary {
+  background-color: rgba(41, 83, 204, 0.4);
+}
+
+.bg-light-secondary {
+  background-color: rgba(255, 205, 0, 0.4);
+}
+
+.bg-light-tertiary {
+  background-color: rgba(216, 38, 38, 0.4);
+}
+
+.bg-light-gray {
+  background-color: rgba(102, 102, 102, 0.4);
+}
+
+.bg-light-transparent {
   background-color: transparent;
 }
 

@@ -5042,10 +5042,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /*!****************************************************!*\
   !*** ./src/_patterns/global/base/breakpoints.json ***!
   \****************************************************/
-/*! exports provided: mediumBreakpoint, largeBreakpoint, xlargeBreakpoint, xxlargeBreakpoint, default */
+/*! exports provided: breakpoints, default */
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse(\"{\\\"mediumBreakpoint\\\":640,\\\"largeBreakpoint\\\":1024,\\\"xlargeBreakpoint\\\":1200,\\\"xxlargeBreakpoint\\\":1440}\");\n\n//# sourceURL=webpack:///./src/_patterns/global/base/breakpoints.json?");
+eval("module.exports = JSON.parse(\"{\\\"breakpoints\\\":{\\\"small\\\":0,\\\"medium\\\":640,\\\"large\\\":1024,\\\"xlarge\\\":1200,\\\"xxlarge\\\":1440}}\");\n\n//# sourceURL=webpack:///./src/_patterns/global/base/breakpoints.json?");
 
 /***/ }),
 

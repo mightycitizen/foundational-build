@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1666814424255" media="all" />
-    <link rel="stylesheet" href="../../css/all.css?1666814424255" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1667243057693" media="all" />
+    <link rel="stylesheet" href="../../css/all.css?1667243057693" media="all" />
 
         <meta name="theme-color" content="#ffffff">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
         <script src="https://kit.fontawesome.com/2f872f69e9.js" crossorigin="anonymous"></script>
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1666814424255" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1667243057693" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -941,6 +941,7 @@
 }
 </style>
 
+<h4>Solid</h4>
 <div class="bg-solid-primary bg-swatch text-white">
   Solid Background (any brand color and variation can be used)
 </div>
@@ -948,6 +949,8 @@
 <div class="bg-light-primary bg-swatch">
   Light Background (any brand color and variation can be used)
 </div>
+
+<h4>Gradient</h4>
 <div class="bg-gradient-primary bg-swatch">
   Gradient Background Horizontal (any brand color and variation can be used)
 </div>
@@ -1012,7 +1015,7 @@
 		
 			<div class="pl-js-pattern-example">
 			<h3>Unstyled List</h3>
-<ul class="unstyled-list">
+<ul class="list-unstyled">
   <li>Basically a list</li>
   <li>With no bullets</li>
   <li>Lorem ipsum</li>
@@ -1020,37 +1023,38 @@
 
 
 <h3>Inline List</h3>
-<ul class="inline-list">
+<p>Also demonstrates some utility class styling.</p>
+<ul class="list-unstyled d-flex gap-4">
   <li>Basically a list</li>
   <li>That displays items<br /> side by side</li>
   <li>Lorem ipsum</li>
 </ul>
 
-<ul class="inline-list inline-list--top">
+<ul class="list-unstyled d-flex gap-4 align-items-center">
   <li>Same inline list</li>
-  <li>But vertically aligned<br /> to top</li>
+  <li>But vertically aligned<br /> to middle</li>
   <li>Lorem ipsum</li>
 </ul>
 
-<ul class="inline-list inline-list--stacked">
+<ul class="list-unstyled d-flex flex-column flex-large-row gap-4">
   <li>Same inline list</li>
   <li>But stacks on mobile</li>
   <li>Lorem ipsum</li>
 </ul>
 
-<ul class="inline-list inline-list--divided">
+<ul class="list-unstyled list-divided  d-flex gap-5">
   <li>Same inline list</li>
   <li>But with dividers</li>
   <li>Lorem ipsum</li>
 </ul>
 
-<ul class="inline-list inline-list--tight">
+<ul class="list-unstyled list-divided d-flex gap-3">
   <li>Same inline list</li>
   <li>But closer together</li>
   <li>Lorem ipsum</li>
 </ul>
 
-<ul class="inline-list inline-list--wide">
+<ul class="list-unstyled list-divided d-flex gap-6">
   <li>Same inline list</li>
   <li>But further apart</li>
   <li>Lorem ipsum</li>
@@ -1100,216 +1104,472 @@
 			<div class="pl-js-pattern-example">
 			<style>
   .spacer{
-    background: #ccc;
-    outline: 1px solid #000;
+    background: aqua;
+    border: 1px solid #000;
   }
 </style>
 
   <h3>Margin</h3>
       <h4>Margin Top</h4>
-    
-Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/patternlab/node_modules/@basalt/twig-renderer/vendor/twig/twig/src/Environment.php(418) : eval()'d code on line 73
-      <div class="spacer mt-0">Margin Top 0</div>
-          <div class="spacer mt-1">Margin Top 1</div>
-          <div class="spacer mt-2">Margin Top 2</div>
-          <div class="spacer mt-3">Margin Top 3</div>
-          <div class="spacer mt-4">Margin Top 4</div>
-          <div class="spacer mt-5">Margin Top 5</div>
-          <div class="spacer mt-6">Margin Top 6</div>
-          <div class="spacer mt-7">Margin Top 7</div>
-          <div class="spacer mt-8">Margin Top 8</div>
-          <div class="spacer mt-9">Margin Top 9</div>
-          <div class="spacer mt-10">Margin Top 10</div>
-          <h4>Margin Bottom</h4>
-    
-Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/patternlab/node_modules/@basalt/twig-renderer/vendor/twig/twig/src/Environment.php(418) : eval()'d code on line 73
-      <div class="spacer mb-0">Margin Bottom 0</div>
-          <div class="spacer mb-1">Margin Bottom 1</div>
-          <div class="spacer mb-2">Margin Bottom 2</div>
-          <div class="spacer mb-3">Margin Bottom 3</div>
-          <div class="spacer mb-4">Margin Bottom 4</div>
-          <div class="spacer mb-5">Margin Bottom 5</div>
-          <div class="spacer mb-6">Margin Bottom 6</div>
-          <div class="spacer mb-7">Margin Bottom 7</div>
-          <div class="spacer mb-8">Margin Bottom 8</div>
-          <div class="spacer mb-9">Margin Bottom 9</div>
-          <div class="spacer mb-10">Margin Bottom 10</div>
-          <h4>Margin Left</h4>
-    
-Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/patternlab/node_modules/@basalt/twig-renderer/vendor/twig/twig/src/Environment.php(418) : eval()'d code on line 73
-      <div class="spacer ms-0">Margin Left 0</div>
-          <div class="spacer ms-1">Margin Left 1</div>
-          <div class="spacer ms-2">Margin Left 2</div>
-          <div class="spacer ms-3">Margin Left 3</div>
-          <div class="spacer ms-4">Margin Left 4</div>
-          <div class="spacer ms-5">Margin Left 5</div>
-          <div class="spacer ms-6">Margin Left 6</div>
-          <div class="spacer ms-7">Margin Left 7</div>
-          <div class="spacer ms-8">Margin Left 8</div>
-          <div class="spacer ms-9">Margin Left 9</div>
-          <div class="spacer ms-10">Margin Left 10</div>
-          <h4>Margin Right</h4>
-    
-Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/patternlab/node_modules/@basalt/twig-renderer/vendor/twig/twig/src/Environment.php(418) : eval()'d code on line 73
-      <div class="spacer me-0">Margin Right 0</div>
-          <div class="spacer me-1">Margin Right 1</div>
-          <div class="spacer me-2">Margin Right 2</div>
-          <div class="spacer me-3">Margin Right 3</div>
-          <div class="spacer me-4">Margin Right 4</div>
-          <div class="spacer me-5">Margin Right 5</div>
-          <div class="spacer me-6">Margin Right 6</div>
-          <div class="spacer me-7">Margin Right 7</div>
-          <div class="spacer me-8">Margin Right 8</div>
-          <div class="spacer me-9">Margin Right 9</div>
-          <div class="spacer me-10">Margin Right 10</div>
-          <h4>Margin Horizontal</h4>
-    
-Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/patternlab/node_modules/@basalt/twig-renderer/vendor/twig/twig/src/Environment.php(418) : eval()'d code on line 73
-      <div class="spacer mx-0">Margin Horizontal 0</div>
-          <div class="spacer mx-1">Margin Horizontal 1</div>
-          <div class="spacer mx-2">Margin Horizontal 2</div>
-          <div class="spacer mx-3">Margin Horizontal 3</div>
-          <div class="spacer mx-4">Margin Horizontal 4</div>
-          <div class="spacer mx-5">Margin Horizontal 5</div>
-          <div class="spacer mx-6">Margin Horizontal 6</div>
-          <div class="spacer mx-7">Margin Horizontal 7</div>
-          <div class="spacer mx-8">Margin Horizontal 8</div>
-          <div class="spacer mx-9">Margin Horizontal 9</div>
-          <div class="spacer mx-10">Margin Horizontal 10</div>
-          <h4>Margin Vertical</h4>
-    
-Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/patternlab/node_modules/@basalt/twig-renderer/vendor/twig/twig/src/Environment.php(418) : eval()'d code on line 73
-      <div class="spacer my-0">Margin Vertical 0</div>
-          <div class="spacer my-1">Margin Vertical 1</div>
-          <div class="spacer my-2">Margin Vertical 2</div>
-          <div class="spacer my-3">Margin Vertical 3</div>
-          <div class="spacer my-4">Margin Vertical 4</div>
-          <div class="spacer my-5">Margin Vertical 5</div>
-          <div class="spacer my-6">Margin Vertical 6</div>
-          <div class="spacer my-7">Margin Vertical 7</div>
-          <div class="spacer my-8">Margin Vertical 8</div>
-          <div class="spacer my-9">Margin Vertical 9</div>
-          <div class="spacer my-10">Margin Vertical 10</div>
-          <h4>Margin All</h4>
-    
-Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/patternlab/node_modules/@basalt/twig-renderer/vendor/twig/twig/src/Environment.php(418) : eval()'d code on line 73
-      <div class="spacer m-0">Margin All 0</div>
-          <div class="spacer m-1">Margin All 1</div>
-          <div class="spacer m-2">Margin All 2</div>
-          <div class="spacer m-3">Margin All 3</div>
-          <div class="spacer m-4">Margin All 4</div>
-          <div class="spacer m-5">Margin All 5</div>
-          <div class="spacer m-6">Margin All 6</div>
-          <div class="spacer m-7">Margin All 7</div>
-          <div class="spacer m-8">Margin All 8</div>
-          <div class="spacer m-9">Margin All 9</div>
-          <div class="spacer m-10">Margin All 10</div>
-      
+    <div style="background-color: orange; overflow: hidden;">
+              <div class="spacer mt-0">
+          <span class="d-block" style="background-color: #ccc">Margin Top 0 (<code>mt-0</code>)</span>
+        </div>
+              <div class="spacer mt-1">
+          <span class="d-block" style="background-color: #ccc">Margin Top 1 (<code>mt-1</code>)</span>
+        </div>
+              <div class="spacer mt-2">
+          <span class="d-block" style="background-color: #ccc">Margin Top 2 (<code>mt-2</code>)</span>
+        </div>
+              <div class="spacer mt-3">
+          <span class="d-block" style="background-color: #ccc">Margin Top 3 (<code>mt-3</code>)</span>
+        </div>
+              <div class="spacer mt-4">
+          <span class="d-block" style="background-color: #ccc">Margin Top 4 (<code>mt-4</code>)</span>
+        </div>
+              <div class="spacer mt-5">
+          <span class="d-block" style="background-color: #ccc">Margin Top 5 (<code>mt-5</code>)</span>
+        </div>
+              <div class="spacer mt-6">
+          <span class="d-block" style="background-color: #ccc">Margin Top 6 (<code>mt-6</code>)</span>
+        </div>
+              <div class="spacer mt-7">
+          <span class="d-block" style="background-color: #ccc">Margin Top 7 (<code>mt-7</code>)</span>
+        </div>
+              <div class="spacer mt-8">
+          <span class="d-block" style="background-color: #ccc">Margin Top 8 (<code>mt-8</code>)</span>
+        </div>
+          </div>
+    <hr/>
+      <h4>Margin Bottom</h4>
+    <div style="background-color: orange; overflow: hidden;">
+              <div class="spacer mb-0">
+          <span class="d-block" style="background-color: #ccc">Margin Bottom 0 (<code>mb-0</code>)</span>
+        </div>
+              <div class="spacer mb-1">
+          <span class="d-block" style="background-color: #ccc">Margin Bottom 1 (<code>mb-1</code>)</span>
+        </div>
+              <div class="spacer mb-2">
+          <span class="d-block" style="background-color: #ccc">Margin Bottom 2 (<code>mb-2</code>)</span>
+        </div>
+              <div class="spacer mb-3">
+          <span class="d-block" style="background-color: #ccc">Margin Bottom 3 (<code>mb-3</code>)</span>
+        </div>
+              <div class="spacer mb-4">
+          <span class="d-block" style="background-color: #ccc">Margin Bottom 4 (<code>mb-4</code>)</span>
+        </div>
+              <div class="spacer mb-5">
+          <span class="d-block" style="background-color: #ccc">Margin Bottom 5 (<code>mb-5</code>)</span>
+        </div>
+              <div class="spacer mb-6">
+          <span class="d-block" style="background-color: #ccc">Margin Bottom 6 (<code>mb-6</code>)</span>
+        </div>
+              <div class="spacer mb-7">
+          <span class="d-block" style="background-color: #ccc">Margin Bottom 7 (<code>mb-7</code>)</span>
+        </div>
+              <div class="spacer mb-8">
+          <span class="d-block" style="background-color: #ccc">Margin Bottom 8 (<code>mb-8</code>)</span>
+        </div>
+          </div>
+    <hr/>
+      <h4>Margin Left/Start</h4>
+    <div style="background-color: orange; overflow: hidden;">
+              <div class="spacer ms-0">
+          <span class="d-block" style="background-color: #ccc">Margin Left/Start 0 (<code>ms-0</code>)</span>
+        </div>
+              <div class="spacer ms-1">
+          <span class="d-block" style="background-color: #ccc">Margin Left/Start 1 (<code>ms-1</code>)</span>
+        </div>
+              <div class="spacer ms-2">
+          <span class="d-block" style="background-color: #ccc">Margin Left/Start 2 (<code>ms-2</code>)</span>
+        </div>
+              <div class="spacer ms-3">
+          <span class="d-block" style="background-color: #ccc">Margin Left/Start 3 (<code>ms-3</code>)</span>
+        </div>
+              <div class="spacer ms-4">
+          <span class="d-block" style="background-color: #ccc">Margin Left/Start 4 (<code>ms-4</code>)</span>
+        </div>
+              <div class="spacer ms-5">
+          <span class="d-block" style="background-color: #ccc">Margin Left/Start 5 (<code>ms-5</code>)</span>
+        </div>
+              <div class="spacer ms-6">
+          <span class="d-block" style="background-color: #ccc">Margin Left/Start 6 (<code>ms-6</code>)</span>
+        </div>
+              <div class="spacer ms-7">
+          <span class="d-block" style="background-color: #ccc">Margin Left/Start 7 (<code>ms-7</code>)</span>
+        </div>
+              <div class="spacer ms-8">
+          <span class="d-block" style="background-color: #ccc">Margin Left/Start 8 (<code>ms-8</code>)</span>
+        </div>
+          </div>
+    <hr/>
+      <h4>Margin Right/End</h4>
+    <div style="background-color: orange; overflow: hidden;">
+              <div class="spacer me-0">
+          <span class="d-block" style="background-color: #ccc">Margin Right/End 0 (<code>me-0</code>)</span>
+        </div>
+              <div class="spacer me-1">
+          <span class="d-block" style="background-color: #ccc">Margin Right/End 1 (<code>me-1</code>)</span>
+        </div>
+              <div class="spacer me-2">
+          <span class="d-block" style="background-color: #ccc">Margin Right/End 2 (<code>me-2</code>)</span>
+        </div>
+              <div class="spacer me-3">
+          <span class="d-block" style="background-color: #ccc">Margin Right/End 3 (<code>me-3</code>)</span>
+        </div>
+              <div class="spacer me-4">
+          <span class="d-block" style="background-color: #ccc">Margin Right/End 4 (<code>me-4</code>)</span>
+        </div>
+              <div class="spacer me-5">
+          <span class="d-block" style="background-color: #ccc">Margin Right/End 5 (<code>me-5</code>)</span>
+        </div>
+              <div class="spacer me-6">
+          <span class="d-block" style="background-color: #ccc">Margin Right/End 6 (<code>me-6</code>)</span>
+        </div>
+              <div class="spacer me-7">
+          <span class="d-block" style="background-color: #ccc">Margin Right/End 7 (<code>me-7</code>)</span>
+        </div>
+              <div class="spacer me-8">
+          <span class="d-block" style="background-color: #ccc">Margin Right/End 8 (<code>me-8</code>)</span>
+        </div>
+          </div>
+    <hr/>
+      <h4>Margin Horizontal</h4>
+    <div style="background-color: orange; overflow: hidden;">
+              <div class="spacer mx-0">
+          <span class="d-block" style="background-color: #ccc">Margin Horizontal 0 (<code>mx-0</code>)</span>
+        </div>
+              <div class="spacer mx-1">
+          <span class="d-block" style="background-color: #ccc">Margin Horizontal 1 (<code>mx-1</code>)</span>
+        </div>
+              <div class="spacer mx-2">
+          <span class="d-block" style="background-color: #ccc">Margin Horizontal 2 (<code>mx-2</code>)</span>
+        </div>
+              <div class="spacer mx-3">
+          <span class="d-block" style="background-color: #ccc">Margin Horizontal 3 (<code>mx-3</code>)</span>
+        </div>
+              <div class="spacer mx-4">
+          <span class="d-block" style="background-color: #ccc">Margin Horizontal 4 (<code>mx-4</code>)</span>
+        </div>
+              <div class="spacer mx-5">
+          <span class="d-block" style="background-color: #ccc">Margin Horizontal 5 (<code>mx-5</code>)</span>
+        </div>
+              <div class="spacer mx-6">
+          <span class="d-block" style="background-color: #ccc">Margin Horizontal 6 (<code>mx-6</code>)</span>
+        </div>
+              <div class="spacer mx-7">
+          <span class="d-block" style="background-color: #ccc">Margin Horizontal 7 (<code>mx-7</code>)</span>
+        </div>
+              <div class="spacer mx-8">
+          <span class="d-block" style="background-color: #ccc">Margin Horizontal 8 (<code>mx-8</code>)</span>
+        </div>
+          </div>
+    <hr/>
+      <h4>Margin Vertical</h4>
+    <div style="background-color: orange; overflow: hidden;">
+              <div class="spacer my-0">
+          <span class="d-block" style="background-color: #ccc">Margin Vertical 0 (<code>my-0</code>)</span>
+        </div>
+              <div class="spacer my-1">
+          <span class="d-block" style="background-color: #ccc">Margin Vertical 1 (<code>my-1</code>)</span>
+        </div>
+              <div class="spacer my-2">
+          <span class="d-block" style="background-color: #ccc">Margin Vertical 2 (<code>my-2</code>)</span>
+        </div>
+              <div class="spacer my-3">
+          <span class="d-block" style="background-color: #ccc">Margin Vertical 3 (<code>my-3</code>)</span>
+        </div>
+              <div class="spacer my-4">
+          <span class="d-block" style="background-color: #ccc">Margin Vertical 4 (<code>my-4</code>)</span>
+        </div>
+              <div class="spacer my-5">
+          <span class="d-block" style="background-color: #ccc">Margin Vertical 5 (<code>my-5</code>)</span>
+        </div>
+              <div class="spacer my-6">
+          <span class="d-block" style="background-color: #ccc">Margin Vertical 6 (<code>my-6</code>)</span>
+        </div>
+              <div class="spacer my-7">
+          <span class="d-block" style="background-color: #ccc">Margin Vertical 7 (<code>my-7</code>)</span>
+        </div>
+              <div class="spacer my-8">
+          <span class="d-block" style="background-color: #ccc">Margin Vertical 8 (<code>my-8</code>)</span>
+        </div>
+          </div>
+    <hr/>
+      <h4>Margin All</h4>
+    <div style="background-color: orange; overflow: hidden;">
+              <div class="spacer m-0">
+          <span class="d-block" style="background-color: #ccc">Margin All 0 (<code>m-0</code>)</span>
+        </div>
+              <div class="spacer m-1">
+          <span class="d-block" style="background-color: #ccc">Margin All 1 (<code>m-1</code>)</span>
+        </div>
+              <div class="spacer m-2">
+          <span class="d-block" style="background-color: #ccc">Margin All 2 (<code>m-2</code>)</span>
+        </div>
+              <div class="spacer m-3">
+          <span class="d-block" style="background-color: #ccc">Margin All 3 (<code>m-3</code>)</span>
+        </div>
+              <div class="spacer m-4">
+          <span class="d-block" style="background-color: #ccc">Margin All 4 (<code>m-4</code>)</span>
+        </div>
+              <div class="spacer m-5">
+          <span class="d-block" style="background-color: #ccc">Margin All 5 (<code>m-5</code>)</span>
+        </div>
+              <div class="spacer m-6">
+          <span class="d-block" style="background-color: #ccc">Margin All 6 (<code>m-6</code>)</span>
+        </div>
+              <div class="spacer m-7">
+          <span class="d-block" style="background-color: #ccc">Margin All 7 (<code>m-7</code>)</span>
+        </div>
+              <div class="spacer m-8">
+          <span class="d-block" style="background-color: #ccc">Margin All 8 (<code>m-8</code>)</span>
+        </div>
+          </div>
+    <hr/>
+  
   <h3>Padding</h3>
       <h4>Padding Top</h4>
-    
-Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/patternlab/node_modules/@basalt/twig-renderer/vendor/twig/twig/src/Environment.php(418) : eval()'d code on line 73
-      <div class="spacer pt-0">Padding Top 0</div>
-          <div class="spacer pt-1">Padding Top 1</div>
-          <div class="spacer pt-2">Padding Top 2</div>
-          <div class="spacer pt-3">Padding Top 3</div>
-          <div class="spacer pt-4">Padding Top 4</div>
-          <div class="spacer pt-5">Padding Top 5</div>
-          <div class="spacer pt-6">Padding Top 6</div>
-          <div class="spacer pt-7">Padding Top 7</div>
-          <div class="spacer pt-8">Padding Top 8</div>
-          <div class="spacer pt-9">Padding Top 9</div>
-          <div class="spacer pt-10">Padding Top 10</div>
-          <h4>Padding Bottom</h4>
-    
-Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/patternlab/node_modules/@basalt/twig-renderer/vendor/twig/twig/src/Environment.php(418) : eval()'d code on line 73
-      <div class="spacer pb-0">Padding Bottom 0</div>
-          <div class="spacer pb-1">Padding Bottom 1</div>
-          <div class="spacer pb-2">Padding Bottom 2</div>
-          <div class="spacer pb-3">Padding Bottom 3</div>
-          <div class="spacer pb-4">Padding Bottom 4</div>
-          <div class="spacer pb-5">Padding Bottom 5</div>
-          <div class="spacer pb-6">Padding Bottom 6</div>
-          <div class="spacer pb-7">Padding Bottom 7</div>
-          <div class="spacer pb-8">Padding Bottom 8</div>
-          <div class="spacer pb-9">Padding Bottom 9</div>
-          <div class="spacer pb-10">Padding Bottom 10</div>
-          <h4>Padding Left</h4>
-    
-Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/patternlab/node_modules/@basalt/twig-renderer/vendor/twig/twig/src/Environment.php(418) : eval()'d code on line 73
-      <div class="spacer ps-0">Padding Left 0</div>
-          <div class="spacer ps-1">Padding Left 1</div>
-          <div class="spacer ps-2">Padding Left 2</div>
-          <div class="spacer ps-3">Padding Left 3</div>
-          <div class="spacer ps-4">Padding Left 4</div>
-          <div class="spacer ps-5">Padding Left 5</div>
-          <div class="spacer ps-6">Padding Left 6</div>
-          <div class="spacer ps-7">Padding Left 7</div>
-          <div class="spacer ps-8">Padding Left 8</div>
-          <div class="spacer ps-9">Padding Left 9</div>
-          <div class="spacer ps-10">Padding Left 10</div>
-          <h4>Padding Right</h4>
-    
-Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/patternlab/node_modules/@basalt/twig-renderer/vendor/twig/twig/src/Environment.php(418) : eval()'d code on line 73
-      <div class="spacer pe-0">Padding Right 0</div>
-          <div class="spacer pe-1">Padding Right 1</div>
-          <div class="spacer pe-2">Padding Right 2</div>
-          <div class="spacer pe-3">Padding Right 3</div>
-          <div class="spacer pe-4">Padding Right 4</div>
-          <div class="spacer pe-5">Padding Right 5</div>
-          <div class="spacer pe-6">Padding Right 6</div>
-          <div class="spacer pe-7">Padding Right 7</div>
-          <div class="spacer pe-8">Padding Right 8</div>
-          <div class="spacer pe-9">Padding Right 9</div>
-          <div class="spacer pe-10">Padding Right 10</div>
-          <h4>Padding Horizontal</h4>
-    
-Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/patternlab/node_modules/@basalt/twig-renderer/vendor/twig/twig/src/Environment.php(418) : eval()'d code on line 73
-      <div class="spacer px-0">Padding Horizontal 0</div>
-          <div class="spacer px-1">Padding Horizontal 1</div>
-          <div class="spacer px-2">Padding Horizontal 2</div>
-          <div class="spacer px-3">Padding Horizontal 3</div>
-          <div class="spacer px-4">Padding Horizontal 4</div>
-          <div class="spacer px-5">Padding Horizontal 5</div>
-          <div class="spacer px-6">Padding Horizontal 6</div>
-          <div class="spacer px-7">Padding Horizontal 7</div>
-          <div class="spacer px-8">Padding Horizontal 8</div>
-          <div class="spacer px-9">Padding Horizontal 9</div>
-          <div class="spacer px-10">Padding Horizontal 10</div>
-          <h4>Padding Vertical</h4>
-    
-Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/patternlab/node_modules/@basalt/twig-renderer/vendor/twig/twig/src/Environment.php(418) : eval()'d code on line 73
-      <div class="spacer py-0">Padding Vertical 0</div>
-          <div class="spacer py-1">Padding Vertical 1</div>
-          <div class="spacer py-2">Padding Vertical 2</div>
-          <div class="spacer py-3">Padding Vertical 3</div>
-          <div class="spacer py-4">Padding Vertical 4</div>
-          <div class="spacer py-5">Padding Vertical 5</div>
-          <div class="spacer py-6">Padding Vertical 6</div>
-          <div class="spacer py-7">Padding Vertical 7</div>
-          <div class="spacer py-8">Padding Vertical 8</div>
-          <div class="spacer py-9">Padding Vertical 9</div>
-          <div class="spacer py-10">Padding Vertical 10</div>
-          <h4>Padding All</h4>
-    
-Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/patternlab/node_modules/@basalt/twig-renderer/vendor/twig/twig/src/Environment.php(418) : eval()'d code on line 73
-      <div class="spacer p-0">Padding All 0</div>
-          <div class="spacer p-1">Padding All 1</div>
-          <div class="spacer p-2">Padding All 2</div>
-          <div class="spacer p-3">Padding All 3</div>
-          <div class="spacer p-4">Padding All 4</div>
-          <div class="spacer p-5">Padding All 5</div>
-          <div class="spacer p-6">Padding All 6</div>
-          <div class="spacer p-7">Padding All 7</div>
-          <div class="spacer p-8">Padding All 8</div>
-          <div class="spacer p-9">Padding All 9</div>
-          <div class="spacer p-10">Padding All 10</div>
-      
+    <div style="background-color: orange; overflow: hidden;">
+              <div class="spacer pt-0">
+          <span class="d-block" style="background-color: #ccc">Padding Top 0 (<code>pt-0</code>)</span>
+        </div>
+              <div class="spacer pt-1">
+          <span class="d-block" style="background-color: #ccc">Padding Top 1 (<code>pt-1</code>)</span>
+        </div>
+              <div class="spacer pt-2">
+          <span class="d-block" style="background-color: #ccc">Padding Top 2 (<code>pt-2</code>)</span>
+        </div>
+              <div class="spacer pt-3">
+          <span class="d-block" style="background-color: #ccc">Padding Top 3 (<code>pt-3</code>)</span>
+        </div>
+              <div class="spacer pt-4">
+          <span class="d-block" style="background-color: #ccc">Padding Top 4 (<code>pt-4</code>)</span>
+        </div>
+              <div class="spacer pt-5">
+          <span class="d-block" style="background-color: #ccc">Padding Top 5 (<code>pt-5</code>)</span>
+        </div>
+              <div class="spacer pt-6">
+          <span class="d-block" style="background-color: #ccc">Padding Top 6 (<code>pt-6</code>)</span>
+        </div>
+              <div class="spacer pt-7">
+          <span class="d-block" style="background-color: #ccc">Padding Top 7 (<code>pt-7</code>)</span>
+        </div>
+              <div class="spacer pt-8">
+          <span class="d-block" style="background-color: #ccc">Padding Top 8 (<code>pt-8</code>)</span>
+        </div>
+          </div>
+    <hr/>
+      <h4>Padding Bottom</h4>
+    <div style="background-color: orange; overflow: hidden;">
+              <div class="spacer pb-0">
+          <span class="d-block" style="background-color: #ccc">Padding Bottom 0 (<code>pb-0</code>)</span>
+        </div>
+              <div class="spacer pb-1">
+          <span class="d-block" style="background-color: #ccc">Padding Bottom 1 (<code>pb-1</code>)</span>
+        </div>
+              <div class="spacer pb-2">
+          <span class="d-block" style="background-color: #ccc">Padding Bottom 2 (<code>pb-2</code>)</span>
+        </div>
+              <div class="spacer pb-3">
+          <span class="d-block" style="background-color: #ccc">Padding Bottom 3 (<code>pb-3</code>)</span>
+        </div>
+              <div class="spacer pb-4">
+          <span class="d-block" style="background-color: #ccc">Padding Bottom 4 (<code>pb-4</code>)</span>
+        </div>
+              <div class="spacer pb-5">
+          <span class="d-block" style="background-color: #ccc">Padding Bottom 5 (<code>pb-5</code>)</span>
+        </div>
+              <div class="spacer pb-6">
+          <span class="d-block" style="background-color: #ccc">Padding Bottom 6 (<code>pb-6</code>)</span>
+        </div>
+              <div class="spacer pb-7">
+          <span class="d-block" style="background-color: #ccc">Padding Bottom 7 (<code>pb-7</code>)</span>
+        </div>
+              <div class="spacer pb-8">
+          <span class="d-block" style="background-color: #ccc">Padding Bottom 8 (<code>pb-8</code>)</span>
+        </div>
+          </div>
+    <hr/>
+      <h4>Padding Left/Start</h4>
+    <div style="background-color: orange; overflow: hidden;">
+              <div class="spacer ps-0">
+          <span class="d-block" style="background-color: #ccc">Padding Left/Start 0 (<code>ps-0</code>)</span>
+        </div>
+              <div class="spacer ps-1">
+          <span class="d-block" style="background-color: #ccc">Padding Left/Start 1 (<code>ps-1</code>)</span>
+        </div>
+              <div class="spacer ps-2">
+          <span class="d-block" style="background-color: #ccc">Padding Left/Start 2 (<code>ps-2</code>)</span>
+        </div>
+              <div class="spacer ps-3">
+          <span class="d-block" style="background-color: #ccc">Padding Left/Start 3 (<code>ps-3</code>)</span>
+        </div>
+              <div class="spacer ps-4">
+          <span class="d-block" style="background-color: #ccc">Padding Left/Start 4 (<code>ps-4</code>)</span>
+        </div>
+              <div class="spacer ps-5">
+          <span class="d-block" style="background-color: #ccc">Padding Left/Start 5 (<code>ps-5</code>)</span>
+        </div>
+              <div class="spacer ps-6">
+          <span class="d-block" style="background-color: #ccc">Padding Left/Start 6 (<code>ps-6</code>)</span>
+        </div>
+              <div class="spacer ps-7">
+          <span class="d-block" style="background-color: #ccc">Padding Left/Start 7 (<code>ps-7</code>)</span>
+        </div>
+              <div class="spacer ps-8">
+          <span class="d-block" style="background-color: #ccc">Padding Left/Start 8 (<code>ps-8</code>)</span>
+        </div>
+          </div>
+    <hr/>
+      <h4>Padding Right/End</h4>
+    <div style="background-color: orange; overflow: hidden;">
+              <div class="spacer pe-0">
+          <span class="d-block" style="background-color: #ccc">Padding Right/End 0 (<code>pe-0</code>)</span>
+        </div>
+              <div class="spacer pe-1">
+          <span class="d-block" style="background-color: #ccc">Padding Right/End 1 (<code>pe-1</code>)</span>
+        </div>
+              <div class="spacer pe-2">
+          <span class="d-block" style="background-color: #ccc">Padding Right/End 2 (<code>pe-2</code>)</span>
+        </div>
+              <div class="spacer pe-3">
+          <span class="d-block" style="background-color: #ccc">Padding Right/End 3 (<code>pe-3</code>)</span>
+        </div>
+              <div class="spacer pe-4">
+          <span class="d-block" style="background-color: #ccc">Padding Right/End 4 (<code>pe-4</code>)</span>
+        </div>
+              <div class="spacer pe-5">
+          <span class="d-block" style="background-color: #ccc">Padding Right/End 5 (<code>pe-5</code>)</span>
+        </div>
+              <div class="spacer pe-6">
+          <span class="d-block" style="background-color: #ccc">Padding Right/End 6 (<code>pe-6</code>)</span>
+        </div>
+              <div class="spacer pe-7">
+          <span class="d-block" style="background-color: #ccc">Padding Right/End 7 (<code>pe-7</code>)</span>
+        </div>
+              <div class="spacer pe-8">
+          <span class="d-block" style="background-color: #ccc">Padding Right/End 8 (<code>pe-8</code>)</span>
+        </div>
+          </div>
+    <hr/>
+      <h4>Padding Horizontal</h4>
+    <div style="background-color: orange; overflow: hidden;">
+              <div class="spacer px-0">
+          <span class="d-block" style="background-color: #ccc">Padding Horizontal 0 (<code>px-0</code>)</span>
+        </div>
+              <div class="spacer px-1">
+          <span class="d-block" style="background-color: #ccc">Padding Horizontal 1 (<code>px-1</code>)</span>
+        </div>
+              <div class="spacer px-2">
+          <span class="d-block" style="background-color: #ccc">Padding Horizontal 2 (<code>px-2</code>)</span>
+        </div>
+              <div class="spacer px-3">
+          <span class="d-block" style="background-color: #ccc">Padding Horizontal 3 (<code>px-3</code>)</span>
+        </div>
+              <div class="spacer px-4">
+          <span class="d-block" style="background-color: #ccc">Padding Horizontal 4 (<code>px-4</code>)</span>
+        </div>
+              <div class="spacer px-5">
+          <span class="d-block" style="background-color: #ccc">Padding Horizontal 5 (<code>px-5</code>)</span>
+        </div>
+              <div class="spacer px-6">
+          <span class="d-block" style="background-color: #ccc">Padding Horizontal 6 (<code>px-6</code>)</span>
+        </div>
+              <div class="spacer px-7">
+          <span class="d-block" style="background-color: #ccc">Padding Horizontal 7 (<code>px-7</code>)</span>
+        </div>
+              <div class="spacer px-8">
+          <span class="d-block" style="background-color: #ccc">Padding Horizontal 8 (<code>px-8</code>)</span>
+        </div>
+          </div>
+    <hr/>
+      <h4>Padding Vertical</h4>
+    <div style="background-color: orange; overflow: hidden;">
+              <div class="spacer py-0">
+          <span class="d-block" style="background-color: #ccc">Padding Vertical 0 (<code>py-0</code>)</span>
+        </div>
+              <div class="spacer py-1">
+          <span class="d-block" style="background-color: #ccc">Padding Vertical 1 (<code>py-1</code>)</span>
+        </div>
+              <div class="spacer py-2">
+          <span class="d-block" style="background-color: #ccc">Padding Vertical 2 (<code>py-2</code>)</span>
+        </div>
+              <div class="spacer py-3">
+          <span class="d-block" style="background-color: #ccc">Padding Vertical 3 (<code>py-3</code>)</span>
+        </div>
+              <div class="spacer py-4">
+          <span class="d-block" style="background-color: #ccc">Padding Vertical 4 (<code>py-4</code>)</span>
+        </div>
+              <div class="spacer py-5">
+          <span class="d-block" style="background-color: #ccc">Padding Vertical 5 (<code>py-5</code>)</span>
+        </div>
+              <div class="spacer py-6">
+          <span class="d-block" style="background-color: #ccc">Padding Vertical 6 (<code>py-6</code>)</span>
+        </div>
+              <div class="spacer py-7">
+          <span class="d-block" style="background-color: #ccc">Padding Vertical 7 (<code>py-7</code>)</span>
+        </div>
+              <div class="spacer py-8">
+          <span class="d-block" style="background-color: #ccc">Padding Vertical 8 (<code>py-8</code>)</span>
+        </div>
+          </div>
+    <hr/>
+      <h4>Padding All</h4>
+    <div style="background-color: orange; overflow: hidden;">
+              <div class="spacer p-0">
+          <span class="d-block" style="background-color: #ccc">Padding All 0 (<code>p-0</code>)</span>
+        </div>
+              <div class="spacer p-1">
+          <span class="d-block" style="background-color: #ccc">Padding All 1 (<code>p-1</code>)</span>
+        </div>
+              <div class="spacer p-2">
+          <span class="d-block" style="background-color: #ccc">Padding All 2 (<code>p-2</code>)</span>
+        </div>
+              <div class="spacer p-3">
+          <span class="d-block" style="background-color: #ccc">Padding All 3 (<code>p-3</code>)</span>
+        </div>
+              <div class="spacer p-4">
+          <span class="d-block" style="background-color: #ccc">Padding All 4 (<code>p-4</code>)</span>
+        </div>
+              <div class="spacer p-5">
+          <span class="d-block" style="background-color: #ccc">Padding All 5 (<code>p-5</code>)</span>
+        </div>
+              <div class="spacer p-6">
+          <span class="d-block" style="background-color: #ccc">Padding All 6 (<code>p-6</code>)</span>
+        </div>
+              <div class="spacer p-7">
+          <span class="d-block" style="background-color: #ccc">Padding All 7 (<code>p-7</code>)</span>
+        </div>
+              <div class="spacer p-8">
+          <span class="d-block" style="background-color: #ccc">Padding All 8 (<code>p-8</code>)</span>
+        </div>
+          </div>
+    <hr/>
+  
 
-<div class="spacer auto" style="width: 100px;">Auto Horizontal Margin</div>
 
-<div class="spacer w-100">100% Width</div>
-<div class="spacer h-100">100% Height</div>
+  <div class="spacer m-auto" >
+    <span class="d-block" style="background-color: #ccc">Auto Horizontal Margin (<code>m-auto</code>)</span>
+  </div>
+
+  <div class="spacer w-100" >
+    <span class="d-block" style="background-color: #ccc">100% Width (<code>w-100</code>)</span>
+  </div>
+
+  <div class="spacer h-100" >
+    <span class="d-block" style="background-color: #ccc">100% Height (<code>h-100</code>)</span>
+  </div>
+
+
+<div class="grid-x mx-n3 gx-3">
+  <div class="cell medium-6">
+    <span class="d-block" style="background-color: #ccc; height: 100px;border: 1px solid #000;"></span>
+  </div>
+  <div class="cell medium-6">
+    <span class="d-block" style="background-color: #ccc; height: 100px;border: 1px solid #000;"></span>
+  </div>
+</div>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-global-spacers" class="pl-js-pattern-data">
@@ -2230,10 +2490,10 @@ Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/p
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1666814424255">
+<script id="pl-js-polyfill-insert-1667243057693">
   (function() {
     if (self != top) {
-      var cb = '1666814424255';
+      var cb = '1667243057693';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -2246,7 +2506,7 @@ Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/p
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1666814424255" nomodule>
+<script id="pl-js-insert-1667243057693" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -2269,7 +2529,7 @@ Warning: Undefined array key "i" in /Users/kristine/Sites/standard-build-craft/p
   <script src="/core/misc/drupal.init.js"></script>
   -->
   <!-- Concatenated by Gulp so you don't have to manually add each file. -->
-  <script src="../../js/pattern-scaffolding.js?1666814424255"></script>
-  <script src="../../js/app.js?1666814424255"></script>
+  <script src="../../js/pattern-scaffolding.js?1667243057693"></script>
+  <script src="../../js/app.js?1667243057693"></script>
 </body>
 </html>

@@ -6,10 +6,17 @@ $spacers: (
   3: $spacer,
   4: $spacer * 1.5,
   5: $spacer * 3,
+  6: $spacer * 4,
+  7: $spacer * 5,
+  8: $spacer * 6,
 ) !default;
 //$enable-important-utilities: true !default;
 $enable-negative-margins: true !default;
-$negative-spacers: if($enable-negative-margins, ($spacers), null) !default;
+$negative-spacers: ();
+
+@each $size, $value in $spacers {
+  $negative-spacers: map-set($negative-spacers, 'n' + $size, $value * -1);
+}
 
 
 //@debug $utilities-text-colors;
@@ -356,6 +363,22 @@ $utilities: map-merge(
       class: gap,
       values: $spacers
     ),
+
+    // Gap utility
+    "g-y": (
+      responsive: true,
+      property: gap,
+      class: gy,
+      values: $spacers
+    ),
+
+    // Gap utility
+    "g-x": (
+      responsive: true,
+      property: gap,
+      class: gx,
+      values: $spacers
+    ),
     // scss-docs-end utils-spacing
     // Text
     // scss-docs-start utils-text
@@ -462,12 +485,6 @@ $utilities: map-merge(
         visible: visible,
         invisible: hidden,
       )
-    ),
-    // scss-docs-end utils-visibility
-    "z-index": (
-      property: z-index,
-      class: z,
-      //values: $zindex-levels,
     )
   ),
   $utilities

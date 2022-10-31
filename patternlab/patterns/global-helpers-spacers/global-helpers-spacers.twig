@@ -1,7 +1,7 @@
 <style>
   .spacer{
-    background: #ccc;
-    outline: 1px solid #000;
+    background: aqua;
+    border: 1px solid #000;
   }
 </style>
 {% set types = [
@@ -25,11 +25,11 @@
     selector: "b"
   },
   {
-    label: "Left",
+    label: "Left/Start",
     selector: "s"
   },
   {
-    label: "Right",
+    label: "Right/End",
     selector: "e"
   },
   {
@@ -49,14 +49,44 @@
   <h3>{{ type.label }}</h3>
   {% for direction in directions %}
     <h4>{{ type.label }} {{ direction.label }}</h4>
-    {% for i in range (i, 10) %}
-      <div class="spacer {{ type.selector }}{{ direction.selector }}-{{ i }}">{{ type.label }} {{ direction.label }} {{ i }}</div>
-    {% endfor %}
+    <div style="background-color: orange; overflow: hidden;">
+      {% for i in range (0, 8) %}
+        <div class="spacer {{ type.selector }}{{ direction.selector }}-{{ i }}">
+          <span class="d-block" style="background-color: #ccc">{{ type.label }} {{ direction.label }} {{ i }} (<code>{{ type.selector }}{{ direction.selector }}-{{ i }}</code>)</span>
+        </div>
+      {% endfor %}
+    </div>
+    <hr/>
   {% endfor %}
 
 {% endfor %}
 
-<div class="spacer auto" style="width: 100px;">Auto Horizontal Margin</div>
+{% set other_types = [
+  {
+    label: 'Auto Horizontal Margin',
+    selector: 'm-auto'
+  },
+  {
+    label: '100% Width',
+    selector: 'w-100'
+  },{
+    label: '100% Height',
+    selector: 'h-100'
+  }
+] %}
+{% for type in other_types %}
 
-<div class="spacer w-100">100% Width</div>
-<div class="spacer h-100">100% Height</div>
+  <div class="spacer {{ type.selector }}" {% if selector == 'm-auto' %}style="width: 100px;"{% endif %}>
+    <span class="d-block" style="background-color: #ccc">{{ type.label }} (<code>{{ type.selector }}</code>)</span>
+  </div>
+{% endfor %}
+
+
+<div class="grid-x mx-n3 gx-3">
+  <div class="cell medium-6">
+    <span class="d-block" style="background-color: #ccc; height: 100px;border: 1px solid #000;"></span>
+  </div>
+  <div class="cell medium-6">
+    <span class="d-block" style="background-color: #ccc; height: 100px;border: 1px solid #000;"></span>
+  </div>
+</div>

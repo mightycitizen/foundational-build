@@ -23,7 +23,7 @@
               <h1>{{ heading }}</h1>
               {% if summary | default %}
                 {% if summary | length %}
-                  <ul class="inline-list inline-list--divided fw-bold text-small mb-3">
+                  <ul class="list-unstyled d-flex gap-4 list-divided fw-bold text-small mb-3">
                     {% for item in summary %}
                       <li>{{ item }}</li>
                     {% endfor %}

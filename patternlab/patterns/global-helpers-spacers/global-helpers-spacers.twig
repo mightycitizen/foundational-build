@@ -4,6 +4,7 @@
     border: 1px solid #000;
   }
 </style>
+
 {% set types = [
   {
     label: "Margin",
@@ -45,14 +46,22 @@
     selector: ""
   }
 ] %}
+
+{% set spacers = ['quarter','half'] %}
+{% for i in range (0, 8) %}
+  {% set spacers = spacers|merge([i]) %}
+{% endfor %}
+
+
+
 {% for type in types %}
   <h3>{{ type.label }}</h3>
   {% for direction in directions %}
     <h4>{{ type.label }} {{ direction.label }}</h4>
     <div style="background-color: orange; overflow: hidden;">
-      {% for i in range (0, 8) %}
-        <div class="spacer {{ type.selector }}{{ direction.selector }}-{{ i }}">
-          <span class="d-block" style="background-color: #ccc">{{ type.label }} {{ direction.label }} {{ i }} (<code>{{ type.selector }}{{ direction.selector }}-{{ i }}</code>)</span>
+      {% for spacer in spacers %}
+        <div class="spacer {{ type.selector }}{{ direction.selector }}-{{ spacer }}">
+          <span class="d-block" style="background-color: #ccc">{{ type.label }} {{ direction.label }} {{ spacer }} (<code>{{ type.selector }}{{ direction.selector }}-{{ spacer }}</code>)</span>
         </div>
       {% endfor %}
     </div>

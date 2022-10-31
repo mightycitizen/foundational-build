@@ -1,15 +1,30 @@
 $spacer-mobile: $spacer *.625;
-$spacers: (
-  0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
-  6: $spacer * 4,
-  7: $spacer * 5,
-  8: $spacer * 6,
-) !default;
+$spacers: ();
+@for $i from 1 through $spacers-range {
+  $spacers: map-merge($spacers, (
+    $i: $spacer * $i
+  ));
+}
+@if $spacers-additional {
+  @each $key, $value in $spacers-additional {
+    $spacers: map-merge($spacers, (
+      $key: $value * $spacer
+    ));
+  }
+}
+// $spacers: (
+//   0: 0,
+//   quarter: $spacer * .25,
+//   half: $spacer * .5,
+//   1: $spacer,
+//   2: $spacer * 2,
+//   3: $spacer * 3,
+//   4: $spacer * 4,
+//   5: $spacer * 5,
+//   6: $spacer * 6,
+//   7: $spacer * 7,
+//   8: $spacer * 8,
+// ) !default;
 //$enable-important-utilities: true !default;
 $enable-negative-margins: true !default;
 $negative-spacers: ();

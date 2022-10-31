@@ -1,27 +1,10 @@
-.text{
-  // &-smaller{
-  //   font-size: rem-calc(14);
-  // }
-  // &-small{
-  //   font-size: rem-calc(16);
-  // }
-  &-inherit{
-    color: inherit;
+[class*=text-]{
+  a{
+    &:not(.card-body *){
+      color: inherit;
+    }
   }
-  // &-black{
-  //   color: $black;
-  // }
-  // &-white{
-  //   color: $white;
-  //   a{
-  //     &:not(.button){
-  //       color: inherit;
-  //     }
-
-  //   }
-  // }
 }
-
 
 .unstyled-blockquote{
   border: 0;

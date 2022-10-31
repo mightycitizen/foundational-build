@@ -14,7 +14,7 @@
 
   {% if categories | default | length %}
     <li>
-      <ul class="list-unstyled d-flex gap-4--top">
+      <ul class="list-unstyled d-flex gap-4">
         {% for category in categories %}<li><a href="{{ category.url }}">{{ category.title }}</a></li>{% endfor %}
       </ul>
     </li>

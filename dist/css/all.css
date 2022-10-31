@@ -1347,28 +1347,36 @@
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
+.text-smaller {
+  font-size: 14px;
+}
+
+.text-small {
+  font-size: 16px;
+}
+
 .fs-1 {
-  font-size: 2.6666666667rem;
+  font-size: 48;
 }
 
 .fs-2 {
-  font-size: 1.7777777778rem;
+  font-size: 32;
 }
 
 .fs-3 {
-  font-size: 1.3333333333rem;
+  font-size: 24;
 }
 
 .fs-4 {
-  font-size: 1rem;
+  font-size: 18;
 }
 
 .fs-5 {
-  font-size: 0.8888888889rem;
+  font-size: 16;
 }
 
 .fs-6 {
-  font-size: 0.8888888889rem;
+  font-size: 16;
 }
 
 .fst-italic {
@@ -16931,7 +16939,7 @@ html, body, .l-wrapper {
   position: relative;
 }
 
-.text-inherit {
+[class*=text-] a:not(.card-body *) {
   color: inherit;
 }
 

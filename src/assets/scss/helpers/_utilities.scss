@@ -387,8 +387,15 @@ $utilities: map-merge(
       class: font,
       values: (primary: $primaryFontFamily, secondary: $secondaryFontFamily)
     ),
+    "font-size-em": (
+      property: font-size,
+      class: text,
+      values: (
+        smaller: 14px,
+        small: 16px,
+      )
+    ),
     "font-size": (
-      rfs: true,
       property: font-size,
       class: fs,
       values: $font-sizes

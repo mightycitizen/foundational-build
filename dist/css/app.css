@@ -17298,7 +17298,10 @@ html, body, .l-wrapper {
 .list-divided > li:not(:last-child):after {
   content: "|";
   display: inline-block;
+  position: absolute;
   opacity: 0.5;
+  right: -0.6666666667rem;
+  transform: translateX(50%);
 }
 
 .list-unstyled {

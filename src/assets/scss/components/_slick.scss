@@ -392,7 +392,7 @@
 	}
 
 	.js-slick--center{
-		$transition-duration: 0.75s;
+		$transition-duration: 0.8s;
 		$slide-margin: 80;
 		$slide-transform: 80;
 		$slide-width: 450;
@@ -405,7 +405,13 @@
 		.slick-slide{
 			margin: rem-calc($slide-margin-offset) rem-calc($slide-margin-mobile);
 		}
-		@include breakpoint(medium){
+		@include breakpoint(medium down){
+
+			margin: auto;
+			max-width: rem-calc(600px);
+
+		}
+		@include breakpoint(large){
 			.slick-list{
 				overflow: visible;
 				//display: flex;
@@ -415,14 +421,32 @@
 				//max-width: 100vw;
 				width: rem-calc($slide-width);
 				transform: translateY(#{rem-calc($slide-transform)});
-				transition: $transition-duration transform, $transition-duration width, $transition-duration margin;
-				will-change: margin, transform, width;
+				transition: $transition-duration margin, $transition-duration width;
+				will-change: margin, width;
 				.card-section{
-					will-change: padding;
-					transition: $transition-duration padding;
+					will-change: opacity, padding;
+					transition: 0.5s opacity, $transition-duration padding;
 				}
 
-				&:not(.slick-current){
+				&:before, &:after, p{ // selectors to hide
+
+					will-change: opacity, max-height;
+					transition: 0.2s max-height 0.5s, 0.5s opacity 0.5s;
+				}
+
+				.card-title{
+					//@at-root: rem-calc(-16);
+					transition: 0.2s font-size 0.3s, 0.2s margin 0.3s;
+				}
+
+				.card-image{
+					transition: $transition-duration margin, $transition-duration max-height;
+					img{
+						object-fit: cover;
+						height: 100%;
+					}
+				}
+				&:not(.slick-primary):not(.slick-clone-current){
 					margin-bottom: rem-calc($curr-width/$image-ratio - $slide-width/$image-ratio + $slide-margin-offset);
 					.card-section{
 						@include spacer(padding,y,3);
@@ -444,8 +468,18 @@
 					}
 				}
 
-
-				&.slick-current{
+				&:not(.slick-animating){
+					.card-section{
+						transition: 0.5s opacity 0.5s;
+					}
+				}
+				&.slick-animating{
+					.card-section{
+						opacity: 0;
+						//transition: 0.25s opacity;
+					}
+				}
+				&.slick-primary, &.slick-clone-current{
 					z-index: 2;
 					position: relative;
 					width: rem-calc($curr-width);
@@ -471,7 +505,22 @@
 					// }
 					.card-image, .button{  // selectors to hide
 						max-height: rem-calc(1000);
-						opacity: 1;
+						//opacity: 1;
+					}
+					&.slick-animate{
+						&:before, &:after{  // selectors to hide
+							opacity: 1;
+						}
+
+						p{
+							max-height: rem-calc(1000);
+							transition: $transition-duration opacity 0.5s, 0.2s max-height 0.5s;
+						}
+						.card-section{
+							opacity: 1;
+							@include spacer(padding,all,5);
+							//transition: 0.5 opacity 0.5s,  0.2s padding 0.5s;
+						}
 					}
 				}
 

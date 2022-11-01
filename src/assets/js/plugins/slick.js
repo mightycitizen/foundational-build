@@ -152,6 +152,7 @@ const slickTabs = (slick, cur) => {
 
 
 const slickEvents = ($slick) => {
+  const slickActiveClass = 'slick-primary';
   $slick.on('init', function (event, slick, breakpoint){
     slickPagination(slick);
     slickGo(slick, 0);
@@ -167,12 +168,45 @@ const slickEvents = ($slick) => {
   $slick.on('afterChange', function(event, slick, cur, next){
     slickProgress(slick);
     slickTabs(slick, cur);
-    //slickBackground(slick);
+    const slideCount = slick.$slides.length - 1
+    const loopEnd = cur === slideCount;
+    const loopStart  = cur === 0;
+
+
+    if (loopEnd) {
+      const $activeSlide = $(slick.$slides[0]);
+      $activeSlide.prev('.slick-slide').addClass(slickActiveClass);
+    }
+    if (loopStart) {
+      const $activeSlide = $(slick.$slides[slideCount]);
+      $activeSlide.next('.slick-slide').addClass(slickActiveClass);
+    }
+    $(slick.$slides[cur]).addClass(slickActiveClass);
+
+
+
+    setTimeout(() => {
+      $('.slick-clone-current').addClass('slick-animate');
+      $(slick.$slides[cur]).addClass('slick-animate');
+      slick.$slider.find('.slick-slide').removeClass('slick-animating');
+
+    }, 5);
   })
   $slick.on('beforeChange', function(event, slick, cur, next){
     slickGo(slick, next);
     slickBackground(slick, next);
     slickProgress(slick, true);
+    $('.' + slickActiveClass).removeClass(slickActiveClass);
+    // slick active class start
+    // slick active class end
+
+    // animating class to hide elements within slide during transition
+    slick.$slider.find('.slick-slide').addClass('slick-animating');
+
+    setTimeout(() => {
+      // class to key animations within slide
+      slick.$slider.find('.slick-slide').removeClass('slick-animate');
+    }, 5);
   })
 }
 
@@ -336,7 +370,7 @@ const initSlick = () => {
       adaptiveHeight: false,
       variableWidth: true,
       waitForAnimate: true,
-      infinite: false,
+      infinite: true,
       responsive: [
         {
 

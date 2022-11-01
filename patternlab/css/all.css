@@ -16036,7 +16036,13 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .js-slick--center .slick-slide {
   margin: 0.8333333333rem 0.5555555556rem;
 }
-@media print, screen and (min-width: 40em) {
+@media print, screen and (max-width: 63.99875em) {
+  .js-slick--center {
+    margin: auto;
+    max-width: 33.3333333333rem;
+  }
+}
+@media print, screen and (min-width: 64em) {
   .js-slick--center .slick-list {
     overflow: visible;
   }
@@ -16044,90 +16050,132 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     margin: 0.8333333333rem 4.4444444444rem;
     width: 25rem;
     transform: translateY(4.4444444444rem);
-    transition: 0.75s transform, 0.75s width, 0.75s margin;
-    will-change: margin, transform, width;
+    transition: 0.8s margin, 0.8s width;
+    will-change: margin, width;
   }
   .js-slick--center .slick-slide .card-section {
-    will-change: padding;
-    transition: 0.75s padding;
+    will-change: opacity, padding;
+    transition: 0.5s opacity, 0.8s padding;
   }
-  .js-slick--center .slick-slide:not(.slick-current) {
+  .js-slick--center .slick-slide:before, .js-slick--center .slick-slide:after, .js-slick--center .slick-slide p {
+    will-change: opacity, max-height;
+    transition: 0.2s max-height 0.5s, 0.5s opacity 0.5s;
+  }
+  .js-slick--center .slick-slide .card-title {
+    transition: 0.2s font-size 0.3s, 0.2s margin 0.3s;
+  }
+  .js-slick--center .slick-slide .card-image {
+    transition: 0.8s margin, 0.8s max-height;
+  }
+  .js-slick--center .slick-slide .card-image img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    height: 100%;
+  }
+  .js-slick--center .slick-slide:not(.slick-primary):not(.slick-clone-current) {
     margin-bottom: 8.9462081129rem;
   }
-  .js-slick--center .slick-slide:not(.slick-current) .card-section {
+  .js-slick--center .slick-slide:not(.slick-primary):not(.slick-clone-current) .card-section {
     padding-top: 0.8333333333rem;
     padding-bottom: 0.8333333333rem;
     padding-left: 1.1111111111rem;
     padding-right: 1.1111111111rem;
   }
 }
-@media print, screen and (min-width: 40em) and (min-width: 40em) {
-  .js-slick--center .slick-slide:not(.slick-current) .card-section {
+@media print, screen and (min-width: 64em) and (min-width: 40em) {
+  .js-slick--center .slick-slide:not(.slick-primary):not(.slick-clone-current) .card-section {
     padding-top: 1.3333333333rem;
     padding-bottom: 1.3333333333rem;
   }
 }
-@media print, screen and (min-width: 40em) and (min-width: 40em) {
-  .js-slick--center .slick-slide:not(.slick-current) .card-section {
+@media print, screen and (min-width: 64em) and (min-width: 40em) {
+  .js-slick--center .slick-slide:not(.slick-primary):not(.slick-clone-current) .card-section {
     padding-left: 1.7777777778rem;
     padding-right: 1.7777777778rem;
   }
 }
-@media print, screen and (min-width: 40em) {
-  .js-slick--center .slick-slide:not(.slick-current) .card-image {
-    transition: 0.75s margin;
+@media print, screen and (min-width: 64em) {
+  .js-slick--center .slick-slide:not(.slick-primary):not(.slick-clone-current) .card-image {
+    transition: 0.8s margin;
   }
 }
-@media print, screen and (min-width: 40em) {
-  .js-slick--center .slick-slide:not(.slick-current) .h4 {
+@media print, screen and (min-width: 64em) {
+  .js-slick--center .slick-slide:not(.slick-primary):not(.slick-clone-current) .h4 {
     display: block;
     will-change: opacity, max-height;
-    transition: 0.75s max-height, 0.75s opacity;
+    transition: 0.8s max-height, 0.8s opacity;
     opacity: 0;
     max-height: 0;
     overflow: hidden;
   }
 }
-@media print, screen and (min-width: 40em) {
-  .js-slick--center .slick-slide:not(.slick-current):after {
-    transition: 0.75s bottom;
+@media print, screen and (min-width: 64em) {
+  .js-slick--center .slick-slide:not(.slick-primary):not(.slick-clone-current):after {
+    transition: 0.8s bottom;
   }
 }
-@media print, screen and (min-width: 40em) {
-  .js-slick--center .slick-slide.slick-current {
+@media print, screen and (min-width: 64em) {
+  .js-slick--center .slick-slide:not(.slick-animating) .card-section {
+    transition: 0.5s opacity 0.5s;
+  }
+}
+@media print, screen and (min-width: 64em) {
+  .js-slick--center .slick-slide.slick-animating .card-section {
+    opacity: 0;
+  }
+}
+@media print, screen and (min-width: 64em) {
+  .js-slick--center .slick-slide.slick-primary, .js-slick--center .slick-slide.slick-clone-current {
     z-index: 2;
     position: relative;
     width: 37.7777777778rem;
     margin: 0.8333333333rem -35px;
     transform: translateY(0);
   }
-  .js-slick--center .slick-slide.slick-current .card--special {
+  .js-slick--center .slick-slide.slick-primary .card--special, .js-slick--center .slick-slide.slick-clone-current .card--special {
     box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
   }
-  .js-slick--center .slick-slide.slick-current .card--special .card-section {
+  .js-slick--center .slick-slide.slick-primary .card--special .card-section, .js-slick--center .slick-slide.slick-clone-current .card--special .card-section {
     padding: 1.3888888889rem;
   }
 }
-@media print, screen and (min-width: 40em) and (min-width: 64em) {
-  .js-slick--center .slick-slide.slick-current .card--special .card-section {
+@media print, screen and (min-width: 64em) and (min-width: 64em) {
+  .js-slick--center .slick-slide.slick-primary .card--special .card-section, .js-slick--center .slick-slide.slick-clone-current .card--special .card-section {
     padding: 2.2222222222rem;
   }
 }
-@media print, screen and (min-width: 40em) {
-  .js-slick--center .slick-slide.slick-current .card--special .card-image {
+@media print, screen and (min-width: 64em) {
+  .js-slick--center .slick-slide.slick-primary .card--special .card-image, .js-slick--center .slick-slide.slick-clone-current .card--special .card-image {
     margin-bottom: 4.4444444444rem;
   }
 }
-@media print, screen and (min-width: 40em) {
-  .js-slick--center .slick-slide.slick-current .card--special:after {
+@media print, screen and (min-width: 64em) {
+  .js-slick--center .slick-slide.slick-primary .card--special:after, .js-slick--center .slick-slide.slick-clone-current .card--special:after {
     height: 70%;
     bottom: 4.4444444444rem;
   }
 }
-@media print, screen and (min-width: 40em) {
-  .js-slick--center .slick-slide.slick-current .card-image, .js-slick--center .slick-slide.slick-current .button {
+@media print, screen and (min-width: 64em) {
+  .js-slick--center .slick-slide.slick-primary .card-image, .js-slick--center .slick-slide.slick-primary .button, .js-slick--center .slick-slide.slick-clone-current .card-image, .js-slick--center .slick-slide.slick-clone-current .button {
     max-height: 55.5555555556rem;
+  }
+}
+@media print, screen and (min-width: 64em) {
+  .js-slick--center .slick-slide.slick-primary.slick-animate:before, .js-slick--center .slick-slide.slick-primary.slick-animate:after, .js-slick--center .slick-slide.slick-clone-current.slick-animate:before, .js-slick--center .slick-slide.slick-clone-current.slick-animate:after {
     opacity: 1;
+  }
+  .js-slick--center .slick-slide.slick-primary.slick-animate p, .js-slick--center .slick-slide.slick-clone-current.slick-animate p {
+    max-height: 55.5555555556rem;
+    transition: 0.8s opacity 0.5s, 0.2s max-height 0.5s;
+  }
+  .js-slick--center .slick-slide.slick-primary.slick-animate .card-section, .js-slick--center .slick-slide.slick-clone-current.slick-animate .card-section {
+    opacity: 1;
+    padding: 1.3888888889rem;
+  }
+}
+@media print, screen and (min-width: 64em) and (min-width: 64em) {
+  .js-slick--center .slick-slide.slick-primary.slick-animate .card-section, .js-slick--center .slick-slide.slick-clone-current.slick-animate .card-section {
+    padding: 2.2222222222rem;
   }
 }
 

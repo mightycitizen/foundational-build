@@ -5,6 +5,21 @@ import './lib/foundation-explicit-pieces'; // @foundation pick and choose Founda
 import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
 import loaderTemplate from '../../_patterns/components/utils/loader.twig'; // used with @forms
 
+
+// Passive event listeners
+$.event.special.touchstart = {
+  setup: function( _, ns, handle ) {
+      this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
+  }
+};
+$.event.special.touchmove = {
+  setup: function( _, ns, handle ) {
+      this.addEventListener("touchmove", handle, { passive: !ns.includes("noPreventDefault") });
+  }
+};
+
+
+
 import './plugins/slider';
 import './plugins/tippy';
 import './plugins/ajaxify';

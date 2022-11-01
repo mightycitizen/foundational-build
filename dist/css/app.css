@@ -16057,7 +16057,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     will-change: opacity, padding;
     transition: 0.5s opacity, 0.8s padding;
   }
-  .js-slick--center .slick-slide:before, .js-slick--center .slick-slide:after, .js-slick--center .slick-slide p {
+  .js-slick--center .slick-slide:before, .js-slick--center .slick-slide:after, .js-slick--center .slick-slide p, .js-slick--center .slick-slide .h4 {
     will-change: opacity, max-height;
     transition: 0.2s max-height 0.5s, 0.5s opacity 0.5s;
   }
@@ -16097,16 +16097,6 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 @media print, screen and (min-width: 64em) {
   .js-slick--center .slick-slide:not(.slick-primary):not(.slick-clone-current) .card-image {
     transition: 0.8s margin;
-  }
-}
-@media print, screen and (min-width: 64em) {
-  .js-slick--center .slick-slide:not(.slick-primary):not(.slick-clone-current) .h4 {
-    display: block;
-    will-change: opacity, max-height;
-    transition: 0.8s max-height, 0.8s opacity;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
   }
 }
 @media print, screen and (min-width: 64em) {
@@ -16161,7 +16151,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   }
 }
 @media print, screen and (min-width: 64em) {
-  .js-slick--center .slick-slide.slick-primary.slick-animate:before, .js-slick--center .slick-slide.slick-primary.slick-animate:after, .js-slick--center .slick-slide.slick-clone-current.slick-animate:before, .js-slick--center .slick-slide.slick-clone-current.slick-animate:after {
+  .js-slick--center .slick-slide.slick-primary.slick-animate:before, .js-slick--center .slick-slide.slick-primary.slick-animate:after, .js-slick--center .slick-slide.slick-primary.slick-animate p, .js-slick--center .slick-slide.slick-primary.slick-animate .h4, .js-slick--center .slick-slide.slick-clone-current.slick-animate:before, .js-slick--center .slick-slide.slick-clone-current.slick-animate:after, .js-slick--center .slick-slide.slick-clone-current.slick-animate p, .js-slick--center .slick-slide.slick-clone-current.slick-animate .h4 {
     opacity: 1;
   }
   .js-slick--center .slick-slide.slick-primary.slick-animate p, .js-slick--center .slick-slide.slick-clone-current.slick-animate p {

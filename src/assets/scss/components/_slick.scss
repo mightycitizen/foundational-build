@@ -428,7 +428,7 @@
 					transition: 0.5s opacity, $transition-duration padding;
 				}
 
-				&:before, &:after, p{ // selectors to hide
+				&:before, &:after, p, .h4{ // selectors to hide
 
 					will-change: opacity, max-height;
 					transition: 0.2s max-height 0.5s, 0.5s opacity 0.5s;
@@ -455,14 +455,7 @@
 					.card-image{
 						transition: $transition-duration margin;
 					}
-					.h4{
-						display: block; // selectors to hide
-						will-change: opacity, max-height;
-						transition: $transition-duration max-height, $transition-duration opacity;
-						opacity: 0;
-						max-height: 0;
-						overflow: hidden;
-					}
+
 					&:after{
 						transition: $transition-duration bottom;
 					}
@@ -503,12 +496,12 @@
 					// 	background-color: $secondary-color;
 					// 	color: $white;
 					// }
-					.card-image, .button{  // selectors to hide
+					.card-image, .button{
 						max-height: rem-calc(1000);
 						//opacity: 1;
 					}
 					&.slick-animate{
-						&:before, &:after{  // selectors to hide
+						&:before, &:after, p, .h4{  // selectors to hide
 							opacity: 1;
 						}
 

@@ -1,7 +1,7 @@
 <div></div><!-- to prevent :first-child styling in style guide -->
 
 {% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
-  section_class: "bg-gradient-secondary",
+  section_class: "bg-gradient--down bg-gradient-secondary",
   section_heading: "Section with Gradient Secondary Background",
   section_description: "Can be any of the brand colors",
 }%}
@@ -25,7 +25,7 @@
   Divider to show division between sections
 </div>
 {% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
-  section_class: "bg-gradient-primary",
+  section_class: "bg-gradient--down bg-gradient-primary",
   section_heading: "Section with Gradient Primary Background",
   section_description: "Section content widths can be narrower, narrow, or regular.",
   style: "narrower"
@@ -37,7 +37,7 @@
 {% endembed %}
 
 {% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
-  section_class: "bg-gradient-primary",
+  section_class: "bg-gradient--down bg-gradient-primary",
   section_background: "https://source.unsplash.com/9wg5jCEPBsw/1200x500",
   section_heading: "Section with Background Image",
   section_description: "Section content widths can be narrower, narrow, or regular.",

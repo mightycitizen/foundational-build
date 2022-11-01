@@ -17108,14 +17108,14 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .section--tight.section--collapse + .section--tight.section--collapse {
   padding-top: 0 !important;
 }
-.section:not([class*=bg-]) + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]), .section.bg-gradient--flip + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]) {
+.section:not([class*=bg-]) + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient--right]), .section.bg-gradient--flip + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient--right]) {
   padding-top: 0;
 }
-.section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]) {
+.section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient--right]) {
   padding-top: 1.6666666667rem;
 }
 @media print, screen and (min-width: 40em) {
-  .section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]) {
+  .section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient--right]) {
     padding-top: 2.6666666667rem;
   }
 }
@@ -17439,7 +17439,7 @@ html, body, .l-wrapper {
   position: relative;
 }
 
-[class*=text-] a:not(.card-body *) {
+[class*=text-] a:not(.button):not(.card-body *) {
   color: inherit;
 }
 

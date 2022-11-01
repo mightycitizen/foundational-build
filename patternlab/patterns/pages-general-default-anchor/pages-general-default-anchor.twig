@@ -110,7 +110,7 @@
     }
    %}
   {% include 'components/modules/three-up-cards.twig' with {
-    section_class: 'bg-gradient-secondary'
+    section_class: 'bg-gradient--down bg-gradient-secondary'
   } %} {# three up #}
   {% set card_image_transform = image_sizes.landscapeCroppedSmall %}
   {% include 'components/modules/three-up-cards.twig' with
@@ -279,7 +279,7 @@
   {% include 'components/modules/testimonial-carousel.twig' %}
   {% set card_carousel_transform = image_sizes.landscapeCroppedMedium %}
   {% include 'components/modules/card-carousel-center.twig' with {
-    section_class: "bg-gradient-secondary",
+    section_class: "bg-gradient--down bg-gradient-secondary",
     "cards": [
       {
 
@@ -339,6 +339,6 @@
     section_button: read_more
   } %}
   {% include 'components/modules/links.twig' with {
-    section_class: "bg-gradient-secondary"
+    section_class: "bg-gradient--down bg-gradient-secondary"
   } %}
 {% endblock %}

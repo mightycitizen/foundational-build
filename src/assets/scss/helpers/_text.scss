@@ -1,5 +1,5 @@
 [class*=text-]{
-  a{
+  a:not(.button){
     &:not(.card-body *){
       color: inherit;
     }

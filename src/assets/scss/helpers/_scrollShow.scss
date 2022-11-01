@@ -4,12 +4,12 @@
     opacity: 0;
     transition: 0.25s opacity, 0.3s transform;
     transform: translateY(100px);
-    &[data-scroll-from="left"]{
-      transform: translateX(-100px);
-    }
-    &[data-scroll-from="right"]{
-      transform: translateX(100px);
-    }
+    // &[data-scroll-from="left"]{
+    //   transform: translateX(-100px);
+    // }
+    // &[data-scroll-from="right"]{
+    //   transform: translateX(100px);
+    // }
     &.is-active{
      // pointer-events: all;
       transform: translateX(0) translateY(0);

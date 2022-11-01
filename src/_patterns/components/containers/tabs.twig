@@ -1,13 +1,13 @@
 
 
 
-<ul class="tabs" data-tabs id="{{ id | default }}">
+<ul class="tabs" data-tabs id="{{ tabs_id | default }}">
   {% for tab in tabs %}
     <li class="tabs-title {{ loop.first ? 'is-active' }}"><button data-href="#{{ tab.id }}" aria-selected="true">{{ tab.text }}</button></li>
   {% endfor %}
 </ul>
 
-<div class="tabs-content" data-tabs-content="{{ id | default  }}">
+<div class="tabs-content" data-tabs-content="{{ tabs_id | default  }}">
 
     {% for tab in tabs %}
       <div tabindex="0" id="{{ tab.id }}" class="tabs-panel {{ loop.first ? 'is-active'}}">

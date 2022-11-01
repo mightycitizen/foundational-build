@@ -1,5 +1,5 @@
 {
-  "id": "example-tabs",
+  "tabs_id": "example-tabs",
   "tabs": [
     {
       "text": "Tab One",

@@ -15817,10 +15817,16 @@ span.button a {
 
 .slick-slide {
   margin: 0.8333333333rem 0.5555555556rem;
+  margin: 0.8333333333rem 10px;
+}
+@media print, screen and (min-width: 40em) {
+  .slick-slide {
+    margin: 0.8333333333rem 12px;
+  }
 }
 @media print, screen and (min-width: 64em) {
   .slick-slide {
-    margin: 0.8333333333rem 1.5277777778rem;
+    margin: 0.8333333333rem 20px;
   }
 }
 .slick-slide .card {
@@ -17456,12 +17462,6 @@ html, body, .l-wrapper {
   opacity: 0;
   transition: 0.25s opacity, 0.3s transform;
   transform: translateY(100px);
-}
-[data-scroll-show][data-scroll-from=left] {
-  transform: translateX(-100px);
-}
-[data-scroll-show][data-scroll-from=right] {
-  transform: translateX(100px);
 }
 [data-scroll-show].is-active {
   transform: translateX(0) translateY(0);

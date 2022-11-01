@@ -1362,83 +1362,93 @@
 }
 
 .gy-1 {
-  gap: 8px;
+  row-gap: 8px;
 }
 
 .gy-2 {
-  gap: 16px;
+  row-gap: 16px;
 }
 
 .gy-3 {
-  gap: 24px;
+  row-gap: 24px;
 }
 
 .gy-4 {
-  gap: 32px;
+  row-gap: 32px;
 }
 
 .gy-5 {
-  gap: 40px;
+  row-gap: 40px;
 }
 
 .gy-6 {
-  gap: 48px;
+  row-gap: 48px;
 }
 
 .gy-7 {
-  gap: 56px;
+  row-gap: 56px;
 }
 
 .gy-8 {
-  gap: 64px;
+  row-gap: 64px;
 }
 
 .gy-quarter {
-  gap: 2px;
+  row-gap: 2px;
 }
 
 .gy-half {
-  gap: 4px;
+  row-gap: 4px;
 }
 
 .gx-1 {
-  gap: 8px;
+  -moz-column-gap: 8px;
+  column-gap: 8px;
 }
 
 .gx-2 {
-  gap: 16px;
+  -moz-column-gap: 16px;
+  column-gap: 16px;
 }
 
 .gx-3 {
-  gap: 24px;
+  -moz-column-gap: 24px;
+  column-gap: 24px;
 }
 
 .gx-4 {
-  gap: 32px;
+  -moz-column-gap: 32px;
+  column-gap: 32px;
 }
 
 .gx-5 {
-  gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
 }
 
 .gx-6 {
-  gap: 48px;
+  -moz-column-gap: 48px;
+  column-gap: 48px;
 }
 
 .gx-7 {
-  gap: 56px;
+  -moz-column-gap: 56px;
+  column-gap: 56px;
 }
 
 .gx-8 {
-  gap: 64px;
+  -moz-column-gap: 64px;
+  column-gap: 64px;
 }
 
 .gx-quarter {
-  gap: 2px;
+  -moz-column-gap: 2px;
+  column-gap: 2px;
 }
 
 .gx-half {
-  gap: 4px;
+  -moz-column-gap: 4px;
+  column-gap: 4px;
 }
 
 .font-primary {
@@ -2899,83 +2909,93 @@
   }
 
   .gy-medium-1 {
-    gap: 8px;
+    row-gap: 8px;
   }
 
   .gy-medium-2 {
-    gap: 16px;
+    row-gap: 16px;
   }
 
   .gy-medium-3 {
-    gap: 24px;
+    row-gap: 24px;
   }
 
   .gy-medium-4 {
-    gap: 32px;
+    row-gap: 32px;
   }
 
   .gy-medium-5 {
-    gap: 40px;
+    row-gap: 40px;
   }
 
   .gy-medium-6 {
-    gap: 48px;
+    row-gap: 48px;
   }
 
   .gy-medium-7 {
-    gap: 56px;
+    row-gap: 56px;
   }
 
   .gy-medium-8 {
-    gap: 64px;
+    row-gap: 64px;
   }
 
   .gy-medium-quarter {
-    gap: 2px;
+    row-gap: 2px;
   }
 
   .gy-medium-half {
-    gap: 4px;
+    row-gap: 4px;
   }
 
   .gx-medium-1 {
-    gap: 8px;
+    -moz-column-gap: 8px;
+    column-gap: 8px;
   }
 
   .gx-medium-2 {
-    gap: 16px;
+    -moz-column-gap: 16px;
+    column-gap: 16px;
   }
 
   .gx-medium-3 {
-    gap: 24px;
+    -moz-column-gap: 24px;
+    column-gap: 24px;
   }
 
   .gx-medium-4 {
-    gap: 32px;
+    -moz-column-gap: 32px;
+    column-gap: 32px;
   }
 
   .gx-medium-5 {
-    gap: 40px;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
   }
 
   .gx-medium-6 {
-    gap: 48px;
+    -moz-column-gap: 48px;
+    column-gap: 48px;
   }
 
   .gx-medium-7 {
-    gap: 56px;
+    -moz-column-gap: 56px;
+    column-gap: 56px;
   }
 
   .gx-medium-8 {
-    gap: 64px;
+    -moz-column-gap: 64px;
+    column-gap: 64px;
   }
 
   .gx-medium-quarter {
-    gap: 2px;
+    -moz-column-gap: 2px;
+    column-gap: 2px;
   }
 
   .gx-medium-half {
-    gap: 4px;
+    -moz-column-gap: 4px;
+    column-gap: 4px;
   }
 }
 @media print, screen and (min-width: 64em) {
@@ -4167,83 +4187,93 @@
   }
 
   .gy-large-1 {
-    gap: 8px;
+    row-gap: 8px;
   }
 
   .gy-large-2 {
-    gap: 16px;
+    row-gap: 16px;
   }
 
   .gy-large-3 {
-    gap: 24px;
+    row-gap: 24px;
   }
 
   .gy-large-4 {
-    gap: 32px;
+    row-gap: 32px;
   }
 
   .gy-large-5 {
-    gap: 40px;
+    row-gap: 40px;
   }
 
   .gy-large-6 {
-    gap: 48px;
+    row-gap: 48px;
   }
 
   .gy-large-7 {
-    gap: 56px;
+    row-gap: 56px;
   }
 
   .gy-large-8 {
-    gap: 64px;
+    row-gap: 64px;
   }
 
   .gy-large-quarter {
-    gap: 2px;
+    row-gap: 2px;
   }
 
   .gy-large-half {
-    gap: 4px;
+    row-gap: 4px;
   }
 
   .gx-large-1 {
-    gap: 8px;
+    -moz-column-gap: 8px;
+    column-gap: 8px;
   }
 
   .gx-large-2 {
-    gap: 16px;
+    -moz-column-gap: 16px;
+    column-gap: 16px;
   }
 
   .gx-large-3 {
-    gap: 24px;
+    -moz-column-gap: 24px;
+    column-gap: 24px;
   }
 
   .gx-large-4 {
-    gap: 32px;
+    -moz-column-gap: 32px;
+    column-gap: 32px;
   }
 
   .gx-large-5 {
-    gap: 40px;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
   }
 
   .gx-large-6 {
-    gap: 48px;
+    -moz-column-gap: 48px;
+    column-gap: 48px;
   }
 
   .gx-large-7 {
-    gap: 56px;
+    -moz-column-gap: 56px;
+    column-gap: 56px;
   }
 
   .gx-large-8 {
-    gap: 64px;
+    -moz-column-gap: 64px;
+    column-gap: 64px;
   }
 
   .gx-large-quarter {
-    gap: 2px;
+    -moz-column-gap: 2px;
+    column-gap: 2px;
   }
 
   .gx-large-half {
-    gap: 4px;
+    -moz-column-gap: 4px;
+    column-gap: 4px;
   }
 }
 @media screen and (min-width: 75em) {
@@ -5435,83 +5465,93 @@
   }
 
   .gy-xlarge-1 {
-    gap: 8px;
+    row-gap: 8px;
   }
 
   .gy-xlarge-2 {
-    gap: 16px;
+    row-gap: 16px;
   }
 
   .gy-xlarge-3 {
-    gap: 24px;
+    row-gap: 24px;
   }
 
   .gy-xlarge-4 {
-    gap: 32px;
+    row-gap: 32px;
   }
 
   .gy-xlarge-5 {
-    gap: 40px;
+    row-gap: 40px;
   }
 
   .gy-xlarge-6 {
-    gap: 48px;
+    row-gap: 48px;
   }
 
   .gy-xlarge-7 {
-    gap: 56px;
+    row-gap: 56px;
   }
 
   .gy-xlarge-8 {
-    gap: 64px;
+    row-gap: 64px;
   }
 
   .gy-xlarge-quarter {
-    gap: 2px;
+    row-gap: 2px;
   }
 
   .gy-xlarge-half {
-    gap: 4px;
+    row-gap: 4px;
   }
 
   .gx-xlarge-1 {
-    gap: 8px;
+    -moz-column-gap: 8px;
+    column-gap: 8px;
   }
 
   .gx-xlarge-2 {
-    gap: 16px;
+    -moz-column-gap: 16px;
+    column-gap: 16px;
   }
 
   .gx-xlarge-3 {
-    gap: 24px;
+    -moz-column-gap: 24px;
+    column-gap: 24px;
   }
 
   .gx-xlarge-4 {
-    gap: 32px;
+    -moz-column-gap: 32px;
+    column-gap: 32px;
   }
 
   .gx-xlarge-5 {
-    gap: 40px;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
   }
 
   .gx-xlarge-6 {
-    gap: 48px;
+    -moz-column-gap: 48px;
+    column-gap: 48px;
   }
 
   .gx-xlarge-7 {
-    gap: 56px;
+    -moz-column-gap: 56px;
+    column-gap: 56px;
   }
 
   .gx-xlarge-8 {
-    gap: 64px;
+    -moz-column-gap: 64px;
+    column-gap: 64px;
   }
 
   .gx-xlarge-quarter {
-    gap: 2px;
+    -moz-column-gap: 2px;
+    column-gap: 2px;
   }
 
   .gx-xlarge-half {
-    gap: 4px;
+    -moz-column-gap: 4px;
+    column-gap: 4px;
   }
 }
 @media screen and (min-width: 90em) {
@@ -6703,83 +6743,93 @@
   }
 
   .gy-xxlarge-1 {
-    gap: 8px;
+    row-gap: 8px;
   }
 
   .gy-xxlarge-2 {
-    gap: 16px;
+    row-gap: 16px;
   }
 
   .gy-xxlarge-3 {
-    gap: 24px;
+    row-gap: 24px;
   }
 
   .gy-xxlarge-4 {
-    gap: 32px;
+    row-gap: 32px;
   }
 
   .gy-xxlarge-5 {
-    gap: 40px;
+    row-gap: 40px;
   }
 
   .gy-xxlarge-6 {
-    gap: 48px;
+    row-gap: 48px;
   }
 
   .gy-xxlarge-7 {
-    gap: 56px;
+    row-gap: 56px;
   }
 
   .gy-xxlarge-8 {
-    gap: 64px;
+    row-gap: 64px;
   }
 
   .gy-xxlarge-quarter {
-    gap: 2px;
+    row-gap: 2px;
   }
 
   .gy-xxlarge-half {
-    gap: 4px;
+    row-gap: 4px;
   }
 
   .gx-xxlarge-1 {
-    gap: 8px;
+    -moz-column-gap: 8px;
+    column-gap: 8px;
   }
 
   .gx-xxlarge-2 {
-    gap: 16px;
+    -moz-column-gap: 16px;
+    column-gap: 16px;
   }
 
   .gx-xxlarge-3 {
-    gap: 24px;
+    -moz-column-gap: 24px;
+    column-gap: 24px;
   }
 
   .gx-xxlarge-4 {
-    gap: 32px;
+    -moz-column-gap: 32px;
+    column-gap: 32px;
   }
 
   .gx-xxlarge-5 {
-    gap: 40px;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
   }
 
   .gx-xxlarge-6 {
-    gap: 48px;
+    -moz-column-gap: 48px;
+    column-gap: 48px;
   }
 
   .gx-xxlarge-7 {
-    gap: 56px;
+    -moz-column-gap: 56px;
+    column-gap: 56px;
   }
 
   .gx-xxlarge-8 {
-    gap: 64px;
+    -moz-column-gap: 64px;
+    column-gap: 64px;
   }
 
   .gx-xxlarge-quarter {
-    gap: 2px;
+    -moz-column-gap: 2px;
+    column-gap: 2px;
   }
 
   .gx-xxlarge-half {
-    gap: 4px;
+    -moz-column-gap: 4px;
+    column-gap: 4px;
   }
 }
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */

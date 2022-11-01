@@ -382,7 +382,7 @@ $utilities: map-merge(
     // Gap utility
     "g-y": (
       responsive: true,
-      property: gap,
+      property: row-gap,
       class: gy,
       values: $spacers
     ),
@@ -390,7 +390,7 @@ $utilities: map-merge(
     // Gap utility
     "g-x": (
       responsive: true,
-      property: gap,
+      property: column-gap,
       class: gx,
       values: $spacers
     ),

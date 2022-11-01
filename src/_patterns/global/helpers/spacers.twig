@@ -117,6 +117,18 @@
   {% endif %}
 
 {% endfor %}
+<hr>
+<h4>Row Gap <code>gy-#</code></h4>
+<p><strong>Useful for flex containers like grids with <code>flex-wrap: wrap</code></strong></p>
+
+<div class="grid-x grid-margin-x gy-3">
+  {% for i in 1..5 %}
+  <div class="cell medium-6">
+    <span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"></span>
+  </div>
+  {% endfor %}
+
+</div>
 
 <hr>
 

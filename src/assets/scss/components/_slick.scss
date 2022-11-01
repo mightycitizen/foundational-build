@@ -421,7 +421,7 @@
 				//max-width: 100vw;
 				width: rem-calc($slide-width);
 				transform: translateY(#{rem-calc($slide-transform)});
-				transition: $transition-duration margin, $transition-duration width;
+				transition: $transition-duration transform, $transition-duration margin, $transition-duration width;
 				will-change: margin, width;
 				.card-section{
 					will-change: opacity, padding;
@@ -479,19 +479,19 @@
 					margin: rem-calc($slide-margin-offset) #{$slide-margin*2 - ($slide-current-diff/2 + $slide-margin)}px;
 					transform: translateY(#{rem-calc(0)});
 
-					.card--special{
-						box-shadow: $global-box-shadow;
-						.card-section{
-							@include spacer(padding,all,5);
-						}
-						.card-image{
-							margin-bottom: rem-calc($curr-section-offset);
-						}
-						&:after{
-							height: 70%;
-							bottom: rem-calc(80);
-						}
-					}
+					// .card--special{
+					// 	box-shadow: $global-box-shadow;
+					// 	.card-section{
+					// 		@include spacer(padding,all,5);
+					// 	}
+					// 	.card-image{
+					// 		margin-bottom: rem-calc($curr-section-offset);
+					// 	}
+					// 	&:after{
+					// 		height: 70%;
+					// 		bottom: rem-calc(80);
+					// 	}
+					// }
 					// .card-section{
 					// 	background-color: $secondary-color;
 					// 	color: $white;

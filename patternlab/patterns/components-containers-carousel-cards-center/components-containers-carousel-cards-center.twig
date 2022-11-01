@@ -8,10 +8,12 @@
           lazyload_class: 'data-lazy',
           modifier: "special"
         }) %}
-        {% include patternlab_namespace | default ~ "components/teasers/card.twig" with {
-            card: card
-          }
-        %}
+        <div class="{{ loop.first ? 'slick-primary ' : '' }}">
+          {% include patternlab_namespace | default ~ "components/teasers/card.twig" with {
+              card: card
+            }
+          %}
+        </div>
       {% endfor %}
   {% endblock %}
 {% endembed %}

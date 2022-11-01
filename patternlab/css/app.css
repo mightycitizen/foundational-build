@@ -16050,7 +16050,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     margin: 0.8333333333rem 4.4444444444rem;
     width: 25rem;
     transform: translateY(4.4444444444rem);
-    transition: 0.8s margin, 0.8s width;
+    transition: 0.8s transform, 0.8s margin, 0.8s width;
     will-change: margin, width;
   }
   .js-slick--center .slick-slide .card-section {
@@ -16122,35 +16122,9 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     margin: 0.8333333333rem -35px;
     transform: translateY(0);
   }
-  .js-slick--center .slick-slide.slick-primary .card--special, .js-slick--center .slick-slide.slick-clone-current .card--special {
-    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
-  }
-  .js-slick--center .slick-slide.slick-primary .card--special .card-section, .js-slick--center .slick-slide.slick-clone-current .card--special .card-section {
-    padding: 1.3888888889rem;
-  }
-}
-@media print, screen and (min-width: 64em) and (min-width: 64em) {
-  .js-slick--center .slick-slide.slick-primary .card--special .card-section, .js-slick--center .slick-slide.slick-clone-current .card--special .card-section {
-    padding: 2.2222222222rem;
-  }
-}
-@media print, screen and (min-width: 64em) {
-  .js-slick--center .slick-slide.slick-primary .card--special .card-image, .js-slick--center .slick-slide.slick-clone-current .card--special .card-image {
-    margin-bottom: 4.4444444444rem;
-  }
-}
-@media print, screen and (min-width: 64em) {
-  .js-slick--center .slick-slide.slick-primary .card--special:after, .js-slick--center .slick-slide.slick-clone-current .card--special:after {
-    height: 70%;
-    bottom: 4.4444444444rem;
-  }
-}
-@media print, screen and (min-width: 64em) {
   .js-slick--center .slick-slide.slick-primary .card-image, .js-slick--center .slick-slide.slick-primary .button, .js-slick--center .slick-slide.slick-clone-current .card-image, .js-slick--center .slick-slide.slick-clone-current .button {
     max-height: 55.5555555556rem;
   }
-}
-@media print, screen and (min-width: 64em) {
   .js-slick--center .slick-slide.slick-primary.slick-animate:before, .js-slick--center .slick-slide.slick-primary.slick-animate:after, .js-slick--center .slick-slide.slick-primary.slick-animate p, .js-slick--center .slick-slide.slick-primary.slick-animate .h4, .js-slick--center .slick-slide.slick-clone-current.slick-animate:before, .js-slick--center .slick-slide.slick-clone-current.slick-animate:after, .js-slick--center .slick-slide.slick-clone-current.slick-animate p, .js-slick--center .slick-slide.slick-clone-current.slick-animate .h4 {
     opacity: 1;
   }

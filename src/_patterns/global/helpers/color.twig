@@ -1,4 +1,22 @@
-<h3>Background Colors</h3>
+{% set color_sections = [
+  {
+    name: 'bg-colors',
+    title: 'Background Colors'
+  },
+  {
+    name: 'text-colors',
+    title: 'Text Colors'
+  }
+] %}
+
+<ul>
+  {% for section in color_sections %}
+    <li>
+      <a href="#{{ section.name }}">{{ section.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+<h3 id="bg-colors">Background Colors</h3>
 
 <style>
 .bg-swatch{
@@ -33,8 +51,33 @@
 
 <hr>
 
-<h3>Text Colors</h3>
+<h3 id="text-colors">Text Colors</h3>
 
-<p>
-  <span class="text-primary">Any brand color and variation can be used</span>
-</p>
+{% set color_section = [
+  {
+    class: 'text-primary'
+  },
+  {
+    class: 'text-secondary-darker'
+  },
+  {
+    class: 'text-inherit'
+  },
+  {
+    class: 'text-black'
+  },
+  {
+    class: 'text-gray'
+  },
+  {
+    class: 'text-white',
+    container_class: 'bg-solid-black py-2 px-2'
+  }
+] %}
+
+<p><strong>Any brand color and variation can be used</strong></p>
+{% for color in color_section %}
+  <div class="{{ color.container_class }}">
+    <span class="{{ color.class }}">.{{ color.class }}</span>
+  </div>
+{% endfor %}

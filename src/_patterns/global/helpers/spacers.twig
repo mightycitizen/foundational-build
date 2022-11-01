@@ -1,3 +1,4 @@
+
 <style>
   .spacer{
     background: aqua;
@@ -5,16 +6,38 @@
   }
 </style>
 
+
+
+
 {% set types = [
   {
     label: "Margin",
-    selector: "m"
+    selector: "m",
+    directions: true
   },
   {
     label: "Padding",
-    selector: "p"
+    selector: "p",
+    directions: true
+  },
+  {
+    label: "Gap",
+    selector: "gap",
+    description: "Gap between flex child elements (either in a row or column)",
+    directions: false,
+    multiple: 4
   }
 ] %}
+
+{% set sections = types %}
+
+<ul>
+  {% for section in sections %}
+    <li>
+      <a href="#{{ section.selector }}">{{ section.label }}</a>
+    </li>
+  {% endfor %}
+</ul>
 
 {% set directions = [
   {
@@ -55,20 +78,49 @@
 
 
 {% for type in types %}
-  <h3>{{ type.label }}</h3>
-  {% for direction in directions %}
-    <h4>{{ type.label }} {{ direction.label }}</h4>
+  <h3 id="{{ type.selector }}">{{ type.label }}</h3>
+  {% if type.description %}
+    <p>{{ type.description }}</p>
+  {% endif %}
+  {% if type.directions %}
+    {% for direction in directions %}
+      <h4>{{ type.label }} {{ direction.label }}</h4>
+      <div style="background-color: orange; overflow: hidden;">
+        {% for spacer in spacers %}
+          <div class="spacer {{ type.selector }}{{ direction.selector }}-{{ spacer }}">
+            <span class="d-block" style="background-color: #ccc">{{ type.label }} {{ direction.label }} {{ spacer }} (<code>{{ type.selector }}{{ direction.selector }}-{{ spacer }}</code>)</span>
+          </div>
+        {% endfor %}
+      </div>
+      <hr/>
+    {% endfor %}
+  {% else %}
     <div style="background-color: orange; overflow: hidden;">
-      {% for spacer in spacers %}
-        <div class="spacer {{ type.selector }}{{ direction.selector }}-{{ spacer }}">
-          <span class="d-block" style="background-color: #ccc">{{ type.label }} {{ direction.label }} {{ spacer }} (<code>{{ type.selector }}{{ direction.selector }}-{{ spacer }}</code>)</span>
-        </div>
+      {% set directions = ['col','row'] %}
+      {% for direction in directions %}
+        {% for spacer in spacers %}
+          <div class="spacer {% if type.multiple %}d-flex{% endif %} {% if direction == 'col' %}flex-column{% endif %} {{ type.selector }}-{{ spacer }}">
+            {% if type.multiple %}
+              {% for i in range (1, type.multiple) %}
+                <div class="spacer {{ type.selector }}-{{ spacer }}">
+                  <span class="d-block" style="background-color: #ccc">{{ type.label }} {{ spacer }} (<code>{{ type.selector }}-{{ spacer }}</code>)</span>
+                </div>
+              {% endfor %}
+            {% else %}
+              <span class="d-block" style="background-color: #ccc">{{ type.label }} {{ spacer }} (<code>{{ type.selector }}-{{ spacer }}</code>)</span>
+            {% endif %}
+
+          </div>
+        {% endfor %}
       {% endfor %}
     </div>
-    <hr/>
-  {% endfor %}
+  {% endif %}
 
 {% endfor %}
+
+<hr>
+
+<h3>Miscellaneous Spacers</h3>
 
 {% set other_types = [
   {

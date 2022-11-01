@@ -1534,6 +1534,10 @@
   word-break: break-word;
 }
 
+.text-black {
+  color: #333;
+}
+
 .text-primary {
   color: #2953cc;
 }
@@ -1598,16 +1602,16 @@
   color: #333;
 }
 
-.text-black {
-  color: #333;
-}
-
 .text-white {
   color: #fff;
 }
 
 .text-reset {
   color: inherit;
+}
+
+.bg-solid-black {
+  background-color: #333;
 }
 
 .bg-solid-primary {

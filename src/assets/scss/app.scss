@@ -2,7 +2,9 @@
 @use "sass:map";
 // this file is created by the json to sass gulp task,
 // see .json files in src/_patterns/global/base/*.json
-
+// :root{
+//   --grid-margin-gutters: 1rem;
+// }
 @import
   'variables/breakpoints',
   'variables/headings',

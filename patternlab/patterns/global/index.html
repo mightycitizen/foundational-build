@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1667323811145" media="all" />
-    <link rel="stylesheet" href="../../css/all.css?1667323811145" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1667325401669" media="all" />
+    <link rel="stylesheet" href="../../css/all.css?1667325401669" media="all" />
 
         <meta name="theme-color" content="#ffffff">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
         <script src="https://kit.fontawesome.com/2f872f69e9.js" crossorigin="anonymous"></script>
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1667323811145" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1667325401669" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -2019,41 +2019,36 @@
 <h4>Row Gap <code>gy-#</code></h4>
 <p><strong>Useful for flex containers like grids with <code>flex-wrap: wrap</code></strong></p>
 
-<div class="grid-x grid-margin-x gy-3">
-    <div class="cell medium-6">
-    <span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"></span>
+<div class="grid-container">
+  <div class="grid-x grid-margin-x gy-3 gy-large-5">
+        <div class="cell medium-6 large-4">
+      <span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"></span>
+    </div>
+        <div class="cell medium-6 large-4">
+      <span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"></span>
+    </div>
+        <div class="cell medium-6 large-4">
+      <span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"></span>
+    </div>
+        <div class="cell medium-6 large-4">
+      <span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"></span>
+    </div>
+        <div class="cell medium-6 large-4">
+      <span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"></span>
+    </div>
+    
   </div>
-    <div class="cell medium-6">
-    <span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"></span>
-  </div>
-    <div class="cell medium-6">
-    <span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"></span>
-  </div>
-    <div class="cell medium-6">
-    <span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"></span>
-  </div>
-    <div class="cell medium-6">
-    <span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"></span>
-  </div>
-  
 </div>
 
 <hr>
 
 <h3>Miscellaneous Spacers</h3>
 
-
-  <div class="spacer m-auto" >
-    <span class="d-block" style="background-color: #ccc">Auto Horizontal Margin (<code>m-auto</code>)</span>
-  </div>
-
-  <div class="spacer w-100" >
-    <span class="d-block" style="background-color: #ccc">100% Width (<code>w-100</code>)</span>
-  </div>
-
-  <div class="spacer h-100" >
-    <span class="d-block" style="background-color: #ccc">100% Height (<code>h-100</code>)</span>
-  </div>
+<div style="background-color: orange; overflow: hidden;">
+    <span class="spacer d-block m-auto"  style="width: 300px;background-color: #ccc">Auto Horizontal Margin (<code>m-auto</code>)</span>
+    <span class="spacer d-block w-100"  style="background-color: #ccc">100% Width (<code>w-100</code>)</span>
+    <span class="spacer d-block h-100"  style="background-color: #ccc">100% Height (<code>h-100</code>)</span>
+</div>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-global-spacers" class="pl-js-pattern-data">
@@ -2974,10 +2969,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1667323811145">
+<script id="pl-js-polyfill-insert-1667325401669">
   (function() {
     if (self != top) {
-      var cb = '1667323811145';
+      var cb = '1667325401669';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -2990,7 +2985,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1667323811145" nomodule>
+<script id="pl-js-insert-1667325401669" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -3013,7 +3008,7 @@
   <script src="/core/misc/drupal.init.js"></script>
   -->
   <!-- Concatenated by Gulp so you don't have to manually add each file. -->
-  <script src="../../js/pattern-scaffolding.js?1667323811145"></script>
-  <script src="../../js/app.js?1667323811145"></script>
+  <script src="../../js/pattern-scaffolding.js?1667325401669"></script>
+  <script src="../../js/app.js?1667325401669"></script>
 </body>
 </html>

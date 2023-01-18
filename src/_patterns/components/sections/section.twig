@@ -1,27 +1,27 @@
 {% if intro_class | default is empty %}{% set intro_class = 'text-center' %}{% endif %}
 
-{% set section_intro %}
-  {% if section_heading | default %}
-      <div class="section_intro {{ intro_class }}">
+{% set intro %}
+  {% if heading | default %}
+      <div class="intro {{ intro_class }}">
         <div class="grid-x grid-margin-x align-middle align-center">
-          {% if section_image | default %}
+          {% if image | default %}
             <div class="cell medium-5 large-6">
               <div class="image-size--landscapeCroppedMedium">
-                <img data-src="{{ section_image.src }}" alt="{{ section_image.alt }}" class="js-lazy">
+                <img data-src="{{ image.src }}" alt="{{ image.alt }}" class="js-lazy">
               </div>
             </div>
           {% endif %}
-          <div class="cell {% if section_image | default %}medium-7 large-6{% elseif style | default is empty %}medium-8{% endif %}">
-            <h2 class="section_heading">{{ section_heading }}</h2>
-            {% if section_subheading | default %}
-              <h3 class="section_subheading">{{ section_subheading }}</h3>
+          <div class="cell {% if image | default %}medium-7 large-6{% elseif style | default is empty %}medium-8{% endif %}">
+            <h2 class="section_heading">{{ heading }}</h2>
+            {% if subheading | default %}
+              <h3 class="section_subheading">{{ subheading }}</h3>
             {% endif %}
-            {% if section_description | default %}
-              <p class="lead">{{ section_description }}</p>
+            {% if description | default %}
+              <p class="lead">{{ description }}</p>
             {% endif %}
-            {% if section_button | default %}
+            {% if button | default %}
               {% include patternlab_namespace | default ~ 'components/links/button.twig' with {
-                "button" : section_button
+                "button" : button
               } %}
             {% endif %}
           </div>
@@ -29,7 +29,7 @@
       </div>
     {% endif %}
 {% endset %}
-{% set section_content %}
+{% set content %}
   {% if block('section_content') | trim is not empty%}
     <div class="section_content">
       {% block section_content %}
@@ -37,27 +37,27 @@
     </div>
   {% endif %}
 {% endset %}
-<section class="section {{ section_class | default }} {% if style | default %}section--{{ style }} {% endif %} {% if collapse | default %}section--collapse{% endif %}" >
-  {% if section_background | default %}<div class="js-lazy section_background" data-bg="{{ section_background.src }}"></div>{% endif %}
+<section class="section {{ class | default }} {% if style | default %}section--{{ style }} {% endif %} {% if collapse | default %}section--collapse{% endif %}" >
+  {% if background | default %}<div class="js-lazy section_background" data-bg="{{ background.src }}"></div>{% endif %}
   <div class="{% if exclude_container | default is empty %}grid-container{% endif %} {{ grid_class | default }}">
     {% if style | default and (style == 'side') %}
       <div class="grid-x align-middle align-center">
         <div class="cell medium-8">
-          {{ section_intro }}
+          {{ intro }}
         </div>
         <div class="cell large-4">
-          {{ section_content }}
+          {{ content }}
         </div>
       </div>
     {% else %}
-      {{ section_intro }}
+      {{ intro }}
       {% if (style | default and (style == 'narrow' or style == 'narrower')) and exclude_container | default is empty %}
         {% set content %}
-          {{ section_content }}
+          {{ content }}
         {% endset %}
-        {% include patternlab_namespace | default ~  'layout/structure/content-' ~ style ~ '.twig' %}
+        {% include '../../layout/structure/content-narrow.twig' %}
       {% else %}
-        {{ section_content }}
+        {{ content }}
       {% endif %}
     {% endif %}
   </div>

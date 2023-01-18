@@ -4,7 +4,7 @@
 
   {% for item in items %}
     {%
-      include patternlab_namespace | default ~  'components/containers/accordion-item.twig' with {item: item, modifier: modifier}
+      include './accordion-item.twig' with {item: item, modifier: modifier}
     %}
   {% endfor %}
 </ul>

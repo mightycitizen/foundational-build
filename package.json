@@ -10,7 +10,9 @@
     "compress": "gulp compress",
     "lint": "gulp lint",
     "clean": "gulp clean",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "browserslist": [
     "last 2 versions",
@@ -23,6 +25,14 @@
     "@pattern-lab/core": "^5.14.3",
     "@pattern-lab/engine-twig-php": "^5.14.1",
     "@pattern-lab/uikit-workshop": "^5.14.1",
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-interactions": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/builder-webpack4": "^6.5.15",
+    "@storybook/html": "^6.5.15",
+    "@storybook/manager-webpack4": "^6.5.15",
+    "@storybook/testing-library": "0.0.13",
     "babel-loader": "^8.0.4",
     "browser-sync": "^2.26.14",
     "del": "^4.1.1",
@@ -40,6 +50,7 @@
     "gulp-sass-lint": "^1.4.0",
     "gulp-sourcemaps": "^2.6.5",
     "raw-loader": "^4.0.2",
+    "twig-loader": "^0.5.5",
     "webpack-stream": "^6.1.1"
   },
   "dependencies": {

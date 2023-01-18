@@ -11,8 +11,8 @@ import yaml          from 'js-yaml';
 
 
 // Include Pattern Lab and config.
-const config = require('./patternlab-config.json');
-const patternlab = require('@pattern-lab/core')(config);
+// const config = require('./patternlab-config.json');
+// const patternlab = require('@pattern-lab/core')(config);
 let method;
 
 // Include Our tasks.
@@ -61,43 +61,11 @@ function serve(done) {
     // Drupal core directory. This allows urls that reference
     // Drupal core JS files to resolve correctly.
     // i.e. /core/misc/drupal.js
-    server: ['./patternlab/', '../../../'],
+    server: [ '../../../'],
     notify: false,
     open: false
   });
   done();
-}
-
-/**
- * Start Pattern Lab build watch process.
- * @param {function} done callback function.
- * @returns {undefined}
- */
-function watchPatternlab(done) {
-  patternlab
-    .build({
-      cleanPublic: config.cleanPublic,
-      watch: true
-    })
-    .then(() => {
-      done();
-    });
-}
-
-/**
- * Build Pattern Lab.
- * @param {function} done callback function.
- * @returns {undefined}
- */
-function buildPatternlab(done) {
-  patternlab
-    .build({
-      cleanPublic: config.cleanPublic,
-      watch: false
-    })
-    .then(() => {
-      done();
-    });
 }
 
 function buildVariables(){
@@ -142,14 +110,14 @@ function watchFiles() {
 
   // Reload the browser after patternlab updates.
   if (method === 'patternlab'){
-    patternlab.events.on('patternlab-build-end', () => {
-      server.reload('*.html');
-    });
+    // patternlab.events.on('patternlab-build-end', () => {
+    //   server.reload('*.html');
+    // });
   }else{
     watch(['./src/_patterns/components/**/*.twig'], (done) =>  {server.reload('*.html'); done()});
     watch(['./src/_patterns/layout/**/*.twig'], (done) =>  {server.reload('*.html'); done()});
     watch([
-      '../web/themes/custom/mc_theme/templates/**/*',
+      //'../web/themes/custom/mc_theme/templates/**/*',
       '../templates/**/*',
     ], (done) => {
       server.reload();
@@ -193,11 +161,11 @@ exports.watch = series(
     movePatternJS
   ),
   concatCSS,
-  series(watchPatternlab, serve, watchFiles)
+  series(serve, watchFiles)
 );
 
 // Build task for Pattern Lab.
-exports.styleguide = buildPatternlab;
+//exports.styleguide = buildPatternlab;
 
 //exports.copyComponent = copyComponent;
 
@@ -222,6 +190,5 @@ exports.default = series(
     movePatternCSS,
     movePatternJS
   ),
-  concatCSS,
-  buildPatternlab
+  concatCSS
 );

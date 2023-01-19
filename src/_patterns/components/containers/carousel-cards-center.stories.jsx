@@ -1,10 +1,10 @@
-import twig from './carousel-cards.twig';
+import twig from './carousel-cards-center.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
 
 export default {
-  title: 'Containers/Card Group/Carousel Cards',
+  title: 'Containers/Card Group/Carousel Cards (Centered)',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

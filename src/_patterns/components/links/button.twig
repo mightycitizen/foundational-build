@@ -1,7 +1,7 @@
 
 
-  <button class="button{{ modifier | default ? ' ' ~ modifier }}">
-    {{ label | default }}
+  <button class="button{{ color | default ? ' ' ~ color }} {{ size | default ? ' ' ~ size }} {{  class | default  }}">
+    {{ text | default }}
     {% if icon | default %}
       <i class="icon icon--small icon-{{ icon }}"></i>
     {% endif %}

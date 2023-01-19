@@ -1,37 +1,31 @@
-import twig from './carousel-cards.twig';
+import twig from './modal.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
-
-
 export default {
-  title: 'Containers/Card Group/Carousel Cards',
+  title: 'Containers/Modal',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 
-    modifier: {
+    heading: {
       control: 'text'
     },
-    cards: {
-      flag: {
+
+    summary: {
+      control: 'text'
+    },
+    subheading: {
+      control: 'text'
+    },
+    button: {
+      url: {
         control: 'text'
       },
-      image: {
-        src: {
-          control: 'text'
-        },
-        url: {
-          control: 'text'
-        }
-      },
-      heading: {
-        text: {
-          control: 'text'
-        },
-        url: {
-          control: 'text'
-        }
-      },
-      link: {
+      text: {
+        control: 'text'
+      }
+    },
+    categories: [
+      {
         text: {
           control: 'text'
         },
@@ -39,7 +33,7 @@ export default {
           control: 'text'
         }
       }
-    }
+    ]
     // backgroundColor: { control: 'color' },
     // label: { control: 'text' },
     // onClick: { action: 'onClick' },
@@ -58,24 +52,10 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-const cards = [...Array(5)].map((_, i) => ( {
-  heading: {
-    text: 'Heading',
-    url: '#',
-    level: 3
-  },
-  image: {
-    src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
-    alt: 'Alt Text'
-  },
-  link: {
-    text: 'Link',
-    url: '#'
-  },
-}));
-
 const defaultArgs = {
-  cards: cards
+  heading: 'Hero',
+  summary: 'Summary',
+  subheading: 'Subheading'
 }
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

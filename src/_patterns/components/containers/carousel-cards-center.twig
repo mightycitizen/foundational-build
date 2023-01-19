@@ -8,10 +8,7 @@
           lazyload_class: 'data-lazy',
           modifier: "special"
         }) %}
-        {% include "../teasers/card.twig" with {
-            card: card
-          }
-        %}
+        {% include "../teasers/card.twig" with card %}
       {% endfor %}
   {% endblock %}
 {% endembed %}

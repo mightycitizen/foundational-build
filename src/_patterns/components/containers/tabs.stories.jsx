@@ -1,10 +1,10 @@
-import twig from './carousel-cards.twig';
+import twig from './tabs.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
 
 export default {
-  title: 'Containers/Card Group/Carousel Cards',
+  title: 'Containers/Tabs',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 
@@ -58,24 +58,15 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-const cards = [...Array(5)].map((_, i) => ( {
-  heading: {
-    text: 'Heading',
-    url: '#',
-    level: 3
-  },
-  image: {
-    src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
-    alt: 'Alt Text'
-  },
-  link: {
-    text: 'Link',
-    url: '#'
-  },
+const tabs = [...Array(5)].map((_, i) => ( {
+  "text": "Tab " + (0 + i),
+  "id": "tab-" + i,
+  "content": `<h2>Tab Content</h2><p>Lorem ipsum ${i}</p><p><a href='' class='read-more'>Styled Link</a></p>`
 }));
 
 const defaultArgs = {
-  cards: cards
+  id: 'example-tabs',
+  tabs: tabs
 }
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

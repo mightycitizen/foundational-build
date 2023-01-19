@@ -1,8 +1,5 @@
-<span class="{{ read_more.class | default }}">
-{% set link = read_more | merge({
-  modifier: 'read-more'
-}) %}
-{% include '../links/link.twig' with {
-  link: link
-} %}
+<span class="{{ class | default }} {{ size | default }}">
+  {% include '../links/link.twig' with {
+    modifier: 'read-more'
+  } %}
 </span>

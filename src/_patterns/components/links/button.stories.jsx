@@ -5,13 +5,18 @@ export default {
   title: 'Links/Button',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
-    label: { control: 'text' },
-    onClick: { action: 'onClick' },
-    primary: { control: 'boolean' },
+
+    text: { control: 'text' },
+    url: { control: 'text' },
+    color: {
+      control: {
+        type: 'select',
+      },
+      options: ['primary','secondary']
+    },
     size: {
       control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
+      options: ['tiny', 'small', 'medium', 'large'],
     },
   },
 };
@@ -23,26 +28,28 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Primary = Template.bind({});
+const defaultArgs = {
+  text: 'Button',
+  url: '#',
+
+}
+export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
-};
-//
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   label: 'Button',
-// };
-//
-// export const Large = Template.bind({});
-// Large.args = {
-//   size: 'large',
-//   label: 'Button',
-// };
-//
-// export const Small = Template.bind({});
-// Small.args = {
-//   size: 'small',
-//   label: 'Button',
-// };
+Default.args = defaultArgs;
+
+export const Secondary = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Secondary.args = Object.assign({...defaultArgs}, {color: 'secondary'});
+
+
+export const Large = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Large.args = Object.assign({...defaultArgs}, {size: 'large'});
+
+export const Small = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Small.args = Object.assign({...defaultArgs}, {size: 'small'});
+
+export const Tiny = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Tiny.args = Object.assign({...defaultArgs}, {size: 'tiny'});

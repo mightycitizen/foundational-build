@@ -4,17 +4,17 @@
     slick_class: 'slick-slider--equalize'
   } %}
     {% block slide_content %}
-      {% for slide in slides %}
+      {% for card in cards %}
           <div>
-            {% include '../teasers/card-testimonial.twig' with {
-              card: {
-                image: slide.image,
-                lazyload_class: 'data-lazy',
-                quote: slide.quote,
-                attribution: slide.attribution,
+            {% set card = card | merge({
+              image: card.image,
+              lazyload_class: 'data-lazy',
+              quote: card.quote,
+              attribution: card.attribution,
 
-              }
-            }%}
+            }) %}
+            {% include '../teasers/card-testimonial.twig' with card %}
+
           </div>
         {% endfor %}
     {% endblock %}

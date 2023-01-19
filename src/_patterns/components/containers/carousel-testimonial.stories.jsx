@@ -1,10 +1,10 @@
-import twig from './carousel-cards.twig';
+import twig from './carousel-testimonial.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
 
 export default {
-  title: 'Containers/Card Group/Carousel Cards',
+  title: 'Containers/Card Group/Testimonial Cards',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 
@@ -12,9 +12,7 @@ export default {
       control: 'text'
     },
     cards: {
-      flag: {
-        control: 'text'
-      },
+
       image: {
         src: {
           control: 'text'
@@ -23,19 +21,14 @@ export default {
           control: 'text'
         }
       },
-      heading: {
-        text: {
-          control: 'text'
-        },
-        url: {
-          control: 'text'
-        }
+      quote: {
+        control: 'text'
       },
-      link: {
-        text: {
+      attribution: {
+        label: {
           control: 'text'
         },
-        url: {
+        info: {
           control: 'text'
         }
       }
@@ -59,19 +52,15 @@ const Template = ({ label, ...args }) => {
 };
 
 const cards = [...Array(5)].map((_, i) => ( {
-  heading: {
-    text: 'Heading',
-    url: '#',
-    level: 3
+  quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla.',
+  attribution: {
+    label: 'John Doe',
+    info: 'CEO, Acme Inc.'
   },
   image: {
     src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
     alt: 'Alt Text'
-  },
-  link: {
-    text: 'Link',
-    url: '#'
-  },
+  }
 }));
 
 const defaultArgs = {

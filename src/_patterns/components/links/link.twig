@@ -1,7 +1,5 @@
-{% if link.value | default and link.url is not defined %}
-  {% set link = link | merge({
-    url: link.value,
-    text: link.customText
-  }) %}
+{% if value | default and url is not defined %}
+  {% set url = value %}
+  {% set text = customText %}
 {% endif %}
-<a href="{{ link.url }}" {% if link.targetString | default %}target="{{ link.targetString }}"{% endif %} class="{{ modifier | default }} {{ link.modifier | default }}">{{ link.text }}</a>
+<a href="{{ url }}" {% if targetString | default %}target="{{ targetString }}"{% endif %} class="{{ modifier | default }} {{ modifier | default }}">{{ text }}</a>

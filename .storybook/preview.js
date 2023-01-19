@@ -18,6 +18,7 @@ setupTwig(Twig);
 addDecorator(storyFn => {
   document.addEventListener('DOMContentLoaded', () => {
 
+    $(document).trigger('_page_ready');
     $(document).foundation();
   });
 

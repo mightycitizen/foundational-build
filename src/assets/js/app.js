@@ -7,16 +7,16 @@ import './lib/foundation-explicit-pieces'; // @foundation pick and choose Founda
 import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
 import loaderTemplate from '../../_patterns/components/utils/loader.twig'; // used with @forms
 
-import './plugins/slider';
-import './plugins/tippy';
-import './plugins/ajaxify';
-import './plugins/selectize';
-import './plugins/lity';
-import './plugins/datepicker';
-import './plugins/youtube';
-import './plugins/vimeo';
+import initSlider from './plugins/slider';
+import initTippy from './plugins/tippy';
+import initAjax from './plugins/ajaxify';
+import initSelectize from './plugins/selectize';
+import initLity from './plugins/lity';
+import initDatepicker from './plugins/datepicker';
+import initVimeo from './plugins/vimeo';
+import initYoutube from './plugins/youtube';
 //import './plugins/tabs';
-import './plugins/slick';
+import initSlick from './plugins/slick';
 
 window.$ = $;
 //import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
@@ -208,7 +208,7 @@ const initMenuHelpers = () => {
   })
 }
 
-$(document).ready(function(){
+$(document).bind('_page_ready', function(){
 
   // ↑ True for "medium" or larger (by default)
   //Foundation.MediaQuery.is('medium up');
@@ -234,7 +234,21 @@ $(document).ready(function(){
   initSelectUrl(); // @select-url init
 
   initFoundationHelpers(); // @foundation helpers init
-})
 
-// @foundation init
+  //console.log(initSlider);
+  if (typeof initSlick === 'function') initSlick(); // @slick init call
+  if (typeof initDatepicker === 'function') initDatepicker(); // @datepicker init call
+  if (typeof initSlider === 'function') initSlider(); // @slider init call
+  if (typeof initTippy === 'function') initTippy(); // @tippy init call
+  if (typeof initAjax === 'function') initAjax(); // @ajax init call
+  if (typeof initVimeo === 'function') initVimeo(); // @vimeo init call
+  if (typeof initYoutube === 'function') initYoutube(); // @youtube init call
+  if (typeof initSlider === 'function') initSlider(); // @slider init call
+});
+
+$(document).ready(function(){
+  $(document).trigger('_page_ready');
+});
 $(document).foundation();
+
+

@@ -63,5 +63,4 @@ const initTippy = () => {
   });
 }
 
-
-initTippy(); // @tippy init call
+export default initTippy;

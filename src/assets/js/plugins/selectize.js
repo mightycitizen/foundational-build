@@ -123,6 +123,4 @@ const initSelectize = () => {
   });
 }
 
-$(document).ready(function(){
-  initSelectize(); // @selectize init call
-})
+export default initSelectize;

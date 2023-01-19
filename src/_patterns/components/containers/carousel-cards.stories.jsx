@@ -1,6 +1,8 @@
 import twig from './carousel-cards.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
+
+
 export default {
   title: 'Containers/Carousel Cards',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
@@ -9,37 +11,35 @@ export default {
     modifier: {
       control: 'text'
     },
-    cards: [
-      {
-        flag: {
+    cards: {
+      flag: {
+        control: 'text'
+      },
+      image: {
+        src: {
           control: 'text'
         },
-        image: {
-          src: {
-            control: 'text'
-          },
-          url: {
-            control: 'text'
-          }
+        url: {
+          control: 'text'
+        }
+      },
+      heading: {
+        text: {
+          control: 'text'
         },
-        heading: {
-          text: {
-            control: 'text'
-          },
-          url: {
-            control: 'text'
-          }
+        url: {
+          control: 'text'
+        }
+      },
+      link: {
+        text: {
+          control: 'text'
         },
-        link: {
-          text: {
-            control: 'text'
-          },
-          url: {
-            control: 'text'
-          }
+        url: {
+          control: 'text'
         }
       }
-    ]
+    }
     // backgroundColor: { control: 'color' },
     // label: { control: 'text' },
     // onClick: { action: 'onClick' },
@@ -58,23 +58,23 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
+const cards = [...Array(5)].map((_, i) => ( {
+  heading: {
+    text: 'Heading',
+    url: '#'
+  },
+  image: {
+    src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
+    alt: 'Alt Text'
+  },
+  link: {
+    text: 'Link',
+    url: '#'
+  },
+}));
+
 const defaultArgs = {
-  cards: [
-    {
-      heading: {
-        text: 'Heading',
-        url: '#'
-      },
-      image: {
-        src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
-        alt: 'Alt Text'
-      },
-      link: {
-        text: 'Link',
-        url: '#'
-      },
-    }
-  ]
+  cards: cards
 }
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

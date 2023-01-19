@@ -321,6 +321,4 @@ const initAjax = () => {
   }
 }
 
-$(document).ready(function(){
-  initAjax(); // @ajax init
-});
+export default initAjax;

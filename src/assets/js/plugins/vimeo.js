@@ -124,6 +124,4 @@ const initVideo = () => {
     }, 50));
 }
 
-$(document).ready(function () {
-  initVideo(); // @video init call
-});
+export default initVideo;

@@ -9,6 +9,4 @@ const initDatepicker = () => {
   })
 }
 
-$(document).ready(function(){
-  initDatepicker();
-});
+export default initDatepicker;

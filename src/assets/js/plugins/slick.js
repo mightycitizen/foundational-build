@@ -278,7 +278,8 @@ const initSlick = () => {
 
 // }
 
-$(document).ready(function(){
-  initSlick(); // @slick init call
-  //initSlickTabs();
-});
+export default initSlick;
+// $(document).ready(function(){
+//   initSlick(); // @slick init call
+//   //initSlickTabs();
+// });

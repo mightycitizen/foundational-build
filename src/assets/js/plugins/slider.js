@@ -31,6 +31,4 @@ function initSlider(){
 
 }
 
-$(document).ready(function(){
-  initSlider(); // @slider init
-});
+export default initSlider;

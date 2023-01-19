@@ -1,18 +1,18 @@
-<div class="card card--horizontal card--thumb {{ card.modifier | default }} {% if card.clickCard | default %}card--click{% endif %}" >
+<div class="card card--horizontal card--thumb {{ modifier | default }} {% if clickCard | default %}card--click{% endif %}" >
   <div class="card-section">
     <div class="grid-x grid-margin-x align-middle">
-      {% if card.image | default %}
-        <div class="cell medium-5 large-4 {% if card.image.alignment | default and card.image.alignment == 'right' %}medium-order-2{% endif %}">
+      {% if image | default %}
+        <div class="cell medium-5 large-4 {% if image.alignment | default and image.alignment == 'right' %}medium-order-2{% endif %}">
           <div class="card-image image-size--square">
-            <img {% if card.lazyload_class | default %}data-lazy="{{ card.image.src }}" {% else %} data-src="{{ card.image.src }}" class="js-lazy"{% endif %} alt="{{ card.image.alt }}">
+            <img {% if lazyload_class | default %}data-lazy="{{ image.src }}" {% else %} data-src="{{ image.src }}" class="js-lazy"{% endif %} alt="{{ image.alt }}">
           </div>
         </div>
       {% endif %}
-      <div class="cell {% if card.image | default %}medium-7 large-8{% endif %} {% if card.image.alignment  | default and card.image.alignment == 'right' %}medium-order-1{% endif %}">
+      <div class="cell {% if image | default %}medium-7 large-8{% endif %} {% if image.alignment  | default and image.alignment == 'right' %}medium-order-1{% endif %}">
         <blockquote class="unstyled-blockquote">
-          <p class="lead">{{ card.quote }}</p>
-          {% if card.attribution | default %}
-            <cite>{{ card.attribution.name }}{% if card.attribution.info and card.attribution.name %}, {% endif %}{{ card.attribution.info }}</cite>
+          <p class="lead">{{ quote }}</p>
+          {% if attribution | default %}
+            <cite>{{ attribution.label }}{% if attribution.info and attribution.name %}, {% endif %}{{ attribution.info }}</cite>
           {% endif %}
         </blockquote>
       </div>

@@ -2,7 +2,7 @@ import twig from './card.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Teasers/Card',
+  title: 'Teasers/General Card',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
       type: {
@@ -25,7 +25,7 @@ export default {
         src: {
           control: 'text'
         },
-        url: {
+        alt: {
           control: 'text'
         }
       },

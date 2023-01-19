@@ -1,4 +1,4 @@
-{% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
+{% embed '../sections/section.twig' with {
     "section_heading": section_heading | default ? section_heading : "Three up cards Heading",
     "section_description":  section_description | default,
     "intro_class": "text-center"
@@ -6,6 +6,6 @@
 %}
 
   {% block section_content %}
-    {% include patternlab_namespace | default ~ 'components/containers/three-up-cards.twig' %}
+    {% include '../containers/three-up-cards.twig' %}
   {% endblock %}
 {% endembed %}

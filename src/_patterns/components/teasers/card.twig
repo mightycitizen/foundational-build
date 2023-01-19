@@ -1,47 +1,47 @@
-{% set heading_level = card.heading.level | default ? card.heading.level : 3 %}
-<div class="card {{ card.class | default }} {{ card.modifier | default ? 'card--' ~ card.modifier : '' }} {% if card.clickCard | default %}card--click{% endif %}" >
-  {% if card.header | default %}
+{% set heading_level = heading.level | default ? heading.level : 3 %}
+<div class="card {{ class | default }} {{ modifier | default ? 'card--' ~ modifier : '' }} {% if clickCard | default %}card--click{% endif %}" >
+  {% if header | default %}
   <div class="card-divider">
-    {{ card.header }}
+    {{ header }}
   </div>
   {% endif %}
-  {% if card.image | default %}
+  {% if image | default %}
     <div class="card-image">
-      <img src="{{ card.image.src }}" alt="{{ card.image.alt }}">
+      <img src="{{ image.src }}" alt="{{ image.alt }}">
 
-      {% if card.type.handle | default == 'events' and card.date | default %}
-        {% include patternlab_namespace | default ~ 'components/inline-text/date.twig' with {
-          date: card.date
+      {% if type.handle | default == 'events' and date | default %}
+        {% include '../inline-text/date.twig' with {
+          date: date
         } %}
       {% endif %}
-      {% if card.flag | default %}
-        {% include patternlab_namespace | default ~ 'components/inline-text/flag.twig' with {
-          flag_text: card.flag
+      {% if flag | default %}
+        {% include '../inline-text/flag.twig' with {
+          flag_text: flag
         }%}
       {% endif %}
     </div>
   {% endif %}
   <div class="card-section" {% if equalize | default %}data-equalizer-watch{% endif %}>
-    {% if card.image | default is empty %}
-        {% if card.flag | default %}
-          {% include patternlab_namespace | default ~ 'components/inline-text/flag.twig' with {
+    {% if image | default is empty %}
+        {% if flag | default %}
+          {% include '../inline-text/flag.twig' with {
             flag_class: "card_flag"
           }%}
       {% endif %}
     {% endif %}
-    <h{{ heading_level }} class="card-title {{ card.heading.modifier | default }}">{{ card.heading.text }}</h{{ heading_level }}>
-     {% if card.link | default %}
+    <h{{ heading_level }} class="card-title {{ heading.modifier | default }}">{{ heading.text }}</h{{ heading_level }}>
+     {% if link | default %}
 
-        {% include patternlab_namespace | default ~ 'components/links/read-more.twig' with {
+        {% include '../links/read-more.twig' with {
           read_more: {
             class: 'h4',
-            text: card.link.text,
-            url: card.link.url,
-            target: card.link.target | default
+            text: link.text,
+            url: link.url,
+            target: link.target | default
           }
         } %}
-        {% if card.clickCard | default %}
-          <a href="{{ card.link.url }}" class="card_click">{{ card.link.text }}</a>
+        {% if clickCard | default %}
+          <a href="{{ link.url }}" class="card_click">{{ link.text }}</a>
         {% endif %}
     {% endif %}
   </div>

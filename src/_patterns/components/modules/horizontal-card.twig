@@ -1,10 +1,10 @@
-{% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
+{% embed '../sections/section.twig' with {
   collapse: true,
   section_class: "section--tight",
   style: "narrow"
 } %}
   {% block section_content %}
-    {% include patternlab_namespace | default ~ 'components/teasers/card-horizontal.twig' with {
+    {% include '../teasers/card-horizontal.twig' with {
 
         card: {
           modifier: "",

@@ -8,14 +8,14 @@
           <p class="m-b-3">{{ contact_description }}</p>
         {% endif %}
         {% if link | default %}
-          {% include patternlab_namespace | default ~ 'components/links/read-more.twig' with {
+          {% include '../links/read-more.twig' with {
             read_more: link
           } %}
         {% endif %}
       </div>
       <div class="cell large-5">
         <div class="callout bg-solid-gray-lightest text-small">
-          {% include patternlab_namespace | default ~ 'components/informational/listing.twig' with {
+          {% include '../informational/listing.twig' with {
           "listing_class": 'm-b-0',
           "items": items
         } %}

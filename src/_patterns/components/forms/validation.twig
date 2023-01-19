@@ -1,12 +1,12 @@
 <form action="" data-abide novalidate>
-  {% include patternlab_namespace | default ~ 'components/forms/text.twig' with {
+  {% include '../forms/text.twig' with {
       label: "Text",
       name: "text",
       id: "field_id_3",
       placeholder: "Prompt Text",
       required: true
     } %}
-  {% include patternlab_namespace | default ~ 'components/forms/textarea.twig' with {
+  {% include '../forms/textarea.twig' with {
       label: "Textarea",
       name: "textarea",
       id: "field_id_2",
@@ -34,15 +34,15 @@
       }
     ]
   } %}
-  {% include patternlab_namespace | default ~ 'components/forms/select.twig' with select_options
+  {% include '../forms/select.twig' with select_options
   %}
 
   {% set select_options = select_options | merge({"selectize": true, "label": "Select (Filterable)" }) %}
 
-  {% include patternlab_namespace | default ~ 'components/forms/select.twig' with select_options
+  {% include '../forms/select.twig' with select_options
   only
   %}
-  {% include patternlab_namespace | default ~ 'components/forms/radio-group.twig' with {
+  {% include '../forms/radio-group.twig' with {
     "required": true,
     "label": "Radio",
     "field_id": "radio_validation",
@@ -65,7 +65,7 @@
   %}
 
 
-  {% include patternlab_namespace | default ~ 'components/forms/checkbox-group.twig' with {
+  {% include '../forms/checkbox-group.twig' with {
       "label": "Checkbox",
       "field_id": "checkbox_validation",
       required: true,

@@ -20,7 +20,7 @@
               <p class="lead">{{ description }}</p>
             {% endif %}
             {% if button | default %}
-              {% include patternlab_namespace | default ~ 'components/links/button.twig' with {
+              {% include '../links/button.twig' with {
                 "button" : button
               } %}
             {% endif %}

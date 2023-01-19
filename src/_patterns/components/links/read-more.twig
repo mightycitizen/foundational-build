@@ -2,7 +2,7 @@
 {% set link = read_more | merge({
   modifier: 'read-more'
 }) %}
-{% include patternlab_namespace | default ~ 'components/links/link.twig' with {
+{% include '../links/link.twig' with {
   link: link
 } %}
 </span>

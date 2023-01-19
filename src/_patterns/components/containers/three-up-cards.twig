@@ -2,7 +2,7 @@
   {% for card in cards %}
       {% set card = card | merge({lazyload_class: 'data-lazy', equalize: true}) %}
       <div class="cell medium-4">
-        {% include patternlab_namespace | default ~ "components/teasers/card.twig" with card %}
+        {% include "../teasers/card.twig" with card %}
       </div>
   {% endfor %}
 </div>

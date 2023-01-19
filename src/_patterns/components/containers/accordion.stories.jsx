@@ -2,16 +2,11 @@ import twig from './accordion.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Modules/Accordion',
+  title: 'Containers/Accordion',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-    accordion_id: {
-      control: 'text'
-    },
-    heading: {
-      control: 'text'
-    },
-    description: {
+
+    modifier: {
       control: 'text'
     },
     items: [
@@ -27,7 +22,6 @@ export default {
         }
       }
     ]
-
     // backgroundColor: { control: 'color' },
     // label: { control: 'text' },
     // onClick: { action: 'onClick' },
@@ -46,11 +40,13 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-
 const defaultArgs = {
   accordion_id: 'accordion_default',
-  heading: 'Heading',
   items: [
+    {
+      heading: 'Heading',
+      content: 'Content'
+    },
     {
       heading: 'Heading',
       content: 'Content'
@@ -60,3 +56,33 @@ const defaultArgs = {
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;
+
+export const Numbers = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+
+const numberArgs = Object.assign({...defaultArgs},{
+  accordion_id: 'accordion_numbers',
+  modifier: 'steps',
+});
+
+Numbers.args =  numberArgs;
+
+
+export const Icons = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+
+Icons.args =  Object.assign({...defaultArgs},{
+  accordion_id: 'accordion_icons',
+  items: [
+    {
+      heading: 'Heading',
+      content: 'Content',
+      icon: 'icon-bell'
+    },
+    {
+      heading: 'Heading',
+      content: 'Content',
+      icon: 'icon-search'
+    }
+  ]
+});

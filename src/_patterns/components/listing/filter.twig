@@ -4,7 +4,7 @@
       {% block form_content %}
         {% if keyword_filter | default %}
           <div class="cell medium-5">
-            {% include patternlab_namespace | default ~ 'components/forms/text.twig' with {
+            {% include '../forms/text.twig' with {
               "value": queryParam | default,
               "label": label | default("Keywords"),
               "id": input_id | default("keywords"),
@@ -15,7 +15,7 @@
           </div>
         {% endif %}
         <div class="cell medium-5 large-4 small-10">
-          {% include patternlab_namespace | default ~ 'components/forms/select.twig' with {
+          {% include '../forms/select.twig' with {
             label: category_label | default("Filter by Category"),
             input_class: 'w-100 ' ~ input_class | default,
             id: "category",

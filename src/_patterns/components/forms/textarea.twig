@@ -1,4 +1,4 @@
-{% embed patternlab_namespace | default ~ 'components/forms/input.twig' %}
+{% embed '../forms/input.twig' %}
   {% block field %}
     <textarea name="{{ name }}" id="{{ id }}" {% if required %}required{% endif %} placeholder="{{ placeholder }}"></textarea>
   {% endblock %}

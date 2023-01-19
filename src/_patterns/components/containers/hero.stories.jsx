@@ -1,33 +1,39 @@
-import twig from './accordion.twig';
+import twig from './hero.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Modules/Accordion',
+  title: 'Containers/Hero',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-    accordion_id: {
-      control: 'text'
-    },
+
     heading: {
       control: 'text'
     },
-    description: {
+
+    summary: {
       control: 'text'
     },
-    items: [
+    subheading: {
+      control: 'text'
+    },
+    button: {
+      url: {
+        control: 'text'
+      },
+      text: {
+        control: 'text'
+      }
+    },
+    categories: [
       {
-        heading: {
+        text: {
           control: 'text'
         },
-        content: {
-          control: 'text'
-        },
-        icon: {
+        url: {
           control: 'text'
         }
       }
     ]
-
     // backgroundColor: { control: 'color' },
     // label: { control: 'text' },
     // onClick: { action: 'onClick' },
@@ -46,16 +52,10 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-
 const defaultArgs = {
-  accordion_id: 'accordion_default',
-  heading: 'Heading',
-  items: [
-    {
-      heading: 'Heading',
-      content: 'Content'
-    }
-  ]
+  heading: 'Hero',
+  summary: 'Summary',
+  subheading: 'Subheading'
 }
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

@@ -1,5 +1,5 @@
 <div  data-responsive-toggle="responsive-menu" data-hide-for="large" class="hide-for-large top-bar_toggle" >
-  {% include patternlab_namespace | default ~ "components/utils/hamburger.twig" with {
+  {% include "../utils/hamburger.twig" with {
     toggle: "responsive-menu"
   } %}
 </div>
@@ -41,7 +41,7 @@
         </li>
       {% endfor %}
       <li class="hide-for-large search-wrapper">
-        {% include patternlab_namespace | default ~ 'components/forms/simple-form.twig' with {
+        {% include '../forms/simple-form.twig' with {
           input_id: 'keywords_mobile'
         }%}
       </li>

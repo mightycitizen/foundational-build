@@ -1,11 +1,11 @@
-{% embed patternlab_namespace | default ~ 'components/sections/section.twig' with {
+{% embed '../sections/section.twig' with {
     section_heading: block.heading,
     section_class: "section--tight",
     "style": "narrower"
   }
 %}
   {% block section_content %}
-      {% include patternlab_namespace | default ~ 'components/embed/video.twig' with {
+      {% include '../embed/video.twig' with {
         trigger: "click"
       }%}
   {% endblock %}

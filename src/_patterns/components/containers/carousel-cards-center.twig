@@ -1,4 +1,4 @@
-{% embed patternlab_namespace | default ~ 'components/containers/slick.twig' with {
+{% embed '../containers/slick.twig' with {
     peekaboo: true,
     modifier: 'center'
   }%}
@@ -8,7 +8,7 @@
           lazyload_class: 'data-lazy',
           modifier: "special"
         }) %}
-        {% include patternlab_namespace | default ~ "components/teasers/card.twig" with {
+        {% include "../teasers/card.twig" with {
             card: card
           }
         %}

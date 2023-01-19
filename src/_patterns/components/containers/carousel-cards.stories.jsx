@@ -1,33 +1,45 @@
-import twig from './accordion.twig';
+import twig from './carousel-cards.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Modules/Accordion',
+  title: 'Containers/Carousel Cards',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-    accordion_id: {
+
+    modifier: {
       control: 'text'
     },
-    heading: {
-      control: 'text'
-    },
-    description: {
-      control: 'text'
-    },
-    items: [
+    cards: [
       {
+        flag: {
+          control: 'text'
+        },
+        image: {
+          src: {
+            control: 'text'
+          },
+          url: {
+            control: 'text'
+          }
+        },
         heading: {
-          control: 'text'
+          text: {
+            control: 'text'
+          },
+          url: {
+            control: 'text'
+          }
         },
-        content: {
-          control: 'text'
-        },
-        icon: {
-          control: 'text'
+        link: {
+          text: {
+            control: 'text'
+          },
+          url: {
+            control: 'text'
+          }
         }
       }
     ]
-
     // backgroundColor: { control: 'color' },
     // label: { control: 'text' },
     // onClick: { action: 'onClick' },
@@ -46,14 +58,21 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-
 const defaultArgs = {
-  accordion_id: 'accordion_default',
-  heading: 'Heading',
-  items: [
+  cards: [
     {
-      heading: 'Heading',
-      content: 'Content'
+      heading: {
+        text: 'Heading',
+        url: '#'
+      },
+      image: {
+        src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
+        alt: 'Alt Text'
+      },
+      link: {
+        text: 'Link',
+        url: '#'
+      },
     }
   ]
 }

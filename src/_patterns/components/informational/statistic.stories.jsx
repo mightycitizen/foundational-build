@@ -1,19 +1,24 @@
-import twig from './alert.twig';
+import twig from './statistic.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Informational/Alert',
+  title: 'Informational/Statistic',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 
-    label: {
+    value: {
       control: 'text'
     },
     link: {
-      control: 'text'
+      url: {
+        control: 'text'
+      },
+      target: {
+        control: 'text'
+      }
     },
-    closable: {
-      control: 'boolean'
+    text: {
+      control: 'text'
     }
   },
 };
@@ -26,8 +31,8 @@ const Template = ({ label, ...args }) => {
 };
 
 const defaultArgs = {
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-  label: "Alert"
+  value: 9,
+  text: "Lorem ipsum"
 }
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

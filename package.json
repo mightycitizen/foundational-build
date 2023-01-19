@@ -50,6 +50,7 @@
     "gulp-sass-lint": "^1.4.0",
     "gulp-sourcemaps": "^2.6.5",
     "raw-loader": "^4.0.2",
+    "storybook-addon-run-script": "^0.1.4",
     "twig-loader": "^0.5.5",
     "webpack-stream": "^6.1.1"
   },

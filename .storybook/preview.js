@@ -1,6 +1,8 @@
 import Twig from 'twig';
+import { addDecorator } from '@storybook/html';
+import { useEffect } from '@storybook/client-api';
 import '../dist/css/app.css';
-//import '../dist/js/app.js';
+import '../dist/js/app.js';
 function setupTwig(twig) {
   twig.cache();
   // twigDrupal(twig);
@@ -12,6 +14,16 @@ function setupTwig(twig) {
 }
 
 setupTwig(Twig);
+
+addDecorator(storyFn => {
+  document.addEventListener('DOMContentLoaded', () => {
+
+    $(document).foundation();
+  });
+
+  return storyFn();
+});
+
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

@@ -1,5 +1,7 @@
 import "babel-polyfill"; // ie 11 polyfill - can exclude if not in scope
 import $ from 'jquery';
+
+
 import './lib/foundation-explicit-pieces'; // @foundation pick and choose Foundation plugins
 
 import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
@@ -16,6 +18,7 @@ import './plugins/vimeo';
 //import './plugins/tabs';
 import './plugins/slick';
 
+window.$ = $;
 //import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
 
 

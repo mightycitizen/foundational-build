@@ -35,7 +35,11 @@ export default {
         },
         url: {
           control: 'text'
+        },
+        level: {
+          control: 'number'
         }
+
       },
       link: {
         text: {
@@ -69,7 +73,8 @@ const defaultArgs = {
 
     heading: {
       text: 'Heading',
-      url: '#'
+      url: '#',
+      level: 3
     },
     image: {
       src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',

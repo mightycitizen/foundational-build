@@ -2,3 +2,37 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/2f872f69e9.js" crossorigin="anonymous"></script>
+<script>
+
+  // On page change, fire DOMContentLoaded event
+  function pageChange() {
+
+    // Dispatch DOMContentLoaded event
+    window.document.dispatchEvent(new Event('DOMContentLoaded', {
+      bubbles: true,
+      cancelable: true
+    }));
+  }
+
+  function watchForChanges() {
+    const mutationObserver = function(mutationsList) {
+      for (let i = 0, len = mutationsList.length; i < len; i++) {
+        if (mutationsList[i].type == 'childList') {
+          pageChange();
+          break;
+        }
+      }
+    };
+
+    const observer = new MutationObserver(mutationObserver);
+    const config = { childList: true, subtree: true };
+    observer.observe(document.getElementById('docs-root'), config);
+
+    // Remove event listener, otherwise we will re-run this function when we fire our manual event
+    document.removeEventListener('DOMContentLoaded', watchForChanges);
+  }
+
+  // Initially create mutation observer
+  document.addEventListener('DOMContentLoaded', watchForChanges);
+
+</script>

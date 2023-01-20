@@ -1,39 +1,34 @@
-import twig from './modal.twig';
+import twig from './ordered-list.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Containers/Modal',
+  title: 'Global/Elements/Lists/Ordered List',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-
     heading: {
-      control: 'text'
-    },
-
-    summary: {
       control: 'text'
     },
     subheading: {
       control: 'text'
     },
-    button: {
-      url: {
-        control: 'text'
-      },
-      text: {
-        control: 'text'
-      }
+    description: {
+      control: 'text'
     },
-    categories: [
-      {
-        text: {
-          control: 'text'
-        },
-        url: {
-          control: 'text'
-        }
-      }
-    ]
+    intro_class: {
+      control: 'text'
+    },
+    class: {
+      control: 'text'
+    },
+    style: {
+      control: {
+        type: 'select',
+      },
+      options: [
+        'side',
+        ''
+      ]
+    },
     // backgroundColor: { control: 'color' },
     // label: { control: 'text' },
     // onClick: { action: 'onClick' },
@@ -52,11 +47,25 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-const defaultArgs = {
-  heading: 'Hero',
-  summary: 'Summary',
-  subheading: 'Subheading'
-}
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+Default.args = {
+  heading: 'Heading',
+};
+//
+// export const Secondary = Template.bind({});
+// Secondary.args = {
+//   label: 'Button',
+// };
+//
+// export const Large = Template.bind({});
+// Large.args = {
+//   size: 'large',
+//   label: 'Button',
+// };
+//
+// export const Small = Template.bind({});
+// Small.args = {
+//   size: 'small',
+//   label: 'Button',
+// };

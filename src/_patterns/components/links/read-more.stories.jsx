@@ -2,7 +2,7 @@ import twig from './read-more.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Links/Read More',
+  title: 'Components/Links/Read More',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

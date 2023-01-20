@@ -2,7 +2,7 @@ import twig from './meta.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Inline Text/Meta',
+  title: 'Components/Inline Text/Meta',
   argTypes: {
     date: {
       unformatted: {

@@ -63,20 +63,20 @@
 
     {% if color.colors.default %}
       <div>
-        {% include 'global/base/_swatch.twig' with {
+        {% include './_swatch.twig' with {
             hex: color.colors.default
           }%}
 
 
         {% for key, value in color.colors.variants %}
-          {% include 'global/base/_swatch.twig' with {
+          {% include './_swatch.twig' with {
               type: key
             }%}
         {% endfor %}
       </div>
 
     {% else %}
-      {% include 'global/base/_swatch.twig' with {
+      {% include './_swatch.twig' with {
         hex: color.hex
       }%}
     {% endif %}

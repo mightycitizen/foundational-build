@@ -2,7 +2,7 @@ import twig from './flag.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Inline Text/Flag',
+  title: 'Components/Inline Text/Flag',
   argTypes: {
     class: {
       control: {

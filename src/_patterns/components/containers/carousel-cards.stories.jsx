@@ -4,7 +4,7 @@ import twig from './carousel-cards.twig';
 
 
 export default {
-  title: 'Containers/Card Group/Carousel Cards',
+  title: 'Components/Containers/Card Group/Carousel Cards',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

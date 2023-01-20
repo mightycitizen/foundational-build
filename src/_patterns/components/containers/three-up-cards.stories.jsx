@@ -4,7 +4,7 @@ import twig from './three-up-cards.twig';
 
 
 export default {
-  title: 'Containers/Card Group/Three-up Cards',
+  title: 'Components/Containers/Card Group/Three-up Cards',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

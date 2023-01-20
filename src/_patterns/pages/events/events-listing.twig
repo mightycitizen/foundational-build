@@ -1,24 +1,24 @@
-{% extends 'pages/wrapper.twig' %}
+{% extends '../wrapper.twig' %}
 {% set type = {
   label: 'Event',
   handle: 'events'
 }%}
 {% block top %}
-  {% include "components/containers/hero.twig"  with {
+  {% include "../../components/containers/hero.twig"  with {
     heading: 'Events Listing'
   } %}
 {% endblock %}
 {% set listing_image_transform = image_sizes.landscapeCroppedMedium %}
 {% block main %}
-  {% embed 'components/sections/section.twig' with {
+  {% embed '../../components/sections/section.twig' with {
     section_class: 'section--tight',
     style: 'narrow'
   } %}
     {% block section_content %}
-      {% include 'components/listing/filter.twig' with {
+      {% include '../../components/listing/filter.twig' with {
         ajax: true
       }%}
-      {% include 'components/listing/list.twig' with
+      {% include '../../components/listing/list.twig' with
       {
           "list": [
             {
@@ -97,7 +97,7 @@
         }
 
        %}
-      {% include 'components/listing/pagination.twig' %}
+      {% include '../../components/listing/pagination.twig' %}
     {% endblock %}
   {% endembed %}
 {% endblock %}

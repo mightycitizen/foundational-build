@@ -1,6 +1,6 @@
 
   <form {% if action | default %}action="{{ action }}"{% endif %} {% if ajax | default %}class="js-ajax"{% endif %}>
-    {% embed 'components/forms/form-group.twig' %}
+    {% embed '../../components/forms/form-group.twig' %}
       {% block form_content %}
         {% if keyword_filter | default %}
           <div class="cell medium-5">

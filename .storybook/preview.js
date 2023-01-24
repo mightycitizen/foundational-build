@@ -4,12 +4,9 @@ import { useEffect } from '@storybook/client-api';
 import '../dist/css/app.css';
 import '../dist/js/app.js';
 function setupTwig(twig) {
-  twig.cache();
-  // twigDrupal(twig);
-  // twigAttributes(twig);
-  // keysort(twig);
-  // uniqueId(twig);
-  // fieldValue(twig);
+  //twig.cache();
+  // set allowInclude option to true
+
   return twig;
 }
 

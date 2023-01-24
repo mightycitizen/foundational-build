@@ -1,11 +1,14 @@
 {% embed '../sections/section.twig' with {
-    "section_heading": section_heading | default ? section_heading : "Card Carousel Module Heading",
-    "section_description":  section_description | default,
+    "section_heading": heading | default,
+    "section_description":  description | default,
     "intro_class": "text-center"
   }
 %}
 
   {% block section_content %}
-    {% include '../containers/carousel-cards.twig' %}
+    {% include '../containers/carousel-cards.twig' with {
+      cards: cards
+    } %}
+
   {% endblock %}
 {% endembed %}

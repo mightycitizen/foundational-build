@@ -1,6 +1,6 @@
 import 'slick-carousel';
 import $ from 'jquery';
-import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
+import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../../stories/global/base/breakpoints.json'; // Foundation breakpoints
 
 // @slick pagination helper function
 const slickPagination = (slick) => {

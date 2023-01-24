@@ -71,7 +71,7 @@ function serve(done) {
 function buildVariables(){
 
 
-  return src('src/_patterns/global/base/**/*.json')
+  return src('src/stories/global/base/**/*.json')
     .pipe(jsonCss({
         keepObjects: true
     }))
@@ -85,7 +85,7 @@ function buildVariables(){
  */
 function watchFiles() {
   // Watch all my sass files and compile sass if a file changes.
-  watch(['./src/_patterns/global/base/**/*.json'],
+  watch(['./src/stories/global/base/**/*.json'],
     series(buildVariables, compileSass, concatCSS, (done) => {
       server.reload('*.css');
       done();
@@ -114,8 +114,8 @@ function watchFiles() {
     //   server.reload('*.html');
     // });
   }else{
-    watch(['./src/_patterns/components/**/*.twig'], (done) =>  {server.reload('*.html'); done()});
-    watch(['./src/_patterns/layout/**/*.twig'], (done) =>  {server.reload('*.html'); done()});
+    watch(['./src/stories/components/**/*.twig'], (done) =>  {server.reload('*.html'); done()});
+    watch(['./src/stories/layout/**/*.twig'], (done) =>  {server.reload('*.html'); done()});
     watch([
       //'../web/themes/custom/mc_theme/templates/**/*',
       '../templates/**/*',

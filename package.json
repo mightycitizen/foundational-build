@@ -22,9 +22,6 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.12.11",
     "@babel/register": "^7.0.0",
-    "@pattern-lab/core": "^5.14.3",
-    "@pattern-lab/engine-twig-php": "^5.14.1",
-    "@pattern-lab/uikit-workshop": "^5.14.1",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
     "@storybook/addon-interactions": "^6.5.15",
@@ -55,7 +52,6 @@
     "webpack-stream": "^6.1.1"
   },
   "dependencies": {
-    "@pattern-lab/plugin-tab": "^5.14.3",
     "@vimeo/player": "^2.16.0",
     "babel-polyfill": "^6.26.0",
     "dart-sass": "^1.25.0",

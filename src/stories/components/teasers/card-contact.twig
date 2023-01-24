@@ -8,9 +8,7 @@
           <p class="m-b-3">{{ description }}</p>
         {% endif %}
         {% if link | default %}
-          {% include '../links/read-more.twig' with {
-            read_more: link
-          } %}
+          {% include '../links/read-more.twig' with link %}
         {% endif %}
       </div>
       <div class="cell large-5">

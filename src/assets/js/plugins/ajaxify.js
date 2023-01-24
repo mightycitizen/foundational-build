@@ -1,6 +1,6 @@
 import Twig from 'twig'; // @twig used with @ajax
-import resultsTemplate from '../../../_patterns/components/listing/event.twig'; // used with @ajax
-import paginationTemplate from '../../../_patterns/components/listing/pagination.twig'; // used with @ajax
+import resultsTemplate from '../../../stories/components/listing/event.twig'; // used with @ajax
+import paginationTemplate from '../../../stories/components/listing/pagination.twig'; // used with @ajax
 import $ from 'jquery';
 
 function buildPagination(

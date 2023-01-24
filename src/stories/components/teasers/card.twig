@@ -33,12 +33,10 @@
      {% if link | default %}
 
         {% include '../links/read-more.twig' with {
-          read_more: {
-            class: 'h4',
-            text: link.text,
-            url: link.url,
-            target: link.target | default
-          }
+          class: 'h4',
+          text: link.text,
+          url: link.url,
+          target: link.target | default
         } %}
         {% if clickCard | default %}
           <a href="{{ link.url }}" class="card_click">{{ link.text }}</a>

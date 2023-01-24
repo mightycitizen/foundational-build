@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   staticDirs: ['../dist'],
   "stories": [
-    "../src/_patterns/**/**/*.stories.jsx"
+    "../src/stories/**/**/*.stories.jsx"
   ],
   "addons": [
     "@storybook/addon-links",
@@ -20,9 +20,9 @@ module.exports = {
           options: {
             twigOptions: {
               namespaces: {
-                global: resolve(__dirname, '../', 'src/_patterns/global'),
-                components: resolve(__dirname, '../','src/_patterns/components'),
-                layout: resolve(__dirname, '../','src/_patterns/layout')
+                global: resolve(__dirname, '../', 'src/stories/global'),
+                components: resolve(__dirname, '../','src/stories/components'),
+                layout: resolve(__dirname, '../','src/stories/layout')
               },
             }
           }

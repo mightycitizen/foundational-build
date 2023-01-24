@@ -5,7 +5,7 @@ import $ from 'jquery';
 import './lib/foundation-explicit-pieces'; // @foundation pick and choose Foundation plugins
 
 import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
-import loaderTemplate from '../../_patterns/components/utils/loader.twig'; // used with @forms
+import loaderTemplate from '../../stories/components/utils/loader.twig'; // used with @forms
 
 import initSlider from './plugins/slider';
 import initTippy from './plugins/tippy';
@@ -19,7 +19,7 @@ import initYoutube from './plugins/youtube';
 import initSlick from './plugins/slick';
 
 window.$ = $;
-//import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../_patterns/global/base/breakpoints.json'; // Foundation breakpoints
+//import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../stories/global/base/breakpoints.json'; // Foundation breakpoints
 
 
 // @skip-to init

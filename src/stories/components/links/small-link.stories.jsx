@@ -24,20 +24,3 @@ const defaultArgs = {
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;
-
-export const Secondary = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
-Secondary.args = Object.assign({...defaultArgs}, {color: 'secondary'});
-
-
-export const Large = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
-Large.args = Object.assign({...defaultArgs}, {size: 'large'});
-
-export const Small = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
-Small.args = Object.assign({...defaultArgs}, {size: 'small'});
-
-export const Tiny = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
-Tiny.args = Object.assign({...defaultArgs}, {size: 'tiny'});

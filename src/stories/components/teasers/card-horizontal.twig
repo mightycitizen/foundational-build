@@ -16,9 +16,7 @@
         {% endif %}
         {% if link | default %}
           {% set link = link | merge({ class: 'h4' })%}
-          {% include '../links/read-more.twig' with {
-            read_more: link
-          }%}
+          {% include '../links/read-more.twig' with link %}
         {% endif %}
       </div>
     </div>

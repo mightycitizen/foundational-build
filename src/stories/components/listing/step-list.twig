@@ -5,11 +5,9 @@
       <p class="m-b-3">{{ step.description }}</p>
       {% if step.link | default is not empty %}
         {% include '../links/read-more.twig' with {
-          read_more: {
-            text: step.link.text,
-            url: step.link.url,
-            target: step.link.target
-          }
+          text: step.link.text,
+          url: step.link.url,
+          target: step.link.target
         }%}
       {% endif %}
     </li>

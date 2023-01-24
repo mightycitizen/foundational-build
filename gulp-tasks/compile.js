@@ -17,7 +17,7 @@ const ModuleReplacement = require('./webpack.module-replacement.config');
 import webpackStream from 'webpack-stream';
 import webpack2      from 'webpack';
 import yargs         from 'yargs';
-import pluginSettings from '../src/_patterns/global/base/plugins.json';
+import pluginSettings from '../src/stories/global/base/plugins.json';
 //const PRODUCTION = true;
 const PRODUCTION = !!(yargs.argv.production);
 

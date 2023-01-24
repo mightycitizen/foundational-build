@@ -1,10 +1,10 @@
 <nav aria-label="Pagination">
   <ul class="pagination text-center m-b-0">
-    {% if pagination_links.previous %}
-      <li class="pagination-previous"><a href="{{ pagination_links.previous }}" aria-label="Previous page" class="arrow arrow--prev" ><span class="show-for-sr">Previous page</span></a></li>
+    {% if previous %}
+      <li class="pagination-previous"><a href="{{ previous }}" aria-label="Previous page" class="arrow arrow--prev" ><span class="show-for-sr">Previous page</span></a></li>
     {% endif %}
-    {% if pagination_links.pages | length %}
-      {% for link in pagination_links.pages %}
+    {% if pages | length %}
+      {% for link in pages %}
         <li {% if link.current | default %}class="current"{% endif %}>
           {% if link.ellipses | default %}
             &hellip;
@@ -16,8 +16,8 @@
         </li>
       {% endfor %}
     {% endif %}
-    {% if pagination_links.next %}
-      <li class="pagination-next"><a href="{{ pagination_links.next }}" aria-label="Next page" class="arrow arrow--next" ><span class="show-for-sr">Next page</span></a></li>
+    {% if next %}
+      <li class="pagination-next"><a href="{{ next }}" aria-label="Next page" class="arrow arrow--next" ><span class="show-for-sr">Next page</span></a></li>
     {% endif %}
   </ul>
 </nav>

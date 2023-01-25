@@ -4,7 +4,7 @@ import twig from './carousel-cards-center.twig';
 
 
 export default {
-  title: '@Components/Containers/Card Group/Carousel Cards (Centered)',
+  title: 'Components/Containers/Card Group/Carousel Cards (Centered)',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

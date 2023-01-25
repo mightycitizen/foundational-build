@@ -4,7 +4,7 @@ import twig from './step-list.twig';
 
 
 export default {
-  title: '@Components/Listing/Steps',
+  title: 'Components/Listing/Steps',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

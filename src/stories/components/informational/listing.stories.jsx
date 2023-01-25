@@ -2,7 +2,7 @@ import twig from './listing.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: '@Components/Informational/Listing',
+  title: 'Components/Informational/Listing',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

@@ -4,7 +4,7 @@ import twig from './event.twig';
 
 
 export default {
-  title: '@Components/Listing/Events',
+  title: 'Components/Listing/Events',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

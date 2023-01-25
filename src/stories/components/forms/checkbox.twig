@@ -1,4 +1,4 @@
 <span>
-  <input class="custom" id="{{ field_id }}_{{ checkbox_id ? checkbox_id : checkbox_value }}" name="{{ field_name }}" value="{{ checkbox_value }}" type="checkbox" {% if required %}required {% endif %}>
-  <label for="{{ field_id }}_{{ checkbox_id ? checkbox_id : checkbox_value }}"> {{ checkbox_label }}</label>
+  <input class="custom" id="{{ field_id }}_{{ id is not empty  ? id : value }}" name="{{ field_name }}" value="{{ value }}" type="checkbox" {% if required %}required {% endif %}>
+  <label for="{{ field_id }}_{{ id is not empty ? id : value }}"> {{ label }}</label>
 </span>

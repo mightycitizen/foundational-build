@@ -2,7 +2,7 @@
 
 {% set intro %}
   {% if heading | default %}
-      <div class="intro {{ intro_class }}">
+      <div class="section_intro {{ intro_class }}">
         <div class="grid-x grid-margin-x align-middle align-center">
           {% if image | default %}
             <div class="cell medium-5 large-6">
@@ -20,7 +20,9 @@
               <p class="lead">{{ description }}</p>
             {% endif %}
             {% if button | default %}
-              {% include '@components/links/button.twig' with button only %}
+              {% include '@components/links/button.twig' with button | merge({
+                color: 'secondary'
+              }) only %}
             {% endif %}
           </div>
         </div>

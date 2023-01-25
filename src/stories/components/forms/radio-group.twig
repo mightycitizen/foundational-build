@@ -3,8 +3,8 @@
     <ul class="radio-group no-bullet">
       {% for option in options %}
         <li>
-          <input class="custom" id="{{ field_id }}_{{ option.id ? option.id : option.value }}" name="{{ field_name }}" value="{{ option.value }}" type="radio" {% if required %}required {% endif %}>
-          <label for="{{ field_id }}_{{ option.id ? option.id : option.value }}">{{ option.label }}</label>
+          <input class="custom" id="{{ id }}_{{ option.id is not empty ? option.id : option.value }}" name="{{ name }}" value="{{ option.value }}" type="radio" {% if required %}required {% endif %}>
+          <label for="{{ id }}_{{ option.id is not empty ? option.id : option.value }}">{{ option.label }}</label>
         </li>
       {% endfor %}
     </ul>

@@ -1,7 +1,0 @@
-{
-  "label": "Text",
-  "name": "text",
-  "id": "text",
-  "placeholder": "Prompt Text",
-  "required": true
-}

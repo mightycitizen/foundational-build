@@ -19,8 +19,28 @@ const Template = ({ label, ...args }) => {
 
 
 const defaultArgs = {
-  heading: 'Heading'
+  heading: 'Heading',
+  description: 'Description',
+  button: {
+    text: 'Link',
+    url: '#'
+  }
 }
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;
+
+export const Image = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Image.args = Object.assign({...defaultArgs}, {image: {
+  src: 'https://source.unsplash.com/9wg5jCEPBsw/632x400',
+  alt: 'Image'}
+});
+
+
+export const BackgroundImage = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+BackgroundImage.args = Object.assign({...defaultArgs}, {background: {
+    src: 'https://source.unsplash.com/9wg5jCEPBsw/1200x500',
+    alt: 'Image'}
+});

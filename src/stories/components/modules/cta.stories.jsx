@@ -1,9 +1,13 @@
-import twig from './logo.twig';
+import twig from './cta.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Logos/Main Logo',
+  title: 'Components/Modules/CTA',
+  // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
+  argTypes: {
 
+
+  },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -13,8 +17,10 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
-Default.args = {
 
-};
-//
+const defaultArgs = {
+  heading: 'Heading'
+}
+export const Default = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Default.args = defaultArgs;

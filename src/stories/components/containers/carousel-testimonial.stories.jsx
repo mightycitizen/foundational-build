@@ -4,7 +4,7 @@ import twig from './carousel-testimonial.twig';
 
 
 export default {
-  title: '@Components/Containers/Card Group/Testimonial Cards',
+  title: 'Components/Containers/Card Group/Testimonial Cards',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

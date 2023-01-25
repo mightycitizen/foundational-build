@@ -2,7 +2,7 @@ import twig from './loader.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: '@Components/Utils/Loader',
+  title: 'Components/Utils/Loader',
 
 };
 

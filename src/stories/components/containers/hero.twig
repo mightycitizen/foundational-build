@@ -39,9 +39,7 @@
                 {% set button = button | merge({
                   modifier: 'secondary'
                 }) %}
-                {% include '@components/links/button.twig' with {
-                  button: button
-                } %}
+                {% include '@components/links/button.twig' with button %}
               {% endif %}
               {% if categories | default %}
                 {% include '@components/inline-text/meta.twig' with {

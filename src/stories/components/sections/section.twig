@@ -20,9 +20,7 @@
               <p class="lead">{{ description }}</p>
             {% endif %}
             {% if button | default %}
-              {% include '@components/links/button.twig' with {
-                "button" : button
-              } %}
+              {% include '@components/links/button.twig' with button only %}
             {% endif %}
           </div>
         </div>

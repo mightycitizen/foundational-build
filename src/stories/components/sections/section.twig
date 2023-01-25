@@ -20,7 +20,7 @@
               <p class="lead">{{ description }}</p>
             {% endif %}
             {% if button | default %}
-              {% include '../links/button.twig' with {
+              {% include '@components/links/button.twig' with {
                 "button" : button
               } %}
             {% endif %}
@@ -55,7 +55,7 @@
         {% set content %}
           {{ content }}
         {% endset %}
-        {% include '../../layout/structure/content-narrow.twig' %}
+        {% include '@components/../layout/structure/content-narrow.twig' %}
       {% else %}
         {{ content }}
       {% endif %}

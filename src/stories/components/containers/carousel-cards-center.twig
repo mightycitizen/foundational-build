@@ -1,4 +1,4 @@
-{% embed '../containers/slick.twig' with {
+{% embed '@components/containers/slick.twig' with {
     peekaboo: true,
     modifier: 'center'
   }%}
@@ -8,7 +8,7 @@
           lazyload_class: 'data-lazy',
           modifier: "special"
         }) %}
-        {% include "../teasers/card.twig" with card %}
+        {% include "@components/teasers/card.twig" with card %}
       {% endfor %}
   {% endblock %}
 {% endembed %}

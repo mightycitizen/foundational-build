@@ -2,7 +2,7 @@
     <legend>{{ label }} {% if required | default %}<span class="form-required">*</span>{% endif %}</legend>
     <ul class="checkbox-group no-bullet">
       {% for option in options %}
-        <li>{% include '../forms/checkbox.twig' with {
+        <li>{% include '@components/forms/checkbox.twig' with {
          field_id: field_id,
          checkbox_value: option.value,
          name: field_name,

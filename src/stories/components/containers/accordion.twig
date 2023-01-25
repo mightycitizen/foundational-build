@@ -4,7 +4,7 @@
 
   {% for item in items %}
     {%
-      include './accordion-item.twig' with {item: item, modifier: modifier}
+      include '@components/containers/accordion-item.twig' with {item: item, modifier: modifier}
     %}
   {% endfor %}
 </ul>

@@ -1,11 +1,11 @@
-{% embed '../sections/section.twig' with {
+{% embed '@components/sections/section.twig' with {
     section_heading: block.heading,
     section_class: "section--tight",
     "style": "narrower"
   }
 %}
   {% block section_content %}
-      {% include '../embed/video.twig' with {
+      {% include '@components/embed/video.twig' with {
         trigger: "click"
       }%}
   {% endblock %}

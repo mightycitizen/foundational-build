@@ -1,4 +1,4 @@
-{% embed '../forms/input.twig' %}
+{% embed '@components/forms/input.twig' %}
   {% block field %}
     <select id="{{ id }}" {% if required | default %}required{% endif %} {% if disabled | default %}disabled{% endif %} class="{{ input_class | default }} {% if selectize | default %}js-selectize{% endif %}" name="{{ name }}">
       {% if placeholder | default %}

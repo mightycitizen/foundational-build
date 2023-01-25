@@ -1,10 +1,10 @@
-{% embed '../sections/section.twig' with {
+{% embed '@components/sections/section.twig' with {
   collapse: true,
   section_class: "section--tight",
   style: "narrow"
 } %}
   {% block section_content %}
-    {% include '../teasers/card-horizontal.twig' with {
+    {% include '@components/teasers/card-horizontal.twig' with {
 
         card: {
           modifier: "",

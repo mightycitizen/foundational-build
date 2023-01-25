@@ -1,9 +1,9 @@
-{% embed '../sections/section.twig' with {
+{% embed '@components/sections/section.twig' with {
     section_class: "section--tight",
     style: 'narrow'
   }
 %}
   {% block section_content %}
-    {% include '../containers/accordion.twig' %}
+    {% include '@components/containers/accordion.twig' %}
   {% endblock %}
 {% endembed %}

@@ -9,7 +9,7 @@
             <div class="wrapper image-size--landscapeCroppedMedium">
               <img data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" class="js-lazy">
               {% if item_type == 'events' %}
-                {% include '../inline-text/date.twig' with {
+                {% include '@components/inline-text/date.twig' with {
                   date: item.start_date
                 } %}
               {% endif %}
@@ -20,7 +20,7 @@
           <div class="media-object">
             {% if item.image | default is empty and item_type == 'events' %}
               <div class="media-object-section">
-                {% include '../inline-text/date.twig' with {
+                {% include '@components/inline-text/date.twig' with {
                   date: item.start_date
                 } %}
 
@@ -29,7 +29,7 @@
             <div class="media-object-section">
               <h2><a href="{{ item.url }}">{{ item.heading }}</a></h2>
               {% if item_type | default != 'events' and item.date.full | default %}
-                {% include '../inline-text/meta.twig' with {
+                {% include '@components/inline-text/meta.twig' with {
                   date: item.date,
                   meta_class: 'm-b-2'
                 } %}
@@ -38,7 +38,7 @@
                 <p class="m-b-2">{{ item.summary }}</p>
               {% endif %}
               {% if item.categories | default | length %}
-                {% include '../inline-text/meta.twig' with {
+                {% include '@components/inline-text/meta.twig' with {
                     categories: item.categories,
                     date: null
 

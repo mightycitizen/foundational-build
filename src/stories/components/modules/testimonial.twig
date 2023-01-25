@@ -1,10 +1,10 @@
-{% embed '../sections/section.twig' with {
+{% embed '@components/sections/section.twig' with {
     section_class: "section--tight",
     "style": "narrow"
   }
 %}
   {% block section_content %}
-    {% include '../teasers/card-testimonial.twig' with {
+    {% include '@components/teasers/card-testimonial.twig' with {
         "card": testimonial
       }
     %}

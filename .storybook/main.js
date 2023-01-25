@@ -1,28 +1,61 @@
 const { resolve } = require('path');
 const path = require('path');
+const LEGACY_REGEXP = /^(\w+)::/;
+
+/**
+ * Transforms legacy namespace::template/path to @namespoace/template/path
+ */
+class LegacyNsResolverPlugin {
+  apply(resolver) {
+    const target = resolver.ensureHook('resolve');
+    resolver
+      .getHook('resolve')
+      .tapAsync('LegacyNsResolverPlugin', (request, resolveContext, callback) => {
+        const requestPath = request.request;
+        if (!requestPath.match(LEGACY_REGEXP)) {
+          callback();
+          return;
+        }
+
+        const newRequest = {
+          ...request,
+          request: requestPath.replace(LEGACY_REGEXP, '@$1/'),
+        };
+
+        resolver.doResolve(target, newRequest, null, resolveContext, callback);
+      });
+  }
+}
+
+
 module.exports = {
   staticDirs: ['../dist'],
-  "stories": [
+  stories: [
     "../src/stories/**/**/*.stories.jsx"
   ],
-  "addons": [
+  addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions"
   ],
-  "framework": "@storybook/html",
+  framework: "@storybook/html",
   webpackFinal: async (config, { configType }) => {
+    config.resolve.plugins = [new LegacyNsResolverPlugin()];
+    config.resolve.alias = {
+      '@components': path.resolve(__dirname, '../', 'src/stories/components'),
+      '@global': path.resolve(__dirname, '../', 'src/stories/global'),
+      '@layout': path.resolve(__dirname, '../', 'src/stories/layout'),
+    };
     config.module.rules.push({
       test: /\.twig$/,
       use: [
         {
-          loader: 'twig-loader',
+          loader: 'twigjs-loader',
           options: {
             twigOptions: {
-              namespaces: {
-                global: resolve(__dirname, '../', 'src/stories/global'),
-                components: resolve(__dirname, '../','src/stories/components'),
-                layout: resolve(__dirname, '../','src/stories/layout')
+              allowInlineIncludes: true,
+              paths: {
+                components: "src/stories/components"
               },
             }
           }

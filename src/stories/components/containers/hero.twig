@@ -2,7 +2,7 @@
   <div class="grid-container">
     <div class="grid-x grid-margin-x">
       <div class="cell large-8 medium-6 medium-order-1">
-        {% include '../navigation/breadcrumbs.twig' with breadcrumbs %}
+        {% include '@components/navigation/breadcrumbs.twig' with breadcrumbs %}
       </div>
 
       <div class="cell medium-12 medium-order-3">
@@ -15,7 +15,7 @@
             {% endif %}
             <div class="cell {% if image | default %}medium-8{% endif %}">
               {% if date | default %}
-                {% include '../inline-text/meta.twig' with {
+                {% include '@components/inline-text/meta.twig' with {
                   date: date,
                   endDate: endDate
                 } only %}
@@ -39,12 +39,12 @@
                 {% set button = button | merge({
                   modifier: 'secondary'
                 }) %}
-                {% include '../links/button.twig' with {
+                {% include '@components/links/button.twig' with {
                   button: button
                 } %}
               {% endif %}
               {% if categories | default %}
-                {% include '../inline-text/meta.twig' with {
+                {% include '@components/inline-text/meta.twig' with {
                   categories: categories
                 } only%}
               {% endif %}
@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="cell large-4 medium-6 medium-order-2">
-        {% include '../utils/add2any.twig' with {
+        {% include '@components/utils/add2any.twig' with {
           class: 'm-b-0'
         } %}
       </div>

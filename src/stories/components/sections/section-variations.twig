@@ -1,6 +1,6 @@
 <div></div><!-- to prevent :first-child styling in style guide -->
 
-{% embed '../sections/section.twig' with {
+{% embed '@components/sections/section.twig' with {
   section_class: "bg-gradient-secondary",
   section_heading: "Section with Gradient Secondary Background",
   section_description: "Can be any of the brand colors",
@@ -10,7 +10,7 @@
   {% endblock %}
 {% endembed %}
 
-{% embed '../sections/section.twig' with {
+{% embed '@components/sections/section.twig' with {
   section_heading: "Section Tight",
   section_description: "Intro area can have alignment classes",
   section_class: 'section--tight',
@@ -24,7 +24,7 @@
 <div class="pl-placeholder">
   Divider to show division between sections
 </div>
-{% embed '../sections/section.twig' with {
+{% embed '@components/sections/section.twig' with {
   section_class: "bg-gradient-primary",
   section_heading: "Section with Gradient Primary Background",
   section_description: "Section content widths can be narrower, narrow, or regular.",
@@ -36,7 +36,7 @@
   {% endblock %}
 {% endembed %}
 
-{% embed '../sections/section.twig' with {
+{% embed '@components/sections/section.twig' with {
   section_class: "bg-gradient-primary",
   section_background: "https://source.unsplash.com/9wg5jCEPBsw/1200x500",
   section_heading: "Section with Background Image",

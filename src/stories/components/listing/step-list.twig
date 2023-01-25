@@ -4,7 +4,7 @@
       <h3 class="m-b-2">{{ step.heading }}</h3>
       <p class="m-b-3">{{ step.description }}</p>
       {% if step.link | default is not empty %}
-        {% include '../links/read-more.twig' with {
+        {% include '@components/links/read-more.twig' with {
           text: step.link.text,
           url: step.link.url,
           target: step.link.target

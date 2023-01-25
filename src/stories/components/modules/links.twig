@@ -1,4 +1,4 @@
-{% embed '../sections/section.twig' with {
+{% embed '@components/sections/section.twig' with {
     "intro_class": "text-center",
     "section_heading": section_heading | default ? section_heading : "Links List Module Heading",
     "section_description":  section_description | default,
@@ -18,7 +18,7 @@
               <div class="cell medium-4">
 
                 {% if link | default is not empty %}
-                  {% include '../links/read-more.twig' with {
+                  {% include '@components/links/read-more.twig' with {
                         "read_more": {
                           "class": "h3",
                           "url": link.url,

@@ -1,4 +1,4 @@
-{% embed '../sections/section.twig' with {
+{% embed '@components/sections/section.twig' with {
     section_class: "section--tight",
     "style": "narrow",
     "section_heading": null,
@@ -7,7 +7,7 @@
 %}
   {% block section_content %}
 
-      {% include '../teasers/card-contact.twig' with {
+      {% include '@components/teasers/card-contact.twig' with {
         items: contact_items,
         link: link
       } %}

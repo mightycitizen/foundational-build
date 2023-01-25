@@ -1,11 +1,13 @@
 {% embed '@components/sections/section.twig' with {
     heading: heading | default,
     description:  description | default,
-    intro_class: "text-center"
-  }
+    intro_class: "text-center",
+    cards: cards
+  } only
 %}
 
   {% block section_content %}
     {% include '@components/containers/three-up-cards.twig' %}
+
   {% endblock %}
 {% endembed %}

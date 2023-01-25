@@ -2,7 +2,7 @@ import twig from './helper.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Inline Text/Helper Text',
+  title: '@Components/Inline Text/Helper Text',
   argTypes: {
     class: {
       control: {

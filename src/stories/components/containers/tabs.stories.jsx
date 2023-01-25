@@ -4,7 +4,7 @@ import twig from './tabs.twig';
 
 
 export default {
-  title: 'Components/Containers/Tabs',
+  title: '@Components/Containers/Tabs',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

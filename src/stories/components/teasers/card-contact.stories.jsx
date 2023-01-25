@@ -2,7 +2,7 @@ import twig from './card-contact.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Teasers/Contact Card',
+  title: '@Components/Teasers/Contact Card',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

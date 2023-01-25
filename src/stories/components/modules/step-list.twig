@@ -1,8 +1,8 @@
 {% embed '@components/sections/section.twig' with {
-    "section_heading": section_heading | default ? section_heading : "Step List Module Heading",
-    "section_description":  section_description | default,
-    "intro_class": "text-center",
-    "style": "narrower"
+    heading: heading | default,
+    description:  description | default,
+    intro_class: "text-center",
+    style: "narrower"
   }
 %}
   {% block section_content %}

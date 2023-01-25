@@ -2,7 +2,7 @@ import twig from './statistic.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Informational/Statistic',
+  title: '@Components/Informational/Statistic',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

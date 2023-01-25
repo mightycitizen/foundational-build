@@ -1,5 +1,8 @@
 <span class="{{ class | default }} {{ size | default }}">
   {% include '@components/links/link.twig' with {
+    url: url,
+    text: text,
+    target: target,
     modifier: 'read-more'
   } %}
 </span>

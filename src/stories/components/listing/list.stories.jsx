@@ -4,7 +4,7 @@ import twig from './list.twig';
 
 
 export default {
-  title: 'Components/Listing/List',
+  title: '@Components/Listing/List',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

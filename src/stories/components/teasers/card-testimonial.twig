@@ -12,7 +12,7 @@
         <blockquote class="unstyled-blockquote">
           <p class="lead">{{ quote }}</p>
           {% if attribution | default %}
-            <cite>{{ attribution.label }}{% if attribution.info and attribution.name %}, {% endif %}{{ attribution.info }}</cite>
+            <cite>{{ attribution.label }}{% if attribution.info and attribution.label %}, {% endif %}{{ attribution.info }}</cite>
           {% endif %}
         </blockquote>
       </div>

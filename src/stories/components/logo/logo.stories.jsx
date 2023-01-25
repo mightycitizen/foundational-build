@@ -2,7 +2,7 @@ import twig from './logo.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Logos/Main Logo',
+  title: '@Components/Logos/Main Logo',
 
 };
 

@@ -2,7 +2,7 @@ import twig from './card-carousel.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Card Carousel',
+  title: '@Components/Modules/Card Carousel',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

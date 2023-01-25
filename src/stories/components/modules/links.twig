@@ -1,7 +1,7 @@
 {% embed '@components/sections/section.twig' with {
-    "intro_class": "text-center",
-    "section_heading": section_heading | default ? section_heading : "Links List Module Heading",
-    "section_description":  section_description | default,
+    intro_class: "text-center",
+    heading: heading | default,
+    description: description | default,
   }
 %}
 
@@ -18,15 +18,12 @@
               <div class="cell medium-4">
 
                 {% if link | default is not empty %}
-                  {% include '@components/links/read-more.twig' with {
-                        "read_more": {
-                          "class": "h3",
-                          "url": link.url,
-                          "target": link.target,
-                          "text": link.text
-                        }
-                      }
-                  %}
+                  {%  set link = link | merge({
+
+                    class: "h3"
+                  }) %}
+
+                  {% include '@components/links/read-more.twig' with link %}
                 {% endif %}
 
               </div>

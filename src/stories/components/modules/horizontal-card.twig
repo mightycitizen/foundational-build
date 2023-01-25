@@ -1,22 +1,18 @@
 {% embed '@components/sections/section.twig' with {
   collapse: true,
-  section_class: "section--tight",
+  class: "section--tight",
   style: "narrow"
 } %}
   {% block section_content %}
     {% include '@components/teasers/card-horizontal.twig' with {
-
-        card: {
-          modifier: "",
-          image: image | default,
-          summary: summary | default,
-          heading: {
-            text: heading,
-            level: "3"
-          },
-          link: link | default
-        }
-
+      modifier: "",
+      image: image | default,
+      summary: summary | default,
+      heading: {
+        text: heading,
+        level: "3"
+      },
+      link: link | default
 
     } %}
   {% endblock %}

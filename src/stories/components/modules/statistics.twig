@@ -1,8 +1,8 @@
 {% embed '@components/sections/section.twig' with {
-    "intro_class": 'text-center ' ~ (style | default == 'side' ? 'large-text-left' : ''),
-    "section_heading": section_heading | default ? section_heading : "Statistics Module Heading",
-    "section_description":  section_description | default,
-    "section_button": section_button | default,
+    intro_class: 'text-center ' ~ (style | default == 'side' ? 'large-text-left' : ''),
+    heading: heading | default,
+    description:  description | default,
+    button: button | default,
   }
 %}
   {% block section_content %}

@@ -1,4 +1,4 @@
-<div class="card card--horizontal {{ modifier }} {% if clickCard | default %}card--click{% endif %}" >
+<div class="card card--horizontal {{ modifier | default }} {% if clickCard | default %}card--click{% endif %}" >
   <div class="card-section">
     <div class="grid-x grid-margin-x align-middle">
       {% if image | default %}
@@ -9,7 +9,7 @@
         </div>
       {% endif %}
       <div class="cell {% if image | default %}medium-7 large-7 {% if image.alignment  | default and image.alignment == 'right' %}medium-order-1{% endif %}{% endif %}">
-       <h{{ heading.level }} class="card-title {{ heading.modifier  | default }}">{{ heading.text }}</h{{ heading.level }}>
+       <h{{ heading.level | default(3) }} class="card-title {{ heading.modifier  | default }}">{{ heading.text }}</h{{ heading.level | default(3) }}>
         {% if summary | default %}
 
           <p class="m-b-3">{{ summary }}</p>

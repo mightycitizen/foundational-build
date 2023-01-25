@@ -4,7 +4,7 @@ import twig from './pagination.twig';
 
 
 export default {
-  title: 'Components/Listing/Pagination',
+  title: '@Components/Listing/Pagination',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

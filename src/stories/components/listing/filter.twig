@@ -1,15 +1,15 @@
 
   <form {% if action | default %}action="{{ action }}"{% endif %} {% if ajax | default %}class="js-ajax"{% endif %}>
-    {% embed '@components/../components/forms/form-group.twig' %}
+    {% embed '@components/../@components/forms/form-group.twig' %}
       {% block form_content %}
         {% if keyword_filter | default %}
           <div class="cell medium-5">
             {% include '@components/forms/text.twig' with {
-              "value": queryParam | default,
-              "label": label | default("Keywords"),
-              "id": input_id | default("keywords"),
-              "placeholder": placeholder | default("Filter by keywords"),
-              "name": input_name | default('q')
+              value: queryParam | default,
+              label: label | default("Keywords"),
+              id: input_id | default("keywords"),
+              placeholder: placeholder | default("Filter by keywords"),
+              name: input_name | default('q')
             }
             %}
           </div>

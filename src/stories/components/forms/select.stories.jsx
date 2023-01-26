@@ -21,13 +21,13 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args ={
+
+const defaultArgs = {
   label: "Select Dropdown",
   id: "dropdown",
   name: "dropdown",
-
+  selectize: false,
+  placeholder: 'Select an option',
   options: [
     {
       label: "Dropdown A",
@@ -43,11 +43,17 @@ Default.args ={
     }
   ]
 };
-//
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   label: 'Button',
-// };
+
+export const Default = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Default.args = defaultArgs;
+export const Filterable = Template.bind({});
+Filterable.args = Object.assign({...defaultArgs}, {
+  selectize: true,
+  name: 'select_selectize',
+  id: 'select_selectize'
+})
+
 //
 // export const Large = Template.bind({});
 // Large.args = {

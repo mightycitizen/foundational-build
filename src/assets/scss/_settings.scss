@@ -60,6 +60,8 @@
 //  55. Top Bar
 //  56. Xy Grid
 
+
+
 @import 'util/util';
 
 // 1. Global
@@ -69,32 +71,32 @@
 
 $cms: 'Craft';
 
+@import 'tokens';
+
 $font-scale-mobile: 0.75;
 
-$spacer-mobile: 5px !default;
-$spacer: 8px !default;
+$spacer-mobile: 5px;
+$spacer: 8px;
 $spacers: (
-        half,
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-) !default;
+  half,
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10
+);
 
 /* ---- */
 
 $global-font-size: 112.5%; // 18/16
 $global-width: rem-calc(1340);
 $global-lineheight: 1.4;
-
-
 
 $foundation-palette: (
   primary: map-get($primary,'default'),

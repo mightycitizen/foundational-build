@@ -15,7 +15,6 @@ import initLity from './plugins/lity';
 import initDatepicker from './plugins/datepicker';
 import initVimeo from './plugins/vimeo';
 import initYoutube from './plugins/youtube';
-//import './plugins/tabs';
 import initSlick from './plugins/slick';
 
 window.$ = $;
@@ -127,37 +126,38 @@ const initTableScroll = () => {
     //   $wrapper.removeClass('is-end')
     // }
   });
-
 }
 
 // @foundation helpers init
 const initFoundationHelpers = () => {
   $(document).on('change.zf.tabs', function(e, tab, pane, $target){
     const tabNav = $(tab).parent();
-    //console.log(tabNav);
-    const tabStartPosition = $(tab).position().left;
-    const tabNavWidth = tabNav.outerWidth();
-    const tabWidth = $(tab).outerWidth();
-    const tabEndPosition = tabStartPosition + tabWidth;
-    const offset = 30;
-    let position;
-    const currPosition = tabNav.scrollLeft();
-    // console.log(currPosition);
-    // console.log('left',tabStartPosition);
-    // console.log('right',tabEndPosition);
-    if (tabStartPosition < offset){
-      position = currPosition + tabStartPosition - offset;
-    }
-    else if (tabEndPosition > tabNavWidth - offset){
-      position = currPosition + (tabEndPosition - tabNavWidth + offset);
-      //console.log(position);
+    if ($(tab).length){
+      const tabStartPosition = $(tab).position().left;
+      const tabNavWidth = tabNav.outerWidth();
+      const tabWidth = $(tab).outerWidth();
+      const tabEndPosition = tabStartPosition + tabWidth;
+      const offset = 30;
+      let position;
+      const currPosition = tabNav.scrollLeft();
+      // console.log(currPosition);
+      // console.log('left',tabStartPosition);
+      // console.log('right',tabEndPosition);
+      if (tabStartPosition < offset){
+        position = currPosition + tabStartPosition - offset;
+      }
+      else if (tabEndPosition > tabNavWidth - offset){
+        position = currPosition + (tabEndPosition - tabNavWidth + offset);
+        //console.log(position);
+      }
+
+      if (position){
+        $(tabNav).animate({
+          scrollLeft: position
+        },200);
+      }
     }
 
-    if (position){
-      $(tabNav).animate({
-        scrollLeft: position
-      },200);
-    }
     // console.log(tab);
     // console.log(pane);
     // console.log($target);
@@ -208,6 +208,7 @@ const initMenuHelpers = () => {
   })
 }
 
+// create separate document ready method so that we can call it from other scripts e.g. storybook
 $(document).bind('_page_ready', function(){
 
   // ↑ True for "medium" or larger (by default)
@@ -244,6 +245,7 @@ $(document).bind('_page_ready', function(){
   if (typeof initVimeo === 'function') initVimeo(); // @vimeo init call
   if (typeof initYoutube === 'function') initYoutube(); // @youtube init call
   if (typeof initSlider === 'function') initSlider(); // @slider init call
+  if (typeof initSelectize === 'function') initSelectize(); // @slider init call
 });
 
 $(document).ready(function(){

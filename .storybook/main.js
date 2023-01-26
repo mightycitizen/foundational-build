@@ -36,7 +36,8 @@ module.exports = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-interactions"
+    "@storybook/addon-interactions",
+    "storybook-design-token"
   ],
   framework: "@storybook/html",
   webpackFinal: async (config, { configType }) => {

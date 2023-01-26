@@ -447,6 +447,21 @@
   background: linear-gradient(to bottom, #fff 0%, rgba(51, 51, 51, 0.4) 100%);
 }
 
+/**
+* @tokens Global
+* @presenter Spacing
+*/
+:root {
+  --spacer-mobile: 5px;
+  --spacer: 8px;
+  --global-font-size: 16px;
+  --global-line-height: 1.5;
+  --global-width: 1366px;
+}
+
+/**
+  * @tokens-end
+  */
 /* ---- */
 /**
  * Foundation for Sites

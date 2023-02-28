@@ -39,6 +39,30 @@ const defaultArgs = {
   section_description: 'Description',
   cards: cards
 }
-export const Default = Template.bind({});
+const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;
+
+const Events = Template.bind({});
+
+const eventCards =  cards.map((card, i) => Object.assign({...card}, {
+  date: {
+    unformatted: '2020-01-01',
+    full: 'January 1, 2020',
+    day: 1,
+    month_short: 'Jan',
+    year: 2020
+  },
+  type: {
+    handle: 'events',
+    label: 'Events'
+  }
+}))
+
+Events.args = {
+  ...defaultArgs,
+  cards: eventCards
+}
+
+
+export { Default, Events }

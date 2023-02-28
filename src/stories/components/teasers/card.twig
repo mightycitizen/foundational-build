@@ -10,9 +10,7 @@
       <img src="{{ image.src }}" alt="{{ image.alt }}">
 
       {% if type.handle | default == 'events' and date | default %}
-        {% include '@components/inline-text/date.twig' with {
-          date: date
-        } %}
+        {% include '@components/inline-text/date.twig' with date %}
       {% endif %}
       {% if flag | default %}
         {% include '@components/inline-text/flag.twig' with {

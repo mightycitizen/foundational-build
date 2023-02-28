@@ -3,6 +3,7 @@ import { addDecorator } from '@storybook/html';
 import { useEffect } from '@storybook/client-api';
 import '../dist/css/app.css';
 import '../dist/js/app.js';
+import '../dist/css/storybook.css';
 function setupTwig(twig) {
   //twig.cache();
   // set allowInclude option to true
@@ -23,6 +24,7 @@ addDecorator(storyFn => {
 });
 
 
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -31,4 +33,18 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  options: {
+    storySort: {
+       method: 'alphabetical',
+        order: [
+          'Global',
+          'Layout',
+          'Components',
+          'Pages',
+          '*'
+        ],
+        includeName: true,
+      }
+  }
+
 }

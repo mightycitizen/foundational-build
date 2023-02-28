@@ -11,40 +11,47 @@ $light-opacity: 0.1;
 $gradient-opacity: 0.4;
 
 @mixin generateVariants($map, $color){
+
+  @if (is-map($map) == false){
+    $map: (default: $map);
+    $map: map-set($map, 'variants', ());
+  }
+  $default-color: map-get($map, 'default');
   $variants: map-get($map, 'variants');
+
+  .color-#{$color}{
+    color: $default-color;
+  }
+
+  .fill-#{$color}{
+    path, polygon{
+      fill: $default-color;
+    }
+  }
+
+
+  .bg-solid-#{$color}{
+    background-color: $default-color;
+  }
+
+
+  .bg-light-#{$color}{
+    background-color: rgba($default-color,$light-opacity);
+  }
+
+  .bg-gradient-#{$color}{
+    &:before{
+      background: linear-gradient(to bottom, $white 0%, rgba($default-color,$gradient-opacity) 100%);
+    }
+  }
   @each $key, $value in $variants {
 
-    $default-color: map-get($map, 'default');
+
     $output: $value;
     @if (is-percentage($value)){
       $output: scale-color($default-color,$lightness: $output);
     }
 
-    .color-#{$color}{
-      color: $default-color;
-    }
-
-    .fill-#{$color}{
-      path, polygon{
-        fill: $default-color;
-      }
-    }
-
-
-    .bg-solid-#{$color}{
-      background-color: $default-color;
-    }
-
-
-    .bg-light-#{$color}{
-      background-color: rgba($default-color,$light-opacity);
-    }
-
-    .bg-gradient-#{$color}{
-      &:before{
-        background: linear-gradient(to bottom, $white 0%, rgba($default-color,$gradient-opacity) 100%);
-      }
-    }
     @if $output{
       $additional-palette: map-set($additional-palette, '#{$color}-#{$key}', $output) !global;
       .color-#{$color}-#{$key}{
@@ -80,8 +87,13 @@ $gradient-opacity: 0.4;
 @include generateVariants($primary, 'primary');
 @include generateVariants($secondary, 'secondary');
 @include generateVariants($tertiary, 'tertiary');
-//@include generateVariants($tertiary, 'accent');
+@include generateVariants($alert, 'alert');
+@include generateVariants($success, 'success');
+@include generateVariants($gray, 'warning');
+@include generateVariants($black, 'black');
+@include generateVariants($white, 'white');
 @include generateVariants($gray, 'gray');
+
 
 
 

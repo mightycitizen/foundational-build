@@ -161,7 +161,7 @@ exports.watch = series(
     movePatternJS
   ),
   concatCSS,
-  series(serve, watchFiles)
+  // series(serve, watchFiles)
 );
 
 // Build task for Pattern Lab.

@@ -4,3 +4,6 @@
 @function is-number($value) {
   @return type-of($value) == 'number';
 }
+@function is-map($var){
+  @return type-of($var) == 'map';
+}

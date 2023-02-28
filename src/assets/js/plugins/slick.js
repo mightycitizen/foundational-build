@@ -4,6 +4,7 @@ import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../../s
 
 // @slick pagination helper function
 const slickPagination = (slick) => {
+  console.log(slick);
   if (slick.$dots){
     const numSlides = slick.$dots.find('>li').length;
     slick.$slider.toggleClass('has-pagers', numSlides > 1);

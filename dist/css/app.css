@@ -51,26 +51,6 @@
   background: linear-gradient(to bottom, #fff 0%, rgba(31, 62, 153, 0.4) 100%);
 }
 
-.color-primary {
-  color: #2953cc;
-}
-
-.fill-primary path, .fill-primary polygon {
-  fill: #2953cc;
-}
-
-.bg-solid-primary {
-  background-color: #2953cc;
-}
-
-.bg-light-primary {
-  background-color: rgba(41, 83, 204, 0.1);
-}
-
-.bg-gradient-primary:before {
-  background: linear-gradient(to bottom, #fff 0%, rgba(41, 83, 204, 0.4) 100%);
-}
-
 .color-primary-lighter {
   color: #6986db;
 }
@@ -85,26 +65,6 @@
 
 .bg-gradient-primary-lighter:before {
   background: linear-gradient(to bottom, #fff 0%, rgba(105, 134, 219, 0.4) 100%);
-}
-
-.color-primary {
-  color: #2953cc;
-}
-
-.fill-primary path, .fill-primary polygon {
-  fill: #2953cc;
-}
-
-.bg-solid-primary {
-  background-color: #2953cc;
-}
-
-.bg-light-primary {
-  background-color: rgba(41, 83, 204, 0.1);
-}
-
-.bg-gradient-primary:before {
-  background: linear-gradient(to bottom, #fff 0%, rgba(41, 83, 204, 0.4) 100%);
 }
 
 .color-primary-lightest {
@@ -159,26 +119,6 @@
   background: linear-gradient(to bottom, #fff 0%, rgba(236, 168, 6, 0.4) 100%);
 }
 
-.color-secondary {
-  color: #ffcd00;
-}
-
-.fill-secondary path, .fill-secondary polygon {
-  fill: #ffcd00;
-}
-
-.bg-solid-secondary {
-  background-color: #ffcd00;
-}
-
-.bg-light-secondary {
-  background-color: rgba(255, 205, 0, 0.1);
-}
-
-.bg-gradient-secondary:before {
-  background: linear-gradient(to bottom, #fff 0%, rgba(255, 205, 0, 0.4) 100%);
-}
-
 .color-secondary-lighter {
   color: #ffe57f;
 }
@@ -193,26 +133,6 @@
 
 .bg-gradient-secondary-lighter:before {
   background: linear-gradient(to bottom, #fff 0%, rgba(255, 229, 127, 0.4) 100%);
-}
-
-.color-secondary {
-  color: #ffcd00;
-}
-
-.fill-secondary path, .fill-secondary polygon {
-  fill: #ffcd00;
-}
-
-.bg-solid-secondary {
-  background-color: #ffcd00;
-}
-
-.bg-light-secondary {
-  background-color: rgba(255, 205, 0, 0.1);
-}
-
-.bg-gradient-secondary:before {
-  background: linear-gradient(to bottom, #fff 0%, rgba(255, 205, 0, 0.4) 100%);
 }
 
 .color-secondary-lightest {
@@ -267,26 +187,6 @@
   background: linear-gradient(to bottom, #fff 0%, rgba(180, 39, 39, 0.4) 100%);
 }
 
-.color-tertiary {
-  color: #d82626;
-}
-
-.fill-tertiary path, .fill-tertiary polygon {
-  fill: #d82626;
-}
-
-.bg-solid-tertiary {
-  background-color: #d82626;
-}
-
-.bg-light-tertiary {
-  background-color: rgba(216, 38, 38, 0.1);
-}
-
-.bg-gradient-tertiary:before {
-  background: linear-gradient(to bottom, #fff 0%, rgba(216, 38, 38, 0.4) 100%);
-}
-
 .color-tertiary-lighter {
   color: #e87d7d;
 }
@@ -303,26 +203,6 @@
   background: linear-gradient(to bottom, #fff 0%, rgba(232, 125, 125, 0.4) 100%);
 }
 
-.color-tertiary {
-  color: #d82626;
-}
-
-.fill-tertiary path, .fill-tertiary polygon {
-  fill: #d82626;
-}
-
-.bg-solid-tertiary {
-  background-color: #d82626;
-}
-
-.bg-light-tertiary {
-  background-color: rgba(216, 38, 38, 0.1);
-}
-
-.bg-gradient-tertiary:before {
-  background: linear-gradient(to bottom, #fff 0%, rgba(216, 38, 38, 0.4) 100%);
-}
-
 .color-tertiary-lightest {
   color: #f3bdbd;
 }
@@ -337,6 +217,154 @@
 
 .bg-gradient-tertiary-lightest:before {
   background: linear-gradient(to bottom, #fff 0%, rgba(243, 189, 189, 0.4) 100%);
+}
+
+.color-alert {
+  color: #d5383c;
+}
+
+.fill-alert path, .fill-alert polygon {
+  fill: #d5383c;
+}
+
+.bg-solid-alert {
+  background-color: #d5383c;
+}
+
+.bg-light-alert {
+  background-color: rgba(213, 56, 60, 0.1);
+}
+
+.bg-gradient-alert:before {
+  background: linear-gradient(to bottom, #fff 0%, rgba(213, 56, 60, 0.4) 100%);
+}
+
+.color-success {
+  color: #73af8c;
+}
+
+.fill-success path, .fill-success polygon {
+  fill: #73af8c;
+}
+
+.bg-solid-success {
+  background-color: #73af8c;
+}
+
+.bg-light-success {
+  background-color: rgba(115, 175, 140, 0.1);
+}
+
+.bg-gradient-success:before {
+  background: linear-gradient(to bottom, #fff 0%, rgba(115, 175, 140, 0.4) 100%);
+}
+
+.color-warning {
+  color: #666;
+}
+
+.fill-warning path, .fill-warning polygon {
+  fill: #666;
+}
+
+.bg-solid-warning {
+  background-color: #666;
+}
+
+.bg-light-warning {
+  background-color: rgba(102, 102, 102, 0.1);
+}
+
+.bg-gradient-warning:before {
+  background: linear-gradient(to bottom, #fff 0%, rgba(102, 102, 102, 0.4) 100%);
+}
+
+.color-warning-lighter {
+  color: #ccc;
+}
+
+.bg-solid-warning-lighter {
+  background-color: #ccc;
+}
+
+.bg-light-warning-lighter {
+  background-color: rgba(204, 204, 204, 0.1);
+}
+
+.bg-gradient-warning-lighter:before {
+  background: linear-gradient(to bottom, #fff 0%, rgba(204, 204, 204, 0.4) 100%);
+}
+
+.color-warning-lightest {
+  color: #eee;
+}
+
+.bg-solid-warning-lightest {
+  background-color: #eee;
+}
+
+.bg-light-warning-lightest {
+  background-color: rgba(238, 238, 238, 0.1);
+}
+
+.bg-gradient-warning-lightest:before {
+  background: linear-gradient(to bottom, #fff 0%, rgba(238, 238, 238, 0.4) 100%);
+}
+
+.color-warning-darker {
+  color: #333;
+}
+
+.bg-solid-warning-darker {
+  background-color: #333;
+}
+
+.bg-light-warning-darker {
+  background-color: rgba(51, 51, 51, 0.1);
+}
+
+.bg-gradient-warning-darker:before {
+  background: linear-gradient(to bottom, #fff 0%, rgba(51, 51, 51, 0.4) 100%);
+}
+
+.color-black {
+  color: #333;
+}
+
+.fill-black path, .fill-black polygon {
+  fill: #333;
+}
+
+.bg-solid-black {
+  background-color: #333;
+}
+
+.bg-light-black {
+  background-color: rgba(51, 51, 51, 0.1);
+}
+
+.bg-gradient-black:before {
+  background: linear-gradient(to bottom, #fff 0%, rgba(51, 51, 51, 0.4) 100%);
+}
+
+.color-white {
+  color: #fff;
+}
+
+.fill-white path, .fill-white polygon {
+  fill: #fff;
+}
+
+.bg-solid-white {
+  background-color: #fff;
+}
+
+.bg-light-white {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bg-gradient-white:before {
+  background: linear-gradient(to bottom, #fff 0%, rgba(255, 255, 255, 0.4) 100%);
 }
 
 .color-gray {
@@ -375,26 +403,6 @@
   background: linear-gradient(to bottom, #fff 0%, rgba(204, 204, 204, 0.4) 100%);
 }
 
-.color-gray {
-  color: #666;
-}
-
-.fill-gray path, .fill-gray polygon {
-  fill: #666;
-}
-
-.bg-solid-gray {
-  background-color: #666;
-}
-
-.bg-light-gray {
-  background-color: rgba(102, 102, 102, 0.1);
-}
-
-.bg-gradient-gray:before {
-  background: linear-gradient(to bottom, #fff 0%, rgba(102, 102, 102, 0.4) 100%);
-}
-
 .color-gray-lightest {
   color: #eee;
 }
@@ -409,26 +417,6 @@
 
 .bg-gradient-gray-lightest:before {
   background: linear-gradient(to bottom, #fff 0%, rgba(238, 238, 238, 0.4) 100%);
-}
-
-.color-gray {
-  color: #666;
-}
-
-.fill-gray path, .fill-gray polygon {
-  fill: #666;
-}
-
-.bg-solid-gray {
-  background-color: #666;
-}
-
-.bg-light-gray {
-  background-color: rgba(102, 102, 102, 0.1);
-}
-
-.bg-gradient-gray:before {
-  background: linear-gradient(to bottom, #fff 0%, rgba(102, 102, 102, 0.4) 100%);
 }
 
 .color-gray-darker {

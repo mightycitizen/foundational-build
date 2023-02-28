@@ -1,6 +1,6 @@
 {% embed '@components/sections/section.twig' with {
   collapse: true,
-  class: "section--tight",
+  section_class: "section--tight " ~ section_class | default,
   section_style: "narrow"
 } %}
   {% block section_content %}

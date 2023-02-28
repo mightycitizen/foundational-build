@@ -1,5 +1,5 @@
 {% embed '@components/sections/section.twig' with {
-  class: "section--tight section--form",
+  section_class: "section--tight section--form " ~ section_class | default,
   section_style: "narrower"
 } %}
   {% block section_content %}

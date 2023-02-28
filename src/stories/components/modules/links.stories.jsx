@@ -5,7 +5,17 @@ export default {
   title: 'Components/Modules/Links',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-
+    section_class: {
+      control: {
+        type: 'select',
+        options: [
+          '',
+          'bg-solid-primary text-white',
+          'bg-solid-secondary text-white',
+          'bg-solid-tertiary text-white',
+        ]
+      }
+    }
   },
 };
 

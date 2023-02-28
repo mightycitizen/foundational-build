@@ -4,45 +4,45 @@ import twig from './card-contact.twig';
 export default {
   title: 'Components/Teasers/Contact Card',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
+  // argTypes: {
 
-    heading:  {
-      control: 'text'
-    },
-    subheading:  {
-      control: 'text'
-    },
-    description:  {
-      control: 'text'
-    },
-    link: {
-      text: {
-        control: 'text'
-      },
-      url: {
-        control: 'text'
-      }
-    },
-    items: [
-      {
-        label: {
-          control: 'text'
-        },
-        value: {
-          control: 'text'
-        }
-      },
-    ]
+  //   heading:  {
+  //     control: 'text'
+  //   },
+  //   subheading:  {
+  //     control: 'text'
+  //   },
+  //   description:  {
+  //     control: 'text'
+  //   },
+  //   link: {
+  //     text: {
+  //       control: 'text'
+  //     },
+  //     url: {
+  //       control: 'text'
+  //     }
+  //   },
+  //   items: [
+  //     {
+  //       label: {
+  //         control: 'text'
+  //       },
+  //       value: {
+  //         control: 'text'
+  //       }
+  //     },
+  //   ]
 
-    // backgroundColor: { control: 'color' },
-    // label: { control: 'text' },
-    // onClick: { action: 'onClick' },
-    // primary: { control: 'boolean' },
-    // size: {
-    //   control: { type: 'select' },
-    //   options: ['small', 'medium', 'large'],
-    // },
-  },
+  //   // backgroundColor: { control: 'color' },
+  //   // label: { control: 'text' },
+  //   // onClick: { action: 'onClick' },
+  //   // primary: { control: 'boolean' },
+  //   // size: {
+  //   //   control: { type: 'select' },
+  //   //   options: ['small', 'medium', 'large'],
+  //   // },
+  // },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args

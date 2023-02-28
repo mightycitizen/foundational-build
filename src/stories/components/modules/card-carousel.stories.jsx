@@ -4,9 +4,9 @@ import twig from './card-carousel.twig';
 export default {
   title: 'Components/Modules/Card Carousel',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
+  // argTypes: {
 
-  },
+  // },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -34,8 +34,8 @@ const cards = [...Array(5)].map((_, i) => ( {
 }));
 
 const defaultArgs = {
-  heading: 'Heading',
-  description: 'Description',
+  section_heading: 'Heading',
+  section_description: 'Description',
   cards: cards
 }
 export const Default = Template.bind({});

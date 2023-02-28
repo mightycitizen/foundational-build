@@ -1,16 +1,16 @@
 {% embed '@components/sections/section.twig' with {
     class: "section--tight",
-    style: "narrow",
-    heading: null,
-    description: null,
+    section_style: "narrow"
   }
 %}
   {% block section_content %}
-
       {% include '@components/teasers/card-contact.twig' with {
-        items: contact_items,
+        heading: heading,
+        description: description,
+        subheading: subheading,
+        items: items,
         link: link
-      } %}
+      } only %}
 
 
   {% endblock %}

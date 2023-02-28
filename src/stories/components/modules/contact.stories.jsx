@@ -17,26 +17,47 @@ const Template = ({ label, ...args }) => {
 };
 
 
-const cards = [...Array(5)].map((_, i) => ( {
-  heading: {
-    text: 'Heading',
-    url: '#',
-    level: 3
-  },
-  image: {
-    src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
-    alt: 'Alt Text'
-  },
-  link: {
-    text: 'Link',
-    url: '#'
-  },
-}));
+// const cards = [...Array(5)].map((_, i) => ( {
+//   heading: {
+//     text: 'Heading',
+//     url: '#',
+//     level: 3
+//   },
+//   image: {
+//     src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
+//     alt: 'Alt Text'
+//   },
+//   link: {
+//     text: 'Link',
+//     url: '#'
+//   },
+// }));
 
 const defaultArgs = {
   heading: 'Heading',
+  heading: 'Subheading',
   description: 'Description',
-  cards: cards
+  link: {
+    text: 'Link',
+    url: '#',
+    target: '_blank'
+  },
+  items: [
+    {
+      label: 'Phone',
+      value: '123-456-7890'
+    },
+    {
+      label: 'Email',
+      url: 'mailto:example@domain.com',
+      value: 'example@domain.com',
+    },
+    {
+      label: 'Address',
+      value: '123 Main Street, Anytown, USA'
+    },
+
+  ]
 }
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

@@ -4,10 +4,10 @@ import twig from './cta.twig';
 export default {
   title: 'Components/Modules/CTA',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
+  // argTypes: {
 
 
-  },
+  // },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -19,9 +19,9 @@ const Template = ({ label, ...args }) => {
 
 
 const defaultArgs = {
-  heading: 'Heading',
-  description: 'Description',
-  button: {
+  section_heading: 'Heading',
+  section_description: 'Description',
+  section_button: {
     text: 'Link',
     url: '#'
   }
@@ -32,7 +32,7 @@ Default.args = defaultArgs;
 
 export const Image = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Image.args = Object.assign({...defaultArgs}, {image: {
+Image.args = Object.assign({...defaultArgs}, {section_image: {
   src: 'https://source.unsplash.com/9wg5jCEPBsw/632x400',
   alt: 'Image'}
 });
@@ -40,7 +40,7 @@ Image.args = Object.assign({...defaultArgs}, {image: {
 
 export const BackgroundImage = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-BackgroundImage.args = Object.assign({...defaultArgs}, {background: {
+BackgroundImage.args = Object.assign({...defaultArgs}, {section_background: {
     src: 'https://source.unsplash.com/9wg5jCEPBsw/1200x500',
     alt: 'Image'}
 });

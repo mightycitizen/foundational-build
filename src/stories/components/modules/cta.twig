@@ -1,10 +1,10 @@
-{% if button | default %}
-  {% set button = button | merge({
+{% if section_button | default %}
+  {% set section_button = section_button | merge({
     modifier: "secondary"
   }) %}
 {% endif %}
 
 {% include '@components/sections/section.twig' with {
-  class: "cta bg-solid-primary text-white " ~ class | default ~ (image | default ? ' cta--horizontal': ''),
-  intro_class: (image | default ? 'medium-text-left': '') ~ ' text-center m-b-0'
+  class: "cta bg-solid-primary text-white " ~ section_class | default ~ (section_image | default ? ' cta--horizontal': ''),
+  intro_class: (section_image | default ? 'medium-text-left': '') ~ ' text-center m-b-0'
 }%}

@@ -1,26 +1,26 @@
 {% if intro_class | default is empty %}{% set intro_class = 'text-center' %}{% endif %}
 
 {% set intro %}
-  {% if heading | default %}
+  {% if section_heading | default %}
       <div class="section_intro {{ intro_class }}">
         <div class="grid-x grid-margin-x align-middle align-center">
-          {% if image | default %}
+          {% if section_image | default %}
             <div class="cell medium-5 large-6">
               <div class="image-size--landscapeCroppedMedium">
-                <img data-src="{{ image.src }}" alt="{{ image.alt }}" class="js-lazy">
+                <img data-src="{{ section_image.src }}" alt="{{ section_image.alt }}" class="js-lazy">
               </div>
             </div>
           {% endif %}
-          <div class="cell {% if image | default %}medium-7 large-6{% elseif style | default is empty %}medium-8{% endif %}">
-            <h2 class="section_heading">{{ heading }}</h2>
-            {% if subheading | default %}
-              <h3 class="section_subheading">{{ subheading }}</h3>
+          <div class="cell {% if section_image | default %}medium-7 large-6{% elseif section_style | default is empty %}medium-8{% endif %}">
+            <h2 class="section_heading">{{ section_heading }}</h2>
+            {% if section_subheading | default %}
+              <h3 class="section_subheading">{{ section_subheading }}</h3>
             {% endif %}
-            {% if description | default %}
-              <p class="lead">{{ description }}</p>
+            {% if section_description | default %}
+              <p class="lead">{{ section_description }}</p>
             {% endif %}
-            {% if button | default %}
-              {% include '@components/links/button.twig' with button | merge({
+            {% if section_button | default %}
+              {% include '@components/links/button.twig' with section_button | merge({
                 color: 'secondary'
               }) only %}
             {% endif %}
@@ -38,9 +38,9 @@
   {% endif %}
 {% endset %}
 <section class="section {{ class | default }} {% if style | default %}section--{{ style }} {% endif %} {% if collapse | default %}section--collapse{% endif %}" >
-  {% if background | default %}<div class="js-lazy section_background" data-bg="{{ background.src }}"></div>{% endif %}
+  {% if section_background | default %}<div class="js-lazy section_background" data-bg="{{ section_background.src }}"></div>{% endif %}
   <div class="{% if exclude_container | default is empty %}grid-container{% endif %} {{ grid_class | default }}">
-    {% if style | default and (style == 'side') %}
+    {% if section_style | default and (section_style == 'side') %}
       <div class="grid-x align-middle align-center">
         <div class="cell medium-8">
           {{ intro }}
@@ -51,7 +51,7 @@
       </div>
     {% else %}
       {{ intro }}
-      {% if (style | default and (style == 'narrow' or style == 'narrower')) and exclude_container | default is empty %}
+      {% if (section_style | default and (section_style == 'narrow' or section_style == 'narrower')) and exclude_container | default is empty %}
         {% set content %}
           {{ content }}
         {% endset %}

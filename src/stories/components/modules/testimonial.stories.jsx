@@ -34,8 +34,8 @@ const cards = [...Array(5)].map((_, i) => ( {
 }));
 
 const defaultArgs = {
-  heading: 'Heading',
-  description: 'Description',
+  section_heading: 'Heading',
+  section_description: 'Description',
   cards: cards
 }
 export const Default = Template.bind({});

@@ -1,8 +1,8 @@
-import twig from './step-list.twig';
+import twig from './card-carousel-center.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Step List',
+  title: 'Components/Modules/Card Carousel/Center',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

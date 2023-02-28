@@ -4,39 +4,39 @@ import twig from './accordion.twig';
 export default {
   title: 'Components/Modules/Accordion',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
-    accordion_id: {
-      control: 'text'
-    },
-    heading: {
-      control: 'text'
-    },
-    description: {
-      control: 'text'
-    },
-    items: [
-      {
-        heading: {
-          control: 'text'
-        },
-        content: {
-          control: 'text'
-        },
-        icon: {
-          control: 'text'
-        }
-      }
-    ]
+  // argTypes: {
+  //   // accordion_id: {
+  //   //   control: 'text'
+  //   // },
+  //   // heading: {
+  //   //   control: 'text'
+  //   // },
+  //   // description: {
+  //   //   control: 'text'
+  //   // },
+  //   // items: [
+  //   //   {
+  //   //     heading: {
+  //   //       control: 'text'
+  //   //     },
+  //   //     content: {
+  //   //       control: 'text'
+  //   //     },
+  //   //     icon: {
+  //   //       control: 'text'
+  //   //     }
+  //   //   }
+  //   // ]
 
-    // backgroundColor: { control: 'color' },
-    // label: { control: 'text' },
-    // onClick: { action: 'onClick' },
-    // primary: { control: 'boolean' },
-    // size: {
-    //   control: { type: 'select' },
-    //   options: ['small', 'medium', 'large'],
-    // },
-  },
+  //   // backgroundColor: { control: 'color' },
+  //   // label: { control: 'text' },
+  //   // onClick: { action: 'onClick' },
+  //   // primary: { control: 'boolean' },
+  //   // size: {
+  //   //   control: { type: 'select' },
+  //   //   options: ['small', 'medium', 'large'],
+  //   // },
+  // },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -49,11 +49,16 @@ const Template = ({ label, ...args }) => {
 
 const defaultArgs = {
   accordion_id: 'accordion_default',
-  heading: 'Heading',
+  section_heading: 'Heading',
+  section_description: 'Description',
   items: [
     {
-      heading: 'Heading',
-      content: 'Content'
+      heading: 'Accordion Heading 1',
+      content: 'Accordion Content 1'
+    },
+    {
+      heading: 'Accordion Heading 2',
+      content: 'Accordion Content 2'
     }
   ]
 }

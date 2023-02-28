@@ -5,22 +5,11 @@ export default {
   title: 'Components/Sections/Section',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-    heading: {
-      control: 'text'
-    },
-    subheading: {
-      control: 'text'
-    },
-    description: {
-      control: 'text'
-    },
+
     intro_class: {
       control: 'text'
     },
-    class: {
-      control: 'text'
-    },
-    style: {
+    section_style: {
       control: {
         type: 'select',
       },
@@ -29,14 +18,16 @@ export default {
         ''
       ]
     },
-    // backgroundColor: { control: 'color' },
-    // label: { control: 'text' },
-    // onClick: { action: 'onClick' },
-    // primary: { control: 'boolean' },
-    // size: {
-    //   control: { type: 'select' },
-    //   options: ['small', 'medium', 'large'],
-    // },
+    section_image: {
+      src: {
+        control: 'text'
+      },
+      alt: {
+        control: 'text'
+      }
+
+    }
+
   },
 };
 
@@ -50,7 +41,14 @@ const Template = ({ label, ...args }) => {
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = {
-  heading: 'Heading',
+  section_heading: 'Heading',
+  section_description: 'Description',
+  section_button: {
+    url: '#',
+    text: 'Button'
+
+  }
+
 };
 //
 // export const Secondary = Template.bind({});

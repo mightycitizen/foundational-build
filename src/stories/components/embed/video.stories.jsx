@@ -19,8 +19,8 @@ const Template = ({ label, ...args }) => {
 
 const defaultArgs = {
   trigger: "click",
-  type: "youtube",
-  id: "gJ6APKIjFQY",
+  video_type: "youtube",
+  video_id: "gJ6APKIjFQY",
   image: {
     src: "//via.placeholder.com/900x500",
     alt: ""
@@ -39,5 +39,6 @@ Scroll.args = Object.assign({...defaultArgs}, {
 export const Vimeo = Template.bind({});
 
 Vimeo.args = Object.assign({...defaultArgs}, {
-  type: 'vimeo'
+  video_type: 'vimeo',
+  video_id: '559422073'
 });

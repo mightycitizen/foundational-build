@@ -6,7 +6,7 @@
     &_wrapper{
       .video{
         &_loader{
-
+          z-index: 3;
           color: $white;
           display: flex;
           pointer-events: none;
@@ -17,6 +17,9 @@
           left: 0;
           height: 100%;
           width: 100%;
+          .loader > div{
+            border-top-color: $white;
+          }
         }
         &_player{
           opacity: 0;
@@ -28,6 +31,9 @@
             position: relative;
 //            aspect-ratio: 9/5;
             background-color: $dark-gray;
+            &:before{
+              opacity: 0;
+            }
           }
           display: block;
           width: 100%;
@@ -45,6 +51,11 @@
           }
           &:after{
             transform: translateY(100%);
+          }
+        }
+        .video_image_wrapper{
+          &:before{
+            opacity: 1;
           }
         }
       }
@@ -112,7 +123,9 @@
       }
 
       &[data-video-trigger="click"]{
-        cursor: pointer;
+        &.is-initialized{
+          cursor: pointer;
+        }
         &:hover{
           .video_image_wrapper{
             background-color: $primary-color;

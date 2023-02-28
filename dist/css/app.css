@@ -9247,6 +9247,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   }
 }
 .video_wrapper .video_loader {
+  z-index: 3;
   color: #fff;
   display: flex;
   pointer-events: none;
@@ -9257,6 +9258,9 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   left: 0;
   height: 100%;
   width: 100%;
+}
+.video_wrapper .video_loader .loader > div {
+  border-top-color: #fff;
 }
 .video_wrapper .video_player {
   opacity: 0;
@@ -9270,6 +9274,9 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   position: relative;
   background-color: #333;
 }
+.video_wrapper .video_image_wrapper:before {
+  opacity: 0;
+}
 .video_wrapper.is-initialized .video_loader {
   opacity: 0;
 }
@@ -9278,6 +9285,9 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 .video_wrapper.is-initialized .video_container:after {
   transform: translateY(100%);
+}
+.video_wrapper.is-initialized .video_image_wrapper:before {
+  opacity: 1;
 }
 .video_wrapper.is-playing .video_player {
   opacity: 1;
@@ -9338,7 +9348,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   -o-object-fit: cover;
   object-fit: cover;
 }
-.video_wrapper[data-video-trigger=click] {
+.video_wrapper[data-video-trigger=click].is-initialized {
   cursor: pointer;
 }
 .video_wrapper[data-video-trigger=click]:hover .video_image_wrapper {

@@ -4,6 +4,7 @@ import { useEffect } from '@storybook/client-api';
 import '../dist/css/app.css';
 import '../dist/js/app.js';
 import '../dist/css/storybook.css';
+
 function setupTwig(twig) {
   //twig.cache();
   // set allowInclude option to true

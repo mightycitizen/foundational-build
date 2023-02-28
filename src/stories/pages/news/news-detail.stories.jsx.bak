@@ -1,8 +1,8 @@
-import twig from './events-listing.twig';
+import twig from './news-detail.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Pages/Events/Events Listing',
+  title: 'Pages/News/News Detail',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {

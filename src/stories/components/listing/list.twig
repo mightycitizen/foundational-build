@@ -8,21 +8,17 @@
           <div class="cell medium-5 large-4">
             <div class="wrapper image-size--landscapeCroppedMedium">
               <img data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" class="js-lazy">
-              {% if item_type == 'events' %}
-                {% include '@components/inline-text/date.twig' with {
-                  date: item.start_date
-                } %}
+              {% if item_type == 'events' and item.start_date | default %}
+                {% include '@components/inline-text/date.twig' with item.start_date %}
               {% endif %}
             </div>
           </div>
         {% endif %}
         <div class="cell {% if item.image | default %}medium-7 large-8{% endif %}">
           <div class="media-object">
-            {% if item.image | default is empty and item_type == 'events' %}
+            {% if item.image | default is empty and item_type == 'events' and  item.start_date | default %}
               <div class="media-object-section">
-                {% include '@components/inline-text/date.twig' with {
-                  date: item.start_date
-                } %}
+                {% include '@components/inline-text/date.twig' with item.start_date %}
 
               </div>
             {% endif %}

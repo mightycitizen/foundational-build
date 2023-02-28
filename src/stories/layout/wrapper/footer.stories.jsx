@@ -4,40 +4,40 @@ import twig from './footer.twig';
 export default {
   title: 'Layout/Wrapper/Footer',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
-    heading: {
-      control: 'text'
-    },
-    subheading: {
-      control: 'text'
-    },
-    description: {
-      control: 'text'
-    },
-    intro_class: {
-      control: 'text'
-    },
-    class: {
-      control: 'text'
-    },
-    style: {
-      control: {
-        type: 'select',
-      },
-      options: [
-        'side',
-        ''
-      ]
-    },
-    // backgroundColor: { control: 'color' },
-    // label: { control: 'text' },
-    // onClick: { action: 'onClick' },
-    // primary: { control: 'boolean' },
-    // size: {
-    //   control: { type: 'select' },
-    //   options: ['small', 'medium', 'large'],
-    // },
-  },
+  // argTypes: {
+  //   heading: {
+  //     control: 'text'
+  //   },
+  //   subheading: {
+  //     control: 'text'
+  //   },
+  //   description: {
+  //     control: 'text'
+  //   },
+  //   intro_class: {
+  //     control: 'text'
+  //   },
+  //   class: {
+  //     control: 'text'
+  //   },
+  //   style: {
+  //     control: {
+  //       type: 'select',
+  //     },
+  //     options: [
+  //       'side',
+  //       ''
+  //     ]
+  //   },
+  //   // backgroundColor: { control: 'color' },
+  //   // label: { control: 'text' },
+  //   // onClick: { action: 'onClick' },
+  //   // primary: { control: 'boolean' },
+  //   // size: {
+  //   //   control: { type: 'select' },
+  //   //   options: ['small', 'medium', 'large'],
+  //   // },
+  // },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -48,10 +48,10 @@ const Template = ({ label, ...args }) => {
 };
 
 export const Default = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = {
-  heading: 'Heading',
-};
+// // More on args: https://storybook.js.org/docs/html/writing-stories/args
+// Default.args = {
+//   heading: 'Heading',
+// };
 //
 // export const Secondary = Template.bind({});
 // Secondary.args = {

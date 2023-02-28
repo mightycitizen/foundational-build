@@ -4,18 +4,18 @@ import twig from './home.twig';
 export default {
   title: 'Pages/Home',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
+  // argTypes: {
 
-    label: {
-      control: 'text'
-    },
-    link: {
-      control: 'text'
-    },
-    closable: {
-      control: 'boolean'
-    }
-  },
+  //   label: {
+  //     control: 'text'
+  //   },
+  //   link: {
+  //     control: 'text'
+  //   },
+  //   closable: {
+  //     control: 'boolean'
+  //   }
+  // },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args

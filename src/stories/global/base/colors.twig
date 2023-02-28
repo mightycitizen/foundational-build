@@ -58,7 +58,7 @@
 %}
 
 {% for title, section in sections %}
-  <h3>{{ title }}</h3>
+  <h3 class="m-t-3">{{ title }}</h3>
   {% for color in section %}
 
     {% if color.colors.default %}
@@ -70,6 +70,7 @@
 
         {% for key, value in color.colors.variants %}
           {% include './_swatch.twig' with {
+              hex: value,
               type: key
             }%}
         {% endfor %}
@@ -81,4 +82,5 @@
       }%}
     {% endif %}
   {% endfor %}
+
 {% endfor %}

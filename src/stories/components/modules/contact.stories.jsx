@@ -2,7 +2,7 @@ import twig from './contact.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Contact',
+  title: 'Components/Modules/Cards/Contact',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
 

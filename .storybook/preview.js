@@ -1,11 +1,18 @@
 import Twig from 'twig';
 import { addDecorator } from '@storybook/html';
 import { useEffect } from '@storybook/client-api';
+import twigDrupal from 'twig-drupal-filters';
+import twigAttributes from 'add-attributes-twig-extension';
+import twigMap from '../lib/map';
+
 import '../dist/css/app.css';
 import '../dist/js/app.js';
 import '../dist/css/storybook.css';
 
 function setupTwig(twig) {
+  twigMap(twig);
+  twigDrupal(twig);
+  twigAttributes(twig);
   //twig.cache();
   // set allowInclude option to true
 

@@ -2,11 +2,11 @@ import twig from './testimonial-carousel.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Testimonial Carousel',
+  title: 'Components/Modules/Cards/Testimonial/Carousel',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
+  // argTypes: {
 
-  },
+  // },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -18,19 +18,16 @@ const Template = ({ label, ...args }) => {
 
 
 const cards = [...Array(5)].map((_, i) => ( {
-  heading: {
-    text: 'Heading',
-    url: '#',
-    level: 3
-  },
   image: {
     src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
     alt: 'Alt Text'
   },
-  link: {
-    text: 'Link',
-    url: '#'
-  },
+  quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl. Nullam auctor, nisl eget ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl.',
+  attribution: {
+    label: 'John Doe',
+    info: 'CEO, Company'
+  }
+
 }));
 
 const defaultArgs = {

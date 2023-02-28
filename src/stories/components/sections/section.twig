@@ -55,7 +55,12 @@
         {% set content %}
           {{ content }}
         {% endset %}
-        {% include '@layout/structure/content-narrow.twig' %}
+        {% if section_style == 'narrower' %}
+            {% include '@layout/structure/content-narrower.twig' %}
+        {% else %}
+            {% include '@layout/structure/content-narrow.twig' %}
+        {% endif %}
+
       {% else %}
         {{ content }}
       {% endif %}

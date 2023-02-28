@@ -1,0 +1,29 @@
+{% if anchor_items %}
+  <div data-sticky-container id="anchormenu">
+    <div class="anchormenu bg-solid-secondary-darker text-white"  data-sticky data-sticky-on="small" data-options="marginTop:0;" style="width:100%" data-top-anchor="anchormenu:top" data-anchormenu>
+      <div class="grid-container">
+
+        <div class="hide-for-large anchormenu_mobile">
+          {# {% include 'components/containers/dropdown.twig' with {
+              id: 'anchor_mobile',
+              label_trigger: true,
+              placeholder: 'Select a section',
+              label_mobile: 'Jump to',
+              items: anchor_items | map(item => {
+                value: item.anchor,
+                title: item.text
+              }),
+          } %} #}
+        </div>
+
+        <ul class="menu horizontal text-center align-center show-for-large">
+          {% for item in anchor_items %}
+            <li>
+              <a href="{{ item.anchor }}">{{ item.text }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endif %}

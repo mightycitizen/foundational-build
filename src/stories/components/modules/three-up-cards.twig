@@ -6,9 +6,7 @@
 %}
 
   {% block section_content %}
-    {% include '@components/containers/three-up-cards.twig' with {
-      cards: cards | default
-    } only %}
+    {% include '@components/containers/three-up-cards.twig' %}
 
   {% endblock %}
 {% endembed %}

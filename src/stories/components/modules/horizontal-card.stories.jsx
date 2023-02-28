@@ -2,7 +2,7 @@ import twig from './horizontal-card.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Horizontal Card',
+  title: 'Components/Modules/Cards/Horizontal Card',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
 

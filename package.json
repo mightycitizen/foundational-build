@@ -30,6 +30,7 @@
     "@storybook/html": "^6.5.16",
     "@storybook/manager-webpack4": "^6.5.16",
     "@storybook/testing-library": "0.0.13",
+    "add-attributes-twig-extension": "^0.1.0",
     "babel-loader": "^8.0.4",
     "browser-sync": "^2.26.14",
     "del": "^4.1.1",
@@ -48,6 +49,7 @@
     "gulp-sourcemaps": "^2.6.5",
     "raw-loader": "^4.0.2",
     "storybook-addon-run-script": "^0.1.4",
+    "twig-drupal-filters": "^3.2.0",
     "twig-loader": "^0.5.5",
     "twigjs-loader": "^1.0.3",
     "webpack-stream": "^6.1.1"

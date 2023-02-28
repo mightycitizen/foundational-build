@@ -1,8 +1,8 @@
-import twig from './card-carousel.twig';
+import twig from './anchor.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Cards/Card Carousel',
+  title: 'Components/Navigation/Anchor',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
 
@@ -17,26 +17,23 @@ const Template = ({ label, ...args }) => {
 };
 
 
-const cards = [...Array(5)].map((_, i) => ( {
-  heading: {
-    text: 'Heading',
-    url: '#',
-    level: 3
-  },
-  image: {
-    src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
-    alt: 'Alt Text'
-  },
-  link: {
-    text: 'Link',
-    url: '#'
-  },
-}));
-
 const defaultArgs = {
-  section_heading: 'Heading',
-  section_description: 'Description',
-  cards: cards
+  // section_heading: 'Heading',
+  // section_description: 'Description',
+  id: 'anchor_mobile',
+  label_trigger: true,
+  placeholder: 'Select a section',
+  label_mobile: 'Jump to',
+  anchor_items: [
+    {
+      anchor: 'anchor-1',
+      text: 'Anchor 1'
+    },
+    {
+      anchor: 'anchor-2',
+      text: 'Anchor 2'
+    },
+  ]
 }
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

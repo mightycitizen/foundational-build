@@ -2,7 +2,7 @@ import twig from './testimonial.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Testimonial',
+  title: 'Components/Modules/Cards/Testimonial',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 
@@ -17,26 +17,20 @@ const Template = ({ label, ...args }) => {
 };
 
 
-const cards = [...Array(5)].map((_, i) => ( {
-  heading: {
-    text: 'Heading',
-    url: '#',
-    level: 3
-  },
-  image: {
-    src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
-    alt: 'Alt Text'
-  },
-  link: {
-    text: 'Link',
-    url: '#'
-  },
-}));
+
 
 const defaultArgs = {
   section_heading: 'Heading',
   section_description: 'Description',
-  cards: cards
+  image: {
+    src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
+    alt: 'Alt Text'
+  },
+  quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl. Nullam auctor, nisl eget ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl.',
+  attribution: {
+    label: 'John Doe',
+    info: 'CEO, Company'
+  }
 }
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

@@ -1,5 +1,5 @@
 <figure>
-  <div class="video_wrapper" data-video-trigger="{{ trigger }}" data-video-type="{{ video_type }}">
+  <div class="video_wrapper" data-video-trigger="{{ trigger | default('click') }}" data-video-type="{{ video_type }}">
     <div class="video_loader">
       {% include '@components/utils/loader.twig' %}
     </div>

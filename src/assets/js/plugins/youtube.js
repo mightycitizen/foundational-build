@@ -9,12 +9,12 @@ const initVideo = () => {
     playingClass = 'is-playing';
 
   // 2. This code loads the IFrame Player API code asynchronously.
-  if (document.querySelector('[data-type="youtube"]').length === 0) {
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    tag.setAttribute('data-type','youtube');
-    document.body.appendChild(tag);
-  }
+
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  tag.setAttribute('data-type','youtube');
+  document.body.appendChild(tag);
+
   // var firstScriptTag = document.getElementsByTagName('script')[0];
   // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 

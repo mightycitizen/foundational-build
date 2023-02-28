@@ -8,31 +8,31 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 
-    modifier: {
-      control: 'text'
-    },
-    cards: {
+    // modifier: {
+    //   control: 'text'
+    // },
+    // cards: {
 
-      image: {
-        src: {
-          control: 'text'
-        },
-        url: {
-          control: 'text'
-        }
-      },
-      quote: {
-        control: 'text'
-      },
-      attribution: {
-        label: {
-          control: 'text'
-        },
-        info: {
-          control: 'text'
-        }
-      }
-    }
+    //   image: {
+    //     src: {
+    //       control: 'text'
+    //     },
+    //     url: {
+    //       control: 'text'
+    //     }
+    //   },
+    //   quote: {
+    //     control: 'text'
+    //   },
+    //   attribution: {
+    //     label: {
+    //       control: 'text'
+    //     },
+    //     info: {
+    //       control: 'text'
+    //     }
+    //   }
+    // }
     // backgroundColor: { control: 'color' },
     // label: { control: 'text' },
     // onClick: { action: 'onClick' },

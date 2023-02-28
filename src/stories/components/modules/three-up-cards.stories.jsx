@@ -2,11 +2,11 @@ import twig from './three-up-cards.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Three Up Cards',
+  title: 'Components/Modules/Cards/Three Up Cards',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
+  // argTypes: {
 
-  },
+  // },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -17,7 +17,7 @@ const Template = ({ label, ...args }) => {
 };
 
 
-const cards = [...Array(5)].map((_, i) => ( {
+const cards = [...Array(3)].map((_, i) => ( {
   heading: {
     text: 'Heading',
     url: '#',
@@ -32,6 +32,7 @@ const cards = [...Array(5)].map((_, i) => ( {
     url: '#'
   },
 }));
+
 
 const defaultArgs = {
   section_heading: 'Heading',

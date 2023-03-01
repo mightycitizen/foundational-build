@@ -141,6 +141,24 @@ figure{
 
     }
   }
+  &.img--center{
+    margin: rem-calc(16) auto;
+    display: block;
+  }
+  &.img--left, .img--right{
+    max-width: 40%;
+    margin-bottom: rem-calc(16);
+  }
+  &.img--left{
+    float: left;
+    margin-right: rem-calc(16);
+
+
+  }
+  &.img--right{
+    float: right;
+    margin-left: rem-calc(16);
+  }
 }
 
 

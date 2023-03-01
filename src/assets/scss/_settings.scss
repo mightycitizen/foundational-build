@@ -60,8 +60,6 @@
 //  55. Top Bar
 //  56. Xy Grid
 
-
-
 @import 'util/util';
 
 // 1. Global
@@ -71,32 +69,17 @@
 
 $cms: 'Craft';
 
-@import 'tokens';
-
 $font-scale-mobile: 0.75;
 
-$spacer-mobile: 5px;
-$spacer: 8px;
-$spacers: (
-  half,
-  0,
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
-  7,
-  8,
-  9,
-  10
-);
+
 
 /* ---- */
 
 $global-font-size: 112.5%; // 18/16
 $global-width: rem-calc(1340);
 $global-lineheight: 1.4;
+
+
 
 $foundation-palette: (
   primary: map-get($primary,'default'),
@@ -107,6 +90,7 @@ $foundation-palette: (
   alert: $alert,
 );
 
+//$enable-important-utilities: true;
 
 $tertiary-color: map-get($foundation-palette,'tertiary');
 $light-gray: map-get($additional-palette,'gray-lighter');
@@ -144,11 +128,11 @@ $print-hrefs: true;
 
 $breakpoints: (
   small: 0,
-  medium: $mediumBreakpoint,
-  large: $largeBreakpoint,
-  xlarge: $xlargeBreakpoint,
-  xxlarge: $xxlargeBreakpoint,
-);
+  medium: 640,
+  large: 1024,
+  xlarge: 1200,
+  xxlarge: 1440,
+) !default;
 $breakpoints-hidpi: (
   hidpi-1: 1,
   hidpi-1-5: 1.5,
@@ -157,7 +141,7 @@ $breakpoints-hidpi: (
   hidpi-3: 3
 );
 $print-breakpoint: large;
-$breakpoint-classes: (small medium large);
+$breakpoint-classes: (small medium large xlarge);
 
 // 3. The Grid
 // -----------
@@ -182,6 +166,8 @@ $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
 $header-lineheight: 1.2;
 $header-margin-bottom: rem-calc(16);
+
+
 $header-styles: (
   small: (
     'h1': ('font-size': 32),
@@ -199,7 +185,8 @@ $header-styles: (
     'h5': ('font-size': 16),
     'h6': ('font-size': 16),
   ),
-);
+) !default;
+
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
@@ -277,7 +264,7 @@ $accordion-plus-content: '\002B';
 $accordion-minus-content: '\2013';
 $accordion-title-font-size: rem-calc(24);
 $accordion-item-color: $dark-gray;
-$accordion-item-background-hover: scale-color($accordion-background, $lightness: -20%);
+$accordion-item-background-hover: $accordion-background;
 //$accordion-item-padding: rem-calc(16 32 19);
 $accordion-content-background: $white;
 $accordion-content-border: 0 solid $light-gray;
@@ -918,7 +905,7 @@ $topbar-unstack-breakpoint: medium;
 // 56. Xy Grid
 // -----------
 
-$xy-grid: true;
+$xy-grid: false;
 $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (

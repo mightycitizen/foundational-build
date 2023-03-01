@@ -6,6 +6,7 @@
   "tippy": false,
   "youtube": true,
   "vimeo": true,
+  "scroll-show": true,
   "slider": false,
   "datepicker": true
 }

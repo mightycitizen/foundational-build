@@ -1,21 +1,34 @@
 @charset 'utf-8';
+@use "sass:map";
 // this file is created by the json to sass gulp task,
-// see .json files in src/stories/global/base/*.json
-@import
-  "helpers/mixins",
-  'helpers/functions';
-
+// see .json files in src/_patterns/global/base/*.json
+// :root{
+//   --grid-margin-gutters: 1rem;
+// }
 @import
   'variables/breakpoints',
+  'variables/headings',
+  'variables/styles',
   'variables/fonts',
   'variables/colors';
 
-@import 'helpers/colors';
+
+
+@import
+  'helpers/mixins',
+  'helpers/functions';
+
+@import "helpers/preprocess";
 
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
 
+@import "helpers/utilities";
+
+
+//@debug $utilities-text-colors;
+//@debug $additional-palette;
 $unicode-quote-left: '\201c';
 
 // Global styles
@@ -68,7 +81,7 @@ $unicode-quote-left: '\201c';
 @include foundation-top-bar;
 
 // Helpers
-@include foundation-float-classes;
+//@include foundation-float-classes;
 @include foundation-flex-classes;
 @include foundation-visibility-classes;
 // @include foundation-prototype-classes;
@@ -88,7 +101,9 @@ $unicode-quote-left: '\201c';
   "components/accordion",
   "components/alert",
   "components/add2any",
+  "components/backToTop",
   "components/breadcrumb",
+  "components/dropdown",
   "components/card",
   "components/cta",
   "components/hero",
@@ -102,6 +117,7 @@ $unicode-quote-left: '\201c';
   "components/lity",
   "components/table-scroll",
   "components/tooltip",
+  "components/countdown",
   "components/top-bar",
   "components/selectize",
   //@extend"components/search",
@@ -113,6 +129,7 @@ $unicode-quote-left: '\201c';
   "components/section",
   "components/callout",
   "components/step-list";
+// COMPONENTS END
 
 @import
   "layout/grid",
@@ -121,10 +138,11 @@ $unicode-quote-left: '\201c';
 
 
 @import
-  "helpers/spacing",
   "helpers/lists",
   "helpers/misc",
+  "helpers/gradients",
   "helpers/text",
+  "helpers/scrollShow",
   //"helpers/display",
   "helpers/fonts";
 

@@ -5,7 +5,7 @@
 	$arrow-margin-xxlarge: 25px;
 	$peekaboo-space: 30px;
 	$slide-margin-mobile: 10px;
-	$slide-margin: map-get($grid-container-padding,'medium');
+	$slide-margin: map-get($grid-margin-gutters,'medium');
 
 	$slide-margin-offset: 15; // to prevent shadow overflow issues
 
@@ -18,6 +18,115 @@
 
 		}
 	}
+	.slick_controls{
+		display:flex;
+		position: relative;
+		.slick-arrow{
+			margin: 0;
+			width: auto;
+			height: auto;
+			background-color: map-get($additional-palette,'secondary-darker');
+			color: $black;
+			border-radius: 0;
+			padding: rem-calc(2 8);
+			position: relative;
+
+			transition: 0.3s width, 0.3s padding, 0.1s opacity 0.2s;
+			&:not(foo):after{
+				content: "";
+				display: block;
+				@include stretch();
+				background: linear-gradient(to right, rgba($white,0) 0%, rgba($white,1) 100%);
+			}
+			&.slick-next{
+				&:after{
+					left: auto;
+					right: 100%;
+				}
+			}
+			&.slick-prev{
+				&:after{
+					left: 100%;
+					transform: scaleX(-1);
+				}
+			}
+			// &.slick-disabled{
+			// 	display: none;
+
+			// }
+
+		}
+		&.is-start .slick-prev, &.is-end .slick-next{
+				opacity: 0;
+				pointer-events: none;
+				width: 0;
+				padding: 0;
+		}
+		// {
+		// 	.slick-next{
+		// 		opacity: 0;
+
+		// 	}
+		// }
+		.slick-slider.is-paused ~ &{
+			.slick-toggle{
+				.inactive{
+					display: block;
+				}
+				.active{
+					display: none;
+				}
+			}
+
+		}
+	}
+	.slick_tabs{
+		list-style-type: none;
+		margin: 0;
+		display: inline-flex;
+		box-shadow: $global-box-shadow;
+		overflow-y: hidden;
+		overflow-x: scroll;
+		max-width: 100%;
+		-webkit-overflow-scrolling: touch;
+		&::-webkit-scrollbar{
+			display: none;
+		}
+		li{
+			//display: inline-flex;
+			margin: 0;
+			button{
+				cursor: pointer;
+				white-space: nowrap;
+				padding: rem-calc(20 15);
+				font-weight: $global-weight-bold;
+				background-color: $white;
+			}
+			&.is-active{
+				button{
+					position: relative;
+					z-index: 2;
+					background-color: $secondary-color;
+				}
+			}
+			&:not(:last-child){
+				border-right: 1px solid $medium-gray;
+			}
+		}
+	}
+	.slick_progress{
+		z-index: 2;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: rem-calc(6);
+		background-color: rgba($secondary-color,0.4);
+		&_line{
+			height: 100%;
+			background-color: $secondary-color;
+		}
+	}
 
 	.slick-track{
 		margin-left: auto;
@@ -26,9 +135,12 @@
 
 	.slick-slide{
 		margin: rem-calc($slide-margin-offset) rem-calc($slide-margin-mobile);
-		@include breakpoint(large){
-			margin: rem-calc($slide-margin-offset) rem-calc(0.5*$slide-margin);
+		@each $breakpoint, $value in $grid-margin-gutters{
+			@include breakpoint($breakpoint){
+				margin: rem-calc($slide-margin-offset) rem-calc( #{0.5 *map-get($grid-margin-gutters,$breakpoint)});
+			}
 		}
+
 		.card{
 			margin-bottom: 0;
 		}
@@ -280,7 +392,7 @@
 	}
 
 	.js-slick--center{
-		$transition-duration: 0.75s;
+		$transition-duration: 0.8s;
 		$slide-margin: 80;
 		$slide-transform: 80;
 		$slide-width: 450;
@@ -293,7 +405,13 @@
 		.slick-slide{
 			margin: rem-calc($slide-margin-offset) rem-calc($slide-margin-mobile);
 		}
-		@include breakpoint(medium){
+		@include breakpoint(medium down){
+
+			margin: auto;
+			max-width: rem-calc(600px);
+
+		}
+		@include breakpoint(large){
 			.slick-list{
 				overflow: visible;
 				//display: flex;
@@ -303,14 +421,32 @@
 				//max-width: 100vw;
 				width: rem-calc($slide-width);
 				transform: translateY(#{rem-calc($slide-transform)});
-				transition: $transition-duration transform, $transition-duration width, $transition-duration margin;
-				will-change: margin, transform, width;
+				transition: $transition-duration transform, $transition-duration margin, $transition-duration width;
+				will-change: margin, width;
 				.card-section{
-					will-change: padding;
-					transition: $transition-duration padding;
+					will-change: opacity, padding;
+					transition: 0.5s opacity, $transition-duration padding;
 				}
 
-				&:not(.slick-current){
+				&:before, &:after, p, .h4{ // selectors to hide
+
+					will-change: opacity, max-height;
+					transition: 0.2s max-height 0.5s, 0.5s opacity 0.5s;
+				}
+
+				.card-title{
+					//@at-root: rem-calc(-16);
+					transition: 0.2s font-size 0.3s, 0.2s margin 0.3s;
+				}
+
+				.card-image{
+					transition: $transition-duration margin, $transition-duration max-height;
+					img{
+						object-fit: cover;
+						height: 100%;
+					}
+				}
+				&:not(.slick-primary):not(.slick-clone-current){
 					margin-bottom: rem-calc($curr-width/$image-ratio - $slide-width/$image-ratio + $slide-margin-offset);
 					.card-section{
 						@include spacer(padding,y,3);
@@ -319,47 +455,65 @@
 					.card-image{
 						transition: $transition-duration margin;
 					}
-					.h4{
-						display: block; // selectors to hide
-						will-change: opacity, max-height;
-						transition: $transition-duration max-height, $transition-duration opacity;
-						opacity: 0;
-						max-height: 0;
-						overflow: hidden;
-					}
+
 					&:after{
 						transition: $transition-duration bottom;
 					}
 				}
 
-
-				&.slick-current{
+				&:not(.slick-animating){
+					.card-section{
+						transition: 0.5s opacity 0.5s;
+					}
+				}
+				&.slick-animating{
+					.card-section{
+						opacity: 0;
+						//transition: 0.25s opacity;
+					}
+				}
+				&.slick-primary, &.slick-clone-current{
 					z-index: 2;
 					position: relative;
 					width: rem-calc($curr-width);
 					margin: rem-calc($slide-margin-offset) #{$slide-margin*2 - ($slide-current-diff/2 + $slide-margin)}px;
 					transform: translateY(#{rem-calc(0)});
 
-					.card--special{
-						box-shadow: $global-box-shadow;
-						.card-section{
-							@include spacer(padding,all,5);
-						}
-						.card-image{
-							margin-bottom: rem-calc($curr-section-offset);
-						}
-						&:after{
-							height: 70%;
-							bottom: rem-calc(80);
-						}
-					}
+					// .card--special{
+					// 	box-shadow: $global-box-shadow;
+					// 	.card-section{
+					// 		@include spacer(padding,all,5);
+					// 	}
+					// 	.card-image{
+					// 		margin-bottom: rem-calc($curr-section-offset);
+					// 	}
+					// 	&:after{
+					// 		height: 70%;
+					// 		bottom: rem-calc(80);
+					// 	}
+					// }
 					// .card-section{
 					// 	background-color: $secondary-color;
 					// 	color: $white;
 					// }
-					.card-image, .button{  // selectors to hide
+					.card-image, .button{
 						max-height: rem-calc(1000);
-						opacity: 1;
+						//opacity: 1;
+					}
+					&.slick-animate{
+						&:before, &:after, p, .h4{  // selectors to hide
+							opacity: 1;
+						}
+
+						p{
+							max-height: rem-calc(1000);
+							transition: $transition-duration opacity 0.5s, 0.2s max-height 0.5s;
+						}
+						.card-section{
+							opacity: 1;
+							@include spacer(padding,all,5);
+							//transition: 0.5 opacity 0.5s,  0.2s padding 0.5s;
+						}
 					}
 				}
 

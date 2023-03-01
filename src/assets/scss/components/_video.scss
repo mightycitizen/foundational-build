@@ -6,7 +6,7 @@
     &_wrapper{
       .video{
         &_loader{
-          z-index: 3;
+
           color: $white;
           display: flex;
           pointer-events: none;
@@ -17,9 +17,7 @@
           left: 0;
           height: 100%;
           width: 100%;
-          .loader > div{
-            border-top-color: $white;
-          }
+          z-index: 2;
         }
         &_player{
           opacity: 0;
@@ -31,9 +29,6 @@
             position: relative;
 //            aspect-ratio: 9/5;
             background-color: $dark-gray;
-            &:before{
-              opacity: 0;
-            }
           }
           display: block;
           width: 100%;
@@ -41,9 +36,14 @@
 
       }
 
-      &.is-initialized{
+      &:not(.is-loading){
         .video_loader{
           opacity: 0;
+        }
+        .video_image_wrapper{
+          &:before{
+            opacity: 1 !important;
+          }
         }
         .video_container{
           &:before{
@@ -51,11 +51,6 @@
           }
           &:after{
             transform: translateY(100%);
-          }
-        }
-        .video_image_wrapper{
-          &:before{
-            opacity: 1;
           }
         }
       }
@@ -123,17 +118,18 @@
       }
 
       &[data-video-trigger="click"]{
-        &.is-initialized{
+        &:not(.is-loading){
           cursor: pointer;
-        }
-        &:hover{
-          .video_image_wrapper{
-            background-color: $primary-color;
-            img{
-              opacity: 0.9;
+          &:hover{
+            .video_image_wrapper{
+              background-color: $primary-color;
+              img{
+                opacity: 0.9;
+              }
             }
           }
         }
+
       }
 
       &[data-video-trigger="scroll"], &[data-video-trigger="click"]{
@@ -154,6 +150,7 @@
                 @include center;
               }
               &:before{
+                opacity: 0;
                 @include triangle(40px 28px, $white, right);
                 z-index: 1;
                 margin-left: rem-calc(-5);
@@ -184,13 +181,9 @@
 
 
             .video_player{
-              &_wrapper{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-              }
+              // &_wrapper{
+              //  display: contents;
+              // }
               width: 100%;
               //margin-top: -100px;
               position: absolute;

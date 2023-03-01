@@ -1,21 +1,10 @@
-.text{
-  &-smaller{
-    font-size: rem-calc(14);
-  }
-  &-small{
-    font-size: rem-calc(16);
-  }
-  &-white{
-    color: $white;
-    a{
-      &:not(.button){
-        color: inherit;
-      }
-
+[class*=text-]{
+  a:not(.button){
+    &:not(.card-body *){
+      color: inherit;
     }
   }
 }
-
 
 .unstyled-blockquote{
   border: 0;

@@ -33,9 +33,11 @@ const initLityAccessibility = () => {
   });
 }
 
-const initLity = () => {
-  lityCheck();
-  initLityAccessibility();
+export const initLity = () => {
+  lityCheck(); // @lity breakpoint trigger
+  initLityAccessibility(); // @lity init accessibility call
 }
 
-export default initLity;
+// $(document).ready(function(){
+
+// });

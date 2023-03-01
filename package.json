@@ -11,7 +11,7 @@
     "lint": "gulp lint",
     "clean": "gulp clean",
     "gulp": "gulp",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6011",
     "build-storybook": "build-storybook"
   },
   "browserslist": [

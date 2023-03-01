@@ -14,6 +14,9 @@ $error-message-class: '.fui-error-message';
 
   /* FORMIE STYLING */
 
+  .fui-row{
+    display: flex;
+  }
   .fui-required{
     color: $alert-color;
   }
@@ -364,6 +367,7 @@ button{
     background-color: $light-gray;
     color: $medium-gray;
     opacity: 1;
+    cursor: not-allowed;
   }
 }
 

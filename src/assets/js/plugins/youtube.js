@@ -3,20 +3,15 @@ import '../utils/in-viewport.js';
 
 
 // @video init
-const initVideo = () => {
+export const initYoutube = () => {
   const
-    initializedClass = 'is-initialized',
+    loadingClass = 'is-loading',
     playingClass = 'is-playing';
-
-  // 2. This code loads the IFrame Player API code asynchronously.
 
   var tag = document.createElement('script');
   tag.src = "https://www.youtube.com/iframe_api";
   tag.setAttribute('data-type','youtube');
   document.body.appendChild(tag);
-
-  // var firstScriptTag = document.getElementsByTagName('script')[0];
-  // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
   // 3. This function creates an <iframe> (and YouTube player)
   //    after the API code downloads.
@@ -34,7 +29,7 @@ const initVideo = () => {
           vid.attr('tabindex', -1);
           const youtubeId = vid.data('video-id');
           player = new YT.Player(vid[0], {
-              playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 1 , 'showInfo': 0, 'mute': trigger !== 'click','rel': 0},
+              playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 1 , 'showInfo': 0, 'mute': 1,'rel': 0},
               videoId: youtubeId,
               events: {
                   'onReady': onPlayerReady,
@@ -46,6 +41,7 @@ const initVideo = () => {
             player.playVideo();
             setVideoSize();
             holder.bind('play', function(){
+              holder.addClass(loadingClass);
               if (!playing) {
                   player.playVideo();
               }
@@ -56,7 +52,7 @@ const initVideo = () => {
                 player.pauseVideo();
               }
             })
-
+            holder.removeClass(loadingClass);
           }
 
           function onPlayerStateChange(event) {
@@ -66,13 +62,12 @@ const initVideo = () => {
                   player.pauseVideo();
                 }, 50);
               }
-              holder.addClass(initializedClass);
+
             }
             //console.log('now', event.target.getPlayerState());
             switch (event.target.getPlayerState()){
               case 2:
                 setTimeout(() => {
-                  //console.log('later', event.target.getPlayerState());
                   switch (event.target.getPlayerState()){
                     case 2:
                       playing = false;
@@ -80,15 +75,17 @@ const initVideo = () => {
                       break;
                     case 1:
                       playing = true;
-                      holder.addClass(playingClass);
+                      if (!firstPlay) holder.addClass(playingClass);
+                      holder.removeClass(loadingClass);
                       break;
                   }
                 }, 500);
                 break;
               case 1:
-
+                if (!firstPlay) player.unMute();
                 playing = true;
-                holder.addClass(playingClass);
+                holder.removeClass(loadingClass);
+                if (!firstPlay) holder.addClass(playingClass);
                 break;
             }
             //console.log(event.target.getPlayerState());
@@ -124,14 +121,14 @@ const initVideo = () => {
             }
           }
 
-          player.clickHandler = (e) => {
-              e.preventDefault();
-              if (!playing) {
-                  player.playVideo();
-              } else {
-                  player.pauseVideo();
-              }
-          }
+          // player.clickHandler = (e) => {
+          //     e.preventDefault();
+          //     if (!playing) {
+          //         player.playVideo();
+          //     } else {
+          //         player.pauseVideo();
+          //     }
+          // }
         $(window).on('resize', Foundation.util.throttle(
           function(){
             setVideoSize();
@@ -160,6 +157,26 @@ const initVideo = () => {
 
       });
     }, 50));
+
+    $(window).on('scroll', Foundation.util.throttle(
+      function(){
+        checkVideo();
+      }, 50));
+
+    $(window).on('load', function(){
+      checkVideo();
+
+    });
 }
 
-export default initVideo;
+
+
+const checkVideo = () => {
+  if ($('body').hasClass('youtube-loaded')) return false;
+  const $video = $('[data-video-trigger]');
+  if ($video.isInViewport()){
+    initYoutube();
+    $('body').addClass('youtube-loaded');
+  }
+
+}

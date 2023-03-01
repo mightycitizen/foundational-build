@@ -112,7 +112,7 @@ selectize.define('accessibility', function(options) {
 
 
 // @selectize init
-const initSelectize = () => {
+export const initSelectize = () => {
   $('select.js-selectize:not(.selectized)').selectize({
     plugins: {'accessibility': {}},
     render: {
@@ -123,4 +123,6 @@ const initSelectize = () => {
   });
 }
 
-export default initSelectize;
+// $(document).ready(function(){
+//   initSelectize(); // @selectize init call
+// })

@@ -1,7 +1,7 @@
 import tippy from 'tippy.js'; // @tippy tooltip
 import $ from 'jquery';
 
-const initTippy = () => {
+export const initTippy = () => {
   var tippies = document.querySelectorAll("[data-tippy-content]");
   tippy(tippies, {
     hideOnClick: false,
@@ -63,4 +63,5 @@ const initTippy = () => {
   });
 }
 
-export default initTippy;
+
+

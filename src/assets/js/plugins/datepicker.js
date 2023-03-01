@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import Litepicker from 'litepicker'; // @litepicker date picker
 // @litepicker init
-const initDatepicker = () => {
+export const initDatepicker = () => {
   $('.js-date').each(function(){
     new Litepicker({
       element: $(this)[0]
@@ -9,4 +9,6 @@ const initDatepicker = () => {
   })
 }
 
-export default initDatepicker;
+// $(document).ready(function(){
+//   initDatepicker();
+// });

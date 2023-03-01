@@ -86,7 +86,45 @@ class Ajax {
   }
   init(){
     this.bindEvents();
+    this.grabParams();
     this.loadData();
+  }
+  grabParams(){
+    let params = new URLSearchParams(window.location.search)
+    let form = {};
+
+    for (const param of params) {
+      const name = param[0];
+      const value = param[1];
+      const fields = document.querySelectorAll('[name="' + name + '"]');
+      if (fields.length){
+        switch (fields[0].type){
+          case 'radio':
+            const field = Array.from(fields).filter(field => field.matches('[value="' + value + '"]'))
+            if (field.length) field[0].checked = true;
+            break;
+          default:
+            if (fields.length) {
+              fields[0].value = value;
+              fields[0].dispatchEvent(new Event('change'));
+            }
+            break;
+        }
+      }
+      form[name] = value
+    }
+    return form;
+  }
+  updateUrlParams(){
+    //console.log(this.$form.serializeArray());
+    const form = this.$form.serializeArray().filter(item => item.value !== '');
+    // converrt serialize array to url params
+    const params = form.map(item => item.name + '=' + item.value).join('&');
+    let url = window.location.pathname;
+    if (form){
+      url += '?' + params;
+    }
+    history.pushState(null, null, url);
   }
   updatePagination(){
     const self = this;
@@ -231,8 +269,8 @@ class Ajax {
     if (self.options.filterRefresh){
       ajaxOptions.data = self.$filters.serialize();
     }
-
-    $.ajax( ajaxOptions).done(function( response ) {
+    if (this.xhr) this.xhr.abort();
+    this.xhr = $.ajax( ajaxOptions).done(function( response ) {
       if (self.options.numPerPage && response.meta) self.meta = response.meta;
       response = response.data || response;
       self.total = response.length;
@@ -301,6 +339,7 @@ class Ajax {
     });
     self.$filters.on('submit', function(e){
       e.preventDefault();
+      self.updateUrlParams();
       self.filterResults();
     })
     self.$filters.find('[data-filter], [data-filter-checkbox] input[type="checkbox"]').on('change', function(e){
@@ -313,7 +352,7 @@ class Ajax {
 
 
 // @ajax init
-const initAjax = () => {
+export const initAjax = () => {
   const $events = $('[data-ajaxify]');
   if ($events.length) {
     const events = new Ajax('/js/data/events.json', $('[data-ajaxify]'), 'events', false, 1);
@@ -321,4 +360,6 @@ const initAjax = () => {
   }
 }
 
-export default initAjax;
+// $(document).ready(function(){
+//   initAjax(); // @ajax init
+// });

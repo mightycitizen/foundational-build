@@ -1,17 +1,20 @@
-import twig from './back-to-top.twig';
+import twig from './countdown.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Utils/Back to Top',
+  title: 'Components/Informational/Countdown',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
+
   //   label: {
   //     control: 'text'
   //   },
-  //   class: {
+  //   link: {
   //     control: 'text'
   //   },
-
+  //   closable: {
+  //     control: 'boolean'
+  //   }
   // },
 };
 
@@ -22,28 +25,17 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  scroll_show: false
+const defaultArgs = {
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+  label: "Alert"
 }
+export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-// Default.args = {
-//   label: 'Heading',
-// };
-//
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   label: 'Button',
-// };
-//
-// export const Large = Template.bind({});
-// Large.args = {
-//   size: 'large',
-//   label: 'Button',
-// };
-//
-// export const Small = Template.bind({});
-// Small.args = {
-//   size: 'small',
-//   label: 'Button',
-// };
+Default.args = defaultArgs;
+
+
+export const Link = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Link.args = Object.assign({...defaultArgs}, {
+  link: '#'
+});

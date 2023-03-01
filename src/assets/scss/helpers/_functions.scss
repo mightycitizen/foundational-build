@@ -4,6 +4,43 @@
 @function is-number($value) {
   @return type-of($value) == 'number';
 }
-@function is-map($var){
-  @return type-of($var) == 'map';
+// Internal Bootstrap function to turn maps into its negative variant.
+// It prefixes the keys with `n` and makes the value negative.
+@function negativify-map($map) {
+  $result: ();
+  @each $key, $value in $map {
+    @if $key != 0 {
+      $result: map-merge($result, ("n" + $key: (-$value)));
+    }
+  }
+  @return $result;
+}
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
+
+// Minimum breakpoint width. Null for the smallest (first) breakpoint.
+//
+//    >> breakpoint-min(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px))
+//    576px
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+/// Replace `$search` with `$replace` in `$string`
+/// @author Kitty Giraudel
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
 }

@@ -7,15 +7,18 @@ import './lib/foundation-explicit-pieces'; // @foundation pick and choose Founda
 import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
 import loaderTemplate from '../../stories/components/utils/loader.twig'; // used with @forms
 
-import initSlider from './plugins/slider';
-import initTippy from './plugins/tippy';
-import initAjax from './plugins/ajaxify';
-import initSelectize from './plugins/selectize';
-import initLity from './plugins/lity';
-import initDatepicker from './plugins/datepicker';
-import initVimeo from './plugins/vimeo';
-import initYoutube from './plugins/youtube';
-import initSlick from './plugins/slick';
+import { initSlider } from './plugins/slider';
+import { initTippy } from './plugins/tippy';
+import { initAjax } from './plugins/ajaxify';
+import { initSelectize } from './plugins/selectize';
+import { initLity } from './plugins/lity';
+import { initDatepicker } from './plugins/datepicker';
+import { initVimeo } from './plugins/vimeo';
+import { initYoutube } from './plugins/youtube';
+import { initSlick } from './plugins/slick';
+import { initScrollShow } from './plugins/scroll-show';
+import { initCountdown } from './plugins/countdown';
+import { initAnchor } from './plugins/sticky-anchor';
 
 window.$ = $;
 //import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../stories/global/base/breakpoints.json'; // Foundation breakpoints
@@ -236,7 +239,7 @@ $(document).bind('_page_ready', function(){
 
   initFoundationHelpers(); // @foundation helpers init
 
-  //console.log(initSlider);
+  console.log(typeof initSelectize);
   if (typeof initSlick === 'function') initSlick(); // @slick init call
   if (typeof initDatepicker === 'function') initDatepicker(); // @datepicker init call
   if (typeof initSlider === 'function') initSlider(); // @slider init call
@@ -244,8 +247,12 @@ $(document).bind('_page_ready', function(){
   if (typeof initAjax === 'function') initAjax(); // @ajax init call
   if (typeof initVimeo === 'function') initVimeo(); // @vimeo init call
   if (typeof initYoutube === 'function') initYoutube(); // @youtube init call
+  if (typeof initLity === 'function') initLity(); // @lity init call
   if (typeof initSlider === 'function') initSlider(); // @slider init call
   if (typeof initSelectize === 'function') initSelectize(); // @slider init call
+  if (typeof initScrollShow === 'function') initScrollShow(); // @scrollshow init call
+  if (typeof initCountdown === 'function') initCountdown(); // @scrollshow init call
+  if (typeof initAnchor === 'function') initAnchor(); // @scrollshow init call
 });
 
 $(document).ready(function(){

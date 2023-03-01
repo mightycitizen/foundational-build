@@ -19,6 +19,7 @@
   &_background{
     @include stretch;
     opacity: 0.6;
+    object-fit: cover;
     background-size: cover;
     background-position: center;
   }
@@ -67,7 +68,7 @@
       }
     }
   }
-  &:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]){
+  &:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient--right]){
     .section:not([class*=bg-]) + &, .section.bg-gradient--flip + &{
       padding-top: 0;
     }

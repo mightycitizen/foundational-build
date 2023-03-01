@@ -1,7 +1,7 @@
 import noUiSlider from 'nouislider';
 import $ from 'jquery';
 // @slider init
-function initSlider(){
+export const initSlider = () => {
   $('.js-slider').each(function(){
     const slider = $(this)[0];
     const $slider = $(this);
@@ -31,4 +31,6 @@ function initSlider(){
 
 }
 
-export default initSlider;
+// $(document).ready(function(){
+//   initSlider(); // @slider init
+// });

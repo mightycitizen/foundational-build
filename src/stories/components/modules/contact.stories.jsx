@@ -1,4 +1,5 @@
 import twig from './contact.twig';
+import contact from '../../global/placeholders/contact.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -34,30 +35,7 @@ const Template = ({ label, ...args }) => {
 // }));
 
 const defaultArgs = {
-  heading: 'Heading',
-  subheading: 'Subheading',
-  description: 'Description',
-  link: {
-    text: 'Link',
-    url: '#',
-    target: '_blank'
-  },
-  items: [
-    {
-      label: 'Phone',
-      value: '123-456-7890'
-    },
-    {
-      label: 'Email',
-      url: 'mailto:example@domain.com',
-      value: 'example@domain.com',
-    },
-    {
-      label: 'Address',
-      value: '123 Main Street, Anytown, USA'
-    },
-
-  ]
+  ...contact
 }
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

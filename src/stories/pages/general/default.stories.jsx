@@ -1,5 +1,6 @@
 import twig from './default.twig';
-import hero from '../../components/containers/hero.json';
+import hero from '../../global/placeholders/hero.json';
+import contact from '../../global/placeholders/contact.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/General/Default',
@@ -47,7 +48,16 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
+const Default = Template.bind({});
 Default.args = {
   hero: hero,
+  contact: contact,
 }
+
+const Cookies = Template.bind({});
+Cookies.args = {
+  ...defaultArgs,
+  cookie: 'Cookie Lorem ipsum'
+}
+
+export { Default, Cookies }

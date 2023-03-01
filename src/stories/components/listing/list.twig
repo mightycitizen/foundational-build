@@ -16,9 +16,7 @@
 
             {% if item.start_date | default is not empty %}
               <div class="media-object-section">
-                {% include '@components/inline-text/date.twig' with {
-                  date: item.start_date
-                } %}
+                {% include '@components/inline-text/date.twig' with item.start_date %}
 
               </div>
             {% endif %}

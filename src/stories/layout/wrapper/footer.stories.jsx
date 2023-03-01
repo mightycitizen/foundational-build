@@ -1,5 +1,6 @@
 import twig from './footer.twig';
-
+import menu from '../../global/placeholders/menu.json';
+import social from '../../global/placeholders/social-media.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Layout/Wrapper/Footer',
@@ -48,24 +49,7 @@ const Template = ({ label, ...args }) => {
 };
 
 export const Default = Template.bind({});
-// // More on args: https://storybook.js.org/docs/html/writing-stories/args
-// Default.args = {
-//   heading: 'Heading',
-// };
-//
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   label: 'Button',
-// };
-//
-// export const Large = Template.bind({});
-// Large.args = {
-//   size: 'large',
-//   label: 'Button',
-// };
-//
-// export const Small = Template.bind({});
-// Small.args = {
-//   size: 'small',
-//   label: 'Button',
-// };
+Default.args = {
+  menu: menu,
+  social: social,
+}

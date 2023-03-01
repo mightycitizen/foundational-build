@@ -1,41 +1,41 @@
 import twig from './card-horizontal.twig';
-
+import card from '../../global/placeholders/card.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Teasers/Horizontal Card',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 
-    image: {
-      src: {
-        control: 'text'
-      },
-      url: {
-        control: 'text'
-      }
-    },
-    summary: {
-      control: 'text'
-    },
-    heading: {
-      level: {
-        control: 'number'
-      },
-      text: {
-        control: 'text'
-      },
-      url: {
-        control: 'text'
-      }
-    },
-    link: {
-      text: {
-        control: 'text'
-      },
-      url: {
-        control: 'text'
-      }
-    }
+    // image: {
+    //   src: {
+    //     control: 'text'
+    //   },
+    //   url: {
+    //     control: 'text'
+    //   }
+    // },
+    // summary: {
+    //   control: 'text'
+    // },
+    // heading: {
+    //   level: {
+    //     control: 'number'
+    //   },
+    //   text: {
+    //     control: 'text'
+    //   },
+    //   url: {
+    //     control: 'text'
+    //   }
+    // },
+    // link: {
+    //   text: {
+    //     control: 'text'
+    //   },
+    //   url: {
+    //     control: 'text'
+    //   }
+    // }
 
     // backgroundColor: { control: 'color' },
     // label: { control: 'text' },
@@ -56,22 +56,7 @@ const Template = ({ label, ...args }) => {
 };
 
 const defaultArgs = {
-
-
-  heading: {
-    level: 3,
-    text: 'Heading',
-    url: '#'
-  },
-  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-  image: {
-    src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
-    alt: 'Alt Text'
-  },
-  link: {
-    text: 'Link',
-    url: '#'
-  }
+  ...card
 }
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

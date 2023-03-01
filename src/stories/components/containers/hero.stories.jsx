@@ -1,5 +1,5 @@
 import twig from './hero.twig';
-import hero from './hero.json';
+import hero from '../../global/placeholders/hero.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Containers/Hero',

@@ -1,5 +1,5 @@
 import twig from './sidebar.twig';
-
+import hero from '../../global/placeholders/hero.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/General/Sidebar',
@@ -48,3 +48,6 @@ const Template = ({ label, ...args }) => {
 };
 
 export const Default = Template.bind({});
+Default.args = {
+  hero: hero,
+}

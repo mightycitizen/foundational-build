@@ -14,7 +14,7 @@
       }
     }
   %}
-  {% include '@components/modules/contact.twig' with link
+  {% include '@components/modules/contact.twig' with contact
   %}
 
   {% include '@components/modules/accordion.twig' with { accordion_id: 'accordion', items: items} only %}
@@ -355,7 +355,7 @@
     section_class: "bg-light-primary"
    } %}
   {% include '@components/modules/statistics.twig' with {
-    style: "side",
+    section_style: "side",
     section_button: read_more
   } %}
   {% include '@components/modules/links.twig' with {

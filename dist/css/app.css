@@ -7906,7 +7906,7 @@ a.thumbnail image {
 }
 
 .breadcrumbs {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Georgia", "Times New Roman", serif;
   font-weight: 600;
 }
 .breadcrumbs li:not(:last-child):after {
@@ -8208,7 +8208,7 @@ span.button a {
 
 .read-more {
   position: relative;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Georgia", "Times New Roman", serif;
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
@@ -8807,7 +8807,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 /* purgecss start ignore */
 /* purgecss start ignore */
 .top-bar {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Georgia", "Times New Roman", serif;
   font-weight: 600;
 }
 .top-bar_close {
@@ -9435,7 +9435,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 }
 
 .large-value {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Georgia", "Times New Roman", serif;
   line-height: 1.2;
   font-weight: bold;
   font-size: 3.5555555556rem;
@@ -11554,7 +11554,7 @@ html, body, .l-wrapper {
 }
 
 .font-secondary {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Georgia", "Times New Roman", serif;
 }
 
 .font-bold {

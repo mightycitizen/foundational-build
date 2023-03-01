@@ -1,8 +1,8 @@
-import twig from './add2any.twig';
+import twig from './back-to-top.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Utils/Add2Any',
+  title: 'Components/Utils/Back to Top',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   label: {

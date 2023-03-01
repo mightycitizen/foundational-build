@@ -1,39 +1,10 @@
 import twig from './hero.twig';
-
+import hero from './hero.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Containers/Hero',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
-
-    heading: {
-      control: 'text'
-    },
-
-    summary: {
-      control: 'text'
-    },
-    subheading: {
-      control: 'text'
-    },
-    button: {
-      url: {
-        control: 'text'
-      },
-      text: {
-        control: 'text'
-      }
-    },
-    categories: [
-      {
-        text: {
-          control: 'text'
-        },
-        url: {
-          control: 'text'
-        }
-      }
-    ]
+  //argTypes:
     // backgroundColor: { control: 'color' },
     // label: { control: 'text' },
     // onClick: { action: 'onClick' },
@@ -42,7 +13,7 @@ export default {
     //   control: { type: 'select' },
     //   options: ['small', 'medium', 'large'],
     // },
-  },
+  // },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -52,11 +23,7 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-const defaultArgs = {
-  heading: 'Hero',
-  summary: 'Summary',
-  subheading: 'Subheading'
-}
+const defaultArgs = {...hero}
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;

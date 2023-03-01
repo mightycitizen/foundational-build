@@ -5,33 +5,34 @@
     <div class="item">
       <div class="grid-x grid-margin-x align-middle">
         {% if item.image | default %}
-          <div class="cell medium-5 large-4">
+          <div class="cell medium-5 large-3 medium-order-2">
             <div class="wrapper image-size--landscapeCroppedMedium">
               <img data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" class="js-lazy">
-              {% if item_type == 'events' and item.start_date | default %}
-                {% include '@components/inline-text/date.twig' with item.start_date %}
-              {% endif %}
             </div>
           </div>
         {% endif %}
-        <div class="cell {% if item.image | default %}medium-7 large-8{% endif %}">
+        <div class="cell {% if item.image | default %}medium-7 large-9 medium-order-1{% endif %}">
           <div class="media-object">
-            {% if item.image | default is empty and item_type == 'events' and  item.start_date | default %}
+
+            {% if item.start_date | default is not empty %}
               <div class="media-object-section">
-                {% include '@components/inline-text/date.twig' with item.start_date %}
+                {% include '@components/inline-text/date.twig' with {
+                  date: item.start_date
+                } %}
 
               </div>
             {% endif %}
+
             <div class="media-object-section">
               <h2><a href="{{ item.url }}">{{ item.heading }}</a></h2>
               {% if item_type | default != 'events' and item.date.full | default %}
                 {% include '@components/inline-text/meta.twig' with {
                   date: item.date,
-                  meta_class: 'm-b-2'
+                  meta_class: 'mb-2'
                 } %}
               {% endif %}
               {% if item.summary | default %}
-                <p class="m-b-2">{{ item.summary }}</p>
+                <p class="mb-2">{{ item.summary }}</p>
               {% endif %}
               {% if item.categories | default | length %}
                 {% include '@components/inline-text/meta.twig' with {

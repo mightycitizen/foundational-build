@@ -7,11 +7,7 @@
       {% for card in cards %}
           <div>
             {% set card = card | merge({
-              image: card.image,
-              lazyload_class: 'data-lazy',
-              quote: card.quote,
-              attribution: card.attribution,
-
+              lazyload_class: 'data-lazy'
             }) %}
             {% include '@components/teasers/card-testimonial.twig' with card %}
 

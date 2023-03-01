@@ -1,6 +1,6 @@
 $spacer-mobile: $spacer *.625;
 $spacers: ();
-@for $i from 1 through $spacers-range {
+@for $i from 0 through $spacers-range {
   $spacers: map-merge($spacers, (
     $i: $spacer * $i
   ));
@@ -465,7 +465,7 @@ $utilities: map-merge(
     // scss-docs-start utils-color
     "color": (
       property: color,
-      class: text,
+      class: color,
       values: map-merge(
         $utilities-colors,
         (

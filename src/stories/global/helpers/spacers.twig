@@ -1,19 +1,43 @@
+
 <style>
   .spacer{
-    background: #ccc;
-    outline: 1px solid #000;
+    background: aqua;
+    border: 1px solid #000;
   }
 </style>
+
+
+
+
 {% set types = [
   {
     label: "Margin",
-    selector: "m"
+    selector: "m",
+    directions: true
   },
   {
     label: "Padding",
-    selector: "p"
+    selector: "p",
+    directions: true
+  },
+  {
+    label: "Gap",
+    selector: "gap",
+    description: "Gap between flex child elements (either in a row or column)",
+    directions: false,
+    multiple: 4
   }
 ] %}
+
+{% set sections = types %}
+
+<ul>
+  {% for section in sections %}
+    <li>
+      <a href="#{{ section.selector }}">{{ section.label }}</a>
+    </li>
+  {% endfor %}
+</ul>
 
 {% set directions = [
   {
@@ -25,12 +49,12 @@
     selector: "b"
   },
   {
-    label: "Left",
-    selector: "l"
+    label: "Left/Start",
+    selector: "s"
   },
   {
-    label: "Right",
-    selector: "r"
+    label: "Right/End",
+    selector: "e"
   },
   {
     label: "Horizontal",
@@ -42,21 +66,92 @@
   },
   {
     label: "All",
-    selector: "a"
+    selector: ""
   }
 ] %}
-{% for type in types %}
-  <h3>{{ type.label }}</h3>
-  {% for direction in directions %}
-    <h4>{{ type.label }} {{ direction.label }}</h4>
-    {% for i in range (i, 10) %}
-      <div class="spacer {{ type.selector }}-{{ direction.selector }}-{{ i }}">{{ type.label }} {{ direction.label }} {{ i }}</div>
-    {% endfor %}
-  {% endfor %}
 
+{% set spacers = ['quarter','half'] %}
+{% for i in range (0, 8) %}
+  {% set spacers = spacers|merge([i]) %}
 {% endfor %}
 
-<div class="spacer m-x-auto" style="width: 100px;">Auto Horizontal Margin</div>
 
-<div class="spacer w-100">100% Width</div>
-<div class="spacer h-100">100% Height</div>
+
+{% for type in types %}
+  <h3 id="{{ type.selector }}">{{ type.label }}</h3>
+  {% if type.description %}
+    <p>{{ type.description }}</p>
+  {% endif %}
+  {% if type.directions %}
+    {% for direction in directions %}
+      <h4>{{ type.label }} {{ direction.label }}</h4>
+      <div style="background-color: orange; overflow: hidden;">
+        {% for spacer in spacers %}
+          <div class="spacer {{ type.selector }}{{ direction.selector }}-{{ spacer }}">
+            <span class="d-block" style="background-color: #ccc">{{ type.label }} {{ direction.label }} {{ spacer }} (<code>{{ type.selector }}{{ direction.selector }}-{{ spacer }}</code>)</span>
+          </div>
+        {% endfor %}
+      </div>
+      <hr/>
+    {% endfor %}
+  {% else %}
+    <div style="background-color: orange; overflow: hidden;">
+      {% set directions = ['col','row'] %}
+      {% for direction in directions %}
+        {% for spacer in spacers %}
+          <div class="spacer {% if type.multiple %}d-flex{% endif %} {% if direction == 'col' %}flex-column{% endif %} {{ type.selector }}-{{ spacer }}">
+            {% if type.multiple %}
+              {% for i in range (1, type.multiple) %}
+                <div class="spacer {{ type.selector }}-{{ spacer }}">
+                  <span class="d-block" style="background-color: #ccc">{{ type.label }} {{ spacer }} (<code>{{ type.selector }}-{{ spacer }}</code>)</span>
+                </div>
+              {% endfor %}
+            {% else %}
+              <span class="d-block" style="background-color: #ccc">{{ type.label }} {{ spacer }} (<code>{{ type.selector }}-{{ spacer }}</code>)</span>
+            {% endif %}
+
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+{% endfor %}
+<hr>
+<h4>Row Gap <code>gy-#</code></h4>
+<p><strong>Useful for flex containers like grids with <code>flex-wrap: wrap</code></strong></p>
+
+<div class="grid-container">
+  <div class="grid-x grid-margin-x gy-3 gy-large-5">
+    {% for i in 1..5 %}
+    <div class="cell medium-6 large-4">
+      <span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"></span>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+<hr>
+
+<h3>Miscellaneous Spacers</h3>
+
+{% set other_types = [
+  {
+    label: 'Auto Horizontal Margin',
+    selector: 'm-auto'
+  },
+  {
+    label: '100% Width',
+    selector: 'w-100'
+  },{
+    label: '100% Height',
+    selector: 'h-100'
+  }
+] %}
+<div style="background-color: orange; overflow: hidden;">
+{% for type in other_types %}
+    <span class="spacer d-block {{ type.selector }}"  style="{% if type.selector == 'm-auto' %}width: 300px;{% endif %}background-color: #ccc">{{ type.label }} (<code>{{ type.selector }}</code>)</span>
+{% endfor %}
+</div>
+

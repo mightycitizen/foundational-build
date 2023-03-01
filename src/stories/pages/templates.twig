@@ -1,12 +1,12 @@
 {% extends '@pages/wrapper.twig' %}
 {% block top %}
-  {% include "components/containers/hero.twig"  with {
+  {% include "@components/containers/hero.twig"  with {
     heading: 'Templates',
     subheading: null
   } %}
 {% endblock %}
 {% block main %}
-  {% embed 'components/sections/section.twig' with {
+  {% embed '@components/sections/section.twig' with {
     section_class: 'section--tight section--collapse'
   } %}
     {% set templates = [

@@ -1,6 +1,7 @@
 {% embed '@components/containers/slick.twig' with {
     peekaboo: true,
-    modifier: 'center'
+    modifier: 'center',
+
   }%}
   {% block slide_content %}
       {% for card in cards %}
@@ -8,7 +9,10 @@
           lazyload_class: 'data-lazy',
           modifier: "special"
         }) %}
-        {% include "@components/teasers/card.twig" with card %}
+        <div class="{{ loop.first ? 'slick-primary ' : '' }}">
+          {% include "@components/teasers/card.twig" with card
+          %}
+        </div>
       {% endfor %}
   {% endblock %}
 {% endembed %}

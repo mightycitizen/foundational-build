@@ -408,7 +408,7 @@
 		@include breakpoint(medium down){
 
 			margin: auto;
-			max-width: rem-calc(600px);
+			max-width: rem-calc(600);
 
 		}
 		@include breakpoint(large){

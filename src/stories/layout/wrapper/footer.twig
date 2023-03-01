@@ -1,4 +1,4 @@
-<footer class="l-footer text-white text-center">
+<footer class="l-footer color-white text-center">
   <div class="grid-container">
     <div class="grid-x grid-margin-x">
 
@@ -29,15 +29,22 @@
       </div>
     </div>
 
-    <ul class="inline-list inline-list--divided m-b-2">
-      {% for item in footer_links %}
+    <ul class="list-unstyled d-flex gap-4 list-divided mb-2">
+      {% for item in footer_links | default %}
         <li>
           {% set link = item.cta %}
-          <a href="{{ link.url }}" {% if link.targetString %}target="{{ link.targetString }}"{% endif %}>{{ link.text }}</a>
+          {% include '@components/links/link.twig' with {
+            link: {
+              url: link.url,
+              text: link.text,
+              target: link.getTarget()
+            }
+          } %}
         </li>
       {% endfor %}
     </ul>
-    <p>Copyright &copy; {{ now | date('Y') }} {{ site_name | default }}</p>
+    <p>Copyright &copy; {{ copyright_year | default(2022) }} {{ site_name | default }}</p>
 
   </div>
+  {% include '@components/utils/back-to-top.twig' %}
 </footer>

@@ -1,13 +1,15 @@
 <ol class="step-list">
   {% for step in steps %}
     <li>
-      <h3 class="m-b-2">{{ step.heading }}</h3>
-      <p class="m-b-3">{{ step.description }}</p>
+      <h3 class="mb-2">{{ step.heading }}</h3>
+      <p class="mb-3">{{ step.description }}</p>
       {% if step.link | default is not empty %}
         {% include '@components/links/read-more.twig' with {
-          text: step.link.text,
-          url: step.link.url,
-          target: step.link.target
+
+            text: step.link.text,
+            url: step.link.url,
+            target: step.link.target
+
         }%}
       {% endif %}
     </li>

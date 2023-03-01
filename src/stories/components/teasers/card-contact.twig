@@ -5,7 +5,7 @@
         <h2>{{ heading }}</h2>
         <h3>{{ subheading }}</h3>
         {% if description is not empty %}
-          <p class="m-b-3">{{ description }}</p>
+          <p class="mb-3">{{ description }}</p>
         {% endif %}
         {% if link | default %}
           {% include '@components/links/read-more.twig' with link %}
@@ -14,8 +14,8 @@
       <div class="cell large-5">
         <div class="callout bg-solid-gray-lightest text-small">
           {% include '@components/informational/listing.twig' with {
-          listing_class: 'm-b-0',
-          items: items
+          "listing_class": 'mb-0',
+          "items": items
         } %}
         </div>
       </div>

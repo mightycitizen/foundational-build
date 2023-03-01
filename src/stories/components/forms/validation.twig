@@ -1,93 +1,94 @@
-<form action="" data-abide novalidate>
-  {% include '@components/forms/text.twig' with {
+<form action="/" data-abide novalidate>
+  {% include  '@components/forms/text.twig' with {
       label: "Text",
       name: "text",
-      id: "field_id_3",
+      field_id: "field_id_3",
       placeholder: "Prompt Text",
       required: true
     } %}
-  {% include '@components/forms/textarea.twig' with {
+  {% include  '@components/forms/textarea.twig' with {
       label: "Textarea",
       name: "textarea",
-      id: "field_id_2",
+      field_id: "field_id_2",
       placeholder: "Prompt Text",
       required: true
     } %}
 
   {% set select_options = {
-    required: true,
-    label: "Select",
-    field_id: "select_validation",
-    field_name: "select",
-    options: [
+    "required": true,
+    "label": "Select",
+    "field_id": "select_validation",
+    "field_name": "select",
+    "options": [
       {
-        label: "Select A",
-        value: 0
+        "label": "Select A",
+        "value": 0
       },
       {
-        label: "Select B",
-        value: 1
+        "label": "Select B",
+        "value": 1
       },
       {
-        label: "Select C",
-        value: 2
+        "label": "Select C",
+        "value": 2
       }
     ]
   } %}
-  {% include '@components/forms/select.twig' with select_options
+  {% include  '@components/forms/select.twig' with select_options
   %}
 
-  {% set select_options = select_options | merge({selectize: true, label: "Select (Filterable)" }) %}
+  {% set select_options = select_options | merge({"selectize": true, field_id: 'selectize', "label": "Select (Filterable)" }) %}
 
-  {% include '@components/forms/select.twig' with select_options
+  {% include  '@components/forms/select.twig' with select_options
   only
   %}
-  {% include '@components/forms/radio-group.twig' with {
-    required: true,
-    label: "Radio",
-    field_id: "radio_validation",
-    field_name: "radio",
-    options: [
+  {% include  '@components/forms/radio-group.twig' with {
+    "required": true,
+    "label": "Radio",
+    "field_id": "radio_validation",
+    "field_name": "radio",
+    placeholder: 'Select an option',
+    "options": [
       {
-        label: "Radio A",
-        value: 0
+        "label": "Radio A",
+        "value": 0
       },
       {
-        label: "Radio B",
-        value: 1
+        "label": "Radio B",
+        "value": 1
       },
       {
-        label: "Radio C",
-        value: 2
+        "label": "Radio C",
+        "value": 2
       }
     ]
   }
   %}
 
 
-  {% include '@components/forms/checkbox-group.twig' with {
-      label: "Checkbox",
-      field_id: "checkbox_validation",
+  {% include  '@components/forms/checkbox-group.twig' with {
+      "label": "Checkbox",
+      "field_id": "checkbox_validation",
       required: true,
-      field_name: "checkbox",
-      options: [
+      "field_name": "checkbox",
+      "options": [
         {
-          label: "Checkbox A",
-          value: 0
+          "label": "Checkbox A",
+          "value": 0
         },
         {
-          label: "Checkbox B",
-          value: 1
+          "label": "Checkbox B",
+          "value": 1
         },
         {
-          label: "Checkbox C",
-          value: 2
+          "label": "Checkbox C",
+          "value": 2
         }
       ]
     }
 
     %}
-  <ul class="inline-list inline-list--stacked">
+  <ul class="list-unstyled d-flex gap-4--stacked">
     <li><button type="submit" class="button">Submit</button></li>
     <li><button type="submit" class="button" disabled>Disabled button</button></li>
   </ul>

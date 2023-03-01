@@ -1,4 +1,4 @@
-<div class="hero text-white">
+<div class="hero color-white">
   <div class="grid-container">
     <div class="grid-x grid-margin-x">
       <div class="cell large-8 medium-6 medium-order-1">
@@ -14,7 +14,7 @@
               </div>
             {% endif %}
             <div class="cell {% if image | default %}medium-8{% endif %}">
-              {% if date | default %}
+              {% if date | default and endDate | default %}
                 {% include '@components/inline-text/meta.twig' with {
                   date: date,
                   endDate: endDate
@@ -22,8 +22,8 @@
               {% endif %}
               <h1>{{ heading }}</h1>
               {% if summary | default %}
-                {% if summary | length %}
-                  <ul class="inline-list inline-list--divided font-bold text-small m-b-3">
+                {% if summary | length > 1 %}
+                  <ul class="list-unstyled d-flex gap-4 list-divided fw-bold text-small mb-3">
                     {% for item in summary %}
                       <li>{{ item }}</li>
                     {% endfor %}
@@ -35,14 +35,17 @@
               {% if subheading | default %}
                 <p class="lead">{{ subheading }}</p>
               {% endif %}
-              {% if button | default %}
-                {% set button = button | merge({
-                  color: 'secondary'
+              {% if hero_button | default %}
+                {% set hero_button = hero_button | merge({
+                  modifier: 'secondary'
                 }) %}
-                {% include '@components/links/button.twig' with button %}
+                {% include '@components/links/button.twig' with {
+                  button: hero_button
+                } %}
               {% endif %}
               {% if categories | default %}
                 {% include '@components/inline-text/meta.twig' with {
+                  date: endDate | default is empty ? date : false,
                   categories: categories
                 } only%}
               {% endif %}
@@ -53,7 +56,7 @@
       </div>
       <div class="cell large-4 medium-6 medium-order-2">
         {% include '@components/utils/add2any.twig' with {
-          class: 'm-b-0'
+          class: 'mb-0'
         } %}
       </div>
     </div>

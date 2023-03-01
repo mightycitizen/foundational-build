@@ -35,7 +35,7 @@ const Template = ({ label, ...args }) => {
 
 const defaultArgs = {
   heading: 'Heading',
-  heading: 'Subheading',
+  subheading: 'Subheading',
   description: 'Description',
   link: {
     text: 'Link',

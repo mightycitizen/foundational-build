@@ -23,6 +23,11 @@ import { initAnchor } from './plugins/sticky-anchor';
 window.$ = $;
 //import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../stories/global/base/breakpoints.json'; // Foundation breakpoints
 
+window.jQuery = $;
+
+// CLASS DEFINITIONS
+
+// INITIALIZATION FUNCTIONS
 
 // @skip-to init
 const initSkipTo = () => {
@@ -63,7 +68,7 @@ const initFormHelpers = () => {
   });
 
   const disableSubmit = (elem) => {
-    elem.prop('disabled', true).append(loaderTemplate).addClass('is-loading');
+    if (!elem.is(':disabled')) elem.prop('disabled', true).append(loaderTemplate).addClass('is-loading');
   }
 
   window.enableSubmit = (elem) => {
@@ -83,6 +88,38 @@ const initFormHelpers = () => {
   });
 }
 
+const initScrollHide = () => {
+  let animateOnce = false;
+  const scrollCheck = () => {
+    $('[data-scroll-hide],[data-scroll-show]').each(function(){
+      let scrollClass = 'is-inactive';
+      let attribute = 'data-scroll-hide';
+      //console.log(typeof $(this).attr('data-scroll-show'));
+      if (typeof $(this).attr('data-scroll-show') !== 'undefined'){
+        attribute = 'data-scroll-show';
+        scrollClass =  'is-active';
+      }
+
+      let scrollTrigger;
+      if ($(this).attr(attribute) > 0) {
+        scrollTrigger = $(window).scrollTop() > $(this).attr(attribute);
+      }else{
+        scrollTrigger = $(window).scrollTop() + $(window).height() > $(this).offset().top;
+        if (!animateOnce){
+          scrollTrigger = scrollTrigger && $(window).scrollTop() < $(this).offset().top + $(this).height();
+        }
+      }
+      $(this).toggleClass(scrollClass,scrollTrigger);
+    });
+  }
+  scrollCheck();
+  $(window).on('scroll', Foundation.util.throttle(function(e){
+
+    scrollCheck();
+  }, 300));
+
+}
+
 // @smooth-scroll init
 const initSmoothScroll = () => {
   // In-page smooth scroll, exclude from modal windows
@@ -90,7 +127,7 @@ const initSmoothScroll = () => {
   function(event) {
     // On-page links
     event.preventDefault();
-
+    $('html').addClass('is-scrolling');
     if (
       location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
       location.hostname == this.hostname
@@ -105,12 +142,15 @@ const initSmoothScroll = () => {
 
         $('html, body').animate({
           scrollTop: target.offset().top
-        }, 500);
+        }, 500, null, function(){
+          $('html').removeClass('is-scrolling');
+        });
 
       }
     }
   });
 }
+
 
 // @table-scroll init
 const initTableScroll = () => {
@@ -133,6 +173,22 @@ const initTableScroll = () => {
 
 // @foundation helpers init
 const initFoundationHelpers = () => {
+  $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
+    $('body').removeClass('has-menu');
+  });
+
+  $('[data-dropdown-trigger]').on('click', 'a', function(e){
+    e.preventDefault();
+    const text = $(e.target).text();
+    const $dropdown = $(this).closest('[data-dropdown-trigger]');
+    const dropdownId = $dropdown.attr('id');
+    const $toggle = $('[data-toggle="'+dropdownId+'"]');
+    $toggle.text(text);
+    $dropdown.foundation('close');
+    // console.log(dropdownId);
+    // console.log(text);
+    // console.log($toggle);
+  })
   $(document).on('change.zf.tabs', function(e, tab, pane, $target){
     const tabNav = $(tab).parent();
     if ($(tab).length){
@@ -167,6 +223,34 @@ const initFoundationHelpers = () => {
     //alert('test');
   });
 }
+
+// @anchor update
+
+const initAnchorUpdate = () => {
+  if ($('.anchormenu.sticky').length){
+    $(window).on('scroll', Foundation.util.throttle(function(){
+      let activeAnchor;
+      $('.anchormenu a').each(function(){
+        const $anchor = $(this);
+        const $section = $($anchor.attr('href'));
+        if ($section && !$('html').hasClass('is-scrolling')){
+          if ($section.isInViewport()){
+            //activeSection = $section;
+            activeAnchor = $anchor;
+          }else{
+            $section.removeClass('is-active');
+          }
+        }
+      });
+      if (activeAnchor){
+        activeAnchor.parent().addClass('is-active').siblings().removeClass('is-active');
+        const $anchorMenu = activeAnchor.closest('.anchormenu');
+        $anchorMenu.find('.dropdown_toggle').text(activeAnchor.text());
+      }
+    },50));
+  }
+}
+
 
 // @foundation accessibility init
 const initFoundationAccessibility = () => {
@@ -227,15 +311,18 @@ $(document).bind('_page_ready', function(){
   //Foundation.MediaQuery.upTo('medium');
 
   initLazy(); // @lazy init call
+  initAnchorUpdate(); // @anchor update init
   initFoundationAccessibility();  // @foundation init accessibility call
   initTableScroll(); // @table-scroll init call
 
+  initScrollHide(); // @scroll-hide init call
   initSmoothScroll(); // @smooth-scroll init
   initMenuHelpers(); // @menu helpers
   initFormHelpers(); // @form helpers init\
 
   initSkipTo(); // @skip-to init
   initSelectUrl(); // @select-url init
+  // RUN INITS
 
   initFoundationHelpers(); // @foundation helpers init
 

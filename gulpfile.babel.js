@@ -61,13 +61,53 @@ function serve(done) {
     // Drupal core directory. This allows urls that reference
     // Drupal core JS files to resolve correctly.
     // i.e. /core/misc/drupal.js
+<<<<<<< HEAD
     server: [ '../../../'],
     notify: false,
     open: false
+=======
+    server: ['./patternlab/', '../../../'],
+    notify: false
+>>>>>>> master
   });
   done();
 }
 
+<<<<<<< HEAD
+=======
+/**
+ * Start Pattern Lab build watch process.
+ * @param {function} done callback function.
+ * @returns {undefined}
+ */
+function watchPatternlab(done) {
+  patternlab
+  .build({
+    cleanPublic: config.cleanPublic,
+    watch: true
+  })
+  .then(() => {
+    done()
+  });
+}
+
+/**
+ * Build Pattern Lab.
+ * @param {function} done callback function.
+ * @returns {undefined}
+ */
+function buildPatternlab(done) {
+  patternlab
+    .build({
+      cleanPublic: config.cleanPublic,
+      watch: false
+    })
+    .then(() => {
+      done();
+    });
+}
+
+>>>>>>> master
 function buildVariables(){
 
 
@@ -84,6 +124,11 @@ function buildVariables(){
  * @returns {undefined}
  */
 function watchFiles() {
+  watch(
+    ['./src/assets/images/**/*{.png,.jpg,.svg}',],
+    compressAssets
+  );
+
   // Watch all my sass files and compile sass if a file changes.
   watch(['./src/stories/global/base/**/*.json'],
     series(buildVariables, compileSass, concatCSS, (done) => {
@@ -179,6 +224,7 @@ exports.ddev = series(
   watchFiles
 );;
 
+exports.moveFonts = moveFonts;
 // Default Task
 exports.default = series(
   parallel(cleanCSS, cleanJS),

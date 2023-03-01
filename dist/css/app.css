@@ -16778,6 +16778,56 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   margin-bottom: 0;
 }
 
+/* ------------------ Tooltip ------------------ */
+.tippy-box,
+.tippy-tooltip {
+  background: #2953cc;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  max-width: 10.25rem !important;
+  padding: 0.6rem 0.65rem;
+  text-align: left;
+}
+.tippy-box h2,
+.tippy-box h3,
+.tippy-box h4,
+.tippy-tooltip h2,
+.tippy-tooltip h3,
+.tippy-tooltip h4 {
+  font-size: 0.8888888889rem;
+}
+
+.tippy-close {
+  display: none;
+}
+
+.tippy-content {
+  padding: 0;
+}
+
+.tippy-tooltip[data-placement^=left] > .tippy-arrow {
+  border-right-color: #2953cc;
+}
+
+.tippy-arrow {
+  border-right-color: #2953cc;
+  color: #2953cc;
+  height: 0;
+  width: 0;
+}
+.tippy-arrow:before {
+  display: inline-block;
+}
+
+[data-tippy-content] {
+  margin-left: 0.1666666667rem;
+  display: inline-block;
+  vertical-align: middle;
+  color: #2953cc;
+}
+
 .countdown {
   justify-content: center;
   margin: 0 -0.4444444444rem;
@@ -17839,6 +17889,69 @@ html, body, .l-wrapper {
 
 .image-size--wideCroppedXlarge {
   aspect-ratio: 3.1304347826;
+}
+
+.bg-gradient-primary:before {
+  background-color: rgba(41, 83, 204, 0.5);
+  -webkit-mask-image: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0) 100%);
+}
+.bg-gradient-primary-darker:before {
+  background: linear-gradient(to bottom, #fff 0%, #1f3e99 100%);
+}
+.bg-gradient-primary-lighter:before {
+  background: linear-gradient(to bottom, #fff 0%, #6986db 100%);
+}
+.bg-gradient-primary-lightest:before {
+  background: linear-gradient(to bottom, #fff 0%, #bdcaef 100%);
+}
+@media print, screen and (min-width: 40em) {
+  .bg-gradient-primary:not(.bg-gradient--down):before {
+    -webkit-mask-image: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 100%);
+  }
+}
+
+.bg-gradient-secondary:before {
+  background-color: rgba(255, 205, 0, 0.5);
+  -webkit-mask-image: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0) 100%);
+}
+.bg-gradient-secondary-darker:before {
+  background: linear-gradient(to bottom, #fff 0%, #eca806 100%);
+}
+.bg-gradient-secondary-lighter:before {
+  background: linear-gradient(to bottom, #fff 0%, #ffe57f 100%);
+}
+.bg-gradient-secondary-lightest:before {
+  background: linear-gradient(to bottom, #fff 0%, #ffefb2 100%);
+}
+@media print, screen and (min-width: 40em) {
+  .bg-gradient-secondary:not(.bg-gradient--down):before {
+    -webkit-mask-image: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 100%);
+  }
+}
+
+.bg-gradient-tertiary:before {
+  background-color: rgba(216, 38, 38, 0.5);
+  -webkit-mask-image: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0) 100%);
+}
+.bg-gradient-tertiary-darker:before {
+  background: linear-gradient(to bottom, #fff 0%, #b42727 100%);
+}
+.bg-gradient-tertiary-lighter:before {
+  background: linear-gradient(to bottom, #fff 0%, #e87d7d 100%);
+}
+.bg-gradient-tertiary-lightest:before {
+  background: linear-gradient(to bottom, #fff 0%, #f3bdbd 100%);
+}
+@media print, screen and (min-width: 40em) {
+  .bg-gradient-tertiary:not(.bg-gradient--down):before {
+    -webkit-mask-image: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 100%);
+  }
 }
 
 .bg-gradient--flip:before {

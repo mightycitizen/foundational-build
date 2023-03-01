@@ -1,0 +1,344 @@
+{% extends 'wrappers/default.twig' %}
+{% block top %}
+  {% include "components/containers/hero.twig" %}
+{% endblock %}
+{% block main %}
+  {% include 'components/navigation/anchor.twig' %}
+  {% include 'components/modules/wysiwyg.twig' %}
+  {% set video_image_transform = image_sizes.landscapeCropped %}
+  {% include 'components/modules/video.twig'
+    with {
+      "trigger": "click",
+      "youtube": "gJ6APKIjFQY",
+      "image": {
+        "src": image_placeholder ~ video_image_transform.width ~ "x"~ video_image_transform.height,
+        "alt": ""
+      }
+    }
+
+  %}
+  {% include 'components/modules/contact.twig' with {
+      link: read_more
+    }
+  %}
+
+  {% include 'components/modules/accordion.twig' with { id: 'section-1', accordion_id: 'accordion', items: items} only %}
+
+  {% include 'components/modules/accordion.twig' with {id: 'section-2', accordion_id: 'accordion_steps', items: items, modifier: "steps"} only %}
+  {% include 'components/modules/accordion.twig' with {
+    accordion_id: 'accordion_icons',
+  items:
+    [
+      {
+        "heading": "Curabitur aliquet quam id dui posuere blandit.",
+        "content": "<p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>",
+        "icon": "fas fa-bell"
+      },
+      {
+        "heading": "Curabitur aliquet quam",
+        "content": "<p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>",
+        "icon": "fas fa-bell"
+      },
+      {
+        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu cursus euismod quis viverra nibh cras pulvinar?",
+        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est sit amet facilisis magna etiam tempor orci. Auctor eu augue ut lectus arcu bibendum at varius. Risus ultricies tristique nulla aliquet enim tortor at auctor.</p>",
+        "icon": "fas fa-bell"
+      }
+    ]} only %}
+
+
+
+
+  {% set horizontal_card_transform = image_sizes.landscapeCroppedMedium %}
+  {% include 'components/modules/horizontal-card.twig' with {
+    heading: "Heading",
+    image: {
+      src: image_placeholder ~ horizontal_card_transform.width ~ "x"~ horizontal_card_transform.height,
+      alt: "Alt Text"
+    },
+    summary: summary,
+    link: read_more
+  } %}
+  {% include 'components/modules/horizontal-card.twig' with {
+    heading: "Another Horizontal Card",
+    image: {
+      src: image_placeholder ~ horizontal_card_transform.width ~ "x"~ horizontal_card_transform.height,
+      alt: "Alt Text"
+    },
+    summary: summary,
+    link: read_more
+  } %}
+  {% include 'components/modules/testimonial.twig' %}
+  {% include 'components/modules/tabs.twig' %}
+  {% include 'components/modules/cta.twig' with {
+
+      "section_heading": "Default CTA",
+      "section_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas urna in mauris dictum porta. Integer quis diam finibus, mattis dui quis, rhoncus orci. Nunc consequat, urna eget feugiat cursus, erat dolor vehicula nibh, et eleifend quam lorem at purus.",
+      "section_button": {
+        "url": "#",
+        "text": "Text"
+      }
+    }
+
+  %}
+
+  {% set cta_background_transform = image_sizes.wideCroppedXlarge %}
+  {% include 'components/modules/cta.twig' with {
+      "section_background": {
+        "src": image_placeholder ~ cta_background_transform.width ~ "x"~ cta_background_transform.height,
+      },
+      "section_heading": "Default CTA",
+      "section_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas urna in mauris dictum porta. Integer quis diam finibus, mattis dui quis, rhoncus orci. Nunc consequat, urna eget feugiat cursus, erat dolor vehicula nibh, et eleifend quam lorem at purus.",
+      "section_button": {
+        "url": "#",
+        "text": "Text"
+      }
+    }
+   %}
+  {% set cta_image_transform = image_sizes.landscapeCroppedMedium %}
+  {% include 'components/modules/cta.twig' with {
+      "section_image": {
+        "src": image_placeholder ~ cta_image_transform.width ~ "x"~ cta_image_transform.height,
+        "alt": ""
+      },
+      "section_heading": "Default CTA",
+      "section_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas urna in mauris dictum porta. Integer quis diam finibus, mattis dui quis, rhoncus orci. Nunc consequat, urna eget feugiat cursus, erat dolor vehicula nibh, et eleifend quam lorem at purus.",
+      "section_button": {
+        "url": "#",
+        "text": "Text"
+      }
+    }
+   %}
+  {% include 'components/modules/three-up-cards.twig' with {
+    section_class: 'bg-gradient--down bg-gradient-secondary'
+  } %} {# three up #}
+  {% set card_image_transform = image_sizes.landscapeCroppedSmall %}
+  {% include 'components/modules/three-up-cards.twig' with
+      {
+      "cards": [
+        {
+          "type": {
+            "handle": "events",
+            "label": "Events"
+          },
+
+          "flag": "Test",
+          "image": {
+            "src": image_placeholder ~ card_image_transform.width ~ "x"~ card_image_transform.height,
+            "alt": "Alt Text"
+          },
+          "summary": "Lorem ipsum dolor sit amet",
+          "heading": {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "url": "#"
+          },
+
+          "date": {
+            "unformatted": "2020-12-20",
+            "month_short": "Dec",
+            "day": 20,
+            "full": "December 20, 2020"
+          }
+        },
+          {
+          "type": {
+            "handle": "events",
+            "label": "Events"
+          },
+
+          "summary": "Lorem ipsum dolor sit amet",
+          "image": {
+            "src": image_placeholder ~ card_image_transform.width ~ "x"~ card_image_transform.height,
+            "alt": "Alt Text"
+          },
+          "heading": {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Another line here to show multiple lines",
+            "url": "#"
+          },
+
+          "date": {
+            "unformatted": "2020-12-20",
+            "month_short": "Dec",
+            "day": 20,
+            "full": "December 20, 2020"
+          }
+        },
+          {
+          "type": {
+            "handle": "events",
+            "label": "Events"
+          },
+
+
+          "image": {
+            "src": image_placeholder ~ card_image_transform.width ~ "x"~ card_image_transform.height,
+            "alt": "Alt Text"
+          },
+          "summary": "Lorem ipsum dolor sit amet",
+          "heading": {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "url": "#"
+          },
+
+          "date": {
+            "unformatted": "2020-12-20",
+            "month_short": "Dec",
+            "day": 20,
+            "full": "December 20, 2020"
+          }
+        }
+      ]
+    }
+
+   %}
+
+  {% include 'components/modules/card-carousel.twig' with {
+    section_class: "bg-light-primary",
+    "cards":
+    [
+      {
+        "card": {
+
+          "image": {
+            "src": image_placeholder ~ card_image_transform.width ~ "x"~ card_image_transform.height,
+            "alt": "Alt Text"
+          },
+          "heading": {
+            "text": "Phasellus auctor, turpis",
+            "level": "3",
+            "url": "#"
+          },
+          "summary": "Lorem ipsum dolor sit amet"
+        }
+      },
+      {
+        "card": {
+
+          "image": {
+            "src": image_placeholder ~ card_image_transform.width ~ "x"~ card_image_transform.height,
+            "alt": "Alt Text"
+          },
+          "heading": {
+            "text": "Phasellus auctor, turpis",
+            "level": "3",
+            "url": "#"
+          },
+        "summary": "Lorem ipsum dolor sit amet"
+        }
+      },
+      {
+        "card": {
+
+          "image": {
+            "src": image_placeholder ~ card_image_transform.width ~ "x"~ card_image_transform.height,
+            "alt": "Alt Text"
+          },
+          "heading": {
+            "text": "Phasellus auctor, turpis",
+            "level": "3",
+            "url": "#"
+          },
+       "summary": "Lorem ipsum dolor sit amet"
+        }
+      },
+      {
+        "card": {
+
+          "image": {
+            "src": image_placeholder ~ card_image_transform.width ~ "x"~ card_image_transform.height,
+            "alt": "Alt Text"
+          },
+          "heading": {
+            "text": "Phasellus auctor, turpis",
+            "level": "3",
+            "url": "#"
+          },
+        "summary": "Lorem ipsum dolor sit amet"
+        }
+      },
+      {
+        "card": {
+
+          "image": {
+            "src": image_placeholder ~ card_image_transform.width ~ "x"~ card_image_transform.height,
+            "alt": "Alt Text"
+          },
+          "heading": {
+            "text": "Phasellus auctor, turpis",
+            "level": "3",
+            "url": "#"
+          },
+      "summary": "Lorem ipsum dolor sit amet"
+        }
+      }
+
+    ]
+
+  } %}
+
+  {% include 'components/modules/testimonial-carousel.twig' %}
+  {% set card_carousel_transform = image_sizes.landscapeCroppedMedium %}
+  {% include 'components/modules/card-carousel-center.twig' with {
+    section_class: "bg-gradient--down bg-gradient-secondary",
+    "cards": [
+      {
+
+        "image": {
+          "src": image_placeholder ~ card_carousel_transform.width ~ "x"~ card_carousel_transform.height,
+          "alt": "Alt Text"
+        },
+        "heading": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        "link": {
+          "url": "#",
+          "text":"Optional Link"
+        }
+      },
+        {
+
+        "image": {
+          "src": image_placeholder ~ card_carousel_transform.width ~ "x"~ card_carousel_transform.height,
+          "alt": "Alt Text"
+        },
+        "heading": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Another line here to show multiple lines"
+        },
+        "link": {
+          "url": "#",
+          "text":"Optional Link"
+        }
+      },
+        {
+
+        "image": {
+          "src": image_placeholder ~ card_carousel_transform.width ~ "x"~ card_carousel_transform.height,
+          "alt": "Alt Text"
+        },
+        "heading": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        "link": {
+          "url": "#",
+          "text":"Optional Link"
+        }
+      }
+    ]
+
+
+
+  } %}
+
+  {% include 'components/modules/step-list.twig' %}
+
+  {% include 'components/modules/statistics.twig' with {
+    section_class: "bg-light-primary"
+   } %}
+  {% include 'components/modules/statistics.twig' with {
+    style: "side",
+    section_button: read_more
+  } %}
+  {% include 'components/modules/links.twig' with {
+    section_class: "bg-gradient--down bg-gradient-secondary"
+  } %}
+{% endblock %}

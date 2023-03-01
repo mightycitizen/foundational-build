@@ -1,6 +1,6 @@
-$primary: (default: #2953cc, variants: (darker: #1f3e99, lighter: #6986db, lightest: #bdcaef));
-$secondary: (default: #ffcd00, variants: (darker: #eca806, lighter: #ffe57f, lightest: #ffefb2));
-$tertiary: (default: #d82626, variants: (darker: #b42727, lighter: #e87d7d, lightest: #f3bdbd));
+$primary: (default: #2953cc, gradient: true, variants: (darker: #1f3e99, lighter: #6986db, lightest: #bdcaef));
+$secondary: (default: #ffcd00, gradient: true, variants: (darker: #eca806, lighter: #ffe57f, lightest: #ffefb2));
+$tertiary: (default: #d82626, gradient: true, variants: (darker: #b42727, lighter: #e87d7d, lightest: #f3bdbd));
 $success: #73af8c;
 $alert: #d5383c;
 $warning: #EEA600;

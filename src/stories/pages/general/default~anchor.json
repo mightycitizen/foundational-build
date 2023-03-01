@@ -1,0 +1,12 @@
+{
+  "anchor_items": [
+    {
+      "text": "Test",
+      "anchor": "#section-1"
+    },
+    {
+      "text": "Test 2",
+      "anchor": "#section-2"
+    }
+  ]
+}

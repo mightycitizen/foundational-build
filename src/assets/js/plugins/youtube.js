@@ -170,7 +170,6 @@ export const initYoutube = () => {
 }
 
 
-
 const checkVideo = () => {
   if ($('body').hasClass('youtube-loaded')) return false;
   const $video = $('[data-video-trigger]');

@@ -1,8 +1,12 @@
-import twig from './news-detail.twig';
+import twig from './news-listing.twig';
+import menu from '../../global/placeholders/menu.json';
+import social from '../../global/placeholders/social-media.json';
+import imageSizes from '../../global/placeholders/image-sizes.json';
+import images from '../../global/placeholders/images.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Pages/News/News Detail',
+  title: 'Pages/News/News Listing',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {
@@ -46,5 +50,10 @@ const Template = ({ label, ...args }) => {
   // return `<div>${label}</div>`;
   return twig({ label, ...args });
 };
-
 export const Default = Template.bind({});
+Default.args = {
+  menu,
+  social,
+  image_sizes: imageSizes,
+  image_placeholder: images.default
+}

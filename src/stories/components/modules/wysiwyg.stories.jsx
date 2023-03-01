@@ -1,4 +1,5 @@
 import twig from './wysiwyg.twig';
+import { wysiwyg } from '../../global/placeholders/content.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -36,7 +37,7 @@ const Template = ({ label, ...args }) => {
 const defaultArgs = {
   // section_heading: 'Heading',
   // section_description: 'Description',
-  wysiwyg: '<p>WYSIWYG</p>'
+  wysiwyg: wysiwyg
 }
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

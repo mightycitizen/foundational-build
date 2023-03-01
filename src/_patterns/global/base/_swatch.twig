@@ -1,8 +1,0 @@
-<div {% if type is empty %}style="background-color: {{ hex }}"{% endif %} class="pl-swatch bg-solid-{{ color.name | lower }}{% if type %}-{{ type }}{% endif %} {% if color.name == 'White' or 'light' in type %}pl-swatch--light{% endif %}" >
-
-    {{ hex }}
-    <div class="pl-swatch__hex">
-      {{ color.name }}
-      {% if type %}({{ type }}){% endif %}
-    </div>
-</div>

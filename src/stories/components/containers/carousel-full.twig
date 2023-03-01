@@ -1,5 +1,5 @@
 {% set slider_id = 'slider-full' %}
-{% embed 'components/sections/section.twig' with {
+{% embed '@components/sections/section.twig' with {
   section_background_slick: slider_id
 } %}
   {% block section_content %}
@@ -37,7 +37,7 @@
         description: 'test'
       }
     ] %}
-    {% embed patternlab_namespace | default ~ 'components/containers/slick.twig' with {
+    {% embed '@components/containers/slick.twig' with {
       modifier: 'full',
       id: slider_id,
       grid: true,

@@ -1,27 +1,27 @@
 import twig from './accordion.twig';
-
+import accordion from '../../global/placeholders/accordion.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Containers/Accordion',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
+  // argTypes: {
 
-    modifier: {
-      control: 'text'
-    },
-    items: [
-      {
-        heading: {
-          control: 'text'
-        },
-        content: {
-          control: 'text'
-        },
-        icon: {
-          control: 'text'
-        }
-      }
-    ]
+  //   modifier: {
+  //     control: 'text'
+  //   },
+  //   items: [
+  //     {
+  //       heading: {
+  //         control: 'text'
+  //       },
+  //       content: {
+  //         control: 'text'
+  //       },
+  //       icon: {
+  //         control: 'text'
+  //       }
+  //     }
+  //   ]
     // backgroundColor: { control: 'color' },
     // label: { control: 'text' },
     // onClick: { action: 'onClick' },
@@ -30,7 +30,7 @@ export default {
     //   control: { type: 'select' },
     //   options: ['small', 'medium', 'large'],
     // },
-  },
+  // },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -41,17 +41,7 @@ const Template = ({ label, ...args }) => {
 };
 
 const defaultArgs = {
-  accordion_id: 'accordion_default',
-  items: [
-    {
-      heading: 'Heading',
-      content: 'Content'
-    },
-    {
-      heading: 'Heading',
-      content: 'Content'
-    }
-  ]
+  ...accordion,
 }
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

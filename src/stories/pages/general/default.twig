@@ -3,23 +3,17 @@
   {% include "@components/containers/hero.twig" with hero %}
 {% endblock %}
 {% block main %}
+  {% include '@components/navigation/anchor.twig' %}
   {% include '@components/modules/wysiwyg.twig' %}
-  {% set video_image_transform = image_sizes.landscapeCropped %}
-  {% include '@components/modules/video.twig' with {
-      trigger: "click",
-      youtube: "gJ6APKIjFQY",
-      image: {
-        src: image_placeholder ~ video_image_transform.width ~ "x"~ video_image_transform.height,
-        alt: ""
-      }
-    }
+
+  {% include '@components/modules/video.twig' with video
   %}
   {% include '@components/modules/contact.twig' with contact
   %}
 
-  {% include '@components/modules/accordion.twig' with { accordion_id: 'accordion', items: items} only %}
+  {% include '@components/modules/accordion.twig' with accordion only %}
 
-  {% include '@components/modules/accordion.twig' with {accordion_id: 'accordion_steps', items: items, modifier: "steps"} only %}
+  {% include '@components/modules/accordion.twig' with accordion | merge({accordion_id: 'accordion_steps', modifier: "steps"}) only %}
   {% include '@components/modules/accordion.twig' with {
     accordion_id: 'accordion_icons',
   items:
@@ -45,25 +39,14 @@
 
 
   {% set horizontal_card_transform = image_sizes.landscapeCroppedMedium %}
-  {% include '@components/modules/horizontal-card.twig' with {
-    heading: "Heading",
+  {% include '@components/modules/horizontal-card.twig' with card | merge({
     image: {
       src: image_placeholder ~ horizontal_card_transform.width ~ "x"~ horizontal_card_transform.height,
       alt: "Alt Text"
-    },
-    summary: summary,
-    link: read_more
-  } %}
-  {% include '@components/modules/horizontal-card.twig' with {
-    heading: "Another Horizontal Card",
-    image: {
-      src: image_placeholder ~ horizontal_card_transform.width ~ "x"~ horizontal_card_transform.height,
-      alt: "Alt Text"
-    },
-    summary: summary,
-    link: read_more
-  } %}
-  {% include '@components/modules/testimonial.twig' %}
+    }
+  }) %}
+
+  {% include '@components/modules/testimonial.twig' with testimonial %}
   {% include '@components/modules/tabs.twig' %}
   {% include '@components/modules/cta.twig' with {
 

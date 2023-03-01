@@ -8,10 +8,10 @@
       modifier: "",
       image: image | default,
       summary: summary | default,
-      heading: {
+      heading: heading | merge({
         text: heading,
-        level: "3"
-      },
+        level: heading.level | default(3)
+      }),
       link: link | default
 
     } %}

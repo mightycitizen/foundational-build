@@ -326,7 +326,7 @@ $(document).bind('_page_ready', function(){
 
   initFoundationHelpers(); // @foundation helpers init
 
-  console.log(typeof initSelectize);
+
   if (typeof initSlick === 'function') initSlick(); // @slick init call
   if (typeof initDatepicker === 'function') initDatepicker(); // @datepicker init call
   if (typeof initSlider === 'function') initSlider(); // @slider init call

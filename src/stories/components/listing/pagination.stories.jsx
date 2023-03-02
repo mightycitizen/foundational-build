@@ -1,5 +1,5 @@
 import twig from './pagination.twig';
-
+import pagination from '../../global/placeholders/pagination.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
 
@@ -28,34 +28,7 @@ const Template = ({ label, ...args }) => {
 };
 
 const defaultArgs = {
-  previous: '#',
-  next: '#',
-  pages: [
-    {
-      url: '#',
-      index: 1
-    },
-    {
-      url: '#',
-      index: 2
-    },
-    {
-      url: '#',
-      index: 3,
-      current: true
-    },
-    {
-      ellipses: true
-    },
-    {
-      url: '#',
-      index: 4
-    },
-    {
-      url: '#',
-      index: 5
-    }
-  ]
+  ...pagination
 }
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

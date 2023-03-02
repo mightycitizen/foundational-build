@@ -1,9 +1,10 @@
 import twig from './news-detail.twig';
 import menu from '../../global/placeholders/menu.json';
 import social from '../../global/placeholders/social-media.json';
-import imageSizes from '../../global/placeholders/image-sizes.json';
-import images from '../../global/placeholders/images.json';
+
+import { placeholder, sizes } from '../../global/placeholders/images.json';
 import { wysiwyg } from '../../global/placeholders/content.json';
+import pagination from '../../global/placeholders/pagination.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/News/News Detail',
@@ -56,6 +57,7 @@ Default.args = {
   menu,
   social,
   image_sizes: imageSizes,
-  image_placeholder: images.default,
-  wysiwyg
+  image_placeholder: placeholder,
+  wysiwyg,
+  pagination
 }

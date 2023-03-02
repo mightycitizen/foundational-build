@@ -2,7 +2,7 @@
   "name": "mc-standard-build",
   "version": "2.0.0",
   "scripts": {
-    "start": "npm run watch",
+    "start": "concurrently --raw \"npm run watch\" \"npm run storybook\"",
     "build": "gulp --production",
     "compile": "gulp compile",
     "watch": "gulp watch",
@@ -33,6 +33,7 @@
     "add-attributes-twig-extension": "^0.1.0",
     "babel-loader": "^8.0.4",
     "browser-sync": "^2.26.14",
+    "concurrently": "^7.6.0",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",

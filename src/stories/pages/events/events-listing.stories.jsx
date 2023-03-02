@@ -1,5 +1,8 @@
 import twig from './events-listing.twig';
-import images from '../../global/placeholders/images.json';
+import { placeholder, sizes } from '../../global/placeholders/images.json';
+import pagination from '../../global/placeholders/pagination.json';
+import menu from '../../global/placeholders/menu.json';
+import social from '../../global/placeholders/social-media.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/Events/Events Listing',
@@ -50,5 +53,8 @@ const Template = ({ label, ...args }) => {
 export const Default = Template.bind({});
 
 Default.args = {
-  image_placeholder: images.default
+  pagination,
+  image_placeholder: placeholder,
+  menu,
+  social,
 }

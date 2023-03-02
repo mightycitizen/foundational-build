@@ -1,5 +1,4 @@
 {
-  "image_sizes": {
     "landscapeCropped": {
       "name":"Landscape Cropped",
       "width":900,
@@ -30,6 +29,4 @@
       "height":460,
       "type":"crop"
     }
-  }
-
 }

@@ -1,5 +1,5 @@
 import twig from './card-horizontal.twig';
-import card from '../../global/placeholders/card.json';
+import { card } from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Teasers/Horizontal Card',

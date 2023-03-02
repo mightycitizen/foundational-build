@@ -1,5 +1,5 @@
 import twig from './wysiwyg.twig';
-import { wysiwyg } from '../../global/placeholders/content.json';
+import { wysiwyg } from '../../global/placeholders/components.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {

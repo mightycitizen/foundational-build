@@ -1,5 +1,5 @@
 import twig from './accordion.twig';
-import accordion from '../../global/placeholders/accordion.json';
+import { accordion } from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Containers/Accordion',

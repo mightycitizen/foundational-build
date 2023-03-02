@@ -1,9 +1,7 @@
 import twig from './sidebar.twig';
-import hero from '../../global/placeholders/hero.json';
 
-import menu from '../../global/placeholders/menu.json';
-import social from '../../global/placeholders/social-media.json';
-import card from '../../global/placeholders/card.json';
+import { menu, social } from '../../global/placeholders/global.json';
+import { card, hero } from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/General/Sidebar',

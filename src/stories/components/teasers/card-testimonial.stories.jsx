@@ -1,5 +1,5 @@
 import twig from './card-testimonial.twig';
-import testimonial from '../../global/placeholders/testimonial.json';
+import { testimonial } from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Teasers/Testimonial Card',

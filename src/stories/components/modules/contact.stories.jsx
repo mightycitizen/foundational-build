@@ -1,5 +1,5 @@
 import twig from './contact.twig';
-import contact from '../../global/placeholders/contact.json';
+import { contact } from '../../global/placeholders/components.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {

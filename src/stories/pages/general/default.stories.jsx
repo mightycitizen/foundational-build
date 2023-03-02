@@ -1,16 +1,10 @@
 import twig from './default.twig';
-import hero from '../../global/placeholders/hero.json';
-import contact from '../../global/placeholders/contact.json';
+
 import { placeholder, sizes } from '../../global/placeholders/images.json';
-import video from '../../global/placeholders/video.json';
-import accordion from '../../global/placeholders/accordion.json';
 
-import card from '../../global/placeholders/card.json';
-import testimonial from '../../global/placeholders/testimonial.json';
-import { wysiwyg } from '../../global/placeholders/content.json';
+import { accordion, hero, card, contact, testimonial, wysiwyg, video } from '../../global/placeholders/components.json';
 
-import menu from '../../global/placeholders/menu.json';
-import social from '../../global/placeholders/social-media.json';
+import { menu, social } from '../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/General/Default',

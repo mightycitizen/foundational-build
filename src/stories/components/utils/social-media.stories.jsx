@@ -1,5 +1,5 @@
 import twig from './social-media.twig';
-import social from '../../global/placeholders/social-media.json';
+
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Utils/Social Media',

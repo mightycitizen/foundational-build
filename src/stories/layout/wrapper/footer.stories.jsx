@@ -1,6 +1,6 @@
 import twig from './footer.twig';
-import menu from '../../global/placeholders/menu.json';
-import social from '../../global/placeholders/social-media.json';
+import { menu, social } from '../../global/placeholders/global.json';
+
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Layout/Wrapper/Footer',

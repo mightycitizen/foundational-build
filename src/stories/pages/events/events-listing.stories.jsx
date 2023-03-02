@@ -1,8 +1,8 @@
 import twig from './events-listing.twig';
 import { placeholder, sizes } from '../../global/placeholders/images.json';
-import pagination from '../../global/placeholders/pagination.json';
-import menu from '../../global/placeholders/menu.json';
-import social from '../../global/placeholders/social-media.json';
+import { pagination } from '../../global/placeholders/components.json';
+import { menu, social } from '../../global/placeholders/global.json';
+
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/Events/Events Listing',

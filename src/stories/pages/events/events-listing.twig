@@ -1,8 +1,4 @@
 {% extends '@pages/wrapper.twig' %}
-{% set type = {
-  label: 'Event',
-  handle: 'events'
-}%}
 {% block top %}
   {% include "@components/containers/hero.twig"  with {
     heading: 'Events Listing'
@@ -20,80 +16,7 @@
       }%}
       {% include '@components/listing/list.twig' with
       {
-          list: [
-            {
-             image: {
-                src: image_placeholder ~ listing_image_transform.width ~ "x"~ listing_image_transform.height,
-                alt: "Alt Text"
-              },
-              type: type,
-              heading: "Item Title",
-              summary: "Lorem ipsum dolor sit amet consectetur adipiscing.",
-              start_date: {
-                month_short: "Dec",
-                day: 20,
-                unformatted: "2020-12-20",
-                full: "December 20, 2020",
-              },
-              categories: [
-                {
-                  url: "#",
-                  title: "Category"
-                }
-              ]
-            },
-            {
-              type: type,
-              heading: "Item Title",
-              summary: "Lorem ipsum dolor sit amet consectetur adipiscing.",
-              start_date: {
-                month_short: "Dec",
-                day: 20,
-                unformatted: "2020-12-20",
-                full: "December 20, 2020",
-              },
-              categories: [
-                {
-                  url: "#",
-                  title: "Category"
-                }
-              ]
-            },
-            {
-              type: type,
-              heading: "Item Title",
-              summary: "Lorem ipsum dolor sit amet consectetur adipiscing.",
-              start_date: {
-                month_short: "Dec",
-                day: 20,
-                unformatted: "2020-12-20",
-                full: "December 20, 2020",
-              },
-              categories: [
-                {
-                  url: "#",
-                  title: "Category"
-                }
-              ]
-            },
-            {
-              type: type,
-              heading: "Item Title",
-              summary: "Lorem ipsum dolor sit amet consectetur adipiscing.",
-              start_date: {
-                month_short: "Dec",
-                day: 20,
-                unformatted: "2020-12-20",
-                full: "December 20, 2020",
-              },
-              categories: [
-                {
-                  url: "#",
-                  title: "Category"
-                }
-              ]
-            }
-          ]
+          list: items
         }
 
        %}

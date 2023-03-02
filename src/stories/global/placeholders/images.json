@@ -1,5 +1,5 @@
 {
-  "default": "//source.unsplash.com/9wg5jCEPBsw/",
+  "placeholder": "//source.unsplash.com/9wg5jCEPBsw/",
   "sizes": {
     "landscapeCropped": {
       "name":"Landscape Cropped",

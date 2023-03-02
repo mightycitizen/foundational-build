@@ -4,7 +4,7 @@ import { placeholder, sizes } from '../../global/placeholders/images.json';
 
 import { accordion, hero, card, contact, testimonial, wysiwyg, video } from '../../global/placeholders/components.json';
 
-import { menu, social } from '../../global/placeholders/global.json';
+import { menu, social, logo } from '../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/General/Default',
@@ -18,9 +18,10 @@ const Template = ({ label, ...args }) => {
 
 const Default = Template.bind({});
 const defaultArgs = {
-  hero: hero,
-  menu: menu,
-  social: social,
+  hero,
+  menu,
+  logo,
+  social,
   modules: [
     {
       module_type: 'wysiwyg',
@@ -243,4 +244,29 @@ AnchorMenu.args = {
   ]
 }
 
-export { Default, Cookies, AnchorMenu }
+const SectionTest = Template.bind({});
+SectionTest.args = {
+  ...defaultArgs,
+  modules: [
+    {
+      module_type: 'three-up-cards',
+      section_class: 'bg-gradient-secondary',
+      section_heading: 'Bg Gradient Secondary',
+      cards: Array.from({length: 3}, (v, i) => card)
+    },
+    {
+      module_type: 'three-up-cards',
+      //section_class: 'bg-gradient-secondary',
+      section_heading: 'No Background',
+      cards: Array.from({length: 3}, (v, i) => card)
+    },
+    {
+      module_type: 'three-up-cards',
+      section_class: 'bg-solid-primary-lightest',
+      section_heading: 'Bg Solid Primary Lightest',
+      cards: Array.from({length: 3}, (v, i) => card)
+    }
+  ]
+}
+
+export { Default, Cookies, AnchorMenu, SectionTest }

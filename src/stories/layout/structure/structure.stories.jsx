@@ -62,6 +62,7 @@ const SidebarTwigTemplate = ({ label, ...args }) => {
 };
 
 const defaultArgs = {
+  wrapper_class: 'grid-container',
   content: '<div class="pl-placeholder">Content</div>'
 }
 
@@ -75,6 +76,7 @@ const Sidebar = SidebarTwigTemplate.bind({});
 
 Sidebar.args = {
   ...defaultArgs,
+
   sidebar: '<div class="pl-placeholder">Sidebar</div>'
 };
 

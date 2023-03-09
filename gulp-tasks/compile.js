@@ -61,7 +61,7 @@ module.exports = {
   // Compile Sass.
 
   compileSass: function() {
-    return src(['./src/assets/scss/**/*.scss','./src/patterns/**/**/*.scss'])
+    return src(['./src/assets/scss/**/*.scss'])
       .pipe(sass({
         includePaths: ['./node_modules/foundation-sites/scss', './node_modules/motion-ui/src']
         }).on('error', handleError))

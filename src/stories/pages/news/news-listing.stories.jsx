@@ -55,7 +55,7 @@ export const Default = Template.bind({});
 Default.args = {
   menu,
   social,
-  image_sizes: imageSizes,
+  image_sizes: sizes,
   image_placeholder: placeholder,
   pagination
 }

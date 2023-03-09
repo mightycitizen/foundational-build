@@ -1,8 +1,10 @@
-import twig from './image-sizes.twig';
-import imageSizes from './image-sizes.json';
+import narrowTwig from './content-narrow.twig';
+import narrowerTwig from './content-narrower.twig';
+import sidebarTwig from './content-with-sidebar.twig';
+
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Base/Image Sizes',
+  title: 'Layout/Structure/Content',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {
@@ -41,13 +43,39 @@ export default {
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
-const Template = ({ label, ...args }) => {
+const NarrowTwigTemplate = ({ label, ...args }) => {
   // You can either use a function to create DOM elements or use a plain html string!
   // return `<div>${label}</div>`;
-  return twig({ label, ...args });
+  return narrowTwig({ label, ...args });
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  image_sizes: imageSizes.image_sizes
+const NarrowerTwigTemplate = ({ label, ...args }) => {
+  // You can either use a function to create DOM elements or use a plain html string!
+  // return `<div>${label}</div>`;
+  return narrowerTwig({ label, ...args });
+};
+
+const SidebarTwigTemplate = ({ label, ...args }) => {
+  // You can either use a function to create DOM elements or use a plain html string!
+  // return `<div>${label}</div>`;
+  return sidebarTwig({ label, ...args });
+};
+
+const defaultArgs = {
+  content: '<div class="pl-placeholder">Content</div>'
 }
+
+const Narrow = NarrowTwigTemplate.bind({});
+Narrow.args = defaultArgs;
+
+const Narrower = NarrowerTwigTemplate.bind({});
+Narrower.args = defaultArgs;
+
+const Sidebar = SidebarTwigTemplate.bind({});
+
+Sidebar.args = {
+  ...defaultArgs,
+  sidebar: '<div class="pl-placeholder">Sidebar</div>'
+};
+
+export { Narrow, Narrower, Sidebar };

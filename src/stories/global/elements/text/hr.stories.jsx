@@ -1,10 +1,17 @@
-import twig from './social-media.twig';
-import { social } from '../../global/placeholders/global.json';
+import twig from './hr.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Utils/Social Media',
+  title: 'Global/Elements/Horizontal Rule',
+  // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
+  // argTypes: {
+  //   required: {
+  //     controls: {
+  //       type: 'boolean'
+  //     }
+  //   }
 
+  // },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -15,7 +22,4 @@ const Template = ({ label, ...args }) => {
 };
 
 export const Default = Template.bind({});
-Default.args = {
-  social: social
-};
-//
+// More on args: https://storybook.js.org/docs/html/writing-stories/args

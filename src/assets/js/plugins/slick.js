@@ -1,6 +1,7 @@
 import 'slick-carousel';
 import $ from 'jquery';
-import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../../stories/global/base/breakpoints.json'; // Foundation breakpoints
+import breakpoints from '../../../stories/global/base/breakpoints.json'; // Foundation breakpoints
+
 
 // @slick pagination helper function
 const slickPagination = (slick) => {
@@ -30,27 +31,33 @@ const slickPause = ($slick) => {
 
 const slickBackground = (slick, next) => {
   const $slider = $(slick.$slider);
-  const background = $(slick.$slides[next]).data('slick-background');
-  const currBackgroundElem = $('[data-slick-background="' + $slider.attr('id') + '"]');
-
-
-  if (currBackgroundElem){
-    currBackgroundElem.addClass('is-hidden');
+  if (slick.$slides && slick.$slides[next]){
+    const background = $(slick.$slides[next]).data('slick-background');
     if (background){
-      $slider.addClass('has-background');
+      const currBackgroundElem = $('[data-slick-background="' + $slider.attr('id') + '"]');
 
-      let nextBackgroundElem = currBackgroundElem.siblings('[data-slick-background-index="' + next + '"]');
-      if (nextBackgroundElem.length === 0){
-        nextBackgroundElem = currBackgroundElem.last().clone();
-        currBackgroundElem.last().after(nextBackgroundElem);
-        nextBackgroundElem.attr('src', background).attr('data-slick-background-index',next);
+
+      if (currBackgroundElem){
+      currBackgroundElem.addClass('is-hidden');
+      if (background){
+        $slider.addClass('has-background');
+
+        let nextBackgroundElem = currBackgroundElem.siblings('[data-slick-background-index="' + next + '"]');
+        if (nextBackgroundElem.length === 0){
+          nextBackgroundElem = currBackgroundElem.last().clone();
+          currBackgroundElem.last().after(nextBackgroundElem);
+          nextBackgroundElem.attr('src', background).attr('data-slick-background-index',next);
+        }
+
+        setTimeout(() => {
+          nextBackgroundElem.removeClass('is-hidden');
+        }, 50);
+      }else{
+        $slider.removeClass('has-background');
       }
 
-      setTimeout(() => {
-        nextBackgroundElem.removeClass('is-hidden');
-      }, 50);
-    }else{
-      $slider.removeClass('has-background');
+
+      }
     }
 
   }
@@ -154,6 +161,7 @@ const slickTabs = (slick, cur) => {
 const slickEvents = ($slick) => {
   const slickActiveClass = 'slick-primary';
   $slick.on('init', function (event, slick, breakpoint){
+    //console.log(slick);
     slickPagination(slick);
     slickGo(slick, 0);
     slickProgress(slick, false, true);
@@ -238,7 +246,7 @@ export const initSlick = () => {
 
   // @slick mobile init
   const initSlickMobile = () => {
-    const $slickMobile = $('.js-slick--mobile');
+    const $slickMobile = $('.js-slick--mobile:not(.slick-initialized)');
 
     $slickMobile.each(function(){
       const $this = $(this);
@@ -251,7 +259,7 @@ export const initSlick = () => {
         appendDots: $this.next('.slick-nav'),
         responsive: [
           {
-            breakpoint: mediumBreakpoint,
+            breakpoint: breakpoints.medium,
             settings: 'unslick'
           }
         ]
@@ -271,7 +279,7 @@ export const initSlick = () => {
 
 
 
-  const $slick = $('.js-slick');
+  const $slick = $('.js-slick:not(.slick-initialized)');
 
   $slick.each(function(){
     const $this = $(this);
@@ -295,7 +303,7 @@ export const initSlick = () => {
   })
 
 
-  const $slickFull = $('.js-slick--full');
+  const $slickFull = $('.js-slick--full:not(.slick-initialized)');
 
   $slickFull.each(function(){
     const $this = $(this);
@@ -317,7 +325,7 @@ export const initSlick = () => {
 
   })
 
-  const $slickCards = $('.js-slick--cards');
+  const $slickCards = $('.js-slick--cards:not(.slick-initialized)');
 
   $slickCards.each(function(){
     const $this = $(this);
@@ -332,7 +340,7 @@ export const initSlick = () => {
       appendDots: $this.next('.slick-nav'),
       responsive: [
         {
-        breakpoint: largeBreakpoint,
+        breakpoint: breakpoints.large,
         settings: {
           //adaptiveHeight: true,
           slidesToScroll: 2,
@@ -340,7 +348,7 @@ export const initSlick = () => {
         }
       },
         {
-        breakpoint: mediumBreakpoint,
+        breakpoint: breakpoints.medium,
         settings: {
           //adaptiveHeight: true,
           slidesToScroll: 1,
@@ -356,7 +364,7 @@ export const initSlick = () => {
 
   });
 
-  const $slickCenter = $('.js-slick--center');
+  const $slickCenter = $('.js-slick--center:not(.slick-initialized)');
   $slickCenter.each(function(){
     const $this = $(this);
 
@@ -374,7 +382,7 @@ export const initSlick = () => {
       responsive: [
         {
 
-          breakpoint: mediumBreakpoint,
+          breakpoint: breakpoints.medium,
           settings: {
             centerMode: false,
             centerPadding: 0,

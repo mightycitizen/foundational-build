@@ -1,23 +1,19 @@
 import $ from 'jquery';
 import '../utils/in-viewport.js';
 
-
 // @video init
 export const initYoutube = () => {
   const
     loadingClass = 'is-loading',
     playingClass = 'is-playing';
 
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/iframe_api";
-  tag.setAttribute('data-type','youtube');
-  document.body.appendChild(tag);
+  // 1. This code loads the IFrame Player API code asynchronously.
+  const youtube = document.getElementById('youtube-api');
 
-  // 3. This function creates an <iframe> (and YouTube player)
-  //    after the API code downloads.
 
-  window.onYouTubeIframeAPIReady = function(){
 
+
+  const bindEvents = () => {
     $('.video_wrapper[data-video-type="youtube"]').each(function(){
           var holder = $(this),
               vid = holder.find('.video_player'),
@@ -138,6 +134,26 @@ export const initYoutube = () => {
     });
   }
 
+
+  if (youtube){
+    bindEvents();
+  }else{
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    tag.setAttribute('id', 'youtube-api')
+    //tag.attr('id','youtube-api');
+    document.body.appendChild(tag);
+  }
+
+
+
+
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
+
+  window.onYouTubeIframeAPIReady = function(){
+    bindEvents();
+  }
   $(document).on('click', '[data-video-trigger="click"][data-video-type="youtube"]', function(){
     if ($(this).hasClass(playingClass)){
       $(this).trigger('pause').removeClass(playingClass);

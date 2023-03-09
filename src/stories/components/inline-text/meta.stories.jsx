@@ -3,35 +3,35 @@ import twig from './meta.twig';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Inline Text/Meta',
-  argTypes: {
-    date: {
-      unformatted: {
-        control: {
-          type: 'text'
-        }
-      },
-      full: {
-        control: {
-          type: 'text'
-        }
-      }
-    },
-    categories: [
-      {
-        title: {
-          control: {
-            type: 'text'
-          }
-        },
-        url: {
-          control: {
-            type: 'text'
-          }
-        }
-      }
-    ]
+  // argTypes: {
+  //   date: {
+  //     unformatted: {
+  //       control: {
+  //         type: 'text'
+  //       }
+  //     },
+  //     full: {
+  //       control: {
+  //         type: 'text'
+  //       }
+  //     }
+  //   },
+  //   categories: [
+  //     {
+  //       title: {
+  //         control: {
+  //           type: 'text'
+  //         }
+  //       },
+  //       url: {
+  //         control: {
+  //           type: 'text'
+  //         }
+  //       }
+  //     }
+  //   ]
 
-  }
+  // }
 
 };
 
@@ -42,8 +42,8 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
-Default.args = {
+export const Meta = Template.bind({});
+Meta.args = {
   date: {
     unformatted: "2021-08-12",
     full: "August 12, 2021"

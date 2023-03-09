@@ -4,48 +4,6 @@ import { card } from '../../global/placeholders/components.json';
 export default {
   title: 'Components/Teasers/Horizontal Card',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
-
-    // image: {
-    //   src: {
-    //     control: 'text'
-    //   },
-    //   url: {
-    //     control: 'text'
-    //   }
-    // },
-    // summary: {
-    //   control: 'text'
-    // },
-    // heading: {
-    //   level: {
-    //     control: 'number'
-    //   },
-    //   text: {
-    //     control: 'text'
-    //   },
-    //   url: {
-    //     control: 'text'
-    //   }
-    // },
-    // link: {
-    //   text: {
-    //     control: 'text'
-    //   },
-    //   url: {
-    //     control: 'text'
-    //   }
-    // }
-
-    // backgroundColor: { control: 'color' },
-    // label: { control: 'text' },
-    // onClick: { action: 'onClick' },
-    // primary: { control: 'boolean' },
-    // size: {
-    //   control: { type: 'select' },
-    //   options: ['small', 'medium', 'large'],
-    // },
-  },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -56,10 +14,20 @@ const Template = ({ label, ...args }) => {
 };
 
 const defaultArgs = {
-  ...card
+  ...card,
+  image: {
+    src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
+    alt: 'Alt Text'
+  }
 }
-export const Default = Template.bind({});
+const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;
 
-
+const NoImage = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+NoImage.args = {
+  ...defaultArgs,
+  image: null
+};
+export { Default, NoImage };

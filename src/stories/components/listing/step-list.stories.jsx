@@ -39,6 +39,6 @@ const defaultArgs = {
     }
   ]
 }
-export const Default = Template.bind({});
+export const StepList = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+StepList.args = defaultArgs;

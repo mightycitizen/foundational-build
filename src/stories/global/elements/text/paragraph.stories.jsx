@@ -21,5 +21,5 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
+export const Paragraph = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

@@ -3,19 +3,19 @@ import twig from './helper.twig';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Inline Text/Tooltip',
-  argTypes: {
-    class: {
-      control: {
-        type: 'text'
-      }
-    },
-    text: {
-      control: {
-        type: 'text'
-      }
-    },
+  // argTypes: {
+  //   class: {
+  //     control: {
+  //       type: 'text'
+  //     }
+  //   },
+  //   text: {
+  //     control: {
+  //       type: 'text'
+  //     }
+  //   },
 
-  }
+  // }
 
 };
 
@@ -26,8 +26,8 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
-Default.args = {
+export const Tooltip = Template.bind({});
+Tooltip.args = {
   text: 'Trigger Text',
   tooltip: 'Tooltip Text'
 };

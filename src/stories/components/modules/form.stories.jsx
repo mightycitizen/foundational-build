@@ -37,6 +37,6 @@ const defaultArgs = {
   // section_heading: 'Heading',
   // section_description: 'Description'
 }
-export const Default = Template.bind({});
+export const Form = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+Form.args = defaultArgs;

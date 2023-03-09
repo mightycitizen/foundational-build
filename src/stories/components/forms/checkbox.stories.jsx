@@ -21,28 +21,11 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
+export const Checkbox = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = {
+Checkbox.args = {
   field_id: 'field',
   id: 0,
   value: '',
   label: 'Label',
 };
-//
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   label: 'Button',
-// };
-//
-// export const Large = Template.bind({});
-// Large.args = {
-//   size: 'large',
-//   label: 'Button',
-// };
-//
-// export const Small = Template.bind({});
-// Small.args = {
-//   size: 'small',
-//   label: 'Button',
-// };

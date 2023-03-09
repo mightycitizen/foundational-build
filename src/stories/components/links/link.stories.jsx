@@ -1,18 +1,18 @@
-import twig from './back-to-top.twig';
+import twig from './link.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Utils/Back to Top',
+  title: 'Components/Links/Link',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  // argTypes: {
-  //   label: {
-  //     control: 'text'
-  //   },
-  //   class: {
-  //     control: 'text'
-  //   },
+  argTypes: {
 
-  // },
+    text: { control: 'text' },
+    url: { control: 'text' },
+    size: {
+      control: { type: 'select' },
+      options: ['', 'h3'],
+    },
+  },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -22,7 +22,11 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const BackToTop = Template.bind({});
-BackToTop.args = {
-  scroll_show: false
+const defaultArgs = {
+  text: 'LinK Text',
+  url: '#',
+
 }
+export const Link = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Link.args = defaultArgs;

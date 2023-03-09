@@ -47,7 +47,7 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
-Default.args = {
+export const Fonts = Template.bind({});
+Fonts.args = {
   ...fonts,
 }

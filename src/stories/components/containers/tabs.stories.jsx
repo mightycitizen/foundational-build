@@ -68,6 +68,6 @@ const defaultArgs = {
   id: 'example-tabs',
   tabs: tabs
 }
-export const Default = Template.bind({});
+export const Tabs = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+Tabs.args = defaultArgs;

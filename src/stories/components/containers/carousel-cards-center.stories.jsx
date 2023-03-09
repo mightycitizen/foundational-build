@@ -4,7 +4,7 @@ import twig from './carousel-cards-center.twig';
 
 
 export default {
-  title: 'Components/Containers/Card Group/Carousel Cards (Centered)',
+  title: 'Components/Containers/Card Group/Carousel Cards Centered',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 
@@ -75,8 +75,8 @@ const cards = [...Array(5)].map((_, i) => ( {
 }));
 
 const defaultArgs = {
-  cards: cards
+  cards
 }
-export const Default = Template.bind({});
+export const CarouselCardsCentered = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+CarouselCardsCentered.args = defaultArgs;

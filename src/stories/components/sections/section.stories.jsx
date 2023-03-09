@@ -38,9 +38,10 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
+const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = {
+
+const defaultArgs = {
   section_heading: 'Heading',
   section_description: 'Description',
   section_button: {
@@ -50,11 +51,15 @@ Default.args = {
   }
 
 };
+
+Default.args = defaultArgs;
 //
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   label: 'Button',
-// };
+const BackgroundColor = Template.bind({});
+BackgroundColor.args = {
+  ...defaultArgs,
+  section_heading: 'Background Color',
+  section_background: 'bg-solid-primary'
+};
 //
 // export const Large = Template.bind({});
 // Large.args = {
@@ -67,3 +72,5 @@ Default.args = {
 //   size: 'small',
 //   label: 'Button',
 // };
+
+export { Default, BackgroundColor }

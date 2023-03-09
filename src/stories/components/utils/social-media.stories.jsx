@@ -14,8 +14,8 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
-Default.args = {
+export const SocialMedia = Template.bind({});
+SocialMedia.args = {
   social: social
 };
 //

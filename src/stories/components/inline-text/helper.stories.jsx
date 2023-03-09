@@ -26,8 +26,8 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
-Default.args = {
+export const HelperText = Template.bind({});
+HelperText.args = {
   text: 'Helper Text'
 };
 //

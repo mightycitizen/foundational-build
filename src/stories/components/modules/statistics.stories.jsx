@@ -59,6 +59,15 @@ const defaultArgs = {
     },
   ]
 }
-export const Default = Template.bind({});
+const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;
+
+const Sidebar = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Sidebar.args = {
+  ...defaultArgs,
+  section_style: 'side'
+};
+
+export { Default, Sidebar}

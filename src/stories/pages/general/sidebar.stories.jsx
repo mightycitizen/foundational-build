@@ -14,8 +14,8 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
-Default.args = {
+export const Sidebar = Template.bind({});
+Sidebar.args = {
   hero,
   menu,
   social,

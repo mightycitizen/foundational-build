@@ -31,8 +31,8 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
-Default.args = {
+export const Date = Template.bind({});
+Date.args = {
   day: '1',
   month_short: 'Jan',
   unformatted: '2020-01-01'

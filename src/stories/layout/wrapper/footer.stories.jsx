@@ -48,8 +48,8 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  menu: menu,
-  social: social,
+export const Footer = Template.bind({});
+Footer.args = {
+  menu,
+  social,
 }

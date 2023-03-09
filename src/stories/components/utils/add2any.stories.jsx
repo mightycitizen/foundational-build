@@ -22,9 +22,9 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
+export const Add2Any = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = {
+Add2Any.args = {
   label: 'Heading',
 };
 //

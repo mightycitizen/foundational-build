@@ -26,8 +26,8 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
-Default.args = {
+export const Flag = Template.bind({});
+Flag.args = {
   text: 'Flag'
 };
 //

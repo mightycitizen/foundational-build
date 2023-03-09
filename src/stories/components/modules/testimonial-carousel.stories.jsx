@@ -35,6 +35,6 @@ const defaultArgs = {
   section_description: 'Description',
   cards: cards
 }
-export const Default = Template.bind({});
+export const Carousel = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+Carousel.args = defaultArgs;

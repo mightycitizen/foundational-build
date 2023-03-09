@@ -55,9 +55,9 @@ const Template = ({ label, ...args }) => {
 const defaultArgs = {
   ...contact
 }
-export const Default = Template.bind({});
+export const ContactCard = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+ContactCard.args = defaultArgs;
 
 
 

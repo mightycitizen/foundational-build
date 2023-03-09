@@ -15,9 +15,9 @@ const Template = ({ label, ...args }) => {
 };
 
 
-export const Default = Template.bind({});
+export const TestimonialCard = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = {
+TestimonialCard.args = {
   ...testimonial
 };
 

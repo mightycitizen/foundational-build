@@ -13,9 +13,9 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-const Default = Template.bind({})
-Default.args = {
+const Colors = Template.bind({})
+Colors.args = {
   ...colors
 }
 
-export { Default };
+export { Colors };

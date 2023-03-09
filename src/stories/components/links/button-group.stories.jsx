@@ -42,6 +42,6 @@ const buttons = [...Array(3)].map((_, i) => ({
 const defaultArgs = {
   buttons: buttons
 };
-export const Default = Template.bind({});
+export const ButtonGroup = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+ButtonGroup.args = defaultArgs;

@@ -1,8 +1,8 @@
-import twig from './image-sizes.twig';
-import imageSizes from './image-sizes.json';
+import twig from './inline-form.twig';
+
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Base/Image Sizes',
+  title: 'Components/Forms/Inline Form',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {
@@ -47,7 +47,5 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const ImageSizes = Template.bind({});
-ImageSizes.args = {
-  image_sizes: imageSizes.image_sizes
-}
+export const InlineForm = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args

@@ -4,7 +4,7 @@ import twig from './three-up-cards.twig';
 
 
 export default {
-  title: 'Components/Containers/Card Group/Three-up Cards',
+  title: 'Components/Containers/Card Group/Three Up Cards',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 
@@ -77,6 +77,6 @@ const cards = [...Array(5)].map((_, i) => ( {
 const defaultArgs = {
   cards: cards
 }
-export const Default = Template.bind({});
+export const ThreeUpCards = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+ThreeUpCards.args = defaultArgs;

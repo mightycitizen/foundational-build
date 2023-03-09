@@ -3,15 +3,15 @@ import twig from './large-value.twig';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Inline Text/Large Value',
-  argTypes: {
-    value: {
-      control: {
-        type: 'text'
-      }
-    }
+  // argTypes: {
+  //   value: {
+  //     control: {
+  //       type: 'text'
+  //     }
+  //   }
 
 
-  }
+  // }
 
 };
 
@@ -22,8 +22,8 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
-Default.args = {
+export const LargeValue = Template.bind({});
+LargeValue.args = {
   value: 9
 };
 //

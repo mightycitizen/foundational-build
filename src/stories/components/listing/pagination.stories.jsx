@@ -30,6 +30,6 @@ const Template = ({ label, ...args }) => {
 const defaultArgs = {
   ...pagination
 }
-export const Default = Template.bind({});
+export const Pagination = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+Pagination.args = defaultArgs;

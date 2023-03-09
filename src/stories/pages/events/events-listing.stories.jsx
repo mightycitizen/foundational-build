@@ -50,7 +50,7 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
+export const EventsListing = Template.bind({});
 
 const type = {
   label: 'Event',
@@ -132,7 +132,7 @@ const items = [
   }
 ]
 
-Default.args = {
+EventsListing.args = {
   logo,
   pagination,
   menu,

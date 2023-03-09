@@ -46,8 +46,8 @@ const list = [...Array(5)].map((_, i) => ( {
 }));
 
 const defaultArgs = {
-  list: list
+  list
 }
-export const Default = Template.bind({});
+export const List = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+List.args = defaultArgs;

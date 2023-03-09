@@ -24,6 +24,6 @@ const Template = ({ label, ...args }) => {
 };
 
 const defaultArgs = {...hero}
-export const Default = Template.bind({});
+export const Hero = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+Hero.args = defaultArgs;

@@ -52,7 +52,7 @@ const defaultArgs = {
     }
   ]
 }
-export const Default = Template.bind({});
+export const Listing = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+Listing.args = defaultArgs;
 

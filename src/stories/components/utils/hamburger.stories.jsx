@@ -18,4 +18,4 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
+export const Hamburger = Template.bind({});

@@ -52,8 +52,7 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Default = Template.bind({});
-Default.args = {
+const defaultArgs =  {
   menu,
   social,
   image_sizes: sizes,
@@ -61,3 +60,16 @@ Default.args = {
   wysiwyg,
   pagination
 }
+
+const Default = Template.bind({});
+Default.args = defaultArgs;
+
+const FeaturedImage = Template.bind({});
+FeaturedImage.args = {
+  ...defaultArgs,
+  featured_image: {
+    src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
+    alt: ''
+  }
+}
+

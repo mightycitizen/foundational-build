@@ -51,8 +51,8 @@ const Template = ({ label, ...args }) => {
   // return `<div>${label}</div>`;
   return twig({ label, ...args });
 };
-export const Default = Template.bind({});
-Default.args = {
+export const NewsListing = Template.bind({});
+NewsListing.args = {
   menu,
   social,
   image_sizes: sizes,

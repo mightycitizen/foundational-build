@@ -57,6 +57,6 @@ const defaultArgs = {
   summary: 'Summary',
   subheading: 'Subheading'
 }
-export const Default = Template.bind({});
+export const Modal = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+Modal.args = defaultArgs;

@@ -43,6 +43,6 @@ const defaultArgs = {
     alt: 'Alt Text'
   }
 }
-export const Default = Template.bind({});
+export const Video = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+Video.args = defaultArgs;

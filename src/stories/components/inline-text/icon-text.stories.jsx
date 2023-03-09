@@ -1,8 +1,8 @@
-import twig from './lead.twig';
+import twig from './helper.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Inline Text/Lead',
+  title: 'Components/Inline Text/Icon Text',
   // argTypes: {
   //   class: {
   //     control: {
@@ -26,8 +26,4 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Lead = Template.bind({});
-Lead.args = {
-  text: 'Lead'
-};
-//
+export const IconText = Template.bind({});

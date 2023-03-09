@@ -1,22 +1,17 @@
-import twig from './lead.twig';
+import twig from './date.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Inline Text/Lead',
-  // argTypes: {
-  //   class: {
-  //     control: {
-  //       type: 'text'
-  //     }
-  //   },
-  //   text: {
-  //     control: {
-  //       type: 'text'
-  //     }
-  //   },
+  title: 'Components/Forms/Date',
+  // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
+  argTypes: {
+    required: {
+      controls: {
+        type: 'boolean'
+      }
+    }
 
-  // }
-
+  },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -26,8 +21,11 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Lead = Template.bind({});
-Lead.args = {
-  text: 'Lead'
+export const Date = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Date.args = {
+  field_id: 'field',
+  id: 0,
+  value: '',
+  label: 'Label',
 };
-//

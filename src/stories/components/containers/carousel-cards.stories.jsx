@@ -75,8 +75,8 @@ const cards = [...Array(5)].map((_, i) => ( {
 }));
 
 const defaultArgs = {
-  cards: cards
+  cards
 }
-export const Default = Template.bind({});
+export const CarouselCards = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+CarouselCards.args = defaultArgs;

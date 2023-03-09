@@ -4,7 +4,7 @@
 @import '../vendor/icomoon/variables';
 $grandchildren-background: map-get($additional-palette,'secondary-lightest');
 .top-bar{
-  font-family: $secondaryFontFamily;
+  //font-family: $secondaryFontFamily;
   font-weight: $global-weight-semibold;
   &_close{
     position: absolute;

@@ -73,3 +73,5 @@ FeaturedImage.args = {
   }
 }
 
+export { Default, FeaturedImage }
+

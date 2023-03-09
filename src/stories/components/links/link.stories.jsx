@@ -23,7 +23,7 @@ const Template = ({ label, ...args }) => {
 };
 
 const defaultArgs = {
-  text: 'LinK Text',
+  text: 'Link Text',
   url: '#',
 
 }

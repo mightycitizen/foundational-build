@@ -1,5 +1,6 @@
 import twig from './card-horizontal.twig';
 import { card } from '../../global/placeholders/components.json';
+import { sizes } from '../../global/placeholders/images.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Teasers/Horizontal Card',
@@ -13,10 +14,11 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
+const imageDimensions = sizes.landscapeCroppedMedium;
 const defaultArgs = {
   ...card,
   image: {
-    src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
+    src: `https://source.unsplash.com/9wg5jCEPBsw/${imageDimensions.width}x${imageDimensions.height}`,
     alt: 'Alt Text'
   }
 }

@@ -3,62 +3,7 @@ import { card } from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Teasers/General Card',
-  // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  // argTypes: {
-  //     type: {
-  //       handle: {
-  //         control: 'text'
-  //       }
-  //     },
-  //     date: {
-  //       month_short: {
-  //         control: 'text'
-  //       },
-  //       day: {
-  //         control: 'text'
-  //       }
-  //     },
-  //     flag: {
-  //       control: 'text'
-  //     },
-  //     image: {
-  //       src: {
-  //         control: 'text'
-  //       },
-  //       alt: {
-  //         control: 'text'
-  //       }
-  //     },
-  //     heading: {
-  //       text: {
-  //         control: 'text'
-  //       },
-  //       url: {
-  //         control: 'text'
-  //       },
-  //       level: {
-  //         control: 'number'
-  //       }
 
-  //     },
-  //     link: {
-  //       text: {
-  //         control: 'text'
-  //       },
-  //       url: {
-  //         control: 'text'
-  //       }
-  //     }
-
-  //   // backgroundColor: { control: 'color' },
-  //   // label: { control: 'text' },
-  //   // onClick: { action: 'onClick' },
-  //   // primary: { control: 'boolean' },
-  //   // size: {
-  //   //   control: { type: 'select' },
-  //   //   options: ['small', 'medium', 'large'],
-  //   // },
-  // },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args

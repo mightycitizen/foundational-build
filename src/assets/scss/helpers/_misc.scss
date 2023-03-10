@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '../variables/image-sizes.scss';
 
 // .no-shadow{
@@ -85,7 +86,7 @@
 
 @each $size, $values in $image_sizes {
   .image-size--#{$size}{
-    aspect-ratio: #{map-get($values, 'width') / map-get($values, 'height')};
+    aspect-ratio: math.div(map-get($values, 'width'), map-get($values, 'height'));
   }
 }
 

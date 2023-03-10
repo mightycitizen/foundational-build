@@ -1,4 +1,5 @@
 
+@use 'sass:math';
 
 @mixin vertical-center(){
     position: absolute;
@@ -11,7 +12,7 @@
   $arrow-size-horizontal: 40;
   $arrow-size-vertical: 24;
   background-repeat: no-repeat;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='#{$arrow-size-horizontal}' height='#{$arrow-size-vertical}' viewBox='0 0 #{$arrow-size-horizontal} #{$arrow-size-vertical}'><polygon points='0,0 #{$arrow-size-horizontal},0 #{$arrow-size-horizontal/2},#{$arrow-size-vertical}' style='fill: rgb%2851, 51, 51%29'></polygon></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='#{$arrow-size-horizontal}' height='#{$arrow-size-vertical}' viewBox='0 0 #{$arrow-size-horizontal} #{$arrow-size-vertical}'><polygon points='0,0 #{$arrow-size-horizontal},0 #{math.div($arrow-size-horizontal,2)},#{$arrow-size-vertical}' style='fill: rgb%2851, 51, 51%29'></polygon></svg>");
   background-size: 9px;
   background-position: right rem-calc(-17) center;
   @include spacer(padding,right,4,4);
@@ -50,7 +51,7 @@
   $width: nth($size, 1);
   $height: nth($size, length($size));
 
-  $width: $width / 2;
+  $width: math.div($width,2);
   $height: if(length($size) > 1, $height, $height/2);
 
   @if $direction == up {

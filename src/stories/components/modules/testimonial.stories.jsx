@@ -2,7 +2,7 @@ import twig from './testimonial.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Cards/Testimonial',
+  title: 'Components/Modules/Testimonials/Testimonial',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

@@ -58,19 +58,14 @@ const BackgroundColor = Template.bind({});
 BackgroundColor.args = {
   ...defaultArgs,
   section_heading: 'Background Color',
-  section_background: 'bg-solid-primary'
+  section_class: 'bg-solid-primary color-white'
 };
-//
-// export const Large = Template.bind({});
-// Large.args = {
-//   size: 'large',
-//   label: 'Button',
-// };
-//
-// export const Small = Template.bind({});
-// Small.args = {
-//   size: 'small',
-//   label: 'Button',
-// };
 
-export { Default, BackgroundColor }
+const Tight = Template.bind({});
+Tight.args = {
+  ...defaultArgs,
+  section_heading: 'Tight',
+  section_class: 'bg-solid-secondary-lightest section--tight'
+};
+
+export { Default, BackgroundColor, Tight }

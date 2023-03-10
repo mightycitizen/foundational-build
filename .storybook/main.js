@@ -34,10 +34,10 @@ module.exports = {
     "../src/stories/**/**/*.stories.jsx"
   ],
   addons: [
-    "@storybook/addon-links",
+    // "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-    "storybook-design-token"
+    // "@storybook/addon-interactions",
+    // "storybook-design-token"
   ],
   framework: "@storybook/html",
   webpackFinal: async (config, { configType }) => {

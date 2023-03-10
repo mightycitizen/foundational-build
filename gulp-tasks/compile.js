@@ -5,12 +5,12 @@
 const { src, dest } = require('gulp');
 
 // Include Our Plugins
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const prefix = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 const rename = require('gulp-rename');
-sass.compiler = require('sass');
+//sass.compiler = require('sass');
 
 const ModuleReplacement = require('./webpack.module-replacement.config');
 

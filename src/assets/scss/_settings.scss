@@ -225,7 +225,7 @@ $abbr-underline: 1px dotted $black;
 // ---------------------
 
 $lead-font-size: rem-calc(24);
-$lead-lineheight: 33/24;
+$lead-lineheight: 1.375; // 33/24
 $subheader-lineheight: 1.4;
 $subheader-color: $dark-gray;
 $subheader-font-weight: $global-weight-normal;

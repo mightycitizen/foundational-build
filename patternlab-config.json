@@ -49,7 +49,7 @@
       "meta": "./src/styleguide/_meta/",
       "annotations": "./src/styleguide/_annotations/",
       "styleguide": "dist/",
-      "patternlabFiles": {
+      "storybookFiles": {
         "general-header": "views/partials/general-header.mustache",
         "general-footer": "views/partials/general-footer.mustache",
         "patternSection": "views/partials/patternSection.mustache",
@@ -62,15 +62,15 @@
       "css": "./dist/css"
     },
     "public": {
-      "root": "patternlab/",
-      "patterns": "patternlab/patterns/",
-      "data": "patternlab/styleguide/data/",
-      "annotations": "patternlab/annotations/",
-      "styleguide": "patternlab/styleguide/",
-      "js": "patternlab/js",
-      "images": "patternlab/images",
-      "fonts": "patternlab/fonts",
-      "css": "patternlab/css"
+      "root": "storybook/",
+      "patterns": "storybook/patterns/",
+      "data": "storybook/styleguide/data/",
+      "annotations": "storybook/annotations/",
+      "styleguide": "storybook/styleguide/",
+      "js": "storybook/js",
+      "images": "storybook/images",
+      "fonts": "storybook/fonts",
+      "css": "storybook/css"
     }
   },
   "patternExtension": "twig",

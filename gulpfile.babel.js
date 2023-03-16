@@ -11,8 +11,8 @@ import yaml          from 'js-yaml';
 
 
 // Include Pattern Lab and config.
-// const config = require('./patternlab-config.json');
-// const patternlab = require('@pattern-lab/core')(config);
+// const config = require('./storybook-config.json');
+// const storybook = require('@pattern-lab/core')(config);
 let method;
 
 // Include Our tasks.
@@ -54,9 +54,9 @@ exports.clean = parallel(cleanCSS, cleanJS);
  */
 function serve(done) {
   // See https://browsersync.io/docs/options for more options.
-  method = 'patternlab';
+  method = 'storybook';
   server.init({
-    // We want to serve both the patternlab directory, so it gets
+    // We want to serve both the storybook directory, so it gets
     // loaded by default AND three directories up which is the
     // Drupal core directory. This allows urls that reference
     // Drupal core JS files to resolve correctly.
@@ -113,9 +113,9 @@ function watchFiles() {
     })
   );
 
-  // Reload the browser after patternlab updates.
-  if (method === 'patternlab'){
-    // patternlab.events.on('patternlab-build-end', () => {
+  // Reload the browser after storybook updates.
+  if (method === 'storybook'){
+    // storybook.events.on('storybook-build-end', () => {
     //   server.reload('*.html');
     // });
   }else{

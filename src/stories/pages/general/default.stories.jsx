@@ -2,7 +2,7 @@ import twig from './default.twig';
 
 import { placeholder, sizes } from '../../global/placeholders/images.json';
 
-import { accordion, breadcrumbs,  hero, card, contact, testimonial, wysiwyg, video, steps, statistic, links } from '../../global/placeholders/components.json';
+import { accordion, tabs, breadcrumbs,  hero, card, contact, testimonial, wysiwyg, video, steps, statistic, links } from '../../global/placeholders/components.json';
 
 import { menu, social, logo } from '../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
@@ -84,12 +84,14 @@ const defaultArgs = {
       ...testimonial
     },
     {
-      module_type: 'tabs'
+      module_type: 'tabs',
+      tabs_id: 'general_tabs',
+      tabs
     },
     {
       module_type: 'cta',
       section_heading: "Default CTA",
-      section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas urna in mauris dictum porta. Integer quis diam finibus, mattis dui quis, rhoncus orci. Nunc consequat, urna eget feugiat cursus, erat dolor vehicula nibh, et eleifend quam lorem at purus.",
+      section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       section_button: {
         url: "#",
         text: "Text"
@@ -101,7 +103,7 @@ const defaultArgs = {
       },
       module_type: 'cta',
       section_heading: "Default CTA",
-      section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas urna in mauris dictum porta. Integer quis diam finibus, mattis dui quis, rhoncus orci. Nunc consequat, urna eget feugiat cursus, erat dolor vehicula nibh, et eleifend quam lorem at purus.",
+      section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       section_button: {
         url: "#",
         text: "Text"
@@ -113,7 +115,7 @@ const defaultArgs = {
       },
       module_type: 'cta',
       section_heading: "Default CTA",
-      section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas urna in mauris dictum porta. Integer quis diam finibus, mattis dui quis, rhoncus orci. Nunc consequat, urna eget feugiat cursus, erat dolor vehicula nibh, et eleifend quam lorem at purus.",
+      section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       section_button: {
         url: "#",
         text: "Text"
@@ -123,6 +125,7 @@ const defaultArgs = {
     {
       module_type: 'three-up-cards',
       section_heading: 'Three Up Cards',
+      section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       section_class: 'bg-gradient-secondary',
       cards: Array.from({length: 3}, (v, i) => {
         return {
@@ -137,6 +140,7 @@ const defaultArgs = {
     {
       module_type: 'three-up-cards',
       section_heading: 'Three Up Event Cards',
+      section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       cards: Array.from({length: 3}, (v, i) => {
         return {
           ...card,
@@ -161,6 +165,7 @@ const defaultArgs = {
       module_type: 'card-carousel',
       section_class: 'bg-light-primary',
       section_heading: 'Carousel',
+      section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       cards: Array.from({length: 8}, (v, i) => {
         return {
           ...card,
@@ -174,6 +179,7 @@ const defaultArgs = {
     {
       module_type: 'testimonial-carousel',
       section_heading: 'Testimonial Carousel',
+      section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       cards: Array.from({length: 8}, (v, i) => {
         return {
           ...testimonial
@@ -184,6 +190,7 @@ const defaultArgs = {
       module_type: 'card-carousel-center',
       section_class: 'bg-gradient-primary',
       section_heading: 'Center Carousel',
+      section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       cards: Array.from({length: 8}, (v, i) => {
         return {
           ...card,
@@ -197,11 +204,13 @@ const defaultArgs = {
     {
       module_type: 'step-list',
       section_heading: 'Step List',
+      section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       steps
     },
     {
       module_type: 'statistics',
       section_heading: 'Statistics',
+      section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       statistics:  Array.from({length: 3}, (v, i) => {
         return {
           ...statistic
@@ -211,6 +220,7 @@ const defaultArgs = {
     {
       module_type: 'statistics',
       section_heading: 'Statistics (Side)',
+      section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       section_style: 'side',
       section_button: {
         url: "#",
@@ -225,6 +235,7 @@ const defaultArgs = {
     {
       module_type: 'links',
       section_heading: 'Links',
+      section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       section_class: "bg-gradient-secondary",
       links
     }

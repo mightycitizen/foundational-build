@@ -1,4 +1,5 @@
 import twig from './tabs.twig';
+import { tabs } from '../../global/placeholders/components.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -37,18 +38,7 @@ const defaultArgs = {
   section_heading: 'Heading',
   section_description: 'Description',
   tabs_id: 'example-tabs-2',
-  tabs: [
-    {
-      id: 'tab-1',
-      text: 'Tab 1',
-      content: '<p>Tab 1 content</p>'
-    },
-    {
-      id: 'tab-2',
-      text: 'Tab 2',
-      content: '<p>Tab 2 content</p>'
-    }
-  ]
+  tabs
 }
 export const Tabs = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

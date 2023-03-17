@@ -42,6 +42,18 @@
       "url": "#"
     }
   ],
+  "tabs": [
+    {
+      "id": "tab-1",
+      "text": "Tab 1",
+      "content": "<p>Tab 1 content</p>"
+    },
+    {
+      "id": "tab-2",
+      "text": "Tab 2",
+      "content": "<p>Tab 2 content</p>"
+    }
+  ],
   "steps": [
     {
       "heading": "Heading",

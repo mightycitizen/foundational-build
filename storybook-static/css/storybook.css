@@ -3,7 +3,6 @@
  * styles for grids, animations, color swatches, etc.
  * These styles will not be your production CSS.
  */
-
 /**
  * By default we want to add padding so the style guide is more
  * readable. This can be overridden in each patterns data file.
@@ -19,10 +18,8 @@
 /* .pl-c-pattern__header, .pl-c-category, .pl-c-pattern__title{
   padding: 0 30px;
 } */
-
 #sg-patterns {
-  -webkit-box-sizing: border-box !important;
-          box-sizing: border-box !important;
+  box-sizing: border-box !important;
   max-width: 100%;
   padding: 0 8px;
 }
@@ -42,10 +39,9 @@
   vertical-align: top;
   border: 1px solid #ececec;
   color: #fff;
-
 }
 
-.pl-swatch--light{
+.pl-swatch--light {
   color: #000;
 }
 
@@ -55,7 +51,7 @@
   left: 0;
   width: 100%;
   padding: 7px;
-  background-color: rgba(255,255,255, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
   color: #000;
   font-weight: bold;
   font-size: 11px;
@@ -64,14 +60,12 @@
   line-height: 1;
 }
 
-
-@media screen and (min-width: 600px){
+@media screen and (min-width: 600px) {
   .pl-swatch {
     width: 180px;
     height: 180px;
   }
 }
-
 /* Increases size of pattern category and pattern name */
 .pl-c-category__title a {
   font-size: 32px !important;
@@ -81,7 +75,7 @@
   font-size: 24px !important;
 }
 
-.pl-c-pattern-index{
+.pl-c-pattern-index {
   padding: 0 20px;
 }
 
@@ -116,8 +110,7 @@
 .card:not(.card--horizontal){
   max-width: 500px;
 } */
-
-.pl-placeholder{
+.pl-placeholder {
   padding: 30px;
   text-align: center;
   border: 1px solid #ccc;
@@ -126,45 +119,44 @@
   position: relative;
 }
 
-  .pl-placeholder:before{
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 4px 8px;
-    background-color: #ccc;
-    color: #333;
-    font-size: 13px;
-    text-transform: uppercase;
-    font-weight: bold;
-    content: 'Patternlab demo purposes only';
-  }
+.pl-placeholder:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 4px 8px;
+  background-color: #ccc;
+  color: #333;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: bold;
+  content: "Patternlab demo purposes only";
+}
 
-  .pl-image{
-    margin: 20px auto;
-    border: 1px solid #ccc;
-    background-color: #f5f5f5;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.pl-image {
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .logo{
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-    font-size: 24px;
-    display: inline-block;
-    line-height: 1.1;
-  }
+.logo {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1.1;
+}
 
-  .text-white .logo{
-    color: white;
-  }
+.text-white .logo {
+  color: white;
+}
 
-
-  @media screen and (min-width: 600px){
-    .logo{
-      font-size: 32px;
-    }
+@media screen and (min-width: 600px) {
+  .logo {
+    font-size: 32px;
   }
+}

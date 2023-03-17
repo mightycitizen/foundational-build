@@ -37,7 +37,7 @@ const defaultArgs = {
   section_heading: 'Heading',
   section_description: 'Description',
   video_type: 'youtube',
-  video_id: '9wg5jCEPBsw',
+  video_id: 'gJ6APKIjFQY',
   image: {
     src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
     alt: 'Alt Text'

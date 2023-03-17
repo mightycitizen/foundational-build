@@ -1,10 +1,10 @@
 import twig from './news-detail.twig';
-import { menu, social } from '../../global/placeholders/global.json';
+import { menu, social, logo } from '../../global/placeholders/global.json';
 
 
 import { placeholder, sizes } from '../../global/placeholders/images.json';
 
-import { wysiwyg, pagination } from '../../global/placeholders/components.json';
+import { wysiwyg, pagination, breadcrumbs } from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/News/News Detail',
@@ -53,6 +53,8 @@ const Template = ({ label, ...args }) => {
 };
 
 const defaultArgs =  {
+  logo, 
+  breadcrumbs,
   menu,
   social,
   image_sizes: sizes,

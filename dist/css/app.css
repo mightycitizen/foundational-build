@@ -16166,14 +16166,14 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .section--tight.section--collapse + .section--tight.section--collapse {
   padding-top: 0 !important;
 }
-.section:not([class*=bg-]) + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient--right]), .section.bg-gradient--flip + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient--right]) {
+.section:not([class*=bg-]) + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient-]), .section.bg-gradient--flip + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient-]), .section:not([class*=bg-]) + .section.bg-gradient--down, .section.bg-gradient--flip + .section.bg-gradient--down {
   padding-top: 0;
 }
-.section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient--right]) {
+.section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient-]), .section:not([class*=bg-]).section--tight + .section.bg-gradient--down {
   padding-top: 1.6666666667rem;
 }
 @media print, screen and (min-width: 40em) {
-  .section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient--right]) {
+  .section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient-]), .section:not([class*=bg-]).section--tight + .section.bg-gradient--down {
     padding-top: 2.6666666667rem;
   }
 }

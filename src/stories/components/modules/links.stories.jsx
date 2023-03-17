@@ -1,4 +1,5 @@
 import twig from './links.twig';
+import { links } from '../../global/placeholders/components.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -46,32 +47,7 @@ const Template = ({ label, ...args }) => {
 const defaultArgs = {
   section_heading: 'Heading',
   section_description: 'Description',
-  links: [
-    {
-      text: 'Link',
-      url: '#'
-    },
-      {
-      text: 'Link',
-      url: '#'
-    },
-      {
-      text: 'Link',
-      url: '#'
-    },
-      {
-      text: 'Link',
-      url: '#'
-    },
-      {
-      text: 'Link',
-      url: '#'
-    },
-      {
-      text: 'Link',
-      url: '#'
-    }
-  ]
+  links
 }
 export const Links = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

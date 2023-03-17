@@ -1,6 +1,6 @@
 import twig from './sidebar.twig';
 
-import { menu, social } from '../../global/placeholders/global.json';
+import { menu, social, logo } from '../../global/placeholders/global.json';
 import { card, hero } from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -17,6 +17,8 @@ const Template = ({ label, ...args }) => {
 export const Sidebar = Template.bind({});
 Sidebar.args = {
   hero,
+  breadcrumbs, 
+  logo,
   menu,
   social,
   card

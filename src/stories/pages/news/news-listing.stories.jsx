@@ -1,10 +1,10 @@
 import twig from './news-listing.twig';
-import { menu, social } from '../../global/placeholders/global.json';
+import { menu, social, logo } from '../../global/placeholders/global.json';
 
 
 
 import { placeholder, sizes } from '../../global/placeholders/images.json';
-import { pagination } from '../../global/placeholders/components.json';
+import { pagination, breadcrumbs } from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/News/News Listing',
@@ -54,6 +54,8 @@ const Template = ({ label, ...args }) => {
 export const NewsListing = Template.bind({});
 NewsListing.args = {
   menu,
+  logo,
+  breadcrumbs,
   social,
   image_sizes: sizes,
   image_placeholder: placeholder,

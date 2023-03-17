@@ -1,5 +1,5 @@
 import twig from './breadcrumbs.twig';
-
+import { breadcrumbs } from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Navigation/Breadcrumbs',
@@ -19,18 +19,6 @@ const Template = ({ label, ...args }) => {
 
 export const Breadcrumbs = Template.bind({});
 Breadcrumbs.args = {
-  breadcrumbs: [
-    {
-      url: '#',
-      text: 'Home'
-    },
-    {
-      url: '#',
-      text: 'Parent Page'
-    },
-    {
-      text: 'Current Page'
-    }
-  ]
+  breadcrumbs
 };
 //

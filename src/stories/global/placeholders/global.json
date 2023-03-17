@@ -1,4 +1,16 @@
 {
+  "footer_links": [
+    {
+      "text": "Privacy Policy",
+      "url": "#"
+    },
+    {
+      "text": "Terms of Use",
+      "url": "#"
+    }
+  ],  
+  "address": "5555 Street 1\r\nUnit B\r\nAustin, TX 78702",
+  "site_name": "Mighty Citizen",
   "social": [
     {
       "handle": "youtube",

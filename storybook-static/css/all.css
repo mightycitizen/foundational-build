@@ -14180,17 +14180,17 @@ a.thumbnail image {
 .a2a_svg svg g, .a2a_svg svg path {
   fill: #fff;
 }
-.text-white .a2a_svg {
+.color-white .a2a_svg {
   background-color: #fff !important;
   mix-blend-mode: lighten;
 }
-.text-white .a2a_svg svg g, .text-white .a2a_svg svg path {
+.color-white .a2a_svg svg g, .color-white .a2a_svg svg path {
   fill: black;
 }
-.text-white .a2a_svg [class*=icon-] {
+.color-white .a2a_svg [class*=icon-] {
   color: black;
 }
-.text-white .a2a_svg:hover, .text-white .a2a_svg:focus {
+.color-white .a2a_svg:hover, .color-white .a2a_svg:focus {
   background-color: #bdcaef !important;
 }
 .a2a_svg [class*=icon-] {
@@ -16166,14 +16166,14 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
 .section--tight.section--collapse + .section--tight.section--collapse {
   padding-top: 0 !important;
 }
-.section:not([class*=bg-]) + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient--right]), .section.bg-gradient--flip + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient--right]) {
+.section:not([class*=bg-]) + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient-]), .section.bg-gradient--flip + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient-]), .section:not([class*=bg-]) + .section.bg-gradient--down, .section.bg-gradient--flip + .section.bg-gradient--down {
   padding-top: 0;
 }
-.section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient--right]) {
+.section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient-]), .section:not([class*=bg-]).section--tight + .section.bg-gradient--down {
   padding-top: 1.6666666667rem;
 }
 @media print, screen and (min-width: 40em) {
-  .section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient--right]) {
+  .section:not([class*=bg-]).section--tight + .section:not(.section--tight):not([class*=bg-solid-]):not([class*=bg-light-]):not([class*=bg-gradient-]), .section:not([class*=bg-]).section--tight + .section.bg-gradient--down {
     padding-top: 2.6666666667rem;
   }
 }
@@ -16911,17 +16911,17 @@ button[type=submit]:not(.is-loading) {
 .icon--circle svg g, .icon--circle svg path {
   fill: #fff;
 }
-.text-white .icon--circle {
+.color-white .icon--circle {
   background-color: #fff !important;
   mix-blend-mode: lighten;
 }
-.text-white .icon--circle svg g, .text-white .icon--circle svg path {
+.color-white .icon--circle svg g, .color-white .icon--circle svg path {
   fill: black;
 }
-.text-white .icon--circle [class*=icon-] {
+.color-white .icon--circle [class*=icon-] {
   color: black;
 }
-.text-white .icon--circle:hover, .text-white .icon--circle:focus {
+.color-white .icon--circle:hover, .color-white .icon--circle:focus {
   background-color: #bdcaef !important;
 }
 .icon--circle [class*=icon-] {

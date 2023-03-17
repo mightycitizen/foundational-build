@@ -1,5 +1,5 @@
 import twig from './hero.twig';
-import { hero } from '../../global/placeholders/components.json';
+import { hero, breadcrumbs } from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Containers/Hero',
@@ -23,7 +23,7 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-const defaultArgs = {...hero}
+const defaultArgs = {...hero, breadcrumbs};
 export const Hero = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Hero.args = defaultArgs;

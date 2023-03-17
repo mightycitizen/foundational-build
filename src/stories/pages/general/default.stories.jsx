@@ -2,7 +2,7 @@ import twig from './default.twig';
 
 import { placeholder, sizes } from '../../global/placeholders/images.json';
 
-import { accordion, hero, card, contact, testimonial, wysiwyg, video } from '../../global/placeholders/components.json';
+import { accordion, breadcrumbs,  hero, card, contact, testimonial, wysiwyg, video, steps, statistic, links } from '../../global/placeholders/components.json';
 
 import { menu, social, logo } from '../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
@@ -19,6 +19,7 @@ const Template = ({ label, ...args }) => {
 const Default = Template.bind({});
 const defaultArgs = {
   hero,
+  breadcrumbs,
   menu,
   logo,
   social,
@@ -195,11 +196,17 @@ const defaultArgs = {
     },
     {
       module_type: 'step-list',
-      section_heading: 'Step List'
+      section_heading: 'Step List',
+      steps
     },
     {
       module_type: 'statistics',
-      section_heading: 'Statistics'
+      section_heading: 'Statistics',
+      statistics:  Array.from({length: 3}, (v, i) => {
+        return {
+          ...statistic
+        }
+      })
     },
     {
       module_type: 'statistics',
@@ -208,12 +215,18 @@ const defaultArgs = {
       section_button: {
         url: "#",
         text: "Text"
-      }
+      },
+      statistics:  Array.from({length: 3}, (v, i) => {
+        return {
+          ...statistic
+        }
+      })
     },
     {
       module_type: 'links',
       section_heading: 'Links',
-      section_class: "bg-gradient-secondary"
+      section_class: "bg-gradient-secondary",
+      links
     }
 
 

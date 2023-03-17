@@ -1,5 +1,6 @@
 import twig from './step-list.twig';
 
+import { steps } from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Modules/Step List',
@@ -36,35 +37,7 @@ const Template = ({ label, ...args }) => {
 const defaultArgs = {
   section_heading: 'Heading',
   section_description: 'Description',
-  steps: [
-    {
-      heading: 'Heading',
-      description: 'Description',
-      link: {
-        text: 'Link',
-        url: '#',
-        target: '_blank'
-      }
-    },
-    {
-      heading: 'Heading',
-      description: 'Description',
-      link: {
-        text: 'Link',
-        url: '#',
-        target: '_blank'
-      }
-    },
-     {
-      heading: 'Heading',
-      description: 'Description',
-      link: {
-        text: 'Link',
-        url: '#',
-        target: '_blank'
-      }
-    }
-  ]
+  steps
 }
 export const StepList = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

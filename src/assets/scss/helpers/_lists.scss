@@ -8,8 +8,8 @@
         display: inline-block;
         // right: 0;
         position: absolute;
-        opacity: 0.5;
-        right: rem-calc(-1.5*$spacer);
+//        opacity: 0.5;
+        right: rem-calc(-2*$spacer);
         transform: translateX(50%);
       }
     }

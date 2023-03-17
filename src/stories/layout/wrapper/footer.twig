@@ -5,7 +5,7 @@
       <div class="cell medium-5 medium-order-2 medium-text-left">
         <div class="media-object media-object--stack">
           <div class="media-object-section">
-            {% include '@components/logo/logo.twig' %}
+            {% include '@components/logo/logo.twig' with logo %}
           </div>
           <div class="media-object-section">
             <address>
@@ -29,17 +29,10 @@
       </div>
     </div>
 
-    <ul class="list-unstyled d-flex gap-4 list-divided mb-2">
-      {% for item in footer_links | default %}
-        <li>
-          {% set link = item.cta %}
-          {% include '@components/links/link.twig' with {
-            link: {
-              url: link.url,
-              text: link.text,
-              target: link.getTarget()
-            }
-          } %}
+    <ul class="list-unstyled d-flex gap-4 align-center list-divided mb-2">
+      {% for link in footer_links | default %}
+        <li>          
+          {% include '@components/links/link.twig' with link %}
         </li>
       {% endfor %}
     </ul>

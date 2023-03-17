@@ -1,6 +1,6 @@
 import twig from './events-listing.twig';
 import { placeholder, sizes } from '../../global/placeholders/images.json';
-import { pagination } from '../../global/placeholders/components.json';
+import { pagination, breadcrumbs } from '../../global/placeholders/components.json';
 import { menu, social, logo } from '../../global/placeholders/global.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
@@ -133,6 +133,7 @@ const items = [
 ]
 
 EventsListing.args = {
+  breadcrumbs,
   logo,
   pagination,
   menu,

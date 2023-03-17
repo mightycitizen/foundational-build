@@ -1,5 +1,5 @@
 import twig from './footer.twig';
-import { menu, social } from '../../global/placeholders/global.json';
+import { menu, social, footer_links, logo, address } from '../../global/placeholders/global.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -52,4 +52,7 @@ export const Footer = Template.bind({});
 Footer.args = {
   menu,
   social,
+  footer_links,
+  logo,
+  address,
 }

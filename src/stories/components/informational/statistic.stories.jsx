@@ -1,4 +1,5 @@
 import twig from './statistic.twig';
+import { statistic } from '../../global/placeholders/components.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -31,8 +32,7 @@ const Template = ({ label, ...args }) => {
 };
 
 const defaultArgs = {
-  value: 9,
-  text: "Lorem ipsum"
+  ...statistic
 }
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

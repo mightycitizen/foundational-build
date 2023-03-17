@@ -16344,8 +16344,7 @@ html, body, .l-wrapper {
   content: "|";
   display: inline-block;
   position: absolute;
-  opacity: 0.5;
-  right: -0.6666666667rem;
+  right: -0.8888888889rem;
   transform: translateX(50%);
 }
 

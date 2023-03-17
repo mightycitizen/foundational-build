@@ -8,13 +8,44 @@ export const initYoutube = () => {
     playingClass = 'is-playing';
 
   // 1. This code loads the IFrame Player API code asynchronously.
-  const youtube = document.getElementById('youtube-api');
+  
 
 
 
 
   const bindEvents = () => {
-    $('.video_wrapper[data-video-type="youtube"]').each(function(){
+    $(document).on('click', '[data-video-trigger="click"][data-video-type="youtube"]', function(){
+      if ($(this).hasClass(playingClass)){
+        $(this).trigger('pause').removeClass(playingClass);
+      }else{
+        $(this).trigger('play');
+      }
+    });
+  
+    $(window).on('scroll', Foundation.util.throttle(
+      function(){
+        $('[data-video-trigger="scroll"][data-video-type="youtube"]').each(function(){
+          if ($(this).find('.video_player').isInViewport()){
+            $(this).trigger('play');
+          }else{
+            $(this).trigger('pause');
+          }
+  
+        });
+      }, 50));
+  
+      $(window).on('scroll', Foundation.util.throttle(
+        function(){
+          checkVideo();
+        }, 50));
+  
+      $(window).on('load', function(){
+        checkVideo();
+  
+      });
+    $('.video_wrapper[data-video-type="youtube"]:not(.is-initialized)').each(function(){
+      //console.log($(this));
+      
           var holder = $(this),
               vid = holder.find('.video_player'),
               player,
@@ -22,9 +53,10 @@ export const initYoutube = () => {
               trigger = holder.data('video-trigger'),
               firstPlay = true;
 
+          holder.addClass('is-initialized');
           vid.attr('tabindex', -1);
           const youtubeId = vid.data('video-id');
-          player = new YT.Player(vid[0], {
+          player = new window.YT.Player(vid[0], {
               playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 1 , 'showInfo': 0, 'mute': 1,'rel': 0},
               videoId: youtubeId,
               events: {
@@ -34,6 +66,7 @@ export const initYoutube = () => {
           });
 
           function onPlayerReady() {
+            
             player.playVideo();
             setVideoSize();
             holder.bind('play', function(){
@@ -52,6 +85,7 @@ export const initYoutube = () => {
           }
 
           function onPlayerStateChange(event) {
+            
             if (firstPlay){
               if (trigger !== 'background'){
                 setTimeout(() => {
@@ -134,16 +168,19 @@ export const initYoutube = () => {
     });
   }
 
-
-  if (youtube){
-    bindEvents();
-  }else{
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    tag.setAttribute('id', 'youtube-api')
-    //tag.attr('id','youtube-api');
-    document.body.appendChild(tag);
-  }
+  setTimeout(() => {
+    const youtubeScript = document.getElementById('youtube-api');
+//    console.log(youtubeScript);
+    if (youtubeScript){
+      bindEvents();
+    }else{
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      tag.setAttribute('id', 'youtube-api')
+      //tag.attr('id','youtube-api');
+      document.body.appendChild(tag);
+    }
+  }, 100);
 
 
 
@@ -151,38 +188,11 @@ export const initYoutube = () => {
   // 3. This function creates an <iframe> (and YouTube player)
   //    after the API code downloads.
 
-  window.onYouTubeIframeAPIReady = function(){
+  window.onYouTubeIframeAPIReady = function(){    
+    window.YT = YT;
     bindEvents();
   }
-  $(document).on('click', '[data-video-trigger="click"][data-video-type="youtube"]', function(){
-    if ($(this).hasClass(playingClass)){
-      $(this).trigger('pause').removeClass(playingClass);
-    }else{
-      $(this).trigger('play');
-    }
-  });
-
-  $(window).on('scroll', Foundation.util.throttle(
-    function(){
-      $('[data-video-trigger="scroll"][data-video-type="youtube"]').each(function(){
-        if ($(this).find('.video_player').isInViewport()){
-          $(this).trigger('play');
-        }else{
-          $(this).trigger('pause');
-        }
-
-      });
-    }, 50));
-
-    $(window).on('scroll', Foundation.util.throttle(
-      function(){
-        checkVideo();
-      }, 50));
-
-    $(window).on('load', function(){
-      checkVideo();
-
-    });
+  
 }
 
 

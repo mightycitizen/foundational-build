@@ -8,13 +8,11 @@ export const initYoutube = () => {
     playingClass = 'is-playing';
 
   // 1. This code loads the IFrame Player API code asynchronously.
-  const youtube = document.getElementById('youtube-api');
-
-
-
-
+  
+  
   const bindEvents = () => {
-    $('.video_wrapper[data-video-type="youtube"]').each(function(){
+    
+    $('.video_wrapper[data-video-type="youtube"]:not(.is-initialized)').each(function(){
           var holder = $(this),
               vid = holder.find('.video_player'),
               player,
@@ -22,16 +20,17 @@ export const initYoutube = () => {
               trigger = holder.data('video-trigger'),
               firstPlay = true;
 
+          holder.addClass('is-initialized');
           vid.attr('tabindex', -1);
           const youtubeId = vid.data('video-id');
-          player = new YT.Player(vid[0], {
-              playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 1, 'controls': 1 , 'showInfo': 0, 'mute': 1,'rel': 0},
+          player = new window.YT.Player(vid[0], {
+              playerVars: { 'enablejsapi': 1, 'fs': 1, 'playlist': youtubeId, 'loop': 1, 'modestbranding': 1, 'autoplay': 0, 'controls': 1 , 'showInfo': 0, 'mute': 1,'rel': 0},
               videoId: youtubeId,
               events: {
                   'onReady': onPlayerReady,
                   'onStateChange': onPlayerStateChange
               }
-          });
+          });          
 
           function onPlayerReady() {
             player.playVideo();
@@ -52,20 +51,23 @@ export const initYoutube = () => {
           }
 
           function onPlayerStateChange(event) {
+            
             if (firstPlay){
               if (trigger !== 'background'){
                 setTimeout(() => {
                   player.pauseVideo();
-                }, 50);
+                }, 5);
               }
 
             }
-            //console.log('now', event.target.getPlayerState());
-            switch (event.target.getPlayerState()){
+            // console.log(event);
+            // console.log(event.target.getPlayerState());
+            switch (event.data){
               case 2:
                 setTimeout(() => {
-                  switch (event.target.getPlayerState()){
+                  switch (event.data){
                     case 2:
+                      
                       playing = false;
                       holder.removeClass(playingClass);
                       break;
@@ -135,7 +137,7 @@ export const initYoutube = () => {
   }
 
 
-  if (youtube){
+  if (document.body.classList.contains('youtube-loaded')){
     bindEvents();
   }else{
     var tag = document.createElement('script');
@@ -152,7 +154,9 @@ export const initYoutube = () => {
   //    after the API code downloads.
 
   window.onYouTubeIframeAPIReady = function(){
+    window.YT = YT;
     bindEvents();
+    document.body.classList.add('youtube-loaded');    
   }
   $(document).on('click', '[data-video-trigger="click"][data-video-type="youtube"]', function(){
     if ($(this).hasClass(playingClass)){

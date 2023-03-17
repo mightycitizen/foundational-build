@@ -153,20 +153,8 @@ function browserSync(done) {
 
 // Watch task that runs a browsersync server.
 exports.watch = series(
-  buildVariables,
-  parallel(cleanCSS, cleanJS),
-  parallel(
-    lintSass,
-    compileSass,
-    lintJS,
-    compileJS,
-    compressAssets,
-    moveFonts,
-    movePatternCSS,
-    movePatternJS
-  ),
-  concatCSS,
-  series(watchFiles)
+  watchFiles,
+  buildVariables
 );
 
 // Build task for Pattern Lab.

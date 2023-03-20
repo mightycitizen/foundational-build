@@ -47,6 +47,7 @@ module.exports = {
       '@global': path.resolve(__dirname, '../', 'src/stories/global'),
       '@layout': path.resolve(__dirname, '../', 'src/stories/layout'),
       '@pages': path.resolve(__dirname, '../', 'src/stories/pages'),
+      '@wrappers': path.resolve(__dirname, '../', 'src/stories/wrappers'),
     };
     config.module.rules.push({
       test: /\.twig$/,

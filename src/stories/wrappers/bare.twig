@@ -1,5 +1,4 @@
 <div class="l-wrapper">
-  {% include "@layout/wrapper/header.twig" %}
   <div class="l-main" id="main">
     {% include '@components/informational/alert.twig' with {
       alert_label: "Alert",
@@ -14,13 +13,4 @@
       {% endblock %}
     </div>
   </div>
-  {% include "@layout/wrapper/footer.twig" %}
-  {% if cookie | default %}
-    {% include '@components/informational/alert.twig' with {
-      text: cookie,
-      closable: true,
-      closable_text: "Accept",
-      alert_class: 'alert--sticky'
-    }%}
-  {% endif %}
 </div>

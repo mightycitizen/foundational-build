@@ -1,5 +1,7 @@
 import twig from './carousel-testimonial.twig';
 
+import { sizes, placeholder } from '../../global/placeholders/images.json';
+import { testimonial } from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
 
@@ -51,17 +53,12 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-const cards = [...Array(5)].map((_, i) => ( {
-  quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla.',
-  attribution: {
-    label: 'John Doe',
-    info: 'CEO, Acme Inc.'
-  },
+const cards = [...Array(5)].map((_, i) => Object.assign(testimonial, {
   image: {
-    src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
+    src: placeholder + sizes.square.width + 'x' + sizes.square.height,
     alt: 'Alt Text'
-  }
-}));
+  }}));
+
 
 const defaultArgs = {
   cards

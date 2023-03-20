@@ -6,7 +6,7 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
     required: {
-      controls: {
+      control: {
         type: 'boolean'
       }
     }

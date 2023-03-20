@@ -6,7 +6,17 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
     required: {
-      controls: {
+      control: {
+        type: 'boolean'
+      }
+    },
+    placeholder: {
+      control: {
+        type: 'text'
+      }
+    },
+    disabled: {
+      control: {
         type: 'boolean'
       }
     }
@@ -26,6 +36,6 @@ export const Text = Template.bind({});
 Text.args ={
   label: "Text",
   id: "text",
-  name: "text",
+  name: "text"  
 
 };

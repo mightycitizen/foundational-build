@@ -12,7 +12,10 @@ export default {
       control: {
         type: 'select',
       },
-      options: ['primary','secondary']
+      options: ['primary','secondary','tertiary','alert','warning','success']
+    },
+    hollow: {
+      control: 'boolean'
     },
     size: {
       control: { type: 'select' },

@@ -1,5 +1,6 @@
 import twig from './card-testimonial.twig';
 import { testimonial } from '../../global/placeholders/components.json';
+import { sizes, placeholder } from '../../global/placeholders/images.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Teasers/Testimonial Card',
@@ -18,7 +19,12 @@ const Template = ({ label, ...args }) => {
 export const TestimonialCard = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 TestimonialCard.args = {
-  ...testimonial
+  ...Object.assign(testimonial, {
+    image: {
+      src: placeholder + sizes.square.width + 'x' + sizes.square.height,
+      alt: 'Alt Text'
+    }}
+  )
 };
 
 

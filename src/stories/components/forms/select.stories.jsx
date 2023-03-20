@@ -5,8 +5,13 @@ export default {
   title: 'Components/Forms/Select Dropdown',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
+    selectize: {
+      control: {
+        type: 'boolean'
+      }
+    },
     required: {
-      controls: {
+      control: {
         type: 'boolean'
       }
     }
@@ -25,8 +30,7 @@ const Template = ({ label, ...args }) => {
 const defaultArgs = {
   label: "Select Dropdown",
   id: "dropdown",
-  name: "dropdown",
-  selectize: false,
+  name: "dropdown",  
   placeholder: 'Select an option',
   options: [
     {

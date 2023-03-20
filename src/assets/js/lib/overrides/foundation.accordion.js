@@ -39,13 +39,13 @@ class Accordion extends Plugin {
    * Initializes the accordion by animating the preset active pane(s).
    * @private
    */
-  _init() {
+  _init() {    
     this._isInitializing = true;
 
-    this.$element.attr('role', 'tablist');
+//    this.$element.attr('role', 'tablist');
     this.$tabs = this.$element.children('[data-accordion-item]');
 
-    this.$tabs.attr({'role': 'presentation'});
+//    this.$tabs.attr({'role': 'presentation'});
 
     this.$tabs.each(function(idx, el) {
       var $el = $(el),
@@ -55,10 +55,10 @@ class Accordion extends Plugin {
 
       $el.find('button:first').attr({
         'aria-controls': id,
-        'role': 'tab',
+        //'role': 'tab',
         'id': linkId,
         'aria-expanded': false,
-        'aria-selected': false
+        //'aria-selected': false
       });
 
       $content.attr({'role': 'tabpanel', 'aria-labelledby': linkId, 'aria-hidden': true, 'id': id});

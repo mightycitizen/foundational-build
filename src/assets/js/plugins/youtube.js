@@ -142,7 +142,7 @@ export const initYoutube = () => {
   }else{
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
-    tag.setAttribute('id', 'youtube-api')
+    //tag.setAttribute('id', 'youtube-api')
     //tag.attr('id','youtube-api');
     document.body.appendChild(tag);
   }

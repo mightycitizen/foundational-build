@@ -8,38 +8,38 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 
-    modifier: {
-      control: 'text'
-    },
-    cards: {
-      flag: {
-        control: 'text'
-      },
-      image: {
-        src: {
-          control: 'text'
-        },
-        url: {
-          control: 'text'
-        }
-      },
-      heading: {
-        text: {
-          control: 'text'
-        },
-        url: {
-          control: 'text'
-        }
-      },
-      link: {
-        text: {
-          control: 'text'
-        },
-        url: {
-          control: 'text'
-        }
-      }
-    }
+    // modifier: {
+    //   control: 'text'
+    // },
+    // cards: {
+    //   flag: {
+    //     control: 'text'
+    //   },
+    //   image: {
+    //     src: {
+    //       control: 'text'
+    //     },
+    //     url: {
+    //       control: 'text'
+    //     }
+    //   },
+    //   heading: {
+    //     text: {
+    //       control: 'text'
+    //     },
+    //     url: {
+    //       control: 'text'
+    //     }
+    //   },
+    //   link: {
+    //     text: {
+    //       control: 'text'
+    //     },
+    //     url: {
+    //       control: 'text'
+    //     }
+    //   }
+    // }
     // backgroundColor: { control: 'color' },
     // label: { control: 'text' },
     // onClick: { action: 'onClick' },
@@ -65,7 +65,7 @@ const tabs = [...Array(5)].map((_, i) => ( {
 }));
 
 const defaultArgs = {
-  id: 'example-tabs',
+  tabs_id: 'example-tabs',
   tabs: tabs
 }
 export const Tabs = Template.bind({});

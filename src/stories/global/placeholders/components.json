@@ -162,8 +162,7 @@
     }
   },
   "hero": {
-    "heading": "Hero",
-    "summary": "Summary",
+    "heading": "Hero",    
     "subheading": "Subheading"
   },
   "card": {

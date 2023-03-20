@@ -64,7 +64,7 @@ class Tabs extends Plugin {
       $link.attr({
         'role': 'tab',
         'aria-controls': hash,
-        'aria-selected': isActive,
+        'aria-expanded': isActive,
         'id': linkId,
         'tabindex': isActive ? '0' : '-1'
       });
@@ -300,7 +300,7 @@ class Tabs extends Plugin {
       $target.addClass(`${this.options.linkActiveClass}`);
 
       $tabLink.attr({
-        'aria-selected': 'true',
+        'aria-expanded': 'true',
         'tabindex': '0'
       });
 

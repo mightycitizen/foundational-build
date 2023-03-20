@@ -140,3 +140,7 @@ EventsListing.args = {
   social,
   items
 }
+
+EventsListing.parameters = {
+  layout: 'fullscreen',
+}

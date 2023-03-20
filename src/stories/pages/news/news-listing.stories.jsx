@@ -61,3 +61,6 @@ NewsListing.args = {
   image_placeholder: placeholder,
   pagination
 }
+NewsListing.parameters = {
+  layout: 'fullscreen',
+}

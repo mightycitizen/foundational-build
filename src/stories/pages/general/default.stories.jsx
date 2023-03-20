@@ -246,14 +246,20 @@ const defaultArgs = {
   ]
 };
 
+const parameters = {
+  layout: 'fullscreen',
+}
+
 // console.log(defaultArgs);
-Default.args = defaultArgs
+Default.args = defaultArgs;
+Default.parameters = parameters;
 
 const Cookies = Template.bind({});
 Cookies.args = {
   ...defaultArgs,
   cookie: 'Cookie Lorem ipsum'
 }
+Cookies.parameters = parameters;
 
 const AnchorMenu = Template.bind({});
 AnchorMenu.args = {
@@ -269,6 +275,8 @@ AnchorMenu.args = {
     }
   ]
 }
+
+AnchorMenu.parameters = parameters;
 
 const SectionTest = Template.bind({});
 SectionTest.args = {
@@ -294,6 +302,7 @@ SectionTest.args = {
     }
   ]
 }
+SectionTest.parameters = parameters;
 
 const Sidebar = Template.bind({});
 Sidebar.args = {
@@ -311,6 +320,7 @@ Sidebar.args = {
     }
   ]
 }
+Sidebar.parameters = parameters;
 
 
 export { Default, Cookies, AnchorMenu, SectionTest, Sidebar }

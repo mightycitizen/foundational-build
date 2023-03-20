@@ -59,8 +59,13 @@ const defaultArgs = {
   wysiwyg
 }
 
+const parameters = {
+  layout: 'fullscreen',
+}
+
 const Default = Template.bind({});
 Default.args = defaultArgs;
+Default.parameters = parameters;
 
 const FeaturedImage = Template.bind({});
 FeaturedImage.args = {
@@ -70,6 +75,8 @@ FeaturedImage.args = {
     alt: ''
   }
 }
+
+FeaturedImage.parameters = parameters;
 
 export { Default, FeaturedImage }
 

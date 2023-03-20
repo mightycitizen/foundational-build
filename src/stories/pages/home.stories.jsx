@@ -36,6 +36,9 @@ const defaultArgs = {
 // export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Home.args = defaultArgs;
+Home.parameters = {
+  layout: 'fullscreen'
+}
 
 export { Home }
 

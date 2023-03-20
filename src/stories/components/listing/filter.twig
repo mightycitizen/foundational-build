@@ -18,7 +18,7 @@
           {% include '@components/forms/select.twig' with {
             label: category_label | default("Filter by Category"),
             input_class: 'w-100 ' ~ input_class | default,
-            input_id: "category",
+            id: "category",
             autocomplete: 'off',
             placeholder: category_placeholder | default("Select a Category"),
             name: 'category',

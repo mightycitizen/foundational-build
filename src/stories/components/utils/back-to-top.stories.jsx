@@ -22,7 +22,7 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const BackoTop = Template.bind({});
+export const BackToTop = Template.bind({});
 BackToTop.args = {
   scroll_show: false
 }

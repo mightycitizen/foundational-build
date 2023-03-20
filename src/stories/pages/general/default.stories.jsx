@@ -7,7 +7,7 @@ import { accordion, tabs, breadcrumbs,  hero, card, contact, testimonial, wysiwy
 import { menu, social, logo } from '../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Pages/General/Default',
+  title: 'Pages/General',
 
 };
 
@@ -26,6 +26,7 @@ const defaultArgs = {
   modules: [
     {
       module_type: 'wysiwyg',
+      section_id: 'section-1',
       wysiwyg
     },
     {
@@ -42,6 +43,7 @@ const defaultArgs = {
     },
     {
       module_type: 'accordion',
+      section_id: 'section-2',
       ...accordion
     },
     {

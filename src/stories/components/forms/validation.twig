@@ -2,64 +2,64 @@
   {% include  '@components/forms/text.twig' with {
       label: "Text",
       name: "text",
-      field_id: "field_id_3",
+      id: "id_3",
       placeholder: "Prompt Text",
       required: true
     } %}
   {% include  '@components/forms/textarea.twig' with {
       label: "Textarea",
       name: "textarea",
-      field_id: "field_id_2",
+      id: "id_2",
       placeholder: "Prompt Text",
       required: true
     } %}
 
   {% set select_options = {
-    "required": true,
-    "label": "Select",
-    "field_id": "select_validation",
-    "field_name": "select",
-    "options": [
+    required: true,
+    label: "Select",
+    id: "select_validation",
+    field_name: "select",
+    options: [
       {
-        "label": "Select A",
-        "value": 0
+        label: "Select A",
+        value: 0
       },
       {
-        "label": "Select B",
-        "value": 1
+        label: "Select B",
+        value: 1
       },
       {
-        "label": "Select C",
-        "value": 2
+        label: "Select C",
+        value: 2
       }
     ]
   } %}
   {% include  '@components/forms/select.twig' with select_options
   %}
 
-  {% set select_options = select_options | merge({"selectize": true, field_id: 'selectize', "label": "Select (Filterable)" }) %}
+  {% set select_options = select_options | merge({selectize: true, id: 'selectize', label: "Select (Filterable)" }) %}
 
   {% include  '@components/forms/select.twig' with select_options
   only
   %}
   {% include  '@components/forms/radio-group.twig' with {
-    "required": true,
-    "label": "Radio",
-    "field_id": "radio_validation",
-    "field_name": "radio",
+    required: true,
+    label: "Radio",
+    id: "radio_validation",
+    field_name: "radio",
     placeholder: 'Select an option',
-    "options": [
+    options: [
       {
-        "label": "Radio A",
-        "value": 0
+        label: "Radio A",
+        value: 0
       },
       {
-        "label": "Radio B",
-        "value": 1
+        label: "Radio B",
+        value: 1
       },
       {
-        "label": "Radio C",
-        "value": 2
+        label: "Radio C",
+        value: 2
       }
     ]
   }
@@ -67,22 +67,22 @@
 
 
   {% include  '@components/forms/checkbox-group.twig' with {
-      "label": "Checkbox",
-      "field_id": "checkbox_validation",
+      label: "Checkbox",
+      id: "checkbox_validation",
       required: true,
-      "field_name": "checkbox",
-      "options": [
+      field_name: "checkbox",
+      options: [
         {
-          "label": "Checkbox A",
-          "value": 0
+          label: "Checkbox A",
+          value: 0
         },
         {
-          "label": "Checkbox B",
-          "value": 1
+          label: "Checkbox B",
+          value: 1
         },
         {
-          "label": "Checkbox C",
-          "value": 2
+          label: "Checkbox C",
+          value: 2
         }
       ]
     }

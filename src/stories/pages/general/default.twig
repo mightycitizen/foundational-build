@@ -3,6 +3,32 @@
   {% include "@components/containers/hero.twig" with hero %}
 {% endblock %}
 {% block main %}
+  {% if narrow_modules | default | length > 0 %}
+    {% set content %}
+      {% for module in narrow_modules %}
+      {% if module.module_type == 'wysiwyg' %}
+        {{ module.wysiwyg }}
+      {% endif %}
+      {% endfor %}   
+    {% endset %}
+    {% if sidebar_modules | default | length > 0 %}
+      {% set sidebar %}
+        {% for module in sidebar_modules %}
+          {% if module.module_type == 'card' %}
+            {% include "@components/teasers/card.twig" with module %}
+          {% endif %}
+        {% endfor %}           
+      {% endset %}
+    {% endif %}
+    {% embed '@components/sections/section.twig' with {
+      section_class: 'section--tight'
+    } %}
+      {% block section_content %}
+        {% include '@layout/structure/content-with-sidebar.twig' %}
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+
   {% include '@components/navigation/anchor.twig' %}
   {% for module in modules %}
     {% if module.module_type == 'wysiwyg' %}

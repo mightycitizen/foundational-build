@@ -29,13 +29,13 @@ const defaultArgs = {
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
   label: "Alert"
 }
-export const Default = Template.bind({});
+export const Countdown = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+Countdown.args = defaultArgs;
 
 
-export const Link = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
-Link.args = Object.assign({...defaultArgs}, {
-  link: '#'
-});
+// export const Link = Template.bind({});
+// // More on args: https://storybook.js.org/docs/html/writing-stories/args
+// Link.args = Object.assign({...defaultArgs}, {
+//   link: '#'
+// });

@@ -22,7 +22,7 @@ const defaultArgs = {
   breadcrumbs,
   menu,
   logo,
-  social,
+  social,  
   modules: [
     {
       module_type: 'wysiwyg',
@@ -293,4 +293,22 @@ SectionTest.args = {
   ]
 }
 
-export { Default, Cookies, AnchorMenu, SectionTest }
+const Sidebar = Template.bind({});
+Sidebar.args = {
+  ...defaultArgs,
+  narrow_modules: [
+    {
+      module_type: 'wysiwyg',
+      wysiwyg
+    }    
+  ],
+  sidebar_modules: [
+    {
+      module_type: 'card',
+      ...card
+    }
+  ]
+}
+
+
+export { Default, Cookies, AnchorMenu, SectionTest, Sidebar }

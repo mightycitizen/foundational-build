@@ -1,4 +1,4 @@
-import twig from './helper.twig';
+import twig from './icon-text.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {

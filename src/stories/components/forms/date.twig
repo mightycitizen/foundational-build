@@ -1,8 +1,6 @@
-{% embed '@components/forms/input.twig' with {
+{% include '@components/forms/text.twig' with {
   label: "Date",
+  class: 'js-date',
   id: "date"
 } %}
-  {% block field %}
-    <input type="text" class="js-date">
-  {% endblock %}
-{% endembed %}
+  

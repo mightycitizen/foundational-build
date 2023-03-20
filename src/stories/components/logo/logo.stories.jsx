@@ -1,4 +1,5 @@
 import twig from './logo.twig';
+import { logo } from '../../global/placeholders/global.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -13,8 +14,8 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Logo = Template.bind({});
-Logo.args = {
-
+export const MainLogo = Template.bind({});
+MainLogo.args = {
+  ...logo
 };
 //

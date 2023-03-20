@@ -34,7 +34,7 @@ module.exports = {
     "../src/stories/**/**/*.stories.jsx"
   ],
   addons: [
-    // "@storybook/addon-links",
+    "@storybook/addon-a11y",
     "@storybook/addon-essentials",
     // "@storybook/addon-interactions",
     // "storybook-design-token"

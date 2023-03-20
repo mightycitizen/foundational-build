@@ -2,7 +2,7 @@ import twig from './back-to-top.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Utils/Back to Top',
+  title: 'Components/Utils/Back To Top',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   label: {
@@ -22,7 +22,7 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const BackToTop = Template.bind({});
+export const BackoTop = Template.bind({});
 BackToTop.args = {
   scroll_show: false
 }

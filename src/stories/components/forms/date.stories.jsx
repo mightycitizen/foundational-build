@@ -24,8 +24,7 @@ const Template = ({ label, ...args }) => {
 export const Date = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Date.args = {
-  field_id: 'field',
-  id: 0,
+  id: 'field',  
   value: '',
   label: 'Label',
 };

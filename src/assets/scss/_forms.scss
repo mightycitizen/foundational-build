@@ -72,6 +72,9 @@ $error-message-class: '.fui-error-message';
       margin-bottom: 0;
     }
   }
+  .fui-btn-wrapper{
+    @include spacer(margin,top,3);
+  }
 }
 
 

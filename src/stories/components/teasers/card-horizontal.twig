@@ -9,7 +9,7 @@
         </div>
       {% endif %}
       <div class="cell {% if image | default %}medium-7 large-7 {% if image.alignment  | default and image.alignment == 'right' %}medium-order-1{% endif %}{% endif %}">
-       <h{{ heading.level }} class="card-title {{ heading.modifier  | default }}">{{ heading.text }}</h{{ heading.level }}>
+       <h{{ heading.level | default(3) }} class="card-title {{ heading.modifier  | default }}">{{ heading.text }}</h{{ heading.level | default(3) }}>
         {% if summary | default %}
 
           <p class="mb-3">{{ summary }}</p>

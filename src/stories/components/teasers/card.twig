@@ -28,6 +28,9 @@
       {% endif %}
     {% endif %}
     <h{{ heading_level }} class="card-title {{ heading.modifier | default }}">{{ heading.text }}</h{{ heading_level }}>
+    {% if summary | default %}
+      <p class="card-summary">{{ summary }}</p>
+    {% endif %}
      {% if link | default %}
 
         {% include '@components/links/read-more.twig' with {

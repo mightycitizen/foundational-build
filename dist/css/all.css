@@ -16612,6 +16612,15 @@ html, body, .l-wrapper {
   margin-bottom: 0;
 }
 
+.fui-btn-wrapper {
+  margin-top: 0.8333333333rem;
+}
+@media print, screen and (min-width: 40em) {
+  .fui-btn-wrapper {
+    margin-top: 1.3333333333rem;
+  }
+}
+
 .form-input, .fui-field-container {
   margin-bottom: 0.8333333333rem;
 }

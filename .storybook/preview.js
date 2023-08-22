@@ -1,5 +1,5 @@
 import Twig from 'twig';
-import { addDecorator } from '@storybook/html';
+//import { addDecorator } from '@storybook/html';
 import { useEffect } from '@storybook/client-api';
 import twigDrupal from 'twig-drupal-filters';
 import twigAttributes from 'add-attributes-twig-extension';
@@ -15,21 +15,19 @@ function setupTwig(twig) {
   twigAttributes(twig);
   //twig.cache();
   // set allowInclude option to true
-
-  return twig;
-}
-
-setupTwig(Twig);
-
-addDecorator(storyFn => {
   document.addEventListener('DOMContentLoaded', () => {
 
     $(document).trigger('_page_ready');
     $(document).foundation();
   });
 
-  return storyFn();
-});
+//  return storyFn();
+
+  return twig;
+}
+
+setupTwig(Twig);
+
 
 
 

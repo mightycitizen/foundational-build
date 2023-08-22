@@ -30,16 +30,23 @@ class LegacyNsResolverPlugin {
 
 module.exports = {
   staticDirs: ['../dist'],
+
   stories: [
     "../src/stories/**/**/*.stories.jsx"
   ],
+
   addons: [
     "@storybook/addon-a11y",
     "@storybook/addon-essentials",
     // "@storybook/addon-interactions",
     // "storybook-design-token"
   ],
-  framework: "@storybook/html",
+
+  framework: {
+    name: '@storybook/html-webpack5',
+    options: {}
+  },
+
   webpackFinal: async (config, { configType }) => {
     config.resolve.plugins = [new LegacyNsResolverPlugin()];
     config.resolve.alias = {
@@ -67,5 +74,9 @@ module.exports = {
     });
 
     return config;
+  },
+
+  docs: {
+    autodocs: true
   }
 }

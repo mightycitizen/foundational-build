@@ -2,6 +2,7 @@
   "name": "mc-standard-build",
   "version": "2.0.0",
   "scripts": {
+    "preinstall": "npx only-allow pnpm", 
     "start": "concurrently --raw \"npm run watch\" \"npm run storybook\"",
     "build": "gulp --production",
     "compile": "gulp compile",

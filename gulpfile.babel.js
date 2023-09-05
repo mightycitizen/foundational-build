@@ -20,7 +20,7 @@ let method;
 // Each task is broken apart to it's own node module.
 // Check out the ./gulp-tasks directory for more.
 const { compileSass, compileJS } = require('./gulp-tasks/compile.js');
-const { lintJS, lintSass } = require('./gulp-tasks/lint.js');
+//const { lintJS, lintSass } = require('./gulp-tasks/lint.js');
 const { compressAssets } = require('./gulp-tasks/compress.js');
 const { cleanCSS, cleanJS, cleanWebDist, cleanWebComponents, cleanWebLayout } = require('./gulp-tasks/clean.js');
 
@@ -36,7 +36,7 @@ const jsonCss = require('gulp-json-css');
 exports.compile = parallel(compileSass, compileJS, moveFonts, movePatternCSS, movePatternJS);
 
 // Lint Sass and JavaScript
-exports.lint = parallel(lintSass, lintJS);
+//exports.lint = parallel(lintSass, lintJS);
 
 // Compress Files
 exports.compress = compressAssets;

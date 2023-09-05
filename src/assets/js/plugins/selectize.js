@@ -1,7 +1,6 @@
 
-import selectize from 'selectize'; // @selectize custom select dropdowns
+import selectize from '@selectize/selectize'; // @selectize custom select dropdowns
 import $ from 'jquery';
-
 selectize.define('accessibility', function(options) {
   var self = this;
 

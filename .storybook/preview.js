@@ -1,5 +1,4 @@
 import Twig from 'twig';
-//import { addDecorator } from '@storybook/html';
 import { useEffect } from '@storybook/client-api';
 import twigDrupal from 'twig-drupal-filters';
 import twigAttributes from 'add-attributes-twig-extension';

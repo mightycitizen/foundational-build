@@ -52,21 +52,21 @@ exports.clean = parallel(cleanCSS, cleanJS);
  * @param {function} done callback function.
  * @returns {undefined}
  */
-function serve(done) {
-  // See https://browsersync.io/docs/options for more options.
-  method = 'storybook';
-  server.init({
-    // We want to serve both the storybook directory, so it gets
-    // loaded by default AND three directories up which is the
-    // Drupal core directory. This allows urls that reference
-    // Drupal core JS files to resolve correctly.
-    // i.e. /core/misc/drupal.js
-    server: [ '../../../'],
-    notify: false,
-    open: false
-  });
-  done();
-}
+// function serve(done) {
+//   // See https://browsersync.io/docs/options for more options.
+//   method = 'storybook';
+//   server.init({
+//     // We want to serve both the storybook directory, so it gets
+//     // loaded by default AND three directories up which is the
+//     // Drupal core directory. This allows urls that reference
+//     // Drupal core JS files to resolve correctly.
+//     // i.e. /core/misc/drupal.js
+//     server: [ '../../../'],
+//     notify: false,
+//     open: false
+//   });
+//   done();
+// }
 
 function buildVariables(){
 
@@ -100,6 +100,14 @@ function watchFiles() {
     ['./src/assets/**/*.scss'],
     series(compileSass, concatCSS, (done) => {
       server.reload('*.css');
+      done();
+    })
+  );
+
+  watch(
+    ['./src/vendor/**/fonts/*'],
+    series(moveFonts, (done) => {
+      server.reload();
       done();
     })
   );

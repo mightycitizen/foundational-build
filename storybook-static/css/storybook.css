@@ -160,3 +160,6 @@
     font-size: 32px;
   }
 }
+.docblock-argstable-head th {
+  color: inherit !important;
+}

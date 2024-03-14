@@ -88,37 +88,37 @@ const initFormHelpers = () => {
   });
 }
 
-const initScrollHide = () => {
-  let animateOnce = false;
-  const scrollCheck = () => {
-    $('[data-scroll-hide],[data-scroll-show]').each(function(){
-      let scrollClass = 'is-inactive';
-      let attribute = 'data-scroll-hide';
-      //console.log(typeof $(this).attr('data-scroll-show'));
-      if (typeof $(this).attr('data-scroll-show') !== 'undefined'){
-        attribute = 'data-scroll-show';
-        scrollClass =  'is-active';
-      }
+// const initScrollHide = () => {
+//   let animateOnce = false;
+//   const scrollCheck = () => {
+//     $('[data-scroll-hide],[data-scroll-show]').each(function(){
+//       let scrollClass = 'is-inactive';
+//       let attribute = 'data-scroll-hide';
+//       //console.log(typeof $(this).attr('data-scroll-show'));
+//       if (typeof $(this).attr('data-scroll-show') !== 'undefined'){
+//         attribute = 'data-scroll-show';
+//         scrollClass =  'is-active';
+//       }
 
-      let scrollTrigger;
-      if ($(this).attr(attribute) > 0) {
-        scrollTrigger = $(window).scrollTop() > $(this).attr(attribute);
-      }else{
-        scrollTrigger = $(window).scrollTop() + $(window).height() > $(this).offset().top;
-        if (!animateOnce){
-          scrollTrigger = scrollTrigger && $(window).scrollTop() < $(this).offset().top + $(this).height();
-        }
-      }
-      $(this).toggleClass(scrollClass,scrollTrigger);
-    });
-  }
-  scrollCheck();
-  $(window).on('scroll', Foundation.util.throttle(function(e){
+//       let scrollTrigger;
+//       if ($(this).attr(attribute) > 0) {
+//         scrollTrigger = $(window).scrollTop() > $(this).attr(attribute);
+//       }else{
+//         scrollTrigger = $(window).scrollTop() + $(window).height() > $(this).offset().top;
+//         if (!animateOnce){
+//           scrollTrigger = scrollTrigger && $(window).scrollTop() < $(this).offset().top + $(this).height();
+//         }
+//       }
+//       $(this).toggleClass(scrollClass,scrollTrigger);
+//     });
+//   }
+//   scrollCheck();
+//   $(window).on('scroll', Foundation.util.throttle(function(e){
 
-    scrollCheck();
-  }, 300));
+//     scrollCheck();
+//   }, 300));
 
-}
+// }
 
 // @smooth-scroll init
 const initSmoothScroll = () => {
@@ -315,7 +315,7 @@ $(document).bind('_page_ready', function(){
   initFoundationAccessibility();  // @foundation init accessibility call
   initTableScroll(); // @table-scroll init call
 
-  initScrollHide(); // @scroll-hide init call
+  //initScrollHide(); // @scroll-hide init call
   initSmoothScroll(); // @smooth-scroll init
   initMenuHelpers(); // @menu helpers
   initFormHelpers(); // @form helpers init\

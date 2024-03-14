@@ -18,7 +18,7 @@
 /* ---- */
 /**
  * Foundation for Sites
- * Version 6.7.5
+ * Version 6.8.1
  * https://get.foundation
  * Licensed under MIT Open Source
  */
@@ -14652,45 +14652,6 @@ span.button a {
   }
 }
 
-.listing .item {
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 1.7777777778rem;
-  padding-top: 1.7777777778rem;
-}
-.listing .item *:last-child {
-  margin-bottom: 0;
-}
-@media print, screen and (min-width: 40em) {
-  .listing .item {
-    padding-bottom: 2.2222222222rem;
-  }
-}
-@media print, screen and (min-width: 40em) {
-  .listing .item {
-    padding-top: 2.2222222222rem;
-  }
-}
-.listing .item .media-object-section:first-child {
-  padding-left: 0;
-}
-.listing .item .media-object-section:first-child:not(:last-child) {
-  padding-left: 0;
-}
-@media print, screen and (min-width: 40em) {
-  .listing .item .media-object-section:first-child:not(:last-child) {
-    max-width: 40%;
-  }
-  .listing .item .media-object-section:first-child:not(:last-child) img {
-    width: 13.8888888889rem;
-    max-width: 100%;
-  }
-}
-@media print, screen and (max-width: 39.99875em) {
-  .listing .item .media-object:not(.media-object--stack) .media-object-section:first-child {
-    padding-right: 16px;
-  }
-}
-
 .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a:after {
   font-family: "icomoon";
   content: "\f078" !important;
@@ -15140,23 +15101,15 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   .js-slick--center .slick-slide:not(.slick-primary):not(.slick-clone-current) .card-image {
     transition: 0.8s margin;
   }
-}
-@media print, screen and (min-width: 64em) {
   .js-slick--center .slick-slide:not(.slick-primary):not(.slick-clone-current):after {
     transition: 0.8s bottom;
   }
-}
-@media print, screen and (min-width: 64em) {
   .js-slick--center .slick-slide:not(.slick-animating) .card-section {
     transition: 0.5s opacity 0.5s;
   }
-}
-@media print, screen and (min-width: 64em) {
   .js-slick--center .slick-slide.slick-animating .card-section {
     opacity: 0;
   }
-}
-@media print, screen and (min-width: 64em) {
   .js-slick--center .slick-slide.slick-primary, .js-slick--center .slick-slide.slick-clone-current {
     z-index: 2;
     position: relative;
@@ -15440,13 +15393,9 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   .top-bar .top-bar-left {
     padding: 4.4444444444rem 2.7777777778rem;
   }
-}
-@media print, screen and (max-width: 63.99875em) {
   .top-bar .accordion-menu a:not(.button) {
     padding: 0.6666666667rem 1.3333333333rem;
   }
-}
-@media print, screen and (max-width: 63.99875em) {
   .top-bar .parent-link {
     font-weight: bold;
   }
@@ -15454,23 +15403,15 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     padding-left: 0;
     padding-right: 0;
   }
-}
-@media print, screen and (max-width: 63.99875em) {
   .top-bar input {
     max-width: none;
   }
-}
-@media print, screen and (max-width: 63.99875em) {
   .top-bar .search-wrapper {
     margin-bottom: 0.8333333333rem;
   }
-}
-@media print, screen and (max-width: 63.99875em) {
   .top-bar .input-group {
     padding: 0 0.5555555556rem;
   }
-}
-@media print, screen and (max-width: 63.99875em) {
   .top-bar_toggle {
     display: flex;
     justify-content: flex-end;
@@ -15481,8 +15422,6 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     justify-content: flex-end;
     flex-direction: column;
   }
-}
-@media print, screen and (max-width: 63.99875em) {
   .top-bar .top > li:not(.utility):not(.search-wrapper):not(:first-child) {
     border-top: 1px solid #ccc;
   }

@@ -1,9 +1,9 @@
-<div class="listing">
+<div>
   {% for item in list %}
     {% set label = item.label | default ? item.label : item.type.label | default %}
     {% set item_type = item.type | default and item.type.handle ? item.type.handle : '' %}
-    <div class="item">
-      <div class="grid-x grid-margin-x align-middle">
+    <div class="item py-5">
+      <div class="grid-x grid-margin-x {% if item.start_date | default is empty %}align-middle{% endif %} gy-3">
         {% if item.image | default %}
           <div class="cell medium-5 large-3 medium-order-2">
             <div class="wrapper image-size--landscapeCroppedMedium">
@@ -12,16 +12,16 @@
           </div>
         {% endif %}
         <div class="cell {% if item.image | default %}medium-7 large-9 medium-order-1{% endif %}">
-          <div class="media-object">
+          <div class="d-flex gx-3 align-items-start">
 
             {% if item.start_date | default is not empty %}
-              <div class="media-object-section">
-                {% include '@components/inline-text/date.twig' with item.start_date %}
+              
+              {% include '@components/inline-text/date.twig' with item.start_date %}
 
-              </div>
+            
             {% endif %}
 
-            <div class="media-object-section">
+            <div>
               <h2><a href="{{ item.url }}">{{ item.heading }}</a></h2>
               {% if item_type | default != 'events' and item.date.full | default %}
                 {% include '@components/inline-text/meta.twig' with {
@@ -34,6 +34,7 @@
               {% endif %}
               {% if item.categories | default | length %}
                 {% include '@components/inline-text/meta.twig' with {
+                    meta_class: 'mb-0',
                     categories: item.categories,
                     date: null
 
@@ -46,5 +47,6 @@
         </div>
       </div>
     </div>
+    <hr class="my-0">
   {% endfor %}
 </div>

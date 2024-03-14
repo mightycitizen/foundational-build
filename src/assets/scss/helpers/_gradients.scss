@@ -1,25 +1,17 @@
 $light-opacity: 0.5;
 @each $palette, $map in $palettes {
   $gradient-color: map-get($map, 'default');
-  //$background-color: map-get($additional-palette,'#{$palette}-bright');
-  // @if ($palette == 'primary3'){
-  //   $gradient-color: $tertiary-color;
-  // }
-  // @if ($palette == 'tertiary'){
-  //   //$background-color: map-get($map, 'default');
-  //   $gradient-color: map-get($additional-palette,'#{$palette}-lighter');
-  // }
+
   @if (map-get($map,'gradient')){
     .bg-gradient{
       &-#{$palette}{
-        //background-color: $background-color;
-        // &.bg-gradient--light{
-        //   background-color: rgba($background-color,$light-opacity);
-        // }
         &:before{
-          background-color: rgba($gradient-color, $light-opacity);
-          mask-image: linear-gradient(to top, black 0%, rgba(0,0,0,0) 100%);
-          //background: linear-gradient(to bottom, $default-color 0%, rgba(map-get($additional-palette,'#{$palette}-bright'),0) 60%);
+          background-color: $gradient-color;
+        }
+      }
+      &-light-#{$palette}, &-#{$palette}{
+        &:before{                    
+          mask-image: linear-gradient(to top, black 0%, rgba(0,0,0,0) 100%);          
         }
         $variants: map-get($map, 'variants');
         @each $key, $value in $variants {
@@ -51,72 +43,48 @@ $light-opacity: 0.5;
         // }
 
       }
-
-
-    }
-
-  }
-
-}
-
-.bg-gradient{
-  &--flip{
-    &:before{
-      transform: scaleY(-1);
-    }
-    @include breakpoint(medium){
-      &:not(.bg-gradient--down){
-        &:before{
-          transform: scaleX(-1);
+      &-light-#{$palette}{
+        &:before{          
+          background-color: rgba($gradient-color, $light-opacity);          
         }
-      }
-    }
-  }
-  // &--light{
-  //   &:before{
-  //     opacity: $light-opacity;
-  //   }
-  // }
-//   &--faded{
-//     background: linear-gradient(to bottom, $white 0%, rgba($white,0) 100%);
-//     // &.bg-pattern{
-//     //   &:after{
-//     //     opacity: 0.2;
-//     //   }
-//     // }
+        
 
-//     // &:before{
-//     //   opacity: 0.2;
-//     //   transform: scaleY(-1);
-//     // }
-//     // &.bg-gradient--flip{
-//     //   &:before{
-//     //     transform: scaleY(-1);
-//     //   }
-//     // }
-//   }
+      }
+
+
+    }
+
+  }
+
 }
+
+
 [class*=bg-gradient-]{
   position: relative;
-  // &:before{
-  //   content: '';
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 100%;
-  //   z-index: 1;
-  //   top: 0;
-  //   left: 0;
-  // }
-  // @include breakpoint(small only){
-  //   &.has-backgroundImage{
-  //     background-color: transparent;
-  //   }
-  // }
-  // &.bg-gradient--flip{
-  //   &:before{
-  //     transform: scaleX(-1);
-  //   }
-  // }
+  &:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    //z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+  &.bg-gradient--flip{
+    &:before{
+      transform: scaleX(-1);
+    }
+    &.bg-gradient--down{
+      &:before{
+        transform: scaleY(-1);
+      }
+    
+    }
+  }
   // &.bg-gradient--shorter{
   //   &:before{
   //     height: rem-calc(300);
@@ -130,7 +98,7 @@ $light-opacity: 0.5;
   // &.bg-gradient--tall{
   //   &:before{
   //     height: rem-calc(500);
-  //     @include breakpoint(medium){
+  //     @include breakpoint(large){
   //       height: rem-calc(800);
   //     }
   //   }

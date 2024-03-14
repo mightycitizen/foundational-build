@@ -480,7 +480,7 @@ $utilities: map-merge(
     // scss-docs-start utils-bg-color
     "background-color": (
       property: background-color,
-      class: bg-solid,
+      class: bg,
       values: map-merge(
         $utilities-colors,
         (

@@ -14,42 +14,6 @@
 }
 
 
-[class*=bg-gradient-]{
-  position: relative;
-  &:before{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    top: 0;
-    left: 0;
-  }
-  &.bg-gradient--flip{
-    &:before{
-      transform: scaleY(-1);
-    }
-  }
-  &.bg-gradient--shorter{
-    &:before{
-      height: rem-calc(300);
-    }
-  }
-  &.bg-gradient--short{
-    &:before{
-      height: rem-calc(600);
-    }
-  }
-  &.bg-gradient--tall{
-    &:before{
-      height: rem-calc(500);
-      @include breakpoint(large){
-        height: rem-calc(800);
-      }
-    }
-  }
-}
-
 
 // .overflow{
 //   &-hidden{

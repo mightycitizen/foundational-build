@@ -30,7 +30,7 @@
                 } %}
               {% endif %}
               {% if item.summary | default %}
-                <p class="mb-2">{{ item.summary }}</p>
+                <p class="{% if item.categories | default | length %}mb-2{% else %}mb-0{% endif %}">{{ item.summary }}</p>
               {% endif %}
               {% if item.categories | default | length %}
                 {% include '@components/inline-text/meta.twig' with {

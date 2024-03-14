@@ -32,4 +32,11 @@ NoImage.args = {
   ...defaultArgs,
   image: null
 };
-export { Default, NoImage };
+
+const FlushImage = Template.bind({});
+
+FlushImage.args = {
+  ...defaultArgs,
+  image_position: 'flush',
+}
+export { Default, NoImage, FlushImage };

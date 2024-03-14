@@ -10,7 +10,7 @@
           modifier: "special"
         }) %}
         <div class="{{ loop.first ? 'slick-primary ' : '' }}">
-          {% include "@components/teasers/card.twig" with card
+          {% include "@components/teasers/card/card.twig" with card
           %}
         </div>
       {% endfor %}

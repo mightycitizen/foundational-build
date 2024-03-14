@@ -15,7 +15,7 @@
       {% set sidebar %}
         {% for module in sidebar_modules %}
           {% if module.module_type == 'card' %}
-            {% include "@components/teasers/card.twig" with module %}
+            {% include "@components/teasers/card/card.twig" with module %}
           {% endif %}
         {% endfor %}           
       {% endset %}

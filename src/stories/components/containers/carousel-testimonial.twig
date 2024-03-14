@@ -9,7 +9,7 @@
             {% set card = card | merge({
               lazyload_class: 'data-lazy'
             }) %}
-            {% include '@components/teasers/card-testimonial.twig' with card %}
+            {% include '@components/teasers/card/card-testimonial.twig' with card %}
 
           </div>
         {% endfor %}

@@ -12,7 +12,7 @@
         {% if image_position | default == 'flush' %}          
           <div class="card-section display-flex justify-content-center flex-column h-100 d-flex">
         {% endif %}
-              {% include './_card-content.twig' %} 
+              {% include '@components/teasers/card/_card-content.twig' %} 
         {% if image_position | default == 'flush' %}
           </div>
         

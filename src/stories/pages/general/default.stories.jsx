@@ -125,7 +125,7 @@ const defaultArgs = {
     }
     ,
     {
-      module_type: 'three-up-cards',
+      module_type: 'card-group',
       section_heading: 'Three Up Cards',
       section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       section_class: 'bg-gradient-secondary',
@@ -140,7 +140,7 @@ const defaultArgs = {
       })
     },
     {
-      module_type: 'three-up-cards',
+      module_type: 'card-group',
       section_heading: 'Three Up Event Cards',
       section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       cards: Array.from({length: 3}, (v, i) => {
@@ -283,19 +283,19 @@ SectionTest.args = {
   ...defaultArgs,
   modules: [
     {
-      module_type: 'three-up-cards',
+      module_type: 'card-group',
       section_class: 'bg-gradient-secondary',
       section_heading: 'Bg Gradient Secondary',
       cards: Array.from({length: 3}, (v, i) => card)
     },
     {
-      module_type: 'three-up-cards',
+      module_type: 'card-group',
       //section_class: 'bg-gradient-secondary',
       section_heading: 'No Background',
       cards: Array.from({length: 3}, (v, i) => card)
     },
     {
-      module_type: 'three-up-cards',
+      module_type: 'card-group',
       section_class: 'bg-solid-primary-lightest',
       section_heading: 'Bg Solid Primary Lightest',
       cards: Array.from({length: 3}, (v, i) => card)

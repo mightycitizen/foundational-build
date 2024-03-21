@@ -24,7 +24,7 @@
 @import 'foundation';
 @import 'motion-ui';
 
-@import "helpers/utilities";
+
 
 
 //@debug $utilities-text-colors;
@@ -142,6 +142,7 @@ $unicode-quote-left: '\201c';
   "helpers/gradients",
   "helpers/text",
   "helpers/scrollShow",
+  "helpers/utilities",
   //"helpers/display",
   "helpers/fonts";
 
@@ -150,4 +151,5 @@ $unicode-quote-left: '\201c';
   "forms",
   "icons",
   "elements";
+
 

@@ -1,13 +1,13 @@
-<div class="hero color-white">
+<div class="hero color-white bg-primary padding-y-5">
   <div class="grid-container">
-    <div class="grid-x grid-margin-x">
+    <div class="grid-x grid-margin-x grid-margin-y">
       <div class="cell large-8 medium-6 medium-order-1">
         {% include '@components/navigation/breadcrumbs.twig' with breadcrumbs %}
       </div>
 
       <div class="cell medium-12 medium-order-3">
         <div class="hero_content">
-          <div class="grid-x grid-margin-x align-middle">
+          <div class="grid-x grid-margin-x grid-margin-y align-middle">
             {% if image | default %}
               <div class="cell medium-4">
                 <img src="{{ image.src }}" alt="{{ image.alt }}">

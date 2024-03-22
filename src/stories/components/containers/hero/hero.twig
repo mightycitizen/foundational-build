@@ -15,7 +15,7 @@
             {% endif %}
             <div class="cell {% if image | default %}medium-8{% endif %}">
               {% if date | default and endDate | default %}
-                {% include '@components/inline-text/meta.twig' with {
+                {% include '@components/inline-text/meta/meta.twig' with {
                   date: date,
                   endDate: endDate
                 } only %}
@@ -43,7 +43,7 @@
                 {% include '@components/links/button/button.twig' with hero_button %}
               {% endif %}
               {% if categories | default %}
-                {% include '@components/inline-text/meta.twig' with {
+                {% include '@components/inline-text/meta/meta.twig' with {
                   date: endDate | default is empty ? date : false,
                   categories: categories
                 } only%}

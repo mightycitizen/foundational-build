@@ -16,7 +16,7 @@
 
             {% if item.start_date | default is not empty %}
               
-              {% include '@components/inline-text/date.twig' with item.start_date %}
+              {% include '@components/inline-text/date/date.twig' with item.start_date %}
 
             
             {% endif %}
@@ -24,7 +24,7 @@
             <div>
               <h2><a href="{{ item.url }}">{{ item.heading }}</a></h2>
               {% if item_type | default != 'events' and item.date.full | default %}
-                {% include '@components/inline-text/meta.twig' with {
+                {% include '@components/inline-text/meta/meta.twig' with {
                   date: item.date,
                   meta_class: 'mb-2'
                 } %}
@@ -33,7 +33,7 @@
                 <p class="{% if item.categories | default | length %}mb-2{% else %}mb-0{% endif %}">{{ item.summary }}</p>
               {% endif %}
               {% if item.categories | default | length %}
-                {% include '@components/inline-text/meta.twig' with {
+                {% include '@components/inline-text/meta/meta.twig' with {
                     meta_class: 'mb-0',
                     categories: item.categories,
                     date: null

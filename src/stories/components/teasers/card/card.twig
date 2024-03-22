@@ -10,10 +10,10 @@
       <img src="{{ image.src }}" alt="{{ image.alt }}">
 
       {% if type.handle | default == 'events' and date | default %}
-        {% include '@components/inline-text/date.twig' with date %}
+        {% include '@components/inline-text/date/date.twig' with date %}
       {% endif %}
       {% if flag | default %}
-        {% include '@components/inline-text/flag.twig' with {
+        {% include '@components/inline-text/flag/flag.twig' with {
           flag_text: flag
         }%}
       {% endif %}
@@ -22,7 +22,7 @@
   <div class="card-section" {% if equalize | default %}data-equalizer-watch{% endif %}>
     {% if image | default is empty %}
         {% if flag | default %}
-          {% include '@components/inline-text/flag.twig' with {
+          {% include '@components/inline-text/flag/flag.twig' with {
             flag_class: "card_flag"
           }%}
       {% endif %}

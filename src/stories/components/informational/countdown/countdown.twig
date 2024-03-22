@@ -1,0 +1,14 @@
+<div class="countdown d-flex" data-countdown="{{ date | default('1678991854') }}">
+  {% include '@components/informational/countdown/countdown-item.twig' with {
+    property: 'days',
+  } %}
+  {% include '@components/informational/countdown/countdown-item.twig' with {
+    property: 'hours',
+  } %}
+  {% include '@components/informational/countdown/countdown-item.twig' with {
+    property: 'min',
+  } %}
+  {% include '@components/informational/countdown/countdown-item.twig' with {
+    property: 'sec',
+  } %}
+</div>

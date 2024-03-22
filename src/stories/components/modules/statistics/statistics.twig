@@ -11,7 +11,7 @@
     <div class="grid-x grid-margin-x">
       {% for statistic in statistics %}
         <div class="cell medium-4 {% if section_style | default == 'side' %}large-12{% endif %}">
-          {% include '@components/informational/statistic.twig' with {
+          {% include '@components/informational/statistic/statistic.twig' with {
             text: statistic.text,
             value: statistic.value,
             link: statistic.link

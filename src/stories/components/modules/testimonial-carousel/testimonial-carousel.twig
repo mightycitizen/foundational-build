@@ -1,0 +1,12 @@
+{% embed '@components/sections/section.twig' with {
+    section_heading: section_heading | default,
+    section_description: section_description | default,
+    section_class: section_class | default,
+    intro_class: "text-center",
+    section_style: "narrow"
+  }
+%}
+  {% block section_content %}
+    {% include '@components/containers/carousel/carousel-testimonial/carousel-testimonial.twig' %}
+  {% endblock %}
+{% endembed %}

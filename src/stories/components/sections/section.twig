@@ -20,7 +20,7 @@
               <p class="lead">{{ section_description }}</p>
             {% endif %}
             {% if section_button | default %}
-              {% include '@components/links/button.twig' with section_button | merge({
+              {% include '@components/links/button/button.twig' with section_button | merge({
                 color: 'secondary'
               }) only %}
             {% endif %}

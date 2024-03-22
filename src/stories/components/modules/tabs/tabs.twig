@@ -1,0 +1,10 @@
+{% embed '@components/sections/section.twig' with {
+    section_class: "section--tight " ~ section_class | default,
+    section_style: "narrow"
+  }
+%}
+  {% block section_content %}
+    {% include '@components/containers/tabs/tabs.twig' %}
+
+  {% endblock %}
+{% endembed %}

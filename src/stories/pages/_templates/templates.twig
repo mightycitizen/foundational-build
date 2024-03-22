@@ -1,0 +1,22 @@
+{% extends '@wrappers/default.twig' %}
+{% block top %}
+  {% include '@components/containers/hero/hero.twig'  with {
+    heading: 'Templates',
+    subheading: null
+  } %}
+{% endblock %}
+{% block main %}
+  {% embed '@components/sections/section.twig' with {
+    section_class: 'section--tight section--collapse'
+  } %}
+    {% block section_content %}
+      <ul>
+        {% for template in templates %}
+          <li>
+            <a href="{{ template.url }}">{{ template.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

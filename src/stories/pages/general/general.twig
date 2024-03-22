@@ -1,0 +1,70 @@
+{% extends '@wrappers/default.twig' %}
+{% block top %}
+  {% include '@components/containers/hero/hero.twig' with hero %}
+{% endblock %}
+{% block main %}
+  {% if narrow_modules | default | length > 0 %}
+    {% set content %}
+      {% for module in narrow_modules %}
+      {% if module.module_type == 'wysiwyg' %}
+        {{ module.wysiwyg }}
+      {% endif %}
+      {% endfor %}   
+    {% endset %}
+    {% if sidebar_modules | default | length > 0 %}
+      {% set sidebar %}
+        {% for module in sidebar_modules %}
+          {% if module.module_type == 'card' %}
+            {% include "@components/teasers/card/card.twig" with module %}
+          {% endif %}
+        {% endfor %}           
+      {% endset %}
+    {% endif %}
+    {% embed '@components/sections/section.twig' with {
+      section_class: 'section--tight'
+    } %}
+      {% block section_content %}
+        {% include '@layout/structure/content-with-sidebar.twig' %}
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+
+  {% include '@components/navigation/anchor.twig' %}
+  {% for module in modules %}
+    {% if module.module_type == 'wysiwyg' %}
+      {% include '@components/modules/wysiwyg/wysiwyg.twig' with module %}
+    {% elseif module.module_type == 'video' %}
+      {% include '@components/modules/video/video.twig' with module %}
+    {% elseif module.module_type == 'contact' %}
+      {% include '@components/modules/contact/contact.twig' with module %}
+     {% elseif module.module_type == 'accordion' %}
+      {% include '@components/modules/accordion/accordion.twig' with module %}
+    {% elseif module.module_type == 'horizontalCard' %}
+      {% include '@components/modules/horizontal-card/horizontal-card.twig' with module %}
+    {% elseif module.module_type == 'testimonial' %}
+      {% include '@components/modules/testimonial/testimonial.twig' with module %}
+    {% elseif module.module_type == 'tabs' %}
+      {% include '@components/modules/tabs/tabs.twig' with module %}
+    {% elseif module.module_type == 'cta' %}
+      {% include '@components/modules/cta/cta.twig' with module %}
+    {% elseif module.module_type == 'card-group' %}
+      {% include '@components/modules/card-group/card-group.twig' with module %}
+    {% elseif module.module_type == 'card-carousel' %}
+      {% include '@components/modules/card-carousel/card-carousel.twig' with module %}
+    {% elseif module.module_type == 'card-carousel-center' %}
+      {% include '@components/modules/card-carousel-center/card-carousel-center.twig' with module %}
+    {% elseif module.module_type == 'testimonial-carousel' %}
+      {% include '@components/modules/testimonial-carousel/testimonial-carousel.twig' with module %}
+    {% elseif module.module_type == 'step-list' %}
+      {% include '@components/modules/step-list/step-list.twig' with module %}
+    {% elseif module.module_type == 'statistics' %}
+      {% include '@components/modules/statistics/statistics.twig' with module %}
+    {% elseif module.module_type == 'links' %}
+      {% include '@components/modules/links/links.twig' with module %}
+    {% elseif module.module_type == 'testimonial-carousel' %}
+      {% include '@components/modules/testimonial-carousel/testimonial-carousel.twig' with module %}
+    {% endif %}
+
+  {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,64 @@
+<div class="hero color-white bg-primary padding-y-5">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x grid-margin-y">
+      <div class="cell large-8 medium-6 medium-order-1">
+        {% include '@components/navigation/breadcrumbs.twig' with breadcrumbs %}
+      </div>
+
+      <div class="cell medium-12 medium-order-3">
+        <div class="hero_content">
+          <div class="grid-x grid-margin-x grid-margin-y align-middle">
+            {% if image | default %}
+              <div class="cell medium-4">
+                <img src="{{ image.src }}" alt="{{ image.alt }}">
+              </div>
+            {% endif %}
+            <div class="cell {% if image | default %}medium-8{% endif %}">
+              {% if date | default and endDate | default %}
+                {% include '@components/inline-text/meta.twig' with {
+                  date: date,
+                  endDate: endDate
+                } only %}
+              {% endif %}
+              <h1>{{ heading }}</h1>
+                        
+              {% if subheading | default %}
+                <p class="lead">{{ subheading }}</p>
+              {% endif %}
+              {% if list | default %}
+                <ul class="list-unstyled d-flex gap-4 list-divided fw-bold text-small mb-3">
+                  {% for item in list %}                    
+                    <li>{{ item }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              {% if summary | default %}                
+                <p>{{ summary }}</p>
+              {% endif %}
+
+              {% if hero_button | default %}
+                {% set hero_button = hero_button | merge({
+                  color: 'secondary'
+                }) %}
+                {% include '@components/links/button/button.twig' with hero_button %}
+              {% endif %}
+              {% if categories | default %}
+                {% include '@components/inline-text/meta.twig' with {
+                  date: endDate | default is empty ? date : false,
+                  categories: categories
+                } only%}
+              {% endif %}
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="cell large-4 medium-6 medium-order-2">
+        {% include '@components/utils/add2any.twig' with {
+          class: 'mb-0'
+        } %}
+      </div>
+    </div>
+  </div>
+
+</div>

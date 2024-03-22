@@ -5,7 +5,7 @@
     {% endif %}
      {% if link | default %}
 
-        {% include '@components/links/read-more.twig' with {
+        {% include '@components/links/read-more/read-more.twig' with {
           class: 'h4',
           text: link.text,
           url: link.url,

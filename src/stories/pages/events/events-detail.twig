@@ -5,7 +5,7 @@
 }%}
 {% block top %}
 
-  {% include "@components/containers/hero.twig" with {
+  {% include '@components/containers/hero/hero.twig' with {
     date: {
       unformatted: '2022-06-01',
       full: 'June 1'
@@ -33,5 +33,5 @@
   }%}
 {% endblock %}
 {% block main %}
-  {% include '@components/modules/wysiwyg.twig' %}
+  {% include '@components/modules/wysiwyg/wysiwyg.twig' %}
 {% endblock %}

@@ -1,0 +1,12 @@
+{% embed '@components/sections/section.twig' with {
+    section_heading: section_heading | default,
+    section_description: section_description | default,
+    intro_class: "text-center"
+  }
+%}
+
+  {% block section_content %}
+    {% include '@components/containers/card-group/card-group.twig' %}
+
+  {% endblock %}
+{% endembed %}

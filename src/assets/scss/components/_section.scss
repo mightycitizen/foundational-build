@@ -1,7 +1,5 @@
 .section{
-  // $section-padding: 50;
-  // $section-padding-medium: 95;
-  // $section-padding-large: 115;
+  
   @include spacer(padding,top,12,4);
   @include spacer(padding,bottom,13,5);
 

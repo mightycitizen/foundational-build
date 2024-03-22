@@ -1,0 +1,18 @@
+{% embed '@components/containers/slick/slick.twig' with {
+    peekaboo: true,
+    modifier: 'center',
+
+  }%}
+  {% block slide_content %}
+      {% for card in cards %}
+        {% set card = card | merge({
+          lazyload_class: 'data-lazy',
+          modifier: "special"
+        }) %}
+        <div class="{{ loop.first ? 'slick-primary ' : '' }}">
+          {% include "@components/teasers/card/card.twig" with card
+          %}
+        </div>
+      {% endfor %}
+  {% endblock %}
+{% endembed %}

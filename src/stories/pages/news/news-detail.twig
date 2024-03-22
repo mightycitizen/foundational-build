@@ -4,7 +4,7 @@
   handle: 'news'
 }%}
 {% block top %}
-  {% include "@components/containers/hero.twig"  with {
+  {% include '@components/containers/hero/hero.twig'  with {
     heading: 'News Detail',
     image: featured_image
   } %}
@@ -28,7 +28,7 @@
       }%}
     {% endblock %}
   {% endembed %}
-  {% include '@components/modules/wysiwyg.twig' with {
+  {% include '@components/modules/wysiwyg/wysiwyg.twig' with {
     section_class: 'section--collapse',
     wysiwyg: wysiwyg
   }%}

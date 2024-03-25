@@ -1,5 +1,5 @@
 import twig from './pagination.twig';
-import { pagination } from '../../global/placeholders/components.json';
+import { pagination } from '../../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
 

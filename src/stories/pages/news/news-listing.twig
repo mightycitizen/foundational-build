@@ -16,10 +16,10 @@
     {% set listing_image_transform = image_sizes.landscapeCroppedMedium %}
     {% block section_content %}
 
-      {% include '@components/listing/filter.twig' with {
+      {% include '@components/listing/filter/filter.twig' with {
         ajax: true
       }%}
-      {% include '@components/listing/list.twig' with
+      {% include '@components/listing/list/list.twig' with
       {
           "list": [
             {
@@ -101,7 +101,7 @@
         }
 
        %}
-      {% include '@components/listing/pagination.twig' with pagination %}
+      {% include '@components/listing/pagination/pagination.twig' with pagination %}
     {% endblock %}
   {% endembed %}
 {% endblock %}

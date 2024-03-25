@@ -29,7 +29,7 @@
     {% endembed %}
   {% endif %}
 
-  {% include '@components/navigation/anchor.twig' %}
+  {% include '@components/navigation/anchor/anchor.twig' %}
   {% for module in modules %}
     {% if module.module_type == 'wysiwyg' %}
       {% include '@components/modules/wysiwyg/wysiwyg.twig' with module %}

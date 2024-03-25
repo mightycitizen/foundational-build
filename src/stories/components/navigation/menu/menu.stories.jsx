@@ -1,12 +1,12 @@
-import twig from './breadcrumbs.twig';
-import { breadcrumbs } from '../../global/placeholders/components.json';
+import twig from './menu.twig';
+import { menu, social } from '../../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Navigation/Breadcrumbs',
-  argTypes: {
+  title: 'Components/Navigation/Menu',
+  // argTypes: {
 
 
-  }
+  // }
 
 };
 
@@ -17,8 +17,8 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Breadcrumbs = Template.bind({});
-Breadcrumbs.args = {
-  breadcrumbs
+export const Menu = Template.bind({});
+Menu.args = {
+  menu
 };
 //

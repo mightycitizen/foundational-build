@@ -1,10 +1,10 @@
 
   <form {% if action | default %}action="{{ action }}"{% endif %} {% if ajax | default %}class="js-ajax"{% endif %}>
-    {% embed '@components/forms/form-group.twig' %}
+    {% embed '@components/forms/form-group/form-group.twig' %}
       {% block form_content %}
         {% if keyword_filter | default %}
           <div class="cell medium-5">
-            {% include '@components/forms/text.twig' with {
+            {% include '@components/forms/text/text.twig' with {
               value: queryParam | default,
               label: label | default("Keywords"),
               id: input_id | default("keywords"),
@@ -15,7 +15,7 @@
           </div>
         {% endif %}
         <div class="cell medium-5 large-4 small-10">
-          {% include '@components/forms/select.twig' with {
+          {% include '@components/forms/select/select.twig' with {
             label: category_label | default("Filter by Category"),
             input_class: 'w-100 ' ~ input_class | default,
             id: "category",

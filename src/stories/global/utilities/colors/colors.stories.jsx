@@ -1,8 +1,8 @@
-import twig from './text.twig';
+import twig from './colors.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Helpers/Text',
+  title: 'Global/Utilities/Colors',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {
@@ -47,4 +47,4 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Text = Template.bind({});
+export const Colors = Template.bind({});

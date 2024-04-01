@@ -1,8 +1,8 @@
-import twig from './lists.twig';
+import twig from './spacers.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Helpers/Lists',
+  title: 'Global/Utilities/Spacers',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {
@@ -47,4 +47,4 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Lists = Template.bind({});
+export const Spacers = Template.bind({});

@@ -1,8 +1,8 @@
-import twig from './colors.twig';
+import twig from './lists.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Helpers/Colors',
+  title: 'Global/Utilities/Lists',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {
@@ -47,4 +47,4 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Colors = Template.bind({});
+export const Lists = Template.bind({});

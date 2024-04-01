@@ -1,3 +1,4 @@
+$border-color: $medium-gray;
 
 $spacers: ();
 @for $i from 0 through $spacers-range {
@@ -124,6 +125,38 @@ $utilities: map-merge(
       class: right,
       values: map-merge($spacers, (0: 0))
     ),
+
+
+    "border": (
+      property: border,
+      class: border,
+      values: (
+        0: 0,
+        1: 1px solid $border-color
+      )
+    ),
+    "border-right": (
+      property: border-right,
+      class: border-right,
+      values: (
+        0: 0,
+        1: 1px solid $border-color
+      )
+    ),
+    "border-bottom": (
+      property: border-bottom,
+      class: border,
+      values: (
+        0: 0,
+        1: 1px solid $border-color
+      )
+    ),
+    "border-color": (
+      property: border-color,
+      class: border,
+      values: map-merge($utilities-colors, (transparent: transparent))
+    ),
+    
 
     "bottom": (
       property: bottom,
@@ -428,6 +461,11 @@ $utilities: map-merge(
       values: (
         smaller: 14px,
         small: 16px,
+        base: 18px,
+        large: 20px,
+        larger: 24px,
+        xlarge: 32px,
+        xxlarge: 48px,
       )
     ),
     "font-size": (

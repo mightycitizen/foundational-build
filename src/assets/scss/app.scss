@@ -15,10 +15,10 @@
 
 
 @import
-  'helpers/mixins',
-  'helpers/functions';
+  'utilities/mixins',
+  'utilities/functions';
 
-@import "helpers/preprocess";
+@import "utilities/preprocess";
 
 @import 'settings';
 @import 'foundation';
@@ -80,7 +80,7 @@ $unicode-quote-left: '\201c';
 @include foundation-title-bar;
 @include foundation-top-bar;
 
-// Helpers
+// utilities
 //@include foundation-float-classes;
 @include foundation-flex-classes;
 @include foundation-visibility-classes;
@@ -137,14 +137,14 @@ $unicode-quote-left: '\201c';
 
 
 @import
-  "helpers/lists",
-  "helpers/misc",
-  "helpers/gradients",
-  "helpers/text",
-  "helpers/scrollShow",
-  "helpers/utilities",
-  //"helpers/display",
-  "helpers/fonts";
+  "utilities/lists",
+  "utilities/misc",
+  "utilities/gradients",
+  "utilities/text",
+  "utilities/scrollShow",
+  "utilities/utilities",
+  //"utilities/display",
+  "utilities/fonts";
 
 
 @import

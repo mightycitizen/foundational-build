@@ -9706,17 +9706,6 @@ html, body, .l-wrapper {
   padding: 0.1666666667rem 0.2777777778rem;
 }
 
-.list-divided > li:not(:last-child) {
-  position: relative;
-}
-.list-divided > li:not(:last-child):after {
-  content: "|";
-  display: inline-block;
-  position: absolute;
-  right: -0.8888888889rem;
-  transform: translateX(50%);
-}
-
 .list-unstyled {
   margin-left: 0;
   list-style-type: none;
@@ -10202,6 +10191,106 @@ html, body, .l-wrapper {
 
 .right-half {
   right: 4px;
+}
+
+.border-0 {
+  border: 0;
+}
+
+.border-1 {
+  border: 1px solid #666;
+}
+
+.border-right-0 {
+  border-right: 0;
+}
+
+.border-right-1 {
+  border-right: 1px solid #666;
+}
+
+.border-0 {
+  border-bottom: 0;
+}
+
+.border-1 {
+  border-bottom: 1px solid #666;
+}
+
+.border-white {
+  border-color: #fff;
+}
+
+.border-black {
+  border-color: #333;
+}
+
+.border-primary {
+  border-color: #2953cc;
+}
+
+.border-primary-darker {
+  border-color: #1f3e99;
+}
+
+.border-primary-lighter {
+  border-color: #6986db;
+}
+
+.border-primary-lightest {
+  border-color: #bdcaef;
+}
+
+.border-secondary {
+  border-color: #ffcd00;
+}
+
+.border-secondary-darker {
+  border-color: #eca806;
+}
+
+.border-secondary-lighter {
+  border-color: #ffe57f;
+}
+
+.border-secondary-lightest {
+  border-color: #ffefb2;
+}
+
+.border-tertiary {
+  border-color: #d82626;
+}
+
+.border-tertiary-darker {
+  border-color: #b42727;
+}
+
+.border-tertiary-lighter {
+  border-color: #e87d7d;
+}
+
+.border-tertiary-lightest {
+  border-color: #f3bdbd;
+}
+
+.border-gray {
+  border-color: #666;
+}
+
+.border-gray-lighter {
+  border-color: #ccc;
+}
+
+.border-gray-lightest {
+  border-color: #eee;
+}
+
+.border-gray-darker {
+  border-color: #333;
+}
+
+.border-transparent {
+  border-color: transparent;
 }
 
 .bottom-0 {
@@ -12327,6 +12416,26 @@ html, body, .l-wrapper {
 
 .text-small {
   font-size: 16px;
+}
+
+.text-base {
+  font-size: 18px;
+}
+
+.text-large {
+  font-size: 20px;
+}
+
+.text-larger {
+  font-size: 24px;
+}
+
+.text-xlarge {
+  font-size: 32px;
+}
+
+.text-xxlarge {
+  font-size: 48px;
 }
 
 .fs-1 {

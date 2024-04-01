@@ -10,7 +10,7 @@ $header-styles: $headingStyles;
   // if last in map
   @each $sizeKey, $sizeValue in $value {
     @if index(map-keys($headingStyles), $key) == length(map-keys($headingStyles)) {
-      $font-sizes: map.set($font-sizes, str-slice($sizeKey,2,3), map-get($sizeValue,'font-size'));
+      $font-sizes: map.set($font-sizes, str-slice($sizeKey,2,3), rem-calc(#{map-get($sizeValue,'font-size')}));
     }
     //$header-styles: map.set($value, 'h'$sizeKey, ('font-size': $value));
   }
@@ -69,3 +69,5 @@ $palettes: ('primary': $primary, 'secondary': $secondary, 'tertiary':$tertiary,'
 
 // Utilities
 
+
+$spacer-mobile: $spacer *.625;

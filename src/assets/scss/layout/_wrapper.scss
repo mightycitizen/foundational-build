@@ -37,11 +37,7 @@ html, body, .l-wrapper{
   background-color: $primary-color;
   //color: $white;
   flex: none;
-  .social-media{
-    @include breakpoint(small only){
-      @include spacer(margin,y,4);
-    }
-  }
+  
   .menu{
     display: flex;
     font-weight: $global-weight-bold;

@@ -7,13 +7,13 @@
     position: relative;
     //padding-left: rem-calc(70);
     margin-left: 0;
-    @include spacer(padding,left,8,4);
-    &:not(:last-child){
-      @include spacer(margin,bottom,5,5);
-    }
-    > *:last-child{
-      margin-bottom: 0;
-    }
+    //@include spacer(padding,left,8,4);
+    // &:not(:last-child){
+    //   @include spacer(margin,bottom,5,5);
+    // }
+    // > *:last-child{
+    //   margin-bottom: 0;
+    // }
     &:before{
       line-height: 1;
       content: counter(steps);

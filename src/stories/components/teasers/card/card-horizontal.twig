@@ -1,5 +1,5 @@
-<div class="card card--horizontal {{ modifier }} {% if clickCard | default %}card--click{% endif %}" data-scroll-show>
-  <div {% if image_position | default != 'flush' %}class="card-section"{% endif %}>
+<div class="card shadow card--horizontal {{ modifier }} {% if clickCard | default %}card--click{% endif %}" data-scroll-show>
+  <div {% if image_position | default != 'flush' %}class="card-section py-4 px-4"{% endif %}>
     <div class="grid-x {% if image_position | default != 'flush' %}grid-margin-x align-middle{% endif %} ">
       {% if image | default %}
         <div class="cell medium-5 large-5 {% if image.alignment | default and image.alignment == 'right' %}medium-order-2{% endif %}">
@@ -10,7 +10,7 @@
       {% endif %}
       <div class="cell {% if image | default %}medium-7 large-7 {% if image.alignment  | default and image.alignment == 'right' %}medium-order-1{% endif %}{% endif %}">
         {% if image_position | default == 'flush' %}          
-          <div class="card-section display-flex justify-content-center flex-column h-100 d-flex">
+          <div class="card-section py-3 px-4 display-flex justify-content-center flex-column h-100 d-flex">
         {% endif %}
               {% include '@components/teasers/card/_card-content.twig' %} 
         {% if image_position | default == 'flush' %}

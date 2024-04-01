@@ -1,6 +1,7 @@
 const { resolve } = require('path');
 const path = require('path');
 const LEGACY_REGEXP = /^(\w+)::/;
+import remarkGfm from 'remark-gfm';
 
 /**
  * Transforms legacy namespace::template/path to @namespoace/template/path
@@ -32,10 +33,21 @@ module.exports = {
   staticDirs: ['../dist'],
 
   stories: [
+    "../src/stories/**/*.mdx",
     "../src/stories/**/**/*.stories.jsx"
   ],
 
   addons: [
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    },
     "@storybook/addon-a11y",
     "@storybook/addon-essentials"    
   ],

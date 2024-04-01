@@ -1,6 +1,6 @@
 
 
-<ul id="{{ accordion_id | default }}" class="accordion {% if modifier | default  %}accordion--{{ modifier | default }}{% endif %}"  data-accordion data-allow-all-closed="true">
+<ul id="{{ accordion_id | default }}" class="list-unstyled accordion {% if modifier | default  %}accordion--{{ modifier | default }}{% endif %}"  data-accordion data-allow-all-closed="true">
 
   {% for item in items %}
     {% include '@components/containers/accordion/accordion-item.twig' with {item: item, modifier: modifier} %}

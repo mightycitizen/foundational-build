@@ -3,11 +3,11 @@
     <div class="grid-x grid-margin-x">
 
       <div class="cell medium-5 medium-order-2 medium-text-left">
-        <div class="media-object media-object--stack">
-          <div class="media-object-section">
+        <div class="d-flex flex-column flex-large-row flex-align-center gx-3 gy-3">
+          <div>
             {% include '@components/logo/logo.twig' with logo %}
           </div>
-          <div class="media-object-section">
+          <div>
             <address>
              {{ address | default | nl2br }}
             </address>
@@ -24,7 +24,7 @@
         {% endfor %}
       </ul>
       </div>
-      <div class="cell medium-7 medium-text-right medium-order-3">
+      <div class="cell medium-7 medium-text-right medium-order-3 my-4">
         {% include '@components/utils/social-media/social-media.twig' %}
       </div>
     </div>

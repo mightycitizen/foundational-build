@@ -1,6 +1,6 @@
 <ol class="step-list">
   {% for step in steps %}
-    <li>
+    <li class="pl-4 pl-large-8 {% if loop.last %}mb-0{% else %}mb-5{% endif %}">
       <h3 class="mb-2">{{ step.heading }}</h3>
       <p class="mb-3">{{ step.description }}</p>
       {% if step.link | default is not empty %}

@@ -1,18 +1,108 @@
-
 <style>
-  .spacer{
-    background: aqua;
-    border: 1px solid #000;
+	.spacer {
+		background: aqua;
+		border: 1px solid #000;
+	}
+  code.highlighter-rouge{
+    background: transparent;
+    border: 0;
+    color: #e83e8c;
   }
 </style>
 
 
+<div class="grid-container">
+	<h2>How it works</h2>
+	<p>Assign responsive-friendly&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;values to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties. Classes are built from a default Sass map ranging from&nbsp;<code class="highlighter-rouge">.25rem</code>&nbsp;to&nbsp;<code class="highlighter-rouge">3rem</code>.</p>
+	<h2>Notation</h2>
+	<p>Spacing utilities that apply to all breakpoints, from&nbsp;<code class="highlighter-rouge">small</code>&nbsp;to&nbsp;<code class="highlighter-rouge">xlarge</code>, have no breakpoint abbreviation in them. This is because those classes are applied from&nbsp;<code class="highlighter-rouge">min-width: 0</code>&nbsp;and up, and thus are not bound by a media query. The remaining breakpoints, however, do include a breakpoint abbreviation.</p>
+	<p>The classes are named using the format&nbsp;<code class="highlighter-rouge">{property}{sides}-{size}</code>&nbsp;for&nbsp;<code class="highlighter-rouge">xs</code>&nbsp;and&nbsp;<code class="highlighter-rouge">{property}{sides}-{breakpoint}-{size}</code>&nbsp;for&nbsp;<code class="highlighter-rouge">medium</code>,&nbsp;<code class="highlighter-rouge">large</code>,&nbsp;<code class="highlighter-rouge">xlarge</code>.</p>
+	<p>Where&nbsp;<em>property</em>&nbsp;is one of:</p>
+	<ul>
+		<li>
+			<code class="highlighter-rouge">m</code>&nbsp;- for classes that set&nbsp;<code class="highlighter-rouge">margin</code>
+		</li>
+		<li>
+			<code class="highlighter-rouge">p</code>&nbsp;- for classes that set&nbsp;<code class="highlighter-rouge">padding</code>
+		</li>
+	</ul>
+	<p>Where&nbsp;<em>sides</em>&nbsp;is one of:</p>
+	<ul>
+		<li>
+			<code class="highlighter-rouge">t</code>&nbsp;- for classes that set&nbsp;<code class="highlighter-rouge">margin-top</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding-top</code>
+		</li>
+		<li>
+			<code class="highlighter-rouge">b</code>&nbsp;- for classes that set&nbsp;<code class="highlighter-rouge">margin-bottom</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding-bottom</code>
+		</li>
+		<li>
+			<code class="highlighter-rouge">l</code>&nbsp;- for classes that set&nbsp;<code class="highlighter-rouge">margin-left</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding-left</code>
+		</li>
+		<li>
+			<code class="highlighter-rouge">r</code>&nbsp;- for classes that set&nbsp;<code class="highlighter-rouge">margin-right</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding-right</code>
+		</li>
+		<li>
+			<code class="highlighter-rouge">x</code>&nbsp;- for classes that set both&nbsp;<code class="highlighter-rouge">*-left</code>&nbsp;and&nbsp;<code class="highlighter-rouge">*-right</code>
+		</li>
+		<li>
+			<code class="highlighter-rouge">y</code>&nbsp;- for classes that set both&nbsp;<code class="highlighter-rouge">*-top</code>&nbsp;and&nbsp;<code class="highlighter-rouge">*-bottom</code>
+		</li>
+		<li>blank - for classes that set a&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;on all 4 sides of the element</li>
+	</ul>
+	<p>Where&nbsp;<em>size</em>&nbsp;is one of:</p>
+	<ul>
+		<li>
+			<code class="highlighter-rouge">0</code>&nbsp;- for classes that eliminate the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;by setting it to&nbsp;<code class="highlighter-rouge">0</code>
+		</li>
+		<li>
+			<code class="highlighter-rouge">1</code>&nbsp;- (by default) for classes that set the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;to&nbsp;<code class="highlighter-rouge">$spacer * .25</code>
+		</li>
+		<li>
+			<code class="highlighter-rouge">2</code>&nbsp;- (by default) for classes that set the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;to&nbsp;<code class="highlighter-rouge">$spacer * .5</code>
+		</li>
+		<li>
+			<code class="highlighter-rouge">3</code>&nbsp;- (by default) for classes that set the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;to&nbsp;<code class="highlighter-rouge">$spacer</code>
+		</li>
+		<li>
+			<code class="highlighter-rouge">4</code>&nbsp;- (by default) for classes that set the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;to&nbsp;<code class="highlighter-rouge">$spacer * 1.5</code>
+		</li>
+		<li>
+			<code class="highlighter-rouge">5</code>&nbsp;- (by default) for classes that set the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;to&nbsp;<code class="highlighter-rouge">$spacer * 3</code>
+		</li>
+		<li>
+			<code class="highlighter-rouge">auto</code>&nbsp;- for classes that set the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;to auto</li>
+	</ul>
+	<p>(You can add more sizes by adding entries to the&nbsp;<code class="highlighter-rouge">$spacers</code>&nbsp;Sass map variable.)</p>
+	<h2>Examples</h2>
+	<p>Here are some representative examples of these classes:</p>
+
+	<figure class="highlight">
+		<pre><code class="language-scss" data-lang="scss"><span class="nc">.mt-0</span> <span class="p">{</span>
+  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">0</span> <span class="o">!</span><span class="n">important</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.ml-1</span> <span class="p">{</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="p">(</span><span class="nv">$spacer</span> <span class="o">*</span> <span class="mi">.25</span><span class="p">)</span> <span class="o">!</span><span class="n">important</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.px-2</span> <span class="p">{</span>
+  <span class="nl">padding-left</span><span class="p">:</span> <span class="p">(</span><span class="nv">$spacer</span> <span class="o">*</span> <span class="mi">.5</span><span class="p">)</span> <span class="o">!</span><span class="n">important</span><span class="p">;</span>
+  <span class="nl">padding-right</span><span class="p">:</span> <span class="p">(</span><span class="nv">$spacer</span> <span class="o">*</span> <span class="mi">.5</span><span class="p">)</span> <span class="o">!</span><span class="n">important</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.p-3</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="nv">$spacer</span> <span class="o">!</span><span class="n">important</span><span class="p">;</span>
+<span class="p">}</span></code></pre>
+	</figure>
+	<div>Horizontal centering</div>
+	<p>Additionally, Bootstrap also includes an&nbsp;<code class="highlighter-rouge">.mx-auto</code>&nbsp;class for horizontally centering fixed-width block level content&mdash;that is, content that has&nbsp;<code class="highlighter-rouge">display: block</code>&nbsp;and a&nbsp;<code class="highlighter-rouge">width</code>&nbsp;set&mdash;by setting the horizontal margins to&nbsp;<code class="highlighter-rouge">auto</code>.</p>
+	<div class="bd-example">&nbsp;</div>
 
 
-{% set types = [
+	{% set types = [
   {
     label: "Margin",
     selector: "m",
+    negative: true,
     directions: true
   },
   {
@@ -29,17 +119,21 @@
   }
 ] %}
 
-{% set sections = types %}
+	{% set sections = types %}
 
-<ul>
-  {% for section in sections %}
-    <li>
-      <a href="#{{ section.selector }}">{{ section.label }}</a>
-    </li>
-  {% endfor %}
-</ul>
+	<ul>
+		{% for section in sections %}
+			<li>
+				<a href="#{{ section.selector }}">{{ section.label }}</a>
+			</li>
+		{% endfor %}
+	</ul>
 
-{% set directions = [
+	{% set directions = [
+  {
+    label: "All",
+    selector: ""
+  },
   {
     label: "Top",
     selector: "t"
@@ -57,86 +151,115 @@
     selector: "r"
   },
   {
-    label: "Horizontal",
+    label: "Horizontal / X",
     selector: "x"
   },
   {
-    label: "Vertical",
+    label: "Vertical / Y",
     selector: "y"
-  },
-  {
-    label: "All",
-    selector: ""
   }
 ] %}
 
-{% set spacers = ['quarter','half'] %}
-{% for i in range (0, 8) %}
-  {% set spacers = spacers|merge([i]) %}
-{% endfor %}
+	{% set spacers = ['quarter','half'] %}
+	{% set spacers_range = 14 %}
+	<p>Spacer range is defined in
+		<code>global/base/styles.json</code><br/>
+		Additional spacers can be added there as well. Spacing system uses 8px increments.
+	</p>
+	{% for i in range (0, spacers_range) %}
+		{% set spacers = spacers|merge([i]) %}
+	{% endfor %}
 
 
+	{% for type in types %}
+		<h3 id="{{ type.selector }}">{{ type.label }}</h3>
+		{% if type.description %}
+			<p>{{ type.description }}</p>
+		{% endif %}
+		{% if type.directions %}
+			{% if type.negative %}
+				<p>{{ type.label }}
+					can also have negative spacers by adding n to the # e.g.
+					{{ type.selector }}t-n1
+				</p>
+			{% endif %}
 
-{% for type in types %}
-  <h3 id="{{ type.selector }}">{{ type.label }}</h3>
-  {% if type.description %}
-    <p>{{ type.description }}</p>
-  {% endif %}
-  {% if type.directions %}
-    {% for direction in directions %}
-      <h4>{{ type.label }} {{ direction.label }}</h4>
-      <div style="background-color: orange; overflow: hidden;">
-        {% for spacer in spacers %}
-          <div class="spacer {{ type.selector }}{{ direction.selector }}-{{ spacer }}">
-            <span class="d-block" style="background-color: #ccc">{{ type.label }} {{ direction.label }} {{ spacer }} (<code>{{ type.selector }}{{ direction.selector }}-{{ spacer }}</code>)</span>
-          </div>
-        {% endfor %}
-      </div>
-      <hr/>
-    {% endfor %}
-  {% else %}
-    <div style="background-color: orange; overflow: hidden;">
-      {% set directions = ['col','row'] %}
-      {% for direction in directions %}
-        {% for spacer in spacers %}
-          <div class="spacer {% if type.multiple %}d-flex{% endif %} {% if direction == 'col' %}flex-column{% endif %} {{ type.selector }}-{{ spacer }}">
-            {% if type.multiple %}
-              {% for i in range (1, type.multiple) %}
-                <div class="spacer {{ type.selector }}-{{ spacer }}">
-                  <span class="d-block" style="background-color: #ccc">{{ type.label }} {{ spacer }} (<code>{{ type.selector }}-{{ spacer }}</code>)</span>
-                </div>
-              {% endfor %}
-            {% else %}
-              <span class="d-block" style="background-color: #ccc">{{ type.label }} {{ spacer }} (<code>{{ type.selector }}-{{ spacer }}</code>)</span>
-            {% endif %}
+			{% for direction in directions %}
+				<h4>{{ type.label }}
+					{{ direction.label }}
+					{% if forward == 'negative' %}(Negative)
+					{% endif %}
+				</h4>
+				<div style="background-color: orange; overflow: hidden;">
+					{% for spacer in spacers %}
+						<div class="spacer {{ type.selector }}{{ direction.selector }}-{{ spacer }}">
+							<span class="d-block" style="background-color: #ccc">{{ type.label }}
+								{{ direction.label }}
+								{{ spacer }}
+								(<code>{{ type.selector }}{{ direction.selector }}-{{ spacer }}</code>)</span>
+						</div>
+					{% endfor %}
+				</div>
+				<hr/>
+			{% endfor %}
 
-          </div>
-        {% endfor %}
-      {% endfor %}
-    </div>
-  {% endif %}
+		{% else %}
 
-{% endfor %}
-<hr>
-<h4>Row Gap <code>gy-#</code></h4>
-<p><strong>Useful for flex containers like grids with <code>flex-wrap: wrap</code></strong></p>
+			<div style="background-color: orange; overflow: hidden;">
+				{% set directions = ['col','row'] %}
 
-<div class="grid-container">
-  <div class="grid-x grid-margin-x gy-3 gy-large-5">
-    {% for i in 1..5 %}
-    <div class="cell medium-6 large-4">
-      <span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"></span>
-    </div>
-    {% endfor %}
 
-  </div>
-</div>
+				{% for direction in directions %}
+					{% for spacer in spacers %}
+						<div class="spacer {% if type.multiple %}d-flex{% endif %} {% if direction == 'col' %}flex-column{% endif %} {{ type.selector }}-{{ spacer }}">
+							{% if type.multiple %}
+								{% for i in range (1, type.multiple) %}
+									<div class="spacer {{ type.selector }}-{{ spacer }}">
+										<span class="d-block" style="background-color: #ccc">{{ type.label }}
+											{{ spacer }}
+											(<code>{{ type.selector }}-{{ spacer }}</code>)</span>
+									</div>
+								{% endfor %}
+							{% else %}
+								<span class="d-block" style="background-color: #ccc">{{ type.label }}
+									{{ spacer }}
+									(<code>{{ type.selector }}-{{ spacer }}</code>)</span>
+							{% endif %}
 
-<hr>
+						</div>
+					{% endfor %}
+				{% endfor %}
 
-<h3>Miscellaneous Spacers</h3>
+			</div>
+		{% endif %}
 
-{% set other_types = [
+	{% endfor %}
+	<hr>
+	<h4>Row Gap
+		<code>gy-#</code>
+	</h4>
+	<p>
+		<strong>Useful for flex containers like grids with
+			<code>flex-wrap: wrap</code>
+		</strong>
+	</p>
+
+	<div class="grid-container">
+		<div class="grid-x grid-margin-x gy-3 gy-large-5">
+			{% for i in 1..5 %}
+				<div class="cell medium-6 large-4">
+					<span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"></span>
+				</div>
+			{% endfor %}
+
+		</div>
+	</div>
+
+	<hr>
+
+	<h3>Miscellaneous Spacers</h3>
+
+	{% set other_types = [
   {
     label: 'Auto Horizontal Margin',
     selector: 'm-auto'
@@ -149,9 +272,12 @@
     selector: 'h-100'
   }
 ] %}
-<div style="background-color: orange; overflow: hidden;">
-{% for type in other_types %}
-    <span class="spacer d-block {{ type.selector }}"  style="{% if type.selector == 'm-auto' %}width: 300px;{% endif %}background-color: #ccc">{{ type.label }} (<code>{{ type.selector }}</code>)</span>
-{% endfor %}
-</div>
+	<div style="background-color: orange; overflow: hidden;">
+		{% for type in other_types %}
+			<span class="spacer d-block {{ type.selector }}" style="{% if type.selector == 'm-auto' %}width: 300px;{% endif %}background-color: #ccc">{{ type.label }}
+				(<code>{{ type.selector }}</code>)</span>
+		{% endfor %}
+	</div>
 
+
+</div>

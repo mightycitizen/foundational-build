@@ -9726,19 +9726,6 @@ html, body, .l-wrapper {
   transform: scaleX(-1);
 }
 
-@media print, screen and (max-width: 39.99875em) {
-  .media-object--stack {
-    display: block;
-  }
-  .media-object--stack img {
-    max-width: 100%;
-  }
-  .media-object--stack .media-object-section:first-child {
-    padding-right: 0;
-    margin-bottom: 15px;
-  }
-}
-
 .image-size--landscapeCropped {
   aspect-ratio: 1.8;
 }

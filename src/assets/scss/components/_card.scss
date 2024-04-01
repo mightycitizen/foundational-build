@@ -1,26 +1,6 @@
 .card{
   //max-width: rem-calc(500);
-  //position: relative;
-  // .date{
-  //   position: absolute;
-  //   left: 0;
-  //   top: 0;
-  // }
-  // .flag{
-  //   position: absolute;
-  //   top: 0;
-  //   right: 0;
-  // }
-  // &-section{
-  //   @include spacer(padding,top,4,4);
-  //   @include spacer(padding,x,4,3);
-  //   @include spacer(padding,bottom,5,4);
-  // }
-  // &-image{
-  //   img{
-  //     width: 100%;
-  //   }
-  // }
+
   &--click{
     position: relative;
     .card_click{
@@ -76,19 +56,5 @@
   //     }
   //   }
   // }
-  // &--horizontal{
-  //   @include breakpoint(large){
-  //     .card-section{
-  //       //@include spacer(padding,x,4,4);
-  //       @include spacer(padding,top,5);
-  //     }
-  //   }
-  //   // @include breakpoint(medium){
-  //   //   .cell{
-  //   //     &:not(:first-child):not([class*=medium-order-1]){
-  //   //       margin-left: rem-calc(10);
-  //   //     }
-  //   //   }
-  //   // }
-  // }
+  
 }

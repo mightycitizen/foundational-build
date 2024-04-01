@@ -75,44 +75,11 @@
 
   }
   &-content{
-    //$accordion-content-padding: rem-calc(16 32 32);
-
-    @include spacer(padding,top,2,2);
-    @include spacer(padding,x,4,3);
-    @include spacer(padding,bottom,4,3);
 
     > *:last-child{
       margin-bottom: 0;
     }
   }
-  &-item{
-    box-shadow: $global-box-shadow;
-    &:not(:last-child){
-      @include spacer(margin, bottom, 3);
-      //border-bottom: 2px solid $white;
-    }
-  }
-  // &--steps{
-  //   counter-set: steps;
-  //   .accordion-title{
-  //     counter-increment: steps;
-  //     @include spacer(padding, left,7,4);
-  //     .accordion-notch{
-  //       width: rem-calc($spacer*3);
-  //       @include breakpoint(medium){
-  //         width: rem-calc($spacer*5);
-  //       }
-  //       &:before{
-  //         content: counter(steps);
-  //         font-size: rem-calc(24);
-  //         @include font-scale-mobile(24);
-  //       }
-  //     }
-
-  //   }
-
-  // }
-
-
+  
 
 }

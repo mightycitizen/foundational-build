@@ -1,9 +1,11 @@
 
 
 
-<ul class="tabs" data-tabs id="{{ tabs_id | default }}">
+<ul class="tabs d-flex" data-tabs id="{{ tabs_id | default }}">
   {% for tab in tabs %}
-    <li class="tabs-title {{ loop.first ? 'is-active' }}"><button data-href="#{{ tab.id }}" aria-selected="true">{{ tab.text }}</button></li>
+    <li class="tabs-title mr-1 {{ loop.first ? 'is-active' }}">
+      <button class="bg-gray-lightest px-1 px-large-5 py-1 py-large-2" data-href="#{{ tab.id }}" aria-selected="true">{{ tab.text }}</button>
+    </li>
   {% endfor %}
 </ul>
 

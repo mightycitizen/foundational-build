@@ -1,7 +1,4 @@
-.section{
-  
-  @include spacer(padding,top,12,4);
-  @include spacer(padding,bottom,13,5);
+.section{    
 
   background-size: cover;
   background-position: center;
@@ -50,18 +47,9 @@
   }
 
   &--tight{
-    @include spacer(padding,top,5,2);
-    @include spacer(padding,bottom,6,3);
-    @include breakpoint(medium down){
-      &:first-child{
-        padding-top: $spacer*4;
-      }
-      &:last-child{
-        padding-bottom: $spacer*5;
-      }
-    }
+    
     &.section--collapse{
-      + .section--tight.section--collapse{
+      + .section--collapse{
         padding-top: 0 !important;
       }
     }

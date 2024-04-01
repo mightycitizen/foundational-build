@@ -21,7 +21,7 @@
       {% endset %}
     {% endif %}
     {% embed '@components/sections/section.twig' with {
-      section_class: 'section--tight'
+      padding: 'tight',
     } %}
       {% block section_content %}
         {% include '@layout/structure/content-with-sidebar.twig' %}

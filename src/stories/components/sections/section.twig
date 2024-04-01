@@ -37,9 +37,11 @@
     </div>
   {% endif %}
 {% endset %}
-<section {% if section_id | default %}id="{{ section_id }}"{% endif %} class="section {{ section_class | default }} {% if style | default %}section--{{ style }} {% endif %} {% if collapse | default %}section--collapse{% endif %}" >
-  {% if section_background | default %}<div class="js-lazy section_background" data-bg="{{ section_background.src }}"></div>{% endif %}
-  {% if section_background_slick | default %}<img class="section_background" data-slick-background="{{ section_background_slick }}"/>{% endif %}
+<section {% if section_id | default %}id="{{ section_id }}"{% endif %} class="section {{ padding | default == 'tight' ? (loop.first ? 'pt-4' : 'pt-2') ~ ' ' ~ (loop.last ? 'pb-5' : 'pb-3') ~ ' pt-large-5 pb-large-6' : 'pt-4 pt-large-12 pb-5 pb-large-13' }} {{ section_class | default }} {% if style | default %}section--{{ style }} {% endif %} {% if collapse | default %}section--collapse{% endif %}" >
+  <div class="position-unset">
+    {% if section_background | default %}<div class="js-lazy section_background" data-bg="{{ section_background.src }}"></div>{% endif %}
+    {% if section_background_slick | default %}<img class="section_background" data-slick-background="{{ section_background_slick }}"/>{% endif %}
+  </div>
   <div class="{% if exclude_container | default is empty %}grid-container{% endif %} {{ grid_class | default }}">
     {% if section_style | default and (section_style == 'side') %}
       <div class="grid-x align-middle align-center">

@@ -77,6 +77,6 @@ const cards = [...Array(5)].map((_, i) => ( {
 const defaultArgs = {
   cards: cards
 }
-export const ThreeUpCards = Template.bind({});
+export const CardGroup = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-ThreeUpCards.args = defaultArgs;
+CardGroup.args = defaultArgs;

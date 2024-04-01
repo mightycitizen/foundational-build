@@ -1,5 +1,6 @@
 {% embed '@components/sections/section.twig' with {
-    section_class: "section--tight section--wysiwyg " ~ section_class | default,
+    padding: 'tight',
+    section_class: "section--wysiwyg " ~ section_class | default,
     section_style: "narrower"
   }
 %}

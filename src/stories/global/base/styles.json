@@ -6,7 +6,7 @@
   "font-weight-bold": "800",
   "line-height": 1.2,
   "bg-light-opacity": 0.4,
-  "spacers-range": 8,
+  "spacers-range": 14,
   "spacers-additional": {
     "quarter": 0.25,
     "half": 0.5

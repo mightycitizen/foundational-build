@@ -7,7 +7,8 @@
 {% endblock %}
 {% block main %}
   {% embed '@components/sections/section.twig' with {
-    section_class: 'section--tight section--collapse'
+    padding: 'tight',
+    section_class: 'section--collapse'
   } %}
     {% block section_content %}
       <ul>

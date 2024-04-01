@@ -1,5 +1,5 @@
 
-<div class="card shadow {{ class | default }} {{ modifier | default ? 'card--' ~ modifier : '' }} {% if clickCard | default %}card--click{% endif %}" >
+<div class="card bg-{{ background_color | default('white')}} shadow {{ class | default }} {{ modifier | default ? 'card--' ~ modifier : '' }} {% if clickCard | default %}card--click{% endif %}" >
   {% if header | default %}
   <div class="card-divider">
     {{ header }}

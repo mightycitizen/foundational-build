@@ -112,7 +112,7 @@ $utilities: map-merge(
     // scss-docs-start utils-position
     "position": (
       property: position,
-      values: static relative absolute fixed sticky
+      values: static relative absolute fixed sticky unset
     ),
     "top": (
       property: top,

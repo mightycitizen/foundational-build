@@ -12,14 +12,11 @@
   &-title{
     button{
       white-space: nowrap;
-      //@include spacer(margin,right,1);
+      
       font-weight: $global-weight-bold;
       cursor: pointer;
       color: $tab-color;
-      //font-size: $tab-item-font-size;
-      // @include spacer(padding,y,2.25,1);
-      // @include spacer(padding,x,5,1);
-      //background-color: $lightest-gray;
+      
       @include font-scale-mobile($tab-item-font-size,18,true);
       &:hover{
         background-color: $tab-item-background-hover;
@@ -40,9 +37,7 @@
     border: 0;
     box-shadow: $global-box-shadow;
   }
-  &-panel{
-    @include spacer(padding,y,5,4);
-    @include spacer(padding,x,4);
+  &-panel{    
     > *:last-child{
       margin-bottom: 0;
     }

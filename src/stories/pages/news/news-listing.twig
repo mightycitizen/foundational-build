@@ -10,7 +10,7 @@
 {% endblock %}
 {% block main %}
   {% embed '@components/sections/section.twig' with {
-    section_class: 'section--tight',
+    padding: 'tight',    
     style: 'narrow'
   } %}
     {% set listing_image_transform = image_sizes.landscapeCroppedMedium %}

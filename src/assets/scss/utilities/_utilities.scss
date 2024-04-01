@@ -59,6 +59,7 @@ $utilities: map-merge(
         none: none,
       )
     ),
+
     // scss-docs-end utils-float
     // Object Fit utilities
     // scss-docs-start utils-object-fit
@@ -565,8 +566,25 @@ $utilities: map-merge(
         visible: visible,
         invisible: hidden,
       )
-    )
+    ),
+    "order": (
+      responsive: true,
+      property: order,
+      values: (
+        first: -1,
+        0: 0,
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 5,
+        last: 6,
+      ),
+    ),
+
+    
   ),
+  
   $utilities
 );
 

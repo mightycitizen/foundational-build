@@ -3,7 +3,7 @@
     {% set label = item.label | default ? item.label : item.type.label | default %}
     {% set item_type = item.type | default and item.type.handle ? item.type.handle : '' %}
     <div class="item py-5">
-      <div class="grid-x grid-margin-x {% if item.start_date | default is empty %}align-middle{% endif %} gy-3">
+      <div class="grid-x grid-margin-x {% if item.start_date | default is empty %}align-items-center{% endif %} gy-3">
         {% if item.image | default %}
           <div class="cell medium-5 large-3 medium-order-2">
             <div class="wrapper image-size--landscapeCroppedMedium">

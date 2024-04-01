@@ -3,7 +3,7 @@
 {% set intro %}
   {% if section_heading | default %}
       <div class="section_intro {{ intro_class }}">
-        <div class="grid-x grid-margin-x align-middle align-center">
+        <div class="grid-x grid-margin-x align-items-center align-center">
           {% if section_image | default %}
             <div class="cell medium-5 large-6"  data-scroll-show data-scroll-from="left">
               <div class="image-size--landscapeCroppedMedium">
@@ -44,7 +44,7 @@
   </div>
   <div class="{% if exclude_container | default is empty %}grid-container{% endif %} {{ grid_class | default }}">
     {% if section_style | default and (section_style == 'side') %}
-      <div class="grid-x align-middle align-center">
+      <div class="grid-x align-items-center align-center">
         <div class="cell medium-8">
           {{ intro }}
         </div>

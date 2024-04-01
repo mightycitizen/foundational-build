@@ -9001,10 +9001,6 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   left: 0;
 }
 
-.helper {
-  font-size: 0.7777777778rem;
-}
-
 .label, .flag {
   font-weight: bold;
   text-transform: uppercase;

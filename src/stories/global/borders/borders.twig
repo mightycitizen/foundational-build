@@ -1,0 +1,37 @@
+<h1>Borders</h1>
+
+<p>These are defined in <code>utilities/_utilities.scss</code> if you would like to add more options</p>
+{% set borders = [
+    {
+        heading: 'Border',
+        description: 'Border is a shorthand property for setting all the border properties in one declaration.',
+        class: 'border-1',    
+    },
+    {
+        heading: 'Border Right',
+        description: 'Border on the right only',
+        class: 'border-right-1',    
+    },
+    {
+        heading: 'Border Bottom',
+        description: 'Border on the bottom only',
+        class: 'border-bottom-1',    
+    },
+    {
+        heading: 'No border',
+        description: 'No border (e.g. used on buttons to remove default border)',
+        class: 'border-0',
+    },
+    {
+        heading: 'Border Color',
+        description: 'Each of these can be used with a border color',
+        class: 'border-1 border-primary',
+    }
+] %}
+
+{% for border in borders %}
+    <div class="{{ border.class }} p-3 bg-gray-lightest mb-4">
+        <h2>{{ border.heading }} - <code>{{ border.class }}</code></h2>
+        <p class="mb-0">{{ border.description }}</p>
+    </div>
+{% endfor %}

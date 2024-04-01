@@ -10209,11 +10209,11 @@ html, body, .l-wrapper {
   border-right: 1px solid #666;
 }
 
-.border-0 {
+.border-bottom-0 {
   border-bottom: 0;
 }
 
-.border-1 {
+.border-bottom-1 {
   border-bottom: 1px solid #666;
 }
 

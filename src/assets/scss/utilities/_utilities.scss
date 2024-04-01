@@ -145,7 +145,7 @@ $utilities: map-merge(
     ),
     "border-bottom": (
       property: border-bottom,
-      class: border,
+      class: border-bottom,
       values: (
         0: 0,
         1: 1px solid $border-color

@@ -1,7 +1,7 @@
-<div class="alert-bar bg-secondary text-center {{ class | default }}" {% if closable | default %}data-closable{% endif %}>
+<div class="alert-bar bg-secondary py-1 text-center {{ class | default }}" {% if closable | default %}data-closable{% endif %}>
   <div class="grid-container">
     {% if label | default %}
-      <span class="alert-bar_label">{{ label }}</span>
+      <span class="alert-bar_label fw-bold">{{ label }}:</span>
     {% endif %}
     {% if link | default %}
       <a href="{{ link }}">{{ text }}</a>

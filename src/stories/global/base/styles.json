@@ -8,7 +8,9 @@
   "bg-light-opacity": 0.4,
   "spacers-range": 14,
   "spacers-additional": {
-    "quarter": 0.25,
-    "half": 0.5
+    "025": 0.25,
+    "05": 0.5,
+    "105": 1.5,
+    "205": 2.5
   }
 }

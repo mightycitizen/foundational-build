@@ -13,7 +13,9 @@
 
 <div class="grid-container">
 	<h2>How it works</h2>
-	<p>Assign responsive-friendly&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;values to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties. Classes are built from a default Sass map ranging from&nbsp;<code class="highlighter-rouge">.25rem</code>&nbsp;to&nbsp;<code class="highlighter-rouge">3rem</code>.</p>
+	<p>Assign responsive-friendly&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;values to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties. </p>
+  
+  <p>Classes are built from a range of 0 to {{ range }}, with some additional half steps: {% for key, value in additional %}{{ key }} ({{ value }}){{ loop.last == false ? ', ': '' }}{% endfor %}.</p>
 	<h2>Notation</h2>
 	<p>Spacing utilities that apply to all breakpoints, from&nbsp;<code class="highlighter-rouge">small</code>&nbsp;to&nbsp;<code class="highlighter-rouge">xlarge</code>, have no breakpoint abbreviation in them. This is because those classes are applied from&nbsp;<code class="highlighter-rouge">min-width: 0</code>&nbsp;and up, and thus are not bound by a media query. The remaining breakpoints, however, do include a breakpoint abbreviation.</p>
 	<p>The classes are named using the format&nbsp;<code class="highlighter-rouge">{property}{sides}-{size}</code>&nbsp;for&nbsp;<code class="highlighter-rouge">xs</code>&nbsp;and&nbsp;<code class="highlighter-rouge">{property}{sides}-{breakpoint}-{size}</code>&nbsp;for&nbsp;<code class="highlighter-rouge">medium</code>,&nbsp;<code class="highlighter-rouge">large</code>,&nbsp;<code class="highlighter-rouge">xlarge</code>.</p>
@@ -50,28 +52,14 @@
 	</ul>
 	<p>Where&nbsp;<em>size</em>&nbsp;is one of:</p>
 	<ul>
+    {% for spacer in spacers %}
 		<li>
-			<code class="highlighter-rouge">0</code>&nbsp;- for classes that eliminate the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;by setting it to&nbsp;<code class="highlighter-rouge">0</code>
+			<code class="highlighter-rouge">{{ spacer.key }}</code>&nbsp;- for classes that eliminate the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;by setting it to&nbsp;<code class="highlighter-rouge">$spacer * {{ spacer.value }}</code>
 		</li>
-		<li>
-			<code class="highlighter-rouge">1</code>&nbsp;- (by default) for classes that set the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;to&nbsp;<code class="highlighter-rouge">$spacer * .25</code>
-		</li>
-		<li>
-			<code class="highlighter-rouge">2</code>&nbsp;- (by default) for classes that set the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;to&nbsp;<code class="highlighter-rouge">$spacer * .5</code>
-		</li>
-		<li>
-			<code class="highlighter-rouge">3</code>&nbsp;- (by default) for classes that set the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;to&nbsp;<code class="highlighter-rouge">$spacer</code>
-		</li>
-		<li>
-			<code class="highlighter-rouge">4</code>&nbsp;- (by default) for classes that set the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;to&nbsp;<code class="highlighter-rouge">$spacer * 1.5</code>
-		</li>
-		<li>
-			<code class="highlighter-rouge">5</code>&nbsp;- (by default) for classes that set the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;to&nbsp;<code class="highlighter-rouge">$spacer * 3</code>
-		</li>
+		{% endfor %}
 		<li>
 			<code class="highlighter-rouge">auto</code>&nbsp;- for classes that set the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;to auto</li>
 	</ul>
-	<p>(You can add more sizes by adding entries to the&nbsp;<code class="highlighter-rouge">$spacers</code>&nbsp;Sass map variable.)</p>
 	
 	<h2>Horizontal centering</h2>
 	<p>Additionally, also includes an&nbsp;<code class="highlighter-rouge">.mx-auto</code>&nbsp;class for horizontally centering fixed-width block level content&mdash;that is, content that has&nbsp;<code class="highlighter-rouge">display: block</code>&nbsp;and a&nbsp;<code class="highlighter-rouge">width</code>&nbsp;set&mdash;by setting the horizontal margins to&nbsp;<code class="highlighter-rouge">auto</code>.</p>
@@ -140,15 +128,12 @@
   }
 ] %}
 
-	{% set spacers = ['quarter','half'] %}
-	{% set spacers_range = 14 %}
+	
+	
 	<p>Spacer range is defined in
 		<code>global/base/styles.json</code><br/>
 		Additional spacers can be added there as well. Spacing system uses 8px increments.
 	</p>
-	{% for i in range (0, spacers_range) %}
-		{% set spacers = spacers|merge([i]) %}
-	{% endfor %}
 
 
 	{% for type in types %}
@@ -172,11 +157,11 @@
 				</h4>
 				<div style="background-color: orange; overflow: hidden;">
 					{% for spacer in spacers %}
-						<div class="spacer {{ type.selector }}{{ direction.selector }}-{{ spacer }}">
+						<div class="spacer {{ type.selector }}{{ direction.selector }}-{{ spacer.key }}">
 							<span class="d-block" style="background-color: #ccc">{{ type.label }}
 								{{ direction.label }}
-								{{ spacer }}
-								(<code>{{ type.selector }}{{ direction.selector }}-{{ spacer }}</code>)</span>
+								{{ spacer.key }}
+								(<code>{{ type.selector }}{{ direction.selector }}-{{ spacer.key }}</code>)</span>
 						</div>
 					{% endfor %}
 				</div>

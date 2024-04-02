@@ -1,5 +1,7 @@
 import twig from './spacers.twig';
+import styles from '../../base/styles.json';
 
+//console.log(styles['spacers-additional']);
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Global/Utilities/Spacers',
@@ -47,4 +49,31 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Spacers = Template.bind({});
+let spacers = Array.from({length: styles['spacers-range']}, (v, k) => ({
+  key: k,
+  value: k
+}  
+));
+
+const spacersAdditional = styles['spacers-additional'];
+
+// append each spacersAdditonal as an object to the spacers array
+Object.keys(spacersAdditional).forEach((spacer, index) => {
+  spacers.push({
+    key: spacer,
+    value: spacersAdditional[spacer]
+  });
+});
+
+
+
+
+const Spacers = Template.bind({});
+
+Spacers.args = {
+  additional: styles['spacers-additional'],
+  range: styles['spacers-range'],
+  spacers
+}
+
+export { Spacers };

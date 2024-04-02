@@ -6,27 +6,29 @@ $spacers: ();
     $i: $spacer * $i
   ));
 }
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  
+  @return $string;
+}
+
 @if $spacers-additional {
   @each $key, $value in $spacers-additional {
+    // remove first character if underscore
+    $key: str-replace($key, '_','');    
     $spacers: map-merge($spacers, (
       $key: $value * $spacer
     ));
   }
 }
-// $spacers: (
-//   0: 0,
-//   quarter: $spacer * .25,
-//   half: $spacer * .5,
-//   1: $spacer,
-//   2: $spacer * 2,
-//   3: $spacer * 3,
-//   4: $spacer * 4,
-//   5: $spacer * 5,
-//   6: $spacer * 6,
-//   7: $spacer * 7,
-//   8: $spacer * 8,
-// ) !default;
-//$enable-important-utilities: true !default;
+
+
+
 $enable-negative-margins: true !default;
 $negative-spacers: ();
 

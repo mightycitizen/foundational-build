@@ -54,7 +54,7 @@
 	<ul>
     {% for spacer in spacers %}
 		<li>
-			<code class="highlighter-rouge">{{ spacer.key }}</code>&nbsp;- for classes that eliminate the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;by setting it to&nbsp;<code class="highlighter-rouge">$spacer * {{ spacer.value }}</code>
+			<code class="highlighter-rouge">{{ spacer.key }}</code>&nbsp;- for classes that set the&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp; to&nbsp;<code class="highlighter-rouge">$spacer * {{ spacer.value }}</code>
 		</li>
 		{% endfor %}
 		<li>

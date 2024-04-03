@@ -11900,79 +11900,79 @@ html, body, .l-wrapper {
   padding-left: 4px;
 }
 
-.gap-0 {
+.g-0 {
   gap: 0px;
 }
 
-.gap-1 {
+.g-1 {
   gap: 8px;
 }
 
-.gap-2 {
+.g-2 {
   gap: 16px;
 }
 
-.gap-3 {
+.g-3 {
   gap: 24px;
 }
 
-.gap-4 {
+.g-4 {
   gap: 32px;
 }
 
-.gap-5 {
+.g-5 {
   gap: 40px;
 }
 
-.gap-6 {
+.g-6 {
   gap: 48px;
 }
 
-.gap-7 {
+.g-7 {
   gap: 56px;
 }
 
-.gap-8 {
+.g-8 {
   gap: 64px;
 }
 
-.gap-9 {
+.g-9 {
   gap: 72px;
 }
 
-.gap-10 {
+.g-10 {
   gap: 80px;
 }
 
-.gap-11 {
+.g-11 {
   gap: 88px;
 }
 
-.gap-12 {
+.g-12 {
   gap: 96px;
 }
 
-.gap-13 {
+.g-13 {
   gap: 104px;
 }
 
-.gap-14 {
+.g-14 {
   gap: 112px;
 }
 
-.gap-105 {
+.g-105 {
   gap: 12px;
 }
 
-.gap-205 {
+.g-205 {
   gap: 20px;
 }
 
-.gap-025 {
+.g-025 {
   gap: 2px;
 }
 
-.gap-05 {
+.g-05 {
   gap: 4px;
 }
 
@@ -13971,61 +13971,61 @@ html, body, .l-wrapper {
   .medium-pl-05 {
     padding-left: 4px;
   }
-  .medium-gap-0 {
+  .medium-g-0 {
     gap: 0px;
   }
-  .medium-gap-1 {
+  .medium-g-1 {
     gap: 8px;
   }
-  .medium-gap-2 {
+  .medium-g-2 {
     gap: 16px;
   }
-  .medium-gap-3 {
+  .medium-g-3 {
     gap: 24px;
   }
-  .medium-gap-4 {
+  .medium-g-4 {
     gap: 32px;
   }
-  .medium-gap-5 {
+  .medium-g-5 {
     gap: 40px;
   }
-  .medium-gap-6 {
+  .medium-g-6 {
     gap: 48px;
   }
-  .medium-gap-7 {
+  .medium-g-7 {
     gap: 56px;
   }
-  .medium-gap-8 {
+  .medium-g-8 {
     gap: 64px;
   }
-  .medium-gap-9 {
+  .medium-g-9 {
     gap: 72px;
   }
-  .medium-gap-10 {
+  .medium-g-10 {
     gap: 80px;
   }
-  .medium-gap-11 {
+  .medium-g-11 {
     gap: 88px;
   }
-  .medium-gap-12 {
+  .medium-g-12 {
     gap: 96px;
   }
-  .medium-gap-13 {
+  .medium-g-13 {
     gap: 104px;
   }
-  .medium-gap-14 {
+  .medium-g-14 {
     gap: 112px;
   }
-  .medium-gap-105 {
+  .medium-g-105 {
     gap: 12px;
   }
-  .medium-gap-205 {
+  .medium-g-205 {
     gap: 20px;
   }
-  .medium-gap-025 {
+  .medium-g-025 {
     gap: 2px;
   }
-  .medium-gap-05 {
+  .medium-g-05 {
     gap: 4px;
   }
   .medium-gy-0 {
@@ -15685,61 +15685,61 @@ html, body, .l-wrapper {
   .large-pl-05 {
     padding-left: 4px;
   }
-  .large-gap-0 {
+  .large-g-0 {
     gap: 0px;
   }
-  .large-gap-1 {
+  .large-g-1 {
     gap: 8px;
   }
-  .large-gap-2 {
+  .large-g-2 {
     gap: 16px;
   }
-  .large-gap-3 {
+  .large-g-3 {
     gap: 24px;
   }
-  .large-gap-4 {
+  .large-g-4 {
     gap: 32px;
   }
-  .large-gap-5 {
+  .large-g-5 {
     gap: 40px;
   }
-  .large-gap-6 {
+  .large-g-6 {
     gap: 48px;
   }
-  .large-gap-7 {
+  .large-g-7 {
     gap: 56px;
   }
-  .large-gap-8 {
+  .large-g-8 {
     gap: 64px;
   }
-  .large-gap-9 {
+  .large-g-9 {
     gap: 72px;
   }
-  .large-gap-10 {
+  .large-g-10 {
     gap: 80px;
   }
-  .large-gap-11 {
+  .large-g-11 {
     gap: 88px;
   }
-  .large-gap-12 {
+  .large-g-12 {
     gap: 96px;
   }
-  .large-gap-13 {
+  .large-g-13 {
     gap: 104px;
   }
-  .large-gap-14 {
+  .large-g-14 {
     gap: 112px;
   }
-  .large-gap-105 {
+  .large-g-105 {
     gap: 12px;
   }
-  .large-gap-205 {
+  .large-g-205 {
     gap: 20px;
   }
-  .large-gap-025 {
+  .large-g-025 {
     gap: 2px;
   }
-  .large-gap-05 {
+  .large-g-05 {
     gap: 4px;
   }
   .large-gy-0 {
@@ -17399,61 +17399,61 @@ html, body, .l-wrapper {
   .xlarge-pl-05 {
     padding-left: 4px;
   }
-  .xlarge-gap-0 {
+  .xlarge-g-0 {
     gap: 0px;
   }
-  .xlarge-gap-1 {
+  .xlarge-g-1 {
     gap: 8px;
   }
-  .xlarge-gap-2 {
+  .xlarge-g-2 {
     gap: 16px;
   }
-  .xlarge-gap-3 {
+  .xlarge-g-3 {
     gap: 24px;
   }
-  .xlarge-gap-4 {
+  .xlarge-g-4 {
     gap: 32px;
   }
-  .xlarge-gap-5 {
+  .xlarge-g-5 {
     gap: 40px;
   }
-  .xlarge-gap-6 {
+  .xlarge-g-6 {
     gap: 48px;
   }
-  .xlarge-gap-7 {
+  .xlarge-g-7 {
     gap: 56px;
   }
-  .xlarge-gap-8 {
+  .xlarge-g-8 {
     gap: 64px;
   }
-  .xlarge-gap-9 {
+  .xlarge-g-9 {
     gap: 72px;
   }
-  .xlarge-gap-10 {
+  .xlarge-g-10 {
     gap: 80px;
   }
-  .xlarge-gap-11 {
+  .xlarge-g-11 {
     gap: 88px;
   }
-  .xlarge-gap-12 {
+  .xlarge-g-12 {
     gap: 96px;
   }
-  .xlarge-gap-13 {
+  .xlarge-g-13 {
     gap: 104px;
   }
-  .xlarge-gap-14 {
+  .xlarge-g-14 {
     gap: 112px;
   }
-  .xlarge-gap-105 {
+  .xlarge-g-105 {
     gap: 12px;
   }
-  .xlarge-gap-205 {
+  .xlarge-g-205 {
     gap: 20px;
   }
-  .xlarge-gap-025 {
+  .xlarge-g-025 {
     gap: 2px;
   }
-  .xlarge-gap-05 {
+  .xlarge-g-05 {
     gap: 4px;
   }
   .xlarge-gy-0 {
@@ -19113,61 +19113,61 @@ html, body, .l-wrapper {
   .xxlarge-pl-05 {
     padding-left: 4px;
   }
-  .xxlarge-gap-0 {
+  .xxlarge-g-0 {
     gap: 0px;
   }
-  .xxlarge-gap-1 {
+  .xxlarge-g-1 {
     gap: 8px;
   }
-  .xxlarge-gap-2 {
+  .xxlarge-g-2 {
     gap: 16px;
   }
-  .xxlarge-gap-3 {
+  .xxlarge-g-3 {
     gap: 24px;
   }
-  .xxlarge-gap-4 {
+  .xxlarge-g-4 {
     gap: 32px;
   }
-  .xxlarge-gap-5 {
+  .xxlarge-g-5 {
     gap: 40px;
   }
-  .xxlarge-gap-6 {
+  .xxlarge-g-6 {
     gap: 48px;
   }
-  .xxlarge-gap-7 {
+  .xxlarge-g-7 {
     gap: 56px;
   }
-  .xxlarge-gap-8 {
+  .xxlarge-g-8 {
     gap: 64px;
   }
-  .xxlarge-gap-9 {
+  .xxlarge-g-9 {
     gap: 72px;
   }
-  .xxlarge-gap-10 {
+  .xxlarge-g-10 {
     gap: 80px;
   }
-  .xxlarge-gap-11 {
+  .xxlarge-g-11 {
     gap: 88px;
   }
-  .xxlarge-gap-12 {
+  .xxlarge-g-12 {
     gap: 96px;
   }
-  .xxlarge-gap-13 {
+  .xxlarge-g-13 {
     gap: 104px;
   }
-  .xxlarge-gap-14 {
+  .xxlarge-g-14 {
     gap: 112px;
   }
-  .xxlarge-gap-105 {
+  .xxlarge-g-105 {
     gap: 12px;
   }
-  .xxlarge-gap-205 {
+  .xxlarge-g-205 {
     gap: 20px;
   }
-  .xxlarge-gap-025 {
+  .xxlarge-g-025 {
     gap: 2px;
   }
-  .xxlarge-gap-05 {
+  .xxlarge-g-05 {
     gap: 4px;
   }
   .xxlarge-gy-0 {

@@ -3,7 +3,7 @@
     <div class="grid-x grid-margin-x">
 
       <div class="cell medium-5 medium-order-2 medium-text-left">
-        <div class="d-flex flex-column large-flex-row flex-align-center gx-3 gy-3">
+        <div class="d-flex flex-column large-flex-row flex-justify-content-center gx-3 gy-3">
           <div>
             {% include '@components/logo/logo.twig' with logo %}
           </div>
@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <ul class="list-unstyled d-flex g-4 align-center list-divided mb-2">
+    <ul class="list-unstyled d-flex g-4 justify-content-center list-divided mb-2">
       {% for link in footer_links | default %}
         <li>          
           {% include '@components/links/link.twig' with link %}

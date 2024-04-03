@@ -67,6 +67,10 @@ module.exports = {
       '@wrappers': path.resolve(__dirname, '../', 'src/stories/wrappers'),
     };
     config.module.rules.push({
+      test: /\.ya?ml$/,      
+      loader: 'js-yaml-loader'
+    });
+    config.module.rules.push({
       test: /\.twig$/,
       use: [
         {

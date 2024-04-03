@@ -504,6 +504,11 @@ $utilities: map-merge(
 //        lg: $line-height-lg,
       )
     ),
+    "text-capitalize": (
+      property: text-transform,
+      class: text,
+      values: capitalize uppercase lowercase none
+    ),
     "text-decoration": (
       property: text-decoration,
       values: none underline line-through
@@ -569,6 +574,14 @@ $utilities: map-merge(
         invisible: hidden,
       )
     ),
+    "letter-spacing": (
+      property: letter-spacing,
+      class: ls,
+      values: (
+        normal: normal,
+        1: 1px,        
+      )
+    ),    
     "order": (
       responsive: true,
       property: order,

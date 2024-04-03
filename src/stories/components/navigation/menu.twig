@@ -1,4 +1,4 @@
-<div  data-responsive-toggle="responsive-menu" data-hide-for="large" class="hide-large-for top-bar_toggle" >
+<div  data-responsive-toggle="responsive-menu" data-hide-for="large" class="large-d-none top-bar_toggle" >
   {% include  "@components/utils/hamburger/hamburger.twig" with {
     toggle: "responsive-menu"
   } %}
@@ -7,7 +7,7 @@
 <div class="top-bar" id="responsive-menu">
   {#
   <div data-responsive-toggle="responsive-menu" data-hide-for="large">
-    <button class="top-bar_close hide-large-for" data-toggle="responsive-menu">
+    <button class="top-bar_close large-d-none" data-toggle="responsive-menu">
       <span class="show-for-sr">Collapse menu</span>
       <span aria-hidden="true">&times;</span>
     </button>
@@ -41,7 +41,7 @@
         </li>
       {% endfor %}    
     </ul>
-    <div class="hide-large-for search-wrapper">
+    <div class="large-d-none search-wrapper">
       {% include  '@components/forms/simple-form/simple-form.twig' with {
         input_id: 'keywords_mobile'
       }%}

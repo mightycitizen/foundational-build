@@ -1,4 +1,4 @@
-<div class="alert-bar bg-secondary py-1 text-center {{ class | default }}" {% if closable | default %}data-closable{% endif %}>
+<div class="alert-bar bg-secondary py-2 text-center {{ class | default }}" {% if closable | default %}data-closable{% endif %}>
   <div class="grid-container">
     {% if label | default %}
       <span class="alert-bar_label fw-bold">{{ label }}:</span>
@@ -6,7 +6,7 @@
     {% if link | default %}
       <a href="{{ link }}">{{ text }}</a>
     {% else %}
-      {{ text }}
+      <span>{{ text }}</span>      
     {% endif %}
     {% if closable | default %}
       <button class="{% if closable_text | default is empty %}close-button{% else %}button secondary{% endif %}" aria-label="Dismiss alert" type="button" data-close>

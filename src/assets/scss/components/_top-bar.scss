@@ -110,6 +110,7 @@ $grandchildren-background: map-get($additional-palette,'secondary-lightest');
           }
         }
         > ul{ // children
+          display: mp;
           padding-bottom: rem-calc(15);
           margin-top: rem-calc(-10);
           font-weight: normal;
@@ -193,6 +194,9 @@ $grandchildren-background: map-get($additional-palette,'secondary-lightest');
     li{
       margin-bottom: 0;
     }
+    // .menu{
+    //   display: block;
+    // }
     .top{
 
       margin-top: rem-calc(-5);
@@ -231,6 +235,7 @@ $grandchildren-background: map-get($additional-palette,'secondary-lightest');
           width: rem-calc($dropdown-width);
           padding: rem-calc(15 0);
           font-weight: normal;
+          
 
           // .parent-link{
           //   font-size: rem-calc(22);
@@ -389,6 +394,9 @@ $grandchildren-background: map-get($additional-palette,'secondary-lightest');
   }
 
   @include breakpoint(medium) {
+    .top-bar > .top > li > ul{
+      display: none;
+    }
     .title-bar {
       display: none;
     }

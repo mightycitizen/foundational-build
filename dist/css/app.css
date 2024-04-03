@@ -8531,6 +8531,7 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
     padding: 1rem 0;
   }
   .top-bar .top > li > ul {
+    display: mp;
     padding-bottom: 0.8333333333rem;
     margin-top: -0.5555555556rem;
     font-weight: normal;
@@ -8701,6 +8702,9 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   }
 }
 @media print, screen and (min-width: 40em) {
+  .no-js .top-bar > .top > li > ul {
+    display: none;
+  }
   .no-js .title-bar {
     display: none;
   }
@@ -9001,14 +9005,6 @@ html:not(.touch-device) .slick-arrow.slick-disabled, html:not(.touch-device) .sl
   left: 0;
 }
 
-.label, .flag {
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #666;
-  font-size: 0.7777777778rem;
-  letter-spacing: 1px;
-}
-
 .large-value {
   line-height: 1.2;
   font-weight: bold;
@@ -9216,6 +9212,18 @@ html, body, .l-wrapper {
 .list-unstyled {
   margin-left: 0;
   list-style-type: none;
+}
+
+.show-for-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .flip {
@@ -12235,6 +12243,22 @@ html, body, .l-wrapper {
   line-height: 1.2;
 }
 
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-none {
+  text-transform: none;
+}
+
 .text-decoration-none {
   text-decoration: none;
 }
@@ -12438,6 +12462,14 @@ html, body, .l-wrapper {
 
 .invisible {
   visibility: hidden;
+}
+
+.ls-normal {
+  letter-spacing: normal;
+}
+
+.ls-1 {
+  letter-spacing: 1px;
 }
 
 .order-first {

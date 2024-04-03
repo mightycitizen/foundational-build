@@ -17,7 +17,7 @@
 }
 
 @function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
-  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+  @return if(breakpoint-min($name, $breakpoints) == null, "", "#{$name}-");
 }
 
 // Minimum breakpoint width. Null for the smallest (first) breakpoint.

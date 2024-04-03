@@ -1,5 +1,5 @@
 import twig from './spacers.twig';
-import styles from '../../base/styles.json';
+import styles from '../../base/theme.json';
 
 //console.log(styles['spacers-additional']);
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export

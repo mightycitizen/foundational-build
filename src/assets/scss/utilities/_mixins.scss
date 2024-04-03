@@ -255,8 +255,10 @@
     // $is-local-vars: map-get($utility, local-vars);
     // $is-rtl: map-get($utility, rtl);
 
+    @debug $infix;
+
     @if $value != null {
-        .#{$property-class + $infix + $property-class-modifier} {
+        .#{$infix + $property-class  + $property-class-modifier} {
           @each $property in $properties {
 
             #{$property}: $value; //  if($enable-important-utilities, !important, null)
@@ -264,7 +266,7 @@
         }
 
         @each $pseudo in $state {
-          .#{$property-class + $infix + $property-class-modifier}-#{$pseudo}:#{$pseudo} {
+          .#{$infix + $property-class + $property-class-modifier}-#{$pseudo}:#{$pseudo} {
             @each $property in $properties {
 
               #{$property}: $value if($enable-important-utilities, !important, null);

@@ -1,11 +1,11 @@
 <div class="hero color-white bg-primary padding-y-5">
   <div class="grid-container">
     <div class="grid-x grid-margin-x grid-margin-y">
-      <div class="cell large-8 medium-6 order-medium-1">
+      <div class="cell large-8 medium-6 medium-order-1">
         {% include '@components/navigation/breadcrumbs/breadcrumbs.twig' with breadcrumbs %}
       </div>
 
-      <div class="cell medium-12 order-medium-3">
+      <div class="cell medium-12 medium-order-3">
         <div class="hero_content">
           <div class="grid-x grid-margin-x grid-margin-y align-items-center">
             {% if image | default %}
@@ -53,7 +53,7 @@
 
         </div>
       </div>
-      <div class="cell large-4 medium-6 order-medium-2">
+      <div class="cell large-4 medium-6 medium-order-2">
         {% include '@components/utils/add2any/add2any.twig' with {
           class: 'mb-0'
         } %}

@@ -4,7 +4,7 @@
 <ul class="tabs d-flex" data-tabs id="{{ tabs_id | default }}">
   {% for tab in tabs %}
     <li class="tabs-title mr-1 {{ loop.first ? 'is-active' }}">
-      <button class="bg-gray-lightest px-1 px-large-5 py-1 py-large-2" data-href="#{{ tab.id }}" aria-selected="true">{{ tab.text }}</button>
+      <button class="bg-gray-lightest px-1 large-px-5 py-1 large-py-2" data-href="#{{ tab.id }}" aria-selected="true">{{ tab.text }}</button>
     </li>
   {% endfor %}
 </ul>
@@ -12,7 +12,7 @@
 <div class="tabs-content" data-tabs-content="{{ tabs_id | default  }}">
 
     {% for tab in tabs %}
-      <div tabindex="0" id="{{ tab.id }}" class="tabs-panel py-4 py-large-5 px-4 {{ loop.first ? 'is-active'}}">
+      <div tabindex="0" id="{{ tab.id }}" class="tabs-panel py-4 large-py-5 px-4 {{ loop.first ? 'is-active'}}">
         {{ tab.content | raw }}
       </div>
     {% endfor %}

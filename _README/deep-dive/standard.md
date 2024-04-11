@@ -20,12 +20,12 @@ See [front end standards page](../quickstart/front-end-standards.md)
 Buddy.Works is used for code repository and deployment, which uses standard Git workflow/syntax. You will need access to Buddy.works in order to make changes.
 ### Git workflow
 - Run a `git pull` to ensure you have latest code.
-- Use a `feature/` or `bugfix/` branch created off of `master`
+- Use a `feature/` or `bugfix/` branch created off of `main`
 - Make changes to the new branch you just created
 - Push this new branch to the repository to ensure we have code changes saved.
 - Merge new branch with dev when ready for review, then deploy to dev environment (if relevant, run any post-deployment processes per [Craft back end changes section](#deploying-a-plugin-installationupgrade-andor-craft-upgrade))
-- When changes have been reviewed and confirmed that they can be pushed live, merge new branch with master and deploy to production (again, if relevant, run any post-deployment processes).
+- When changes have been reviewed and confirmed that they can be pushed live, merge new branch with `main` and deploy to production (again, if relevant, run any post-deployment processes).
 
 ### Deployment
-In Buddy.works, the `dev` branch + environment is set to automatically deploy, while `master` branch + `production` environment is set up to manually deploy.
+In Buddy.works, the `dev` branch + environment is set to automatically deploy, while `main` branch + `production` environment is set up to manually deploy.
 

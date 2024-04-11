@@ -23,7 +23,7 @@ Buddy.Works is used for code repository and deployment, which uses standard Git 
 - Use a `feature/` or `bugfix/` branch created off of `main`
 - Make changes to the new branch you just created
 - Push this new branch to the repository to ensure we have code changes saved.
-- Merge new branch with dev when ready for review, then deploy to dev environment (if relevant, run any post-deployment processes per [Craft back end changes section](#deploying-a-plugin-installationupgrade-andor-craft-upgrade))
+- Merge new branch with dev when ready for review, then deploy to dev environment
 - When changes have been reviewed and confirmed that they can be pushed live, merge new branch with `main` and deploy to production (again, if relevant, run any post-deployment processes).
 
 ### Deployment

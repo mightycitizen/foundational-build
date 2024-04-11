@@ -3,7 +3,7 @@
   - [JS](#js)
   - [Twig](#twig)
   - [More front end info](#more-front-end-info)
-    - [Setup & Development](#setup--development)
+    - [Setup \& Development](#setup--development)
     - [Resources](#resources)
 
 # Front End

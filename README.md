@@ -2,11 +2,15 @@
 # High-Level Overview
 This is the Foundational Build template project.
 
+Are you looking for the CMS-specific versions of the Foundational Build? If you are building for a CMS, use the following
+- [Craft](https://github.com/mightycitizen/foundational-build-craft)
+- [Drupal](https://github.com/mightycitizen/foundational-build-drupal)
+
 ---
 # Quick Start
 
 - **[Branches](https://github.com/mightycitizen/foundational-build/tree/main/_README/quickstart/branches.md)**: description of branches and how they tie to environments
-- **[Local Development](https://github.com/mightycitizen/foundational-build/tree/main/_README/quickstart/local-development.md)**: Any setup or development information needed for front end or Craft development
+- **[Local Development](https://github.com/mightycitizen/foundational-build/tree/main/_README/quickstart/local-development.md)**: Any setup or development information needed for front end development
 - **[Front End Standards](https://github.com/mightycitizen/foundational-build/tree/main/_README/quickstart/front-end-standards.md)**: Standards related to naming conventions, file and folder structure, etc.
 ---
 # Deep Dive

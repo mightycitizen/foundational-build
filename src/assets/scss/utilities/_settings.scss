@@ -62,6 +62,20 @@ $utilities: map-merge(
       )
     ),
 
+    "z-index": (
+      property: z-index,
+      class: z, 
+      values: (
+        0: 0,  
+        1: 1,  
+        2: 2,    
+        10: 10,
+        20: 20,
+        30: 30,
+        auto: auto
+      
+      )
+    ),
     // scss-docs-end utils-float
     // Object Fit utilities
     // scss-docs-start utils-object-fit

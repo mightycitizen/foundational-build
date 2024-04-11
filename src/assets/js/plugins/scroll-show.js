@@ -17,11 +17,7 @@ export const initScrollShow = () => {
       }else{
         // if element is in window
         scrollTrigger = $(window).scrollTop() + $(window).height() > $(this).offset().top ;
-        console.log($(this), $(this).offset().top, $(window).scrollTop()+ $(window).height());
         
-        // if (!animateOnce){
-        //   scrollTrigger = scrollTrigger && $(window).scrollTop() < $(this).offset().top + $(this).height();
-        // }
       }
 
       if (animateOnce) {

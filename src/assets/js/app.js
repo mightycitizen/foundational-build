@@ -5,7 +5,7 @@ import $ from 'jquery';
 import './lib/foundation-explicit-pieces'; // @foundation pick and choose Foundation plugins
 
 import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
-import loaderTemplate from '../../stories/components/utils/loader.twig'; // used with @forms
+import loaderTemplate from '../../stories/components/utils/loader/loader.twig'; // used with @forms
 
 import { initSlider } from './plugins/slider';
 import { initTippy } from './plugins/tippy';

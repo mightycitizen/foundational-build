@@ -1,8 +1,9 @@
 import 'slick-carousel';
 import $ from 'jquery';
-import breakpoints from '../../../stories/global/base/breakpoints.json'; // Foundation breakpoints
+import { breakpoints } from '../../../stories/global/base/breakpoints.json'; // Foundation breakpoints
 
 
+//console.log(breakpoints);
 // @slick pagination helper function
 const slickPagination = (slick) => {
   if (slick.$dots){
@@ -331,7 +332,7 @@ export const initSlick = () => {
     const $this = $(this);
 
     slickEvents($this);
-
+    //console.log(breakpoints);
     const slickOptions = $.extend({}, defaultOptions, {
       slidesToScroll: 3,
       slidesToShow: 3,
@@ -359,6 +360,8 @@ export const initSlick = () => {
       }
       ]
     });
+
+    //console.log(slickOptions);
 
     $this.slick(slickOptions);
 

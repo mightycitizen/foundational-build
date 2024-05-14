@@ -1,4 +1,4 @@
-import "babel-polyfill"; // ie 11 polyfill - can exclude if not in scope
+//import "babel-polyfill"; // ie 11 polyfill - can exclude if not in scope
 import $ from 'jquery';
 
 

@@ -1,11 +1,11 @@
 ---
-to: src/stories/components/<%= type.toLowerCase().replaceAll(' ','-') %>/<%= name.toLowerCase().replaceAll(' ','-') %>/<%= name.toLowerCase().replaceAll(' ','-') %>.stories.jsx
+to: "src/stories/pages/<%= folder ? `${folder.toLowerCase().replaceAll(' ','-')}/` : '' %><%= name.toLowerCase().replaceAll(' ','-') %>/<%= name.toLowerCase().replaceAll(' ','-') %>.stories.jsx"
 ---
 import twig from './<%= name.toLowerCase().replaceAll(' ','-') %>.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/<%= h.capitalize(type) %>/<%= h.capitalize(name) %>'
+  title: 'Pages/<%= folder ? `${h.capitalize(folder)}/` %><%= h.capitalize(name) %>'
 
 };
 

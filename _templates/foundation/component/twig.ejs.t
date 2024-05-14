@@ -1,4 +1,4 @@
 ---
-to: src/stories/components/<%= type.toLowerCase() %>/<%= name.toLowerCase() %>/<%= name.toLowerCase() %>.twig
+to: src/stories/components/<%= type.toLowerCase().replaceAll(' ','-') %>/<%= name.toLowerCase().replaceAll(' ','-') %>/<%= name.toLowerCase().replaceAll(' ','-') %>.twig
 ---
 Component has been generated!

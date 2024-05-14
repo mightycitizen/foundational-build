@@ -6,7 +6,7 @@ module.exports = [
   },
   {
     type: "select",
-    choices: ["containers","embed", "forms", "informatonal", "inline-text", "links","listing","logo","modules","navigaton","sections","teasers","utils"],
+    choices: ["containers","embed", "forms", "informational", "inline-text", "links","listing","logo","modules","navigaton","sections","teasers","utils"],
     name: 'type',
     message: "What's the type of your component?",
   },

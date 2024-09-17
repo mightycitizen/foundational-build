@@ -17,7 +17,7 @@ function setupTwig(twig) {
   document.addEventListener('DOMContentLoaded', () => {
 
     $(document).trigger('_page_ready');
-    $(document).foundation();
+    // $(document).foundation();
   });
 
 //  return storyFn();

@@ -9,7 +9,7 @@
             title: item.text
           }]) %}
         {% endfor %}
-        <div class="lg:d-none anchormenu_mobile">
+        <div class="lg:hidden anchormenu_mobile">
           {% include '@components/containers/dropdown/dropdown.twig' with {
               id: 'anchor_mobile',
               label_trigger: true,
@@ -19,7 +19,7 @@
           } %}
         </div>
 
-        <ul class="menu horizontal text-center justify-center lg:d-block d-none">
+        <ul class="menu horizontal text-center justify-center lg:d-block hidden">
           {% for item in anchor_items %}
             <li>
               <a href="{{ item.anchor }}">{{ item.text }}</a>

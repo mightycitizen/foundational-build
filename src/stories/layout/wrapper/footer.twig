@@ -1,6 +1,6 @@
 <footer class="l-footer text-white text-center bg-primary py-8">
   <div class="container mx-auto">
-    <div class="grid grid-cols-12 gap-3">
+    <div class="grid grid-cols-12 gap-6">
 
       <div class=" md:col-span-5 md:order-2 md:text-left">
         <div class="flex flex-col lg:flex-row flex-justify-center gap-x-3 gap-y-3">
@@ -15,11 +15,11 @@
         </div>
 
       </div>
-      <div class="small-12  md:order-1">
-        <ul class="menu md:horizontal vertical">
+      <div class="col-span-12  md:order-1">
+        <ul class="menu flex flex-col md:flex-row justify-between gap-x-3">
         {% for item in menu %}
           <li>
-            <a href="{{ item.url }}">{{ item.text }}</a>
+            <a class="text-inherit font-bold no-underline hover:underline" href="{{ item.url }}">{{ item.text }}</a>
           </li>
         {% endfor %}
       </ul>
@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <ul class="list-unstyled flex g-4 justify-center list-divided mb-2">
+    <ul class="list-unstyled flex gap-4 justify-center list-divided mb-2">
       {% for link in footer_links | default %}
         <li>          
           {% include '@components/links/link.twig' with link %}

@@ -35,6 +35,7 @@
     "@storybook/html-webpack5": "^7.6.7",
     "@storybook/testing-library": "0.2.2",
     "add-attributes-twig-extension": "^0.1.0",
+    "autoprefixer": "^10.4.20",
     "babel-loader": "^8.3.0",
     "browser-sync": "^2.29.3",
     "concurrently": "^7.6.0",
@@ -50,6 +51,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^2.6.5",
+    "postcss-import": "^16.1.0",
     "raw-loader": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -63,6 +65,7 @@
   },
   "dependencies": {
     "@selectize/selectize": "^0.15.2",
+    "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
     "@vimeo/player": "^2.20.1",
     "alpinejs": "^3.14.1",
     "babel-polyfill": "^6.26.0",

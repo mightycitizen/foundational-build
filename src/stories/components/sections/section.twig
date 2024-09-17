@@ -3,11 +3,11 @@
 {% set intro %}
   {% if section_heading | default %}
       <div class="section_intro {{ intro_class }}">
-        <div class="grid grid-cols-12 gap-3 items-center justify-center">
+        <div class="grid {% if section_image | default %}grid-cols-12{% endif %} gap-6 items-center justify-center">
           {% if section_image | default %}
             <div class=" md:col-span-5 lg:col-span-6"  data-scroll-show data-scroll-from="left">
               <div class="image-size--landscapeCroppedMedium">
-                <img loading="lazy" src="{{ section_image.src }}" alt="{{ section_image.alt }}" class="">
+                <img loading="lazy" src="{{ section_image.src }}" alt="{{ section_image.alt }}" class="w-full">
               </div>
             </div>
           {% endif %}

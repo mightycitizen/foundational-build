@@ -18,12 +18,12 @@ Alpine.start()
 // import { initDatepicker } from './plugins/datepicker';
 // import { initVimeo } from './plugins/vimeo';
 // import { initYoutube } from './plugins/youtube';
-// import { initSlick } from './plugins/slick';
+import { initSlick } from './plugins/slick';
 // import { initScrollShow } from './plugins/scroll-show';
 // import { initCountdown } from './plugins/countdown';
 // import { initAnchor } from './plugins/sticky-anchor';
 
-// window.$ = $;
+window.$ = $;
 // //import { mediumBreakpoint, largeBreakpoint, xxlargeBreakpoint } from '../../stories/global/base/breakpoints.json'; // Foundation breakpoints
 
 // window.jQuery = $;
@@ -234,7 +234,7 @@ Alpine.start()
 // // @lazy init
 // const initLazy = () => {
 //   window.lazyLoad = new LazyLoad({
-//     elements_selector: "."
+//     elements_selector: ".js-lazy"
 //     // ... more custom settings?
 //   });
 // }
@@ -298,7 +298,7 @@ $(document).bind('_page_ready', function(){
 //   initFoundationHelpers(); // @foundation helpers init
 
 
-//   if (typeof initSlick === 'function') initSlick(); // @slick init call
+  if (typeof initSlick === 'function') initSlick(); // @slick init call
 //   if (typeof initDatepicker === 'function') initDatepicker(); // @datepicker init call
 //   if (typeof initSlider === 'function') initSlider(); // @slider init call
 //   if (typeof initTippy === 'function') initTippy(); // @tippy init call

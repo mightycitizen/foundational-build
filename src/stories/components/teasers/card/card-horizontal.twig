@@ -1,6 +1,6 @@
 <div class="card shadow card--horizontal {{ modifier }} {% if clickCard | default %}card--click{% endif %}" data-scroll-show>
   <div {% if image_position | default != 'flush' %}class="card-section py-4 px-4"{% endif %}>
-    <div class="grid-x {% if image_position | default != 'flush' %}grid-margin-x items-center{% endif %} ">
+    <div class="grid grid-cols-12 {% if image_position | default != 'flush' %}gap-x-4 items-center{% endif %} ">
       {% if image | default %}
         <div class=" md:col-span-5 lg:col-span-5 {% if image.alignment | default and image.alignment == 'right' %}md:order-2{% endif %}">
           <div class="card-image image-size--landscapeCroppedMedium">

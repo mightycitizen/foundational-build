@@ -4,7 +4,7 @@
       inline: true
     } %}
   {% endif %}
-  <div {% if id | default %}id="{{ id }}"{% endif %} class="js-slick{{ (modifier | default) ? '--'~modifier : ''}} {{ slick_class | default }} {% if grid | default %}grid grid-cols-12 gap-3{% endif %}" {% if equalize | default %}data-equalizer data-equalize-on="medium"{% endif %}>
+  <div {% if id | default %}id="{{ id }}"{% endif %} class="js-slick{{ (modifier | default) ? '--'~modifier : ''}} {{ slick_class | default }} {% if grid | default %}grid grid-cols-12 gap-6{% endif %}" {% if equalize | default %}data-equalizer data-equalize-on="medium"{% endif %}>
     {% block slide_content %}
     {% endblock %}
   </div>

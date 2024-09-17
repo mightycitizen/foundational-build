@@ -1,6 +1,6 @@
 <div class="card card--horizontal card--thumb {{ modifier | default }} {% if clickCard | default %}card--click{% endif %}" >
   <div class="card-section">
-    <div class="grid grid-cols-12 gap-3 items-center">
+    <div class="grid grid-cols-12 gap-6 items-center">
       {% if image | default %}
         <div class=" md:col-span-5 lg:col-span-4 {% if image.alignment | default and image.alignment == 'right' %}md:order-2{% endif %}">
           <div class="card-image image-size--square">

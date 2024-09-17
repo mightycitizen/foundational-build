@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ['./src/**/*.{html,js,twig}'],
   theme: {
@@ -8,7 +9,9 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
+      inherit: 'inherit',
       'white': 'white',
+      'black': 'black',
       'primary': {
         200: '#bdcaef',
         300: '#6986db',
@@ -30,6 +33,5 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [],
 }
 

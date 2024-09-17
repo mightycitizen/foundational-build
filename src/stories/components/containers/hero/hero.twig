@@ -5,15 +5,15 @@
         {% include '@components/navigation/breadcrumbs/breadcrumbs.twig' with breadcrumbs %}
       </div>
 
-      <div class=" md:col-span-12 md:order-3">
+      <div class="col-span-12 md:order-3">
         <div class="hero_content">
           <div class="grid grid-cols-12 gap-6 grid-margin-y items-center">
             {% if image | default %}
-              <div class=" md:col-span-4">
+              <div class="col-span-12 md:col-span-4">
                 <img src="{{ image.src }}" alt="{{ image.alt }}">
               </div>
             {% endif %}
-            <div class=" {% if image | default %}md:col-span-8{% endif %}">
+            <div class="col-span-12 {% if image | default %}md:col-span-8{% endif %}">
               {% if date | default and endDate | default %}
                 {% include '@components/inline-text/meta/meta.twig' with {
                   date: date,

@@ -1,6 +1,6 @@
 {% set notch = item.icon | default or modifier | default == 'steps' %}
 <li class="accordion-item shadow {{ loop.last ? 'mb-0' : 'mb-3' }}" data-accordion-item>
-  <button tabindex="0" class="accordion-title py-2 position-relative pr-6 lg:pr-8 fs-3 {% if notch %}accordion-title--notch pl-5 lg:pl-8 flex position-relative{% else %}pl-3 lg:pl-4{% endif %}" aria-controls="accordion-{{ accordion_id | default }}-{{ loop.index }}" id="accordion-toggle-{{ accordion_id | default }}-{{ loop.index }}">
+  <button  @click="expanded = expanded === {{ loop.index }} ? null : {{ loop.index }}"  tabindex="0" class="accordion-title py-2 position-relative pr-6 lg:pr-8 fs-3 {% if notch %}accordion-title--notch pl-5 lg:pl-8 flex position-relative{% else %}pl-3 lg:pl-4{% endif %}" aria-controls="accordion-{{ accordion_id | default }}-{{ loop.index }}" id="accordion-toggle-{{ accordion_id | default }}-{{ loop.index }}">
     {% if notch %}
       <span class="accordion-notch position-absolute left-3 top-0 h-100 color-primary fw-bold d-inline-flex items-center justify-end w-4 {{ item.icon | default }}">{% if modifier | default == 'steps' %}{{ loop.index }}{% endif %}</span>
     {% endif %}
@@ -9,7 +9,7 @@
       <span class="icon-chevron-down"></span>
     </span>
   </button>
-  <div x-show="" class="accordion-content px-3 lg:px-4 pt-2 pb-3 lg:pb-4" data-tab-content id="accordion-{{ accordion_id | default }}-{{ loop.index }}" aria-hidden="true" aria-labelledby="accordion-{{ accordion_id | default }}-{{ loop.index }}">
+  <div x-show="expanded={{ loop.index }}" class="accordion-content px-3 lg:px-4 pt-2 pb-3 lg:pb-4" id="accordion-{{ accordion_id | default }}-{{ loop.index }}" aria-labelledby="accordion-{{ accordion_id | default }}-{{ loop.index }}">
     {{ item.content | raw }}
   </div>
 </li>

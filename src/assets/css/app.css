@@ -39,6 +39,14 @@
       }
     }
 
+    .button{
+        @apply text-white bg-primary px-4 py-4 no-underline font-bold;
+    }
+
+    .button.secondary{
+        @apply bg-secondary text-black;
+    }
+
   }
   
 @tailwind components;

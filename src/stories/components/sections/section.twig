@@ -1,3 +1,10 @@
+
+{% set width_class = '' %}
+{% if section_style == 'narrower'%}
+  {% set width_class = 'lg:max-w-screen-lg' %}
+{% elseif section_style == 'narrow' %}  
+  {% set width_class = 'lg:max-w-screen-xl' %}
+{% endif %}
 {% if intro_class | default is empty %}{% set intro_class = 'text-center' %}{% endif %}
 
 {% set intro %}
@@ -42,7 +49,7 @@
     {% if section_background | default %}<div class=" section_background" data-bg="{{ section_background.src }}"></div>{% endif %}
     {% if section_background_slick | default %}<img class="section_background" data-slick-background="{{ section_background_slick }}"/>{% endif %}
   </div>
-  <div class="{% if exclude_container | default is empty %}container{% endif %} {{ grid_class | default }}">
+  <div class="{% if exclude_container | default is empty %}container {{ width_class | default }} {% endif %} {{ grid_class | default }}">
     {% if section_style | default and (section_style == 'side') %}
       <div class="grid-x items-center justify-center">
         <div class=" md:col-span-8">
@@ -53,20 +60,10 @@
         </div>
       </div>
     {% else %}
-      {{ intro }}
-      {% if (section_style | default and (section_style == 'narrow' or section_style == 'narrower')) and exclude_container | default is empty %}
-        {% set content %}
-          {{ content }}
-        {% endset %}
-        {% if section_style == 'narrower' %}
-            {% include '@layout/structure/content-narrower.twig' %}
-        {% else %}
-            {% include '@layout/structure/content-narrow.twig' %}
-        {% endif %}
-
-      {% else %}
-        {{ content }}
-      {% endif %}
+      <div class="mb-10">
+        {{ intro }}
+      </div>
+      {{ content }}
 
 
     {% endif %}

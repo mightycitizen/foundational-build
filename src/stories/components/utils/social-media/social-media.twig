@@ -2,7 +2,7 @@
   {% for item in social | default %}
       <li>
         <a href="{{ item.url }}" target="_blank" class="icon icon--circle">
-          <span class="show-for-sr">{{ item.handle }}</span>
+          <span class="sr-only">{{ item.handle }}</span>
           <span class="icon-{{ item.handle }}"></span>
         </a>
       </li>

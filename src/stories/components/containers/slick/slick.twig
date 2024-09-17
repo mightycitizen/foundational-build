@@ -4,7 +4,7 @@
       inline: true
     } %}
   {% endif %}
-  <div {% if id | default %}id="{{ id }}"{% endif %} class="js-slick{{ (modifier | default) ? '--'~modifier : ''}} {{ slick_class | default }} {% if grid | default %}grid-x grid-margin-x{% endif %}" {% if equalize | default %}data-equalizer data-equalize-on="medium"{% endif %}>
+  <div {% if id | default %}id="{{ id }}"{% endif %} class="js-slick{{ (modifier | default) ? '--'~modifier : ''}} {{ slick_class | default }} {% if grid | default %}grid grid-cols-12 gap-3{% endif %}" {% if equalize | default %}data-equalizer data-equalize-on="medium"{% endif %}>
     {% block slide_content %}
     {% endblock %}
   </div>
@@ -18,7 +18,7 @@
     <div class="slick_controls  is-start">
       {% if pause | default %}
           <button class="js-slick-toggle slick-toggle" data-slick-pause="{{ id | default }}">
-            <span class="show-for-sr">Toggle Pause/Play</span>
+            <span class="sr-only">Toggle Pause/Play</span>
             <span class="icon-pause active"></span>
             <span class="icon-play inactive"></span>
           </button>

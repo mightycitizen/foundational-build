@@ -1,7 +1,7 @@
 {% if anchor_items %}
   <div data-sticky-container id="anchormenu">
-    <div class="anchormenu bg-primary-darker color-white"  data-sticky data-sticky-on="small" data-options="marginTop:0;" style="width:100%" data-top-anchor="anchormenu:top" data-anchormenu>
-      <div class="grid-container">
+    <div class="anchormenu bg-primary-darker text-white"  data-sticky data-sticky-on="small" data-options="marginTop:0;" style="width:100%" data-top-anchor="anchormenu:top" data-anchormenu>
+      <div class="container mx-auto">
         {% set anchor_dropdown = [] %}
         {% for item in anchor_items %}
           {% set anchor_dropdown = anchor_dropdown | merge([{
@@ -9,7 +9,7 @@
             title: item.text
           }]) %}
         {% endfor %}
-        <div class="large-d-none anchormenu_mobile">
+        <div class="lg:d-none anchormenu_mobile">
           {% include '@components/containers/dropdown/dropdown.twig' with {
               id: 'anchor_mobile',
               label_trigger: true,
@@ -19,7 +19,7 @@
           } %}
         </div>
 
-        <ul class="menu horizontal text-center justify-content-center large-d-block d-none">
+        <ul class="menu horizontal text-center justify-center lg:d-block d-none">
           {% for item in anchor_items %}
             <li>
               <a href="{{ item.anchor }}">{{ item.text }}</a>

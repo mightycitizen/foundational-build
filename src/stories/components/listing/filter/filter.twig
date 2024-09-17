@@ -3,7 +3,7 @@
     {% embed '@components/forms/form-group/form-group.twig' %}
       {% block form_content %}
         {% if keyword_filter | default %}
-          <div class="cell medium-5">
+          <div class=" md:col-span-5">
             {% include '@components/forms/text/text.twig' with {
               value: queryParam | default,
               label: label | default("Keywords"),
@@ -14,7 +14,7 @@
             %}
           </div>
         {% endif %}
-        <div class="cell medium-5 large-4 small-10">
+        <div class=" md:col-span-5 lg:col-span-4 small-10">
           {% include '@components/forms/select/select.twig' with {
             label: category_label | default("Filter by Category"),
             input_class: 'w-100 ' ~ input_class | default,
@@ -33,7 +33,7 @@
           %}
         </div>
         {% if ajax | default == false %}
-          <div class="cell medium-2">
+          <div class=" md:col-span-2">
             <button class="button" type="submit">Search</button>
           </div>
         {% endif %}

@@ -3,16 +3,16 @@
     {% set label = item.label | default ? item.label : item.type.label | default %}
     {% set item_type = item.type | default and item.type.handle ? item.type.handle : '' %}
     <div class="item py-5">
-      <div class="grid-x grid-margin-x {% if item.start_date | default is empty %}align-items-center{% endif %} gy-3">
+      <div class="grid grid grid-cols-12 gap-3 {% if item.start_date | default is empty %}items-center{% endif %} gap-y-3">
         {% if item.image | default %}
-          <div class="cell medium-5 large-3 medium-order-2">
+          <div class="md:col-span-5 lg:col-span-3 md:order-2">
             <div class="wrapper image-size--landscapeCroppedMedium">
-              <img data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" class="js-lazy">
+              <img loading="lazy" src="{{ item.image.src }}" alt="{{ item.image.alt }}" class="">
             </div>
           </div>
         {% endif %}
-        <div class="cell {% if item.image | default %}medium-7 large-9 medium-order-1{% endif %}">
-          <div class="d-flex gx-3 align-items-start">
+        <div class=" {% if item.image | default %}md:col-span-7 lg:col-span-9 md:order-1{% endif %}">
+          <div class="flex gap-x-3 align-items-start">
 
             {% if item.start_date | default is not empty %}
               

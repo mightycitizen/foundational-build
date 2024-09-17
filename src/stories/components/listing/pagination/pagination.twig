@@ -1,7 +1,7 @@
 <nav aria-label="Pagination">
-  <ul class="pagination text-center mt-3 large-mt-5 mb-0">
+  <ul class="pagination flex gap-3 justify-center text-center mt-3 lg:mt-5 mb-0">
     {% if previous | default %}
-      <li class="pagination-previous"><a href="{{ previous }}" aria-label="Previous page" class="arrow arrow--prev" ><span class="show-for-sr">Previous page</span></a></li>
+      <li class="pagination-previous"><a href="{{ previous }}" aria-label="Previous page" class="arrow arrow--prev" ><span class="sr-only">Previous page</span></a></li>
     {% endif %}
     {% if pages | default | length %}
       {% for link in pages %}
@@ -9,15 +9,15 @@
           {% if link.ellipses | default %}
             &hellip;
           {% elseif link.current | default %}
-            <strong><span class="show-for-sr">Page</span> {{ link.index }}</strong>
+            <strong><span class="sr-only">Page</span> {{ link.index }}</strong>
           {% else %}
-            <a href="{{ link.url }}" aria-label="Page {{ link.index }}"><span class="show-for-sr">Page</span> {{ link.index }}</a>
+            <a href="{{ link.url }}" aria-label="Page {{ link.index }}"><span class="sr-only">Page</span> {{ link.index }}</a>
           {% endif %}
         </li>
       {% endfor %}
     {% endif %}
     {% if next | default %}
-      <li class="pagination-next"><a href="{{ next }}" aria-label="Next page" class="arrow arrow--next" ><span class="show-for-sr">Next page</span></a></li>
+      <li class="pagination-next"><a href="{{ next }}" aria-label="Next page" class="arrow arrow--next" ><span class="sr-only">Next page</span></a></li>
     {% endif %}
   </ul>
 </nav>

@@ -24,7 +24,7 @@ const Template = ({ label, ...args }) => {
 //     level: 3
 //   },
 //   image: {
-//     src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
+//     src: '//via.placeholder.com/430x230',
 //     alt: 'Alt Text'
 //   },
 //   link: {
@@ -39,7 +39,7 @@ const defaultArgs = {
   video_type: 'youtube',
   video_id: 'gJ6APKIjFQY',
   image: {
-    src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
+    src: '//via.placeholder.com/430x230',
     alt: 'Alt Text'
   }
 }

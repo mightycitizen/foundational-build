@@ -1,5 +1,5 @@
 {% embed '@components/sections/section.twig' with {
-    intro_class: 'text-center ' ~ (section_style | default == 'side' ? 'large-text-left' : ''),
+    intro_class: 'text-center ' ~ (section_style | default == 'side' ? 'lg:text-left' : ''),
     section_class: section_class | default,
     section_heading: section_heading | default,
     section_description:  section_description | default,
@@ -8,9 +8,9 @@
 %}
   {% block section_content %}
 
-    <div class="grid-x grid-margin-x">
+    <div class="grid grid-cols-12 gap-3">
       {% for statistic in statistics %}
-        <div class="cell medium-4 {% if section_style | default == 'side' %}large-12{% endif %}">
+        <div class=" md:col-span-4 {% if section_style | default == 'side' %}lg:col-span-12{% endif %}">
           {% include '@components/informational/statistic/statistic.twig' with {
             text: statistic.text,
             value: statistic.value,

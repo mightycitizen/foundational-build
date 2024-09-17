@@ -18,7 +18,7 @@ const imageDimensions = sizes.landscapeCroppedMedium;
 const defaultArgs = {
   ...card,
   image: {
-    src: `https://source.unsplash.com/9wg5jCEPBsw/${imageDimensions.width}x${imageDimensions.height}`,
+    src: `//via.placeholder.com/${imageDimensions.width}x${imageDimensions.height}`,
     alt: 'Alt Text'
   }
 }

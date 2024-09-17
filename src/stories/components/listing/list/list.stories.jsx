@@ -33,7 +33,7 @@ const list = [...Array(5)].map((_, i) => ( {
   url: '#',
   summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel aliquam aliquam, nunc nisl aliquam nisl, vel aliquam nisl nunc vel nisl. Sed euismod, nisl vel aliquam aliquam, nunc nisl aliquam nisl, vel aliquam nisl nunc vel nisl.',
   image: {
-    src: "https://source.unsplash.com/9wg5jCEPBsw/400x360",
+    src: "//via.placeholder.com/400x360",
     alt: 'Image alt text'
   },
   label: 'Label',

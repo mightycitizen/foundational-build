@@ -91,7 +91,7 @@ selectize.define('accessibility', function(options) {
     return function(){
       original.apply(this, arguments);
       var id = self.accessibility.helpers.randomId();
-      self.$control_input.after('<label id="label_' + id + '" class="show-for-sr">Filter selection</label>');
+      self.$control_input.after('<label id="label_' + id + '" class="sr-only">Filter selection</label>');
       self.$control_input.attr({
         'role': 'combobox',
         'aria-owns': id,

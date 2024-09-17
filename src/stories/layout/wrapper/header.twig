@@ -1,11 +1,11 @@
 <a href="#main" class="l-skip">Skip to main</a>
 <header class="l-header" id="header">
-  <div class="grid-container">
-    <div class="grid-x grid-margin-x align-items-center">
-      <div class="cell small-2 large-9">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-12 gap-3 items-center">
+      <div class=" small-2 lg:col-span-9">
         {% include '@components/logo/logo.twig' with logo %}
       </div>
-      <div class="cell large-3 large-d-block d-none">
+      <div class=" lg:col-span-3 lg:d-block d-none">
 
         <div class="search-form">
           {% include '@components/forms/simple-form/simple-form.twig' %}
@@ -14,14 +14,14 @@
 
         {#
         <button data-toggle="search-form search-toggle" data-toggler="is-active" id="search-toggle" class="search-toggle">
-          <span class="show-for-sr">Search</span>
+          <span class="sr-only">Search</span>
           <span class="icon-search"></span>
         </button>
         <div id="search-form" data-toggler=".hide" class="hide search-form">
           {% include '@components/forms/simple-form/simple-form.twig' %}
         </div>#}
       </div>
-      <div class="cell small-10 large-12">
+      <div class=" small-10 lg:col-span-12">
         {% include '@components/navigation/menu/menu.twig' with menu %}
       </div>
     </div>

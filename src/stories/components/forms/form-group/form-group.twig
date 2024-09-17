@@ -1,6 +1,6 @@
-<div class="grid-x grid-margin-x form-group align-bottom">
+<div class="grid grid-cols-12 gap-3 form-group align-bottom">
   {% block form_content %}
-    <div class="cell large-5 medium-4">
+    <div class=" lg:col-span-5 md:col-span-4">
       {% include '@components/forms/text/text.twig' with {
         label: "Text",
         name: "text",
@@ -9,7 +9,7 @@
         required: true
       } %}
     </div>
-    <div class="cell large-5 medium-4">
+    <div class=" lg:col-span-5 md:col-span-4">
       {% include '@components/forms/text/text.twig' with {
         label: "Text",
         name: "text",
@@ -18,7 +18,7 @@
         required: true
       } %}
     </div>
-    <div class="cell large-2 medium-4">
+    <div class=" lg:col-span-2 md:col-span-4">
       <button class="button" type="submit">Submit</button>
     </div>
   {% endblock %}

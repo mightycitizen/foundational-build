@@ -4,7 +4,7 @@
       {% include '@components/utils/loader/loader.twig' %}
     </div>
     <div class="video_image_wrapper image-size--landscapeCropped">
-      <img data-src="{{ image.src }}" alt="{{ image.alt }}" class="video_image js-lazy">
+      <img loading="lazy" src="{{ image.src }}" alt="{{ image.alt }}" class="video_image ">
     </div>
     <div class="video_container">
       <div class="video_player_wrapper">

@@ -7,7 +7,7 @@
   {% endif %}
   {% if image | default %}
     <div class="card-image w-100 position-relative">
-      <img data-src="{{ image.src }}" alt="{{ image.alt }}" class="w-100 js-lazy">
+      <img loading="lazy" src="{{ image.src }}" alt="{{ image.alt }}" class="w-100 ">
 
       {% if type.handle | default == 'events' and date | default %}
         {% include '@components/inline-text/date/date.twig' with date | merge({
@@ -22,7 +22,7 @@
       {% endif %}
     </div>
   {% endif %}
-  <div class="card-section px-3 large-px-4 pt-4 pb-4 large-pb-5" {% if equalize | default %}data-equalizer-watch{% endif %}>
+  <div class="card-section px-3 lg:px-4 pt-4 pb-4 lg:pb-5" {% if equalize | default %}data-equalizer-watch{% endif %}>
     {% if image | default is empty %}
         {% if flag | default %}
           {% include '@components/inline-text/flag/flag.twig' with {

@@ -1,9 +1,9 @@
   <div id="body" class="{{ wrapper_class | default }}">
-    <div class="grid-x grid-margin-x">
-      <div class="cell medium-8 l-content" id="content">
+    <div class="grid grid-cols-12 gap-3">
+      <div class=" md:col-span-8 l-content" id="content">
           {{ content }}
       </div>
-      <div class="cell medium-4">
+      <div class=" md:col-span-4">
         <div data-sticky data-anchor="body" data-sticky-on="medium">
           {{ sidebar }}
         </div>

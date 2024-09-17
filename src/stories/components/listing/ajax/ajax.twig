@@ -1,9 +1,9 @@
 <section class="section">
-  <div class="grid-container">
+  <div class="container mx-auto">
     <h2>Ajax</h2>
-    <div class="grid-x grid-margin-x" data-sticky-container id="event-content">
-      <div class="cell medium-4" >
-        <a href="#filters" data-lity class="medium-d-none button">Filters</a>
+    <div class="grid grid-cols-12 gap-3" data-sticky-container id="event-content">
+      <div class=" md:col-span-4" >
+        <a href="#filters" data-lity class="md:d-none button">Filters</a>
         <div id="filters" class="lity-mobile">
           <form data-ajaxify-form="events" data-sticky data-sticky-on="medium" data-anchor="event-content">
             <div data-ajaxify-toggles="events" class="button-group tiny"></div>
@@ -15,12 +15,12 @@
                   <input type="text" id="keywords" placeholder="Search title, description" data-filter-keywords="title,description" name="keywords" class="input-group-field">
                   <button type="button" data-clear="keywords" class="input-clear">
                     <span class="icon-cross"></span>
-                    <span class="show-for-sr">Clear keywords</span>
+                    <span class="sr-only">Clear keywords</span>
                   </button>
                 </div>
                 <div class="input-group-button">
                   <button type="button"  value="Submit">
-                    <span class="show-for-sr">Search</span>
+                    <span class="sr-only">Search</span>
                     <span class="icon-search"></span>
                   </button>
                 </div>
@@ -61,12 +61,12 @@
             <hr>
             <div class="button-group small">
               <button type="reset" class="button alert">Reset</button>
-              <button type="submit" class="button medium-d-none success">Submit</button>
+              <button type="submit" class="button md:d-none success">Submit</button>
             </div>
           </form>
         </div>
       </div>
-      <div class="cell medium-8">
+      <div class=" md:col-span-8">
         <p data-ajaxify-num-results="events">There were <strong class="value"></strong> results for your search/filters</p>
         <div data-ajaxify id="events">
           {% include '@components/utils/loader/loader.twig' %}
@@ -80,7 +80,7 @@
   </div>
 </section>
 <section class="section">
-  <div class="grid-container">
+  <div class="container mx-auto">
     <h2>Partial include</h2>
     {% include '@components/listing/event/event.twig' with {
       events: [

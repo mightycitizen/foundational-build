@@ -71,7 +71,7 @@ const FeaturedImage = Template.bind({});
 FeaturedImage.args = {
   ...defaultArgs,
   featured_image: {
-    src: 'https://source.unsplash.com/9wg5jCEPBsw/430x230',
+    src: '//via.placeholder.com/430x230',
     alt: ''
   }
 }

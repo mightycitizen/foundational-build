@@ -11,7 +11,7 @@
 </style>
 
 
-<div class="grid-container">
+<div class="container mx-auto">
 	<h2>How it works</h2>
 	<p>Assign responsive-friendly&nbsp;<code class="highlighter-rouge">margin</code>&nbsp;or&nbsp;<code class="highlighter-rouge">padding</code>&nbsp;values to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties. </p>
   
@@ -177,7 +177,7 @@
 
 				{% for direction in directions %}
 					{% for spacer in spacers %}
-						<div class="spacer {% if type.multiple %}d-flex{% endif %} {% if direction == 'col' %}flex-column{% endif %} {{ type.selector }}-{{ spacer.key }}">
+						<div class="spacer {% if type.multiple %}flex{% endif %} {% if direction == 'col' %}flex-col{% endif %} {{ type.selector }}-{{ spacer.key }}">
 							{% if type.multiple %}
 								{% for i in range (1, type.multiple) %}
 									<div class="spacer {{ type.selector }}-{{ spacer.key }}">
@@ -202,27 +202,27 @@
 	{% endfor %}
 	<hr>
 	<h4>Row Gap or Col Gap
-		<code>gy-# / gx-#</code>
+		<code>gap-y-# / gap-x-#</code>
 	</h4>
 
-  <h5>Row Gap <code>gy-#</code></h5>
-  <div class="d-flex gy-1 mb-4 flex-column">
+  <h5>Row Gap <code>gap-y-#</code></h5>
+  <div class="flex gap-y-1 mb-4 flex-col">
     {% for i in 1..5 %}
-      <div class="spacer gx-1 d-flex flex-justify-content-center px-2" style="background-color: #ccc; height: 10px; width-8"></div>
+      <div class="spacer gap-x-1 flex flex-justify-center px-2" style="background-color: #ccc; height: 10px; width-8"></div>
     {% endfor %}
   </div>
 
-  <h5>Col Gap <code>gx-#</code></h5>
-  <div class="d-flex gx-3 mb-4">
+  <h5>Col Gap <code>gap-x-#</code></h5>
+  <div class="flex gap-x-3 mb-4">
     {% for i in 1..5 %}
-      <div class="spacer gx-1 d-flex flex-justify-content-center px-2" style="background-color: #ccc; height: 200px; width-8"></div>
+      <div class="spacer gap-x-1 flex flex-justify-center px-2" style="background-color: #ccc; height: 200px; width-8"></div>
     {% endfor %}
   </div>
 	
-	<h3>Custom grid columns can be created using a combination of padding on the cell and negative margin on the row div</h3>
-  <div class="grid-x gy-2 mx-n1">
+	<h3>Custom grid columns can be created using a combination of padding on the  and negative margin on the row div</h3>
+  <div class="grid-x gap-y-2 mx-n1">
     {% for i in 1..5 %}
-      <div class="cell medium-6 large-4 px-1">
+      <div class=" md:col-span-6 lg:col-span-4 px-1">
         <span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"><code>px-1</code></span>
       </div>
     {% endfor %}
@@ -232,7 +232,7 @@
 
 	<hr>
 
-	<h3>Miscellaneous Spacers</h3>
+	<h3>Misaneous Spacers</h3>
 
 	{% set other_types = [
   {

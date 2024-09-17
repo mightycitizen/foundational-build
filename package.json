@@ -55,6 +55,7 @@
     "react-dom": "^18.2.0",
     "storybook": "^7.6.7",
     "storybook-addon-run-script": "^0.1.4",
+    "tailwindcss": "^3.4.12",
     "twig-drupal-filters": "^3.2.0",
     "twig-loader": "^0.5.5",
     "twigjs-loader": "^1.0.3",
@@ -63,6 +64,7 @@
   "dependencies": {
     "@selectize/selectize": "^0.15.2",
     "@vimeo/player": "^2.20.1",
+    "alpinejs": "^3.14.1",
     "babel-polyfill": "^6.26.0",
     "foundation-sites": "^6.8.1",
     "jquery": "^3.7.1",

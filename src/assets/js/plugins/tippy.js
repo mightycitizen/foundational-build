@@ -30,7 +30,7 @@ export const initTippy = () => {
         $(elem.popper)
           .find(".tippy-tooltip")
           .prepend(
-            "<button class='tippy-close'><span class='show-for-sr'>Close tooltip</span></button>"
+            "<button class='tippy-close'><span class='sr-only'>Close tooltip</span></button>"
           );
         $(elem.popper)
           .find(".tippy-close")

@@ -1,7 +1,7 @@
-<div class="grid-x grid-margin-x grid-margin-y align-{{ alignment | default('center') }}" data-equalizer data-equalize-on="medium">
+<div class="grid grid-cols-12 gap-3 align-{{ alignment | default('center') }}" data-equalizer data-equalize-on="medium">
   {% for card in cards %}
       {% set card = card | merge({lazyload_class: 'data-lazy', equalize: true}) %}
-      <div class="cell medium-4">
+      <div class=" md:col-span-4">
         {% include "@components/teasers/card/card.twig" with card %}
       </div>
   {% endfor %}

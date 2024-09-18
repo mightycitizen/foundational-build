@@ -105,6 +105,14 @@ function watchFiles() {
   );
 
   watch(
+    ['./dist/css/app.css'],
+    series(concatCSS, (done) => {
+      server.reload('*.css');
+      done();
+    })
+  );
+
+  watch(
     ['./src/vendor/**/fonts/*'],
     series(moveFonts, (done) => {
       server.reload();

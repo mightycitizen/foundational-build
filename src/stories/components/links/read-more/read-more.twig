@@ -1,8 +1,9 @@
-<span class="{{ class | default }} {{ size | default }}">
+{% if size == 'lg' %}
+  {% set modifier = 'text-2xl' %}
+{% endif %}
   {% include '@components/links/link.twig' with {
     url: url,
     text: text,
     target: target,
-    modifier: 'read-more'
-  } %}
-</span>
+    modifier: 'read-more' ~ (modifier | default ? ' ' ~ modifier : ''),
+  } only %}

@@ -9,28 +9,23 @@
   {% block section_content %}
       <div class="links">
 
-        {% for link in links %}
-          {% if loop.first or loop.index0 % 3 == 0 %}
-            {% if loop.index0 % 3 == 0 and loop.first == false %}
-              </div>
-            {% endif %}
-            <div class="grid-x">
-          {% endif %}
-              <div class=" md:col-span-4">
+        {% for row in links | batch(3) %}          
+            <div class="grid grid-cols-12 {% if loop.last == false %}border-b pb-8{% endif %} {% if loop.first == false %}pt-8{% endif %}">
+              {% for link in row %}
+                <div class=" md:col-span-4">
 
-                {% if link | default is not empty %}
-                  {%  set link = link | merge({
+                  {% if link | default is not empty %}
+                    {%  set link = link | merge({
+                      size: "lg"
+                    }) %}
 
-                    class: "h3"
-                  }) %}
+                    {% include '@components/links/read-more/read-more.twig' with link only %}
+                  {% endif %}
 
-                  {% include '@components/links/read-more/read-more.twig' with link %}
-                {% endif %}
-
-              </div>
-          {% if loop.last %}
+                </div>
+              {% endfor %}
             </div>
-          {% endif %}
+          
         {% endfor %}
       </div>
   {% endblock %}

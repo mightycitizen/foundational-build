@@ -1,9 +1,9 @@
-<ul class="list-unstyled gap-y-2 flex flex-col {{ listing_class }}">
+<ul class="list-none gap-y-2 flex flex-col {{ listing_class }}">
 
     {% for item in items %}
 
       <li>
-        <span class="label {% if item.icon | default %}d-inline-flex gap-1 items-center{% endif %}">{% if item.icon | default %}<i class="icon icon-{{ item.icon }} icon--tiny"></i>{% endif %}{{ item.label }}</span><br />
+        <span class="font-bold {% if item.icon | default %}inline-flex gap-1 items-center{% endif %}">{% if item.icon | default %}<i class="icon icon-{{ item.icon }} icon--tiny"></i>{% endif %}{{ item.label }}</span><br />
         {% if item.url | default %}
           <a href="{{ item.url }}">{{ item.value }}</a>
         {% else %}

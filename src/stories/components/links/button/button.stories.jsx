@@ -19,7 +19,7 @@ export default {
     },
     size: {
       control: { type: 'select' },
-      options: ['tiny', 'small', 'medium', 'large'],
+      options: ['xs', 'sm', 'lg'],
     },
   },
 };
@@ -45,14 +45,15 @@ export const Secondary = Template.bind({});
 Secondary.args = Object.assign({...defaultArgs}, {color: 'secondary'});
 
 
-export const Large = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
-Large.args = Object.assign({...defaultArgs}, {size: 'large'});
-
 export const Small = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Small.args = Object.assign({...defaultArgs}, {size: 'small'});
+Small.args = Object.assign({...defaultArgs}, {size: 'sm'});
 
-export const Tiny = Template.bind({});
+export const XSmall = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Tiny.args = Object.assign({...defaultArgs}, {size: 'tiny'});
+XSmall.args = Object.assign({...defaultArgs}, {size: 'xs'});
+
+
+export const Large = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Large.args = Object.assign({...defaultArgs}, {size: 'lg'});

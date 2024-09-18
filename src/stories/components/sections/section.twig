@@ -51,7 +51,7 @@
   </div>
   <div class="{% if exclude_container | default is empty %}container {{ width_class | default }} {% endif %} {{ grid_class | default }}">
     {% if section_style | default and (section_style == 'side') %}
-      <div class="grid-x items-center justify-center">
+      <div class="grid grid-cols-12 items-center justify-center">
         <div class=" md:col-span-8">
           {{ intro }}
         </div>

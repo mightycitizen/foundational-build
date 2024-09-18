@@ -24,30 +24,74 @@
 
     p{
         @apply mb-8;
-    }
+    } 
 
     p:last-child{
         @apply mb-0;        
     }
-
-    /* @media  */
+    
 
     a {
-      @apply text-primary underline;
+      @apply text-primary underline inline-block;
       &:hover, &:focus-visible{
         @apply no-underline;
+      }
+
+      .text-white &{
+        @apply text-inherit
       }
     }
 
     .button{
         @apply text-white bg-primary px-4 py-4 no-underline font-bold;
+        &:hover, &:focus-visible{
+            @apply bg-primary-700
+        }
     }
 
     .button.secondary{
         @apply bg-secondary text-black;
+        &:hover, &:focus-visible{
+            @apply bg-secondary-700
+        }
+    } 
+
+    .read-more{
+        &:after{
+            @apply content-[''];            
+            @apply ml-2;
+        }
     }
 
-  }
-  
+    table{
+        thead{
+            @apply bg-primary text-white;
+        }
+    }
+
+    ul, ol{
+        @apply mb-8 pl-4;
+    }
+
+    ul{
+        @apply list-disc;
+    }
+
+    ol{
+        @apply list-decimal;
+        /* ol{
+            @apply list-lower-alpha;            
+        } */
+        
+    }
+
+    blockquote{
+        @apply border-l-4 border-primary pl-4 mb-4;
+        p:not(:last-child){
+            @apply mb-4;
+        }
+    }
+
+  }  
 @tailwind components;
 @tailwind utilities;

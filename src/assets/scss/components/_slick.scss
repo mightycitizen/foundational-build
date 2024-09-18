@@ -6,18 +6,18 @@
 	$arrow-margin-xxlarge: 25;
 	$peekaboo-space: 30;
 	$slide-margin-mobile: 10;
-	$slide-margin: map-get($grid-margin-gutters,'medium');
+	$slide-margin: 40px;
 
 	$slide-margin-offset: 15; // to prevent shadow overflow issues
 
 	.slick-list{
 		margin-top: rem-calc(-1*$slide-margin-offset);
 		margin-bottom: rem-calc(-1*$slide-margin-offset);
-		@include breakpoint(small only){
-			margin-left: rem-calc(-1*$slide-margin-mobile);
-			margin-right: rem-calc(-1*$slide-margin-mobile);
+		// @include screen(small only){
+		// 	margin-left: rem-calc(-1*$slide-margin-mobile);
+		// 	margin-right: rem-calc(-1*$slide-margin-mobile);
 
-		}
+		// }
 	}
 	.slick_controls{
 		display:flex;
@@ -26,7 +26,8 @@
 			margin: 0;
 			width: auto;
 			height: auto;
-			background-color: map-get($additional-palette,'secondary-darker');
+			@apply button;
+			// background-color: map-get($additional-palette,'secondary-darker');
 			color: $black;
 			border-radius: 0;
 			padding: rem-calc(2 8);
@@ -36,7 +37,7 @@
 			&:not(foo):after{
 				content: "";
 				display: block;
-				@include stretch();
+				// @include stretch();
 				background: linear-gradient(to right, rgba($white,0) 0%, rgba($white,1) 100%);
 			}
 			&.slick-next{
@@ -85,7 +86,7 @@
 		list-style-type: none;
 		margin: 0;
 		display: inline-flex;
-		box-shadow: $global-box-shadow;
+		// box-shadow: $global-box-shadow;
 		overflow-y: hidden;
 		overflow-x: scroll;
 		max-width: 100%;
@@ -100,18 +101,18 @@
 				cursor: pointer;
 				white-space: nowrap;
 				padding: rem-calc(20 15);
-				font-weight: $global-weight-bold;
-				background-color: $white;
+				// font-weight: $global-weight-bold;
+				// background-color: $white;
 			}
 			&.is-active{
 				button{
 					position: relative;
 					z-index: 2;
-					background-color: $secondary-color;
+					// background-color: $secondary-color;
 				}
 			}
 			&:not(:last-child){
-				border-right: 1px solid $medium-gray;
+				// border-right: 1px solid $medium-gray;
 			}
 		}
 	}
@@ -122,10 +123,10 @@
 		left: 0;
 		width: 100%;
 		height: rem-calc(6);
-		background-color: rgba($secondary-color,0.4);
+		// background-color: rgba($secondary-color,0.4);
 		&_line{
 			height: 100%;
-			background-color: $secondary-color;
+			// background-color: $secondary-color;
 		}
 	}
 
@@ -136,11 +137,11 @@
 
 	.slick-slide{
 		margin: rem-calc($slide-margin-offset) rem-calc($slide-margin-mobile);
-		@each $breakpoint, $value in $grid-margin-gutters{
-			@include breakpoint($breakpoint){
-				margin: rem-calc($slide-margin-offset) rem-calc( #{0.5 *map-get($grid-margin-gutters,$breakpoint)});
-			}
-		}
+		// @each $breakpoint, $value in $grid-margin-gutters{
+		// 	@include breakpoint($breakpoint){
+		// 		margin: rem-calc($slide-margin-offset) rem-calc( #{0.5 *map-get($grid-margin-gutters,$breakpoint)});
+		// 	}
+		// }
 
 		.card{
 			margin-bottom: 0;
@@ -149,7 +150,7 @@
 
 	$toggle-spacing: 18;
 	.slick-toggle{
-		color: $primary-color;
+		// color: $primary-color;
 		cursor: pointer;
 		order: 3;
 		position: relative;
@@ -157,7 +158,7 @@
 		height: rem-calc(23);
 		display: inline-block;
 		width: rem-calc(18);
-		@include breakpoint(large){
+		@screen(lg){
 			font-size: rem-calc(30);
 			height: rem-calc(35);
 			width: rem-calc(25);
@@ -166,7 +167,7 @@
 			content: "";
 			display: block;
 			position: absolute;
-			background-color: $tertiary-color;
+			// background-color: $tertiary-color;
 			height: 100%;
 			width: rem-calc(1);
 			left: rem-calc(-1*$toggle-spacing);
@@ -174,7 +175,7 @@
 		}
 		.active, .inactive{
 			left: 0;
-			@include vertical-center;
+			// @include vertical-center;
 		}
 
 		.inactive{
@@ -200,14 +201,14 @@
 			}
 		}
 		&.has-peekaboo{
-			@include breakpoint(small only){
-				overflow: hidden;
-				padding-right: rem-calc($peekaboo-space);
-				margin-right: -0.5*map-get($grid-container-padding,'small');
-				.slick-list{
-					overflow: visible !important;
-				}
-			}
+			// @include breakpoint(small only){
+			// 	overflow: hidden;
+			// 	padding-right: rem-calc($peekaboo-space);
+			// 	// margin-right: -0.5*map-get($grid-container-padding,'small');
+			// 	.slick-list{
+			// 		overflow: visible !important;
+			// 	}
+			// }
 		}
 		&:not(.has-pagers){
 			+ .slick-nav{
@@ -215,47 +216,47 @@
 			}
 		}
 
-		@include breakpoint(small only) {
-			+ .slick-nav{
-				// position: relative;
+	// 	@include breakpoint(small only) {
+	// 		+ .slick-nav{
+	// 			// position: relative;
 
 
-					.slick-dots{
+	// 				.slick-dots{
 
-						counter-reset: pages;
-	//					margin-left: 0;
-						li{
-							counter-increment: pages;
-							padding: 0 !important;
-							&:not(.slick-active){
-								display: none;
-							}
-							&.slick-active{
-								//padding-top: rem-calc(3);
-								button{
-									border-radius: 0;
-									width: auto;
-									height: auto;
-									background-color: transparent;
-									font-size: 0;
-									border: 0;
-									color: transparent;
-									line-height: 1;
-									&:after{
-										font-size: rem-calc(16);
-										content: attr(aria-label);
-										color: $black;
-									}
-								}
-							}
-						}
+	// 					counter-reset: pages;
+	// //					margin-left: 0;
+	// 					li{
+	// 						counter-increment: pages;
+	// 						padding: 0 !important;
+	// 						&:not(.slick-active){
+	// 							display: none;
+	// 						}
+	// 						&.slick-active{
+	// 							//padding-top: rem-calc(3);
+	// 							button{
+	// 								border-radius: 0;
+	// 								width: auto;
+	// 								height: auto;
+	// 								background-color: transparent;
+	// 								font-size: 0;
+	// 								border: 0;
+	// 								color: transparent;
+	// 								line-height: 1;
+	// 								&:after{
+	// 									font-size: rem-calc(16);
+	// 									content: attr(aria-label);
+	// 									color: $black;
+	// 								}
+	// 							}
+	// 						}
+	// 					}
 
-					}
+	// 				}
 
 
 
-			}
-		}
+	// 		}
+	// 	}
 
 	}
 
@@ -265,14 +266,14 @@
 		align-items: center;
 		justify-content: center;
 		margin: 0;
-		@include spacer(margin,x,2.5);
+		// @include spacer(margin,x,2.5);
 		list-style-type: none;
 
 		li {
 
 			&,
 			&:last-child {
-				@include spacer(padding,x,1.5);
+				// @include spacer(padding,x,1.5);
 				//padding: rem-calc(15 $spacer*3/2);
 				//padding-bottom: rem-calc(14) !important;
 
@@ -283,16 +284,16 @@
 			}
 
 			button{
-				@include size(rem-calc($spacer-mobile*3));
-				@include breakpoint(medium){
-					@include size(rem-calc($spacer*3));
-				}
+				// @include size(rem-calc($spacer-mobile*3));
+				// @include breakpoint(medium){
+				// 	@include size(rem-calc($spacer*3));
+				// }
 				display: block;
 				font-size: 0;
 				line-height: 0;
 				border-radius: 50%;
-				border: 2px solid $primary-color;
-				background: $primary-color;
+				// border: 2px solid $primary-color;
+				// background: $primary-color;
 				cursor: pointer;
 			}
 
@@ -314,24 +315,24 @@
 	}
 	.slick-arrow {
 		&.slick-disabled {
-			background-color: $input-background-disabled;
+			// background-color: $input-background-disabled;
 			&:before{
-				color: $medium-gray;
+				// color: $medium-gray;
 			}
 			&,
 			&:focus {
-				color: $light-gray;
+				// color: $light-gray;
 				pointer-events: none;
 
 				html:not(.touch-device) & {
-					color: $light-gray;
+					// color: $light-gray;
 				}
 			}
 		}
 	}
 
 	.slick-nav{
-		@include spacer(margin,top,4);
+		// @include spacer(margin,top,4);
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
@@ -386,10 +387,10 @@
 	}
 
 	.js-slick--cards{
-		@include breakpoint(medium down){
-			margin-left: 0;
-			margin-right: 0
-		}
+		// @include breakpoint(medium down){
+		// 	margin-left: 0;
+		// 	margin-right: 0
+		// }
 	}
 
 	.js-slick--center{
@@ -406,13 +407,13 @@
 		.slick-slide{
 			margin: rem-calc($slide-margin-offset) rem-calc($slide-margin-mobile);
 		}
-		@include breakpoint(medium down){
+		// @include breakpoint(medium down){
 
-			margin: auto;
-			max-width: rem-calc(600);
+		// 	margin: auto;
+		// 	max-width: rem-calc(600);
 
-		}
-		@include breakpoint(large){
+		// }
+		@screen(lg){
 			.slick-list{
 				overflow: visible;
 				//display: flex;
@@ -449,10 +450,10 @@
 				}
 				&:not(.slick-primary):not(.slick-clone-current){
 					margin-bottom: rem-calc(#{math.div($curr-width, $image-ratio)} - #{math.div($slide-width,$image-ratio)} + $slide-margin-offset);
-					.card-section{
-						@include spacer(padding,y,3);
-						@include spacer(padding,x,4);
-					}
+					// .card-section{
+					// 	@include spacer(padding,y,3);
+					// 	@include spacer(padding,x,4);
+					// }
 					.card-image{
 						transition: $transition-duration margin;
 					}
@@ -512,7 +513,7 @@
 						}
 						.card-section{
 							opacity: 1;
-							@include spacer(padding,all,5);
+							// @include spacer(padding,all,5);
 							//transition: 0.5 opacity 0.5s,  0.2s padding 0.5s;
 						}
 					}

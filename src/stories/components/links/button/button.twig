@@ -1,9 +1,39 @@
 
+{% set modifiers = [] %}
+{% if color %}
+  {% set modifiers = modifiers | merge([color]) %}
+{% endif %}
+{% if size %}
+  {% if size == 'xs' %}
+    {% set button_modifiers = 'p-2 text-xs' %}
+  {% elseif size == 'sm' %}
+    {% set button_modifiers = 'p-3 text-sm' %}
+  {% elseif size == 'lg' %}
+    {% set button_modifiers = 'py-4 px-5 text-xl' %}
+  {% endif %}
 
-  <a href="{{ url }}" {% if target | default %}target="{{ target }}"{% endif %} class="button{{ color | default ? ' ' ~ color }} {{ size | default ? ' ' ~ size }} {{  class | default  }} {% if hollow | default %}hollow{% endif %}">
-    {{ text | default }}
-    {% if icon | default %}
-      <i class="icon icon--small icon-{{ icon }}"></i>
-    {% endif %}
-  </a>
+  {% set modifiers = modifiers | merge([button_modifiers]) %}
+{% endif %}
+{% if outline %}
+  {% set modifiers = modifiers | merge(['outline']) %}
+{% endif %}
+{% if block %}
+  {% set modifiers = modifiers | merge(['block']) %}
+{% endif %}
+{% if rounded %}
+  {% set modifiers = modifiers | merge(['rounded']) %}
+{% endif %}
+{% if disabled %}
+  {% set modifiers = modifiers | merge(['disabled']) %}
+{% endif %}
+{% if icon %}
+  {% set modifiers = modifiers | merge(['icon']) %}
+{% endif %}
+
+<a href="{{ url }}" {% if target | default %}target="{{ target }}"{% endif %} class="button {{ modifiers | join(' ')}}">
+  {{ text | default }}
+  {% if icon | default %}
+    <i class="icon icon--small icon-{{ icon }}"></i>
+  {% endif %}
+</a>
 

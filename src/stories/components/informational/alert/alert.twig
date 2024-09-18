@@ -1,7 +1,7 @@
 <div class="alert-bar bg-secondary py-4 text-center {{ class | default }}" {% if closable | default %}data-closable{% endif %}>
   <div class="container mx-auto">
     {% if label | default %}
-      <span class="alert-bar_label fw-bold">{{ label }}:</span>
+      <span class="alert-bar_label font-bold">{{ label }}:</span>
     {% endif %}
     {% if link | default %}
       <a href="{{ link }}">{{ text }}</a>

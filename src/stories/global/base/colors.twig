@@ -73,7 +73,7 @@
 
 
           {% for key, value in color.colors.variants %}
-            {% include './_swatch.twig' with {
+            {% include './_swatch.twig' with {                
                 hex: value,
                 type: key
               }%}

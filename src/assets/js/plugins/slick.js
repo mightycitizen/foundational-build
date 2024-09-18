@@ -219,12 +219,14 @@ const slickEvents = ($slick) => {
   })
 }
 
+const arrowClass = 'aspect-square bg-primary text-white rounded-full w-16';
+
 const defaultOptions = {
   slidesToScroll: 1,
   rows: 0,
   lazyLoad: 'progressive',
-  prevArrow: '<button class="slick-prev arrow arrow--prev">Previous</button>',
-  nextArrow: '<button class="slick-next arrow arrow--next">Next</button>',
+  prevArrow: `<button class="slick-prev ${arrowClass}">Previous</button>`,
+  nextArrow: `<button class="slick-next ${arrowClass}">Next</button>`,
   dots: true,
   dotsClass: 'slick-dots',
   adaptiveHeight: true,

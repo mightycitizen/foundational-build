@@ -1,4 +1,32 @@
 /** @type {import('tailwindcss').Config} */
+import palettes from './src/stories/global/base/colors.json';
+
+let colors = {
+  transparent: 'transparent',
+  current: 'currentColor',
+  inherit: 'inherit',  
+};
+
+let brandPalette = {};
+
+
+Object.keys(palettes).forEach(key => {  
+  const palette = palettes[key];
+  const brandColors = palette.variants ? {
+    DEFAULT: palette.default,      
+    ...palette.variants,
+  } : {
+    DEFAULT: palette,      
+  };
+  brandPalette[key] = brandColors;
+});
+
+
+
+colors = {
+  ...colors,
+  ...brandPalette
+};
 
 module.exports = {
   content: ['./src/**/*.{html,js,twig}'],
@@ -14,32 +42,16 @@ module.exports = {
       },
 
     },
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      inherit: 'inherit',
-      'white': 'white',
-      'black': 'black',
-      'primary': {
-        200: '#bdcaef',
-        300: '#6986db',
-        DEFAULT: '#2953cc',
-        700: '#1f3e99'
-      },
-      'secondary': {              
-        200: '#ffefb2',
-        300: '#ffe57f',
-        DEFAULT: '#ffcd00',
-        700: '#eca806'
-      },
-      'tertiary': {
-        200: '#f3bdbd',
-        300: '#e87d7d',
-        DEFAULT: '#d82626',
-        700: '#b42727'
-      }
-    },
-    extend: {},
+    colors: colors,
+  
+   
   },
+  plugins: [
+    require('@tailwindcss/forms')({
+      strategy: 'base', // only generate global styles
+
+    }),
+    // require('@tailwindcss/typography'),
+  ]
 }
 

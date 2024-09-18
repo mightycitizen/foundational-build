@@ -6,7 +6,7 @@
       {% for item in breadcrumbs %}
         <li>
           {% if item.url %}
-            <a href="{{ item.url }}" class="text-inherit">{{ item.text }}</a>
+            <a href="{{ item.url }}" >{{ item.text }}</a>
           {% else %}
             <span class="breadcrumb__current">{{ item.text }}</span>
           {% endif %}

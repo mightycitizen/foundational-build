@@ -4,7 +4,7 @@ import twigDrupal from 'twig-drupal-filters';
 import twigAttributes from 'add-attributes-twig-extension';
 import twigMap from '../lib/map';
 
-import '../dist/css/app.css';
+import '../dist/css/all.css';
 import '../dist/js/app.js';
 import '../dist/css/storybook.css';
 

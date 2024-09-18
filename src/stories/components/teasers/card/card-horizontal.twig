@@ -10,7 +10,7 @@
       {% endif %}
       <div class=" {% if image | default %}md:col-span-7 lg:col-span-7 {% if image.alignment  | default and image.alignment == 'right' %}md:order-1{% endif %}{% endif %}">
         {% if image_position | default == 'flush' %}          
-          <div class="card-section py-3 px-4 display-flex justify-center flex-col h-100 flex">
+          <div class="card-section py-3 px-4 flex justify-center flex-col h-full flex">
         {% endif %}
               {% include '@components/teasers/card/_card-content.twig' %} 
         {% if image_position | default == 'flush' %}

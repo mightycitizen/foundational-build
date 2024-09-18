@@ -1,6 +1,6 @@
-<ul class="list-unstyled flex text-smaller lh-1 fw-bold {{ meta_class | default }}">
+<ul class="list-none flex text-smaller leading-4 font-bold {{ modifier | default }}">
   {% if date | default %}
-    <li class="label border-right-1 border-gray mr-3 pr-1 ">
+    <li class="font-bold border-right-1 border-gray mr-3 pr-1 ">
       {% embed '@components/inline-text/label/label.twig' %}
         {% block content %}
             <time datetime="{{ date.unformatted }}">{{ date.full }}</time>
@@ -18,7 +18,7 @@
 
   {% if categories | default | length %}
     <li>
-      <ul class="list-unstyled flex gap-4 lh-1">
+      <ul class="list-none flex gap-4 leading-4">
         {% for category in categories %}<li><a href="{{ category.url }}">{{ category.title }}</a></li>{% endfor %}
       </ul>
     </li>

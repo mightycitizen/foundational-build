@@ -14,7 +14,8 @@ module.exports = {
   concatCSS: function() {
     return (
       src([
-        './dist/css/*.css',
+        './dist/css/app.css',
+        './dist/css/components.css',
         '!./dist/css/all.css',
         '!./dist/css/pattern-scaffolding.css'
       ])
@@ -28,10 +29,10 @@ module.exports = {
         //   'dist/css/form-float-label.css',
         //   'dist/css/*.css'
         // ], { base: './' }))
-        .pipe(order([
-          'dist/css/global.css',
-          'dist/css/*.css'
-        ], { base: './' }))
+        // .pipe(order([
+        //   'dist/css/global.css',
+        //   'dist/css/*.css'
+        // ], { base: './' }))
         .pipe(concat('all.css'))
         .pipe(dest('./dist/css'))
     );

@@ -220,7 +220,7 @@
   </div>
 	
 	<h3>Custom grid columns can be created using a combination of padding on the  and negative margin on the row div</h3>
-  <div class="grid-x gap-y-2 mx-n1">
+  <div class="grid gap-y-2 mx-n1">
     {% for i in 1..5 %}
       <div class=" md:col-span-6 lg:col-span-4 px-1">
         <span class="d-block" style="border: 1px solid #000;background-color: #ccc; height: 200px;"><code>px-1</code></span>
@@ -244,7 +244,7 @@
     selector: 'w-full'
   },{
     label: '100% Height',
-    selector: 'h-100'
+    selector: 'h-full'
   }
 ] %}
 	<div style="background-color: orange; overflow: hidden;">

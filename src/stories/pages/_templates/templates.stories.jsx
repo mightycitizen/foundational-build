@@ -52,6 +52,14 @@ const templates = [
     {
         title: 'News Detail',
         url: '/iframe.html?args=&id=pages-news-news-detail--default&viewMode=story',
+    },
+    {
+      title: 'Events Listing',
+      url: '/iframe.html?args=&id=pages-events-events-listing--events-listing&viewMode=story',
+    },
+    {
+      title: 'Events Detail',
+      url: '/iframe.html?args=&id=pages-events-events-detail--default&viewMode=story',
     }
 ];
 

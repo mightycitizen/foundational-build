@@ -41,3 +41,7 @@ const defaultArgs = {
 export const Center = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Center.args = defaultArgs;
+
+Center.parameters = {
+  layout: 'fullscreen'
+}

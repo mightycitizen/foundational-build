@@ -166,22 +166,22 @@ export const initYoutube = () => {
     }
   });
 
-  $(window).on('scroll', Foundation.util.throttle(
-    function(){
-      $('[data-video-trigger="scroll"][data-video-type="youtube"]').each(function(){
-        if ($(this).find('.video_player').isInViewport()){
-          $(this).trigger('play');
-        }else{
-          $(this).trigger('pause');
-        }
+  // $(window).on('scroll', Foundation.util.throttle(
+  //   function(){
+  //     $('[data-video-trigger="scroll"][data-video-type="youtube"]').each(function(){
+  //       if ($(this).find('.video_player').isInViewport()){
+  //         $(this).trigger('play');
+  //       }else{
+  //         $(this).trigger('pause');
+  //       }
 
-      });
-    }, 50));
+  //     });
+  //   }, 50));
 
-    $(window).on('scroll', Foundation.util.throttle(
-      function(){
-        checkVideo();
-      }, 50));
+  //   $(window).on('scroll', Foundation.util.throttle(
+  //     function(){
+  //       checkVideo();
+  //     }, 50));
 
     $(window).on('load', function(){
       checkVideo();

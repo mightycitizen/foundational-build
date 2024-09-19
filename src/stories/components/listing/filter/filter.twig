@@ -3,7 +3,7 @@
     {% embed '@components/forms/form-group/form-group.twig' %}
       {% block form_content %}
         {% if keyword_filter | default %}
-          <div class=" md:col-span-5">
+          <div class="col-span-12 md:col-span-5">
             {% include '@components/forms/text/text.twig' with {
               value: queryParam | default,
               label: label | default("Keywords"),
@@ -14,7 +14,7 @@
             %}
           </div>
         {% endif %}
-        <div class=" md:col-span-5 lg:col-span-4 small-10">
+        <div class="col-span-12 md:col-span-5 lg:col-span-4">
           {% include '@components/forms/select/select.twig' with {
             label: category_label | default("Filter by Category"),
             input_class: 'w-full ' ~ input_class | default,

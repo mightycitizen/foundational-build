@@ -1,7 +1,7 @@
-<ul class="list-none inline-flex gap-2 mb-0 social-media">
+<ul class="list-none inline-flex gap-4 mb-0 social-media">
   {% for item in social | default %}
       <li>
-        <a href="{{ item.url }}" target="_blank" class="icon icon--circle">
+        <a href="{{ item.url }}" target="_blank" class="icon aspect-square rounded-full bg-white text-primary w-8 flex items-center justify-center no-underline text-lg hover:bg-primary-100">
           <span class="sr-only">{{ item.handle }}</span>
           <span class="icon-{{ item.handle }}"></span>
         </a>

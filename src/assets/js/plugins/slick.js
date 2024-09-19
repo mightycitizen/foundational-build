@@ -226,18 +226,20 @@ const defaultOptions = {
   rows: 0,
   lazyLoad: 'progressive',
   prevArrow: `<button class="slick-prev ${arrowClass}"><span class="icon-chevron-left"></span><span class="sr-only">Previous</span></button>`,
-  nextArrow: `<button class="slick-next ${arrowClass}"><span class="icon-chevron-right"></span><span class="sr-only">Next</span></button>`,
+  nextArrow: `<button class="slick-next order-1 ${arrowClass}"><span class="icon-chevron-right"></span><span class="sr-only">Next</span></button>`,
   dots: true,
   dotsClass: 'slick-dots list-none mb-0 px-5 md:px-8 flex justify-center ' + (mobilePager ? 'md:gap-x-5' : 'gap-x-3 md:gap-x-5'),
   adaptiveHeight: true,
   waitForAnimate: false,
   customPaging : function(slider, i) {
-    let dotClasses = 'w-4 md:w-6 aspect-square rounded-full bg-primary border-2 border-primary';
+    // check if active slide     
+    // console.log(slider);
+    let dotClasses = 'w-4 md:w-6 aspect-square rounded-full  border-2 border-primary ' + (i === slider.currentSlide ? 'bg-white' : 'bg-primary');
     if (mobilePager){
       dotClasses = '!text-sm md:w-6 md:h-6 md:rounded-full md:bg-primary md:border-2 md:border-primary ' + (i === 0 || i === slider.slideCount - 1 ? '' : '!hidden md:!block');
     }    
 
-    return `<button class="${dotClasses}"><span class="md:hidden">${i === slider.slideCount - 1 ? '<span class="ml-1">of </span>' : '' }${ i + 1 }</span></button>`;
+    return `<button class="${dotClasses}"><span class="${mobilePager ? 'md:hidden' : 'hidden'}">${i === slider.slideCount - 1 ? '<span class="ml-1">of </span>' : '' }${ i + 1 }</span></button>`;
   }
 }
 

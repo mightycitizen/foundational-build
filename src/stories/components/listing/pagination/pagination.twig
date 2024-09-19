@@ -1,7 +1,10 @@
 <nav aria-label="Pagination">
-  <ul class="pagination flex gap-3 justify-center text-center mt-3 lg:mt-5 mb-0">
+  <ul class="pagination flex gap-3 md:gap-7 justify-center text-center mt-3 lg:mt-5 mb-0 list-none items-center">
     {% if previous | default %}
-      <li class="pagination-previous"><a href="{{ previous }}" aria-label="Previous page" class="arrow arrow--prev" ><span class="sr-only">Previous page</span></a></li>
+      <li class="pagination-previous">
+        {% include '@components/links/arrow/arrow.twig' with { direction: 'Previous', url: prev } %}
+        
+      </li>
     {% endif %}
     {% if pages | default | length %}
       {% for link in pages %}
@@ -17,7 +20,9 @@
       {% endfor %}
     {% endif %}
     {% if next | default %}
-      <li class="pagination-next"><a href="{{ next }}" aria-label="Next page" class="arrow arrow--next" ><span class="sr-only">Next page</span></a></li>
+      <li class="pagination-next">
+        {% include '@components/links/arrow/arrow.twig' with { direction: 'Next', url: next } %}
+      </li>
     {% endif %}
   </ul>
 </nav>

@@ -50,7 +50,7 @@
         @apply no-underline;
       }
 
-      .text-white &{
+      .text-white &:not([class*='text-']){
         @apply text-inherit
       }
     }
@@ -160,8 +160,34 @@
             }
         }
     } */
-
-    
+    @media screen(md){
+        .js-slick--center{        
+            display: none;
+            .slick-slide{
+                width: 500px;
+                margin: 55px 0;
+                padding: 10px 50px;
+                transition: all 0.3s;
+                &.slick-current.slick-animate{
+                    /* margin: 5px; */
+                    @apply z-20 relative;
+                    margin: 0;
+                    margin-left: -100px;
+                    margin-right: -100px;
+                    width: 700px;
+                    .card{
+                        @apply shadow-lg bg-primary text-white;                        
+                        a:not(.button){
+                            @apply text-inherit;
+                        }                        
+                    }
+                    /* .card_section{
+                        @apply p-6;
+                    } */
+                }
+            }
+        }
+    }
 
   }  
 @tailwind components;

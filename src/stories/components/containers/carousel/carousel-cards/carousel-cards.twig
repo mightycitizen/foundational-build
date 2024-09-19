@@ -7,8 +7,10 @@
   }%}
     {% block slide_content %}
       {% for card in cards %}
+        <div class="mx-2 my-2">
           {% set card = card | merge({lazyload_class: 'data-lazy'}) %}
           {% include "@components/teasers/card/card.twig" with card %}
+        </div>
       {% endfor %}
     {% endblock %}
   {% endembed %}

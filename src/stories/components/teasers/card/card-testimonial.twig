@@ -1,15 +1,15 @@
-<div class="card card--horizontal card--thumb {{ modifier | default }} {% if clickCard | default %}card--click{% endif %}" >
-  <div class="card-section">
-    <div class="grid grid-cols-12 gap-6 items-center">
+<div class="card card--horizontal shadow-md {{ modifier | default }} {% if clickCard | default %}card--click{% endif %}" >
+  <div class="card_section p-8">
+    <div class="grid grid-cols-12 gap-6 gap-x-12 items-center">
       {% if image | default %}
-        <div class=" md:col-span-5 lg:col-span-4 {% if image.alignment | default and image.alignment == 'right' %}md:order-2{% endif %}">
-          <div class="card-image image-size--square">
+        <div class="col-span-12 md:col-span-5 lg:col-span-4 {% if image.alignment | default and image.alignment == 'right' %}md:order-2{% endif %}">
+          <div class="card_image image-size--square">
             <img {% if lazyload_class | default %}data-lazy="{{ image.src }}" {% else %} loading="lazy" src="{{ image.src }}" class=""{% endif %} alt="{{ image.alt }}">
           </div>
         </div>
       {% endif %}
-      <div class=" {% if image | default %}md:col-span-7 lg:col-span-8{% endif %} {% if image.alignment  | default and image.alignment == 'right' %}md:order-1{% endif %}">
-        <blockquote class="unstyled-blockquote">
+      <div class="col-span-12 {% if image | default %}md:col-span-7 lg:col-span-8{% endif %} {% if image.alignment  | default and image.alignment == 'right' %}md:order-1{% endif %}">
+        <blockquote class="border-0 pl-0">
           <p class="lead">{{ quote }}</p>
           {% if attribution | default %}
             <cite>{{ attribution.label }}{% if attribution.info and attribution.label %}, {% endif %}{{ attribution.info }}</cite>

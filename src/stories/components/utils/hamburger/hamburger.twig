@@ -1,4 +1,4 @@
-<button class="hamburger" type="button" id="hamburger" data-toggle="{{ toggle }}" data-toggler=".is-active" aria-label="Toggle navigation">
+<button class="hamburger" type="button" id="hamburger" @click="{{ toggle }} = !{{ toggle }}" aria-label="Toggle navigation">
   <span class="hamburger-icon">
     <span class="hamburger-icon-bar"></span>
   </span>

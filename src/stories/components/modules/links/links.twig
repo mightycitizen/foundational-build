@@ -8,25 +8,54 @@
 
   {% block section_content %}
       <div class="links">
+        <div class="grid grid-cols-12">
+        {% set total_links = links|length %}
+        {% set items_per_row = 3 %}
+        {% set last_row_start_index = total_links - (total_links % items_per_row) % items_per_row %}
+        {% if last_row_start_index == total_links %}
+            {% set last_row_start_index = last_row_start_index - items_per_row %}
+        {% endif %}
 
-        {% for row in links | batch(3) %}          
-            <div class="grid grid-cols-12 {% if loop.last == false %}border-b pb-8{% endif %} {% if loop.first == false %}pt-8{% endif %}">
-              {% for link in row %}
-                <div class=" md:col-span-4">
+        {% set first_row_end_index = items_per_row - 1 %}
 
-                  {% if link | default is not empty %}
-                    {%  set link = link | merge({
-                      size: "lg"
-                    }) %}
+        {% for link in links %}          
 
-                    {% include '@components/links/read-more/read-more.twig' with link only %}
-                  {% endif %}
+              
+              {% set has_bottom = {
+                sm: loop.last == false,
+                md: loop.index0 < last_row_start_index
+              } %}
+              {% set has_top = {
+                sm: loop.first == false,
+                md: loop.index0 > first_row_end_index
+              } %}
 
-                </div>
-              {% endfor %}
-            </div>
+              {# {% set has_bottom = loop.index0 < last_row_start_index %}
+              {% set has_top = loop.index0 <= first_row_end_index %}               #}
+              {# {% set padding = {
+                sm: 4,
+                md: 10
+              } %} #}
+              
+              <div class="col-span-12 md:col-span-4 
+              {{ has_top.sm ? 'pt-4' : 'pt-0'}} 
+              {{ has_bottom.sm ? 'border-b pb-4' : 'border-0 pb-0'}}
+              {{ has_top.md ? 'md:pt-10': 'md:pt-0'}} 
+              {{ has_bottom.md ? 'md:border-b md:pb-10' : 'md:border-0 md:pb-0'}}">
+
+                {% if link | default is not empty %}
+                  {%  set link = link | merge({
+                    size: "lg"
+                  }) %}
+
+                  {% include '@components/links/read-more/read-more.twig' with link only %}
+                {% endif %}
+
+              </div>
+            
           
         {% endfor %}
+        </div>
       </div>
   {% endblock %}
 {% endembed %}

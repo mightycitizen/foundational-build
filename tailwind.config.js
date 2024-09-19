@@ -29,7 +29,7 @@ colors = {
 };
 
 module.exports = {
-  content: ['./src/**/*.{html,js,twig}'],
+  content: ['./src/**/*.{html,js,twig,jsx}'],
   theme: {
     container: {
       center: true,

@@ -128,7 +128,7 @@ const defaultArgs = {
       module_type: 'card-group',
       section_heading: 'Three Up Cards',
       section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      section_class: 'bg-gradient-secondary',
+      section_class: "bg-gradient-to-b lg:bg-gradient-to-r from-secondary-200 to-white",
       cards: Array.from({length: 3}, (v, i) => {
         return {
           ...card,
@@ -165,7 +165,7 @@ const defaultArgs = {
     },
     {
       module_type: 'card-carousel',
-      section_class: 'bg-light-primary',
+      section_class: 'bg-primary-200',
       section_heading: 'Carousel',
       section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       cards: Array.from({length: 8}, (v, i) => {
@@ -190,7 +190,7 @@ const defaultArgs = {
     },
     {
       module_type: 'card-carousel-center',
-      section_class: 'bg-gradient-primary',
+      section_class: "bg-gradient-to-b lg:bg-gradient-to-r from-primary-200 to-white",
       section_heading: 'Center Carousel',
       section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       cards: Array.from({length: 8}, (v, i) => {
@@ -238,7 +238,7 @@ const defaultArgs = {
       module_type: 'links',
       section_heading: 'Links',
       section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      section_class: "bg-gradient-secondary",
+      section_class: "bg-gradient-to-b lg:bg-gradient-to-r from-secondary-200 to-white",
       links
     }
 
@@ -284,7 +284,7 @@ SectionTest.args = {
   modules: [
     {
       module_type: 'card-group',
-      section_class: 'bg-gradient-secondary',
+      section_class: "bg-gradient-to-b lg:bg-gradient-to-r from-secondary-200 to-white",
       section_heading: 'Bg Gradient Secondary',
       cards: Array.from({length: 3}, (v, i) => card)
     },
@@ -296,7 +296,7 @@ SectionTest.args = {
     },
     {
       module_type: 'card-group',
-      section_class: 'bg-solid-primary-lightest',
+      section_class: "bg-gradient-to-b lg:bg-gradient-to-r from-primary-200 to-white",
       section_heading: 'Bg Solid Primary Lightest',
       cards: Array.from({length: 3}, (v, i) => card)
     }

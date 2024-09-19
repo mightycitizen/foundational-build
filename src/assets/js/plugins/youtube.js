@@ -127,10 +127,10 @@ export const initYoutube = () => {
           //         player.pauseVideo();
           //     }
           // }
-        $(window).on('resize', Foundation.util.throttle(
-          function(){
-            setVideoSize();
-          }, 50));
+        // $(window).on('resize', Foundation.util.throttle(
+        //   function(){
+        //     setVideoSize();
+        //   }, 50));
 
 
     });

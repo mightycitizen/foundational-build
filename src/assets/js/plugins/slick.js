@@ -219,18 +219,26 @@ const slickEvents = ($slick) => {
   })
 }
 
-const arrowClass = 'aspect-square bg-primary text-white rounded-full w-16';
-
+const arrowClass = 'aspect-square bg-primary hover:bg-primary-700 text-white rounded-full w-10 flex items-center justify-center';
+const mobilePager = false;
 const defaultOptions = {
   slidesToScroll: 1,
   rows: 0,
   lazyLoad: 'progressive',
-  prevArrow: `<button class="slick-prev ${arrowClass}">Previous</button>`,
-  nextArrow: `<button class="slick-next ${arrowClass}">Next</button>`,
+  prevArrow: `<button class="slick-prev ${arrowClass}"><span class="icon-chevron-left"></span><span class="sr-only">Previous</span></button>`,
+  nextArrow: `<button class="slick-next ${arrowClass}"><span class="icon-chevron-right"></span><span class="sr-only">Next</span></button>`,
   dots: true,
-  dotsClass: 'slick-dots',
+  dotsClass: 'slick-dots list-none mb-0 px-5 md:px-8 flex justify-center ' + (mobilePager ? 'md:gap-x-5' : 'gap-x-3 md:gap-x-5'),
   adaptiveHeight: true,
-  waitForAnimate: false
+  waitForAnimate: false,
+  customPaging : function(slider, i) {
+    let dotClasses = 'w-4 md:w-6 aspect-square rounded-full bg-primary border-2 border-primary';
+    if (mobilePager){
+      dotClasses = '!text-sm md:w-6 md:h-6 md:rounded-full md:bg-primary md:border-2 md:border-primary ' + (i === 0 || i === slider.slideCount - 1 ? '' : '!hidden md:!block');
+    }    
+
+    return `<button class="${dotClasses}"><span class="md:hidden">${i === slider.slideCount - 1 ? '<span class="ml-1">of </span>' : '' }${ i + 1 }</span></button>`;
+  }
 }
 
 const initSlickGo = () => {
@@ -318,6 +326,7 @@ export const initSlick = () => {
       prevArrow: $('.slick-prev[data-slick="' + slickId + '"]'),
       nextArrow: $('.slick-next[data-slick="' + slickId + '"]'),
       dots: false,
+      
       focusOnSelect: true,
       infinite: true,
       autoplay: true,

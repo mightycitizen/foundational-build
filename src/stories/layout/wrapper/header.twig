@@ -1,11 +1,11 @@
 <a href="#main" class="l-skip">Skip to main</a>
-<header class="l-header py-8" id="header">
-  <div class="container mx-auto">
-    <div class="grid grid-cols-12 gap-6 items-center">
-      <div class=" small-2 lg:col-span-9">
+<header class="l-header py-4 lg:py-8" id="header" x-data="{{'{'}} mainMenu: false, dropdownOpen: {sm: null, lg: null} {{'}'}}">
+  <div class="container">
+    <div class="grid grid-cols-12 gap-6 items-center justify-between">
+      <div class="col-span-10 lg:col-span-9">
         {% include '@components/logo/logo.twig' with logo %}
       </div>
-      <div class=" lg:col-span-3 lg:d-block hidden">
+      <div class="col-span-12 lg:col-span-3 lg:block hidden">
 
         <div class="search-form">
           {% include '@components/forms/simple-form/simple-form.twig' %}
@@ -21,10 +21,13 @@
           {% include '@components/forms/simple-form/simple-form.twig' %}
         </div>#}
       </div>
-      <div class=" small-10 lg:col-span-12">
-        {% include '@components/navigation/menu/menu.twig' with menu %}
-      </div>
+      <div class="col-span-2 lg:hidden">            
+        {% include  "@components/utils/hamburger/hamburger.twig" with {
+          toggle: "mainMenu"
+        } %}
+      </div>      
     </div>
 
   </div>
+  {% include '@components/navigation/menu/menu.twig' with menu %}
 </header>

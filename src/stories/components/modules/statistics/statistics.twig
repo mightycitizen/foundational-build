@@ -10,7 +10,7 @@
 
     <div class="grid grid-cols-12 gap-6">
       {% for statistic in statistics %}
-        <div class=" md:col-span-4 {% if section_style | default == 'side' %}lg:col-span-12{% endif %}">
+        <div class="col-span-12 md:col-span-4 {% if section_style | default == 'side' %}lg:col-span-12{% endif %}">
           {% include '@components/informational/statistic/statistic.twig' with {
             text: statistic.text,
             value: statistic.value,

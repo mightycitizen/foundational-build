@@ -1,28 +1,28 @@
 
-<div class="card bg-{{ background_color | default('white')}} shadow {{ class | default }} {{ modifier | default ? 'card--' ~ modifier : '' }} {% if clickCard | default %}card--click{% endif %}" >
+<div class="card bg-{{ background_color | default('white')}} shadow-md {{ class | default }} {{ modifier | default ? 'card--' ~ modifier : '' }} {% if clickCard | default %}card--click{% endif %}" >
   {% if header | default %}
-  <div class="card-divider">
+  <div class="card_divider">
     {{ header }}
   </div>
   {% endif %}
   {% if image | default %}
-    <div class="card-image w-full position-relative">
+    <div class="card_image w-full relative">
       <img loading="lazy" src="{{ image.src }}" alt="{{ image.alt }}" class="w-full ">
 
       {% if type.handle | default == 'events' and date | default %}
         {% include '@components/inline-text/date/date.twig' with date | merge({
-          class: 'position-absolute top-0 left-0 z-2'
+          class: 'absolute top-0 left-0 z-2'
         }) %}
       {% endif %}
       {% if flag | default %}
         {% include '@components/inline-text/flag/flag.twig' with {
-          class: 'position-absolute top-0 right-0 z-2',
+          class: 'absolute top-0 right-0 z-2',
           flag_text: flag
         }%}
       {% endif %}
     </div>
   {% endif %}
-  <div class="card-section px-3 lg:px-4 pt-4 pb-4 lg:pb-5" {% if equalize | default %}data-equalizer-watch{% endif %}>
+  <div class="card_section px-3 lg:px-4 pt-4 pb-4 lg:pb-5" {% if equalize | default %}data-equalizer-watch{% endif %}>
     {% if image | default is empty %}
         {% if flag | default %}
           {% include '@components/inline-text/flag/flag.twig' with {
@@ -32,7 +32,7 @@
     {% endif %}
     {% include '@components/teasers/card/_card-content.twig' %}
     {% if footer | default %}
-      <div class="card-footer">
+      <div class="card_footer">
         {{ footer }}
       </div>
     {% endif %}

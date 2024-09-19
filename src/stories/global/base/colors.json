@@ -3,8 +3,9 @@
     "default": "#2953cc",
     "gradient": true,
     "variants": {
+      "100": "#E2E8F7",
       "200": "#bdcaef",
-      "300": "#6986db",      
+      "300": "#6986db",
       "700": "#1f3e99"
     }
   },
@@ -26,7 +27,6 @@
       "700": "#b42727"
     }
   },
-
   "success": "#73af8c",
   "alert": "#d5383c",
   "warning": "#EEA600",

@@ -1,6 +1,9 @@
 //import "babel-polyfill"; // ie 11 polyfill - can exclude if not in scope
 import $ from 'jquery';
 import Alpine from 'alpinejs'
+import focus from '@alpinejs/focus'
+ 
+Alpine.plugin(focus);
 window.Alpine = Alpine
 Alpine.start()
 
@@ -17,7 +20,7 @@ Alpine.start()
 // import { initLity } from './plugins/lity';
 // import { initDatepicker } from './plugins/datepicker';
 // import { initVimeo } from './plugins/vimeo';
-// import { initYoutube } from './plugins/youtube';
+import { initYoutube } from './plugins/youtube';
 import { initSlick } from './plugins/slick';
 // import { initScrollShow } from './plugins/scroll-show';
 // import { initCountdown } from './plugins/countdown';
@@ -304,7 +307,7 @@ $(document).bind('_page_ready', function(){
 //   if (typeof initTippy === 'function') initTippy(); // @tippy init call
 //   if (typeof initAjax === 'function') initAjax(); // @ajax init call
 //   if (typeof initVimeo === 'function') initVimeo(); // @vimeo init call
-//   if (typeof initYoutube === 'function') initYoutube(); // @youtube init call
+  if (typeof initYoutube === 'function') initYoutube(); // @youtube init call
 //   if (typeof initLity === 'function') initLity(); // @lity init call
 //   if (typeof initSlider === 'function') initSlider(); // @slider init call
 //   if (typeof initSelectize === 'function') initSelectize(); // @slider init call

@@ -1,6 +1,6 @@
   <fieldset class="options">
     <legend>{{ label }} {% if required | default %}<span class="form-required">*</span>{% endif %}</legend>
-    <ul class="checkbox-group no-bullet">
+    <ul class="checkbox-group list-none">
       {% for option in options %}
         <li>{% include '@components/forms/checkbox/checkbox.twig' with {
          field_id: id,

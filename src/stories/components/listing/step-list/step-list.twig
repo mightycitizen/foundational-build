@@ -1,17 +1,24 @@
-<ol class="step-list">
+<ol class="list-none flex flex-col space-y-5 lg:space-y-10">
   {% for step in steps %}
-    <li class="pl-4 lg:pl-8 {% if loop.last %}mb-0{% else %}mb-5{% endif %}">
-      <h3 class="mb-2">{{ step.heading }}</h3>
-      <p class="mb-3">{{ step.description }}</p>
-      {% if step.link | default is not empty %}
-        {% include '@components/links/read-more/read-more.twig' with {
+    <li class="pl-4 lg:pl-8">
+      <div class="flex">
+        <div class="w-16 flex justify-end pr-6">
+          <div class="step__number font-bold text-4xl text-primary">{{ loop.index }}</div>
+        </div>
+        <div >
+          <h3 class="mb-2">{{ step.heading }}</h3>
+          <p class="mb-3">{{ step.description }}</p>
+          {% if step.link | default is not empty %}
+            {% include '@components/links/read-more/read-more.twig' with {
 
-            text: step.link.text,
-            url: step.link.url,
-            target: step.link.target
+                text: step.link.text,
+                url: step.link.url,
+                target: step.link.target
 
-        }%}
-      {% endif %}
+            }%}
+          {% endif %}
+        </div>
+      </div>
     </li>
   {% endfor %}
 

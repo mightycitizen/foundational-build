@@ -35,23 +35,27 @@ const getUrl = (template) => {
 
 
 //const templateUrl = '';
-// const templates = [
-//     {
-//         title: 'Home',
-//         parentStory: homeStories,
-//         story: Home
-//     },
-//     {
-//         title: 'News Listing',
-//         parentStory: newsListingStories,
-//         story: NewsListing
-//     },
-//     {
-//         title: 'News Detail',
-//         parentStory: newsDetailStories,
-//         story: Default
-//     }
-// ].map(template => {
+const templates = [
+    {
+        title: 'Home',        
+        url: '/iframe.html?args=&id=pages-home--home&viewMode=story',
+    },
+    {
+      title: 'General', 
+      url: '/iframe.html?args=&id=pages-general--default&viewMode=story',
+
+    },
+    {
+        title: 'News Listing',
+        url: '/iframe.html?args=&id=pages-news-news-listing--news-listing&viewMode=story',
+    },
+    {
+        title: 'News Detail',
+        url: '/iframe.html?args=&id=pages-news-news-detail--default&viewMode=story',
+    }
+];
+
+// map(template => {
 //     console.log(template.story);
 //     const prefix = getUrl(template.parentStory.title);
 //     const url = '/iframe.html?args=&id=' + prefix + '--' + getUrl(template.story.name);
@@ -63,7 +67,7 @@ const getUrl = (template) => {
 // console.log(templates);
 
 const defaultArgs = {
-  
+  templates,
   hero,
   breadcrumbs,
   menu,

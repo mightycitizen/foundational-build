@@ -1,11 +1,11 @@
 <form action="{{ action | default('/search') }}">
-  <div class="input-group simple">
+  <div class="flex relative">
     <label for="{{ input_id | default('keywords') }}" class="sr-only">Keywords</label>
-    <input class="input-group-field" placeholder="Search" type="search" id="{{ input_id | default('keywords') }}" name="{{ name | default('q') }}">
-    <div class="input-group-button">
+    <input class="w-full pr-6 border-gray-200" placeholder="Search" type="search" id="{{ input_id | default('keywords') }}" name="{{ name | default('q') }}">
+    <div class="absolute h-full right-0 top-0 flex items-center px-3">
       <button type="submit"  value="Submit">
         <span class="sr-only">{{ button_text | default('Search') }}</span>
-        <span class="icon-search"></span>
+        <span class="icon-search text-primary"></span>
       </button>
     </div>
   </div>

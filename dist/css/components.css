@@ -927,9 +927,6 @@
   margin-right: auto;
 }
 
-.slick-slide {
-  margin: rem-calc(15) rem-calc(10);
-}
 .slick-slide .card {
   margin-bottom: 0;
 }

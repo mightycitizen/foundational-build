@@ -1,10 +1,10 @@
 <figure>
-  <div class="video_wrapper is-loading" data-video-trigger="{{ trigger | default('click') }}" data-video-type="{{ video_type }}">
+  <div class="video_wrapper relative is-loading" data-video-trigger="{{ trigger | default('click') }}" data-video-type="{{ video_type }}">
     <div class="video_loader">
       {% include '@components/utils/loader/loader.twig' %}
     </div>
-    <div class="video_image_wrapper image-size--landscapeCropped">
-      <img loading="lazy" src="{{ image.src }}" alt="{{ image.alt }}" class="video_image ">
+    <div class="video_image_wrapper image-size--landscapeCropped absolute top-0 left-0 w-full h-full">
+      <img loading="lazy" src="{{ image.src }}" alt="{{ image.alt }}" class="video_image w-full h-full object-cover">
     </div>
     <div class="video_container">
       <div class="video_player_wrapper">

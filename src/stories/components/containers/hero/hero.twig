@@ -1,7 +1,7 @@
 <div class="hero text-white bg-primary py-10">
-  <div class="container mx-auto">
-    <div class="grid grid-cols-12 gap-6 gap-y-3 lg:g-y-0">
-      <div class="col-span-12 lg:col-span-8 md:col-span-6 md:order-1">
+  <div class="container">
+    <div class="grid grid-cols-12 gap-6 gap-y-7 lg:g-y-0">
+      <div class="col-span-12 lg:col-span-8 md:col-span-6 md:order-1 mb-9 lg:mb-5">
         {% include '@components/navigation/breadcrumbs/breadcrumbs.twig' with breadcrumbs %}
       </div>
 
@@ -16,6 +16,7 @@
             <div class="col-span-12 {% if image | default %}md:col-span-8{% endif %}">
               {% if date | default and endDate | default %}
                 {% include '@components/inline-text/meta/meta.twig' with {
+                  modifier: 'mb-4',
                   date: date,
                   endDate: endDate
                 } only %}
@@ -23,10 +24,10 @@
               <h1>{{ heading }}</h1>
                         
               {% if subheading | default %}
-                <p class="lead">{{ subheading }}</p>
+                <p class="text-2xl">{{ subheading }}</p>
               {% endif %}
               {% if list | default %}
-                <ul class="list-none flex gap-4 list-divided font-bold text-small mb-3">
+                <ul class="list-none flex gap-4 list-divided font-bold text-sm mb-3">
                   {% for item in list %}                    
                     <li>{{ item }}</li>
                   {% endfor %}
@@ -40,21 +41,21 @@
                 {% set hero_button = hero_button | merge({
                   color: 'secondary'
                 }) %}
-                {% include '@components/links/button/button.twig' with hero_button %}
+                {% include '@components/links/button/button.twig' with hero_button only %}
               {% endif %}
               {% if categories | default %}
                 {% include '@components/inline-text/meta/meta.twig' with {
                   date: endDate | default is empty ? date : false,
                   modifier: 'mt-4',
                   categories: categories
-                } only%}
+                } only %}
               {% endif %}
             </div>
           </div>
 
         </div>
       </div>
-      <div class=" lg:col-span-4 md:col-span-6 md:order-2">
+      <div class="col-span-12 lg:col-span-4 md:col-span-6 md:order-2 flex md:justify-end">
         {% include '@components/utils/add2any/add2any.twig' with {
           class: 'mb-0'
         } %}

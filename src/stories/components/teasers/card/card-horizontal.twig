@@ -1,16 +1,16 @@
-<div class="card shadow card--horizontal {{ modifier }} {% if clickCard | default %}card--click{% endif %}" data-scroll-show>
-  <div {% if image_position | default != 'flush' %}class="card-section py-4 px-4"{% endif %}>
-    <div class="grid grid-cols-12 {% if image_position | default != 'flush' %}gap-x-4 items-center{% endif %} ">
+<div class="card shadow-lg card--horizontal {{ modifier }} {% if clickCard | default %}card--click{% endif %}" data-scroll-show>
+  <div {% if image_position | default != 'flush' %}class="card_section py-8 px-8"{% endif %}>
+    <div class="grid grid-cols-12 gap-y-4 {% if image_position | default != 'flush' %}gap-x-12 items-center{% endif %} ">
       {% if image | default %}
-        <div class=" md:col-span-5 lg:col-span-5 {% if image.alignment | default and image.alignment == 'right' %}md:order-2{% endif %}">
-          <div class="card-image image-size--landscapeCroppedMedium">
+        <div class="col-span-12 md:col-span-5 lg:col-span-5 {% if image.alignment | default and image.alignment == 'right' %}md:order-2{% endif %}">
+          <div class="card_image image-size--landscapeCroppedMedium">
             <img class="" loading="lazy" src="{{ image.src }}" alt="{{ image.alt }}">
           </div>
         </div>
       {% endif %}
-      <div class=" {% if image | default %}md:col-span-7 lg:col-span-7 {% if image.alignment  | default and image.alignment == 'right' %}md:order-1{% endif %}{% endif %}">
+      <div class="col-span-12 {% if image | default %}md:col-span-7 lg:col-span-7 {% if image.alignment  | default and image.alignment == 'right' %}md:order-1{% endif %}{% endif %}">
         {% if image_position | default == 'flush' %}          
-          <div class="card-section py-3 px-4 flex justify-center flex-col h-full flex">
+          <div class="card_section py-6 px-8 flex justify-center flex-col h-full flex">
         {% endif %}
               {% include '@components/teasers/card/_card-content.twig' %} 
         {% if image_position | default == 'flush' %}

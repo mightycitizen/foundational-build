@@ -1,17 +1,17 @@
 {% set notch = item.icon | default or modifier | default == 'steps' %}
 <li class="accordion-item {{ loop.last ? 'mb-0' : 'mb-3' }}" data-accordion-item>
-  <button  @click="expanded = expanded === {{ loop.index0 }} ? null : {{ loop.index0 }}"  tabindex="0" class="text-left leading-6 w-full bg-gray-100 font-bold accordion-title flex justify-between py-4 position-relative px-4 text-lg" aria-controls="accordion-{{ accordion_id | default }}-{{ loop.index }}" id="accordion-toggle-{{ accordion_id | default }}-{{ loop.index }}">
+  <button  @click="expanded = expanded === {{ loop.index0 }} ? null : {{ loop.index0 }}"  tabindex="0" class="text-left leading-6 w-full bg-gray-100 font-bold accordion-title gap-x-4 flex justify-between items-center py-4 relative px-4 md:px-8 text-lg" aria-controls="accordion-{{ accordion_id | default }}-{{ loop.index }}" id="accordion-toggle-{{ accordion_id | default }}-{{ loop.index }}">
     <span class="inline-flex gap-2 items-center">
       {% if notch %}
-        <span class="accordion-notch position-absolute left-3 top-0 h-full text-primary font-bold inline-flex items-center justify-end w-4 {{ item.icon | default }}">{% if modifier | default == 'steps' %}{{ loop.index }}{% endif %}</span>
+        <span class="accordion-notch h-full text-primary font-bold inline-flex items-center justify-center -ml-1 lg:-ml-3 mr-1 lg:mr-3 w-4 {{ item.icon | default }}">{% if modifier | default == 'steps' %}{{ loop.index }}{% endif %}</span>
       {% endif %}
       {{ item.heading }}
     </span>
-    <span class="accordion-title-icon block" :class="expanded === {{ loop.index0 }} ? 'rotate-180' : ''">
+    <span class="accordion-title-icon block text-primary" :class="expanded === {{ loop.index0 }} ? 'rotate-180' : ''">
       <span class="icon-chevron-down"></span>
     </span>
   </button>
-  <div x-show="expanded === {{ loop.index0 }}" class="accordion-content px-3 lg:px-4 pt-2 pb-3 lg:pb-4 border border-gray-100 border-t-0" id="accordion-{{ accordion_id | default }}-{{ loop.index }}" aria-labelledby="accordion-{{ accordion_id | default }}-{{ loop.index }}">
+  <div x-show="expanded === {{ loop.index0 }}" class="accordion-content px-3 lg:px-6 py-4 lg:py-6 border border-gray-100 border-t-0" id="accordion-{{ accordion_id | default }}-{{ loop.index }}" aria-labelledby="accordion-{{ accordion_id | default }}-{{ loop.index }}">
     {{ item.content | raw }}
   </div>
 </li>

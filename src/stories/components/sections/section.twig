@@ -11,7 +11,7 @@
       <div class="section_intro {{ intro_class }}">
         <div class="grid {% if section_image | default %}grid-cols-12{% endif %} gap-y-6 gap-x-10 items-center justify-center">
           {% if section_image | default %}
-            <div class="col-span-12 md:col-span-5 lg:col-span-6"  data-scroll-show data-scroll-from="left">
+            <div class="col-span-12 md:col-span-5 lg:col-span-6" >
               <div class="image-size--landscapeCroppedMedium">
                 <img loading="lazy" src="{{ section_image.src }}" alt="{{ section_image.alt }}" class="w-full">
               </div>
@@ -37,20 +37,30 @@
 {% endset %}
 {% set content %}
   {% if block('section_content') | trim is not empty%}
-    <div class="section_content" data-scroll-show>
+    <div class="section_content" >
       {% block section_content %}
       {% endblock %}
     </div>
   {% endif %}
 {% endset %}
-<section {% if section_id | default %}id="{{ section_id }}"{% endif %} class="relative section {{ padding | default == 'tight' ? (loop.first ? 'pt-8' : 'pt-4') ~ ' ' ~ (loop.last ? 'pb-10' : 'pb-6') ~ ' lg:pt-10 lg:pb-12' : 'pt-8  pb-10 lg:py-20' }} {{ section_class | default }} {% if style | default %}section--{{ style }} {% endif %} {% if collapse | default %}section--collapse{% endif %}" >
+<section {% if section_id | default %}id="{{ section_id }}"{% endif %} 
+  class="relative section 
+  {% if padding | default == 'tight' %}
+    py-5 lg:py-10
+  {% else %}
+    py-10 lg:py-16
+  {% endif %}  
+  {{ section_class | default }} 
+  {% if style | default %}section--{{ style }} {% endif %} 
+  {% if collapse | default %}section--collapse{% endif %}" 
+  x-data="{{'{'}} show: false {{'}'}}"  x-intersect="show = true" >
   {% if section_background | default %}
     <div class="position-unset">
       {% if section_background | default %}<img class=" section_background absolute object-cover left-0 h-full w-full top-0 opacity-30" src="{{ section_background.src }}" loading="lazy"/>{% endif %}
-      {% if section_background_slick | default %}<img class="section_background" data-slick-background="{{ section_background_slick }}"/>{% endif %}
+      {# {% if section_background_slick | default %}<img class="section_background" data-slick-background="{{ section_background_slick }}"/>{% endif %} #}
     </div>
   {% endif %}
-  <div class="{% if exclude_container | default != true %}container {{ width_class | default }} {% endif %} {{ grid_class | default }} relative z-10">
+  <div class="{% if exclude_container | default != true %}container {{ width_class | default }} {% endif %} {{ grid_class | default }} relative z-10" >
     {% if section_style | default and (section_style == 'side') %}
       <div class="grid grid-cols-12 items-center justify-center gap-y-4">
         <div class="col-span-12 md:col-span-8">

@@ -11,6 +11,9 @@ importers:
       '@alpinejs/focus':
         specifier: ^3.14.1
         version: 3.14.1
+      '@alpinejs/intersect':
+        specifier: ^3.14.1
+        version: 3.14.1
       '@selectize/selectize':
         specifier: ^0.15.2
         version: 0.15.2(jquery@3.7.1)
@@ -244,6 +247,10 @@ packages:
     dependencies:
       focus-trap: 6.9.4
       tabbable: 5.3.3
+    dev: false
+
+  /@alpinejs/intersect@3.14.1:
+    resolution: {integrity: sha512-+qlQief0QWPqjFjoylr+CfKOkwvnxldRQg/WT1PscyPAeykK+wJOJAEQCimwwaLnYHxiXdF6whti5o7GYPYNxw==}
     dev: false
 
   /@ampproject/remapping@2.2.1:

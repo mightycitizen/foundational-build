@@ -231,10 +231,8 @@ const defaultOptions = {
   dotsClass: 'slick-dots list-none mb-0 px-5 md:px-8 flex justify-center ' + (mobilePager ? 'md:gap-x-5' : 'gap-x-3 md:gap-x-5'),
   adaptiveHeight: true,
   waitForAnimate: false,
-  customPaging : function(slider, i) {
-    // check if active slide     
-    // console.log(slider);
-    let dotClasses = 'w-4 md:w-6 aspect-square rounded-full  border-2 border-primary ' + (i === slider.currentSlide ? 'bg-white' : 'bg-primary');
+  customPaging : function(slider, i) {    
+    let dotClasses = 'w-4 md:w-6 aspect-square rounded-full  border-2 border-primary bg-primary';
     if (mobilePager){
       dotClasses = '!text-sm md:w-6 md:h-6 md:rounded-full md:bg-primary md:border-2 md:border-primary ' + (i === 0 || i === slider.slideCount - 1 ? '' : '!hidden md:!block');
     }    

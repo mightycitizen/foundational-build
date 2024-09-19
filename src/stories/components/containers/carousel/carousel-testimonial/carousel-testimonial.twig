@@ -7,9 +7,10 @@
       {% for card in cards %}
           <div class="mx-2 my-2">
             {% set card = card | merge({
-              lazyload_class: 'data-lazy'
+              class: 'w-full',
+              lazyload_attr: 'data-lazy'
             }) %}
-            {% include '@components/teasers/card/card-testimonial.twig' with card %}
+            {% include '@components/teasers/card/card-testimonial.twig' with card only %}
 
           </div>
         {% endfor %}

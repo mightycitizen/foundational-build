@@ -5,13 +5,14 @@
   }%}
   {% block slide_content %}
       {% for card in cards %}
-        {% set card = card | merge({
-          lazyload_class: 'data-lazy',
+        {% set card = card | merge({          
+          lazyload_attr: 'data-lazy',
+          class: 'w-full',
           modifier: "special"
         }) %}
         
         <div class="{{ loop.first ? 'slick-animate ' : '' }} mx-2 my-2">
-          {% include "@components/teasers/card/card.twig" with card
+          {% include "@components/teasers/card/card.twig" with card only
           %}
         </div>
       {% endfor %}

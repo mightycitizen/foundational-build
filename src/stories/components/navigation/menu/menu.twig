@@ -1,28 +1,31 @@
 
 
-<div id="main-menu" class="absolute z-10 bg-white w-full left-0 py-4 lg:mt-4 lg:relative lg:block lg:px-0 lg:py-0" :class="mainMenu ? '' : 'hidden'">
+<div id="main-menu" class="absolute z-20 bg-white w-full left-0 py-4 lg:mt-4 lg:relative lg:block shadow-md lg:shadow-none lg:py-0" :class="mainMenu ? '' : 'hidden'">
   <div class="container">
-    <ul role="menubar" class="flex flex-col lg:flex-row justify-between gap-x-3 list-none" >
+    <ul role="menubar" class="flex flex-col lg:flex-row justify-between gap-x-3 list-none  lg:-mx-6" >
       {% for link in menu %}
         <li 
           role="presentation" 
-          class="lg:border-0 lg:py-0 {{ loop.last == false ? 'border-b border-gray-200 pb-4' : '' }} {{ loop.first == false ? 'pt-4' : ''}}"
-          {% if link.children | length %}
-            @click="if(window.innerWidth <= 1024) dropdownOpen.sm = dropdownOpen.sm === {{ loop.index0 }} ? null : {{ loop.index0 }}" 
+          class="lg:border-0 {{ loop.last == false ? 'border-b border-gray-200' : '' }}"
+          {% if link.children | length %}            
             @mouseleave="if(window.innerWidth > 1024) dropdownOpen.lg = null;"
             @mouseenter="if(window.innerWidth > 1024) dropdownOpen.lg = {{ loop.index0 }}" 
           {% endif %}
           >
-            <a class="text-black no-underline font-bold inline-flex items-center gap-2" {% if link.new_window | default %}target="_blank" rel="noopener"{% endif %} role="menuitem" href="{{ link.url }}">
+            <a 
+            {% if link.children | length %}
+              @click="if(window.innerWidth <= 1024) dropdownOpen.sm = dropdownOpen.sm === {{ loop.index0 }} ? null : {{ loop.index0 }}" 
+            {% endif %}
+            class="py-3 lg:px-6 text-black no-underline w-full font-bold flex lg:inline-flex items-center gap-2 justify-between" {% if link.new_window | default %}target="_blank" rel="noopener"{% endif %} role="menuitem" href="{{ link.url }}">
               {{ link.parent_text | default is not empty ? link.parent_text : link.text }}
               {% if link.children | default %}
-                <span class="icon-chevron-down text-primary text-xs"></span>
+                <span :class="dropdownOpen.sm === {{ loop.index0 }} ? 'rotate-180' : ''"  class="icon-chevron-down text-primary text-xs"></span>
               {% endif %}
             </a>
           {% if link.children | default %}
           <ul 
             role="presentation" 
-            class="list-none lg:absolute lg:bg-white lg:py-3 w-80 lg:-ml-6" 
+            class="list-none lg:absolute lg:bg-white lg:py-3 w-full lg:w-80" 
             :class="(dropdownOpen.sm === {{ loop.index0 }} || dropdownOpen.lg === {{ loop.index0 }} ? '' : 'hidden')"             
             x-data="{{'{'}} childOpen:  { sm: null, lg: null } {{'}'}}">
             <li  role="presentation" class="parent-link font-bold lg:px-6 py-1">
@@ -34,22 +37,26 @@
                 class="py-1 lg:px-6"
                 {% if child.children | default %}                
                   :class="childOpen.lg === {{ loop.index0 }} ? '{{ grandchildBackground }}' : ''"
-                  @click="if(window.innerWidth <= 1024) childOpen.sm = {{ loop.index0 }}" 
+                  
                   @mouseenter="if(window.innerWidth > 1024) childOpen.lg = {{ loop.index0 }}" 
                   @mouseleave="if(window.innerWidth > 1024) childOpen.lg = null;" 
                 {% endif %}
                 role="presentation">
-                <a role="menuitem" href="{{ child.url }}" class="flex items-center gap-2 justify-between">
+                <a 
+                {% if child.children | default %}
+                  @click="if(window.innerWidth <= 1024) childOpen.sm = childOpen.sm === {{ loop.index0 }} ? childOpen.sm = null : {{ loop.index0 }}" 
+                {% endif %}
+                role="menuitem" href="{{ child.url }}" class="flex items-center gap-2 justify-between">
                   {{ child.text }}
                   {% if child.children | default %}
-                    
-                      <span class="icon-chevron-right text-primary text-xs no-underline"></span>
+                    <span :class="childOpen.sm === {{ loop.index0 }} ? 'rotate-180' : ''" class="icon-chevron-down lg:hidden text-primary text-xs no-underline"></span>
+                    <span class="icon-chevron-right hidden lg:block text-primary text-xs no-underline"></span>
                     
                   {% endif %}
                 </a>
                 
                 {% if child.children | default %}
-                <ul role="presentation" class="list-none lg:absolute lg:left-full top-0 {{ grandchildBackground }} w-80 p-3 md:px-6 flex flex-col space-y-2" :class="childOpen.lg === {{ loop.index0 }} ? '' : 'hidden'">
+                <ul role="presentation" class="list-none lg:absolute lg:left-full my-3 lg:my-0 top-0 {{ grandchildBackground }} w-full lg:w-80 p-3 md:px-6 flex flex-col space-y-2" :class="childOpen.sm === {{ loop.index0 }} || childOpen.lg === {{ loop.index0 }} ? '' : 'hidden'">
                   <li role="presentation" class="font-bold"><a {% if child.new_window | default %}target="_blank" rel="noopener"{% endif %} href="{{ child.url }}">{{ child.text }} Overview</a></li>
                   {% for grandchild in child.children %}
                     <li role="presentation">

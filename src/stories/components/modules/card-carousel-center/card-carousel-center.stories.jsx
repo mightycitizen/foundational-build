@@ -17,12 +17,13 @@ const Template = ({ label, ...args }) => {
 };
 
 
-const cards = [...Array(5)].map((_, i) => ( {
+const cards = [{
   heading: {
     text: 'Heading',
     url: '#',
     level: 3
   },
+  summary: 'Summary Text Long here to show how it wraps lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consectetur ipsum. Nulla nec purus feugiat, molestie ipsum et, consectetur ipsum.',
   image: {
     src: '//via.placeholder.com/430x230',
     alt: 'Alt Text'
@@ -31,7 +32,22 @@ const cards = [...Array(5)].map((_, i) => ( {
     text: 'Link',
     url: '#'
   },
-}));
+}].concat([...Array(5)].map((_, i) => ( {
+  heading: {
+    text: 'Heading',
+    url: '#',
+    level: 3
+  },
+  summary: 'Summary',
+  image: {
+    src: '//via.placeholder.com/430x230',
+    alt: 'Alt Text'
+  },
+  link: {
+    text: 'Link',
+    url: '#'
+  },
+})));
 
 const defaultArgs = {
   section_heading: 'Heading',

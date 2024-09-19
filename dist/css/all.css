@@ -839,7 +839,7 @@ a {
     -webkit-text-decoration-line: none;
             text-decoration-line: none;
   }
-  .text-white &:not([class*='text-']) {
+  .text-white &:not([class*='text-']):not(.button) {
     color: inherit;
   }
 }
@@ -880,22 +880,59 @@ a {
   font-weight: 700;
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
-  &:after {
-    --tw-content: '';
-    content: var(--tw-content);
+  &:after{
+    font-family: 'icomoon';
+    content: "\f054";
   }
   &:after {
     margin-left: 0.5rem;
   }
+  &:after {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
   &:hover, &:focus-visible {
     -webkit-text-decoration-line: underline;
             text-decoration-line: underline;
+  }
+  &.text-2xl{
+    &:after {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+  }
+}
+
+figure {
+  margin-bottom: 2rem;
+  img {
+    width: 100%;
+  }
+  figcaption {
+    margin-top: 0.5rem;
+  }
+  figcaption {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  figcaption {
+    font-weight: 700;
   }
 }
 
 table {
   margin-bottom: 1.25rem;
   width: 100%;
+  caption {
+    margin-bottom: 0.5rem;
+  }
+  caption {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  caption {
+    font-weight: 700;
+  }
   thead {
     --tw-bg-opacity: 1;
     background-color: rgb(41 83 204 / var(--tw-bg-opacity));
@@ -946,7 +983,7 @@ ol {
 }
 
 blockquote {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   border-left-width: 8px;
   --tw-border-opacity: 1;
   border-color: rgb(41 83 204 / var(--tw-border-opacity));
@@ -985,26 +1022,42 @@ blockquote {
         @apply block font-bold mb-2;
     } */
 
-/* .slick-nav{
-        .slick-dots{
-            @apply mb-0 mx-8 pl-0 flex justify-center gap-x-5;
-            li{
-                @apply mb-0;
-                button{
-                    @apply w-6 h-6 rounded-full bg-primary border-2 border-primary;
-                }
-            }
+.slick-nav{
+  .slick-dots{
+    li{
+      &.slick-active{
+        button {
+          --tw-bg-opacity: 1;
+          background-color: rgb(255 255 255 / var(--tw-bg-opacity));
         }
-    } */
+      }
+    }
+  }
+}
+
+.section:not(.section--tight){
+  @media (min-width: 1024px) {
+    .section:not(.section--tight):not([class*=bg-]) + &:not([class*=bg-]) {
+      margin-top: -2.5rem;
+    }
+  }
+}
 
 @media (min-width: 768px){
   .js-slick--center{
+    --slide-width: 500px;
+    --slide-width-curr: 700px;
     display: none;
     .slick-slide{
-      width: 500px;
-      margin: 55px 0;
+      width: var(--slide-width);
+      margin: 60px 0;
       padding: 10px 50px;
-      transition: all 0.3s;
+      &, .card_section{
+        transition: all 0.3s;
+      }
+      .card_summary{
+        display: none;
+      }
       &.slick-current.slick-animate{
         /* margin: 5px; */
       }
@@ -1018,7 +1071,7 @@ blockquote {
         margin: 0;
         margin-left: -100px;
         margin-right: -100px;
-        width: 700px;
+        width: var(--slide-width-curr);
         .card {
           --tw-bg-opacity: 1;
           background-color: rgb(41 83 204 / var(--tw-bg-opacity));
@@ -1037,9 +1090,12 @@ blockquote {
             color: inherit;
           }
         }
-        /* .card_section{
-                        @apply p-6;
-                    } */
+        .card_summary{
+          display: block;
+        }
+        .card_section {
+          padding: 1.5rem;
+        }
       }
     }
   }
@@ -1155,6 +1211,10 @@ blockquote {
   z-index: 10;
 }
 
+.z-20 {
+  z-index: 20;
+}
+
 .order-1 {
   order: 1;
 }
@@ -1203,6 +1263,11 @@ blockquote {
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .-ml-1 {
@@ -1696,16 +1761,8 @@ blockquote {
   padding-bottom: 0px;
 }
 
-.pb-10 {
-  padding-bottom: 2.5rem;
-}
-
 .pb-4 {
   padding-bottom: 1rem;
-}
-
-.pb-6 {
-  padding-bottom: 1.5rem;
 }
 
 .pl-0 {
@@ -1734,10 +1791,6 @@ blockquote {
 
 .pt-4 {
   padding-top: 1rem;
-}
-
-.pt-8 {
-  padding-top: 2rem;
 }
 
 .text-left {
@@ -1855,8 +1908,16 @@ blockquote {
           text-decoration-line: none;
 }
 
+.opacity-0 {
+  opacity: 0;
+}
+
 .opacity-30 {
   opacity: 0.3;
+}
+
+.opacity-5 {
+  opacity: 0.05;
 }
 
 .shadow-lg {
@@ -1885,6 +1946,14 @@ blockquote {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
 .hover\:bg-primary-100:hover {
@@ -2094,6 +2163,21 @@ blockquote {
     grid-column: span 9 / span 9;
   }
 
+  .lg\:-mx-3 {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+  }
+
+  .lg\:-mx-6 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+
+  .lg\:my-0 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
   .lg\:-ml-3 {
     margin-left: -0.75rem;
   }
@@ -2118,12 +2202,24 @@ blockquote {
     margin-top: 1.25rem;
   }
 
+  .lg\:mt-0 {
+    margin-top: 0px;
+  }
+
   .lg\:block {
     display: block;
   }
 
+  .lg\:inline-flex {
+    display: inline-flex;
+  }
+
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:w-80 {
+    width: 20rem;
   }
 
   .lg\:max-w-screen-lg {
@@ -2197,9 +2293,9 @@ blockquote {
     padding-bottom: 2.5rem;
   }
 
-  .lg\:py-20 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+  .lg\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .lg\:py-3 {
@@ -2217,8 +2313,9 @@ blockquote {
     padding-bottom: 2rem;
   }
 
-  .lg\:pb-12 {
-    padding-bottom: 3rem;
+  .lg\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 
   .lg\:pb-5 {
@@ -2229,8 +2326,12 @@ blockquote {
     padding-left: 2rem;
   }
 
-  .lg\:pt-10 {
-    padding-top: 2.5rem;
+  .lg\:pt-4 {
+    padding-top: 1rem;
+  }
+
+  .lg\:pt-8 {
+    padding-top: 2rem;
   }
 
   .lg\:text-left {
@@ -2245,6 +2346,22 @@ blockquote {
   .lg\:text-8xl {
     font-size: 6rem;
     line-height: 1;
+  }
+
+  .lg\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .lg\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .lg\:shadow-none {
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 }
 

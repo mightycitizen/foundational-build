@@ -8,8 +8,11 @@
     {% block slide_content %}
       {% for card in cards %}
         <div class="mx-2 my-2">
-          {% set card = card | merge({lazyload_class: 'data-lazy'}) %}
-          {% include "@components/teasers/card/card.twig" with card %}
+          {% set card = card | merge({
+            lazyload_attr: 'data-lazy',
+            class: 'w-full',
+          }) %}
+          {% include "@components/teasers/card/card.twig" with card only %}
         </div>
       {% endfor %}
     {% endblock %}

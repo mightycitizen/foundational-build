@@ -129,23 +129,19 @@ window.$ = $;
 
 
 // // @table-scroll init
-// const initTableScroll = () => {
-//   $('table').each(function(){
-//     if (!$(this).closest('.table-scroll').length){
-//       $(this).wrap('<div class="table-scroll-wrapper"></div>');
-//       $(this).wrap('<div class="table-scroll"></div>');
-//     }
-//   })
-//   $('.table-scroll').on('scroll', function() {
-//     const $wrapper = $(this).parent();
-//     $wrapper.toggleClass('is-end',$(this).scrollLeft() + $(this).innerWidth() >= $(this)[0].scrollWidth);
-//     // if() {
-//     //   $wrapper.addClass('is-end')
-//     // }else{
-//     //   $wrapper.removeClass('is-end')
-//     // }
-//   });
-// }
+const initTableScroll = () => {  
+  $('table').each(function(){
+    if (!$(this).closest('.table-scroll').length){
+      $(this).wrap('<div class="table-scroll_wrapper"></div>');
+      $(this).wrap('<div class="table-scroll"></div>');
+    }
+  })
+  $('.table-scroll').on('scroll', function() {
+    const $wrapper = $(this).parent();
+    $wrapper.toggleClass('is-end',$(this).scrollLeft() + $(this).innerWidth() >= $(this)[0].scrollWidth);
+
+  });
+}
 
 // // @foundation helpers init
 // const initFoundationHelpers = () => {
@@ -289,7 +285,7 @@ $(document).bind('_page_ready', function(){
   // initLazy(); // @lazy init call
 //   initAnchorUpdate(); // @anchor update init
 //   initFoundationAccessibility();  // @foundation init accessibility call
-//   initTableScroll(); // @table-scroll init call
+  initTableScroll(); // @table-scroll init call
 
 //   //initScrollHide(); // @scroll-hide init call
 //   initSmoothScroll(); // @smooth-scroll init

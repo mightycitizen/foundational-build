@@ -4,7 +4,7 @@
       {% if image | default %}
         <div class="col-span-12 md:col-span-5 lg:col-span-4 {% if image.alignment | default and image.alignment == 'right' %}md:order-2{% endif %}">
           <div class="card_image image-size--square">
-            <img {% if lazyload_class | default %}data-lazy="{{ image.src }}" {% else %} loading="lazy" src="{{ image.src }}" class=""{% endif %} alt="{{ image.alt }}">
+            <img {% if lazyload_attr | default %}{{ lazyload_attr }}="{{ image.src }}"{% else %}src="{{ image.src }}" loading="lazy"{% endif %}  alt="{{ image.alt }}" class="w-full ">
           </div>
         </div>
       {% endif %}

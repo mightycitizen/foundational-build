@@ -1,10 +1,39 @@
-<div x-data="{{'{' }} expanded: 0 {{ ' }'}}">
 
 
-  <ul class="tabs list-none mb-0 flex" data-tabs id="{{ tabs_id | default }}" >
+
+<div x-data="{{'{' }} expanded: 0,   handleTabChange: (event) =>  {
+        const tab = event.target;
+        const tabNav = $refs.tabNav;
+        const offset = 30;
+
+        if (tab) {
+          const tabStartPosition = tab.getBoundingClientRect().left - tabNav.getBoundingClientRect().left;
+          const tabNavWidth = tabNav.offsetWidth;
+          const tabWidth = tab.offsetWidth;
+          const tabEndPosition = tabStartPosition + tabWidth;
+          let position;
+          const currPosition = tabNav.scrollLeft;
+
+          if (tabStartPosition < offset) {
+            position = currPosition + tabStartPosition - offset;
+          } else if (tabEndPosition > tabNavWidth - offset) {
+            position = currPosition + (tabEndPosition - tabNavWidth + offset);
+          }
+
+          if (position !== undefined) {
+            tabNav.scrollTo({
+              left: position,
+              behavior: 'smooth'
+            });
+          }
+        }
+      }{{ ' }'}}">
+
+
+  <ul class="tabs list-none mb-0 flex max-w-full overflow-x-auto no-scrollbar" data-tabs id="{{ tabs_id | default }}" x-ref="tabNav">
     {% for tab in tabs %}
       <li class="tabs-title font-bold mr-1" :class="expanded === {{ loop.index0 }} ? 'bg-primary text-white' : 'bg-gray-100'">
-        <button @click="expanded = {{ loop.index0 }}" class="bg-gray-lightest px-2 lg:px-10 py-1 lg:py-3" data-href="#{{ tab.id }}" aria-selected="true">{{ tab.text }}</button>
+        <button @click="expanded = {{ loop.index0 }}; handleTabChange($event);" class="bg-gray-lightest px-2 lg:px-10 py-1 lg:py-3 whitespace-nowrap" data-href="#{{ tab.id }}" aria-selected="true">{{ tab.text }}</button>
       </li>
     {% endfor %}
   </ul>

@@ -58,7 +58,7 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-const tabs = [...Array(5)].map((_, i) => ( {
+const tabs = [...Array(15)].map((_, i) => ( {
   "text": "Tab " + (0 + i),
   "id": "tab-" + i,
   "content": `<h2>Tab Content</h2><p>Lorem ipsum ${i}</p><p><a href='' class='read-more'>Styled Link</a></p>`

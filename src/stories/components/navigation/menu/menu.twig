@@ -16,10 +16,11 @@
             {% if link.children | length %}
               @click="if(window.innerWidth <= 1024) dropdownOpen.sm = dropdownOpen.sm === {{ loop.index0 }} ? null : {{ loop.index0 }}" 
             {% endif %}
+            :class="dropdownOpen.lg === {{ loop.index0 }} ? 'bg-primary text-white' : ''"
             class="py-3 lg:px-6 text-black no-underline w-full font-bold flex lg:inline-flex items-center gap-2 justify-between" {% if link.new_window | default %}target="_blank" rel="noopener"{% endif %} role="menuitem" href="{{ link.url }}">
               {{ link.parent_text | default is not empty ? link.parent_text : link.text }}
               {% if link.children | default %}
-                <span :class="dropdownOpen.sm === {{ loop.index0 }} ? 'rotate-180' : ''"  class="icon-chevron-down text-primary text-xs"></span>
+                <span :class="(dropdownOpen.sm === {{ loop.index0 }} ? 'rotate-180' : '') + ' ' + (dropdownOpen.lg === {{ loop.index0 }} ? 'lg:text-white' : 'lg:text-primary')"  class="icon-chevron-down text-xs text-primary" ></span>
               {% endif %}
             </a>
           {% if link.children | default %}

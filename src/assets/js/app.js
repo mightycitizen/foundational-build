@@ -305,7 +305,7 @@ $(document).bind('_page_ready', function(){
 //   if (typeof initTippy === 'function') initTippy(); // @tippy init call
 //   if (typeof initAjax === 'function') initAjax(); // @ajax init call
 //   if (typeof initVimeo === 'function') initVimeo(); // @vimeo init call
-  if (typeof initYoutube === 'function') initYoutube(); // @youtube init call
+  // if (typeof initYoutube === 'function') initYoutube(); // @youtube init call
 //   if (typeof initLity === 'function') initLity(); // @lity init call
 //   if (typeof initSlider === 'function') initSlider(); // @slider init call
 //   if (typeof initSelectize === 'function') initSelectize(); // @slider init call

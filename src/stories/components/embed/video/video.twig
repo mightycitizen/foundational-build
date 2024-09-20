@@ -1,18 +1,133 @@
-<figure>
-  <div class="video_wrapper relative is-loading" data-video-trigger="{{ trigger | default('click') }}" data-video-type="{{ video_type }}">
-    <div class="video_loader">
+<figure x-data="{
+    loading: true,
+    playing: false,
+    player: null,
+    youtubeId: '{{ video_id }}',
+    trigger: '{{ trigger | default('click') }}',
+    firstPlay: true,
+    
+
+
+    init() {
+      this.loadYouTubeAPI();
+    },
+
+    loadYouTubeAPI() {
+      if (!window.YT) {
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        document.body.appendChild(tag);
+        window.onYouTubeIframeAPIReady = this.onYouTubeIframeAPIReady.bind(this);
+    }
+    },
+    onYouTubeIframeAPIReady() {
+
+      const vid = this.$refs.player;
+      const youtubeId = vid.dataset.videoId;
+      this.player = new YT.Player(vid, {
+        playerVars: {
+          'enablejsapi': 1,
+          'fs': 1,
+          'playlist': youtubeId,
+          'loop': 1,
+          'modestbranding': 1,
+          'autoplay': 0,
+          'controls': 1,
+          'showInfo': 0,
+          'mute': 1,
+          'rel': 0
+        },
+        videoId: youtubeId,
+        events: {
+          'onReady': this.onPlayerReady.bind(this),
+          'onStateChange': this.onPlayerStateChange.bind(this)
+        }
+      });
+    },
+     handleClick() {      
+      if (!this.player) return;
+      if (this.playing) {
+        this.player.pauseVideo();
+        this.playing = false;
+      } else {
+        this.player.playVideo();
+        this.playing = true;
+      }
+    },
+
+    onPlayerReady(event) {      
+      this.loading = false;
+      this.setVideoSize();
+      if (this.firstPlay && this.trigger !== 'background') {
+        setTimeout(() => {
+          this.player.pauseVideo();
+        }, 5);
+      }
+      this.firstPlay = false;
+    },
+
+    onPlayerStateChange(event) {
+      
+      if (this.firstPlay){
+        if (this.trigger !== 'background'){
+          setTimeout(() => {
+            this.player.pauseVideo();
+          }, 5);
+        }
+
+      }      
+      switch (event.data){
+        case 2:
+          setTimeout(() => {
+            switch (event.data){
+              case 2:
+                
+                this.playing = false;                
+                break;
+              case 1:
+                this.playing = true;
+                break;
+            }
+          }, 500);
+          break;
+        case 1:
+          if (!this.firstPlay) this.player.unMute();
+          this.playing = true;                    
+          break;
+      }
+    },
+
+    setVideoSize() {
+      const width = this.$el.clientWidth;
+      const height = this.$el.clientHeight;
+
+      if (width / height > 1) {
+        this.player.setSize(width, (width / 16) * 9);
+      } else {
+        this.player.setSize((height / 9) * 16, height);
+      }
+    }
+  }" x-init="init">
+  <div 
+    class="video_wrapper relative"     
+    data-video-trigger="{{ trigger | default('click') }}" 
+    data-video-type="{{ video_type }}"    
+  >
+    <button @click="handleClick" class="absolute left-0 top-0 w-full h-full z-20">Play Video</button>
+    <div class="video_loader absolute z-10 flex justify-center items-center h-full w-full" x-show="loading">
       {% include '@components/utils/loader/loader.twig' %}
     </div>
-    <div class="video_image_wrapper image-size--landscapeCropped absolute top-0 left-0 w-full h-full">
+    <div class="video_image_wrapper image-size--landscapeCropped absolute top-0 left-0 w-full h-full z-10" x-show="!playing">
       <img loading="lazy" src="{{ image.src }}" alt="{{ image.alt }}" class="video_image w-full h-full object-cover">
     </div>
     <div class="video_container">
       <div class="video_player_wrapper">
-        <div class="video_player" data-video-id="{{ video_id }}" ></div>
+        <div class="video_player" x-ref="player" data-video-id="{{ video_id }}"></div>
       </div>
     </div>
   </div>
   {% if caption %}
     <figcaption class="video_caption">{{ caption }}</figcaption>
-  {% endif %}
+  {% endif %}    
 </figure>
+

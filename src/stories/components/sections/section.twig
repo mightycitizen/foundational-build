@@ -53,10 +53,10 @@
   {{ section_class | default }} 
   {% if style | default %}section--{{ style }} {% endif %} 
   {% if collapse | default %}section--collapse{% endif %}" 
-  x-data="{{'{'}} show: false {{'}'}}"  x-intersect="show = true" >
+    x-data="{{'{'}} show: false {{'}'}}"  x-intersect="show = true" >
   {% if section_background | default %}
     <div class="position-unset">
-      {% if section_background | default %}<img class=" section_background absolute object-cover left-0 h-full w-full top-0 opacity-30" src="{{ section_background.src }}" loading="lazy"/>{% endif %}
+      {% if section_background | default %}<img class=" section_background absolute object-cover left-0 h-full w-full top-0 opacity-30" src="{{ section_background.src }}" alt="" loading="lazy"/>{% endif %}
       {# {% if section_background_slick | default %}<img class="section_background" data-slick-background="{{ section_background_slick }}"/>{% endif %} #}
     </div>
   {% endif %}

@@ -120,6 +120,10 @@
             }
         }
     }
+
+    iframe, img{
+        @apply max-w-full;
+    }
     
 
     ul, ol{

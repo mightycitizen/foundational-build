@@ -1,6 +1,6 @@
 <div class="l-wrapper no-js">
   {% include "@layout/wrapper/header.twig" %}
-  <div class="l-main" id="main">
+  <main class="l-main" id="main">
     {% include '@components/informational/alert/alert.twig' with {
       alert_label: "Alert",
       text: "Important message goes here and is an optional link lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -13,7 +13,7 @@
       {% block main %}
       {% endblock %}
     </div>
-  </div>
+  </main>
   {% include "@layout/wrapper/footer.twig" %}
   {% if cookie | default %}
     {% include '@components/informational/alert/alert.twig' with {

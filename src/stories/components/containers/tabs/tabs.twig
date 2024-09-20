@@ -30,15 +30,15 @@
       }{{ ' }'}}">
 
 
-  <ul class="tabs list-none mb-0 flex max-w-full overflow-x-auto no-scrollbar" data-tabs id="{{ tabs_id | default }}" x-ref="tabNav">
+  <ul class="tabs list-none mb-0 flex max-w-full overflow-x-auto no-scrollbar" id="{{ tabs_id | default }}" x-ref="tabNav">
     {% for tab in tabs %}
       <li class="tabs-title font-bold mr-1" :class="expanded === {{ loop.index0 }} ? 'bg-primary text-white' : 'bg-gray-100'">
-        <button @click="expanded = {{ loop.index0 }}; handleTabChange($event);" class="bg-gray-lightest px-2 lg:px-10 py-1 lg:py-3 whitespace-nowrap" data-href="#{{ tab.id }}" aria-selected="true">{{ tab.text }}</button>
+        <button @click="expanded = {{ loop.index0 }}; handleTabChange($event);" class="bg-gray-lightest px-2 lg:px-10 py-1 lg:py-3 whitespace-nowrap" >{{ tab.text }}</button>
       </li>
     {% endfor %}
   </ul>
 
-  <div class="tabs-content shadow-lg" data-tabs-content="{{ tabs_id | default  }}">
+  <div class="tabs-content shadow-lg" >
 
       {% for tab in tabs %}
         <div  x-show="expanded === {{ loop.index0 }}" tabindex="0" id="{{ tab.id }}" class="tabs-panel py-8 lg:py-10 px-8">

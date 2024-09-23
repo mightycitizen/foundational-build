@@ -30,10 +30,17 @@
       }{{ ' }'}}">
 
 
-  <ul class="tabs list-none mb-0 flex max-w-full overflow-x-auto no-scrollbar" id="{{ tabs_id | default }}" x-ref="tabNav">
+  <ul class="tabs list-none mb-0 flex max-w-full overflow-x-auto no-scrollbar" id="{{ tabs_id | default }}" x-ref="tabNav"
+    @keydown.home="expanded = 0; $refs.tabNav.children[0].querySelector('button').focus();"
+    @keydown.end="expanded = {{ tabs|length - 1 }}; $refs.tabNav.children[{{ tabs|length - 1 }}].querySelector('button').focus();"
+    @keydown.left="if (expanded > 0) { expanded--; $refs.tabNav.children[expanded].querySelector('button').focus(); }" 
+    @keydown.right="if (expanded < {{ tabs|length - 1 }}) { expanded++; $refs.tabNav.children[expanded].querySelector('button').focus(); }" 
+  >
     {% for tab in tabs %}
-      <li class="tabs_title font-bold mr-1" :class="expanded === {{ loop.index0 }} ? 'bg-primary text-white' : 'bg-gray-100'">
-        <button @click="expanded = {{ loop.index0 }}; handleTabChange($event);" class="bg-gray-lightest px-2 lg:px-10 py-1 lg:py-3 whitespace-nowrap" >{{ tab.text }}</button>
+      <li class="tabs_title font-bold mr-1" :class="expanded === {{ loop.index0 }} ? 'bg-primary text-white' : 'bg-gray-100 hover:bg-gray-200'">
+        <button 
+          :tabIndex="expanded === {{ loop.index0 }} ? 0 : -1"
+          @click="expanded = {{ loop.index0 }}; handleTabChange($event);" class="px-2 lg:px-10 py-1 lg:py-3 whitespace-nowrap" >{{ tab.text }}</button>
       </li>
     {% endfor %}
   </ul>

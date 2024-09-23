@@ -8,7 +8,7 @@
 
 {% set intro %}
   {% if section_heading | default %}
-      <div class="section_intro {{ intro_class }}">
+      <div class="section_intro {{ intro_class }} {% if exclude_container | default %}container{% endif %}">
         <div class="grid {% if section_image | default %}grid-cols-12{% endif %} gap-y-6 gap-x-10 items-center justify-center">
           {% if section_image | default %}
             <div class="col-span-12 md:col-span-5 lg:col-span-6" >

@@ -232,7 +232,7 @@ const defaultOptions = {
   adaptiveHeight: true,
   waitForAnimate: false,
   customPaging : function(slider, i) {    
-    let dotClasses = 'w-4 md:w-6 aspect-square rounded-full  border-2 border-primary bg-primary';
+    let dotClasses = 'w-4 md:w-6 aspect-square rounded-full  border-2 border-primary bg-primary hover:bg-primary-700';
     if (mobilePager){
       dotClasses = '!text-sm md:w-6 md:h-6 md:rounded-full md:bg-primary md:border-2 md:border-primary ' + (i === 0 || i === slider.slideCount - 1 ? '' : '!hidden md:!block');
     }    

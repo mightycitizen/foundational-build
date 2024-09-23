@@ -2,9 +2,9 @@
 
 @layer base {
 
-    .l-skip {
+    /* .l-skip {
         @apply sr-only;
-    }
+    } */
 
     h1,
     h2,
@@ -236,6 +236,9 @@
 @layer components {
 
 
+    [type='text'], input:where(:not([type])), [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select{
+        @apply border-gray-200;
+    }
     /* Custom checkbox and radio styles */
     .custom,
     .fui-input {

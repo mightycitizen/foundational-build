@@ -4,8 +4,9 @@
 	    breakpoint: 1024,
 	    dropdownOpen: { sm: null, lg: null },	    
       align: 'left',
+      timeout: null,
 	    toggleDropdown(index) {
-	      if (size === 'sm') {
+	      if (window.innerWidth <= this.breakpoint) {
 	        this.dropdownOpen.sm = this.dropdownOpen.sm === index ? null : index;
 	      }
 	    },
@@ -34,29 +35,57 @@
         }
       },
 	    handleMouseEnter(index) {
-        this.align = 'left';
-	      if (window.innerWidth > this.breakpoint) this.dropdownOpen['sm'] = index;
-        setTimeout(() => {
-          this.checkDropdownPosition();
-        }, 10);        
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(() => {
+          this.align = 'left';
+          if (window.innerWidth > this.breakpoint) this.dropdownOpen['lg'] = index;
+          setTimeout(() => {
+            this.checkDropdownPosition();
+          }, 10);        
+        }, 100);
+        
         
 	    },
-	    handleMouseLeave() {
-	      if (window.innerWidth > this.breakpoint) this.dropdownOpen['lg'] = null;
-	    }
+	    handleMouseLeave() {        
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(() => {
+	        if (window.innerWidth > this.breakpoint) this.dropdownOpen['lg'] = null;        
+        }, 100);        
+	    },
+      handleDirection(direction){        
+        if (direction === 'left') {
+          if (this.dropdownOpen.lg > 0) { 
+            this.dropdownOpen.lg--;             
+          }
+        } else {
+          if (this.dropdownOpen.lg < $refs.topbar.children.length - 1) { 
+            this.dropdownOpen.lg++; 
+          }
+        }        
+        $refs.topbar.children[this.dropdownOpen.lg].querySelector('a').focus(); 
+      }
 	  }" class="absolute z-20 bg-white w-full py-4 lg:mt-4 lg:relative lg:block shadow-md lg:shadow-none lg:py-0" :class="(mainMenu ? '' : 'hidden')">
 	<div class="container">
-		<ul role="menubar" class="flex flex-col justify-between gap-x-3 list-none lg:-mx-6 lg:flex-row" >
+		<ul role="menubar"   
+      x-ref="topbar"  
+      @keydown.left="handleDirection('left')" 
+      @keydown.right="handleDirection('right')" 
+      class="flex flex-col justify-between gap-x-3 list-none lg:-mx-6 lg:flex-row" >
 			{% for link in menu %}
-				<li role="presentation" class="relative lg:border-0 {{ loop.last == false ? 'border-b border-gray-200' : '' }}" 
-          {% if link.children %}
-          @mouseenter="handleMouseEnter({{ loop.index0 }})" 
-          @mouseleave="handleMouseLeave()"
+				<li 
+          @focusin="dropdownOpen.lg = {{ loop.index0 }}"    
+          role="presentation" class="relative lg:border-0 {{ loop.last == false ? 'border-b border-gray-200' : '' }}" 
+          {% if link.children %}            
+            @mouseenter="handleMouseEnter({{ loop.index0 }})" 
+            @mouseleave="handleMouseLeave()"
           {% endif %}
           >
 
 					{% if link.children | length %}
-						<button @click="toggleDropdown({{ loop.index0 }})" class="py-3 text-black no-underline w-full font-bold flex items-center gap-2 justify-between leading-5 lg:hidden" {% if link.new_window | default %} target="_blank" rel="noopener" {% endif %} role="menuitem">
+						<button 
+              @keydown.enter="toggleDropdown({{ loop.index0 }})"
+              @click="toggleDropdown({{ loop.index0 }})" 
+              class="py-3 text-black no-underline w-full font-bold flex items-center gap-2 justify-between leading-5 lg:hidden" {% if link.new_window | default %} target="_blank" rel="noopener" {% endif %} role="menuitem">
 							{{ link.parent_text | default is not empty ? link.parent_text : link.text }}
 							<span :class="(dropdownOpen.sm === {{ loop.index0 }} ? 'rotate-180' : '') + ' ' + (dropdownOpen.lg === {{ loop.index0 }} ? 'lg:text-white' : 'lg:text-primary')" class="icon-chevron-down text-xs text-primary"></span>
 						</button>
@@ -78,8 +107,7 @@
                     
 								    },
                     checkDropdownPosition() {
-                      if (window.innerWidth > this.breakpoint) {
-                        console.log($el);
+                      if (window.innerWidth > this.breakpoint) {                        
                         const dropdown = $el.querySelector('.dropdown:not(.hidden)');
                         
                         if (!dropdown) {
@@ -101,14 +129,18 @@
                       }
                     },                    
 								    handleChildMouseEnter(index) {
-                      this.childAlign = 'left';
-								      if (window.innerWidth > this.breakpoint) this.childOpen.lg = index;
-                      setTimeout(() => {
-                        this.checkDropdownPosition();
-                      }, 25);                          
+                      this.timeout = setTimeout(() => {
+                        this.childAlign = 'left';
+                        if (window.innerWidth > this.breakpoint) this.childOpen.lg = index;
+                        setTimeout(() => {
+                          this.checkDropdownPosition();
+                        }, 25);                          
+                      }, 100);
 								    },
 								    handleChildMouseLeave() {
-								      if (window.innerWidth > this.breakpoint) this.childOpen.lg = null;
+                      this.timeout = setTimeout(() => {
+								        if (window.innerWidth > this.breakpoint) this.childOpen.lg = null;
+                      }, 100);
 								    }
 								  }">
 							<li role="presentation" class="parent-link font-bold lg:px-6 py-1">
@@ -117,6 +149,7 @@
 							</li>
 							{% for child in link.children %}
 								<li 
+                  @focusin="childOpen.lg = {{ loop.index0 }}"    
                   class="py-1 lg:px-6" 
                   {% if child.children %}
                     :class="childOpen.lg === {{ loop.index0 }} ? '{{ grandchildBackground }}' : ''"  

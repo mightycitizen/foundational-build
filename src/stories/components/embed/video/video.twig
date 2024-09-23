@@ -1,6 +1,7 @@
 
 
-<figure x-data="{
+<figure  
+ x-data="{
     loading: true,
     playing: false,
     player: null,
@@ -77,6 +78,9 @@
           play: () => player.play(),
           pause: () => player.pause()
         };
+        const iframe = player.element;
+        // set tabindex to -1
+        iframe.setAttribute('tabindex', '-1');
         {# if (this.trigger === 'background') this.player.play(); #}
         
         
@@ -91,11 +95,10 @@
     handleClick() {
       if (!this.player) return;    
       
-      if (this.videoType === 'youtube') {        
-        this.playing ? this.player.pauseVideo() : this.player.playVideo();
-      
-      } else {       
-        this.playing ? this.player.pause() : this.player.play();      
+      if (this.playing) {
+        this.player.pause();
+      } else {
+        this.player.play();
       }
       
       this.playing = !this.playing; // Toggle playing state
@@ -107,7 +110,14 @@
       if (this.firstPlay && this.trigger !== 'background') {
         setTimeout(() => { this.player.pauseVideo(); }, 5);
       }
+
       this.firstPlay = false;
+      const iframe = this.player.g;
+      // set tabindex to -1
+      iframe.setAttribute('tabindex', '-1');
+
+      this.player.play = () => { this.player.playVideo(); };
+      this.player.pause = () => { this.player.pauseVideo(); };
     },
 
     onPlayerStateChange(event) {
@@ -144,7 +154,7 @@
 
     <div class="video_container " :class="playing ? 'z-10' : 'z-0 opacity-0 absolute top-0 left-0'" >
       <div class="video_player_wrapper">
-        <div class="video_player" x-ref="player" data-video-id="{{ video_id }}"></div>
+        <div class="video_player" x-ref="player" x-trap="playing" data-video-id="{{ video_id }}"></div>
       </div>
     </div>
   </div>

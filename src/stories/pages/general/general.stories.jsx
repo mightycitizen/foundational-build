@@ -220,6 +220,7 @@ const defaultArgs = {
     {
       module_type: 'statistics',
       section_heading: 'Statistics',
+      section_class: "bg-primary-100",
       section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       statistics:  Array.from({length: 3}, (v, i) => {
         return {

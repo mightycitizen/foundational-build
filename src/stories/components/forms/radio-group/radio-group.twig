@@ -1,4 +1,4 @@
-  <fieldset class="options">
+  <fieldset class="options my-4">
     <legend>{{ label }} {% if required | default %}<span class="form-required">*</span>{% endif %}</legend>
     <ul class="radio-group list-none">
       {% for option in options %}
@@ -8,7 +8,7 @@
         </li>
       {% endfor %}
     </ul>
-    {% if required %}
+    {# {% if required %}
       <span class="form-error block">{{ label }} is required</span>
-    {% endif %}
+    {% endif %} #}
   </fieldset>

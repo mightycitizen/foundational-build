@@ -1,4 +1,4 @@
-  <fieldset class="options">
+  <fieldset class="options my-4">
     <legend>{{ label }} {% if required | default %}<span class="form-required">*</span>{% endif %}</legend>
     <ul class="checkbox-group list-none">
       {% for option in options %}
@@ -10,7 +10,7 @@
         } only %}</li>
       {% endfor %}
     </ul>
-    {% if required %}
+    {# {% if required %}
       <span class="form-error">{{ label }} is required</span>
-    {% endif %}
+    {% endif %} #}
   </fieldset>

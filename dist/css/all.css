@@ -2015,8 +2015,17 @@ input[type="radio"]:focus:not(:checked).custom,
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 34 34 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-70 {
   --tw-bg-opacity: 0.7;
+}
+
+.bg-opacity-30 {
+  --tw-bg-opacity: 0.3;
 }
 
 .bg-gradient-to-b {
@@ -2395,6 +2404,11 @@ input[type="radio"]:focus:not(:checked).custom,
           text-decoration-line: underline;
 }
 
+.hover\:no-underline:hover {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
 .focus\:opacity-100:focus {
   opacity: 1;
 }
@@ -2681,6 +2695,11 @@ input[type="radio"]:focus:not(:checked).custom,
   .lg\:bg-white {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+
+  .lg\:bg-primary-100 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(226 232 247 / var(--tw-bg-opacity));
   }
 
   .lg\:bg-gradient-to-r {

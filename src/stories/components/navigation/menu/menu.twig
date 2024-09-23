@@ -1,4 +1,3 @@
-{% set grandchildBackground = 'bg-primary-100' %}
 
 <div id="main-menu" x-data="{
 	    breakpoint: 1024,
@@ -9,6 +8,7 @@
 	      if (window.innerWidth <= this.breakpoint) {
 	        this.dropdownOpen.sm = this.dropdownOpen.sm === index ? null : index;
 	      }
+        console.log(this.dropdownOpen);
 	    },
       checkDropdownPosition() {
         if (window.innerWidth > this.breakpoint) {
@@ -73,7 +73,7 @@
       class="flex flex-col justify-between gap-x-3 list-none lg:-mx-6 lg:flex-row" >
 			{% for link in menu %}
 				<li 
-          @focusin="dropdownOpen.lg = {{ loop.index0 }}"    
+          @focusin="if (window.innerWidth > this.breakpoint) dropdownOpen.lg = {{ loop.index0 }}"    
           role="presentation" class="relative lg:border-0 {{ loop.last == false ? 'border-b border-gray-200' : '' }}" 
           {% if link.children %}            
             @mouseenter="handleMouseEnter({{ loop.index0 }})" 
@@ -82,8 +82,7 @@
           >
 
 					{% if link.children | length %}
-						<button 
-              @keydown.enter="toggleDropdown({{ loop.index0 }})"
+						<button               
               @click="toggleDropdown({{ loop.index0 }})" 
               class="py-3 text-black no-underline w-full font-bold flex items-center gap-2 justify-between leading-5 lg:hidden" {% if link.new_window | default %} target="_blank" rel="noopener" {% endif %} role="menuitem">
 							{{ link.parent_text | default is not empty ? link.parent_text : link.text }}
@@ -149,29 +148,33 @@
 							</li>
 							{% for child in link.children %}
 								<li 
-                  @focusin="childOpen.lg = {{ loop.index0 }}"    
+                  @focusin="if (window.innerWidth > this.breakpoint) childOpen.lg = {{ loop.index0 }}"    
                   class="py-1 lg:px-6" 
                   {% if child.children %}
-                    :class="childOpen.lg === {{ loop.index0 }} ? '{{ grandchildBackground }}' : ''"  
+                    :class="childOpen.lg === {{ loop.index0 }} ? 'lg:bg-primary-100' : ''"  
                     @mouseenter="handleChildMouseEnter({{ loop.index0 }})" 
                     @mouseleave="handleChildMouseLeave()"
                   {% endif %}>
 									{% if child.children | default %}
-										<button @click="toggleChildDropdown({{ loop.index0 }})" role="menuitem" href="{{ child.url }}" class="flex items-center gap-2 justify-between w-full lg:hidden text-primary underline">
-											{{ child.text }}
+										<button @click="toggleChildDropdown({{ loop.index0 }})" role="menuitem" href="{{ child.url }}" class="flex items-center gap-2 justify-between w-full lg:hidden text-primary">
+                      <span class="underline hover:no-underline flex w-full">
+											  {{ child.text }}
+                      </span>
 											<span :class="childOpen.sm === {{ loop.index0 }} ? 'rotate-180' : ''" class="icon-chevron-down lg:hidden text-primary text-xs no-underline"></span>
 											<span class="icon-chevron-right hidden lg:block text-primary text-xs no-underline"></span>
 										</button>
 									{% endif %}
-									<a role="menuitem" class="{{ child.children ? 'hidden lg:flex justify-between gap-2 items-center w-full' : 'inline-flex' }}" href="{{ link.url }}">
-                    {{ child.text }}
+									<a role="menuitem" class="no-underline {{ child.children ? 'hidden lg:flex justify-between gap-2 items-center w-full' : 'inline-flex' }}" href="{{ link.url }}">
+                    <span class="underline flex w-full hover:no-underline">
+                      {{ child.text }}
+                    </span>
                     {% if child.children | default %}                      
                       <span class="icon-chevron-right hidden lg:block text-primary text-xs no-underline"></span>
                     {% endif %}
                   </a>
 
 									{% if child.children | default %}
-										<ul role="presentation" class="list-none dropdown lg:absolute my-3 lg:my-0 top-0 {{ grandchildBackground }} w-full lg:w-80 p-3 md:px-6 flex flex-col space-y-2 lg:shadow-md" :class="(childOpen.sm === {{ loop.index0 }} || childOpen.lg === {{ loop.index0 }} ? '' : 'hidden') + ' ' + (childAlign === 'right' ? 'lg:right-full' : 'lg:left-full')">
+										<ul role="presentation" class="list-none dropdown lg:absolute my-3 lg:my-0 top-0 bg-primary-100 w-full lg:w-80 p-3 md:px-6 flex flex-col space-y-2 lg:shadow-md" :class="(childOpen.sm === {{ loop.index0 }} || childOpen.lg === {{ loop.index0 }} ? '' : 'hidden') + ' ' + (childAlign === 'right' ? 'lg:right-full' : 'lg:left-full')">
 											<li role="presentation" class="font-bold">
 												<a {% if child.new_window | default %} target="_blank" rel="noopener" {% endif %} href="{{ child.url }}">{{ child.text }}
 													Overview</a>

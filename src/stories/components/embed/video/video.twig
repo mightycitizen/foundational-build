@@ -140,12 +140,13 @@
       }
     }
   }" x-init="init">
+  {% set overlay_class = 'bg-opacity-30 bg-black' %}
   <div class="video_wrapper relative" data-video-trigger="{{ trigger | default('click') }}" data-video-type="{{ video_type }}">
-    <button @click="handleClick" x-show="!loading && !playing" class="absolute left-0 top-0 z-20 w-full h-full cursor-pointer">
+    <button @click="handleClick" x-show="!loading && !playing" class="absolute left-0 top-0 z-20 w-full h-full cursor-pointer {{ overlay_class }}">
       <span class="icon-play text-white text-8xl"></span>
       <span class="sr-only">Pause/Play Video</span>
     </button>
-    <div class="video_loader absolute z-20 flex justify-center items-center h-full w-full" x-show="loading">
+    <div class="video_loader absolute z-20 flex justify-center items-center h-full w-full {{ overlay_class }}" x-show="loading">
       {% include '@components/utils/loader/loader.twig' %}
     </div>
     <div class="video_image_wrapper image-size--landscapeCropped z-10" x-show="!playing" >

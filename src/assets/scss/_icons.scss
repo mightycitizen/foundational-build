@@ -82,3 +82,14 @@
 
 
 }
+
+
+.icon-play{
+  // css triangle
+  width: 0;
+  height: 0;
+  border-left: rem-calc(10) solid transparent;
+  border-right: rem-calc(10) solid transparent;
+  border-top: rem-calc(15) solid $white;
+  
+}

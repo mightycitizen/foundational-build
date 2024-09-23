@@ -1,34 +1,41 @@
+<script src="https://www.youtube.com/iframe_api"></script>
+
 <figure x-data="{
     loading: true,
     playing: false,
     player: null,
-    youtubeId: '{{ video_id }}',
-    trigger: '{{ trigger | default('click') }}',
     firstPlay: true,
+    videoId: '{{ video_id }}',
+    trigger: '{{ trigger | default('click') }}',
+    videoType: '{{ video_type | default('youtube') }}',    
     
-
-
     init() {
-      this.loadYouTubeAPI();
+      if (window.videoPlayers === undefined) {
+        window.videoPlayers = [];
+      }
+      if (window.videoPlayers.includes(this.videoId)) {
+        return;
+      }
+      window.videoPlayers.push(this.videoId);
+
+      this.videoType === 'youtube' ? this.loadYouTubeAPI() : this.setupVimeoPlayer();
     },
 
     loadYouTubeAPI() {
       if (!window.YT) {
-        const tag = document.createElement('script');
-        tag.src = 'https://www.youtube.com/iframe_api';
-        document.body.appendChild(tag);
         window.onYouTubeIframeAPIReady = this.onYouTubeIframeAPIReady.bind(this);
-    }
+      } else {
+        this.onYouTubeIframeAPIReady();
+      }
     },
-    onYouTubeIframeAPIReady() {
 
-      const vid = this.$refs.player;
-      const youtubeId = vid.dataset.videoId;
-      this.player = new YT.Player(vid, {
+    onYouTubeIframeAPIReady() {
+      this.player = new YT.Player(this.$refs.player, {
+        videoId: this.videoId,
         playerVars: {
           'enablejsapi': 1,
           'fs': 1,
-          'playlist': youtubeId,
+          'playlist': this.videoId,
           'loop': 1,
           'modestbranding': 1,
           'autoplay': 0,
@@ -37,90 +44,98 @@
           'mute': 1,
           'rel': 0
         },
-        videoId: youtubeId,
         events: {
           'onReady': this.onPlayerReady.bind(this),
           'onStateChange': this.onPlayerStateChange.bind(this)
         }
       });
     },
-     handleClick() {      
-      if (!this.player) return;
-      if (this.playing) {
-        this.player.pauseVideo();
-        this.playing = false;
-      } else {
-        this.player.playVideo();
-        this.playing = true;
-      }
+
+    setupVimeoPlayer() {
+      const tag = document.createElement('script');
+      tag.src = 'https://player.vimeo.com/api/player.js';
+      tag.onload = this.onVimeoAPIReady.bind(this);
+      document.body.appendChild(tag);
     },
 
-    onPlayerReady(event) {      
+    onVimeoAPIReady() {
+      const vid = this.$refs.player;
+      const playerId = 'vimeo_' + this.videoId;
+      vid.setAttribute('id', playerId);
+      
+      const player = new Vimeo.Player(playerId, { id: this.videoId });            
+    
+      player.ready().then(() => {
+        this.loading = false;
+        this.setVideoSize();
+        this.player = {
+          play: () => player.play(),
+          pause: () => player.pause()
+        };
+        {# if (this.trigger === 'background') this.player.play(); #}
+        
+        {# this.player.on('play', () => { this.playing = true; }); #}
+        {# this.player.on('pause', () => { this.playing = false; }); #}
+      }).catch(error => {
+        console.error('Error with Vimeo player:', error);
+      });
+    },
+
+    handleClick() {
+      if (!this.player) return;    
+      
+      if (this.videoType === 'youtube') {        
+        this.playing ? this.player.pauseVideo() : this.player.playVideo();
+      
+      } else {       
+        this.playing ? this.player.pause() : this.player.play();      
+      }
+      
+      this.playing = !this.playing; // Toggle playing state
+    },
+
+    onPlayerReady() {
       this.loading = false;
       this.setVideoSize();
       if (this.firstPlay && this.trigger !== 'background') {
-        setTimeout(() => {
-          this.player.pauseVideo();
-        }, 5);
+        setTimeout(() => { this.player.pauseVideo(); }, 5);
       }
       this.firstPlay = false;
     },
 
     onPlayerStateChange(event) {
-      
-      if (this.firstPlay){
-        if (this.trigger !== 'background'){
-          setTimeout(() => {
-            this.player.pauseVideo();
-          }, 5);
-        }
-
-      }      
-      switch (event.data){
-        case 2:
-          setTimeout(() => {
-            switch (event.data){
-              case 2:
-                
-                this.playing = false;                
-                break;
-              case 1:
-                this.playing = true;
-                break;
-            }
-          }, 500);
-          break;
-        case 1:
-          if (!this.firstPlay) this.player.unMute();
-          this.playing = true;                    
-          break;
+      if (event.data === YT.PlayerState.PLAYING) {
+        this.playing = true;
+      } else if (event.data === YT.PlayerState.PAUSED) {
+        this.playing = false;
       }
     },
 
     setVideoSize() {
       const width = this.$el.clientWidth;
       const height = this.$el.clientHeight;
-
-      if (width / height > 1) {
+      if (this.videoType === 'youtube') {
         this.player.setSize(width, (width / 16) * 9);
       } else {
-        this.player.setSize((height / 9) * 16, height);
+        const iframe = this.$refs.player.querySelector('iframe');
+        iframe.style.width = `${width}px`;
+        iframe.style.height = `${height}px`;
       }
     }
   }" x-init="init">
-  <div 
-    class="video_wrapper relative"     
-    data-video-trigger="{{ trigger | default('click') }}" 
-    data-video-type="{{ video_type }}"    
-  >
-    <button @click="handleClick" class="absolute left-0 top-0 w-full h-full z-20">Play Video</button>
-    <div class="video_loader absolute z-10 flex justify-center items-center h-full w-full" x-show="loading">
+  <div class="video_wrapper relative" data-video-trigger="{{ trigger | default('click') }}" data-video-type="{{ video_type }}">
+    <button @click="handleClick" x-show="!loading && !playing" class="absolute left-0 top-0 z-20 w-full h-full cursor-pointer">
+      <span class="icon-play text-white text-8xl"></span>
+      <span class="sr-only">Pause/Play Video</span>
+    </button>
+    <div class="video_loader absolute z-20 flex justify-center items-center h-full w-full" x-show="loading">
       {% include '@components/utils/loader/loader.twig' %}
     </div>
-    <div class="video_image_wrapper image-size--landscapeCropped absolute top-0 left-0 w-full h-full z-10" x-show="!playing">
-      <img loading="lazy" src="{{ image.src }}" alt="{{ image.alt }}" class="video_image w-full h-full object-cover">
+    <div class="video_image_wrapper image-size--landscapeCropped z-10" x-show="!playing" >
+      <img src="{{ image.src }}" alt="{{ image.alt }}" class="w-full">
     </div>
-    <div class="video_container">
+
+    <div class="video_container " :class="playing ? 'z-10' : 'absolute top-0 left-0 w-full h-full z-0 opacity-0'" >
       <div class="video_player_wrapper">
         <div class="video_player" x-ref="player" data-video-id="{{ video_id }}"></div>
       </div>
@@ -128,6 +143,6 @@
   </div>
   {% if caption %}
     <figcaption class="video_caption">{{ caption }}</figcaption>
-  {% endif %}    
+  {% endif %}      
 </figure>
 

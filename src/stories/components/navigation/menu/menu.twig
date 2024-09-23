@@ -23,7 +23,7 @@
               {% endif %}
             </button>
             {% endif %}
-            <a role="menuitem"  :class="dropdownOpen.lg === {{ loop.index0 }} ? 'bg-primary text-white' : ''" class="{{ link.children ? 'hidden lg:inline-flex' : 'inline-flex' }} font-bold px-6 py-3 gap-2 leading-5 items-center lg:inline-flex text-black no-underline" href="{{ link.url }}">
+            <a x-on:focus="alert('test')"  role="menuitem"  :class="dropdownOpen.lg === {{ loop.index0 }} ? 'bg-primary text-white' : ''" class="{{ link.children ? 'hidden lg:inline-flex' : 'inline-flex' }} font-bold px-6 py-3 gap-2 leading-5 items-center lg:inline-flex text-black no-underline" href="{{ link.url }}">
               {{ link.text }}
                {% if link.children | default %}
                 <span :class="(dropdownOpen.sm === {{ loop.index0 }} ? 'rotate-180' : '') + ' ' + (dropdownOpen.lg === {{ loop.index0 }} ? 'lg:text-white' : 'lg:text-primary')"  class="icon-chevron-down text-xs text-primary" ></span>
@@ -43,8 +43,7 @@
               <li  
                 class="py-1 lg:px-6"
                 {% if child.children | default %}                
-                  :class="childOpen.lg === {{ loop.index0 }} ? '{{ grandchildBackground }}' : ''"
-                  
+                  :class="childOpen.lg === {{ loop.index0 }} ? '{{ grandchildBackground }}' : ''"                                    
                   @mouseenter="if(window.innerWidth > 1024) childOpen.lg = {{ loop.index0 }}" 
                   @mouseleave="if(window.innerWidth > 1024) childOpen.lg = null;" 
                 {% endif %}

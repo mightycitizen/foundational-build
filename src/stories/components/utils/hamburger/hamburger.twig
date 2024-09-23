@@ -1,6 +1,8 @@
 <button class="hamburger" type="button" id="hamburger" @click="{{ toggle }} = !{{ toggle }}" aria-label="Toggle navigation">
-  <span class="hamburger-icon">
-    <span class="hamburger-icon-bar"></span>
-  </span>
-  <span class="hamburger-text">Menu</span>
+	<div class="flex flex-col justify-between transform transition-all duration-300 group-focus:-rotate-[45deg] origin-center gap-2 relative w-10 h-5">
+		<div class="bg-black h-[2px] rounded origin-center transition-all absolute left-0 top-0 w-full" :class="{{ toggle }} ? 'rotate-45 translate-y-2' : ''"></div>
+		<div class="bg-black h-[2px] rounded absolute  w-full top-1/2 mt-0" x-show="!{{ toggle }}"></div>
+		<div class="bg-black h-[2px] rounded origin-center transition-all left-0 top-full absolute  w-full" :class="{{ toggle }} ? ' -rotate-45 -translate-y-3' : ''"></div>
+	</div>
+	<span class="hamburger-text mt-1 uppercase font-bold text-xs tracking-wider" x-text="{{ toggle }} ? 'Close' : 'Menu'">Menu</span>
 </button>

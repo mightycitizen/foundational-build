@@ -1,5 +1,5 @@
 <a href="#main" class="l-skip">Skip to main</a>
-<header class="l-header py-4 lg:pt-8 lg:pt-4" id="header" x-data="{{'{'}} mainMenu: false, dropdownOpen: {sm: null, lg: null} {{'}'}}">
+<header class="l-header py-4 lg:pt-8 lg:pt-4" id="header" x-data="{{'{'}} mainMenu: true, dropdownOpen: {sm: null, lg: null} {{'}'}}">
   <div class="container">
     <div class="grid grid-cols-12 gap-6 items-center justify-between">
       <div class="col-span-10 lg:col-span-9">
@@ -21,7 +21,7 @@
           {% include '@components/forms/simple-form/simple-form.twig' %}
         </div>#}
       </div>
-      <div class="col-span-2 lg:hidden">            
+      <div class="col-span-2 lg:hidden flex justify-end items-center">            
         {% include  "@components/utils/hamburger/hamburger.twig" with {
           toggle: "mainMenu"
         } %}

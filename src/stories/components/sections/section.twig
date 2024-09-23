@@ -50,9 +50,12 @@
   {% else %}
     py-10 lg:py-16
   {% endif %}  
+
   {{ section_class | default }} 
+  transition-opacity duration-1000 ease-in-out
   {% if style | default %}section--{{ style }} {% endif %} 
   {% if collapse | default %}section--collapse{% endif %}" 
+    :class="show ? 'opacity-100' : 'opacity-0'"    
     x-data="{{'{'}} show: false {{'}'}}"  x-intersect="show = true" >
   {% if section_background | default %}
     <div class="position-unset">

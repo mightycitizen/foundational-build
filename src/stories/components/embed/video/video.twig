@@ -1,4 +1,4 @@
-<script src="https://www.youtube.com/iframe_api"></script>
+
 
 <figure x-data="{
     loading: true,
@@ -22,6 +22,11 @@
     },
 
     loadYouTubeAPI() {
+      // load script instead 
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.body.appendChild(tag);
+
       if (!window.YT) {
         window.onYouTubeIframeAPIReady = this.onYouTubeIframeAPIReady.bind(this);
       } else {
@@ -137,7 +142,7 @@
       <img src="{{ image.src }}" alt="{{ image.alt }}" class="w-full">
     </div>
 
-    <div class="video_container " :class="playing ? 'z-10' : 'z-0 opacity-0 absolute'" >
+    <div class="video_container " :class="playing ? 'z-10' : 'z-0 opacity-0 absolute top-0 left-0'" >
       <div class="video_player_wrapper">
         <div class="video_player" x-ref="player" data-video-id="{{ video_id }}"></div>
       </div>

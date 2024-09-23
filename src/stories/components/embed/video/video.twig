@@ -74,11 +74,13 @@
         };
         {# if (this.trigger === 'background') this.player.play(); #}
         
-        {# this.player.on('play', () => { this.playing = true; }); #}
-        {# this.player.on('pause', () => { this.playing = false; }); #}
+        
       }).catch(error => {
         console.error('Error with Vimeo player:', error);
       });
+
+      player.on('play', () => { this.playing = true; }); 
+      player.on('pause', () => { this.playing = false; }); 
     },
 
     handleClick() {
@@ -135,7 +137,7 @@
       <img src="{{ image.src }}" alt="{{ image.alt }}" class="w-full">
     </div>
 
-    <div class="video_container " :class="playing ? 'z-10' : 'absolute top-0 left-0 w-full h-full z-0 opacity-0'" >
+    <div class="video_container " :class="playing ? 'z-10' : 'z-0 opacity-0 absolute'" >
       <div class="video_player_wrapper">
         <div class="video_player" x-ref="player" data-video-id="{{ video_id }}"></div>
       </div>

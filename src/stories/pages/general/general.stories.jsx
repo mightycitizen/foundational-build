@@ -31,7 +31,15 @@ const defaultArgs = {
     },
     {
       module_type: 'video',
-      ...video
+      ...video,
+      caption: "Youtube Video Example"
+    },
+    {
+      module_type: 'video',
+      ...video,
+      video_type: 'vimeo',
+      video_id: '559422073',
+      caption: "Vimeo Video Example"
     },
     {
       module_type: 'contact',

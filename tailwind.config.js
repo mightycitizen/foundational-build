@@ -23,13 +23,14 @@ Object.keys(palettes).forEach(key => {
 
 
 
+
 colors = {
   ...colors,
   ...brandPalette
 };
 
 module.exports = {
-  content: ['./src/**/*.{html,js,twig,jsx}'],
+  content: ['./src/assets/js/**/*.js', './src/stories/{components,layout,pages}/**/*.{twig,jsx}'],
   theme: {
     container: {
       center: true,

@@ -22,7 +22,7 @@ const defaultArgs = {
   video_type: "youtube",
   video_id: "gJ6APKIjFQY",
   image: {
-    src: "//via.placeholder.com/900x500",
+    src: "https://placehold.co/900x500",
     alt: ""
   }
 };

@@ -64,7 +64,6 @@ const cards = [...Array(5)].map((_, i) => ( {
     url: '#',
     level: 3
   },
-  summary: 'Summary',
   image: {
     src: '//via.placeholder.com/430x230',
     alt: 'Alt Text'

@@ -7,7 +7,7 @@
   }%}
     {% block slide_content %}
       {% for card in cards %}
-        <div class="mx-2 my-2">
+        <div class="lg:mx-2 my-2">
           {% set card = card | merge({
             lazyload_attr: 'data-lazy',
             class: 'w-full',

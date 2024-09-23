@@ -22,7 +22,7 @@
       {% endif %}
     </div>
   {% endif %}
-  <div class="card_section px-3 lg:px-4 pt-4 pb-4 lg:pb-5" {% if equalize | default %}data-equalizer-watch{% endif %}>
+  <div class="card_section px-6 lg:px-4 py-6 lg:pb-5" {% if equalize | default %}data-equalizer-watch{% endif %}>
     {% if image | default is empty %}
         {% if flag | default %}
           {% include '@components/inline-text/flag/flag.twig' with {

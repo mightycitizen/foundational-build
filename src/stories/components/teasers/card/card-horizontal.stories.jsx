@@ -18,7 +18,7 @@ const imageDimensions = sizes.landscapeCroppedMedium;
 const defaultArgs = {
   ...card,
   image: {
-    src: `//via.placeholder.com/${imageDimensions.width}x${imageDimensions.height}`,
+    src: `https://placehold.co/${imageDimensions.width}x${imageDimensions.height}`,
     alt: 'Alt Text'
   }
 }

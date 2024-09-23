@@ -23,7 +23,7 @@ const defaultArgs = {
   section_heading: 'Heading',
   section_description: 'Description',
   image: {
-    src: '//via.placeholder.com/430x230',
+    src: 'https://placehold.co/430x230',
     alt: 'Alt Text'
   },
   quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl. Nullam auctor, nisl eget ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl.',

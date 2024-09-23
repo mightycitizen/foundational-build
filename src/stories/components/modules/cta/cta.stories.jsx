@@ -33,7 +33,7 @@ Default.args = defaultArgs;
 export const Image = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Image.args = Object.assign({...defaultArgs}, {section_image: {
-  src: '//via.placeholder.com/632x400',
+  src: 'https://placehold.co/632x400',
   alt: 'Image'}
 });
 
@@ -41,6 +41,6 @@ Image.args = Object.assign({...defaultArgs}, {section_image: {
 export const BackgroundImage = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 BackgroundImage.args = Object.assign({...defaultArgs}, {section_background: {
-    src: '//via.placeholder.com/1200x500',
+    src: 'https://placehold.co/1200x500',
     alt: 'Image'}
 });

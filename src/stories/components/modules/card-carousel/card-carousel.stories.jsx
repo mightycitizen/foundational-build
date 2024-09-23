@@ -24,7 +24,7 @@ const cards = [...Array(5)].map((_, i) => ( {
     level: 3
   },
   image: {
-    src: '//via.placeholder.com/430x230',
+    src: 'https://placehold.co/430x230',
     alt: 'Alt Text'
   },
   link: {

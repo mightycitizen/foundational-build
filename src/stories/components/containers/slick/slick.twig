@@ -24,7 +24,7 @@
           </button>
         {% endif %}
 
-      <button data-slick="{{ id | default }}" class="slick-prev arrow arrow--prev">Previous</button>
+      <button data-slick="{{ id | default }}" class="slick-prev">Previous</button>
       <ul class="slick_tabs" data-slick="{{ id | default }}" data-slick-tabs>
       {% for slide in slides %}
         <li>
@@ -32,7 +32,7 @@
         </li>
       {% endfor %}
       </ul>
-      <button data-slick="{{ id | default }}" class="slick-next arrow arrow--next">Next</button>
+      <button data-slick="{{ id | default }}" class="slick-next">Next</button>
     </div>
   {% endif %}
 </div>

@@ -25,7 +25,7 @@ const cards = [{
   },
   summary: 'Summary Text Long here to show how it wraps lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consectetur ipsum. Nulla nec purus feugiat, molestie ipsum et, consectetur ipsum.',
   image: {
-    src: '//via.placeholder.com/430x230',
+    src: 'https://placehold.co/430x230',
     alt: 'Alt Text'
   },
   link: {
@@ -40,7 +40,7 @@ const cards = [{
   },
   summary: 'Summary',
   image: {
-    src: '//via.placeholder.com/430x230',
+    src: 'https://placehold.co/430x230',
     alt: 'Alt Text'
   },
   link: {

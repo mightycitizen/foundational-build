@@ -21,7 +21,7 @@ export const Image = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Image.args = Object.assign({...defaultArgs}, {
   image: {
-    src: 'https://via.placeholder.com/1600x900',
+    src: 'https:https://placehold.co/1600x900',
     alt: 'Placeholder Image',
   }
 });

@@ -71,7 +71,7 @@ const FeaturedImage = Template.bind({});
 FeaturedImage.args = {
   ...defaultArgs,
   featured_image: {
-    src: '//via.placeholder.com/430x230',
+    src: 'https://placehold.co/430x230',
     alt: ''
   }
 }

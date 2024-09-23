@@ -30,7 +30,7 @@ const imageDimensions = sizes.landscapeCroppedMedium;
 Image.args = {
   ...defaultArgs,
   image: {
-    src: `//via.placeholder.com/${imageDimensions.width}x${imageDimensions.height}`,
+    src: `https://placehold.co/${imageDimensions.width}x${imageDimensions.height}`,
     alt: 'Alt Text'
   },
 }

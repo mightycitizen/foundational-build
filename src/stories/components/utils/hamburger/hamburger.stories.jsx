@@ -11,6 +11,11 @@ export default {
 
 };
 
+const defaultArgs = {
+  is_demo: true,
+  toggle: 'open'
+}
+
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
 const Template = ({ label, ...args }) => {
   // You can either use a function to create DOM elements or use a plain html string!
@@ -18,4 +23,10 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
-export const Hamburger = Template.bind({});
+
+
+const Hamburger = Template.bind({});
+
+Hamburger.args = defaultArgs;
+
+export { Hamburger };

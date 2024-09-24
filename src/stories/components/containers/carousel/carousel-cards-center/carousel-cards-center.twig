@@ -10,8 +10,8 @@
           class: 'w-full',
           modifier: "special"
         }) %}
-        
-        <div class="{{ loop.first ? 'slick-animate ' : '' }} lg:mx-2 my-2">
+                
+        <div class="{{ loop.index == (cards|length / 2)|round(1, 'floor')  ? 'slick-animate ' : '' }} lg:mx-2 my-2">
           {% include "@components/teasers/card/card.twig" with card only
           %}
         </div>

@@ -195,31 +195,36 @@ const slickEvents = ($slick) => {
 
 
     setTimeout(() => {
-      $('.slick-clone-current').addClass('slick-animate');
-      $(slick.$slides[cur]).addClass('slick-animate');
+      
       slick.$slider.find('.slick-slide').removeClass('slick-animating');
 
     }, 5);
   })
-  $slick.on('beforeChange', function(event, slick, cur, next){
-    slickGo(slick, next);
-    slickBackground(slick, next);
+  $slick.on('beforeChange', function(event, slick, cur, nextSlide){
+    slickGo(slick, nextSlide);
+    slickBackground(slick, nextSlide);
     slickProgress(slick, true);
     $('.' + slickActiveClass).removeClass(slickActiveClass);
     // slick active class start
     // slick active class end
 
-    // animating class to hide elements within slide during transition
     slick.$slider.find('.slick-slide').addClass('slick-animating');
 
     setTimeout(() => {
-      // class to key animations within slide
+      // Class to key animations within slide
       slick.$slider.find('.slick-slide').removeClass('slick-animate');
+      setTimeout(() => {
+        // add class to animate the current slide
+        $(slick.$slides[nextSlide]).addClass('slick-animate');
+      }, 100);
+
     }, 5);
+
+
   })
 }
 
-const arrowClass = 'aspect-square bg-primary hover:bg-primary-700 text-white rounded-full w-10 flex items-center justify-center';
+const arrowClass = 'aspect-square button rounded-full w-10 flex items-center justify-center p-0';
 const mobilePager = false;
 const defaultOptions = {
   slidesToScroll: 1,
@@ -386,7 +391,7 @@ export const initSlick = () => {
       adaptiveHeight: false,
       variableWidth: true,
       waitForAnimate: true,
-      infinite: true,
+      infinite: false,
       responsive: [
         {
 
@@ -407,6 +412,10 @@ export const initSlick = () => {
     });
 
     $this.slick(slickOptions);
+    const slideCount = $this.slick('getSlick').slideCount;
+    const middleSlide = Math.floor(slideCount / 2);
+
+    $this.slick('slickGoTo', middleSlide);
 
   });
 

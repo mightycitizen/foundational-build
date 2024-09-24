@@ -1,5 +1,5 @@
 
-  <form {% if action | default %}action="{{ action }}"{% endif %} {% if ajax | default %}class="js-ajax"{% endif %}>
+  <form {% if action | default %}action="{{ action }}"{% endif %} {% if ajax | default %}x-data @change="if ($event.target.matches('select, input')) { $el.dispatchEvent(new Event('submit')); $el.submit() }" {% endif %} >
     {% embed '@components/forms/form-group/form-group.twig' %}
       {% block form_content %}
         {% if keyword_filter | default %}
@@ -7,7 +7,7 @@
             {% include '@components/forms/text/text.twig' with {
               value: queryParam | default,
               label: label | default("Keywords"),
-              id: input_id | default("keywords"),
+              id: input_id | default("keywords"), 
               placeholder: placeholder | default("Filter by keywords"),
               name: input_name | default('q')
             }

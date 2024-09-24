@@ -1,10 +1,15 @@
 {% set hamburger_class = 'bg-primary h-[3px] rounded absolute w-full' %}
-
-<button class="hamburger flex items-center flex-col" type="button" id="hamburger" @click="{{ toggle }} = !{{ toggle }}" aria-label="Toggle navigation">
-	<div class="relative w-8 h-5">
-		<div class="{{ hamburger_class }} origin-center transition-all left-0 top-0" :class="{{ toggle }} ? 'rotate-45 translate-y-2' : ''"></div>
-		<div class="{{ hamburger_class }} top-1/2 mt-0" x-show="!{{ toggle }}"></div>
-		<div class="{{ hamburger_class }} origin-center transition-all left-0 top-full" :class="{{ toggle }} ? ' -rotate-45 -translate-y-3' : ''"></div>
-	</div>
-	<span class="hamburger-text mt-2 uppercase font-bold text-xs tracking-wider" x-text="{{ toggle }} ? 'Close' : 'Menu'">Menu</span>
-</button>
+{% if is_demo | default %}
+<div x-data="{ {{ toggle }}: false }">
+{% endif %}
+  <button class="hamburger flex items-center flex-col" type="button" id="hamburger" @click="{{ toggle }} = !{{ toggle }}" aria-label="Toggle navigation">
+    <div class="relative w-8 h-5">
+      <div class="{{ hamburger_class }} origin-center transition-all left-0 top-0" :class="{{ toggle }} ? 'rotate-45 translate-y-2' : ''"></div>
+      <div class="{{ hamburger_class }} top-1/2 mt-0" x-show="!{{ toggle }}"></div>
+      <div class="{{ hamburger_class }} origin-center transition-all left-0 top-full" :class="{{ toggle }} ? ' -rotate-45 -translate-y-3' : ''"></div>
+    </div>
+    <span class="hamburger-text mt-2 uppercase font-bold text-xs tracking-wider" x-text="{{ toggle }} ? 'Close' : 'Menu'">Menu</span>
+  </button>
+{% if is_demo | default %}  
+</div>
+{% endif %}

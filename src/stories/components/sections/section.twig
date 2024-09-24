@@ -65,8 +65,8 @@
   {% endif %}
   <div class="{% if exclude_container | default %}max-w-full lg:px-0{% endif %} {{ width_class | default }} container {{ grid_class | default }} relative z-10" >
     {% if section_style | default and (section_style == 'side') %}
-      <div class="grid grid-cols-12 items-center justify-center gap-y-2 lg:gap-y-4">
-        <div class="col-span-12 md:col-span-8">
+      <div class="grid grid-cols-12 items-center justify-center gap-y-8">
+        <div class="col-span-12 lg:col-span-8">
           {{ intro }}
         </div>
         <div class="col-span-12 lg:col-span-4">
@@ -74,7 +74,7 @@
         </div>
       </div>
     {% else %}
-      <div class="flex flex-col space-y-8">
+      <div class="flex flex-col gap-y-8">
         {{ intro }}
         {{ content }}
       </div>

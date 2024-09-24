@@ -351,16 +351,9 @@ export const initSlick = () => {
       appendArrows: $this.next('.slick-nav'),
       appendDots: $this.next('.slick-nav'),
       responsive: [
+        
         {
         breakpoint: breakpoints.large,
-        settings: {
-          //adaptiveHeight: true,
-          slidesToScroll: 2,
-          slidesToShow: 2
-        }
-      },
-        {
-        breakpoint: breakpoints.medium,
         settings: {
           //adaptiveHeight: true,
           slidesToScroll: 1,
@@ -396,7 +389,7 @@ export const initSlick = () => {
       responsive: [
         {
 
-          breakpoint: breakpoints.medium,
+          breakpoint: breakpoints.large,
           settings: {
             centerMode: false,
             centerPadding: 0,

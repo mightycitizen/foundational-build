@@ -29,22 +29,25 @@
 
     h2,
     .h2 {
-        @apply text-3xl md:text-4xl;
+        @apply text-3xl md:text-3xl;
+        &:not(:first-child){
+            @apply md:mt-10;
+        }
     }
 
     h3,
     .h3 {
-        @apply text-2xl md:text-3xl;
+        @apply text-2xl md:text-2xl;
     }
 
     h4,
     .h4 {
-        @apply text-sm;
+        /* @apply text-sm; */
     }
 
     h5,
     .h5 {
-        @apply text-xs uppercase tracking-wider;
+        @apply text-sm uppercase tracking-wider;
     }
 
     h6,
@@ -347,7 +350,8 @@
             }
 
             &::after {
-                /* @apply w-[35px] h-[160%] bg-[radial-gradient(at_right, rgba(30, 30, 30, 0.4)_0%, rgba(30, 30, 30, 0)_50%)] right-0 top-[-30%] opacity-100 transition-opacity duration-300 z-10; */
+                @apply w-[35px] h-[160%] right-0 top-[-30%] opacity-100 transition-opacity duration-300 z-10;
+                background: radial-gradient(at right, rgba(0,0,0,0.4) 0%,  rgba(0,0,0,0) 50%);
             }
 
             &::before {
@@ -397,7 +401,7 @@
     }
 
 
-    @media screen(md) {
+    @media screen(lg) {
         .js-slick--center {
             --slide-width: 500px;
             --slide-width-curr: 700px;

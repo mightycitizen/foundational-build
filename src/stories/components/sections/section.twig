@@ -8,7 +8,7 @@
 
 {% set intro %}
   {% if section_heading | default %}
-      <div class="section_intro {{ intro_class }} {% if exclude_container | default %}container{% endif %}">
+      <div class="section_intro {{ intro_class }} ">
         <div class="grid {% if section_image | default %}grid-cols-12{% endif %} gap-y-6 gap-x-10 items-center justify-center">
           {% if section_image | default %}
             <div class="col-span-12 md:col-span-5 lg:col-span-6" >
@@ -63,7 +63,7 @@
       {# {% if section_background_slick | default %}<img class="section_background" data-slick-background="{{ section_background_slick }}"/>{% endif %} #}
     </div>
   {% endif %}
-  <div class="{% if exclude_container | default != true %}container {{ width_class | default }} {% endif %} {{ grid_class | default }} relative z-10" >
+  <div class="{% if exclude_container | default %}max-w-full lg:px-0{% endif %} container {{ grid_class | default }} relative z-10" >
     {% if section_style | default and (section_style == 'side') %}
       <div class="grid grid-cols-12 items-center justify-center gap-y-4">
         <div class="col-span-12 md:col-span-8">

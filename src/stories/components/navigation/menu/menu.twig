@@ -60,10 +60,14 @@
         if (direction === 'left') {
           if (this.dropdownOpen.lg > 0) { 
             this.dropdownOpen.lg--;             
+          }else{
+            this.dropdownOpen.lg = $refs.topbar.children.length - 1;
           }
         } else {
           if (this.dropdownOpen.lg < $refs.topbar.children.length - 1) { 
             this.dropdownOpen.lg++; 
+          }else{
+            this.dropdownOpen.lg = 0;
           }
         }        
         $refs.topbar.children[this.dropdownOpen.lg].querySelector('a').focus(); 

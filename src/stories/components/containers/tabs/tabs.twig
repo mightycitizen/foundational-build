@@ -1,58 +1,77 @@
-
-
-
-<div x-data="{{'{' }} expanded: 0,   handleTabChange: (event) =>  {
-        const tab = event.target;
-        const tabNav = $refs.tabNav;
+<div x-data="{ 
+    expanded: 0,
+    handleTabChange: (event) => { 
+        const tab = event.target; 
+        const tabNav = $refs.tabNav; 
         const offset = 30;
 
-        if (tab) {
-          const tabStartPosition = tab.getBoundingClientRect().left - tabNav.getBoundingClientRect().left;
-          const tabNavWidth = tabNav.offsetWidth;
-          const tabWidth = tab.offsetWidth;
-          const tabEndPosition = tabStartPosition + tabWidth;
-          let position;
-          const currPosition = tabNav.scrollLeft;
+        if (tab) { 
+            const tabStartPosition = tab.getBoundingClientRect().left - tabNav.getBoundingClientRect().left; 
+            const tabNavWidth = tabNav.offsetWidth; 
+            const tabWidth = tab.offsetWidth; 
+            const tabEndPosition = tabStartPosition + tabWidth; 
+            let position; 
+            const currPosition = tabNav.scrollLeft;
 
-          if (tabStartPosition < offset) {
-            position = currPosition + tabStartPosition - offset;
-          } else if (tabEndPosition > tabNavWidth - offset) {
-            position = currPosition + (tabEndPosition - tabNavWidth + offset);
-          }
+            if (tabStartPosition < offset) { 
+                position = currPosition + tabStartPosition - offset; 
+            } else if (tabEndPosition > tabNavWidth - offset) { 
+                position = currPosition + (tabEndPosition - tabNavWidth + offset); 
+            }
 
-          if (position !== undefined) {
-            tabNav.scrollTo({
-              left: position,
-              behavior: 'smooth'
-            });
-          }
+            if (position !== undefined) { 
+                tabNav.scrollTo({ 
+                    left: position, 
+                    behavior: 'smooth' 
+                }); 
+            } 
+        } 
+    },
+    handleKeydown: function(event) {
+        const totalTabs = {{ tabs|length }};
+        if (event.key === 'Home') {
+            this.expanded = 0;
+            this.$refs.tabNav.children[0].querySelector('button').focus();
+        } else if (event.key === 'End') {
+            this.expanded = totalTabs - 1;
+            this.$refs.tabNav.children[totalTabs - 1].querySelector('button').focus();
+        } else if (event.key === 'ArrowLeft') {
+            if (this.expanded > 0){
+              this.expanded--;
+            }else{
+              this.expanded = totalTabs - 1;
+            }
+            
+            this.$refs.tabNav.children[this.expanded].querySelector('button').focus();
+        } else if (event.key === 'ArrowRight') {
+            if (this.expanded < totalTabs - 1){
+              this.expanded++;
+            }else{
+              this.expanded = 0;
+            }
+            
+            this.$refs.tabNav.children[this.expanded].querySelector('button').focus();
         }
-      }{{ ' }'}}">
-
-
+    }
+}">
+  
   <ul class="tabs list-none mb-0 flex max-w-full overflow-x-auto no-scrollbar" id="{{ tabs_id | default }}" x-ref="tabNav"
-    @keydown.home="expanded = 0; $refs.tabNav.children[0].querySelector('button').focus();"
-    @keydown.end="expanded = {{ tabs|length - 1 }}; $refs.tabNav.children[{{ tabs|length - 1 }}].querySelector('button').focus();"
-    @keydown.left="if (expanded > 0) { expanded--; $refs.tabNav.children[expanded].querySelector('button').focus(); }" 
-    @keydown.right="if (expanded < {{ tabs|length - 1 }}) { expanded++; $refs.tabNav.children[expanded].querySelector('button').focus(); }" 
-  >
+    @keydown="handleKeydown($event)">
     {% for tab in tabs %}
       <li class="tabs_title font-bold mr-1" :class="expanded === {{ loop.index0 }} ? 'bg-primary text-white' : 'bg-gray-100 hover:bg-gray-200'">
         <button 
           :tabIndex="expanded === {{ loop.index0 }} ? 0 : -1"
-          @click="expanded = {{ loop.index0 }}; handleTabChange($event);" class="px-2 lg:px-10 py-1 lg:py-3 whitespace-nowrap" >{{ tab.text }}</button>
+          @click="expanded = {{ loop.index0 }}; handleTabChange($event);" class="px-2 lg:px-10 py-1 lg:py-3 whitespace-nowrap">{{ tab.text }}</button>
       </li>
     {% endfor %}
   </ul>
 
-  <div class="tabs_content shadow-lg" >
-
-      {% for tab in tabs %}
-        <div  x-show="expanded === {{ loop.index0 }}" tabindex="0" id="{{ tab.id }}" class="tabs_panel py-8 lg:py-10 px-8">
-          {{ tab.content | raw }}
-        </div>
-      {% endfor %}
-
+  <div class="tabs_content shadow-lg">
+    {% for tab in tabs %}
+      <div x-show="expanded === {{ loop.index0 }}" tabindex="0" id="{{ tab.id }}" class="tabs_panel py-8 lg:py-10 px-8">
+        {{ tab.content | raw }}
+      </div>
+    {% endfor %}
   </div>
-
+  
 </div>

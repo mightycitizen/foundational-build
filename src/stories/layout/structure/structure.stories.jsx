@@ -1,5 +1,4 @@
-import narrowTwig from './content-narrow.twig';
-import narrowerTwig from './content-narrower.twig';
+
 import sidebarTwig from './content-with-sidebar.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
@@ -66,12 +65,6 @@ const defaultArgs = {
   content: '<div class="pl-placeholder">Content</div>'
 }
 
-const Narrow = NarrowTwigTemplate.bind({});
-Narrow.args = defaultArgs;
-
-const Narrower = NarrowerTwigTemplate.bind({});
-Narrower.args = defaultArgs;
-
 const Sidebar = SidebarTwigTemplate.bind({});
 
 Sidebar.args = {
@@ -80,4 +73,4 @@ Sidebar.args = {
   sidebar: '<div class="pl-placeholder">Sidebar</div>'
 };
 
-export { Narrow, Narrower, Sidebar };
+export { Sidebar };

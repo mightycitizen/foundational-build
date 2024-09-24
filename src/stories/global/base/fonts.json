@@ -1,4 +1,4 @@
 {
-  "primaryFontFamily": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
-  "secondaryFontFamily": "\"Georgia\", \"Times New Roman\", serif"
+  "display": ["Roboto", "sans-serif"],
+  "body": ["Georgia", "serif"]
 }

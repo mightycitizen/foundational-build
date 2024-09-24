@@ -7,8 +7,12 @@
 	    toggleDropdown(index) {
 	      if (window.innerWidth <= this.breakpoint) {
 	        this.dropdownOpen.sm = this.dropdownOpen.sm === index ? null : index;
-	      }
-        console.log(this.dropdownOpen);
+	      }else{          
+          this.dropdownOpen.lg = this.dropdownOpen.lg === index ? null : index;
+          setTimeout(() => {
+            this.checkDropdownPosition();
+          }, 10);
+        }        
 	    },
       checkDropdownPosition() {
         if (window.innerWidth > this.breakpoint) {
@@ -90,7 +94,7 @@
 						</button>
 					{% endif %}
 
-					<a role="menuitem" :class="dropdownOpen.lg === {{ loop.index0 }} ? 'bg-primary text-white' : ''" class="{{ link.children ? 'hidden lg:inline-flex' : 'inline-flex' }} font-bold px-6 py-3 gap-2 leading-5 items-center lg:inline-flex text-black no-underline" href="{{ link.url }}">
+					<a @keydown.enter="toggleDropdown({{ loop.index0 }})"  role="menuitem" :class="dropdownOpen.lg === {{ loop.index0 }} ? 'bg-primary text-white' : ''" class="{{ link.children ? 'hidden lg:inline-flex' : 'inline-flex' }} font-bold px-6 py-3 gap-2 leading-5 items-center lg:inline-flex text-black no-underline" href="{{ link.url }}">
 						{{ link.text }}
 						<span :class="(dropdownOpen.sm === {{ loop.index0 }} ? 'rotate-180' : '') + ' ' + (dropdownOpen.lg === {{ loop.index0 }} ? 'lg:text-white' : 'lg:text-primary')" class="icon-chevron-down text-xs text-primary"></span>
 					</a>
@@ -100,9 +104,15 @@
 								    breakpoint: 1024,
 								    childOpen: { sm: null, lg: null },
                     childAlign: 'left',
-								    toggleChildDropdown(index) {
-								      
-                      this.childOpen.sm = this.childOpen.sm === index ? null : index;
+								    toggleChildDropdown(index) {                      
+								      if (window.innerWidth <= this.breakpoint) {
+                        this.childOpen.sm = this.childOpen.sm === index ? null : index;
+                      }else{
+                        this.childOpen.lg = this.childOpen.lg === index ? null : index;
+                        setTimeout(() => {
+                          this.checkDropdownPosition();
+                        }, 25);
+                      }
                     
 								    },
                     checkDropdownPosition() {
@@ -164,7 +174,7 @@
 											<span class="icon-chevron-right hidden lg:block text-primary text-xs no-underline"></span>
 										</button>
 									{% endif %}
-									<a role="menuitem" class="no-underline {{ child.children ? 'hidden lg:flex justify-between gap-2 items-center w-full' : 'inline-flex' }}" href="{{ link.url }}">
+									<a @keydown.enter="toggleChildDropdown({{ loop.index0 }})" role="menuitem" class="no-underline {{ child.children ? 'hidden lg:flex justify-between gap-2 items-center w-full' : 'inline-flex' }}" href="{{ link.url }}">
                     <span class="underline flex w-full hover:no-underline">
                       {{ child.text }}
                     </span>

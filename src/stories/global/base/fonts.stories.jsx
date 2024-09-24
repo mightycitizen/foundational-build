@@ -48,6 +48,12 @@ const Template = ({ label, ...args }) => {
 };
 
 export const Fonts = Template.bind({});
+
+fonts = Object.keys(fonts).reduce((acc, key) => {
+  acc[key] = fonts[key];
+  return acc;
+}, {});
+
 Fonts.args = {
-  ...fonts,
+  fonts
 }

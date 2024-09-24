@@ -1,12 +1,12 @@
 import twig from './select.twig';
-import selectizeTwig from './selectize.twig';
+import filterableTwig from './filterable.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Forms/Select Dropdown',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-    selectize: {
+    filterable: {
       control: {
         type: 'boolean'
       }
@@ -52,16 +52,16 @@ const defaultArgs = {
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;
-const SelectizeTemplate = ({ label, ...args }) => {
+const filterableTemplate = ({ label, ...args }) => {
   // You can either use a function to create DOM elements or use a plain html string!
   // return `<div>${label}</div>`;
-  return selectizeTwig({ label, ...args });
+  return filterableTwig({ label, ...args });
 }
 
-export const Filterable = SelectizeTemplate.bind({});
+export const Filterable = filterableTemplate.bind({});
 Filterable.args = Object.assign({...defaultArgs}, {  
-  name: 'select_selectize',
-  id: 'select_selectize'
+  name: 'select_filterable',
+  id: 'select_filterable'
 })
 
 //

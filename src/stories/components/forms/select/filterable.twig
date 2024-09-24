@@ -1,0 +1,71 @@
+{% embed '@components/forms/input/input.twig' %}
+  {% block field %}
+        <div   x-data="{
+                  open: false,
+                  search: '',
+                  selectedString: '',
+                  selected: [],
+                  options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+                  get filteredOptions() {
+                      const searchLower = this.search.toLowerCase();
+                      return this.options.filter(option => 
+                          option.toLowerCase().includes(searchLower) && !this.selected.includes(option)
+                      );
+                  },
+                  toggle() {                    
+                    this.open = !this.open;
+                  },
+                  close() {
+                      this.open = false;
+                  },
+                  keydown(event) {
+                    console.log(event.key);
+                    if (event.key === 'Escape') {
+                      this.open = false;
+                    }else if (event.key === 'Delete') {
+                        this.selected = [];
+                        this.selectedString = '';
+                    }else if (event.key === 'Backspace') {
+                        this.selected.pop();
+                        this.selectedString = this.selected.join(', ');
+                    }
+                  },
+                  toggleOption(option) {
+                    
+                      if (this.selected.includes(option)) {
+                          this.selected = this.selected.filter(item => item !== option);
+                      } else {
+                          this.selected.push(option);
+                      }
+                      this.selectedString = this.selected.join(', ');
+                      this.search = ''; // Clear search input after selecting
+                      // focus on first element in dropdown
+                      const firstChild = this.$refs.dropdown.children[0];                      
+                      if (firstChild) {
+                        firstChild.focus();
+                      }else{
+                        this.$refs.searchInput.focus();
+                      }
+
+
+                  }
+              }" class="relative w-64" >
+          <button @keydown="keydown($event)"  @click="toggle"      class="border rounded p-2 bg-white cursor-pointer w-full text-left">
+              <span x-text="selected.length ? selected.join(', ') : 'Select options'"></span>
+          </button>
+
+          <input type="hidden" name="{{ name }}" x-model="selectedString">
+          <div @keydown="keydown($event)"  x-show="open" @click.away="close" class="absolute z-10 mt-1 w-full bg-white border rounded shadow-lg">
+              <input x-ref="searchInput" type="text" placeholder="Add or select..." x-model="search" class="w-full p-2 border-b" />
+              <div class="max-h-48 overflow-y-auto flex flex-col" >
+                  <template x-for="option in filteredOptions" :key="option" x-ref="dropdown">
+                      <button @click="toggleOption(option)" class="p-2 hover:bg-gray-200 cursor-pointer w-full text-left">
+                          <span x-text="option"></span>
+                      </button>
+                  </template>
+              </div>
+          </div>
+      </div>
+
+    {% endblock %}
+{% endembed %}

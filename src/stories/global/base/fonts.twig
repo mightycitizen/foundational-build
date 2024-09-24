@@ -1,17 +1,12 @@
-{% set fonts = [
-  {
-    label: "Primary",
-    fontFamily: primaryFontFamily
-  },
-  {
-    label: "Secondary",
-    fontFamily: secondaryFontFamily
-  }
-] %}
-{% for font in fonts %}
-  <div style='font-family: {{ font.fontFamily }}'>
-    <p>{{ font.label }} font: {{ font.fontFamily }};<br />
-    <em>{{ font.label }} font italic: {{ font.fontFamily }}</em><br />
-    <strong>{{ font.label }} font bold: {{ font.fontFamily }};</strong></p>
+
+{% for key, value in fonts %}
+  {% set font = value | join(', ') %}
+  <div class='font-{{ key }}'>
+    <h2 class="text-xl mb-0">{{ key | capitalize }}</h2>  
+    <div class="mb-3">    
+      <span>Default</span><br />
+      <em>Italics</em><br />
+      <strong>Bold</strong></p>
+    </div>
   </div>
 {% endfor %}

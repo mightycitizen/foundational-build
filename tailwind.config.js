@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import palettes from './src/stories/global/base/colors.json';
+import fonts from './src/stories/global/base/fonts.json';
+import breakpoints from './src/stories/global/base/breakpoints.json';
 
 let colors = {
   transparent: 'transparent',
@@ -30,7 +32,11 @@ colors = {
 };
 
 module.exports = {
-  content: ['./src/assets/js/**/*.js', './src/stories/{components,layout,pages}/**/*.{twig,jsx}'],
+  content: ['./src/assets/js/**/*.js', './src/stories/{components,layout,pages}/**/*.{twig,jsx}'],  
+  safelist: [
+    'font-display',
+    'font-body',
+  ],
   theme: {
     container: {
       center: true,
@@ -43,7 +49,9 @@ module.exports = {
       },
 
     },
+    screens: breakpoints,
     colors: colors,
+    fontFamily: fonts,
   
    
   },

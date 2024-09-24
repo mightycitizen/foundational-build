@@ -1,6 +1,6 @@
 {% if anchor_items %}
   <div data-sticky-container id="anchormenu">
-    <div class="anchormenu bg-primary-darker text-white"  data-sticky data-sticky-on="small" data-options="marginTop:0;" style="width:100%" data-top-anchor="anchormenu:top" data-anchormenu>
+    <div class="anchormenu bg-primary text-white"  data-sticky data-sticky-on="small" data-options="marginTop:0;" style="width:100%" data-top-anchor="anchormenu:top" data-anchormenu>
       <div class="container">
         {% set anchor_dropdown = [] %}
         {% for item in anchor_items %}
@@ -19,7 +19,7 @@
           } %}
         </div>
 
-        <ul class="menu horizontal text-center justify-center lg:d-block hidden">
+        <ul class="list-none gap-5 justify-center lg:flex hidden p-3">
           {% for item in anchor_items %}
             <li>
               <a href="{{ item.anchor }}">{{ item.text }}</a>

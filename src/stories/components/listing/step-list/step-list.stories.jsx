@@ -36,6 +36,22 @@ const defaultArgs = {
         text: 'Test',
         url: '#'
       }
+    },
+    {
+      heading: 'Test',
+      description: 'Test',
+      link: {
+        text: 'Test',
+        url: '#'
+      }
+    },
+    {
+      heading: 'Test',
+      description: 'Test',
+      link: {
+        text: 'Test',
+        url: '#'
+      }
     }
   ]
 }

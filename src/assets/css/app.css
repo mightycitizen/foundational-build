@@ -251,7 +251,7 @@
 
             &:before,
             &:after {
-                @apply absolute content-[''] top-0 left-0;
+                @apply absolute content-[''] top-0 left-0 -mt-1;
             }
 
             &:before {
@@ -283,7 +283,7 @@
         
             &+label {
                 &:after {
-                    @apply absolute left-[2px] top-[6px] text-white font-normal opacity-0 content-['\f00c'] font-icomoon text-[12px];
+                    @apply absolute left-[2px] top-[2px] mt-0 text-white font-normal opacity-0 content-['\f00c'] font-icomoon text-[12px];
                 }
             }
 

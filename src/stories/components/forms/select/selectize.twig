@@ -1,0 +1,47 @@
+{% embed '@components/forms/input/input.twig' %}
+  {% block field %}
+        <div x-data="{
+                  open: false,
+                  search: '',
+                  selected: [],
+                  options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+                  get filteredOptions() {
+                      const searchLower = this.search.toLowerCase();
+                      return this.options.filter(option => 
+                          option.toLowerCase().includes(searchLower) && !this.selected.includes(option)
+                      );
+                  },
+                  toggle() {
+                      this.open = !this.open;
+                  },
+                  close() {
+                      this.open = false;
+                  },
+                  toggleOption(option) {
+                      if (this.selected.includes(option)) {
+                          this.selected = this.selected.filter(item => item !== option);
+                      } else {
+                          this.selected.push(option);
+                      }
+                      this.search = ''; // Clear search input after selecting
+                  }
+              }" class="relative w-64">
+          <div @click="toggle" class="border rounded p-2 bg-white cursor-pointer">
+              <span x-text="selected.length ? selected.join(', ') : 'Select options'"></span>
+          </div>
+
+          <input type="hidden" name="{{ name }}" x-model="selected.length ? selected.join(', ') : ''">
+          <div x-show="open" @click.away="close" class="absolute z-10 mt-1 w-full bg-white border rounded shadow-lg">
+              <input type="text" placeholder="Add or select..." x-model="search" class="w-full p-2 border-b" />
+              <div class="max-h-48 overflow-y-auto">
+                  <template x-for="option in filteredOptions" :key="option">
+                      <div @click="toggleOption(option)" class="p-2 hover:bg-gray-200 cursor-pointer">
+                          <span x-text="option"></span>
+                      </div>
+                  </template>
+              </div>
+          </div>
+      </div>
+
+    {% endblock %}
+{% endembed %}

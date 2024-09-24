@@ -1,25 +1,29 @@
-<div class="grid grid-cols-12 gap-6 form-group align-bottom">
+<div class="flex flex-col md:flex-row gap-4">
   {% block form_content %}
-    <div class=" lg:col-span-5 md:col-span-4">
+    <div class=" md:w-1/2">
       {% include '@components/forms/text/text.twig' with {
         label: "Text",
         name: "text",
         id: "field_group_1",
+        class: 'w-full',
+        input_class: "my-0",
         placeholder: "Prompt Text",
         required: true
       } %}
     </div>
-    <div class=" lg:col-span-5 md:col-span-4">
+    <div class=" md:w-1/2">
       {% include '@components/forms/text/text.twig' with {
         label: "Text",
         name: "text",
+        class: 'w-full',
+        input_class: "my-0",
         id: "field_group_2",
         placeholder: "Prompt Text",
         required: true
       } %}
     </div>
-    <div class=" lg:col-span-2 md:col-span-4">
-      <button class="button" type="submit">Submit</button>
-    </div>
+    
+    <button class="button self-end w-full md:w-auto" type="submit">Submit</button>
+  
   {% endblock %}
 </div>

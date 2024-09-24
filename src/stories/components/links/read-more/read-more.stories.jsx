@@ -10,7 +10,7 @@ export default {
     url: { control: 'text' },
     size: {
       control: { type: 'select' },
-      options: ['', 'h3'],
+      options: ['', 'lg'],
     },
   },
 };

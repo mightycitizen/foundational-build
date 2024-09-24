@@ -1,5 +1,5 @@
 <div class="alert-bar bg-secondary py-4 text-center {{ class | default }}" {% if closable | default %}data-closable{% endif %}>
-  <div class="container">
+  <div class="container flex gap-3 justify-between items-center">
     {% if label | default %}
       <span class="alert-bar_label font-bold">{{ label }}:</span>
     {% endif %}
@@ -9,7 +9,7 @@
       <span>{{ text }}</span>      
     {% endif %}
     {% if closable | default %}
-      <button class="{% if closable_text | default is empty %}close-button{% else %}button secondary{% endif %}" aria-label="Dismiss alert" type="button" data-close>
+      <button class="{% if closable_text | default is empty %}close-button{% else %}button{% endif %}" aria-label="Dismiss alert" type="button" data-close>
         <span aria-hidden="true">{% if closable_text | default %}{{ closable_text }}{% else %}&times;{% endif %}</span>
       </button>
     {% endif %}

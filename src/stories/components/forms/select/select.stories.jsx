@@ -1,4 +1,5 @@
 import twig from './select.twig';
+import selectizeTwig from './selectize.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -51,9 +52,14 @@ const defaultArgs = {
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;
-export const Filterable = Template.bind({});
-Filterable.args = Object.assign({...defaultArgs}, {
-  selectize: true,
+const SelectizeTemplate = ({ label, ...args }) => {
+  // You can either use a function to create DOM elements or use a plain html string!
+  // return `<div>${label}</div>`;
+  return selectizeTwig({ label, ...args });
+}
+
+export const Filterable = SelectizeTemplate.bind({});
+Filterable.args = Object.assign({...defaultArgs}, {  
   name: 'select_selectize',
   id: 'select_selectize'
 })

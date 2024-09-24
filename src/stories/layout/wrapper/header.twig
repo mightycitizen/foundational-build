@@ -1,5 +1,15 @@
-<a href="#main" class="opacity-0 focus:opacity-100 fixed left-0 top-0 bg-primary text-white p-1" >Skip to main</a>
-<header class="l-header py-4 lg:pt-8 lg:pt-4" id="header" x-data="{{'{'}} mainMenu: false, dropdownOpen: {sm: null, lg: null} {{'}'}}">
+<script>
+    function focusFirstFocusable() {
+        const mainElement = document.getElementById('main');
+        const focusableElements = mainElement.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])');
+        
+        if (focusableElements.length > 0) {
+            focusableElements[0].focus();
+        }
+    }
+</script>
+<a href="#main" @keydown.enter.prevent="focusFirstFocusable" class="opacity-0 focus:opacity-100 fixed left-0 top-0 bg-primary text-white p-1" >Skip to main</a>
+<header class="l-header py-4 lg:pt-8" id="header" x-data="{{'{'}} mainMenu: false, dropdownOpen: {sm: null, lg: null} {{'}'}}">
   <div class="container">
     <div class="grid grid-cols-12 gap-6 items-center justify-between">
       <div class="col-span-10 lg:col-span-9">

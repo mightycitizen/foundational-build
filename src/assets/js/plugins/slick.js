@@ -1,6 +1,6 @@
 import 'slick-carousel';
 import $ from 'jquery';
-import { breakpoints } from '../../../stories/global/base/breakpoints.json'; // Foundation breakpoints
+import breakpoints  from '../../../stories/global/base/breakpoints.json'; // Foundation breakpoints
 
 
 //console.log(breakpoints);
@@ -339,6 +339,7 @@ export const initSlick = () => {
 
   const $slickCards = $('.js-slick--cards:not(.slick-initialized)');
 
+  
   $slickCards.each(function(){
     const $this = $(this);
 
@@ -353,7 +354,7 @@ export const initSlick = () => {
       responsive: [
         
         {
-        breakpoint: breakpoints.large,
+        breakpoint: breakpoints.lg.replace('px',''),
         settings: {
           //adaptiveHeight: true,
           slidesToScroll: 1,
@@ -389,7 +390,7 @@ export const initSlick = () => {
       responsive: [
         {
 
-          breakpoint: breakpoints.large,
+          breakpoint: breakpoints.lg.replace('px',''),
           settings: {
             centerMode: false,
             centerPadding: 0,

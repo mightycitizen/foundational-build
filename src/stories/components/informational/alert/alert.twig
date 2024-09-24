@@ -1,5 +1,5 @@
-<div class="alert-bar bg-secondary py-4 text-center {{ class | default }}" {% if closable | default %}data-closable{% endif %}>
-  <div class="container flex gap-3 justify-between items-center">
+<div class="alert-bar bg-secondary py-4 {{ class | default }}" {% if closable | default %}data-closable{% endif %}>
+  <div class="container flex gap-3 justify-center">
     {% if label | default %}
       <span class="alert-bar_label font-bold">{{ label }}:</span>
     {% endif %}

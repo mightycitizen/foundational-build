@@ -39,5 +39,7 @@
     <p>Copyright &copy; {{ copyright_year | default(2022) }} {{ site_name | default }}</p>
 
   </div>
-  {% include '@components/utils/back-to-top/back-to-top.twig' %}
+  {% include '@components/utils/back-to-top/back-to-top.twig' with {
+    scroll_show: true
+  } %}
 </footer>

@@ -1,4 +1,6 @@
-<div class="l-wrapper no-js">
+<div class="l-wrapper no-js" x-data="{backToTop: false}" 
+    @scroll.window="backToTop = window.scrollY > 100">
+
   {% include "@layout/wrapper/header.twig" %}
   <main class="l-main" id="main">
     {% include '@components/informational/alert/alert.twig' with {

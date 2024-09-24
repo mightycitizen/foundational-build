@@ -1,4 +1,8 @@
-<a href="#header" class="backToTop fixed bottom-8 right-8 flex flex-col rounded-full w-12 aspect-square justify-center items-center no-underline bg-opacity-70 bg-gray-700 hover:bg-opacity-100 z-30" {% if scroll_show | default(true) %}data-scroll-show="200"{% endif %} title="Back to top">
+<a href="#header" class="backToTop fixed bottom-8 right-8 flex flex-col rounded-full w-12 aspect-square justify-center items-center no-underline bg-opacity-70 bg-gray-700 hover:bg-opacity-100 z-30 transition-all duration-200 " 
+  {% if scroll_show | default %}
+    :class="backToTop ? 'opacity-100 translate-y-0 z-10' : 'opacity-0 -z-10 translate-y-3'"    
+  {% endif %}
+>
   <i class="backToTop_icon icon-chevron-up -mt-1"></i>
-  <span class="backToTop_text uppercase text-xs font-bold"><span class="sr-only">Back to </span>top</span>
+  <span class="backToTop_text uppercase text-xs font-bold"><span class="sr-only">Back to </span>top</span>  
 </a>

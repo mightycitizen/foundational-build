@@ -1,1 +1,57 @@
-<span class="inline-flex gap-x-2">{{ text }}<button data-tippy-content="{{ tooltip }}"><span class="sr-only">Tooltip trigger for {{ text }}</span><i class="icon-info-circle"></i></button></span>
+<span x-data="{
+    show: false,
+    tooltipClasses: '',
+    showTooltip(event) {
+        this.tooltipClasses = 'bottom-full';
+        const tooltip = this.$refs.tooltip;
+        const tooltipRect = tooltip.getBoundingClientRect();
+        const buttonRect = event.currentTarget.getBoundingClientRect();
+
+        this.show = true;
+
+        // Center the tooltip above the button
+        let top = buttonRect.top - tooltipRect.height - 8; // 8px gap
+        let left = buttonRect.left + (buttonRect.width / 2) - (tooltipRect.width / 2);
+
+        console.log(top, left);
+
+        // Check if tooltip goes off the top of the viewport
+        if (top < 0) {            
+            this.tooltipClasses = 'top-full'; // Center below
+        } 
+
+        // Adjust left position if it goes out of bounds
+        if (left < 0) {
+            this.tooltipClasses += ` left-2`; // Align to the left if out of bounds
+        } else if (left + tooltipRect.width > window.innerWidth) {
+            this.tooltipClasses += ` right-2`; // Align to the right if out of bounds
+        }else{
+            this.tooltipClasses += ' -translate-x-1/2 left-1/2'; // Center tooltip
+        }
+
+        // Add top and left styles based on the computed positions        
+    },
+
+    hideTooltip() {
+        this.show = false;
+    },
+
+    
+}" class="inline-flex gap-x-2 relative" >
+
+    {{ text }}
+    <span class="relative">
+        <button x-ref="button" @click="show = !show;" @focusin="showTooltip($event)" @blur="hideTooltip()" @mouseenter="showTooltip($event)" @mouseleave="hideTooltip()" ><span class="sr-only">Tooltip trigger for {{ text }}</span><i class="icon-info-circle"></i></button>
+        <span         
+            x-ref="tooltip"
+            aria-hidden="!show"                       
+            :class="tooltipClasses + (show ? ' opacity-100' : ' opacity-0') + ' duration-75 transition-opacity'"
+            class="absolute bg-primary text-white text-sm rounded p-2 whitespace-nowrap"
+    >
+            {{ tooltip }}
+        </span>
+    </span>
+ 
+</span>
+
+

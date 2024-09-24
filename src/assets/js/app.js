@@ -22,7 +22,6 @@ Alpine.start()
 // import { initLity } from './plugins/lity';
 // import { initDatepicker } from './plugins/datepicker';
 // import { initVimeo } from './plugins/vimeo';
-import { initYoutube } from './plugins/youtube';
 import { initSlick } from './plugins/slick';
 // import { initScrollShow } from './plugins/scroll-show';
 // import { initCountdown } from './plugins/countdown';

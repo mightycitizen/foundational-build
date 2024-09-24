@@ -746,10 +746,6 @@ select {
   outline: 1px auto -webkit-focus-ring-color;
 }
 
-/* .l-skip {
-        @apply sr-only;
-    } */
-
 h1,
     h2,
     h3,
@@ -1119,6 +1115,8 @@ label,
   }
 }
 
+/* FORM STYLES */
+
 [type='text'], input:where(:not([type])), [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select {
   --tw-border-opacity: 1;
   border-color: rgb(204 204 204 / var(--tw-border-opacity));
@@ -1294,6 +1292,8 @@ input[type="radio"]:focus:not(:checked).custom,
   }
 }
 
+/* TABLE SCROLL */
+
 .table-scroll {
   margin-bottom: 0.75rem;
   width: 100%;
@@ -1395,6 +1395,8 @@ input[type="radio"]:focus:not(:checked).custom,
   width: 100%;
 }
 
+/* SLICK  */
+
 .slick-nav {
   .slick-dots {
     li {
@@ -1404,14 +1406,6 @@ input[type="radio"]:focus:not(:checked).custom,
           background-color: rgb(255 255 255 / var(--tw-bg-opacity));
         }
       }
-    }
-  }
-}
-
-.section:not(.section--tight) {
-  @media (min-width: 1024px) {
-    .section:not(.section--tight):not([class*=bg-])+&:not([class*=bg-]) {
-      margin-top: -2.5rem;
     }
   }
 }
@@ -1471,6 +1465,16 @@ input[type="radio"]:focus:not(:checked).custom,
           padding: 1.5rem;
         }
       }
+    }
+  }
+}
+
+/* SECTION */
+
+.section:not(.section--tight) {
+  @media (min-width: 1024px) {
+    .section:not(.section--tight):not([class*=bg-])+&:not([class*=bg-]) {
+      margin-top: -2.5rem;
     }
   }
 }
@@ -1541,6 +1545,22 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .top-full {
   top: 100%;
+}
+
+.bottom-full {
+  bottom: 100%;
+}
+
+.left-1\/2 {
+  left: 50%;
+}
+
+.left-2 {
+  left: 0.5rem;
+}
+
+.right-2 {
+  right: 0.5rem;
 }
 
 .z-0 {
@@ -1664,6 +1684,14 @@ input[type="radio"]:focus:not(:checked).custom,
   margin-top: 1rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .block {
   display: block;
 }
@@ -1767,6 +1795,21 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .translate-y-2 {
   --tw-translate-y: 0.5rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-full {
+  --tw-translate-y: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-1\/2 {
+  --tw-translate-x: 50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2198,6 +2241,10 @@ input[type="radio"]:focus:not(:checked).custom,
   padding-top: 1rem;
 }
 
+.pt-8 {
+  padding-top: 2rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2380,6 +2427,10 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .duration-1000 {
   transition-duration: 1000ms;
+}
+
+.duration-75 {
+  transition-duration: 75ms;
 }
 
 .ease-in-out {

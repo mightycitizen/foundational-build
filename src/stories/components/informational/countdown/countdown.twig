@@ -1,14 +1,37 @@
-<div class="countdown flex" data-countdown="{{ date | default('1678991854') }}">
-  {% include '@components/informational/countdown/countdown-item.twig' with {
-    property: 'days',
-  } %}
-  {% include '@components/informational/countdown/countdown-item.twig' with {
-    property: 'hours',
-  } %}
-  {% include '@components/informational/countdown/countdown-item.twig' with {
-    property: 'min',
-  } %}
-  {% include '@components/informational/countdown/countdown-item.twig' with {
-    property: 'sec',
-  } %}
+<div x-data="{
+      targetDate: new Date({{ date }}),
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+      init() {
+        this.updateCountdown();
+        setInterval(() => this.updateCountdown(), 1000);
+      },
+      updateCountdown() {
+        const now = new Date().getTime();
+        const distance = this.targetDate - now;
+
+        this.days = Math.max(Math.floor(distance / (1000 * 60 * 60 * 24)), 0);
+        this.hours = Math.max(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)), 0);
+        this.minutes = Math.max(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)), 0);
+        this.seconds = Math.max(Math.floor((distance % (1000 * 60)) / 1000), 0);
+      },
+      formatNumber(num) {
+        return String(num).padStart(2, '0');
+      }
+    }" class="countdown flex justify-center gap-3" data-countdown="{{ date | default('1678991854') }}">
+    {% set items = [
+      'days',
+      'hours',
+      'minutes',
+      'seconds'
+    ] %}
+    {% for item in items %}
+      <div class="countdown_item flex flex-col justify-center items-center" x-ref="{{ item }}">
+        <span class="countdown_item_number bg-white text-black font-bold text-2xl p-2 rounded" x-text="formatNumber({{ item }})"></span>
+        <span class="countdown_item_label text-xs font-bold uppercase">{{ item }}</span>
+      </div>
+    {% endfor %}
+  
 </div>

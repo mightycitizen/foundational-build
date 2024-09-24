@@ -1,3 +1,5 @@
+{# currently uses section component but if design deviates too much may be better to create standalone #}
+
 {% if section_button | default %}
   {% set section_button = section_button | merge({
     "modifier": "secondary"

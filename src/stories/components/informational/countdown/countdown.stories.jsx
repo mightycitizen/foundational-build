@@ -25,9 +25,14 @@ const Template = ({ label, ...args }) => {
   return twig({ label, ...args });
 };
 
+// date 6 months in the future
+const futureDate = new Date();
+futureDate.setMonth(futureDate.getMonth() + 1);
+futureDate.setHours(futureDate.getDate() + 1);
+// get timestamp
+const futureTimestamp = futureDate.getTime();
 const defaultArgs = {
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-  label: "Alert"
+  date: futureTimestamp,
 }
 export const Countdown = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

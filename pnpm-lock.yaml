@@ -14,6 +14,9 @@ dependencies:
   '@storybook/html-vite':
     specifier: ^8.3.3
     version: 8.3.3(storybook@8.3.3)(vite@5.4.8)
+  '@styleshit/vite-plugin-twig-loader':
+    specifier: ^0.1.1
+    version: 0.1.1(twig@1.17.1)(vite@5.4.8)
   '@tailwindcss/aspect-ratio':
     specifier: ^0.4.2
     version: 0.4.2(tailwindcss@3.4.13)
@@ -53,6 +56,9 @@ dependencies:
   twig:
     specifier: ^1.17.1
     version: 1.17.1
+  twigjs:
+    specifier: ^0.0.4
+    version: 0.0.4
   yargs:
     specifier: ^16.2.0
     version: 16.2.0
@@ -145,6 +151,9 @@ devDependencies:
   vite-plugin-restart:
     specifier: ^0.4.1
     version: 0.4.1(vite@5.4.8)
+  vite-plugin-twig-loader:
+    specifier: ^0.0.6
+    version: 0.0.6
   webpack-stream:
     specifier: ^6.1.2
     version: 6.1.2
@@ -2326,6 +2335,16 @@ packages:
       storybook: ^8.3.3
     dependencies:
       storybook: 8.3.3
+
+  /@styleshit/vite-plugin-twig-loader@0.1.1(twig@1.17.1)(vite@5.4.8):
+    resolution: {integrity: sha512-QSXUySBZQhQ0SfWx9BDazXbdQ7AmZcNNvZdqvqar1DDEwPIOSguYZR6DRQ6S/2htdc8Jak/1B2SDEOG8C5+yQg==}
+    peerDependencies:
+      twig: ^1.17.1
+      vite: ^5.0.8
+    dependencies:
+      twig: 1.17.1
+      vite: 5.4.8(sass@1.79.3)
+    dev: false
 
   /@tailwindcss/aspect-ratio@0.4.2(tailwindcss@3.4.13):
     resolution: {integrity: sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==}
@@ -7967,6 +7986,11 @@ packages:
       twig: 1.17.1
     dev: true
 
+  /twigjs@0.0.4:
+    resolution: {integrity: sha512-d56YaRZmzK+0bMWTtF6Ub+2DyBsxsHoNyx/qV2oXbjiY4/LIWjXD8gsbu/KT+zK5CKRXRLDEAsLJoSVdWC2ecQ==}
+    engines: {node: ~v0.4.11}
+    dev: false
+
   /type-fest@2.19.0:
     resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
     engines: {node: '>=12.20'}
@@ -8224,6 +8248,12 @@ packages:
     dependencies:
       micromatch: 4.0.8
       vite: 5.4.8(sass@1.79.3)
+    dev: true
+
+  /vite-plugin-twig-loader@0.0.6:
+    resolution: {integrity: sha512-OjZWUALOdKHr2Haub4bqhmPvQqsPNbqfBbF1S91/1vOf4rMoWIg9l4J45GSAbLha8/FNhVZtzA+caaeyzwuUiA==}
+    dependencies:
+      twig: 1.17.1
     dev: true
 
   /vite@5.4.8(sass@1.79.3):

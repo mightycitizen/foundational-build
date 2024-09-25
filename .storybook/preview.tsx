@@ -19,7 +19,7 @@ function setupTwig(twig) {
   // set allowInclude option to true
   document.addEventListener('DOMContentLoaded', () => {
 
-    $(document).trigger('_page_ready');
+    // $(document).trigger('_page_ready');
     // $(document).foundation();
   });
 

@@ -1,11 +1,12 @@
-import twig from './alert.twig';
+import Twig from 'twig';
+
+import template from './alert.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Informational/Alert',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
-
+  argTypes: {    
     label: {
       control: 'text'
     },
@@ -19,10 +20,11 @@ export default {
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
-const Template = ({ label, ...args }) => {
+const Template = (args ) => {
+  console.log(args);
   // You can either use a function to create DOM elements or use a plain html string!
   // return `<div>${label}</div>`;
-  return twig({ label, ...args });
+  return Twig.twig({ data: template }).render(args);
 };
 
 const defaultArgs = {

@@ -1,7 +1,7 @@
 {% set width_class = '' %}
-{% if section_style == 'narrower'%}
+{% if section_style | default == 'narrower'%}
   {% set width_class = 'lg:max-w-screen-lg' %}
-{% elseif section_style == 'narrow' %}  
+{% elseif section_style | default == 'narrow' %}  
   {% set width_class = 'lg:max-w-screen-xl' %}
 {% endif %}
 {% if intro_class | default is empty %}{% set intro_class = 'text-center' %}{% endif %}
@@ -52,8 +52,7 @@
   {% endif %}  
 
   {{ section_class | default }} 
-  transition-opacity duration-1000 ease-in-out
-  {% if style | default %}section--{{ style }} {% endif %} 
+  transition-opacity duration-1000 ease-in-out  
   {% if collapse | default %}section--collapse{% endif %}" 
     :class="show ? 'opacity-100' : 'opacity-0'"    
     x-data="{{'{'}} show: false {{'}'}}"  x-intersect="show = true" >

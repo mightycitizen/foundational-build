@@ -1,5 +1,5 @@
 {% set modifier = 'font-bold no-underline hover:underline' %}
-{% if size == 'lg' %}
+{% if size | default == 'lg' %}
   {% set modifier = modifier ~ ' text-2xl' %}
 {% endif %}
   {% include '@components/links/link.twig' with {

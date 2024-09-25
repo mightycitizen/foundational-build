@@ -1,14 +1,14 @@
 
 {% set modifiers = [] %}
-{% if color %}
+{% if color | default %}
   {% set modifiers = modifiers | merge([color]) %}
 {% endif %}
-{% if size %}
-  {% if size == 'xs' %}
+{% if size | default %}
+  {% if size | default == 'xs' %}
     {% set button_modifiers = 'p-2 text-xs ' %}
-  {% elseif size == 'sm' %}
+  {% elseif size | default == 'sm' %}
     {% set button_modifiers = 'p-3 text-sm' %}
-  {% elseif size == 'lg' %}
+  {% elseif size | default == 'lg' %}
     {% set button_modifiers = 'py-4 px-5 text-xl' %}
   {% endif %}
 

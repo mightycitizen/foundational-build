@@ -1,6 +1,6 @@
 {% embed '@components/forms/input/input.twig' %}
   {% block field %}
-      <select {% if autocomplete | default %}autocomplete="{{ autocomplete }}"{% endif %} id="{{ id | default }}" {% if required | default %}required{% endif %} {% if disabled | default %}disabled{% endif %} class="{{ input_class | default }} name="{{ name }}">
+      <select {% if autocomplete | default %}autocomplete="{{ autocomplete }}"{% endif %} id="{{ id | default }}" {% if required | default %}required{% endif %} {% if disabled | default %}disabled{% endif %} class="{{ input_class | default }}" name="{{ name }}">
         {% if placeholder | default %}
           <option value="">{{ placeholder }}</option>
         {% endif %}

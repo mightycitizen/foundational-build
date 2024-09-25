@@ -1,0 +1,11 @@
+{
+  "storybook/src/assets/js/app.js": {
+    "file": "assets/app-CEg9mP2A.js",
+    "name": "app",
+    "src": "storybook/src/assets/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-BO7If7E3.css"
+    ]
+  }
+}

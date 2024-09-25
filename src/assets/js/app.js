@@ -1,4 +1,15 @@
-//import "babel-polyfill"; // ie 11 polyfill - can exclude if not in scope
+
+if (import.meta.hot) {
+  import.meta.hot.accept(() => {
+    console.log("HMR")
+  });
+}
+
+import '../css/output.css';
+import '../icomoon/style.css';
+import '../../../node_modules/slick-carousel/slick/slick.css';
+// import './storybook/node_modules/slick-carousel/slick/slick.css';
+
 import $ from 'jquery';
 import Alpine from 'alpinejs'
 import focus from '@alpinejs/focus'
@@ -9,13 +20,6 @@ Alpine.plugin(intersect);
 window.Alpine = Alpine
 Alpine.start()
 
-//import LazyLoad from 'vanilla-lazyload'; // @lazy lazy image and iframe loading
-// import loaderTemplate from '../../stories/components/utils/loader/loader.twig'; // used with @forms
-// import { initTippy } from './plugins/tippy';
-// import { initAjax } from './plugins/ajaxify';
-
-// import { initLity } from './plugins/lity';
-// import { initDatepicker } from './plugins/datepicker';
 import { initSlick } from './plugins/slick';
 // import { initAnchor } from './plugins/sticky-anchor';
 

@@ -1,8 +1,15 @@
 import Twig from 'twig';
-import { useEffect } from '@storybook/client-api';
+// import { useEffect } from '@storybook/client-api';
 import twigDrupal from 'twig-drupal-filters';
 import twigAttributes from 'add-attributes-twig-extension';
-import twigMap from '../lib/map';
+// import twigMap from './lib/map';
+
+function twigMap(twigInstance) {
+  // JS ksort via https://stackoverflow.com/a/31102605
+  twigInstance.extendFilter('map', (array, callback) => {
+    return array.map(callback);
+  });
+};
 
 function setupTwig(twig) {
   twigMap(twig);
@@ -16,8 +23,8 @@ function setupTwig(twig) {
     // $(document).foundation();
   });
 
-//  return storyFn();
 
+//  return storyFn();
   return twig;
 }
 

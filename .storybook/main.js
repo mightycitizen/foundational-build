@@ -1,10 +1,8 @@
 const { resolve } = require('path');
-const path = require('path');
-const LEGACY_REGEXP = /^(\w+)::/;
 import remarkGfm from 'remark-gfm';
 
 /**
- * Transforms legacy namespace::template/path to @namespoace/template/path
+ * Transforms legacy namespace::template/path to @namespace/template/path
  */
 class LegacyNsResolverPlugin {
   apply(resolver) {
@@ -13,14 +11,14 @@ class LegacyNsResolverPlugin {
       .getHook('resolve')
       .tapAsync('LegacyNsResolverPlugin', (request, resolveContext, callback) => {
         const requestPath = request.request;
-        if (!requestPath.match(LEGACY_REGEXP)) {
+        if (!requestPath.match(/^(\w+)::/)) {
           callback();
           return;
         }
 
         const newRequest = {
           ...request,
-          request: requestPath.replace(LEGACY_REGEXP, '@$1/'),
+          request: requestPath.replace(/^(\w+)::/, '@$1/'),
         };
 
         resolver.doResolve(target, newRequest, null, resolveContext, callback);
@@ -28,8 +26,7 @@ class LegacyNsResolverPlugin {
   }
 }
 
-
-module.exports = {
+export default {
   staticDirs: ['../dist'],
 
   stories: [
@@ -49,48 +46,63 @@ module.exports = {
       },
     },
     "@storybook/addon-a11y",
-    "@storybook/addon-essentials"    
+    "@storybook/addon-essentials"
   ],
 
-  framework: {
-    name: '@storybook/html-webpack5',
-    options: {}
-  },
-
-  webpackFinal: async (config, { configType }) => {
+  async viteFinal(config) {
     config.resolve.plugins = [new LegacyNsResolverPlugin()];
     config.resolve.alias = {
-      '@components': path.resolve(__dirname, '../', 'src/stories/components'),
-      '@global': path.resolve(__dirname, '../', 'src/stories/global'),
-      '@layout': path.resolve(__dirname, '../', 'src/stories/layout'),
-      '@pages': path.resolve(__dirname, '../', 'src/stories/pages'),
-      '@wrappers': path.resolve(__dirname, '../', 'src/stories/wrappers'),
+      '@components': resolve(__dirname, '../', 'src/stories/components'),
+      '@global': resolve(__dirname, '../', 'src/stories/global'),
+      '@layout': resolve(__dirname, '../', 'src/stories/layout'),
+      '@pages': resolve(__dirname, '../', 'src/stories/pages'),
+      '@wrappers': resolve(__dirname, '../', 'src/stories/wrappers'),
     };
-    config.module.rules.push({
-      test: /\.ya?ml$/,      
-      loader: 'js-yaml-loader'
-    });
-    config.module.rules.push({
-      test: /\.twig$/,
-      use: [
-        {
-          loader: 'twigjs-loader',
-          options: {
-            twigOptions: {
-              allowInlineIncludes: true,
-              paths: {
-                components: "src/stories/components"
-              },
-            }
-          }
-        },
-      ],
+    
+    // Use Vite's built-in support for YAML and Twig
+    config.plugins.push({
+      name: 'vite-plugin-yaml',
+      transform(code, id) {
+        if (id.endsWith('.yaml') || id.endsWith('.yml')) {
+          return {
+            code: `export default ${JSON.stringify(require('js-yaml').load(code))}`,
+            map: null, // provide source map if available
+          };
+        }
+      }
     });
 
+    config.plugins.push({
+      name: 'vite-plugin-twig',
+      transform(code, id) {
+        if (id.endsWith('.twig')) {
+          return {
+            code: `export default ${JSON.stringify(require('twig').render(code))}`,
+            map: null, // provide source map if available
+          };
+        }
+      }
+    });
+
+    // Add dependencies to pre-optimization
+    config.optimizeDeps = {
+      include: ['storybook-dark-mode'],
+    };
+
     return config;
+  },
+
+  core: {
+    builder: '@storybook/builder-vite', // Using Vite as the builder
+  },
+
+  framework: {
+
+    name: '@storybook/html-vite', // Updated to reflect Vite usage
+    options: {}
   },
 
   docs: {
     autodocs: true
   }
-}
+};

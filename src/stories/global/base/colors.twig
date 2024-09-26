@@ -63,29 +63,33 @@
       <hr>
     {% endif %}
     <h3>{{ title }}</h3>
-    {% for color in section %}
-
-      {% if color.colors.default %}
-        <div>
-          {% include './_swatch.twig' with {
-              hex: color.colors.default
-            }%}
-
-
-          {% for key, value in color.colors.variants %}
-            {% include './_swatch.twig' with {                
-                hex: value,
-                type: key
+    
+      {% for color in section %}
+      <h4>{{ color.name }}</h4>
+      <div class="flex flex-wrap pb-5">
+        {% if color.colors.default %}
+          
+            {% include './_swatch.twig' with {
+                hex: color.colors.default
               }%}
-          {% endfor %}
-        </div>
 
-      {% else %}
-        {% include './_swatch.twig' with {
-          hex: color.hex
-        }%}
-      {% endif %}
-    {% endfor %}
+
+            {% for key, value in color.colors.variants %}
+              {% include './_swatch.twig' with {                
+                  hex: value,
+                  type: key
+                }%}
+            {% endfor %}
+          
+
+        {% else %}
+          {% include './_swatch.twig' with {
+            hex: color.hex
+          }%}
+        {% endif %}
+        </div>
+      {% endfor %}      
+    
   {% endfor %}
 
 

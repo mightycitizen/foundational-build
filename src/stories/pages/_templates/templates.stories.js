@@ -1,6 +1,6 @@
 import twig from './templates.twig';
 
-import { menu, social, logo, address, site_name, footer_links, utility_links, footer_menu } from '../../global/placeholders/global.json';
+import { menu, social, logo } from '../../global/placeholders/global.json';
 
 import { accordion, tabs, breadcrumbs,  hero, card, contact, testimonial, wysiwyg, video, steps, statistic, links } from '../../global/placeholders/components.json';
 

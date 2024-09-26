@@ -107,7 +107,7 @@
 }
 
 /*
-! tailwindcss v3.4.12 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.13 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -618,7 +618,8 @@ select {
   background-repeat: no-repeat;
   background-size: 1.5em 1.5em;
   padding-right: 2.5rem;
-  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
 }
 
 [multiple],[size]:where(select:not([size="1"])) {
@@ -627,7 +628,8 @@ select {
   background-repeat: unset;
   background-size: initial;
   padding-right: 0.75rem;
-  print-color-adjust: unset;
+  -webkit-print-color-adjust: unset;
+          print-color-adjust: unset;
 }
 
 [type='checkbox'],[type='radio'] {
@@ -635,7 +637,8 @@ select {
      -moz-appearance: none;
           appearance: none;
   padding: 0;
-  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
   display: inline-block;
   vertical-align: middle;
   background-origin: border-box;
@@ -855,12 +858,10 @@ a {
   display: inline-block;
   --tw-text-opacity: 1;
   color: rgb(41 83 204 / var(--tw-text-opacity));
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
   &:hover,
         &:focus-visible {
-    -webkit-text-decoration-line: none;
-            text-decoration-line: none;
+    text-decoration-line: none;
   }
   .text-white &:not([class*='text-']):not(.button) {
     color: inherit;
@@ -1000,8 +1001,7 @@ blockquote {
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
   &:hover,
         &:focus-visible {
     --tw-bg-opacity: 1;
@@ -1039,8 +1039,7 @@ blockquote {
 
 .read-more {
   font-weight: 700;
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
   &:after {
     font-family: 'icomoon';
     content: "\f054";
@@ -1054,8 +1053,7 @@ blockquote {
   }
   &:hover,
         &:focus-visible {
-    -webkit-text-decoration-line: underline;
-            text-decoration-line: underline;
+    text-decoration-line: underline;
   }
   &.text-2xl {
     &:after {
@@ -1199,8 +1197,7 @@ label,
     }
     &:hover,
             &:focus {
-      -webkit-text-decoration-line: underline;
-              text-decoration-line: underline;
+      text-decoration-line: underline;
     }
     &:hover,
             &:focus {
@@ -1305,8 +1302,7 @@ input[type="radio"]:focus:not(:checked).custom,
     color: rgb(41 83 204 / var(--tw-text-opacity));
   }
   &+label {
-    -webkit-text-decoration-line: underline;
-            text-decoration-line: underline;
+    text-decoration-line: underline;
   }
 }
 
@@ -1507,10 +1503,6 @@ input[type="radio"]:focus:not(:checked).custom,
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
-}
-
-.visible {
-  visibility: visible;
 }
 
 .collapse {
@@ -1924,6 +1916,10 @@ input[type="radio"]:focus:not(:checked).custom,
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -2159,9 +2155,9 @@ input[type="radio"]:focus:not(:checked).custom,
   background-color: rgb(226 232 247 / var(--tw-bg-opacity));
 }
 
-.bg-primary-200 {
+.bg-primary-700 {
   --tw-bg-opacity: 1;
-  background-color: rgb(189 202 239 / var(--tw-bg-opacity));
+  background-color: rgb(31 62 153 / var(--tw-bg-opacity));
 }
 
 .bg-secondary {
@@ -2184,26 +2180,6 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .bg-opacity-70 {
   --tw-bg-opacity: 0.7;
-}
-
-.bg-gradient-to-b {
-  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-}
-
-.from-primary-200 {
-  --tw-gradient-from: #bdcaef var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(189 202 239 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.from-secondary-200 {
-  --tw-gradient-from: #ffefb2 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(255 239 178 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.to-white {
-  --tw-gradient-to: #fff var(--tw-gradient-to-position);
 }
 
 .object-cover {
@@ -2341,6 +2317,10 @@ input[type="radio"]:focus:not(:checked).custom,
   padding-top: 1rem;
 }
 
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2465,13 +2445,11 @@ input[type="radio"]:focus:not(:checked).custom,
 }
 
 .underline {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .no-underline {
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
 }
 
 .opacity-0 {
@@ -2517,9 +2495,9 @@ input[type="radio"]:focus:not(:checked).custom,
 }
 
 .transition {
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2599,13 +2577,11 @@ input[type="radio"]:focus:not(:checked).custom,
 }
 
 .hover\:underline:hover {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .hover\:no-underline:hover {
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
 }
 
 .focus\:opacity-100:focus {
@@ -2894,10 +2870,6 @@ input[type="radio"]:focus:not(:checked).custom,
   .lg\:bg-white {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  }
-
-  .lg\:bg-gradient-to-r {
-    background-image: linear-gradient(to right, var(--tw-gradient-stops));
   }
 
   .lg\:px-0 {

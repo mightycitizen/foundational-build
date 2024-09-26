@@ -64,6 +64,10 @@ export default {
         // You can configure options here
         namespaces: {
           components: join(__dirname, '../', 'src/stories/components'),
+          global: join(__dirname, '../', 'src/stories/global'),
+          layout: join(__dirname, '../', 'src/stories/layout'),
+          pages: join(__dirname, '../', 'src/stories/pages'),
+          wrappers: join(__dirname, '../', 'src/stories/wrappers'),
         },
       })
     );

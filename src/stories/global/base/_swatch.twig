@@ -1,4 +1,5 @@
-<div style="background-color: {{ hex }}" class="pl-swatch bg-{{ color.name | lower }}{% if type %}-{{ type }}{% endif %} {% if color.name | lower == 'white' or type | lower < 500 %}pl-swatch--light{% endif %}" >
-  {{ hex }}
-  <div class="pl-swatch__hex">{{ color.name }} {% if type %}({{ type }}){% endif %}</div>
+<div style="background-color: {{ hex }}" class="w-20 h-15 flex flex-col justify-center items-center aspect-square text-center pl-swatch bg-{{ color.name | lower }}{% if type %}-{{ type }}{% endif %} {% if color.name | lower == 'white' or type | lower < 500 %}{% else %}text-white{% endif %}" >
+  <span class="font-bold text-xs">{{ hex }}</span>
+  
+  <div class="pl-swatch__hex text-sm">{% if type %}({{ type }}){% endif %}</div>
 </div>

@@ -3,7 +3,8 @@
   "version": "2.0.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "start": "pnpm storybook",
+    "start": "concurrently --raw \"pnpm watch\" \"pnpm storybook\"",
+    "watch": ") npx tailwindcss -i ./src/assets/css/app.css -o ./src/assets/css/output.css --watch",
     "component": "hygen foundation component",
     "js": "hygen foundation javascript",
     "js-plugin": "hygen foundation javascript-plugin",

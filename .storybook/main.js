@@ -1,8 +1,4 @@
 import { resolve } from 'path';
-import tsconfigPaths from 'vite-tsconfig-paths'
-import remarkGfm from 'remark-gfm';
-import Twig from 'twig';
-// import twigLoader from 'vite-plugin-twig-loader';
 import twig from 'vite-plugin-twig-drupal';
 import { join } from "node:path"
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
@@ -56,15 +52,15 @@ export default {
     config.resolve.plugins = [
       new LegacyNsResolverPlugin()
   ];    
-    config.resolve.alias = {
-      '@components': resolve(__dirname, '../', 'src/stories/components'),
-      '@global': resolve(__dirname, '../', 'src/stories/global'),
-      '@layout': resolve(__dirname, '../', 'src/stories/layout'),
-      '@pages': resolve(__dirname, '../', 'src/stories/pages'),
-      '@wrappers': resolve(__dirname, '../', 'src/stories/wrappers'),
-    };
+    
     config.plugins.push(
       ViteImageOptimizer({
+        logStats: true,
+        includePublic: true,
+        mozjpeg: { quality: 75 },
+        pngquant: { quality: [0.6, 0.8] },
+        svgo: true,
+        webp: { quality: 75 },
         /* pass your config */
       })
     );

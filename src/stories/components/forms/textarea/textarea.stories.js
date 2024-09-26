@@ -1,8 +1,8 @@
-import twig from './slider.twig';
+import twig from './textarea.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Forms/Slider',
+  title: 'Components/Forms/Textarea',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
     required: {
@@ -21,9 +21,9 @@ const Template = (args) => {
   return twig(args);
 };
 
-export const Slider = Template.bind({});
+export const Textarea = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Slider.args ={
+Textarea.args ={
   label: "Text",
   id: "text",
   name: "text",

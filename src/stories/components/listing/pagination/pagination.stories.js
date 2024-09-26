@@ -1,10 +1,10 @@
-import twig from './event.twig';
-
+import twig from './pagination.twig';
+import { pagination } from '../../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
 
 export default {
-  title: 'Components/Listing/Events',
+  title: 'Components/Listing/Pagination',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 
@@ -27,26 +27,9 @@ const Template = (args) => {
   return twig(args);
 };
 
-const events = [...Array(5)].map((_, i) => ( {
-  title: 'Event Title',
-  active: true,
-  categories: [
-    {
-      url: '#',
-      title: 'Category'
-    }
-  ],
-  groups: [
-    {
-      url: '#',
-      title: 'Category'
-    }
-  ]
-}));
-
 const defaultArgs = {
-  events: events
+  ...pagination
 }
-export const Default = Template.bind({});
+export const Pagination = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+Pagination.args = defaultArgs;

@@ -1,10 +1,10 @@
-import twig from './event.twig';
+import twig from './list.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
 
 export default {
-  title: 'Components/Listing/Events',
+  title: 'Components/Listing/List',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 
@@ -27,16 +27,17 @@ const Template = (args) => {
   return twig(args);
 };
 
-const events = [...Array(5)].map((_, i) => ( {
-  title: 'Event Title',
-  active: true,
+
+const list = [...Array(5)].map((_, i) => ( {
+  heading: 'Event Title',
+  url: '#',
+  summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel aliquam aliquam, nunc nisl aliquam nisl, vel aliquam nisl nunc vel nisl. Sed euismod, nisl vel aliquam aliquam, nunc nisl aliquam nisl, vel aliquam nisl nunc vel nisl.',
+  image: {
+    src: "https://placehold.co/400x360",
+    alt: 'Image alt text'
+  },
+  label: 'Label',
   categories: [
-    {
-      url: '#',
-      title: 'Category'
-    }
-  ],
-  groups: [
     {
       url: '#',
       title: 'Category'
@@ -45,8 +46,8 @@ const events = [...Array(5)].map((_, i) => ( {
 }));
 
 const defaultArgs = {
-  events: events
+  list
 }
-export const Default = Template.bind({});
+export const List = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+List.args = defaultArgs;

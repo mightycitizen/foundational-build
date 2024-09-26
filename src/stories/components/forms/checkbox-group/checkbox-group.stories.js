@@ -1,8 +1,8 @@
-import twig from './slider.twig';
+import twig from './checkbox-group.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Forms/Slider',
+  title: 'Components/Forms/Checkbox Group',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
     required: {
@@ -21,11 +21,25 @@ const Template = (args) => {
   return twig(args);
 };
 
-export const Slider = Template.bind({});
+export const CheckboxGroup = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Slider.args ={
-  label: "Text",
-  id: "text",
-  name: "text",
+CheckboxGroup.args ={
+  label: "Checkbox",
+  id: "checkbox",
+  name: "checkbox",
 
+  options: [
+    {
+      label: "Checkbox A",
+      value: 0
+    },
+    {
+      label: "Checkbox B",
+      value: 1
+    },
+    {
+      label: "Checkbox C",
+      value: 2
+    }
+  ]
 };

@@ -1,5 +1,12 @@
 import { resolve } from 'path';
+import tsconfigPaths from 'vite-tsconfig-paths'
 import remarkGfm from 'remark-gfm';
+import Twig from 'twig';
+// import twigLoader from 'vite-plugin-twig-loader';
+import twig from 'vite-plugin-twig-drupal';
+import { join } from "node:path"
+
+
 
 // Legacy namespace resolver plugin
 class LegacyNsResolverPlugin {
@@ -44,7 +51,7 @@ export default {
 
   async viteFinal(config) {
     // Add legacy resolver plugin
-    config.resolve.plugins = [new LegacyNsResolverPlugin()];
+    config.resolve.plugins = [new LegacyNsResolverPlugin()];    
     config.resolve.alias = {
       '@components': resolve(__dirname, '../', 'src/stories/components'),
       '@global': resolve(__dirname, '../', 'src/stories/global'),
@@ -52,21 +59,14 @@ export default {
       '@pages': resolve(__dirname, '../', 'src/stories/pages'),
       '@wrappers': resolve(__dirname, '../', 'src/stories/wrappers'),
     };
-
-    // Add support for Twig files
-    config.plugins.push({
-      name: 'vite-plugin-twig',
-      transform(code, id) {
-        if (id.endsWith('.twig')) {
-          // Here you can compile the Twig template if necessary
-          // This is a simple pass-through for now
-          return {
-            code: `export default ${JSON.stringify(code)}`,
-            map: null, // Provide a source map if needed
-          };
-        }
-      }
-    });
+    config.plugins.push(
+      twig({
+        // You can configure options here
+        namespaces: {
+          components: join(__dirname, '../', 'src/stories/components'),
+        },
+      })
+    );
 
     return config;
   },

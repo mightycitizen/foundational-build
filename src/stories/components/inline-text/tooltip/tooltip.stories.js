@@ -1,17 +1,22 @@
-import twig from './slider.twig';
+import twig from './tooltip.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Forms/Slider',
-  // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
-    required: {
-      control: {
-        type: 'boolean'
-      }
-    }
+  title: 'Components/Inline Text/Tooltip',
+  // argTypes: {
+  //   class: {
+  //     control: {
+  //       type: 'text'
+  //     }
+  //   },
+  //   text: {
+  //     control: {
+  //       type: 'text'
+  //     }
+  //   },
 
-  },
+  // }
+
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -21,11 +26,9 @@ const Template = (args) => {
   return twig(args);
 };
 
-export const Slider = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
-Slider.args ={
-  label: "Text",
-  id: "text",
-  name: "text",
-
+export const Tooltip = Template.bind({});
+Tooltip.args = {
+  text: 'Trigger Text',
+  tooltip: 'Tooltip Text'
 };
+//

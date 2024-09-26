@@ -1,14 +1,39 @@
-import twig from './event.twig';
+import twig from './modal.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
-
-
 export default {
-  title: 'Components/Listing/Events',
+  title: 'Components/Containers/Modal',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 
+    heading: {
+      control: 'text'
+    },
 
+    summary: {
+      control: 'text'
+    },
+    subheading: {
+      control: 'text'
+    },
+    button: {
+      url: {
+        control: 'text'
+      },
+      text: {
+        control: 'text'
+      }
+    },
+    categories: [
+      {
+        text: {
+          control: 'text'
+        },
+        url: {
+          control: 'text'
+        }
+      }
+    ]
     // backgroundColor: { control: 'color' },
     // label: { control: 'text' },
     // onClick: { action: 'onClick' },
@@ -27,26 +52,11 @@ const Template = (args) => {
   return twig(args);
 };
 
-const events = [...Array(5)].map((_, i) => ( {
-  title: 'Event Title',
-  active: true,
-  categories: [
-    {
-      url: '#',
-      title: 'Category'
-    }
-  ],
-  groups: [
-    {
-      url: '#',
-      title: 'Category'
-    }
-  ]
-}));
-
 const defaultArgs = {
-  events: events
+  heading: 'Hero',
+  summary: 'Summary',
+  subheading: 'Subheading'
 }
-export const Default = Template.bind({});
+export const Modal = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
+Modal.args = defaultArgs;

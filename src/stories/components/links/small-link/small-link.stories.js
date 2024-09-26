@@ -1,15 +1,10 @@
-import twig from './slider.twig';
+import twig from './small-link.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Forms/Slider',
+  title: 'Components/Links/Small Link',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-    required: {
-      control: {
-        type: 'boolean'
-      }
-    }
 
   },
 };
@@ -21,11 +16,11 @@ const Template = (args) => {
   return twig(args);
 };
 
-export const Slider = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
-Slider.args ={
-  label: "Text",
-  id: "text",
-  name: "text",
+const defaultArgs = {
+  text: 'Small Link',
+  url: '#',
 
-};
+}
+export const SmallLink = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+SmallLink.args = defaultArgs;

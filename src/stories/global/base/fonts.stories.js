@@ -49,11 +49,12 @@ const Template = (args) => {
 
 export const Fonts = Template.bind({});
 
-fonts = Object.keys(fonts).reduce((acc, key) => {
+
+let fontsArray = Object.keys(fonts).reduce((acc, key) => {
   acc[key] = fonts[key];
   return acc;
 }, {});
 
 Fonts.args = {
-  fonts
+  fonts: fontsArray
 }

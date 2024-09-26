@@ -1,0 +1,5 @@
+import{t as r}from"./list-CR6aF5OI.js";import"./twig-DGqAAA8S.js";import"./_commonjsHelpers-BosuxZz1.js";import"./twig-xRDxs_F9.js";import"./date-Bb-mI_7M.js";import"./meta-CmdndMib.js";import"./label-DT_NOp-F.js";const L={title:"Components/Listing/List",argTypes:{}},l=t=>r(t),n=[...Array(5)].map((t,m)=>({heading:"Event Title",url:"#",summary:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel aliquam aliquam, nunc nisl aliquam nisl, vel aliquam nisl nunc vel nisl. Sed euismod, nisl vel aliquam aliquam, nunc nisl aliquam nisl, vel aliquam nisl nunc vel nisl.",image:{src:"https://placehold.co/400x360",alt:"Image alt text"},label:"Label",categories:[{url:"#",title:"Category"}]})),o={list:n},e=l.bind({});e.args=o;var i,a,s;e.parameters={...e.parameters,docs:{...(i=e.parameters)==null?void 0:i.docs,source:{originalSource:`args => {
+  // You can either use a function to create DOM elements or use a plain html string!
+  // return \`<div>\${label}</div>\`;
+  return twig(args);
+}`,...(s=(a=e.parameters)==null?void 0:a.docs)==null?void 0:s.source}}};const h=["List"];export{e as List,h as __namedExportsOrder,L as default};

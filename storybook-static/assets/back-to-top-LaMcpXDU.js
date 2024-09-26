@@ -1,0 +1,7 @@
+import{T as a,t as r}from"./twig-DGqAAA8S.js";import{a as n,D as i}from"./twig-xRDxs_F9.js";n(a);a.cache(!1);const e=t=>t,l=(t={})=>{const o=r.twig({id:"/Users/kfernandez/Sites/foundational-build-craft/storybook/src/stories/components/utils/back-to-top/back-to-top.twig",data:[{type:"raw",value:`<a href="#header" class="backToTop fixed bottom-8 right-8 flex flex-col rounded-full w-12 aspect-square justify-center items-center no-underline bg-opacity-70 bg-gray-700 hover:bg-opacity-100 z-30 transition-all duration-200 " 
+  `,position:{start:0,end:230}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"scroll_show",match:["scroll_show"]},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:230,end:260},output:[{type:"raw",value:`    :class="backToTop ? 'opacity-100 translate-y-0 z-10' : 'opacity-0 -z-10 translate-y-3'"    
+  `,position:{start:261,end:359}}]},position:{open:{start:230,end:260},close:{start:359,end:370}}},{type:"raw",value:`>
+  <i class="backToTop_icon icon-chevron-up -mt-1"></i>
+  <span class="backToTop_text uppercase text-xs font-bold"><span class="sr-only">Back to </span>top</span>  
+</a>
+`,position:{start:371,end:371}}],precompiled:!0});o.options.allowInlineIncludes=!0;try{return e(o.render({attributes:new i,...t}))}catch(s){return e("An error occurred whilst rendering /Users/kfernandez/Sites/foundational-build-craft/storybook/src/stories/components/utils/back-to-top/back-to-top.twig: "+s.toString())}};export{l as t};

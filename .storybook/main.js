@@ -5,6 +5,8 @@ import Twig from 'twig';
 // import twigLoader from 'vite-plugin-twig-loader';
 import twig from 'vite-plugin-twig-drupal';
 import { join } from "node:path"
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+
 
 
 
@@ -33,7 +35,7 @@ class LegacyNsResolverPlugin {
 }
 
 export default {
-  staticDirs: ['../dist'],
+  staticDirs: ['../public'],
 
   stories: [
     "../src/stories/**/**/*.stories.js"
@@ -51,7 +53,9 @@ export default {
 
   async viteFinal(config) {
     // Add legacy resolver plugin
-    config.resolve.plugins = [new LegacyNsResolverPlugin()];    
+    config.resolve.plugins = [
+      new LegacyNsResolverPlugin()
+  ];    
     config.resolve.alias = {
       '@components': resolve(__dirname, '../', 'src/stories/components'),
       '@global': resolve(__dirname, '../', 'src/stories/global'),
@@ -59,6 +63,11 @@ export default {
       '@pages': resolve(__dirname, '../', 'src/stories/pages'),
       '@wrappers': resolve(__dirname, '../', 'src/stories/wrappers'),
     };
+    config.plugins.push(
+      ViteImageOptimizer({
+        /* pass your config */
+      })
+    );
     config.plugins.push(
       twig({
         // You can configure options here

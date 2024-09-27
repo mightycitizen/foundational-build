@@ -57,15 +57,15 @@ Default.args = defaultArgs;
 const BackgroundColor = Template.bind({});
 BackgroundColor.args = {
   ...defaultArgs,
-  section_heading: 'Background Color',
-  section_class: 'bg-solid-primary color-white'
+  section_heading: 'Background Primary',
+  section_class: 'bg-primary color-white'
 };
 
-const Tight = Template.bind({});
-Tight.args = {
+const Secondary = Template.bind({});
+Secondary.args = {
   ...defaultArgs,
-  section_heading: 'Tight',
-  section_class: 'bg-solid-secondary-lightest section--tight'
+  section_heading: 'Background Secondary',
+  section_class: 'bg-secondary-200'
 };
 
-export { Default, BackgroundColor, Tight }
+export { Default, BackgroundColor, Secondary }

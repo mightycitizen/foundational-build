@@ -26,16 +26,19 @@ Object.keys(palettes).forEach(key => {
 
 
 
+
 colors = {
   ...colors,
   ...brandPalette
 };
 
+
 module.exports = {
-  content: ['./src/assets/js/**/*.js', './src/stories/{components,layout,pages}/**/*.{twig,jsx}'],  
+  content: ['./src/assets/js/**/*.js', './src/stories/{components,layout,pages}/**/*.{twig,js}'],  
   safelist: [
     'font-display',
     'font-body',
+    'bg-secondary-100',
   ],
   theme: {
     container: {

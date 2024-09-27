@@ -9,7 +9,8 @@
     "js": "hygen foundation javascript",
     "js-plugin": "hygen foundation javascript-plugin",
     "storybook": "storybook dev -p 6011",
-    "build": "storybook build"
+    "build": "storybook build",
+    "deploy": "pnpm run build && git add --all && git commit -m 'Deploying Storybook' && git push"
   },
   "browserslist": [
     "last 2 versions",
@@ -62,6 +63,7 @@
     "@tailwindcss/typography": "^0.5.15",
     "alpinejs": "^3.14.1",
     "babel-polyfill": "^6.26.0",
+    "cssnano": "^7.0.6",
     "drupal-attribute": "^1.1.0",
     "jquery": "^3.7.1",
     "js-yaml-loader": "^1.2.2",

@@ -1,5 +1,0 @@
-import{t as s}from"./menu-B-WZh3d9.js";import{m as a}from"./global-DbnAtCvc.js";import"./twig-DGqAAA8S.js";import"./_commonjsHelpers-BosuxZz1.js";import"./twig-xRDxs_F9.js";const l={title:"Components/Navigation/Menu"},i=o=>s(o),e=i.bind({});e.args={menu:a};var r,t,n;e.parameters={...e.parameters,docs:{...(r=e.parameters)==null?void 0:r.docs,source:{originalSource:`args => {
-  // You can either use a function to create DOM elements or use a plain html string!
-  // return \`<div>\${label}</div>\`;
-  return twig(args);
-}`,...(n=(t=e.parameters)==null?void 0:t.docs)==null?void 0:n.source}}};const g=["Menu"];export{e as Menu,g as __namedExportsOrder,l as default};

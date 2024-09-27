@@ -8,11 +8,11 @@ import{T as o,t as l}from"./twig-DGqAAA8S.js";import{a as u,D as d}from"./twig-x
 		<span class="icon-twitter"></span>
 	</a>
 	<a class="aspect-square w-10 rounded-full flex items-center justify-center bg-primary text-white no-underline">
-		<span class="icon-youtube"></span>
+		<span class="icon-youtube-play"></span>
 	</a>
 
 	<a class="aspect-square w-10 rounded-full flex items-center justify-center bg-primary text-white no-underline">
-		<span class="icon-pinterest"></span>
+		<span class="icon-pinterest-p"></span>
 	</a>
 
 </div>

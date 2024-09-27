@@ -1,4 +1,4 @@
-import{T as e,t}from"./twig-DGqAAA8S.js";import{a as i}from"./twig-xRDxs_F9.js";import"./header-vPwZuI0e.js";import"./alert-DjUyq6F7.js";import"./footer-CXuePMqK.js";i(e);e.cache(!1);t.twig({id:"@layout/wrapper/footer.twig",data:[{type:"raw",value:`<footer class="l-footer text-white text-center bg-primary py-8">
+import{T as e,t}from"./twig-DGqAAA8S.js";import{a as i}from"./twig-xRDxs_F9.js";import"./header-vPwZuI0e.js";import"./alert-DjUyq6F7.js";import"./footer-D1OVQFcP.js";i(e);e.cache(!1);t.twig({id:"@layout/wrapper/footer.twig",data:[{type:"raw",value:`<footer class="l-footer text-white text-center bg-primary py-8">
   <div class="container">
     <div class="grid grid-cols-12 gap-6">
 

@@ -80,12 +80,8 @@ const defaultArgs = {
   breadcrumbs,
   menu,
   logo,
-  social,
-  address,
-  site_name,
-  footer_links,
-  utility_links,
-  footer_menu,
+  social,        
+  
 }
 // export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

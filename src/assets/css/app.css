@@ -242,7 +242,9 @@
     /* Custom checkbox and radio styles */
     .custom,
     .fui-input {
-        @apply opacity-0 absolute;
+        &[type="checkbox"], &[type="radio"]{
+            @apply opacity-0 absolute;
+        }        
 
 
         +label {

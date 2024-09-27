@@ -1135,8 +1135,12 @@ label,
 
 .custom,
     .fui-input {
-  position: absolute;
-  opacity: 0;
+  &[type="checkbox"], &[type="radio"] {
+    position: absolute;
+  }
+  &[type="checkbox"], &[type="radio"] {
+    opacity: 0;
+  }
   +label {
     position: relative;
   }

@@ -166,8 +166,11 @@
         }
     }
 
+    .fui-submit{
+        @apply mt-8;
+    }
 
-    .button {
+    .button, .fui-submit {
         @apply text-white bg-primary px-8 py-3 no-underline font-bold;
 
         &:hover,
@@ -425,9 +428,11 @@
                     margin-right: -100px;
                     width: var(--slide-width-curr);
 
+                    .card_section{
+                        @apply bg-primary;
+                    }
                     .card {
-                        @apply shadow-lg bg-primary text-white;
-
+                        @apply shadow-lg  text-white;                    
                         a:not(.button) {
                             @apply text-inherit;
                         }

@@ -14,19 +14,19 @@
 
   {% set modifiers = modifiers | merge([button_modifiers]) %}
 {% endif %}
-{% if outline %}
+{% if outline | default %}
   {% set modifiers = modifiers | merge(['outline']) %}
 {% endif %}
-{% if block %}
+{% if block | default %}
   {% set modifiers = modifiers | merge(['block']) %}
 {% endif %}
-{% if rounded %}
+{% if rounded | default %}
   {% set modifiers = modifiers | merge(['rounded']) %}
 {% endif %}
-{% if disabled %}
+{% if disabled | default %}
   {% set modifiers = modifiers | merge(['disabled']) %}
 {% endif %}
-{% if icon %}
+{% if icon | default %}
   {% set modifiers = modifiers | merge(['icon']) %}
 {% endif %}
 

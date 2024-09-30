@@ -1,4 +1,4 @@
-<div class="card shadow-lg card--horizontal {{ modifier }} {% if clickCard | default %}card--click{% endif %}" data-scroll-show>
+<div class="card shadow-lg card--horizontal bg-white {{ modifier }} {% if clickCard | default %}card--click{% endif %}" data-scroll-show>
   <div {% if image_position | default != 'flush' %}class="card_section py-8 px-8"{% endif %}>
     <div class="grid grid-cols-12 gap-y-4 {% if image_position | default != 'flush' %}gap-x-5 lg:gap-x-8  items-center{% endif %} ">
       {% if image | default %}

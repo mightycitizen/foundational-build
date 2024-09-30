@@ -136,7 +136,7 @@ const defaultArgs = {
       module_type: 'card-group',
       section_heading: 'Three Up Cards',
       section_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      section_class: "bg-gradient-to-b lg:bg-gradient-to-r from-secondary-200 to-white",
+      section_class: "bg-secondary-200",
       cards: Array.from({length: 3}, (v, i) => {
         return {
           ...card,

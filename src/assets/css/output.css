@@ -991,7 +991,11 @@ blockquote {
   }
 }
 
-.button {
+.fui-submit {
+  margin-top: 2rem;
+}
+
+.button, .fui-submit {
   --tw-bg-opacity: 1;
   background-color: rgb(41 83 204 / var(--tw-bg-opacity));
   padding-left: 2rem;
@@ -1458,7 +1462,7 @@ input[type="radio"]:focus:not(:checked).custom,
         margin-left: -100px;
         margin-right: -100px;
         width: var(--slide-width-curr);
-        .card {
+        .card_section {
           --tw-bg-opacity: 1;
           background-color: rgb(41 83 204 / var(--tw-bg-opacity));
         }

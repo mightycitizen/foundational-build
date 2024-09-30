@@ -4,6 +4,13 @@
 {% elseif section_style | default == 'narrow' %}  
   {% set width_class = 'lg:max-w-screen-xl' %}
 {% endif %}
+{% if background_color | default %}
+  {% if background_style | default == 'gradient' %}
+    {% set section_class = 'bg-gradient-to-b lg:bg-gradient-to-r from-' ~ background_color ~ ' to-white' %}
+  {% else %}
+    {% set section_class = 'bg-' ~ background_color %}
+  {% endif %}
+{% endif %}
 {% if intro_class | default is empty %}{% set intro_class = 'text-center' %}{% endif %}
 
 {% set intro %}

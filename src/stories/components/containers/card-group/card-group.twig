@@ -2,7 +2,7 @@
   {% for card in cards %}
       {% set card = card | merge({lazyload_class: 'data-lazy', equalize: true}) %}
       <div class="col-span-12 md:col-span-4">
-        {% include "@components/teasers/card/card.twig" with card %}
+        {% include "@components/teasers/card/card.twig" with card only %}
       </div>
   {% endfor %}
 </div>

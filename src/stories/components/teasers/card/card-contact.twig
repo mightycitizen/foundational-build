@@ -11,14 +11,16 @@
           {% include '@components/links/read-more/read-more.twig' with link %}
         {% endif %}
       </div>
-      <div class="col-span-12 lg:col-span-5">
-        <div class="px-4 py-5 bg-gray-100 text-sm">
-          {% include '@components/informational/listing/listing.twig' with {
-          "listing_class": 'mb-0',
-          "items": items
-        } %}
+      {% if items | length %}
+        <div class="col-span-12 lg:col-span-5">
+          <div class="px-4 py-5 bg-gray-100 text-sm">
+            {% include '@components/informational/listing/listing.twig' with {
+            "listing_class": 'mb-0',
+            "items": items
+          } %}
+          </div>
         </div>
-      </div>
+      {% endif %}
     </div>
   </div>
 </div>

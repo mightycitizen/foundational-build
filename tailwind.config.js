@@ -39,7 +39,7 @@ module.exports = {
     'font-display',
     'font-body',
     'bg-secondary-100',
-    'mt-4'
+    'aspect-video'
   ],
   theme: {
     container: {

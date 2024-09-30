@@ -174,13 +174,13 @@
 		</div>
 		{% if image %}
 			<div class="video_image_wrapper image-size--landscapeCropped z-10" x-show="!playing">
-				<img src="{{ image.src }}" alt="{{ image.alt }}" class="w-full">
+				<img src="{{ image.src }}" alt="{{ image.alt }}" class="w-full aspect-video object-cover" loading="lazy">
 			</div>
 		{% endif %}
 
 		<div class="video_container " :class="playing ? 'z-10' : 'z-0 opacity-0 absolute top-0 left-0'">
 			<div class="video_player_wrapper">
-				<div class="video_player" x-ref="player" x-trap="playing" data-video-id="{{ video_id }}"></div>
+				<div class="video_player aspect-video" x-ref="player" x-trap="playing" data-video-id="{{ video_id }}"></div>
 			</div>
 		</div>
 	</div>

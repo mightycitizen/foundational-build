@@ -1770,6 +1770,10 @@ input[type="radio"]:focus:not(:checked).custom,
   aspect-ratio: 1 / 1;
 }
 
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
 .h-20 {
   height: 5rem;
 }
@@ -1792,6 +1796,10 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .h-full {
   height: 100%;
+}
+
+.h-auto {
+  height: auto;
 }
 
 .max-h-48 {

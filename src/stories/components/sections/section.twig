@@ -9,7 +9,6 @@
     {% set background_color = background_color ~ '-200' %}    
     {% set section_class = 'bg-gradient-to-b lg:bg-gradient-to-r from-' ~ background_color ~ ' to-white' %}
   {% else %}
-
     {% set background_color = background_color == 'primary' ? background_color ~ '-100' : background_color ~ '-200' %}
     {% set section_class = 'bg-' ~ background_color %}
   {% endif %}

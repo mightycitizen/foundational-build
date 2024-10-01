@@ -1,0 +1,10 @@
+{% embed '@components/sections/section.twig' with {    
+  section_class: section_class | default,
+  section_style: "narrow"
+} %}
+  {% block section_content %}
+    {% for card in cards %}
+      {% include '@components/teasers/card/card-horizontal.twig' with card %}
+    {% endfor %}    
+  {% endblock %}
+{% endembed %}

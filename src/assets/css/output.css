@@ -1932,6 +1932,10 @@ input[type="radio"]:focus:not(:checked).custom,
   flex-direction: column;
 }
 
+.place-items-center {
+  place-items: center;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -2050,6 +2054,10 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .self-end {
   align-self: flex-end;
+}
+
+.justify-self-center {
+  justify-self: center;
 }
 
 .overflow-hidden {

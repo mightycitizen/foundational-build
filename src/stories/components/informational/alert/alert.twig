@@ -4,7 +4,7 @@
       <span class="alert-bar_label font-bold">{{ label }}:</span>
     {% endif %}
     {% if link | default %}
-      <a href="{{ link }}">{{ text }}</a>
+      <a href="{{ link.url }}" {% if link.target %}target="{{ link.target }}"{% endif %}>{{ text }}</a>
     {% else %}
       <span>{{ text }}</span>      
     {% endif %}

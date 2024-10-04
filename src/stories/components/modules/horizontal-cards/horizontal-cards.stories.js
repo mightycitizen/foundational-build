@@ -1,4 +1,4 @@
-import twig from './horizontal-card.twig';
+import twig from './horizontal-cards.twig';
 import { card } from '../../../global/placeholders/components.json';
 import { sizes } from '../../../global/placeholders/images.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export

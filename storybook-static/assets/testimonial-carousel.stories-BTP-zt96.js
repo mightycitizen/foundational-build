@@ -1,0 +1,5 @@
+import{t as i}from"./testimonial-carousel-DJx6vgj8.js";import{p as n,s as e}from"./images-Bj4xutc2.js";import{t as m}from"./components-CDY8ucC3.js";import"./twig-DGqAAA8S.js";import"./_commonjsHelpers-BosuxZz1.js";import"./twig-xRDxs_F9.js";import"./section-CtV-pKbR.js";import"./button-DxOr8LVP.js";import"./carousel-testimonial-44BkbfTQ.js";import"./slick-B2EDZ1BN.js";import"./card-testimonial-C7a7jca4.js";const T={title:"Components/Modules/Testimonials/Carousel"},p=t=>i(t),c=[...Array(5)].map((t,u)=>Object.assign(m,{image:{src:n+e.square.width+"x"+e.square.height,alt:"Alt Text"}})),l={section_heading:"Heading",section_description:"Description",cards:c},r=p.bind({});r.args=l;var s,o,a;r.parameters={...r.parameters,docs:{...(s=r.parameters)==null?void 0:s.docs,source:{originalSource:`args => {
+  // You can either use a function to create DOM elements or use a plain html string!
+  // return \`<div>\${label}</div>\`;
+  return twig(args);
+}`,...(a=(o=r.parameters)==null?void 0:o.docs)==null?void 0:a.source}}};const q=["Carousel"];export{r as Carousel,q as __namedExportsOrder,T as default};

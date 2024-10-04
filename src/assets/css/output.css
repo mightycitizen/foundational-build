@@ -1441,12 +1441,33 @@ input[type="radio"]:focus:not(:checked).custom,
       width: var(--slide-width);
       margin: 60px 0;
       padding: 10px 50px;
+      .card {
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      }
       &,
                 .card_section {
         transition: all 0.3s;
       }
-      .card_summary {
-        display: none;
+      .card_section {
+        --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      }
+      .card_section--inactive{
+        position: absolute;
+        width: 100%;
+        .card_summary {
+          display: none;
+        }
+      }
+      .card_section--active{
+        opacity: 0;
+      }
+      .card_section--active {
+        --tw-bg-opacity: 1;
+        background-color: rgb(41 83 204 / var(--tw-bg-opacity));
       }
       &.slick-current.slick-animate {
         /* margin: 5px; */
@@ -1462,9 +1483,11 @@ input[type="radio"]:focus:not(:checked).custom,
         margin-left: -100px;
         margin-right: -100px;
         width: var(--slide-width-curr);
-        .card_section {
-          --tw-bg-opacity: 1;
-          background-color: rgb(41 83 204 / var(--tw-bg-opacity));
+        .card_section--inactive{
+          opacity: 0;
+        }
+        .card_section--active{
+          opacity: 1;
         }
         .card {
           --tw-text-opacity: 1;
@@ -1480,9 +1503,9 @@ input[type="radio"]:focus:not(:checked).custom,
             color: inherit;
           }
         }
-        .card_summary {
-          display: block;
-        }
+        /* .card_summary {
+                        display: block;
+                    } */
         .card_section {
           padding: 1.5rem;
         }
@@ -1531,10 +1554,6 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .relative {
   position: relative;
-}
-
-.sticky {
-  position: sticky;
 }
 
 .bottom-8 {
@@ -1794,12 +1813,12 @@ input[type="radio"]:focus:not(:checked).custom,
   height: 3px;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-auto {
   height: auto;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .max-h-48 {
@@ -1932,10 +1951,6 @@ input[type="radio"]:focus:not(:checked).custom,
   flex-direction: column;
 }
 
-.place-items-center {
-  place-items: center;
-}
-
 .items-start {
   align-items: flex-start;
 }
@@ -2054,10 +2069,6 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .self-end {
   align-self: flex-end;
-}
-
-.justify-self-center {
-  justify-self: center;
 }
 
 .overflow-hidden {

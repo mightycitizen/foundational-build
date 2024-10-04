@@ -2,8 +2,6 @@ import 'slick-carousel';
 import $ from 'jquery';
 import breakpoints  from '../../../stories/global/base/breakpoints.json'; // Foundation breakpoints
 
-
-//console.log(breakpoints);
 // @slick pagination helper function
 const slickPagination = (slick) => {
   if (slick.$dots){
@@ -381,7 +379,20 @@ export const initSlick = () => {
   $slickCenter.each(function(){
     const $this = $(this);
 
-    slickEvents($this);
+    slickEvents($this);    
+    $this.on('init', function(event, slick){
+      
+      // for each slide duplicate the card_section
+      slick.$slider.find('.slick-slide').each(function(index){
+        
+        const $slide = $(this);
+        const $cardSection = $slide.find('.card_section');        
+        const $cardSectionClone = $cardSection.clone();
+        $cardSectionClone.addClass('card_section--active hidden lg:block');
+        $cardSection.after($cardSectionClone);
+        $cardSection.addClass('card_section--inactive');
+      });
+    });
 
     const slickOptions = $.extend({}, defaultOptions, {
       centerMode: true,
@@ -414,6 +425,7 @@ export const initSlick = () => {
     $this.slick(slickOptions);
     const slideCount = $this.slick('getSlick').slideCount;
     const middleSlide = Math.floor(slideCount / 2);
+
 
     $this.slick('slickGoTo', middleSlide);
 

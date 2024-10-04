@@ -64,6 +64,7 @@ const cards = [...Array(5)].map((_, i) => ( {
     url: '#',
     level: 3
   },
+  summary: 'Text',
   image: {
     src: '//via.placeholder.com/430x230',
     alt: 'Alt Text'
@@ -80,3 +81,8 @@ const defaultArgs = {
 export const CarouselCardsCentered = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 CarouselCardsCentered.args = defaultArgs;
+
+
+CarouselCardsCentered.parameters = {
+  layout: 'fullscreen'
+}

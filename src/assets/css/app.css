@@ -413,7 +413,7 @@
                 padding: 10px 50px;
 
                 .card{
-                    @apply shadow-none;
+                    @apply shadow-none bg-transparent;
                 }
 
                 &,
@@ -423,7 +423,7 @@
                 }
 
                 .card_section {
-                    @apply shadow-md;
+                    @apply shadow-md bg-white;
                 }
 
                 .card_section--inactive{

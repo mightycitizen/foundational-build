@@ -1442,6 +1442,9 @@ input[type="radio"]:focus:not(:checked).custom,
       margin: 60px 0;
       padding: 10px 50px;
       .card {
+        background-color: transparent;
+      }
+      .card {
         --tw-shadow: 0 0 #0000;
         --tw-shadow-colored: 0 0 #0000;
         box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -1449,6 +1452,10 @@ input[type="radio"]:focus:not(:checked).custom,
       &,
                 .card_section {
         transition: all 0.3s;
+      }
+      .card_section {
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255 / var(--tw-bg-opacity));
       }
       .card_section {
         --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);

@@ -399,7 +399,7 @@ export const initSlick = () => {
       centerPadding: '50px',
       appendArrows: $this.next('.slick-nav'),
       appendDots: $this.next('.slick-nav'),
-      adaptiveHeight: false,
+      adaptiveHeight: true,
       variableWidth: true,
       waitForAnimate: true,
       infinite: true,

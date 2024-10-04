@@ -402,7 +402,7 @@ export const initSlick = () => {
       adaptiveHeight: false,
       variableWidth: true,
       waitForAnimate: true,
-      infinite: false,
+      infinite: true,
       responsive: [
         {
 

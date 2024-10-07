@@ -9,8 +9,7 @@
     "js": "hygen foundation javascript",
     "js-plugin": "hygen foundation javascript-plugin",
     "storybook": "storybook dev -p 6011",
-    "build": "storybook build",
-    "deploy": "pnpm run build && git add --all && git commit -m 'Deploying Storybook' && git push"
+    "build": "storybook build"    
   },
   "browserslist": [
     "last 2 versions",

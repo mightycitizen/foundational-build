@@ -1,4 +1,4 @@
-import twig from './step-list.twig';
+import twig from './step-list-module.twig';
 
 import { steps } from '../../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export

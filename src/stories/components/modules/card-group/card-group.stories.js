@@ -1,4 +1,4 @@
-import twig from './card-group.twig';
+import twig from './card-group-module.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {

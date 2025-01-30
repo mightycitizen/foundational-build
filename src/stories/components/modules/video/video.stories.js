@@ -1,4 +1,4 @@
-import twig from './video.twig';
+import twig from './video-module.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {

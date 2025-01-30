@@ -1,4 +1,4 @@
-import twig from './accordion.twig';
+import twig from './accordion-module.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {

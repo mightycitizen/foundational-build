@@ -1,4 +1,4 @@
-import twig from './date.twig';
+import twig from './date-form.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -24,7 +24,7 @@ const Template = (args) => {
 export const Date = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Date.args = {
-  id: 'field',  
+  id: 'field',
   value: '',
   label: 'Label',
 };

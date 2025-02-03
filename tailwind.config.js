@@ -34,12 +34,13 @@ colors = {
 
 
 module.exports = {
-  content: ['./src/assets/js/**/*.js', './src/stories/{components,layout,pages}/**/*.{twig,js}'],  
+  content: ['./src/assets/js/**/*.js', './src/stories/{components,layout,pages}/**/*.{twig,js}','../templates/**/*.twig'],  
   safelist: [
+    'mb-1',
     'font-display',
     'font-body',
     'bg-secondary-100',
-    'aspect-video'
+    'aspect-video',    
   ],
   theme: {
     container: {

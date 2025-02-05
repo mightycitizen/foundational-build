@@ -173,26 +173,6 @@
 
 
 
-    .read-more {
-        @apply font-bold no-underline;
-
-        &:after {
-            font-family: 'icomoon';
-            content: "\f054";
-            @apply ml-2 text-xs;
-        }
-
-        &:hover,
-        &:focus-visible {
-            @apply underline;
-        }
-
-        &.text-2xl {
-            &:after {
-                @apply text-lg;
-            }
-        }
-    }
 
     label,
     legend {
@@ -210,6 +190,7 @@
 }
 
 @tailwind components;
+
 
 @layer components {
 
@@ -450,13 +431,7 @@
         }
     }
 
-    /* SECTION */
 
-    .section:not(.section--tight) {
-        .section:not(.section--tight):not([class*=bg-])+&:not([class*=bg-]) {
-            @apply lg:-mt-10;
-        }
-    }
 
 }
 

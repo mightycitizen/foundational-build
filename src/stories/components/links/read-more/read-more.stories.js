@@ -1,5 +1,5 @@
 import twig from './read-more.twig';
-import './read-more.css';
+// import './read-more.css';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {

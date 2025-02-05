@@ -1,0 +1,6 @@
+
+.section:not(.section--tight) {
+    .section:not(.section--tight):not([class*=bg-])+&:not([class*=bg-]) {
+        @apply lg:-mt-10;
+    }
+}

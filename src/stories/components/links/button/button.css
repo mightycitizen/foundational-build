@@ -1,0 +1,25 @@
+.button, .fui-submit {
+    @apply text-white bg-primary px-8 py-3 no-underline font-bold;
+
+    &:hover,
+    &:focus-visible {
+        @apply bg-primary-700
+    }
+
+    p+& {
+        @apply lg:-mt-4;
+    }
+
+    &[disabled], &[aria-disabled="true"] {
+        @apply bg-gray-200 text-gray-700 cursor-not-allowed;
+    }
+}
+
+.button.secondary {
+    @apply bg-secondary text-black;
+
+    &:hover,
+    &:focus-visible {
+        @apply bg-secondary-700
+    }
+}

@@ -80,7 +80,5 @@ export default {
     return config;
   },
 
-  docs: {
-    autodocs: true
-  }
+  docs: {}
 };

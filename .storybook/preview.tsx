@@ -11,7 +11,7 @@ function twigMap(twigInstance) {
   twigInstance.extendFilter('map', (array, callback) => {
     return array.map(callback);
   });
-};
+}
 
 function setupTwig(twig) {
   twigMap(twig);
@@ -58,3 +58,4 @@ export const parameters = {
   }
 
 }
+export const tags = ['autodocs'];

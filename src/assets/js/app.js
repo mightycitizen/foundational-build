@@ -6,7 +6,9 @@ if (import.meta.hot) {
 }
 
 import.meta.glob('../../stories/components/**/*.css', { eager: true }); // Or .scss
-import.meta.glob('../../stories/components/**/*.js', { eager: true }); // Or .scss
+const componentModules = import.meta.glob('../../stories/components/**/*.js', { eager: true }); // Or .scss
+
+
 import '../css/output.css'; // tailwind
 import '../icomoon/style.css'; // icomoon
 
@@ -19,7 +21,6 @@ Alpine.plugin(intersect);
 window.Alpine = Alpine
 Alpine.start()
 
-import { initSplide } from './plugins/splide'; // splide slider is the only plugin that uses jquery right now
 
 // Smooth Scroll Initialization
 const initSmoothScroll = () => {
@@ -74,13 +75,19 @@ const initTableScroll = () => {
 const onDocumentReady = () => {
   initTableScroll();
   initSmoothScroll();
-  if (typeof initSplide === 'function') initSplide();
-  // if (typeof initDatepicker === 'function') initDatepicker();
+  
+  Object.values(componentModules).forEach(module => {
+    if (typeof module.default === 'function') {
+      module.default();
+    }
+  });
+
 };
 
 document.addEventListener('DOMContentLoaded', () => {
   const event = new Event('_page_ready');
   document.dispatchEvent(event);
+  
 });
 
 document.addEventListener('_page_ready', onDocumentReady);

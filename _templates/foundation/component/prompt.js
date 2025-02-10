@@ -12,8 +12,8 @@ module.exports = [
   },
   {
     type: 'toggle',
-    name: 'scss',
-    message: "Include SCSS?",
+    name: 'css',
+    message: "Include CSS?",
   }
 ]
 

@@ -1,15 +1,7 @@
-{
-  "countdown": true,
-  "scroll-show": true,
-  "selectize": true,
-  "lity": true,
-  "ajaxify": false,
+{  
   "slick": true,
   "tippy": true,
   "youtube": true,
-  "vimeo": true,
-  "scroll-show": true,
-  "slider": false,
-  "sticky-anchor": true,
+  "vimeo": true,    
   "datepicker": true
 }

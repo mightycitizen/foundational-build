@@ -1,5 +1,6 @@
 import 'slick-carousel';
 import $ from 'jquery';
+import '../../../../node_modules/slick-carousel/slick/slick.css'; // slick slider css
 import breakpoints  from '../../../stories/global/base/breakpoints.json'; // Foundation breakpoints
 
 // @slick pagination helper function

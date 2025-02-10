@@ -5,10 +5,11 @@ if (import.meta.hot) {
   });
 }
 
-const componentCSS = import.meta.glob('../../stories/components/**/*.css', { eager: true }); // Or .scss
+import.meta.glob('../../stories/components/**/*.css', { eager: true }); // Or .scss
+import.meta.glob('../../stories/components/**/*.js', { eager: true }); // Or .scss
 import '../css/output.css'; // tailwind
 import '../icomoon/style.css'; // icomoon
-import '../../../node_modules/slick-carousel/slick/slick.css'; // slick slider css
+
 
 // import $ from 'jquery';
 import Alpine from 'alpinejs'

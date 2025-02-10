@@ -1737,6 +1737,10 @@ input[type="radio"]:focus:not(:checked).custom,
   display: table;
 }
 
+.\!table {
+  display: table !important;
+}
+
 .grid {
   display: grid;
 }

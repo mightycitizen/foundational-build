@@ -10,7 +10,7 @@ import '../css/output.css'; // tailwind
 import '../icomoon/style.css'; // icomoon
 import '../../../node_modules/slick-carousel/slick/slick.css'; // slick slider css
 
-import $ from 'jquery';
+// import $ from 'jquery';
 import Alpine from 'alpinejs'
 import focus from '@alpinejs/focus'
 import intersect from '@alpinejs/intersect';
@@ -22,66 +22,66 @@ Alpine.start()
 
 import { initSlick } from './plugins/slick'; // slick slider is the only plugin that uses jquery right now
 
-window.$ = $;
-// // @smooth-scroll init
+// Smooth Scroll Initialization
 const initSmoothScroll = () => {
-  // In-page smooth scroll, exclude from modal windows
-  $(document).on('click', 'a[href^="#"]:not([href="#"]):not([data-lity])',
-  function(event) {
-    // On-page links
-    event.preventDefault();
-    $('html').addClass('is-scrolling');
-    if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
-      location.hostname == this.hostname
-    ) {
-      // Figure out element to scroll to
-      var target = $(this.hash);
-      //var targetHash = this.hash.substring(1);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      // Does a scroll target exist?
-      if (target.length) {
-        // Only prevent default if animation is actually gonna happen
-
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 500, null, function(){
-          $('html').removeClass('is-scrolling');
-        });
-
+  document.addEventListener('click', function(event) {
+    const target = event.target.closest('a[href^="#"]:not([href="#"])');
+    if (target) {
+      event.preventDefault();
+      document.documentElement.classList.add('is-scrolling');
+      if (
+        location.pathname.replace(/^\//, '') === target.pathname.replace(/^\//, '') &&
+        location.hostname === target.hostname
+      ) {
+        let scrollToElement = document.querySelector(target.hash);
+        scrollToElement = scrollToElement ? scrollToElement : document.querySelector(`[name=${target.hash.slice(1)}]`);
+        if (scrollToElement) {
+          window.scrollTo({
+            top: scrollToElement.offsetTop,
+            behavior: 'smooth'
+          });
+          setTimeout(() => {
+            document.documentElement.classList.remove('is-scrolling');
+          }, 500);
+        }
       }
     }
   });
-}
+};
 
-
-// // @table-scroll init
-const initTableScroll = () => {  
-  $('table').each(function(){
-    if (!$(this).closest('.table-scroll').length){
-      $(this).wrap('<div class="table-scroll_wrapper"></div>');
-      $(this).wrap('<div class="table-scroll"></div>');
+// Table Scroll Initialization
+const initTableScroll = () => {
+  document.querySelectorAll('table').forEach(table => {
+    if (!table.closest('.table-scroll')) {
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('table-scroll_wrapper');
+      const scrollDiv = document.createElement('div');
+      scrollDiv.classList.add('table-scroll');
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(scrollDiv);
+      scrollDiv.appendChild(table);
     }
-  })
-  $('.table-scroll').on('scroll', function() {
-    const $wrapper = $(this).parent();
-    $wrapper.toggleClass('is-end',$(this).scrollLeft() + $(this).innerWidth() >= $(this)[0].scrollWidth);
-
   });
-}
 
+  document.querySelectorAll('.table-scroll').forEach(scrollDiv => {
+    scrollDiv.addEventListener('scroll', function() {
+      const wrapper = scrollDiv.parentNode;
+      wrapper.classList.toggle('is-end', scrollDiv.scrollLeft + scrollDiv.clientWidth >= scrollDiv.scrollWidth);
+    });
+  });
+};
 
-// // create separate document ready method so that we can call it from other scripts e.g. storybook
-$(document).bind('_page_ready', function(){
+// Document Ready Equivalent
+const onDocumentReady = () => {
+  initTableScroll();
+  initSmoothScroll();
+  if (typeof initSlick === 'function') initSlick();
+  // if (typeof initDatepicker === 'function') initDatepicker();
+};
 
-  initTableScroll(); // @table-scroll init call
-  initSmoothScroll(); // @smooth-scroll init
-
-  if (typeof initSlick === 'function') initSlick(); // @slick init call
-//   if (typeof initDatepicker === 'function') initDatepicker(); // @datepicker init call
+document.addEventListener('DOMContentLoaded', () => {
+  const event = new Event('_page_ready');
+  document.dispatchEvent(event);
 });
 
-$(document).ready(function(){
-  $(document).trigger('_page_ready');
-});
-
+document.addEventListener('_page_ready', onDocumentReady);

@@ -10,8 +10,6 @@ import.meta.glob('../../stories/components/**/*.js', { eager: true }); // Or .sc
 import '../css/output.css'; // tailwind
 import '../icomoon/style.css'; // icomoon
 
-
-// import $ from 'jquery';
 import Alpine from 'alpinejs'
 import focus from '@alpinejs/focus'
 import intersect from '@alpinejs/intersect';

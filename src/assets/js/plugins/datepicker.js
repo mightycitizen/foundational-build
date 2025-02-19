@@ -1,10 +1,11 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 import Litepicker from 'litepicker'; // @litepicker date picker
 // @litepicker init
 export const initDatepicker = () => {
-  $('.js-date').each(function(){
+  // vanilla js
+  document.querySelectorAll('.js-date').forEach(datepicker => {  
     new Litepicker({
-      element: $(this)[0]
+      element: datepicker,
     });
   })
 }

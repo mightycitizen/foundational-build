@@ -6,10 +6,10 @@
         inline: true
       } %}
     {% endif %}
-		<div class="splide__track">
-			<ul class="splide__list">
+		<div class="splide__track py-2">
+			<div class="splide__list">
         {% block slide_content %}{% endblock %}			
-			</ul>
+			</div>
 		</div>
 		{% if splide_nav_position | default != 'top' %}
 			{% include '@components/containers/carousel/carousel-nav.twig' with {

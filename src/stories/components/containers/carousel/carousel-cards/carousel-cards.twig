@@ -6,13 +6,13 @@
   } %}
     {% block slide_content %}
       {% for card in cards %}
-        <li class="splide__slide">
+        <div class="splide__slide">
           {% set card = card | merge({
             lazyload_attr: 'data-splide-lazy',
             class: 'w-full',
           }) %}
           {% include "@components/teasers/card/card.twig" with card only %}
-        </li>
+        </div>
       {% endfor %}
     {% endblock %}
   {% endembed %}

@@ -1,19 +1,17 @@
-
-
-  {% embed '@components/containers/splide/splide.twig' with {
+{% embed '@components/containers/splide/splide.twig' with {
     splide_class: 'splide-slider--equalize'
   } %}
-    {% block slide_content %}
-      {% for card in cards %}
-          <div class="lg:mx-2 my-2">
-            {% set card = card | merge({
-              class: 'w-full',
-              lazyload_attr: 'data-splide-lazy'
-            }) %}
-            {% include '@components/teasers/card/card-testimonial.twig' with card only %}
+	{% block slide_content %}
+		{% for card in cards %}
+			<div class="splide__slide">
+				{% set card = card | merge({
+            lazyload_attr: 'data-splide-lazy',
+            class: 'w-full',
+          }) %}
 
-          </div>
-        {% endfor %}
-    {% endblock %}
-  {% endembed %}
+				{% include '@components/teasers/card/card-testimonial.twig' with card only %}
 
+			</div>
+		{% endfor %}
+	{% endblock %}
+{% endembed %}

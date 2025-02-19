@@ -3,7 +3,7 @@
 // import '@splidejs/splide/css/sea-green';
 import '@splidejs/splide/css/core';
 import Splide from '@splidejs/splide';
-import breakpoints from '../../../stories/global/base/breakpoints.json';
+import breakpoints from '../../../global/base/breakpoints.json';
 // remove px from breakpoints
 const breakpointsArray = Object.keys(breakpoints).map(key => parseInt(key.replace('px', '')));
 

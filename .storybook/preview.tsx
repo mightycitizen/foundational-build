@@ -4,8 +4,6 @@ import twigDrupal from 'twig-drupal-filters';
 import twigAttributes from 'add-attributes-twig-extension';
 import '../src/assets/js/app.js';
 // import twigMap from './lib/map';
-
-import $ from 'jquery';
 function twigMap(twigInstance) {
   // JS ksort via https://stackoverflow.com/a/31102605
   twigInstance.extendFilter('map', (array, callback) => {
@@ -21,7 +19,7 @@ function setupTwig(twig) {
   // set allowInclude option to true
   document.addEventListener('DOMContentLoaded', () => {
 
-    $(document).trigger('_page_ready');
+    // $(document).trigger('_page_ready');
     // $(document).foundation();
   });
 

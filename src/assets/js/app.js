@@ -21,7 +21,7 @@ Alpine.plugin(intersect);
 window.Alpine = Alpine
 Alpine.start()
 
-import { initSlick } from './plugins/slick'; // slick slider is the only plugin that uses jquery right now
+import { initSplide } from './plugins/splide'; // splide slider is the only plugin that uses jquery right now
 
 // Smooth Scroll Initialization
 const initSmoothScroll = () => {
@@ -76,7 +76,7 @@ const initTableScroll = () => {
 const onDocumentReady = () => {
   initTableScroll();
   initSmoothScroll();
-  if (typeof initSlick === 'function') initSlick();
+  if (typeof initSplide === 'function') initSplide();
   // if (typeof initDatepicker === 'function') initDatepicker();
 };
 

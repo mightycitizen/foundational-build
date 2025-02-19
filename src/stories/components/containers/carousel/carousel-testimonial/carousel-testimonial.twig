@@ -1,14 +1,14 @@
 
 
-  {% embed '@components/containers/slick/slick.twig' with {
-    slick_class: 'slick-slider--equalize'
+  {% embed '@components/containers/splide/splide.twig' with {
+    splide_class: 'splide-slider--equalize'
   } %}
     {% block slide_content %}
       {% for card in cards %}
           <div class="lg:mx-2 my-2">
             {% set card = card | merge({
               class: 'w-full',
-              lazyload_attr: 'data-lazy'
+              lazyload_attr: 'data-splide-lazy'
             }) %}
             {% include '@components/teasers/card/card-testimonial.twig' with card only %}
 

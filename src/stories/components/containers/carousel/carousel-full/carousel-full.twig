@@ -1,6 +1,6 @@
 {% set slider_id = 'slider-full' %}
 {% embed '@components/sections/section.twig' with {
-  section_background_slick: slider_id
+  section_background_splide: slider_id
 } %}
   {% block section_content %}
 
@@ -37,17 +37,17 @@
         description: 'test'
       }
     ] %}
-    {% embed '@components/containers/slick/slick.twig' with {
+    {% embed '@components/containers/splide/splide.twig' with {
       modifier: 'full',
       id: slider_id,
       grid: true,
       pause: true,
       equalize: true,
-      slick_tabs: true
+      splide_tabs: true
     }%}
       {% block slide_content %}
         {% for slide in slides %}
-          <div data-slick-background="{{ slide.background_image.src | default }}">
+          <div data-splide-background="{{ slide.background_image.src | default }}">
             <h2>{{ slide.title }}</h2>
             <p>{{ slide.description }}</p>
           </div>
@@ -55,8 +55,8 @@
       {% endblock %}
     {% endembed %}
 
-  <div class="slick_progress" data-slick="{{ slider_id | default }}">
-    <div class="slick_progress_line"></div>
+  <div class="splide_progress" data-splide="{{ slider_id | default }}">
+    <div class="splide_progress_line"></div>
   </div>
   {% endblock %}
 {% endembed %}

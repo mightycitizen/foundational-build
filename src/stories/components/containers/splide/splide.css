@@ -1,0 +1,53 @@
+.splide__track {
+    @apply pb-20;
+}
+
+.splide__list {
+    @apply transition-all duration-300;
+}
+
+.splide__pagination:not(foo) li:not(:last-child) {
+    @apply mb-0;
+}
+
+.splide__nav .splide__dots li.splide__active button {
+    @apply bg-white;
+}
+
+.splide[data-type="center"] {
+    --slide-width: 500px;
+    --slide-width-curr: 700px;
+
+    .splide__slide .card {
+        @apply w-[90vw];
+    }
+
+    @media (min-width: 1024px) {
+        .splide__slide .card {
+            @apply shadow-none bg-transparent w-[var(--slide-width)];
+        }
+
+        
+        .card_section {
+            @apply transition-all duration-300 shadow-md bg-white;
+        }
+
+        .splide__slide.is-active {
+            @apply z-20 relative m-0;
+            
+            
+            .card {
+                @apply w-[var(--slide-width-curr)] -ml-24 -mr-24 shadow-lg text-white;
+                
+                
+                a:not(.button) {
+                    @apply text-inherit;
+                }
+            }
+
+            .card_section {
+                @apply bg-primary p-6;
+            }
+        }
+    }
+}

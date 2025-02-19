@@ -11,6 +11,9 @@ dependencies:
   '@alpinejs/intersect':
     specifier: ^3.14.8
     version: 3.14.8
+  '@splidejs/splide':
+    specifier: ^4.1.4
+    version: 4.1.4
   '@storybook/html-vite':
     specifier: ^8.5.3
     version: 8.5.3(storybook@8.5.3)(vite@5.4.14)
@@ -2031,6 +2034,10 @@ packages:
     os: [win32]
     requiresBuild: true
     optional: true
+
+  /@splidejs/splide@4.1.4:
+    resolution: {integrity: sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==}
+    dev: false
 
   /@storybook/addon-a11y@8.5.3(storybook@8.5.3)(vitest@3.0.5):
     resolution: {integrity: sha512-5dUzcLdStpv39mTemW1uLc47RZH3SzieOWUNdQfg0cW2O5LeV9Nr698YDr3Lnf9PveZ9tpNXvTS8vNdRHTj0bw==}

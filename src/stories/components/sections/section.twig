@@ -68,7 +68,7 @@
   {% if section_background | default %}
     <div class="position-unset">
       {% if section_background | default %}<img class=" section_background absolute object-cover left-0 h-full w-full top-0 opacity-30" src="{{ section_background.src }}" alt="" loading="lazy"/>{% endif %}
-      {# {% if section_background_slick | default %}<img class="section_background" data-slick-background="{{ section_background_slick }}"/>{% endif %} #}
+      {# {% if section_background_splide | default %}<img class="section_background" data-splide-background="{{ section_background_splide }}"/>{% endif %} #}
     </div>
   {% endif %}
   <div class="{% if exclude_container | default %}max-w-full lg:px-0{% endif %} {{ width_class | default }} container {{ grid_class | default }} relative z-10" >

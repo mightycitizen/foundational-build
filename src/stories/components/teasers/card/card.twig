@@ -7,7 +7,7 @@
   {% endif %}
   {% if image | default %}
     <div class="card_image w-full relative">      
-      <img {% if lazyload_attr | default %}{{ lazyload_attr }}="{{ image.src }}"{% else %}src="{{ image.src }}" loading="lazy"{% endif %}  alt="{{ image.alt }}" class="w-full ">
+      <img {% if lazyload_attr | default %}{{ lazyload_attr }}="{{ image.src }}"{% else %}src="{{ image.src }}" {% if disable_lazy | default != true %}loading="lazy"{% endif %}{% endif %}  alt="{{ image.alt }}" class="w-full ">
 
       {% if type.handle | default == 'events' and date | default %}
         {% include '@components/inline-text/date/date.twig' with date | merge({

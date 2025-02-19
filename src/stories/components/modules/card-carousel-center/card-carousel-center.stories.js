@@ -1,4 +1,5 @@
 import twig from './card-carousel-center.twig';
+import { placeholder } from '../../../global/placeholders/images.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -25,7 +26,7 @@ const cards = [{
   },
   summary: 'Summary Text Long here to show how it wraps lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consectetur ipsum. Nulla nec purus feugiat, molestie ipsum et, consectetur ipsum.',
   image: {
-    src: '//via.placeholder.com/430x230',
+    src: placeholder + '430x230',
     alt: 'Alt Text'
   },
   link: {
@@ -38,9 +39,9 @@ const cards = [{
     url: '#',
     level: 3
   },
-  summary: 'Summary',
+  summary: 'Summary Text Long here to show how it wraps lorem ipsum dolor sit amet',
   image: {
-    src: '//via.placeholder.com/430x230',
+    src: placeholder + '430x230',
     alt: 'Alt Text'
   },
   link: {

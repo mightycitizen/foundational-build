@@ -1,17 +1,17 @@
-{% embed '@components/containers/slick/slick.twig' with {
+{% embed '@components/containers/splide/splide.twig' with {
     peekaboo: true,
-    modifier: 'center',
+    type: 'center'    
 
   }%}
   {% block slide_content %}
       {% for card in cards %}
-        {% set card = card | merge({          
-          lazyload_attr: 'data-lazy',
+        {% set card = card | merge({                    
+          disable_lazy: true,
           class: 'w-full relative',
           modifier: "special"
         }) %}
                 
-        <div class="{{ loop.index == (cards|length / 2)|round(1, 'floor')  ? 'slick-animate ' : '' }} lg:mx-2 my-2">
+        <div class="lg:mx-2 my-2 splide__slide">
           {% include "@components/teasers/card/card.twig" with card only
           %}
         </div>

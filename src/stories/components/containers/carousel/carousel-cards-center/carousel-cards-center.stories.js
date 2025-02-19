@@ -1,4 +1,5 @@
 import twig from './carousel-cards-center.twig';
+import { placeholder } from '../../../../global/placeholders/images.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
@@ -66,7 +67,7 @@ const cards = [...Array(5)].map((_, i) => ( {
   },
   summary: 'Text',
   image: {
-    src: '//via.placeholder.com/430x230',
+    src: placeholder + '430x230',
     alt: 'Alt Text'
   },
   link: {

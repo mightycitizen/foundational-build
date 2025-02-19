@@ -52,6 +52,7 @@
   "dependencies": {
     "@alpinejs/focus": "^3.14.8",
     "@alpinejs/intersect": "^3.14.8",
+    "@splidejs/splide": "^4.1.4",
     "@storybook/html-vite": "^8.5.3",
     "@styleshit/vite-plugin-twig-loader": "^0.1.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",

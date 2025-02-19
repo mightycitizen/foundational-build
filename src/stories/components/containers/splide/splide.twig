@@ -1,0 +1,40 @@
+<div class="splide-wrap">
+	{% if splide_nav_position  | default  == 'top'%}
+		{% include '@components/containers/carousel/carousel-nav.twig' with {
+      inline: true
+    } %}
+	{% endif %}
+	<section {% if id | default %} id="{{ id }}" {% endif %} {% if type | default %} data-type="{{ type }}" {% endif %} class="splide js-splide {{ splide_class | default }} {% if grid | default %}grid grid-cols-12 gap-6{% endif %} -my-2">
+		<div class="splide__track">
+			<ul class="splide__list">
+        {% block slide_content %}{% endblock %}			
+			</ul>
+		</div>
+		{# {% if splide_nav_position | default != 'top' %}
+			{% include '@components/containers/carousel/carousel-nav.twig' with {
+      inline: true
+    } %}
+		{% endif %}
+
+		{% if splide_tabs | default %}
+			<div class="splide_controls  is-start">
+				{% if pause | default %}
+					<button class="js-splide-toggle splide-toggle" data-splide-pause="{{ id | default }}">
+						<span class="sr-only">Toggle Pause/Play</span>
+						<span class="icon-pause active"></span>
+						<span class="icon-play inactive"></span>
+					</button>
+				{% endif %}
+
+				<button data-splide="{{ id | default }}" class="splide-prev">Previous</button>
+				<ul class="splide_tabs" data-splide="{{ id | default }}" data-splide-tabs>
+					{% for slide in slides %}
+						<li>
+							<button data-splide-go="{{ id | default }}" data-splide-go-index="{{ loop.index0 }}">{{ slide.tab }}</button>
+						</li>
+					{% endfor %}
+				</ul>
+				<button data-splide="{{ id | default }}" class="splide-next">Next</button>
+			</div>
+		{% endif %} #}
+	</section>

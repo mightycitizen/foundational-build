@@ -1,18 +1,18 @@
-.splide__track {
-    @apply pb-20;
-}
 
 .splide__list {
     @apply transition-all duration-300;
 }
 
-.splide__pagination:not(foo) li:not(:last-child) {
-    @apply mb-0;
+.splide__pagination{    
+
+    button{
+        @apply bg-primary w-5 aspect-square rounded-full border-2 border-primary;
+        &.is-active{
+            @apply bg-white;
+        }
+    }
 }
 
-.splide__nav .splide__dots li.splide__active button {
-    @apply bg-white;
-}
 
 .splide[data-type="center"] {
     --slide-width: 500px;

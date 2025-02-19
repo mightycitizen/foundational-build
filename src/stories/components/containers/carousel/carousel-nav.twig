@@ -1,6 +1,15 @@
-<div class="splide-nav flex justify-center items-center mt-4 md:mt-8 {{ splide_nav_class | default }} {% if inline | default%}splide-nav--inline{% endif %}">
+<div class="splide__arrows splide__nav flex justify-center gap-6 items-center mt-4 md:mt-8 {{ splide_nav_class | default }} {% if inline | default%}splide-nav--inline{% endif %}">
+		<button class="splide__arrow splide__arrow--prev aspect-square button rounded-full w-10 flex items-center justify-center p-0">
+			<span class="icon-chevron-left"></span>
+      <span class="sr-only">Prev</span>			
+		</button>
+    <ul class="splide__pagination list-none gap-4"></ul>
+		<button class="splide__arrow splide__arrow--next aspect-square button rounded-full w-10 flex items-center justify-center p-0">
+      <span class="icon-chevron-right"></span>
+      <span class="sr-only">Next</span>			
+		</button>
   {% if pause | default %}
-    <button class="js-splide-toggle splide-toggle">
+    <button class="js-splide-toggle splide__toggle">
       <span class="sr-only">Toggle Pause/Play</span>
       <span class="icon-pause active"></span>
       <span class="icon-play inactive"></span>

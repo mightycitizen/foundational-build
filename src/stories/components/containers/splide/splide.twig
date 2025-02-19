@@ -1,21 +1,22 @@
 <div class="splide-wrap">
-	{% if splide_nav_position  | default  == 'top'%}
-		{% include '@components/containers/carousel/carousel-nav.twig' with {
-      inline: true
-    } %}
-	{% endif %}
+
 	<section {% if id | default %} id="{{ id }}" {% endif %} {% if type | default %} data-type="{{ type }}" {% endif %} class="splide js-splide {{ splide_class | default }} {% if grid | default %}grid grid-cols-12 gap-6{% endif %} -my-2">
+  	{% if splide_nav_position  | default  == 'top'%}
+      {% include '@components/containers/carousel/carousel-nav.twig' with {
+        inline: true
+      } %}
+    {% endif %}
 		<div class="splide__track">
 			<ul class="splide__list">
         {% block slide_content %}{% endblock %}			
 			</ul>
 		</div>
-		{# {% if splide_nav_position | default != 'top' %}
+		{% if splide_nav_position | default != 'top' %}
 			{% include '@components/containers/carousel/carousel-nav.twig' with {
       inline: true
     } %}
 		{% endif %}
-
+    {#
 		{% if splide_tabs | default %}
 			<div class="splide_controls  is-start">
 				{% if pause | default %}

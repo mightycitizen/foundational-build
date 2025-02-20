@@ -6,7 +6,7 @@ if (import.meta.hot) {
 }
 
 import.meta.glob('../../stories/components/**/*.css', { eager: true }); // Or .scss
-const componentModules = import.meta.glob('../../stories/components/**/*.js', { eager: true }); // Or .scss
+const componentModules = import.meta.glob('../../stories/components/**/!(*.stories).js', { eager: true }); // Or .scss
 
 
 import '../css/output.css'; // tailwind

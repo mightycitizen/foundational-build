@@ -17,3 +17,5 @@ dependencyGraph.json
 .DS_Store
 
 storybook-static
+test-results/*
+playwright-report/*

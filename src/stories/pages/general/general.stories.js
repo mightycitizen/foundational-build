@@ -22,7 +22,6 @@ import { menu, social, logo } from '../../global/placeholders/global.json';
 export default {
   title: 'Pages/General',
   tags: ["visual:check"],
-
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -32,9 +31,7 @@ const Template = (args) => {
 
 const Default = Template.bind({});
 const defaultArgs = {
-  hero: {
-    heading: 'Heading',
-  },
+  hero,
   breadcrumbs,
   menu,
   logo,
@@ -391,4 +388,4 @@ Sidebar.args = {
 };
 Sidebar.parameters = parameters;
 
-export { Default, Cookies, AnchorMenu, SectionTest, Sidebar };
+export { Default, AnchorMenu, SectionTest, Sidebar };

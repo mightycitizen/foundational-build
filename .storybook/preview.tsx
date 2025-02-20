@@ -2,6 +2,7 @@ import Twig from 'twig';
 // import { useEffect } from '@storybook/client-api';
 import twigDrupal from 'twig-drupal-filters';
 import twigAttributes from 'add-attributes-twig-extension';
+import './storybook.css';
 import '../src/assets/js/app.js';
 // import twigMap from './lib/map';
 function twigMap(twigInstance) {

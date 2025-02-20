@@ -3,8 +3,10 @@
   section_style: "narrow"
 } %}
   {% block section_content %}
-    {% for card in cards %}
-      {% include '@components/teasers/card/card-horizontal.twig' with card %}
-    {% endfor %}    
+    <div class="flex flex-col gap-5">
+      {% for card in cards %}
+        {% include '@components/teasers/card/card-horizontal.twig' with card %}
+      {% endfor %}    
+    </div>
   {% endblock %}
 {% endembed %}

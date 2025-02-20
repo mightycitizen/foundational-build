@@ -42,7 +42,7 @@ const defaultArgs = {
     {
       label: 'Label',
       value: 'Value',
-      icon: 'email'
+      icon: 'book'
     }
   ]
 };

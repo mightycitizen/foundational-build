@@ -16,7 +16,9 @@ const Template = (args) => {
 };
 
 const defaultArgs = {
-  ...card,
+  section_heading: 'Optional heading',
+  section_description: 'Optional description',
+  cards: [card, card, card],
   image: null
 };
 const Default = Template.bind({});
@@ -35,7 +37,7 @@ Image.args = {
 
 const ImageFlush = Template.bind({});
 ImageFlush.args = {
-  ...Image.args,
+  ...Image.args,  
   image_position: 'flush'
 };
 

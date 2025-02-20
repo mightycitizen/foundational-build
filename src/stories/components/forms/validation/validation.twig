@@ -1,4 +1,4 @@
-<form action="/" data-abide novalidate>
+<form action="/" >
   {% include  '@components/forms/text/text.twig' with {
       label: "Text",
       name: "text",
@@ -37,9 +37,10 @@
   {% include  '@components/forms/select/select.twig' with select_options
   %}
 
-  {% set select_options = select_options | merge({selectize: true, id: 'selectize', label: "Select (Filterable)" }) %}
+  {% set select_options = select_options | merge({ label: "Select (Filterable)" }) %}
 
-  {% include  '@components/forms/select/select.twig' with select_options
+
+  {% include  '@components/forms/select/filterable.twig' with select_options
   only
   %}
   {% include  '@components/forms/radio-group/radio-group.twig' with {
@@ -89,7 +90,7 @@
 
     %}
   <ul class="list-none flex gap-4--stacked">
-    <li><button type="submit" class="button fui-submit">Submit</button></li>
+    <li><button type="submit" class="button">Submit</button></li>
     <li><button type="submit" class="button ml-4" disabled>Disabled button</button></li>
   </ul>
 

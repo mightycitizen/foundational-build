@@ -1,6 +1,8 @@
 
 {% include '@components/forms/text/text.twig' with {
-  label: "Date",
-  type: 'date',  
+  label: label,
+  type: 'date', 
+  value: value,
+  class: datepicker | default ? 'js-datepicker' : null, 
   id: "date"
 } %}

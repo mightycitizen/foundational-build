@@ -1377,6 +1377,10 @@ input[type="radio"]:focus:not(:checked).custom,
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
 .bottom-8 {
   bottom: 2rem;
 }

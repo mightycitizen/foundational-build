@@ -1,4 +1,5 @@
 import twig from './date-form.twig';
+import './datepicker.js';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -25,5 +26,16 @@ export const Date = Template.bind({});
 Date.args = {
   id: 'field',
   value: '',
-  label: 'Label'
+  label: 'Standard Date Field'
+};
+
+// create datepicker version
+
+export const Datepicker = Template.bind({});
+
+Datepicker.args = {  
+  id: 'field',
+  value: '',
+  label: 'Datepicker field',
+  datepicker: true
 };

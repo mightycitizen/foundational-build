@@ -5,7 +5,7 @@ import { testimonial } from '../../../global/placeholders/components.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Testimonials/Carousel',
+  title: 'Components/Modules/Testimonials/Carousel'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
 
@@ -19,20 +19,20 @@ const Template = (args) => {
   return twig(args);
 };
 
-
-
-
-const cards = [...Array(5)].map((_, i) => Object.assign(testimonial, {
-  image: {
-    src: placeholder + sizes.square.width + 'x' + sizes.square.height,
-    alt: 'Alt Text'
-  }}));
+const cards = [...Array(5)].map((_, i) =>
+  Object.assign(testimonial, {
+    image: {
+      src: placeholder + sizes.square.width + 'x' + sizes.square.height,
+      alt: 'Alt Text'
+    }
+  })
+);
 
 const defaultArgs = {
   section_heading: 'Heading',
   section_description: 'Description',
   cards: cards
-}
+};
 export const Carousel = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Carousel.args = defaultArgs;

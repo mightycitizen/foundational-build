@@ -2,7 +2,7 @@ import twig from './form-group.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Forms/Form Group',
+  title: 'Components/Forms/Form Group'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {

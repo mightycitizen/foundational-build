@@ -2,7 +2,7 @@ import twig from './fonts.twig';
 import fonts from './fonts.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Base/Fonts',
+  title: 'Global/Base/Fonts'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {
@@ -49,7 +49,6 @@ const Template = (args) => {
 
 export const Fonts = Template.bind({});
 
-
 let fontsArray = Object.keys(fonts).reduce((acc, key) => {
   acc[key] = fonts[key];
   return acc;
@@ -57,4 +56,4 @@ let fontsArray = Object.keys(fonts).reduce((acc, key) => {
 
 Fonts.args = {
   fonts: fontsArray
-}
+};

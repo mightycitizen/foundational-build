@@ -13,11 +13,11 @@ export default {
           '',
           'bg-solid-primary text-white',
           'bg-solid-secondary text-white',
-          'bg-solid-tertiary text-white',
+          'bg-solid-tertiary text-white'
         ]
       }
     }
-  },
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -26,7 +26,6 @@ const Template = (args) => {
   // return `<div>${label}</div>`;
   return twig(args);
 };
-
 
 // const cards = [...Array(5)].map((_, i) => ( {
 //   heading: {
@@ -48,7 +47,7 @@ const defaultArgs = {
   section_heading: 'Heading',
   section_description: 'Description',
   links
-}
+};
 export const Links = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Links.args = defaultArgs;

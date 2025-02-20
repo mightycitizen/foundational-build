@@ -5,23 +5,29 @@ export default {
   title: 'Components/Links/Button',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-
     text: { control: 'text' },
     url: { control: 'text' },
     color: {
       control: {
-        type: 'select',
+        type: 'select'
       },
-      options: ['primary','secondary','tertiary','alert','warning','success']
+      options: [
+        'primary',
+        'secondary',
+        'tertiary',
+        'alert',
+        'warning',
+        'success'
+      ]
     },
     hollow: {
       control: 'boolean'
     },
     size: {
       control: { type: 'select' },
-      options: ['xs', 'sm', 'lg'],
-    },
-  },
+      options: ['xs', 'sm', 'lg']
+    }
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -33,27 +39,24 @@ const Template = (args) => {
 
 const defaultArgs = {
   text: 'Button',
-  url: '#',
-
-}
+  url: '#'
+};
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;
 
 export const Secondary = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Secondary.args = Object.assign({...defaultArgs}, {color: 'secondary'});
-
+Secondary.args = Object.assign({ ...defaultArgs }, { color: 'secondary' });
 
 export const Small = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Small.args = Object.assign({...defaultArgs}, {size: 'sm'});
+Small.args = Object.assign({ ...defaultArgs }, { size: 'sm' });
 
 export const XSmall = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-XSmall.args = Object.assign({...defaultArgs}, {size: 'xs'});
-
+XSmall.args = Object.assign({ ...defaultArgs }, { size: 'xs' });
 
 export const Large = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Large.args = Object.assign({...defaultArgs}, {size: 'lg'});
+Large.args = Object.assign({ ...defaultArgs }, { size: 'lg' });

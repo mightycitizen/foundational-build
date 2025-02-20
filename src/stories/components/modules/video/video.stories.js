@@ -4,9 +4,7 @@ import twig from './video-module.twig';
 export default {
   title: 'Components/Modules/Video',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
-
-  },
+  argTypes: {}
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -15,7 +13,6 @@ const Template = (args) => {
   // return `<div>${label}</div>`;
   return twig(args);
 };
-
 
 // const cards = [...Array(5)].map((_, i) => ( {
 //   heading: {
@@ -42,7 +39,7 @@ const defaultArgs = {
     src: 'https://placehold.co/430x230',
     alt: 'Alt Text'
   }
-}
+};
 export const Video = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Video.args = defaultArgs;

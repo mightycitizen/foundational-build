@@ -2,7 +2,7 @@ import twig from './tooltip.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Inline Text/Tooltip',
+  title: 'Components/Inline Text/Tooltip'
   // argTypes: {
   //   class: {
   //     control: {
@@ -16,7 +16,6 @@ export default {
   //   },
 
   // }
-
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args

@@ -2,7 +2,7 @@ import twig from './meta.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Inline Text/Meta',
+  title: 'Components/Inline Text/Meta'
   // argTypes: {
   //   date: {
   //     unformatted: {
@@ -32,7 +32,6 @@ export default {
   //   ]
 
   // }
-
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -45,17 +44,17 @@ const Template = (args) => {
 export const Meta = Template.bind({});
 Meta.args = {
   date: {
-    unformatted: "2021-08-12",
-    full: "August 12, 2021"
+    unformatted: '2021-08-12',
+    full: 'August 12, 2021'
   },
   categories: [
     {
-      title: "Category A",
-      url: "#"
+      title: 'Category A',
+      url: '#'
     },
     {
-      title: "Category B",
-      url: "#"
+      title: 'Category B',
+      url: '#'
     }
   ]
 };

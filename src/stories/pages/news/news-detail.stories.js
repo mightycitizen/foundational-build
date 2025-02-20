@@ -1,13 +1,16 @@
 import twig from './news-detail.twig';
 import { menu, social, logo } from '../../global/placeholders/global.json';
 
-
 import { placeholder, sizes } from '../../global/placeholders/images.json';
 
-import { wysiwyg, pagination, breadcrumbs } from '../../global/placeholders/components.json';
+import {
+  wysiwyg,
+  pagination,
+  breadcrumbs
+} from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Pages/News/News Detail',
+  title: 'Pages/News/News Detail'
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -17,8 +20,8 @@ const Template = (args) => {
   return twig(args);
 };
 
-const defaultArgs =  {
-  logo, 
+const defaultArgs = {
+  logo,
   breadcrumbs,
   menu,
   social,
@@ -26,14 +29,14 @@ const defaultArgs =  {
   image_placeholder: placeholder,
   wysiwyg,
   pagination
-}
+};
 const parameters = {
   layout: 'fullscreen'
-}
+};
 
 const Default = Template.bind({});
 Default.args = defaultArgs;
-Default.parameters = parameters
+Default.parameters = parameters;
 
 const FeaturedImage = Template.bind({});
 FeaturedImage.args = {
@@ -42,9 +45,7 @@ FeaturedImage.args = {
     src: 'https://placehold.co/430x230',
     alt: ''
   }
-}
-FeaturedImage.parameters = parameters
+};
+FeaturedImage.parameters = parameters;
 
-
-export { Default, FeaturedImage }
-
+export { Default, FeaturedImage };

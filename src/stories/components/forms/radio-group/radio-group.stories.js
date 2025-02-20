@@ -10,8 +10,7 @@ export default {
         type: 'boolean'
       }
     }
-
-  },
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -23,22 +22,22 @@ const Template = (args) => {
 
 export const RadioGroup = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-RadioGroup.args ={
-  label: "Radio",
-  id: "radio",
-  name: "radio",
+RadioGroup.args = {
+  label: 'Radio',
+  id: 'radio',
+  name: 'radio',
 
   options: [
     {
-      label: "Radio A",
+      label: 'Radio A',
       value: 0
     },
     {
-      label: "Radio B",
+      label: 'Radio B',
       value: 1
     },
     {
-      label: "Radio C",
+      label: 'Radio C',
       value: 2
     }
   ]

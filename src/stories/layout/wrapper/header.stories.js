@@ -3,7 +3,7 @@ import { menu, logo } from '../../global/placeholders/global.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Layout/Wrapper/Header',
+  title: 'Layout/Wrapper/Header'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {
@@ -51,6 +51,5 @@ const Template = (args) => {
 export const Header = Template.bind({});
 Header.args = {
   menu,
-  logo, 
-  
-}
+  logo
+};

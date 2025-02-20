@@ -2,7 +2,7 @@ import twig from './accordion-module.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Accordion',
+  title: 'Components/Modules/Accordion'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   // accordion_id: {
@@ -46,7 +46,6 @@ const Template = (args) => {
   return twig(args);
 };
 
-
 const defaultArgs = {
   accordion_id: 'accordion_default',
   section_heading: 'Heading',
@@ -61,9 +60,9 @@ const defaultArgs = {
       content: 'Accordion Content 2'
     }
   ]
-}
+};
 const Accordion = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Accordion.args = defaultArgs;
 
-export { Accordion }
+export { Accordion };

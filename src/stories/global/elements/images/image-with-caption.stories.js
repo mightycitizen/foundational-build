@@ -2,7 +2,7 @@ import twig from './image-with-caption.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Elements/Image',
+  title: 'Global/Elements/Image'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   required: {

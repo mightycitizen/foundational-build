@@ -2,7 +2,7 @@ import twig from './hr.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Elements/Horizontal Rule',
+  title: 'Global/Elements/Horizontal Rule'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   required: {

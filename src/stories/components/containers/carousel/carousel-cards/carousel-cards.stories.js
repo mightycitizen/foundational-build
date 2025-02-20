@@ -2,12 +2,10 @@ import twig from './carousel-cards.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
-
 export default {
   title: 'Components/Containers/Card Group/Carousel Cards',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-
     modifier: {
       control: 'text'
     },
@@ -48,7 +46,7 @@ export default {
     //   control: { type: 'select' },
     //   options: ['small', 'medium', 'large'],
     // },
-  },
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -58,7 +56,7 @@ const Template = (args) => {
   return twig(args);
 };
 
-const cards = [...Array(5)].map((_, i) => ( {
+const cards = [...Array(5)].map((_, i) => ({
   heading: {
     text: 'Heading',
     url: '#',
@@ -71,12 +69,12 @@ const cards = [...Array(5)].map((_, i) => ( {
   link: {
     text: 'Link',
     url: '#'
-  },
+  }
 }));
 
 const defaultArgs = {
   cards
-}
+};
 export const CarouselCards = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 CarouselCards.args = defaultArgs;

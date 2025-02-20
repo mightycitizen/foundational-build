@@ -2,7 +2,7 @@ import twig from './card-carousel.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Cards/Card Carousel',
+  title: 'Components/Modules/Cards/Card Carousel'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
 
@@ -16,8 +16,7 @@ const Template = (args) => {
   return twig(args);
 };
 
-
-const cards = [...Array(5)].map((_, i) => ( {
+const cards = [...Array(5)].map((_, i) => ({
   heading: {
     text: 'Heading',
     url: '#',
@@ -30,14 +29,14 @@ const cards = [...Array(5)].map((_, i) => ( {
   link: {
     text: 'Link',
     url: '#'
-  },
+  }
 }));
 
 const defaultArgs = {
   section_heading: 'Heading',
   section_description: 'Description',
   cards
-}
+};
 export const CardCarousel = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 CardCarousel.args = defaultArgs;

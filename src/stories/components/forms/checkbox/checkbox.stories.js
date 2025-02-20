@@ -10,8 +10,7 @@ export default {
         type: 'boolean'
       }
     }
-
-  },
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -27,5 +26,5 @@ Checkbox.args = {
   field_id: 'field',
   id: 0,
   value: '',
-  label: 'Label',
+  label: 'Label'
 };

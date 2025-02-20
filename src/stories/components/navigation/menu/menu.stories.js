@@ -2,12 +2,10 @@ import twig from './menu.twig';
 import { menu, social } from '../../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Navigation/Menu',
+  title: 'Components/Navigation/Menu'
   // argTypes: {
 
-
   // }
-
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args

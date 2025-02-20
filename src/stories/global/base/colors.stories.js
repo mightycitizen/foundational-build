@@ -13,9 +13,9 @@ const Template = (args) => {
   return twig(args);
 };
 
-const Colors = Template.bind({})
+const Colors = Template.bind({});
 Colors.args = {
   ...colors
-}
+};
 
 export { Colors };

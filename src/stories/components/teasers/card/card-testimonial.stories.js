@@ -3,9 +3,8 @@ import { testimonial } from '../../../global/placeholders/components.json';
 import { sizes, placeholder } from '../../../global/placeholders/images.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Teasers/Testimonial Card',
+  title: 'Components/Teasers/Testimonial Card'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -15,7 +14,6 @@ const Template = (args) => {
   return twig(args);
 };
 
-
 export const TestimonialCard = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 TestimonialCard.args = {
@@ -23,8 +21,6 @@ TestimonialCard.args = {
     image: {
       src: placeholder + sizes.square.width + 'x' + sizes.square.height,
       alt: 'Alt Text'
-    }}
-  )
+    }
+  })
 };
-
-

@@ -1,11 +1,15 @@
 import twig from './events-detail.twig';
 import { placeholder, sizes } from '../../global/placeholders/images.json';
-import { pagination, breadcrumbs, wysiwyg } from '../../global/placeholders/components.json';
+import {
+  pagination,
+  breadcrumbs,
+  wysiwyg
+} from '../../global/placeholders/components.json';
 import { menu, social, logo } from '../../global/placeholders/global.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Pages/Events/Events Detail',
+  title: 'Pages/Events/Events Detail'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {
@@ -57,11 +61,11 @@ const defaultArgs = {
   menu,
   social,
   wysiwyg
-}
+};
 
 const parameters = {
-  layout: 'fullscreen',
-}
+  layout: 'fullscreen'
+};
 
 const Default = Template.bind({});
 Default.args = defaultArgs;
@@ -74,10 +78,8 @@ FeaturedImage.args = {
     src: 'https://placehold.co/430x230',
     alt: ''
   }
-}
+};
 
 FeaturedImage.parameters = parameters;
 
-export { Default, FeaturedImage }
-
-
+export { Default, FeaturedImage };

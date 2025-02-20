@@ -6,18 +6,14 @@ export default {
   title: 'Components/Sections',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-
     intro_class: {
       control: 'text'
     },
     section_style: {
       control: {
-        type: 'select',
+        type: 'select'
       },
-      options: [
-        'side',
-        ''
-      ]
+      options: ['side', '']
     },
     section_image: {
       src: {
@@ -26,10 +22,8 @@ export default {
       alt: {
         control: 'text'
       }
-
     }
-
-  },
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -48,9 +42,7 @@ const defaultArgs = {
   section_button: {
     url: '#',
     text: 'Button'
-
   }
-
 };
 
 Default.args = defaultArgs;
@@ -69,4 +61,4 @@ Secondary.args = {
   section_class: 'bg-secondary-200'
 };
 
-export { Default, BackgroundColor, Secondary }
+export { Default, BackgroundColor, Secondary };

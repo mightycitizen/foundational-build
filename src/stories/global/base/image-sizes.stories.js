@@ -2,7 +2,7 @@ import twig from './image-sizes.twig';
 import imageSizes from './image-sizes.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Base/Image Sizes',
+  title: 'Global/Base/Image Sizes'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {
@@ -50,4 +50,4 @@ const Template = (args) => {
 export const ImageSizes = Template.bind({});
 ImageSizes.args = {
   image_sizes: imageSizes.image_sizes
-}
+};

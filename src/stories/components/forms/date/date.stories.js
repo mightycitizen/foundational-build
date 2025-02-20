@@ -10,8 +10,7 @@ export default {
         type: 'boolean'
       }
     }
-
-  },
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -26,5 +25,5 @@ export const Date = Template.bind({});
 Date.args = {
   id: 'field',
   value: '',
-  label: 'Label',
+  label: 'Label'
 };

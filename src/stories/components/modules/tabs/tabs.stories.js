@@ -5,9 +5,7 @@ import { tabs } from '../../../global/placeholders/components.json';
 export default {
   title: 'Components/Modules/Tabs',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
-
-  },
+  argTypes: {}
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -16,7 +14,6 @@ const Template = (args) => {
   // return `<div>${label}</div>`;
   return twig(args);
 };
-
 
 // const cards = [...Array(5)].map((_, i) => ( {
 //   heading: {
@@ -39,7 +36,7 @@ const defaultArgs = {
   section_description: 'Description',
   tabs_id: 'example-tabs-2',
   tabs
-}
+};
 export const Tabs = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Tabs.args = defaultArgs;

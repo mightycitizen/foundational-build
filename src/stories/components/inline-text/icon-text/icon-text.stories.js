@@ -2,7 +2,7 @@ import twig from './icon-text.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Inline Text/Icon Text',
+  title: 'Components/Inline Text/Icon Text'
   // argTypes: {
   //   class: {
   //     control: {
@@ -16,7 +16,6 @@ export default {
   //   },
 
   // }
-
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args

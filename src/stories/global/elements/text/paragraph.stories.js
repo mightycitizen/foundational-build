@@ -2,7 +2,7 @@ import twig from './paragraph.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Elements/Paragraph',
+  title: 'Global/Elements/Paragraph'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   required: {

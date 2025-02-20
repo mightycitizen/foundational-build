@@ -5,7 +5,6 @@ export default {
   title: 'Components/Containers/Modal',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-
     heading: {
       control: 'text'
     },
@@ -42,7 +41,7 @@ export default {
     //   control: { type: 'select' },
     //   options: ['small', 'medium', 'large'],
     // },
-  },
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -56,7 +55,7 @@ const defaultArgs = {
   heading: 'Hero',
   summary: 'Summary',
   subheading: 'Subheading'
-}
+};
 export const Modal = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Modal.args = defaultArgs;

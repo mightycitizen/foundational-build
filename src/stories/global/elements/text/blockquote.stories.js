@@ -2,7 +2,7 @@ import twig from './blockquote.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Elements/Blockquote',
+  title: 'Global/Elements/Blockquote'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   required: {

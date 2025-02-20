@@ -5,14 +5,13 @@ export default {
   title: 'Components/Links/Link',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-
     text: { control: 'text' },
     url: { control: 'text' },
     size: {
       control: { type: 'select' },
-      options: ['', 'h3'],
-    },
-  },
+      options: ['', 'h3']
+    }
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -24,9 +23,8 @@ const Template = (args) => {
 
 const defaultArgs = {
   text: 'Link Text',
-  url: '#',
-
-}
+  url: '#'
+};
 export const Link = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Link.args = defaultArgs;

@@ -4,9 +4,7 @@ import twig from './small-link.twig';
 export default {
   title: 'Components/Links/Small Link',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
-
-  },
+  argTypes: {}
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -18,9 +16,8 @@ const Template = (args) => {
 
 const defaultArgs = {
   text: 'Small Link',
-  url: '#',
-
-}
+  url: '#'
+};
 export const SmallLink = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 SmallLink.args = defaultArgs;

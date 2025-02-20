@@ -11,7 +11,7 @@ export default {
         options: ['default', 'side']
       }
     }
-  },
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -20,7 +20,6 @@ const Template = (args) => {
   // return `<div>${label}</div>`;
   return twig(args);
 };
-
 
 // const cards = [...Array(5)].map((_, i) => ( {
 //   heading: {
@@ -44,21 +43,21 @@ const defaultArgs = {
   statistics: [
     {
       value: 200,
-      text: "Lorem ipsum dolor sit amet",
-      link: "test"
+      text: 'Lorem ipsum dolor sit amet',
+      link: 'test'
     },
     {
       value: 200,
-      text: "Lorem ipsum dolor sit amet",
-      statistic_link: "test"
+      text: 'Lorem ipsum dolor sit amet',
+      statistic_link: 'test'
     },
     {
       value: 200,
-      text: "Lorem ipsum dolor sit amet",
-      statistic_link: "test"
-    },
+      text: 'Lorem ipsum dolor sit amet',
+      statistic_link: 'test'
+    }
   ]
-}
+};
 const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;
@@ -70,4 +69,4 @@ Sidebar.args = {
   section_style: 'side'
 };
 
-export { Default, Sidebar}
+export { Default, Sidebar };

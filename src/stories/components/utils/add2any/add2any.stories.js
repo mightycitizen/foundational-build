@@ -2,7 +2,7 @@ import twig from './add2any.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Utils/Add2Any',
+  title: 'Components/Utils/Add2Any'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   label: {
@@ -25,7 +25,7 @@ const Template = (args) => {
 export const Add2Any = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Add2Any.args = {
-  label: 'Heading',
+  label: 'Heading'
 };
 //
 // export const Secondary = Template.bind({});

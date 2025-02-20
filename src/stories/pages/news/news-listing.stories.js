@@ -1,13 +1,14 @@
 import twig from './news-listing.twig';
 import { menu, social, logo } from '../../global/placeholders/global.json';
 
-
-
 import { placeholder, sizes } from '../../global/placeholders/images.json';
-import { pagination, breadcrumbs } from '../../global/placeholders/components.json';
+import {
+  pagination,
+  breadcrumbs
+} from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Pages/News/News Listing',
+  title: 'Pages/News/News Listing'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {
@@ -60,7 +61,7 @@ NewsListing.args = {
   image_sizes: sizes,
   image_placeholder: placeholder,
   pagination
-}
+};
 NewsListing.parameters = {
-  layout: 'fullscreen',
-}
+  layout: 'fullscreen'
+};

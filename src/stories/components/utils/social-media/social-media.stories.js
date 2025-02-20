@@ -3,8 +3,7 @@ import { social } from '../../../global/placeholders/global.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Utils/Social Media',
-
+  title: 'Components/Utils/Social Media'
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args

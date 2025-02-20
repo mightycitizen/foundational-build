@@ -2,7 +2,7 @@ import twig from './icon-options.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Icons/Icon Options',
+  title: 'Global/Icons/Icon Options'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   required: {

@@ -2,7 +2,7 @@ import twig from './card-group-module.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Cards/Card Group',
+  title: 'Components/Modules/Cards/Card Group'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
 
@@ -16,8 +16,7 @@ const Template = (args) => {
   return twig(args);
 };
 
-
-const cards = [...Array(3)].map((_, i) => ( {
+const cards = [...Array(3)].map((_, i) => ({
   heading: {
     text: 'Heading',
     url: '#',
@@ -30,39 +29,42 @@ const cards = [...Array(3)].map((_, i) => ( {
   link: {
     text: 'Link',
     url: '#'
-  },
+  }
 }));
-
 
 const defaultArgs = {
   section_heading: 'Heading',
   section_description: 'Description',
   cards: cards
-}
+};
 const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;
 
 const Events = Template.bind({});
 
-const eventCards =  cards.map((card, i) => Object.assign({...card}, {
-  date: {
-    unformatted: '2020-01-01',
-    full: 'January 1, 2020',
-    day: 1,
-    month_short: 'Jan',
-    year: 2020
-  },
-  type: {
-    handle: 'events',
-    label: 'Events'
-  }
-}))
+const eventCards = cards.map((card, i) =>
+  Object.assign(
+    { ...card },
+    {
+      date: {
+        unformatted: '2020-01-01',
+        full: 'January 1, 2020',
+        day: 1,
+        month_short: 'Jan',
+        year: 2020
+      },
+      type: {
+        handle: 'events',
+        label: 'Events'
+      }
+    }
+  )
+);
 
 Events.args = {
   ...defaultArgs,
   cards: eventCards
-}
+};
 
-
-export { Default, Events }
+export { Default, Events };

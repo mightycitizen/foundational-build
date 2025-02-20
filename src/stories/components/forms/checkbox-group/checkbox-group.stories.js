@@ -10,8 +10,7 @@ export default {
         type: 'boolean'
       }
     }
-
-  },
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -23,22 +22,22 @@ const Template = (args) => {
 
 export const CheckboxGroup = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-CheckboxGroup.args ={
-  label: "Checkbox",
-  id: "checkbox",
-  name: "checkbox",
+CheckboxGroup.args = {
+  label: 'Checkbox',
+  id: 'checkbox',
+  name: 'checkbox',
 
   options: [
     {
-      label: "Checkbox A",
+      label: 'Checkbox A',
       value: 0
     },
     {
-      label: "Checkbox B",
+      label: 'Checkbox B',
       value: 1
     },
     {
-      label: "Checkbox C",
+      label: 'Checkbox C',
       value: 2
     }
   ]

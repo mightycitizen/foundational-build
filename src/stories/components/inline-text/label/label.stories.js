@@ -13,10 +13,8 @@ export default {
       control: {
         type: 'text'
       }
-    },
-
+    }
   }
-
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args

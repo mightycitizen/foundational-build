@@ -4,7 +4,7 @@ import twig from './alert.twig';
 export default {
   title: 'Components/Informational/Alert',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {    
+  argTypes: {
     label: {
       control: 'text'
     },
@@ -14,29 +14,31 @@ export default {
     closable: {
       control: 'boolean'
     }
-  },
+  }
 };
 
 // Compile the template using Twig
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
-const Template = (args ) => {
+const Template = (args) => {
   // You can either use a function to create DOM elements or use a plain html string!
-  // return `<div>${label}</div>`;    
-  
+  // return `<div>${label}</div>`;
+
   return twig(args);
 };
 
 const defaultArgs = {
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-  label: "Alert"
-}
+  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+  label: 'Alert'
+};
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;
 
-
 export const Link = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Link.args = Object.assign({...defaultArgs}, {
-  link: '#'
-});
+Link.args = Object.assign(
+  { ...defaultArgs },
+  {
+    link: '#'
+  }
+);

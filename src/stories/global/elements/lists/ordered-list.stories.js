@@ -2,7 +2,7 @@ import twig from './ordered-list.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Elements/Lists/Ordered List',
+  title: 'Global/Elements/Lists/Ordered List'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {

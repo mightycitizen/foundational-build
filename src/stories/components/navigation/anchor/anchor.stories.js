@@ -2,7 +2,7 @@ import twig from './anchor.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Navigation/Anchor',
+  title: 'Components/Navigation/Anchor'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
 
@@ -15,7 +15,6 @@ const Template = (args) => {
   // return `<div>${label}</div>`;
   return twig(args);
 };
-
 
 const defaultArgs = {
   // section_heading: 'Heading',
@@ -32,9 +31,9 @@ const defaultArgs = {
     {
       anchor: 'anchor-2',
       text: 'Anchor 2'
-    },
+    }
   ]
-}
+};
 export const Anchor = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Anchor.args = defaultArgs;

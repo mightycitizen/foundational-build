@@ -2,7 +2,7 @@ import twig from './countdown.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Informational/Countdown',
+  title: 'Components/Informational/Countdown'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
 
@@ -32,12 +32,11 @@ futureDate.setHours(futureDate.getDate() + 1);
 // get timestamp
 const futureTimestamp = futureDate.getTime();
 const defaultArgs = {
-  date: futureTimestamp,
-}
+  date: futureTimestamp
+};
 export const Countdown = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Countdown.args = defaultArgs;
-
 
 // export const Link = Template.bind({});
 // // More on args: https://storybook.js.org/docs/html/writing-stories/args

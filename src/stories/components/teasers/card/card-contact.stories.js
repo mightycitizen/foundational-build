@@ -2,7 +2,7 @@ import twig from './card-contact.twig';
 import { contact } from '../../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Teasers/Contact Card',
+  title: 'Components/Teasers/Contact Card'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
 
@@ -54,10 +54,7 @@ const Template = (args) => {
 
 const defaultArgs = {
   ...contact
-}
+};
 export const ContactCard = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 ContactCard.args = defaultArgs;
-
-
-

@@ -2,12 +2,10 @@ import twig from './tabs.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
-
 export default {
   title: 'Components/Containers/Tabs',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-
     // modifier: {
     //   control: 'text'
     // },
@@ -48,7 +46,7 @@ export default {
     //   control: { type: 'select' },
     //   options: ['small', 'medium', 'large'],
     // },
-  },
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -58,16 +56,16 @@ const Template = (args) => {
   return twig(args);
 };
 
-const tabs = [...Array(15)].map((_, i) => ( {
-  "text": "Tab " + (0 + i),
-  "id": "tab-" + i,
-  "content": `<h2>Tab Content</h2><p>Lorem ipsum ${i}</p><p><a href='' class='read-more'>Styled Link</a></p>`
+const tabs = [...Array(15)].map((_, i) => ({
+  text: 'Tab ' + (0 + i),
+  id: 'tab-' + i,
+  content: `<h2>Tab Content</h2><p>Lorem ipsum ${i}</p><p><a href='' class='read-more'>Styled Link</a></p>`
 }));
 
 const defaultArgs = {
   tabs_id: 'example-tabs',
   tabs: tabs
-}
+};
 export const Tabs = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Tabs.args = defaultArgs;

@@ -8,13 +8,12 @@ export default {
       type: 'text'
     }
   }
-
 };
 
 const defaultArgs = {
   is_demo: true,
   toggle: 'open'
-}
+};
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
 const Template = (args) => {
@@ -22,8 +21,6 @@ const Template = (args) => {
   // return `<div>${label}</div>`;
   return twig(args);
 };
-
-
 
 const Hamburger = Template.bind({});
 

@@ -5,27 +5,21 @@ export default {
   title: 'Components/Informational/Listing',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-
     items: [
       {
         label: {
-          control: 'text',
+          control: 'text'
         },
         icon: {
           control: 'select',
-          options: [
-            '',
-            'email',
-            'phone'
-          ]
+          options: ['', 'email', 'phone']
         },
         value: {
-          control: 'text',
+          control: 'text'
         }
       }
     ]
-
-  },
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -51,8 +45,7 @@ const defaultArgs = {
       icon: 'email'
     }
   ]
-}
+};
 export const Listing = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Listing.args = defaultArgs;
-

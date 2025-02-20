@@ -10,8 +10,7 @@ export default {
         type: 'boolean'
       }
     }
-
-  },
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -23,9 +22,8 @@ const Template = (args) => {
 
 export const Switch = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Switch.args ={
-  label: "Switch",
-  id: "switch",
-  name: "switch",
-
+Switch.args = {
+  label: 'Switch',
+  id: 'switch',
+  name: 'switch'
 };

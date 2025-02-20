@@ -1,9 +1,8 @@
-
 import sidebarTwig from './content-with-sidebar.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Layout/Structure/Content',
+  title: 'Layout/Structure/Content'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {
@@ -63,7 +62,7 @@ const SidebarTwigTemplate = (args) => {
 const defaultArgs = {
   wrapper_class: 'grid-container',
   content: '<div class="pl-placeholder">Content</div>'
-}
+};
 
 const Sidebar = SidebarTwigTemplate.bind({});
 

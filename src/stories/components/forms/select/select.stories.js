@@ -16,8 +16,7 @@ export default {
         type: 'boolean'
       }
     }
-
-  },
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -27,23 +26,22 @@ const Template = (args) => {
   return twig(args);
 };
 
-
 const defaultArgs = {
-  label: "Select Dropdown",
-  id: "dropdown",
-  name: "dropdown",  
+  label: 'Select Dropdown',
+  id: 'dropdown',
+  name: 'dropdown',
   placeholder: 'Select an option',
   options: [
     {
-      label: "Dropdown A",
+      label: 'Dropdown A',
       value: 0
     },
     {
-      label: "Dropdown B",
+      label: 'Dropdown B',
       value: 1
     },
     {
-      label: "Dropdown C",
+      label: 'Dropdown C',
       value: 2
     }
   ]
@@ -56,13 +54,16 @@ const filterableTemplate = (args) => {
   // You can either use a function to create DOM elements or use a plain html string!
   // return `<div>${label}</div>`;
   return filterableTwig(args);
-}
+};
 
 export const Filterable = filterableTemplate.bind({});
-Filterable.args = Object.assign({...defaultArgs}, {  
-  name: 'select_filterable',
-  id: 'select_filterable'
-})
+Filterable.args = Object.assign(
+  { ...defaultArgs },
+  {
+    name: 'select_filterable',
+    id: 'select_filterable'
+  }
+);
 
 //
 // export const Large = Template.bind({});

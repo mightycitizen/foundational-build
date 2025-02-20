@@ -39,7 +39,7 @@ export default {
 
   addons: [
     "@storybook/addon-a11y",
-    "@storybook/addon-essentials"
+    "@storybook/addon-essentials"  
   ],
 
   framework: {

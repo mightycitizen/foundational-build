@@ -2,6 +2,8 @@
   "name": "mc-foundation-build",
   "version": "2.0.0",
   "scripts": {
+    "vrt": "STORYBOOK_URL='http://localhost:6011' npx playwright test",    
+    "vrt-set": "STORYBOOK_URL='http://localhost:6011' npx playwright test --update-snapshots",    
     "preinstall": "npx only-allow pnpm",
     "start": "concurrently --raw \"pnpm watch\" \"pnpm storybook\"",
     "watch": "npx tailwindcss -i ./src/assets/css/app.css -o ./src/assets/css/output.css --watch",
@@ -33,7 +35,7 @@
     "del": "^4.1.1",
     "drupal-twig-extensions": "1.0.0-beta.5",
     "postcss-import": "^16.1.0",
-    "raw-loader": "^4.0.2",    
+    "raw-loader": "^4.0.2",
     "sharp": "^0.33.5",
     "storybook": "^8.5.8",
     "storybook-addon-run-script": "^0.1.4",
@@ -49,6 +51,7 @@
   "dependencies": {
     "@alpinejs/focus": "^3.14.8",
     "@alpinejs/intersect": "^3.14.8",
+    "@playwright/test": "^1.50.1",
     "@splidejs/splide": "^4.1.4",
     "@storybook/html-vite": "^8.5.8",
     "@styleshit/vite-plugin-twig-loader": "^0.1.1",

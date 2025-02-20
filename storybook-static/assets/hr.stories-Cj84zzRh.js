@@ -1,5 +1,0 @@
-import{T as i,t as c}from"./twig-DGqAAA8S.js";import{a as u,D as d}from"./twig-xRDxs_F9.js";import"./_commonjsHelpers-BosuxZz1.js";u(i);i.cache(!1);const o=e=>e,m=(e={})=>{const t=c.twig({id:"/Users/kfernandez/Sites/foundational-build-craft/storybook/src/stories/global/elements/text/hr.twig",data:[{type:"raw",value:"<hr />",position:{start:0,end:0}}],precompiled:!0});t.options.allowInlineIncludes=!0;try{return o(t.render({attributes:new d,...e}))}catch(l){return o("An error occurred whilst rendering /Users/kfernandez/Sites/foundational-build-craft/storybook/src/stories/global/elements/text/hr.twig: "+l.toString())}},b={title:"Global/Elements/Horizontal Rule"},p=e=>m(e),r=p.bind({});var s,n,a;r.parameters={...r.parameters,docs:{...(s=r.parameters)==null?void 0:s.docs,source:{originalSource:`args => {
-  // You can either use a function to create DOM elements or use a plain html string!
-  // return \`<div>\${label}</div>\`;
-  return twig(args);
-}`,...(a=(n=r.parameters)==null?void 0:n.docs)==null?void 0:a.source}}};const h=["HorizontalRule"];export{r as HorizontalRule,h as __namedExportsOrder,b as default};

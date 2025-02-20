@@ -15,3 +15,5 @@ npm-debug.log
 dependencyGraph.json
 
 .DS_Store
+
+storybook-static

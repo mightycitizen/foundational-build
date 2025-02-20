@@ -20,7 +20,9 @@ import {
 import { menu, social, logo } from '../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Pages/General'
+  title: 'Pages/General',
+  tags: ["visual:check"],
+
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -30,7 +32,9 @@ const Template = (args) => {
 
 const Default = Template.bind({});
 const defaultArgs = {
-  hero,
+  hero: {
+    heading: 'Heading',
+  },
   breadcrumbs,
   menu,
   logo,

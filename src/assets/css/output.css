@@ -2544,10 +2544,6 @@ input[type="radio"]:focus:not(:checked).custom,
   transition-duration: 150ms;
 }
 
-.duration-1000 {
-  transition-duration: 1000ms;
-}
-
 .duration-200 {
   transition-duration: 200ms;
 }
@@ -2619,6 +2615,26 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .focus\:opacity-100:focus {
   opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion-safe\:opacity-0 {
+    opacity: 0;
+  }
+
+  .motion-safe\:opacity-100 {
+    opacity: 1;
+  }
+
+  .motion-safe\:transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  .motion-safe\:duration-1000 {
+    transition-duration: 1000ms;
+  }
 }
 
 @media (min-width: 640px) {

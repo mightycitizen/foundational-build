@@ -5,6 +5,7 @@ import manifest from "../storybook-static/index.json";
 const options = {
   fullPage: true,
   animations: "disabled",
+  reducedMotion: 'reduce'
 };
 
 // test.beforeEach(async ({ page }, meta) => {
@@ -29,12 +30,16 @@ const visualStories = filterStories(Object.values(manifest.entries));
 visualStories.forEach((story) => {
   test(story.id, async ({ page }, meta) => {
     // console.log(process.env.STORYBOOK_URL);
+    // await page.emulateMedia({ reducedMotion: 'reduce' });
     await navigate(page, process.env.STORYBOOK_URL, meta.title);
+    
     const upstreamScreenshot = `${meta.title}-upstream-${process.platform}.png`;
+
+    
 
     const screenshot = await page.screenshot({
       path: `playwright/${meta.title}-current-${process.platform}.png`,
-      options
+      ...options
     });
 
     expect(screenshot).toMatchSnapshot(upstreamScreenshot);

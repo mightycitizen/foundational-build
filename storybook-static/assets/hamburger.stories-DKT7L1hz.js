@@ -1,0 +1,1 @@
+import{t as r}from"./hamburger-DVA2nQJd.js";import"./twig-BXd3Gfe2.js";import"./_commonjsHelpers-BosuxZz1.js";import"./twig-foVUGi9y.js";const i={title:"Components/Utils/Hamburger",toggle:{control:{type:"text"}}},e={is_demo:!0,toggle:"open"},o=t=>r(t),s=o.bind({});s.args=e;const p=["Hamburger"];export{s as Hamburger,p as __namedExportsOrder,i as default};

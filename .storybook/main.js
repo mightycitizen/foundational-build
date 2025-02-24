@@ -1,9 +1,15 @@
-import { resolve } from 'path';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import twig from 'vite-plugin-twig-drupal';
 import { join } from "node:path"
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
+
+
+console.log(__dirname);
 
 
 // Legacy namespace resolver plugin

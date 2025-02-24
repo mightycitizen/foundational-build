@@ -1,8 +1,0 @@
-import{T as t,t as a}from"./twig-DGqAAA8S.js";import{a as e}from"./twig-xRDxs_F9.js";e(t);t.cache(!1);e(t);t.cache(!1);a.twig({id:"@components/containers/carousel/carousel-nav.twig",data:[{type:"raw",value:'<div class="slick-nav flex justify-center items-center mt-4 md:mt-8 ',position:{start:0,end:68}},{type:"output",position:{start:68,end:99},stack:[{type:"Twig.expression.type.variable",value:"slick_nav_class",match:["slick_nav_class"],position:{start:68,end:99}},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:68,end:99}}]},{type:"raw",value:" ",position:{start:99,end:100}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"inline",match:["inline"]},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:100,end:124},output:[{type:"raw",value:"slick-nav--inline",position:{start:124,end:141}}]},position:{open:{start:100,end:124},close:{start:141,end:152}}},{type:"raw",value:`">
-  `,position:{start:152,end:157}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"pause",match:["pause"]},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:157,end:181},output:[{type:"raw",value:`    <button class="js-slick-toggle slick-toggle">
-      <span class="sr-only">Toggle Pause/Play</span>
-      <span class="icon-pause active"></span>
-      <span class="icon-play inactive"></span>
-    </button>
-  `,position:{start:182,end:394}}]},position:{open:{start:157,end:181},close:{start:394,end:405}}},{type:"raw",value:`</div>
-`,position:{start:406,end:406}}],precompiled:!0});

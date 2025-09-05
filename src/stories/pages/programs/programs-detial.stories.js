@@ -157,15 +157,29 @@ const defaultArgs = {
       ]
     },
     {
-      module_type: 'wysiwyg',
+      module_type: 'split_content',
       section_id: 'section-1',
-      wysiwyg
+      intro_class: 'text-left',
+      section_heading: '[h2, optional] Modular Component Intro, Label type',
+      section_description: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+      section_link: {
+        url: '#',
+        text: 'Optional Link'
+      },
+      divider: true,
+      column_left: '<ul><li>Vestibulum condimentum lectus in convallis feugiat.</li><li>Sed vulputate fringilla felis. Aliquam ut arcu et dui feugiat scelerisque eu quis diam.</li><li>Mauris placerat congue dui sit amet blandit.</li><li>Phasellus condimentum libero vel velit auctor, sit amet tincidunt velit varius.</li></ul><ol><li>Cras dapibus vulputate diam eu pretium. Mauris elit orci, ultricies id fermentum vel, porta et eros.</li><li>Vestibulum condimentum lectus in convallis feugiat. Sed vulputate fringilla felis.</li><li>Aliquam ut arcu et dui feugiat scelerisque eu quis diam.</li></ol>',
+      column_right: '<ul><li>Vestibulum condimentum lectus in convallis feugiat.</li><li>Sed vulputate fringilla felis. Aliquam ut arcu et dui feugiat scelerisque eu quis diam.</li><li>Mauris placerat congue dui sit amet blandit.</li><li>Phasellus condimentum libero vel velit auctor, sit amet tincidunt velit varius.</li></ul><ol><li>Cras dapibus vulputate diam eu pretium. Mauris elit orci, ultricies id fermentum vel, porta et eros.</li><li>Vestibulum condimentum lectus in convallis feugiat. Sed vulputate fringilla felis.</li><li>Aliquam ut arcu et dui feugiat scelerisque eu quis diam.</li></ol>',
     },
     {
       module_type: 'step-list',
+      exclude_container: false,
       section_heading: 'Step List',
-      section_description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      section_description: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+      section_link: {
+        url: '#',
+        text: 'Optional Link'
+      },
+      divider: true,
       steps
     }
   ]

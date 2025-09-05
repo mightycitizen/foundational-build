@@ -187,6 +187,60 @@ Events.args = {
   cards: eventCards
 };
 
+const Person = Template.bind({});
+
+const personCards = cards.map((card, i) =>
+  Object.assign(
+    { ...card },
+    {
+      summary: null,
+      jobtitle: 'Job title lorem ipsum',
+      contact_email: 'example@mightyu.edu',
+      contact_phone: '123-456-7890',
+      image_position: 'flush',
+      department: {
+        text: 'Primary Organization/Department',
+        url: '#'
+      },
+      image: {
+        src: "/images/directory-horizontal-card.jpg",
+        alt: "Alt Text",
+        alignment: 'right'
+      },
+      link: null
+    }
+  )
+);
+
+Person.args = {
+  ...defaultArgs,
+  cards: personCards
+};
+
+const Deadline = Template.bind({});
+
+const deadlineCards = cards.map((card, i) =>
+  Object.assign(
+    { ...card },
+    {
+      no_outline: true,
+      deadline_date: 'February 14, 2025',
+      summary: '[Text and links allowed] Your final submission is due soon. Don\'t delay! Ensure all forms are complete by midnight. Last chance to meet the deadline.',
+      hour: '11:59 PM (CST)',
+      image: null,
+      link: null
+    }
+  )
+);
+
+Deadline.args = {
+  ...defaultArgs,
+  section_heading: 'Academic Calendar: Upcoming Dates & Deadlines',
+  section_description: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+  divider: true,
+  cards: deadlineCards
+};
+
 const Programs = Template.bind({});
 
 const programCards = cards.map((card, i) =>
@@ -215,4 +269,4 @@ Programs.args = {
   cards: programCards
 };
 
-export { Default, News, Events, Programs, Icons };
+export { Default, News, Events, Programs, Icons, Person, Deadline };

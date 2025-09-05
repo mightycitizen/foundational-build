@@ -1,3 +1,8 @@
+{% if deadline_date | default %}
+  <div class="bg-primary-50 border-t-2 border-t-primary-500 uppercase text-primary-500 px-5 py-2 font-bold mb-2">
+    {{ deadline_date }}
+  </div>
+{% endif %}
 {% if badges %}
   {% if featured | default %}<div class="absolute top-8 right-5 lg:top-14 lg:right-8">{% endif %}
   <ul class="list-none flex gap-x-2 mb-3">
@@ -75,6 +80,13 @@
     </li>
   {% endif %}
 </ul>
+{% endif %}
+
+{% if hour | default %}
+  <p class="flex items-center gap-x-2 mb-2">
+    <span class="ph ph-[clock] text-2xl text-primary"></span>
+    <span class="font-bold">{{ hour }}</span>
+  </p>
 {% endif %}
 
 {% if button | default %}

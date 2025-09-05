@@ -131,6 +131,88 @@ const defaultArgs = {
         url: '#',
         text: 'Text'
       }
+    },
+    {
+      module_type: 'card-group',
+      intro_class: 'text-left',
+      section_heading: 'Related Articles',
+      section_description: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+      section_link: {
+        url: '#',
+        text: 'Optional Link'
+      },
+      divider: true,
+      cards: [
+        {
+          badges: [
+            {
+              icon: 'icon-lightning-fill',
+              text: 'Announcement'
+            },
+            {
+              icon: 'icon-lightning-fill',
+              text: 'Featured'
+            }
+          ],
+          image: {
+            src: 'https://placehold.co/430x230',
+            alt: 'Alt Text'
+          },
+          heading: {
+            text: '[h3] Heading example lorem ipsum',
+            url: '#',
+            level: 3
+          },
+          publish_date: 'PUBLISH DATE HERE',
+          summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+        },
+        {
+          badges: [
+            {
+              icon: 'icon-lightning-fill',
+              text: 'Announcement'
+            },
+            {
+              icon: 'icon-lightning-fill',
+              text: 'Featured'
+            }
+          ],
+          image: {
+            src: 'https://placehold.co/430x230',
+            alt: 'Alt Text'
+          },
+          heading: {
+            text: '[h3] Heading example lorem ipsum',
+            url: '#',
+            level: 3
+          },
+          publish_date: 'PUBLISH DATE HERE',
+          summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+        },
+        {
+          badges: [
+            {
+              icon: 'icon-lightning-fill',
+              text: 'Announcement'
+            },
+            {
+              icon: 'icon-lightning-fill',
+              text: 'Featured'
+            }
+          ],
+          image: {
+            src: 'https://placehold.co/430x230',
+            alt: 'Alt Text'
+          },
+          heading: {
+            text: '[h3] Heading example lorem ipsum',
+            url: '#',
+            level: 3
+          },
+          publish_date: 'PUBLISH DATE HERE',
+          summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+        }
+      ]
     }
   ]
 };

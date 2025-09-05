@@ -47,4 +47,11 @@
     {% endembed %}
   {% endif %}
 
+  {% for module in modules %}
+    {% if module.module_type == 'wysiwyg' %}
+      {% include '@components/modules/wysiwyg/wysiwyg.twig' with module only %}
+    {% elseif module.module_type == 'card-group' %}
+      {% include '@components/modules/card-group/card-group-module.twig' with module only %}
+    {% endif %}
+  {% endfor %}
 {% endblock %}

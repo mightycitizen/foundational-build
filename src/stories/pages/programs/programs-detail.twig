@@ -65,8 +65,8 @@
       {% include '@components/modules/testimonial/testimonial.twig' with module only %}
     {% elseif module.module_type == 'tabs' %}
       {% include '@components/modules/tabs/tabs-module.twig' with module only %}
-    {% elseif module.module_type == 'cta' %}
-      {% include '@components/modules/cta/cta.twig' with module only %}
+    {% elseif module.module_type == 'split_content' %}
+      {% include '@components/modules/split-content/split-content.twig' with module only %}
     {% elseif module.module_type == 'card-group' %}
       {% include '@components/modules/card-group/card-group-module.twig' with module only %}
     {% elseif module.module_type == 'card-carousel' %}

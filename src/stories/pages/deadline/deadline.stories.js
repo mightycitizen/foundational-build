@@ -109,6 +109,12 @@ const defaultArgs = {
   modules: [
     {
       module_type: 'short-list-horizontal',
+      section_label: {
+        icon: {
+          name: 'ph ph-[buildings]',
+        },
+        text: 'Example label goes here'
+      },
       section_heading: 'Related Events',
       section_link: {
         url: '#',

@@ -18,7 +18,7 @@ const defaultArgs = {
   section_heading: 'Heading',
   section_description: 'Description',
   image: {
-    src: 'https://placehold.co/430x230',
+    src: '/images/testimonial.jpg',
     alt: 'Alt Text'
   },
   quote:
@@ -26,6 +26,11 @@ const defaultArgs = {
   attribution: {
     label: 'John Doe',
     info: 'CEO, Company'
+  },
+  attribution_two: '<p>Attribution Line #2 <a href="">can include link if needed</a></p>',
+  button: {
+    text: 'Optional Button',
+    url: '#'
   }
 };
 export const Testimonial = Template.bind({});

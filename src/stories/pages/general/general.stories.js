@@ -224,6 +224,12 @@ const defaultArgs = {
     {
       module_type: 'card-carousel',
       section_class: 'bg-primary-200',
+      section_label: {
+        icon: {
+          name: 'ph ph-[buildings]',
+        },
+        text: 'Example label goes here'
+      },
       section_heading: 'Carousel',
       section_description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',

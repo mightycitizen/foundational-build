@@ -48,3 +48,6 @@ figure figcaption {
   filter: drop-shadow(-1px 4px 8px rgba(16, 24, 40, 0.3));
 }
 
+blockquote cite:before {
+  content: "" !important;
+}

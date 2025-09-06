@@ -5,20 +5,18 @@
 }
 %}
   {% block section_content %}
-    {% include '@components/teasers/card/card-testimonial.twig' with testimonial
-    %}
-
+    <div class="c-logo-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 items-center">
     {% for logo in logos %}
-      <div class="c-logo-grid__item">
-        {% if logo.url is empty %}<div class="u-duration-short border border-gray-30 c-logo-grid__item__logo
+      <div class="c-logo-grid__item border border-gray-30 h-full p-4 w-full items-center justify-center flex">
+        {% if logo.url is empty %}<div class="u-duration-short c-logo-grid__item__logo
       bg-white">{% endif %}
-          {% if logo.url %}<a class="u-duration-short border border-gray-30 c-logo-grid__item__logo
+          {% if logo.url %}<a class="u-duration-short c-logo-grid__item__logo
       bg-white" href="{{ logo.url }}">{% endif %}
             <img src="{{ logo.image.src }}" alt="{{ logo.image.alt }}" />
             {% if logo.url %}</a>{% endif %}
           {% if logo.url is empty %}</div>{% endif %}
       </div>
     {% endfor %}
-
+    </div>
   {% endblock %}
 {% endembed %}
